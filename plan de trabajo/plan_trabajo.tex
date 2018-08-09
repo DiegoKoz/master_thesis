@@ -1,0 +1,207 @@
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\usepackage{natbib}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\graphicspath{ {Graficos/} }
+\usepackage{subfigure}
+\usepackage{gensymb}
+
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+
+\usepackage{pgfgantt}
+
+
+\usepackage[spanish]{babel}
+%\usepackage[style=authoryear]{biblatex}
+
+\urldef{\mailsa}\path|diegokoz92@gmail.com|    
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+\usepackage{fancyhdr}
+\usepackage{markdown}
+
+\lhead[]{}
+\chead[]{}
+\rhead[]{}
+\renewcommand{\headrulewidth}{0.25pt}
+\pagestyle{fancy}
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+
+
+\usepackage{geometry}
+\geometry{margin=1in}
+
+
+
+
+
+\begin{document}
+
+
+
+\mainmatter  % start of an individual contribution
+
+
+\begin{titlepage}
+
+\begin{center}
+    
+\textbf{\LARGE{Universidad de Buenos Aires}}
+\end{center}
+\vspace*{0.15in}
+
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=3cm]{logos/UBAlogo.png}
+\end{center}
+\end{figure}
+
+\begin{center}
+\Large{\textbf{Facultad de Ciencias Exactas y Naturales}}\\
+\vspace*{0.1in}
+\large{\textbf{Maestría en Exploración de Datos y Descubrimiento del Conocimiento}} \\
+\vspace*{0.1in}
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=3cm]{logos/dmlogo.png}
+\end{center}
+\end{figure}
+
+\begin{large}
+Tesis a ser presentada para obtener al título de Magíster en Explotación de Datos y Descubrimiento de Conocimiento\\	
+\end{large}
+\vspace*{0.2in}
+\begin{Large}
+\textbf{Plan de Tesis de Maestría en Minería de Datos y Descubrimiento de conocimiento} \\
+\end{Large}
+\vspace*{0.25in}
+\begin{large}
+Autor: Lic. Diego Kozlowski\\
+\end{large}
+\vspace*{0.3in}
+\rule{80mm}{0.1mm}\\
+\vspace*{0.1in}
+\begin{large}
+Directora de Tesis: \\
+Dra. Viktoriya Semeshenko \\
+\today
+\end{large}
+\end{center}
+
+\end{titlepage}
+
+\tableofcontents
+
+
+
+\section[Tema]{Tema de investigación}
+
+El análisis del comercio internacional constituye una de las áreas de estudio más importantes de la investigación económica. Desde los comienzos de la economía política clásica constituye un tema de preocupación por sus fuertes implicancias \cite{ricardo1987principios}. Por su parte, el registro de la información referente al comercio entre países también se remonta en el tiempo.          
+
+Sin embargo, el análisis tradicional de la información generada carece de las herramientas necesarias para hacer frente a los grandes volúmenes de datos generados por el comercio internacional en la actualidad. Históricamente, los indicadores sintéticos del área se resumen en volumen y masa de dinero comerciada, partiendo del total mundial, hacia desagregaciones por región, país y sector económico en cuestión \cite{WTO2017}.                
+
+A la vez que aumenta el volumen de información persistida respecto del comercio internacional, también se facilita el acceso a técnicas de análisis de datos que requieren un mayor poder de cómputo, y que por lo tanto eran impensadas como herramientas de estudio en épocas anteriores. En este sentido, surge la posibilidad de complementar el análisis tradicional del comercio mundial con técnicas de mayor riqueza en términos cuantitativos. 
+
+El presente trabajo se propone utilizar las nuevas técnicas que provee el análisis de grafos para caracterizar el comercio internacional. Su modelización como una red compleja permite la construcción de medidas de resumen que, sin abandonar una mirada holística de la problemática, logren dar cuenta de una mayor complejidad que las métricas tradicionales de dicha área temática. 
+
+
+
+\section{Estado del arte}
+
+No son pocos los autores que utilizan el análisis de grafos para desarrollar intuiciones respecto al comportamiento económico. Jackson \cite{Jackson2008} presenta múltiples implementaciones de la teoría de grafos para el análisis económico. 
+En la literatura orientada al comercio internacional, existe sendos intentos de representar al mismo desde esta perspectiva, ya sea desde la teoría de la información \cite{Bhattacharya2008},  como una herramienta de modelización de los fenómenos económicos \cite{Fan2014}, para analizar las relaciones de centro-periferia \cite{Fagiolo2010}, o bien para realizar una descripción del estado del comercio internacional en un momento dado\cite{Chow2013}.
+Por su parte, cabe destacar los trabajos de Hidalgo \cite{Hidalgo2007},\cite{Hidalgo2009a} y \cite{Hidalgo2009}, quien elabora un grafo bipartito a partir del comercio bilateral a nivel producto, para desarrollar el concepto de complejidad económica de los productos y las naciones. A Su vez, como resultado de lo anterior, también se obtiene un mapa de complejidad de productos.
+Sin embargo, dada la amplitud de los temas a abordar, tanto desde la perspectiva económica, como desde la teoría de grafos, se presenta como un campo abierto para la investigación, con sendas aristas aún por recorrer.        
+
+\section{Objetivos}
+
+Los aportes que se espera realizar se pueden resumir en los siguientes puntos:
+
+\par
+
+\paragraph{\textbf{Objetivo general:}} Reconocer, a partir de la modelización del comercio mundial en una red compleja, los patrones generales de la economía mundial.
+
+\par
+
+\paragraph{\textbf{Objetivos específicos:}}
+
+\begin{enumerate}
+	\item Elaborar un modelo del comercio bilateral total entre países para el período comprendido entre 1996 y 2016 y reconocer los patrones generales del comercio mundial.
+	\item Sobre la base del modelo anterior, analizar la evolución de la economía mundial en el período 1950-2000, en busca de evidencias de la denominada Nueva División Internacional del Trabajo.
+	\item Analizar el comercio bilateral a nivel producto de los países de Sudamérica, en busca de posibles patrones de integración regional.
+\end{enumerate}
+
+
+\section{Antecedentes personales en el tema}
+
+Entre los antecedentes personales en la temática cabe destacar:
+
+\begin{itemize}
+	\item \textbf{Tesis de especialización en Data Mining}\cite{Kozlowski2018b}: En la misma se elaboró una primera versión del objetivo específico 1. Debido a falta de acceso a la información, la misma fue recuperada de la página web de la Organización Mundial del comercio (WTO) mediante métodos de scrapping, dónde existe la posibilidad de que haya una porción de datos no recuperada. En la actualidad, se cuenta con acceso oficial a dicha base de datos, por lo que se puede enriquecer el análisis.
+	\item \textbf{Presentación en Young Scholar Initiative 2018}\cite{Kozlowski2018a}: Se avanzó en el objetivo específico 2. A su vez, en dicha conferencia se recibieron valiosas críticas respecto a la metodología propuesta, que permitirían robustecer la misma.
+	\item \textbf{Presentación en LatinR 2018}\cite{Kozlowski2018}.
+	\item Grupo de trabajo del Instituto de Investigación en Economía Política (IIEP)-FCE-UBA: Desde mayo 2018 se colabora con un grupo de trabajo, junto a las prof. Andrea Molinari y Viktoriya Semeshenko, para elaborar una representación del comercio bilateral en América Latina, a partir de un grafo bipartito, como el propuesto por Hidalgo. En las colaboraciones con dicho grupo se avanza con el objetivo específico 3.
+\end{itemize}
+
+
+
+\section{Plan de Trabajo}
+
+\paragraph{Comienzo:} Mayo 2018.
+\paragraph{Fin} Mayo 2019.
+
+\paragraph{Etapas de desarrollo de la tesis:}
+\begin{enumerate}
+	\item \textbf{Revisión bibliográfica.} Investigación del estado del arte. En particular:
+		\subitem La utilización de la teoría de grafos en las ciencias sociales.
+		\subitem Las representaciones del comercio internacional como una red compleja
+		\subitem Las propuestas de Hidalgo \cite{Hidalgo2007,Hidalgo2009, Hidalgo2009a} para el análisis de la complejidad del espacio de productos. 
+
+
+	\item \textbf{Recopilación de la información.} Descarga de datos de la página de la Organización del Comercio internacional, y búsqueda de fuentes alternativas, de mayor extensión temporal.\\
+	Tiempo estimado: 1 mes
+	\item \textbf{Elaboración grafo de comercio bilateral agregado para el período reciente.} Análisis de las decisiones metodológicas que involucran la conceptualización de la red, y los primeros resultados obtenidos. En base a la información provista por la \textit{WTO}
+	\item \textbf{Análisis de los movimientos de largo plazo en la red.} Búsqueda de elementos confirmatorios o que refuten la tesis de la nueva división internacional del trabajo. En base a la información provista por \cite{Gleditsch2002}
+	\item \textbf{Elaboración del grafo bipartito a nivel producto.} Análisis de cercanía del espacio de productos.
+	\item \textbf{Análisis de resultados obtenidos y preparación del informe final.} 
+
+\end{enumerate}
+
+
+\begin{ganttchart}[vgrid,
+	bar/.append style={fill=gray!30}]{1}{13}
+	
+	\gantttitle{2018}{8} 
+	\gantttitle{2019}{5}
+	\ganttnewline
+	\gantttitlelist{5,6,7,8,9,10,11,12,1,2,3,4,5}{1} \\
+	\ganttbar{Revisión bibliográfica}{1}{2} \\
+	\ganttbar{Recopilación de la información}{3}{3} 
+	\ganttnewline
+	\ganttbar{Grafo agregado, datos WTO}{4}{5} 
+	\ganttnewline
+	\ganttbar{Grafo agregado, datos Gledisch}{5}{7} 
+	\ganttnewline
+	\ganttbar{Grafo Bipartito}{7}{10} 
+	\ganttnewline
+	\ganttbar{Elaboración informe}{10}{12}
+%	\ganttlink{elem2}{elem3}
+%	\ganttlink{elem3}{elem4}
+\end{ganttchart}
+
+
+
+
+\bibliographystyle{unsrt}
+\bibliography{bibliografia}
+
+\end{document}
+
