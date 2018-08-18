@@ -1,12 +1,12 @@
 rm(list = ls())
 library(tidyverse)
 library(rjson)
-library(qdapRegex)
+#library(qdapRegex)
 
 get.Comtrade <- function(type="C",
                          freq="A",
                          r = "ALL",
-                         px="HS",
+                         px="H1",
                          ps,
                          token)
 {
@@ -36,17 +36,23 @@ get.Comtrade <- function(type="C",
   
 }
 
-periodos <- 1990:2017
+periodos <- 1996:2017
+done <- list.files("Dataset/")
+periodos_faltan <- periodos[!periodos %in% substr(done,1,4)]
 
-for (periodo in periodos) {
-  tryCatch({ 
-  data <- get.Comtrade(ps = periodo,
-                        token = "your token")
-  outfile <- paste0("Dataset/",periodo,".RDS")
-  saveRDS(data,outfile)
-  rm(data)
-  gc()
-  }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
+while (length(periodos_faltan>0)) {
+  for (periodo in periodos_faltan) {
+    tryCatch({ 
+    data <- get.Comtrade(ps = periodo,
+                          token = "your_token")
+    outfile <- paste0("Dataset/",periodo,".RDS")
+    saveRDS(data,outfile)
+    rm(data)
+    gc()
+    }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
+  }
+  done <- list.files("Dataset/")
+  periodos_faltan <- periodos_faltan[!periodos_faltan %in% substr(done,1,4)]
+  
 }
-
 
