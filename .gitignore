@@ -39,6 +39,9 @@ rsconnect/
 ### Datasets
 
 **.RDS
+**.rds
+**.asc
+**.pl
 exptradegdpv4.1/**
 
 ### private token
