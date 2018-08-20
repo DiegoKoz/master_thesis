@@ -6,10 +6,6 @@ library(ggridges)
 dataset <- readRDS('dataset/aggregated_trade.RDS')
 
 
-## Hay que sacar los aregados supranacionales
-eliminar <- c("World",unique(dataset$ptTitle)[grepl(" nes",unique(dataset$ptTitle))])
-dataset <-dataset %>% 
-  filter(!ptTitle %in% eliminar) 
   
   
 
@@ -31,7 +27,7 @@ ggplot(resumen, aes(yr, valor))+
 
 tabla <-as.data.frame(table(dataset$yr,dataset$rtTitle))
 
-tabla %>% 
+tab <- tabla %>% 
   filter(Freq>0) %>% 
   group_by(Var1) %>% 
   summarise(n())
