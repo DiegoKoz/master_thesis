@@ -369,59 +369,6 @@ ggsave("graficos/threshold_x_naristas_x_yr.png")
 ### Punto de corte elegido: 1%
 ### representación grafo 2016
 
-
-# grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2, label = FALSE){
-#       lista_grafo <- trade_to_graph(edges = datos, threshold_pct = threshold_pct)
-#       
-#       grafo <- lista_grafo$grafo
-#       nombres_vertices <- data_frame(rt3ISO=as.vector(V(grafo)$name))
-#       countrycode_data2 <- countrycode_data %>% 
-#         select(rt3ISO = iso3c, continent)
-#       correspondencia <- left_join(nombres_vertices,countrycode_data2) %>% 
-#         mutate(color = case_when(continent == "Europe" ~"#E41A1C",
-#                                  continent == "Africa" ~"#377EB8",
-#                                  continent == "Asia" ~"#4DAF4A",
-#                                  continent == "Oceania" ~"#984EA3",
-#                                  continent == "Americas" ~"#FF7F00") )
-#       
-#       V(grafo)$continente <- correspondencia$continent
-#       V(grafo)$color <- correspondencia$color
-#       E(grafo)$edge.color <- "gray80"
-#       l <-layout.graphopt(grafo)
-#       if (save) {
-#         if (label) {
-#             png(paste0("graficos/","grafo_2016_",threshold_pct*100,"_pcnt.png"))
-#             plot(grafo,edge.arrow.size=.2,vertex.frame.color="#ffffff",
-#                  vertex.label="", vertex.label.color="black", vertex.size = 6, 
-#                  layout=l)#, main= paste0("Grafo año 2016, punto de corte de ", 
-#                           #              threshold_pct*100,"%"))
-#             legend(x=-1.5,  y=1.5,unique(unique(correspondencia$continent)),
-#                    pch=21,col="#777777",pt.bg=unique(unique(correspondencia$color)),
-#                    pt.cex=2,cex=1.2,bty="n",ncol=5)
-#         
-#         }
-#         else{
-#           png(paste0("graficos/","grafo_2016_",threshold_pct*100,"_pcnt.png"))
-#           plot(grafo,edge.arrow.size=.2,vertex.frame.color="#ffffff",
-#                vertex.label="", vertex.label.color="black", vertex.size = 6, 
-#                layout=l)#, main= paste0("Grafo año 2016, punto de corte de ", 
-#           }
-#         dev.off()
-#         
-#       }
-#       plot(grafo,edge.arrow.size=.2,vertex.frame.color="#ffffff",
-#            vertex.label="", vertex.label.color="black", vertex.size = 6, 
-#            layout=l)#, main= paste0("Grafo año 2016, punto de corte de ", threshold_pct*100,"%"))
-#       legend(x=-.5,  y=1,unique(unique(correspondencia$continent)),
-#              pch=21,col="#777777",pt.bg=unique(unique(correspondencia$color)),
-#              pt.cex=2,cex=1.5,bty="n",ncol=1)
-# }
-# grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T, label = TRUE)
-# for (pcnt in seq(0.05,.25,0.05)) {
-#   grafico_grafo(threshold_pct = pcnt, save = T, label = FALSE)
-# }
-
-
 grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2,
                           label = FALSE, layout="NA",
                           ponderado=F){
@@ -497,14 +444,14 @@ grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2,
     l <-layout_nicely(grafo)
     if (save) {
       if (label) {
-        png(archivo)
-        plot(grafo,edge.arrow.size=.2,vertex.frame.color="#ffffff", edge.size = .5,
+        png(archivo, width = 960, height = 960)
+        plot(grafo,edge.arrow.size=.4,vertex.frame.color="#ffffff", edge.size = .5,
              vertex.label="", vertex.label.color="black", vertex.size = 6, 
              layout=l)#, main= paste0("Grafo año 2016, punto de corte de ", 
         #              threshold_pct*100,"%"))
-        legend(x=-1.5,  y=1.5,unique(unique(correspondencia$continent)),
+        legend(x=-1,  y=1.2,unique(unique(correspondencia$continent)),
                pch=21,col="#777777",pt.bg=unique(unique(correspondencia$color)),
-               pt.cex=2,cex=1.2,bty="n",ncol=5)
+               pt.cex=6,cex=2,bty="n",ncol=5)
         
       }
       else{
@@ -536,6 +483,12 @@ grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2,
 
 
 
+
+
+grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T, label = TRUE)
+grafico_grafo(datos = dataset2,threshold_pct = 0.2, save = T, label = TRUE)
+
+
 grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T, 
               label = T,layout = "circle",ponderado = T)
 
@@ -546,13 +499,11 @@ for (pcnt in seq(0.05,.25,0.05)) {
 
 
 
-grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T, label = TRUE)
-grafico_grafo(datos = dataset2,threshold_pct = 0.2, save = T, label = TRUE)
 
 
-for (pcnt in seq(0.05,.25,0.05)) {
-  grafico_grafo(threshold_pct = pcnt, save = T, label = FALSE)
-}
+# for (pcnt in seq(0.05,.25,0.05)) {
+#   grafico_grafo(threshold_pct = pcnt, save = T, label = FALSE)
+# }
 
 #### Comparación impos y expos  ####
 
