@@ -10,8 +10,8 @@ Una primera parte de la tésis se basa en el análisis del comercio total entre 
 
 - Metodologı́a
 - Representación del comercio internacional del año __2016__ en un grafo dirigido
-- Análisis del movimiento entre 1997-2016 ^[Dataset de _comtrade_]
-- Análisis del movimiento entre 1950-2000 ^[Dataset de _Gleditsch_]
+- Análisis del movimiento entre 1997-2016 [Dataset de _comtrade_]
+- Análisis del movimiento entre 1950-2000 [Dataset de _Gleditsch_]
 
 Esta parte de la tésis se basa en:
 
@@ -62,17 +62,13 @@ Basado en Hidalgo and Hausmann (2009), se estudiará la representación del come
 
 Además, los autores proponen una métrica de ventajas comparativas relativas, _Relative Comparative Advantages_ 
 
-$$
-  RCA(c,i)= \frac{\displaystyle \frac{x(c,i)}{\displaystyle \sum_{i}x(c,i)}}{\frac{\displaystyle\sum_{c}x(c,i)}{\displaystyle \sum_{c,i}x(c,i)}}
-\\
-$$
-dónde $x(c,i)$ es el valor de las exportaciones del __país c__ en el __producto i__     
+![](formula1.png)
+
+dónde x(c,i) es el valor de las exportaciones del __país c__ en el __producto i__     
 
 A partir de esta métrica, los Hausman e Hidalgo proponen que la similitud entre países dos países, {i,j} se puede definir como: 
 
-$$
-\phi_{ij} = min (P(RCA_i>1/RCA_j>1),P(RCA_j>1/RCA_i>1))
-$$
+![](formula2.png)
 
 
 El objetivo de trabajo es:
