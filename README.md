@@ -1,19 +1,19 @@
-# Tésis de maestría
+# Tesis de maestría
 
-Repositorio para la tésis de maestría en _Data Mining and Knowledge Discovery_ de Diego Kozlowski
+Repositorio para la tesis de maestría en _Data Mining and Knowledge Discovery_ de Diego Kozlowski
 
 Estructura:
 
 ## Comercio Agregado
 
-Una primera parte de la tésis se basa en el análisis del comercio total entre países. Esta sección se divide de la siguiente manera:
+Una primera parte de la tesis se basa en el análisis del comercio total entre países. Esta sección se divide de la siguiente manera:
 
 - Metodologı́a
 - Representación del comercio internacional del año __2016__ en un grafo dirigido
 - Análisis del movimiento entre 1997-2016 [Dataset de _comtrade_]
 - Análisis del movimiento entre 1950-2000 [Dataset de _Gleditsch_]
 
-Esta parte de la tésis se basa en:
+Esta parte de la tesis se basa en:
 
 1. Trabajo de especialización DM&KD
 2. Trabajo presentado en [_Young Scholars Initiative_](https://github.com/DiegoKoz/grafo_comercio_agregado/tree/YSI)
