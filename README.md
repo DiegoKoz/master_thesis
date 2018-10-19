@@ -21,10 +21,10 @@ Esta parte de la tésis se basa en:
 
 Sobre la base de trabajo de especialización:
 
-a. En __2__ se incorporó el análisis de la serie 1950-2000 para buscar evidencias de la _nueva división interanacional del trabajo_ 
-b. En __3__ se incorporó un desarrollo metodológico de la construcción del grafo y las métricas utilizadas.
-c. Por los comentarios recibidos en _YSI_ se redefinió el punto de corte del grafo a partir del coeficiente de clustering
-d. Se actualizó la base de datos, mejorando la consistencia de la misma y extendiendo el período hasta 2016
+1. En __2__ se incorporó el análisis de la serie 1950-2000 para buscar evidencias de la _nueva división interanacional del trabajo_ 
+2. En __3__ se incorporó un desarrollo metodológico de la construcción del grafo y las métricas utilizadas.
+3. Por los comentarios recibidos en _YSI_ se redefinió el punto de corte del grafo a partir del coeficiente de clustering
+4. Se actualizó la base de datos, mejorando la consistencia de la misma y extendiendo el período hasta 2016
 
 Además se construyó una herramienta interactiva para la visualización de la información:
 
