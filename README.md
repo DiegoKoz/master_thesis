@@ -1,19 +1,19 @@
-# Tésis de maestría
+# Tesis de maestría
 
-Repositorio para la tésis de maestría en _Data Mining and Knowledge Discovery_ de Diego Kozlowski
+Repositorio para la tesis de maestría en _Data Mining and Knowledge Discovery_ de Diego Kozlowski
 
 Estructura:
 
 ## Comercio Agregado
 
-Una primera parte de la tésis se basa en el análisis del comercio total entre países. Esta sección se divide de la siguiente manera:
+Una primera parte de la tesis se basa en el análisis del comercio total entre países. Esta sección se divide de la siguiente manera:
 
 - Metodologı́a
 - Representación del comercio internacional del año __2016__ en un grafo dirigido
 - Análisis del movimiento entre 1997-2016 [Dataset de _comtrade_]
 - Análisis del movimiento entre 1950-2000 [Dataset de _Gleditsch_]
 
-Esta parte de la tésis se basa en:
+Esta parte de la tesis se basa en:
 
 1. Trabajo de especialización DM&KD
 2. Trabajo presentado en [_Young Scholars Initiative_](https://github.com/DiegoKoz/grafo_comercio_agregado/tree/YSI)
@@ -21,10 +21,10 @@ Esta parte de la tésis se basa en:
 
 Sobre la base de trabajo de especialización:
 
-a. En __2__ se incorporó el análisis de la serie 1950-2000 para buscar evidencias de la _nueva división interanacional del trabajo_ 
-b. En __3__ se incorporó un desarrollo metodológico de la construcción del grafo y las métricas utilizadas.
-c. Por los comentarios recibidos en _YSI_ se redefinió el punto de corte del grafo a partir del coeficiente de clustering
-d. Se actualizó la base de datos, mejorando la consistencia de la misma y extendiendo el período hasta 2016
+1. En __2__ se incorporó el análisis de la serie 1950-2000 para buscar evidencias de la _nueva división interanacional del trabajo_ 
+2. En __3__ se incorporó un desarrollo metodológico de la construcción del grafo y las métricas utilizadas.
+3. Por los comentarios recibidos en _YSI_ se redefinió el punto de corte del grafo a partir del coeficiente de clustering
+4. Se actualizó la base de datos, mejorando la consistencia de la misma y extendiendo el período hasta 2016
 
 Además se construyó una herramienta interactiva para la visualización de la información:
 
