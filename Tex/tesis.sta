@@ -1,0 +1,5 @@
+\standalonepreambles
+\subpreamble{chapters/chapter_1/chapter1.tex}
+\usepackage [subpreambles=true]{standalone}\usepackage {import}\graphicspath {{images/}}\usepackage {amssymb}\usepackage {amsmath}\setcounter {tocdepth}{3}\usepackage {graphicx}\usepackage {subfigure}\usepackage {gensymb}\usepackage {authblk}\usepackage {url}\usepackage [utf8]{inputenc}\usepackage [spanish]{babel}\selectlanguage {spanish}\newcommand {\keywords }[1]{\par \addvspace \baselineskip \noindent \keywordname \enspace \ignorespaces #1}
+\endsubpreamble
+\endstandalonepreambles

@@ -1,0 +1,738 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.1.24)  3 FEB 2019 14:43
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**tesis.tex
+(./tesis.tex
+LaTeX2e <2018-04-01> patch level 5
+(./tesis.cls
+Document Class: tesis 1996/25/01 1.0g LaTeX document class (wm).
+\hours=\count80
+\minutes=\count81
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count82
+\c@chapter=\count83
+\c@section=\count84
+\c@subsection=\count85
+\c@subsubsection=\count86
+\c@paragraph=\count87
+\c@subparagraph=\count88
+\beforechaptervspace=\skip41
+\afterchaptervspace=\skip42
+\exampleindent=\skip43
+\c@figure=\count89
+\c@table=\count90
+\abovecaptionskip=\skip44
+\belowcaptionskip=\skip45
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/standalone/standalone.sty
+Package: standalone 2018/03/26 v1.3a Package to include TeX sub-files with prea
+mbles
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count91
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/currfile/currfile.sty
+Package: currfile 2015/04/23 v0.7c Provides the file path elements of the curre
+nt input file
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
+Package: filehook 2011/10/12 v0.5d Hooks for input files
+)
+\c@currfiledepth=\count92
+)
+\sa@out=\write3
+ (./tesis.sta)
+(/usr/share/texlive/texmf-dist/tex/latex/gincltex/gincltex.sty
+(/usr/share/texlive/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
+
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2018/04/08 v1.1 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box26
+)
+\tc@llx=\dimen105
+\tc@lly=\dimen106
+\tc@urx=\dimen107
+\tc@ury=\dimen108
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen109
+\adjbox@Height=\dimen110
+\adjbox@Depth=\dimen111
+\adjbox@Totalheight=\dimen112
+\adjbox@pwidth=\dimen113
+\adjbox@pheight=\dimen114
+\adjbox@pdepth=\dimen115
+\adjbox@ptotalheight=\dimen116
+
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count93
+)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box27
+\sift@deathcycles=\count94
+\@vwid@loff=\dimen117
+\@vwid@roff=\dimen118
+))
+\gincltex@box=\box28
+)
+(/usr/share/texlive/texmf-dist/tex/latex/filemod/filemod-expmin.sty
+Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times
+ (expandable; minimal)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+Package: import 2009/03/23  v 5.1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/06/05 3.22 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/06/05 3.22 Babel switching mechanism
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/06/05 3.22 Babel common definitions
+\babel@savecnt=\count95
+\U@D=\dimen119
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count96
+)
+\es@quottoks=\toks18
+\es@quotdepth=\count97
+Package babel Info: Making " an active character on input line 561.
+Package babel Info: Making . an active character on input line 662.
+Package babel Info: Making < an active character on input line 707.
+Package babel Info: Making > an active character on input line 707.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count98
+\Gm@cntv=\count99
+\c@Gm@tempcnt=\count100
+\Gm@bindingoffset=\dimen120
+\Gm@wd@mp=\dimen121
+\Gm@odd@mp=\dimen122
+\Gm@even@mp=\dimen123
+\Gm@layoutwidth=\dimen124
+\Gm@layoutheight=\dimen125
+\Gm@layouthoffset=\dimen126
+\Gm@layoutvoffset=\dimen127
+\Gm@dimlist=\toks19
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip46
+\bibsep=\skip47
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count101
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks20
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip48
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen128
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen129
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count102
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count103
+\leftroot@=\count104
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count105
+\DOTSCASE@=\count106
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box29
+\strutbox@=\box30
+\big@size=\dimen130
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count107
+\c@MaxMatrixCols=\count108
+\dotsspace@=\muskip10
+\c@parentequation=\count109
+\dspbrk@lvl=\count110
+\tag@help=\toks22
+\row@=\count111
+\column@=\count112
+\maxfields@=\count113
+\andhelp@=\toks23
+\eqnshift@=\dimen131
+\alignsep@=\dimen132
+\tagshift@=\dimen133
+\tagwidth@=\dimen134
+\totwidth@=\dimen135
+\lineht@=\dimen136
+\@envbody=\toks24
+\multlinegap=\skip49
+\multlinetaggap=\skip50
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip51
+\subfigcapskip=\skip52
+\subfigcaptopadj=\dimen137
+\subfigbottomskip=\skip53
+\subfigcapmargin=\dimen138
+\subfiglabelskip=\skip54
+\c@subfigure=\count114
+\c@lofdepth=\count115
+\c@subtable=\count116
+\c@lotdepth=\count117
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip55
+\subfig@bottom=\skip56
+)
+(/usr/share/texlive/texmf-dist/tex/latex/was/gensymb.sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip57
+\@affilsep=\skip58
+\c@Maxaffil=\count118
+\c@authors=\count119
+\c@affil=\count120
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (./tesis.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+)
+\openout1 = `tesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+
+(./tesis.sta
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
+)
+\openout3 = `tesis.sta'.
+
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count121
+\scratchdimen=\dimen139
+\scratchbox=\box31
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen140
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks27
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(99.58464pt, 645.87756pt, 99.58464pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=645.87756pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-4.55914pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=53.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \celsius on input line 36.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 36.
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 36.
+Package gensymb Info: Using \Omega for \ohm on input line 36.
+
+Package gensymb Warning: Not defining \micro.
+
+(./frontmatter/caratula.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<frontmatter/logofcen.pdf, id=1, 108.405pt x 108.405pt>
+File: frontmatter/logofcen.pdf Graphic file (type pdf)
+<use frontmatter/logofcen.pdf>
+Package pdftex.def Info: frontmatter/logofcen.pdf  used on input line 10.
+(pdftex.def)             Requested size: 73.97733pt x 73.98073pt.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./frontmatter/logofcen.pdf
+>])
+(./frontmatter/abs_esp.tex) [1
+
+
+] (./frontmatter/abs_en.tex) [2
+
+
+]
+(./frontmatter/agradecimientos.tex) [3
+
+
+] (./tesis.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
+)
+\tf@toc=\write4
+\openout4 = `tesis.toc'.
+
+ [4
+
+
+]
+(./chapters/chapter_1/chapter1.tex [1
+
+
+]
+
+Package natbib Warning: Citation `Gleditsch2002' on page 2 undefined on input l
+ine 82.
+
+[2] [3] [4]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 169.
+ [5]
+<images/2011_freq_interacciones_3.png, id=54, 517.935pt x 273.1806pt>
+File: images/2011_freq_interacciones_3.png Graphic file (type png)
+<use images/2011_freq_interacciones_3.png>
+Package pdftex.def Info: images/2011_freq_interacciones_3.png  used on input li
+ne 206.
+(pdftex.def)             Requested size: 426.79135pt x 225.11832pt.
+<images/2011_freq_interacciones_0.png, id=55, 517.935pt x 273.1806pt>
+File: images/2011_freq_interacciones_0.png Graphic file (type png)
+<use images/2011_freq_interacciones_0.png>
+Package pdftex.def Info: images/2011_freq_interacciones_0.png  used on input li
+ne 207.
+(pdftex.def)             Requested size: 426.79135pt x 225.11832pt.
+ [6]
+<images/2011_autovalor_medio_x_threshold.png, id=61, 258.9675pt x 136.5903pt>
+File: images/2011_autovalor_medio_x_threshold.png Graphic file (type png)
+<use images/2011_autovalor_medio_x_threshold.png>
+Package pdftex.def Info: images/2011_autovalor_medio_x_threshold.png  used on i
+nput line 228.
+(pdftex.def)             Requested size: 192.0548pt x 101.3024pt.
+<images/2011_mean_betweenness_x_threshold.png, id=62, 258.9675pt x 136.5903pt>
+File: images/2011_mean_betweenness_x_threshold.png Graphic file (type png)
+<use images/2011_mean_betweenness_x_threshold.png>
+Package pdftex.def Info: images/2011_mean_betweenness_x_threshold.png  used on 
+input line 229.
+(pdftex.def)             Requested size: 192.0548pt x 101.3024pt.
+<images/grafo_2011_1_pcnt.png, id=63, 481.8pt x 481.8pt>
+File: images/grafo_2011_1_pcnt.png Graphic file (type png)
+<use images/grafo_2011_1_pcnt.png>
+Package pdftex.def Info: images/grafo_2011_1_pcnt.png  used on input line 242.
+(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
+<images/grafo_2011_5_pcnt.png, id=64, 481.8pt x 481.8pt>
+File: images/grafo_2011_5_pcnt.png Graphic file (type png)
+<use images/grafo_2011_5_pcnt.png>
+Package pdftex.def Info: images/grafo_2011_5_pcnt.png  used on input line 243.
+(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
+<images/grafo_2011_10_pcnt.png, id=65, 481.8pt x 481.8pt>
+File: images/grafo_2011_10_pcnt.png Graphic file (type png)
+<use images/grafo_2011_10_pcnt.png>
+Package pdftex.def Info: images/grafo_2011_10_pcnt.png  used on input line 244.
+
+(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
+<images/grafo_2011_15_pcnt.png, id=66, 481.8pt x 481.8pt>
+File: images/grafo_2011_15_pcnt.png Graphic file (type png)
+<use images/grafo_2011_15_pcnt.png>
+Package pdftex.def Info: images/grafo_2011_15_pcnt.png  used on input line 245.
+
+(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
+<images/grafo_2011_20_pcnt.png, id=67, 481.8pt x 481.8pt>
+File: images/grafo_2011_20_pcnt.png Graphic file (type png)
+<use images/grafo_2011_20_pcnt.png>
+Package pdftex.def Info: images/grafo_2011_20_pcnt.png  used on input line 246.
+
+(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
+<images/grafo_2011_25_pcnt.png, id=68, 481.8pt x 481.8pt>
+File: images/grafo_2011_25_pcnt.png Graphic file (type png)
+<use images/grafo_2011_25_pcnt.png>
+Package pdftex.def Info: images/grafo_2011_25_pcnt.png  used on input line 247.
+
+(pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
+
+
+LaTeX Warning: Float too large for page by 14.72614pt on input line 250.
+
+<images/corr_grados_2011_1_pcnt.png, id=69, 722.7pt x 505.89pt>
+File: images/corr_grados_2011_1_pcnt.png Graphic file (type png)
+<use images/corr_grados_2011_1_pcnt.png>
+Package pdftex.def Info: images/corr_grados_2011_1_pcnt.png  used on input line
+ 263.
+(pdftex.def)             Requested size: 384.1096pt x 268.87689pt.
+<images/corr_grados_2011_10_pcnt.png, id=70, 722.7pt x 505.89pt>
+File: images/corr_grados_2011_10_pcnt.png Graphic file (type png)
+<use images/corr_grados_2011_10_pcnt.png>
+Package pdftex.def Info: images/corr_grados_2011_10_pcnt.png  used on input lin
+e 264.
+(pdftex.def)             Requested size: 384.1096pt x 268.87689pt.
+<images/corr_grados_2011_20_pcnt.png, id=71, 722.7pt x 505.89pt>
+File: images/corr_grados_2011_20_pcnt.png Graphic file (type png)
+<use images/corr_grados_2011_20_pcnt.png>
+Package pdftex.def Info: images/corr_grados_2011_20_pcnt.png  used on input lin
+e 265.
+(pdftex.def)             Requested size: 384.1096pt x 268.87689pt.
+
+LaTeX Warning: Float too large for page by 245.19202pt on input line 268.
+
+[7] [8 <./images/2011_freq_interacciones_3.png (PNG copy)> <./images/2011_freq_
+interacciones_0.png (PNG copy)>] [9 <./images/2011_autovalor_medio_x_threshold.
+png (PNG copy)> <./images/2011_mean_betweenness_x_threshold.png (PNG copy)>]
+[10 <./images/grafo_2011_1_pcnt.png (PNG copy)> <./images/grafo_2011_5_pcnt.png
+ (PNG copy)> <./images/grafo_2011_10_pcnt.png (PNG copy)> <./images/grafo_2011_
+15_pcnt.png (PNG copy)> <./images/grafo_2011_20_pcnt.png (PNG copy)> <./images/
+grafo_2011_25_pcnt.png (PNG copy)>] [11 <./images/corr_grados_2011_1_pcnt.png (
+PNG copy)> <./images/corr_grados_2011_10_pcnt.png (PNG copy)> <./images/corr_gr
+ados_2011_20_pcnt.png (PNG copy)>]
+<images/correlacion_x_yr.png, id=88, 486.8589pt x 282.8166pt>
+File: images/correlacion_x_yr.png Graphic file (type png)
+<use images/correlacion_x_yr.png>
+Package pdftex.def Info: images/correlacion_x_yr.png  used on input line 315.
+(pdftex.def)             Requested size: 192.0548pt x 111.56676pt.
+<images/coef_clustering_x_yr.png, id=89, 258.4857pt x 136.5903pt>
+File: images/coef_clustering_x_yr.png Graphic file (type png)
+<use images/coef_clustering_x_yr.png>
+Package pdftex.def Info: images/coef_clustering_x_yr.png  used on input line 31
+8.
+(pdftex.def)             Requested size: 192.0548pt x 101.48581pt.
+ [12 <./images/correlacion_x_yr.png (PNG copy)> <./images/coef_clustering_x_yr.
+png (PNG copy)>]
+<images/impo_densidad_degree_x_yr.png, id=93, 486.8589pt x 282.8166pt>
+File: images/impo_densidad_degree_x_yr.png Graphic file (type png)
+<use images/impo_densidad_degree_x_yr.png>
+Package pdftex.def Info: images/impo_densidad_degree_x_yr.png  used on input li
+ne 339.
+(pdftex.def)             Requested size: 341.43437pt x 198.34138pt.
+<images/expo_densidad_autovalor_x_yr.png, id=94, 486.8589pt x 282.8166pt>
+File: images/expo_densidad_autovalor_x_yr.png Graphic file (type png)
+<use images/expo_densidad_autovalor_x_yr.png>
+Package pdftex.def Info: images/expo_densidad_autovalor_x_yr.png  used on input
+ line 343.
+(pdftex.def)             Requested size: 341.43437pt x 198.34138pt.
+<images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png, id=95, 486.8589pt x 282
+.8166pt>
+File: images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png Graphic file (type 
+png)
+<use images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png>
+Package pdftex.def Info: images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png 
+ used on input line 347.
+(pdftex.def)             Requested size: 341.43437pt x 198.34138pt.
+
+
+LaTeX Warning: Float too large for page by 44.14105pt on input line 351.
+
+
+Package natbib Warning: Citation `Gleditsch2002' on page 13 undefined on input 
+line 361.
+
+[13] [14 <./images/impo_densidad_degree_x_yr.png (PNG copy)> <./images/expo_den
+sidad_autovalor_x_yr.png (PNG copy)> <./images/expo_densidad_USAvsCHN_autovalor
+_pond_x_yr.png (PNG copy)>]
+<images/1950_2000_coef_clustering_x_yr.png, id=103, 414.5889pt x 277.7577pt>
+File: images/1950_2000_coef_clustering_x_yr.png Graphic file (type png)
+<use images/1950_2000_coef_clustering_x_yr.png>
+Package pdftex.def Info: images/1950_2000_coef_clustering_x_yr.png  used on inp
+ut line 373.
+(pdftex.def)             Requested size: 204.85802pt x 137.24678pt.
+<images/1950_2000_correlacion_x_yr.png, id=104, 414.5889pt x 277.7577pt>
+File: images/1950_2000_correlacion_x_yr.png Graphic file (type png)
+<use images/1950_2000_correlacion_x_yr.png>
+Package pdftex.def Info: images/1950_2000_correlacion_x_yr.png  used on input l
+ine 374.
+(pdftex.def)             Requested size: 204.85802pt x 137.24678pt.
+ [15 <./images/1950_2000_coef_clustering_x_yr.png (PNG copy)> <./images/1950_20
+00_correlacion_x_yr.png (PNG copy)>]
+<images/1950_2000_continent_all.png, id=108, 829.4187pt x 556.9608pt>
+File: images/1950_2000_continent_all.png Graphic file (type png)
+<use images/1950_2000_continent_all.png>
+Package pdftex.def Info: images/1950_2000_continent_all.png  used on input line
+ 383.
+(pdftex.def)             Requested size: 426.79135pt x 286.5958pt.
+ [16 <./images/1950_2000_continent_all.png (PNG copy)>]
+<images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png, id=112, 505.89pt x 722.7
+pt>
+File: images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png Graphic file (type p
+ng)
+<use images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png>
+Package pdftex.def Info: images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png  
+used on input line 397.
+(pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
+<images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png, id=113, 505.89pt x 72
+2.7pt>
+File: images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png Graphic file (typ
+e png)
+<use images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png>
+Package pdftex.def Info: images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.pn
+g  used on input line 398.
+(pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
+<images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png, id=114, 505.89pt x
+ 722.7pt>
+File: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png Graphic file (
+type png)
+<use images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png>
+Package pdftex.def Info: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr
+.png  used on input line 410.
+(pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
+<images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png, id=115, 505.89pt x 722.7
+pt>
+File: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png Graphic file (type p
+ng)
+<use images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png>
+Package pdftex.def Info: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png  
+used on input line 411.
+(pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17 <./images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png (PNG copy)> <./imag
+es/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png (PNG copy)>] [18 <./images/
+1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png (PNG copy)> <./images/1950_
+2000_impo_densidad_CHN_JPN_ROK_atvlr.png (PNG copy)>]) [19] (./tesis.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[20
+
+
+] (./tesis.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+) ) 
+Here is how much of TeX's memory you used:
+ 6296 strings out of 494517
+ 92446 string characters out of 6175533
+ 173896 words of memory out of 5000000
+ 9733 multiletter control sequences out of 15000+600000
+ 15479 words of font info for 59 fonts, out of 8000000 for 9000
+ 40 hyphenation exceptions out of 8191
+ 66i,10n,48p,1907b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on tesis.pdf (25 pages, 6600938 bytes).
+PDF statistics:
+ 191 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+

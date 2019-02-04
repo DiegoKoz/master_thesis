@@ -1,0 +1,77 @@
+\begin{thebibliography}{}
+
+\bibitem[Arel-Bundock, 2017]{Arel-Bundock2017}
+Arel-Bundock, V. (2017).
+\newblock {\em {countrycode: Convert Country Names and Country Codes}}.
+
+\bibitem[Arnold, 2017]{Arnold2017}
+Arnold, J.~B. (2017).
+\newblock {\em {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'}}.
+
+\bibitem[Bhattacharya et~al., 2008]{Bhattacharya2008}
+Bhattacharya, K., Mukherjee, G., Saram{\"{a}}ki, J., Kaski, K., and Manna,
+  S.~S. (2008).
+\newblock {The international trade network: Weighted network analysis and
+  modelling}.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2008(2).
+
+\bibitem[Chow, 2013]{Chow2013}
+Chow, W. (2013).
+\newblock {An Anatomy of the World Trade Network}.
+\newblock pages 1--20.
+
+\bibitem[Csardi and Nepusz, 2006]{Csardi2006}
+Csardi, G. and Nepusz, T. (2006).
+\newblock {The igraph software package for complex network research}.
+\newblock {\em InterJournal}, Complex Sy:1695.
+
+\bibitem[Fagiolo et~al., 2007]{Fagiolo2007}
+Fagiolo, G., Reyes, J., and Schiavo, S. (2007).
+\newblock {The Evolution of the World Trade Web Giorgio}.
+
+\bibitem[Fagiolo et~al., 2010]{Fagiolo2010}
+Fagiolo, G., Reyes, J., and Schiavo, S. (2010).
+\newblock {The evolution of the world trade web: A weighted-network analysis}.
+\newblock {\em Journal of Evolutionary Economics}, 20(4):479--514.
+
+\bibitem[Fan et~al., 2014]{Fan2014}
+Fan, Y., Ren, S., Cai, H., and Cui, X. (2014).
+\newblock {The state's role and position in international trade: A complex
+  network perspective}.
+\newblock {\em Economic Modelling}, 39:71--81.
+
+\bibitem[Neuwirth, 2014]{Neuwirth2014}
+Neuwirth, E. (2014).
+\newblock {\em {RColorBrewer: ColorBrewer Palettes}}.
+
+\bibitem[{R Core Team}, 2017]{RCoreTeam2017}
+{R Core Team} (2017).
+\newblock {R: A Language and Environment for Statistical Computing}.
+
+\bibitem[Ricardo, 2007]{ricardo1987principios}
+Ricardo, D. (2007).
+\newblock {Principios de econom{\'{i}}a pol{\'{i}}tica y tributaci{\'{o}}n}.
+
+\bibitem[Slowikowski, 2017]{Slowikowski2017}
+Slowikowski, K. (2017).
+\newblock {\em {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}}.
+
+\bibitem[Vu, 2011]{Vu2011}
+Vu, V.~Q. (2011).
+\newblock {\em {ggbiplot: A ggplot2 based biplot}}.
+
+\bibitem[Wickham, 2017]{Wickham2017}
+Wickham, H. (2017).
+\newblock {\em {tidyverse: Easily Install and Load the 'Tidyverse'}}.
+
+\bibitem[Wilke, 2017]{Wilke2017}
+Wilke, C.~O. (2017).
+\newblock {\em {ggridges: Ridgeline Plots in 'ggplot2'}}.
+
+\bibitem[WTO, 2017]{WTO2017}
+WTO (2017).
+\newblock {World Trade Statistics Review 2017}.
+\newblock Technical report.
+
+\end{thebibliography}

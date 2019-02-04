@@ -2,7 +2,7 @@
 \documentclass[runningheads,a4paper]{llncs}
 
 \usepackage{amssymb}
-\usepackage{natbib}
+
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
 \graphicspath{ {Graficos/} }
@@ -16,7 +16,11 @@
 
 
 \usepackage[spanish]{babel}
-%\usepackage[style=authoryear]{biblatex}
+
+%% biblatex para citas en español
+\usepackage[citestyle=authoryear,natbib=true,backend=bibtex]{biblatex}
+\bibliography{bibliografia.bib}
+%% biblatex para citas en español
 
 \urldef{\mailsa}\path|diegokoz92@gmail.com|    
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
@@ -42,7 +46,6 @@
 
 
 \begin{document}
-
 
 
 \mainmatter  % start of an individual contribution
@@ -84,7 +87,7 @@ Tesis a ser presentada para obtener al título de Magíster en Explotación de D
 \end{Large}
 \vspace*{0.25in}
 \begin{large}
-Autor: Lic. Diego Kozlowski\\
+Autor: Esp. Diego Kozlowski\\
 \end{large}
 \vspace*{0.3in}
 \rule{80mm}{0.1mm}\\
@@ -100,26 +103,50 @@ Dra. Viktoriya Semeshenko \\
 
 \tableofcontents
 
+\section{Resumen}
 
+El presente plan de trabajo propone como proyecto de tesis el desarrollo de un conjunto de herramientas basadas en teoría de grafos y modelos generativo bayesianos, aplicadas a la caracterización del comercio internacional. En particular, se propondrán diferentes construcciones de grafos para analizar distintos aspectos de las relaciones comerciales internacionales, tales como la importancia de los países y la complejidad de sus matrices productivas. También se propone la implementación de modelos originalmente inspirados en el Text Mining, para el agrupamiento automático de los productos y la caracterización del rol de los países en la división internacional del trabajo.
 
 \section[Tema]{Tema de investigación}
 
-El análisis del comercio internacional constituye una de las áreas de estudio más importantes de la investigación económica. Desde los comienzos de la economía política clásica constituye un tema de preocupación por sus fuertes implicancias \cite{ricardo1987principios}. Por su parte, el registro de la información referente al comercio entre países también se remonta en el tiempo.          
 
-Sin embargo, el análisis tradicional de la información generada carece de las herramientas necesarias para hacer frente a los grandes volúmenes de datos generados por el comercio internacional en la actualidad. Históricamente, los indicadores sintéticos del área se resumen en volumen y masa de dinero comerciada, partiendo del total mundial, hacia desagregaciones por región, país y sector económico en cuestión \cite{WTO2017}.                
 
-A la vez que aumenta el volumen de información persistida respecto del comercio internacional, también se facilita el acceso a técnicas de análisis de datos que requieren un mayor poder de cómputo, y que por lo tanto eran impensadas como herramientas de estudio en épocas anteriores. En este sentido, surge la posibilidad de complementar el análisis tradicional del comercio mundial con técnicas de mayor riqueza en términos cuantitativos. 
+El análisis del comercio internacional constituye una de las áreas de estudio más importantes de la investigación económica. Desde los comienzos de la economía política clásica constituye un tema de preocupación por sus fuertes implicancias \citep{ricardo1987principios}. Por su parte, el registro de la información referente al comercio entre países también se remonta en el tiempo.          
 
-El presente trabajo se propone utilizar las nuevas técnicas que provee el análisis de grafos para caracterizar el comercio internacional. Su modelización como una red compleja permite la construcción de medidas de resumen que, sin abandonar una mirada holística de la problemática, logren dar cuenta de una mayor complejidad que las métricas tradicionales de dicha área temática. 
+El comercio internacional se puede pensar como la interacción de cientos de países (N), miles de productos (P), a lo largo de cientos de años (Y), en diversas direcciones (exportaciones e importaciones). Es decir, el problema existe en un espacio de dimensión $\mathcal{R}^{N*P*Y*T*2}$. Esta estructura compleja de interacciones se suele caracterizar con grandes agregados sobre alguna dimensión, perdiendo la riqueza de la información sobre las demás. 
+El análisis tradicional de la información generada carece de las herramientas necesarias para hacer frente a los grandes volúmenes de datos generados por el comercio internacional en la actualidad. Históricamente, los indicadores sintéticos del área se resumen en volumen y masa de dinero comerciada, partiendo del total mundial, hacia desagregaciones por región, país y sector económico en cuestión \citep{WTO2017}. Una parte importante del análisis que se propone superar la generalidad del total comerciado entre dos países, lo hace al concentrarse en un sector particular de la economía, intentando reconstruir las cadenas globales de valor para dicha rama \citep{giuliani2005upgrading}. Por su parte, también se han propuesto modelos que explican el flujo bilateral entre países basados en el tamaño de los países en cuestión, y las distancias que los separan \citep{Head2014}. 
 
+A su vez, el análisis del comercio internacional se interesa no sólo por los flujos comerciales en sí, sino también por lo que ellos reflejan respecto de la División Internacional del Trabajo. Esto es, el lugar que ocupan los diferentes países en el mercado mundial, tanto respecto a su importancia relativa, como también su especialización en una cierta canasta de productos \citep{frobel1978new}.  \\
+
+
+\begin{center}
+	$\ast$~$\ast$~$\ast$
+\end{center}
+
+A la vez que aumenta el volumen de información persistida respecto del comercio internacional, también se facilita el acceso a técnicas de análisis de datos que requieren un mayor poder de cómputo, y que por lo tanto eran impensadas como herramientas de estudio en épocas anteriores.  En este sentido, surge la posibilidad de complementar el análisis tradicional del comercio mundial con nuevas herramientas que guardan la posibilidad de echar nueva luz sobre fenómenos largamente estudiados. 
+
+El presente trabajo se propone utilizar técnicas propias del análisis de grafos para caracterizar el comercio internacional. Su modelización como una red compleja permite la construcción de medidas de resumen que, sin abandonar una mirada holística de la problemática, logren dar cuenta de una mayor complejidad que las métricas tradicionales de dicha área temática. Para ello, se evaluarán alternativamente modelos de comercio agregado entre países \citep{Fagiolo2007}, así como también grafos bipartitos para analizar el comercio a nivel producto \citep{Hidalgo2007}, a la vez que se observará la evolución temporal como una evolución en las medidas de centralidad de cada nodo en cada punto del tiempo.
+Por último, también se propone como técnica alternativa de análisis una aplicación de Latent Dirichlett Allocation Models \citep{LDA} a la esfera del comercio internacional. 
+
+Los modelos basados en grafos resultan particularmente interesantes para dilucidar el lugar que los países ocupan en la División Internacional del Trabajo, ya que el concepto de centralidad de la teoría de redes aplica directamente a este campo de estudio. Sin embargo, la especialización productiva de los países, es decir qué subconjunto de productos exportan e importan con mayor frecuencia, representa una complejidad mayor. Es es debido a la multiplicidad e interrelación del espacio de producción. Los nomencladores tradicionales consideran miles de productos diferentes, los cuales comparten mayores o menores similitudes entre sí, en varias dimensiones distintas. Dos productos pueden ser considerados similares según la rama de la producción a la que pertenecen, las materias primas de las que están hechos, el nivel de complejidad que poseen o el valor agregado que generan \citep{molinari2016especializacion}. La caracterización del lugar que un país ocupa en el mercado mundial no puede simplemente reducirse a los volúmenes comerciados, sino que debe considerar qué productos comercia, y las interrelaciones mencionadas. 
+
+Es por ello que para el presente trabajo se propone en primer lugar un grafo bipartito de países y productos, cuya proyección como un grafo de producto permitiría caracterizar las interacciones entre éstos. De forma complementaria, se propondrá una técnica experimental, basada en el modelo gráfico de Latent Dirichlett Allocation, con el cual se buscara construir una variedad del espacio del producción sobre la que yacen dimensiones latentes que definen la relación entre los productos, a la vez que se reconstruye la canasta exportadora de los países respecto a dicho espacio latente. 
 
 
 \section{Estado del arte}
 
-No son pocos los autores que utilizan el análisis de grafos para desarrollar intuiciones respecto al comportamiento económico. Jackson \cite{Jackson2008} presenta múltiples implementaciones de la teoría de grafos para el análisis económico. 
-En la literatura orientada al comercio internacional, existe sendos intentos de representar al mismo desde esta perspectiva, ya sea desde la teoría de la información \cite{Bhattacharya2008},  como una herramienta de modelización de los fenómenos económicos \cite{Fan2014}, para analizar las relaciones de centro-periferia \cite{Fagiolo2010}, o bien para realizar una descripción del estado del comercio internacional en un momento dado\cite{Chow2013}.
-Por su parte, cabe destacar los trabajos de Hidalgo \cite{Hidalgo2007},\cite{Hidalgo2009a} y \cite{Hidalgo2009}, quien elabora un grafo bipartito a partir del comercio bilateral a nivel producto, para desarrollar el concepto de complejidad económica de los productos y las naciones. A Su vez, como resultado de lo anterior, también se obtiene un mapa de complejidad de productos.
-Sin embargo, dada la amplitud de los temas a abordar, tanto desde la perspectiva económica, como desde la teoría de grafos, se presenta como un campo abierto para la investigación, con sendas aristas aún por recorrer.        
+No son pocos los autores que utilizan el análisis de grafos para desarrollar intuiciones respecto al comportamiento económico. En la literatura económica general, \citet{Jackson2008} presenta múltiples implementaciones de la teoría de grafos para el análisis económico. 
+En la literatura orientada al comercio internacional, existen sendos intentos de representar estos flujos como una red compleja. Ya sea desde la teoría de la información \citep{Bhattacharya2008},  como una herramienta de modelización de los fenómenos económicos \citep{Fan2014}, para analizar las relaciones de centro-periferia \citep{Fagiolo2010}, o bien para realizar una descripción del estado del comercio internacional en un momento dado \citep{Chow2013}.
+Por su parte, cabe destacar los trabajos de Hidalgo \citep{Hidalgo2007,Hidalgo2009a, Hidalgo2009}, donde se elabora un grafo bipartito a partir del comercio bilateral a nivel producto, para desarrollar el concepto de complejidad económica de los productos y las naciones. A su vez, como resultado de lo anterior, se obtiene un mapa de la complejidad de los productos. Este \textit{espacio de productos} surge de la proyección de un grafo bipartito entre países y productos, en el cual se define una arista entre un país y un producto si el país en cuestión exhibe \textit{Relative Comparative Advantages}, una medida que denota la propensión de ese país a componer su canasta exportadora por dicho producto. Dada la amplitud de los temas a abordar, tanto desde la perspectiva económica, como desde la teoría de grafos, éste se presenta como un campo abierto para la investigación, con sendas aristas aún por recorrer.  
+
+En paralelo a lo anterior, el análisis estadístico de la composición de las canastas exportadoras de los países se realiza tradicionalmente agregando los diferentes productos sobre la base de nomencladores realizados especialmente por comités de expertos de organismos internacionales \citep{un2006standard,HS2012}. En dichos nomencladores se construye una estructura jerárquica, donde cada dígito se corresponde con alguna dimensión en la cual se puede trazar una distancia entre los diferentes productos, por ejemplo por rama de actividad, complejidad técnica, etc. A su vez, sobre la base de las clasificaciones estandarizadas, muchos autores construyen sus propias clasificaciones buscando alguna dimensión específica. Por ejemplo \citet{lall2000technological} realiza una clasificación de productos según si su tecnología es baja, media-baja, media-alta y alta. Por su parte \citet{molinari2016especializacion} realizan una clasificación que considera las cadenas de valor, es decir aquellos eslabonamientos productivos que van desde las materias primas hasta el producto final. A su vez, \citet{flores2008world} propone una clasificación de los productos según su uso como bienes de capital, productos primarios, etc. Todas estas construcciones se realizan de forma manual, y se basan en el conocimiento de expertos en la temática. Es por esto último, que resulta de interés la elaboración de técnicas de clasificación de productos que sean automáticas, y en lugar de basarse en el conocimiento de especialistas, se fundamenten en la información disponible. 
+  
+En paralelo, existen múltiples técnicas desarrolladas en el campo del Text Mining que buscan resumir automáticamente los textos. En particular, la técnica conocida como Lantent Dirichlet Allocation Models, o Topic Modelling, desarrollada por \citet{LDA}.
+El principal objetivo de estos modelos es encontrar los tópicos de los que habla un texto, considerado como parte de un Corpus, con una cantidad definida de tópicos desconocidos. 
+Para una intuición del modelo sobre el que se construye dicho objetivo, es necesario considerar, en el texto, cada palabra como una dimensión, y cada documento como un punto en un espacio de muy alta dimensionalidad, definido por el tamaño del vocabulario. Topic Modeling considera que sobre este espacio de alta dimensionalidad yace una variedad, de dimensionalidad mucho menor. Ésta estaría constituida por los ejes temáticos de los documentos. dichas dimensiones latentes se construyen como una distribución sobre el espacio original de palabras. Modelos con estas características permiten a la vez obtener información sobre las temáticas subyacentes de un Corpus, así como también conocer los principales ejes temáticos de cada texto. 
+
+El presente trabajo se propone tomar por base el desarrollo realizado por \citet{LDA} y reconfigurar el modelo de forma tal que brinde una nueva mirada sobre el comercio internacional. Para ello, se recupera el modelo gráfico propuesto por los autores, dejando de lado las intuiciones respecto al procesamiento de texto. Si bien el trabajo original de los autores explicita que el modelo propuesto no necesariamente debe atenerse a los margenes temáticos del análisis de textos, no abundan trabajos que recuperen dicho modelo para otros tipos de datos. La estructura de variables aleatorias con relaciones jerárquicas propuesta por el modelo original posee una analogía ideal para el presente trabajo. Mientras en el modelo original se plantea un proceso generativo con la jerarquía \textit{Corpus-Documento-dimensión latente-palabra}, en el presente trabajo se propone la estructura \textit{Mundo-País-dimensión latente-exportaciones}. Esta analogía nos permite hacer uso de las técnicas inferenciales propuestas en el modelo original \citep{hoffman2013stochastic} y obtener estimaciones del espacio latente, tanto respecto de su configuración como de su distribución en los otros niveles del modelo. Es decir, así como en el modelo original se parte de las palabras de los documentos para caracterizar los tópicos de los que habla y la distribución de tópicos en cada documento, en la presente propuesta se busca partir de las exportaciones de cada país para obtener la distribución de la dimensión latente del comercio internacional, las ramas o componentes, así como también obtiener información respecto de en qué componente se especializa cada país en su comercio respecto del mundo. De esta forma se obtendría una respuesta novedosa para la pregunta clásica en el estudio del comercio internacional sobre la especialización productiva de los países, arriba mencionada. 
+
 
 \section{Objetivos}
 
@@ -134,9 +161,11 @@ Los aportes que se espera realizar se pueden resumir en los siguientes puntos:
 \paragraph{\textbf{Objetivos específicos:}}
 
 \begin{enumerate}
-	\item Elaborar un modelo del comercio bilateral total entre países para el período comprendido entre 1996 y 2016 y reconocer los patrones generales del comercio mundial.
-	\item Sobre la base del modelo anterior, analizar la evolución de la economía mundial en el período 1950-2000, en busca de evidencias de la denominada Nueva División Internacional del Trabajo.
-	\item Analizar el comercio bilateral a nivel producto de los países de Sudamérica, en busca de posibles patrones de integración regional.
+	\item Desarrollar una metodología de análisis del comercio internacional basado en grafos. 
+	\item Analizar comercio bilateral total entre países para el período comprendido entre 1996 y 2016 y reconocer los patrones generales del comercio mundial.\\
+	\item Sobre la base del modelo anterior, analizar la evolución de la economía mundial en el período 1950-2000, en busca de evidencias de la denominada Nueva División Internacional del Trabajo.\\
+	\item Analizar el comercio bilateral a nivel producto de los países de Sudamérica, en busca de posibles patrones de integración regional.\\
+	\item Elaborar un modelo de \textit{Latent Dirichlet Allocation} para el comercio de productos por países
 \end{enumerate}
 
 
@@ -145,54 +174,62 @@ Los aportes que se espera realizar se pueden resumir en los siguientes puntos:
 Entre los antecedentes personales en la temática cabe destacar:
 
 \begin{itemize}
-	\item \textbf{Tesis de especialización en Data Mining}\cite{Kozlowski2018b}: En la misma se elaboró una primera versión del objetivo específico 1. Debido a falta de acceso a la información, la misma fue recuperada de la página web de la Organización Mundial del comercio (WTO) mediante métodos de scrapping, dónde existe la posibilidad de que haya una porción de datos no recuperada. En la actualidad, se cuenta con acceso oficial a dicha base de datos, por lo que se puede enriquecer el análisis.
-	\item \textbf{Presentación en Young Scholar Initiative 2018}\cite{Kozlowski2018a}: Se avanzó en el objetivo específico 2. A su vez, en dicha conferencia se recibieron valiosas críticas respecto a la metodología propuesta, que permitirían robustecer la misma.
-	\item \textbf{Presentación en LatinR 2018}\cite{Kozlowski2018}.
-	\item Grupo de trabajo del Instituto de Investigación en Economía Política (IIEP)-FCE-UBA: Desde mayo 2018 se colabora con un grupo de trabajo, junto a las prof. Andrea Molinari y Viktoriya Semeshenko, para elaborar una representación del comercio bilateral en América Latina, a partir de un grafo bipartito, como el propuesto por Hidalgo. En las colaboraciones con dicho grupo se avanza con el objetivo específico 3.
+	\item \textbf{Tesis de especialización en Data Mining} \citep{Kozlowski2018b}: En la misma se elaboró una primera versión del objetivo específico 1. Debido a falta de acceso a la información, la misma fue recuperada de la página web de la Organización Mundial del comercio (WTO) mediante métodos de scrapping, dónde existe la posibilidad de que haya una porción de datos no recuperada. En la actualidad, se cuenta con acceso oficial a dicha base de datos, por lo que se puede enriquecer el análisis.\\
+	\item \textbf{Presentación en Young Scholar Initiative 2018} \citep{Kozlowski2018a}: Se avanzó en los objetivos específicos 2 y 3. A su vez, en dicha conferencia se recibieron valiosas críticas respecto a la metodología propuesta, que permitirían robustecer la misma.\\
+	\item \textbf{Presentación en LatinR 2018} \citep{Kozlowski2018}.\\
+	\item \textbf{Presentación en el seminario ECON 2018} : En octubre 2018 se presentó un seminario sobre los avances de una investigación que se lleva a cabo desde mayo 2018 junto a las profesoras Andrea Molinari y Viktoriya Semeshenko del Instituto de Investigación en Economía Política (IIEP)-FCE-UBA, para elaborar una representación del comercio bilateral en América Latina, a partir de un grafo bipartito. En las colaboraciones con dicho grupo se avanza con los objetivos específicos 4 y 5.
 \end{itemize}
 
 
 
 \section{Plan de Trabajo}
 
-\paragraph{Comienzo:} Mayo 2018.
-\paragraph{Fin} Mayo 2019.
+%\paragraph{Comienzo:} Mayo 2018.
+%\paragraph{Fin} Mayo 2019.
 
 \paragraph{Etapas de desarrollo de la tesis:}
 \begin{enumerate}
 	\item \textbf{Revisión bibliográfica.} Investigación del estado del arte. En particular:
 		\subitem La utilización de la teoría de grafos en las ciencias sociales.
 		\subitem Las representaciones del comercio internacional como una red compleja
-		\subitem Las propuestas de Hidalgo \cite{Hidalgo2007,Hidalgo2009, Hidalgo2009a} para el análisis de la complejidad del espacio de productos. 
-
+		\subitem Las propuestas de Hidalgo \citep{Hidalgo2007,Hidalgo2009, Hidalgo2009a} para el análisis de la complejidad del espacio de productos. \\
 
 	\item \textbf{Recopilación de la información.} Descarga de datos de la página de la Organización del Comercio internacional, y búsqueda de fuentes alternativas, de mayor extensión temporal.\\
-	Tiempo estimado: 1 mes
-	\item \textbf{Elaboración grafo de comercio bilateral agregado para el período reciente.} Análisis de las decisiones metodológicas que involucran la conceptualización de la red, y los primeros resultados obtenidos. En base a la información provista por la \textit{WTO}
-	\item \textbf{Análisis de los movimientos de largo plazo en la red.} Búsqueda de elementos confirmatorios o que refuten la tesis de la nueva división internacional del trabajo. En base a la información provista por \cite{Gleditsch2002}
-	\item \textbf{Elaboración del grafo bipartito a nivel producto.} Análisis de cercanía del espacio de productos.
+	
+	\item \textbf{Elaboración de un grafo del comercio bilateral agregado para el año 2016} Análisis de las decisiones metodológicas que involucran la conceptualización de la red, y los primeros resultados obtenidos. En base a la información provista por la \textit{WTO}\\
+
+	\item \textbf{Elaboración grafo de comercio bilateral agregado para el período 1996-2016.} Análisis de la evolución de las métricas que caracterizan al grafo y a los nodos en el período reciente. En base a la información provista por la \textit{WTO}\\
+
+	\item \textbf{Análisis de los movimientos de largo plazo en la red.} Búsqueda de elementos confirmatorios o que refuten la tesis de la nueva división internacional del trabajo. En base a la información provista por \citet{Gleditsch2002}\\
+	
+	\item \textbf{Elaboración del grafo bipartito a nivel producto.} Análisis de cercanía del espacio de productos.\\
+	
+	\item \textbf{Desarrollo de LDA para comercio internacional.} propuesta metodológica y diseño de implementación. Análisis de las dimensiones latentes desarrolladas por el modelo, y la evolución en el tiempo de la participación de dichas dimensiones en la canasta exportadora de los países. \\
+	
 	\item \textbf{Análisis de resultados obtenidos y preparación del informe final.} 
 
 \end{enumerate}
 
 
-\begin{ganttchart}[vgrid,
-	bar/.append style={fill=gray!30}]{1}{13}
+\begin{ganttchart}[vgrid,bar/.append style={fill=gray!30},x unit = 1cm]{1}{8}
 	
-	\gantttitle{2018}{8} 
-	\gantttitle{2019}{5}
+	\gantttitle{Meses}{8}
 	\ganttnewline
-	\gantttitlelist{5,6,7,8,9,10,11,12,1,2,3,4,5}{1} \\
-	\ganttbar{Revisión bibliográfica}{1}{2} \\
-	\ganttbar{Recopilación de la información}{3}{3} 
+	\gantttitlelist{1,2,3,4,5,6,7,8}{1} \\
+	\ganttbar{Revisión bibliográfica}{1}{1} \\
+	\ganttbar{Recopilación de la información}{1}{2} 
 	\ganttnewline
-	\ganttbar{Grafo agregado, datos WTO}{4}{5} 
+	\ganttbar{Grafo agregado 2016}{3}{3} 
 	\ganttnewline
-	\ganttbar{Grafo agregado, datos Gledisch}{5}{7} 
+	\ganttbar{Grafo agregado 1996-2016}{4}{4} 
 	\ganttnewline
-	\ganttbar{Grafo Bipartito}{7}{10} 
+	\ganttbar{Grafo agregado, Largo Plazo}{5}{5} 
 	\ganttnewline
-	\ganttbar{Elaboración informe}{10}{12}
+	\ganttbar{Grafo Bipartito}{5}{6} 
+	\ganttnewline
+	\ganttbar{LDA}{6}{8} 
+	\ganttnewline
+	\ganttbar{Elaboración informe}{7}{8}
 %	\ganttlink{elem2}{elem3}
 %	\ganttlink{elem3}{elem4}
 \end{ganttchart}
@@ -200,8 +237,9 @@ Entre los antecedentes personales en la temática cabe destacar:
 
 
 
-\bibliographystyle{unsrt}
-\bibliography{bibliografia}
+%\bibliographystyle{unsrt}
+%\bibliography{bibliografia}
+\printbibliography
 
 \end{document}
 
