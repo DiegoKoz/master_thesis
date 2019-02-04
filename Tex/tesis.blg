@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: tesis.aux
+The style file: apalike.bst
+Database file #1: backmatter/bibliografia.bib
+Warning--I didn't find a database entry for "Gleditsch2002"
+Warning--empty journal in Chow2013
+Warning--empty note in Fagiolo2007
+Warning--empty institution in WTO2017
+You've used 16 entries,
+            1935 wiz_defined-function locations,
+            561 strings with 5612 characters,
+and the built_in function-call counts, 4851 in all, are:
+= -- 460
+> -- 177
+< -- 13
++ -- 56
+- -- 56
+* -- 370
+:= -- 898
+add.period$ -- 38
+call.type$ -- 16
+change.case$ -- 102
+chr.to.int$ -- 16
+cite$ -- 19
+duplicate$ -- 205
+empty$ -- 337
+format.name$ -- 74
+if$ -- 905
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 5
+newline$ -- 73
+num.names$ -- 48
+pop$ -- 93
+preamble$ -- 1
+purify$ -- 108
+quote$ -- 0
+skip$ -- 172
+stack$ -- 0
+substring$ -- 267
+swap$ -- 23
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 96
+warning$ -- 3
+while$ -- 40
+width$ -- 0
+write$ -- 178
+(There were 4 warnings)

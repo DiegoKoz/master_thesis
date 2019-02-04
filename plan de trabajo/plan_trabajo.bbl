@@ -1,80 +1,1040 @@
-\begin{thebibliography}{10}
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{ricardo1987principios}
-David Ricardo.
-\newblock {Principios de econom{\'{i}}a pol{\'{i}}tica y tributaci{\'{o}}n},
-  2007.
+\datalist[entry]{nty/global//global/global}
+  \entry{Bhattacharya2008}{article}{}
+    \name{author}{5}{}{%
+      {{hash=BK}{%
+         family={Bhattacharya},
+         familyi={B\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Mukherjee},
+         familyi={M\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Saram{\"{a}}ki},
+         familyi={S\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kaski},
+         familyi={K\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=MSS}{%
+         family={Manna},
+         familyi={M\bibinitperiod},
+         given={S.\bibnamedelima S.},
+         giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \keyw{Critical exponents and amplitudes (experiment),Network
+  dynamics,Networks,Random graphs}
+    \strng{namehash}{BK+1}
+    \strng{fullhash}{BKMGSJKKMSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{year}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    Tools of the theory of critical phenomena, namely the scaling analysis and
+  universality, are argued to be applicable to large complex web-like network
+  structures. Using a detailed analysis of the real data of the International
+  Trade Network we argue that the scaled link weight distribution has an
+  approximate log-normal distribution which remains robust over a period of 53
+  years. Another universal feature is observed in the power-law growth of the
+  trade strength with gross domestic product, the exponent being similar for
+  all countries. Using the 'rich-club' coefficient measure of the weighted
+  networks it has been shown that the size of the rich-club controlling half of
+  the world's trade is actually shrinking. While the gravity law is known to
+  describe well the social interactions in the static networks of population
+  migration, international trade, etc, here for the first time we studied a
+  non-conservative dynamical model based on the gravity law which excellently
+  reproduced many empirical features of the ITN.%
+    }
+    \verb{doi}
+    \verb 10.1088/1742-5468/2008/02/P02002
+    \endverb
+    \verb{eprint}
+    \verb 0707.4343
+    \endverb
+    \field{isbn}{1742-5468}
+    \field{issn}{17425468}
+    \field{number}{2}
+    \field{title}{{The international trade network: Weighted network analysis
+  and modelling}}
+    \field{volume}{2008}
+    \field{journaltitle}{Journal of Statistical Mechanics: Theory and
+  Experiment}
+    \field{eprinttype}{arXiv}
+    \field{year}{2008}
+  \endentry
 
-\bibitem{WTO2017}
-WTO.
-\newblock {World Trade Statistics Review 2017}.
-\newblock Technical report, 2017.
+  \entry{Chow2013}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CW}{%
+         family={Chow},
+         familyi={C\bibinitperiod},
+         given={William},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CW1}
+    \strng{fullhash}{CW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{1\bibrangedash 20}
+    \field{title}{{An Anatomy of the World Trade Network}}
+    \field{year}{2013}
+  \endentry
 
-\bibitem{Jackson2008}
-Matthew~O Jackson.
-\newblock {Social and Economic Networks 1}.
-\newblock {\em Network}, (March):14--16, 2008.
+  \entry{LDA}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DMIJ}{%
+         family={{David M. Blei Andrew Y. Ng}},
+         familyi={D\bibinitperiod},
+         given={Michael I\bibnamedelima Jordan},
+         giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim
+  J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DMIJ1}
+    \strng{fullhash}{DMIJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{labeldatesource}{year}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{993\bibrangedash 1022}
+    \field{title}{{Latent Dirichlet Allocation}}
+    \field{volume}{3}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2003}
+  \endentry
 
-\bibitem{Bhattacharya2008}
-K.~Bhattacharya, G.~Mukherjee, J.~Saram{\"{a}}ki, K.~Kaski, and S.~S. Manna.
-\newblock {The international trade network: Weighted network analysis and
-  modelling}.
-\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
-  2008(2), 2008.
+  \entry{Fagiolo2010}{article}{}
+    \name{author}{3}{}{%
+      {{hash=FG}{%
+         family={Fagiolo},
+         familyi={F\bibinitperiod},
+         given={Giorgio},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Reyes},
+         familyi={R\bibinitperiod},
+         given={Javier},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Schiavo},
+         familyi={S\bibinitperiod},
+         given={Stefano},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{Globalization,Integration,International trade,Networks,Weighted
+  network analysis,World trade web}
+    \strng{namehash}{FGRJSS1}
+    \strng{fullhash}{FGRJSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{abstract}{%
+    This paper employs a weighted network approach to study the empirical
+  properties of the web of trade relationships among world countries, and its
+  evolution over time. We show that most countries are characterized by weak
+  trade links; yet, there exists a group of countries featuring a large number
+  of strong relationships, thus hinting to a core-periphery structure. Also,
+  better- connected countries tend to trade with poorly-connected ones, but are
+  also involved in highly-interconnected trade clusters. Furthermore, rich
+  countries display more intense trade links and are more clustered. Finally,
+  all network properties are remarkably stable across the years and do not
+  depend on the weighting procedure.%
+    }
+    \verb{doi}
+    \verb 10.1007/s00191-009-0160-x
+    \endverb
+    \field{isbn}{0936-9937}
+    \field{issn}{09369937}
+    \field{number}{4}
+    \field{pages}{479\bibrangedash 514}
+    \field{title}{{The evolution of the world trade web: A weighted-network
+  analysis}}
+    \field{volume}{20}
+    \field{journaltitle}{Journal of Evolutionary Economics}
+    \field{year}{2010}
+  \endentry
 
-\bibitem{Fan2014}
-Ying Fan, Suting Ren, Hongbo Cai, and Xuefeng Cui.
-\newblock {The state's role and position in international trade: A complex
-  network perspective}.
-\newblock {\em Economic Modelling}, 39:71--81, 2014.
+  \entry{Fagiolo2007}{unpublished}{}
+    \name{author}{3}{}{%
+      {{hash=FG}{%
+         family={Fagiolo},
+         familyi={F\bibinitperiod},
+         given={Giorgio},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Reyes},
+         familyi={R\bibinitperiod},
+         given={Javier},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Schiavo},
+         familyi={S\bibinitperiod},
+         given={Stefano},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{Networks,World trade web,globalization.,integration,international
+  trade,trade openness,weighted network analysis}
+    \strng{namehash}{FGRJSS1}
+    \strng{fullhash}{FGRJSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{year}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{abstract}{%
+    This paper employs a weighted network analysis to study the empirical
+  properties of the world trade web and their evolution over time. We show that
+  most countries are characterized by weak trade links; yet, there exists a
+  group of countries featuring a large number of strong relationships, thus
+  hinting to a core-periphery structure. Also, better- connected countries tend
+  to trade with poorly-connected ones, but are also involved in
+  highly-interconnected trade clusters. Furthermore, rich countries display
+  more intense trade links and are more clustered. Finally, all network
+  properties are remarkably stable across the years and do not depend on the
+  weighting procedure.%
+    }
+    \field{title}{{The Evolution of the World Trade Web Giorgio}}
+    \list{institution}{2}{%
+      {Laboratory of Economics}%
+      {Management}%
+    }
+    \field{year}{2007}
+  \endentry
 
-\bibitem{Fagiolo2010}
-Giorgio Fagiolo, Javier Reyes, and Stefano Schiavo.
-\newblock {The evolution of the world trade web: A weighted-network analysis}.
-\newblock {\em Journal of Evolutionary Economics}, 20(4):479--514, 2010.
+  \entry{Fan2014}{article}{}
+    \name{author}{4}{}{%
+      {{hash=FY}{%
+         family={Fan},
+         familyi={F\bibinitperiod},
+         given={Ying},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Ren},
+         familyi={R\bibinitperiod},
+         given={Suting},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Cai},
+         familyi={C\bibinitperiod},
+         given={Hongbo},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CX}{%
+         family={Cui},
+         familyi={C\bibinitperiod},
+         given={Xuefeng},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier B.V.}%
+    }
+    \keyw{Bootstrap percolation,Centrality,Community,Countries'
+  rank,International trade network,Trading relation}
+    \strng{namehash}{FY+1}
+    \strng{fullhash}{FYRSCHCX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{year}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{abstract}{%
+    Based on statistical physics and graph theory, the research paradigm of a
+  complex network, which has sprung up in the last decade, provides us with new
+  global perspective to discuss the topic of international trade. In this
+  paper, we engage in the issue of countries' roles and positions in
+  international trade using the latest complex network theories. On a mid-level
+  structure, countries are classified into three communities that reflect the
+  structure of the "core/periphery" using the weighted extremal optimisation
+  algorithm and the coarse graining process. On a micro-level, countries'
+  rankings are provided with the aid of network's node centralities, which
+  presents world trade as a closed, imbalanced, diversified and multi-polar
+  development. Further, we firstly introduce the improved bootstrap percolation
+  to simulate cascading influences following the breaking down of bilateral
+  trade relations. We find that the breakdown of EU's export relations can more
+  easily form a cascading reaction, which would result in a global collapse of
+  world trade. All the results highlight the important positions of the EU, USA
+  and Japan in the international trade system, which plays a positive role in
+  promoting the world economy. {\textcopyright} 2014 Elsevier B.V.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.econmod.2014.02.027
+    \endverb
+    \field{isbn}{0264-9993}
+    \field{issn}{02649993}
+    \field{pages}{71\bibrangedash 81}
+    \field{title}{{The state's role and position in international trade: A
+  complex network perspective}}
+    \verb{url}
+    \verb http://dx.doi.org/10.1016/j.econmod.2014.02.027
+    \endverb
+    \field{volume}{39}
+    \field{journaltitle}{Economic Modelling}
+    \field{year}{2014}
+  \endentry
 
-\bibitem{Chow2013}
-William Chow.
-\newblock {An Anatomy of the World Trade Network}.
-\newblock pages 1--20, 2013.
+  \entry{flores2008world}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=FRG}{%
+         family={{Fl{\^{o}}res Jr}},
+         familyi={F\bibinitperiod},
+         given={Renato\bibnamedelima G},
+         giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FRG1}
+    \strng{fullhash}{FRG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{year}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{International Workshop" Integra{\c{c}}{\~{a}}o
+  Produtiva-Li{\c{c}}{\~{o}}es da {\'{A}}sia e Europa para o MERCOSUL",
+  CEPAL/Brasil}
+    \field{pages}{7}
+    \field{title}{{The World Fragmentation of Production and Trade Concepts and
+  Basic Issues}}
+    \field{year}{2008}
+  \endentry
 
-\bibitem{Hidalgo2007}
-C.~A. Hidalgo, B.~Winger, A.~L. Barab{\'{a}}si, and R.~Hausmann.
-\newblock {The product space conditions the development of nations}.
-\newblock {\em Science}, 317(5837):482--487, 2007.
+  \entry{frobel1978new}{article}{}
+    \name{author}{3}{}{%
+      {{hash=FF}{%
+         family={Fr{\"{o}}bel},
+         familyi={F\bibinitperiod},
+         given={Folker},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Heinrichs},
+         familyi={H\bibinitperiod},
+         given={J{\"{u}}rgen},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KO}{%
+         family={Kreye},
+         familyi={K\bibinitperiod},
+         given={Otto},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Sage Publications Sage CA: Thousand Oaks, CA}%
+    }
+    \strng{namehash}{FFHJKO1}
+    \strng{fullhash}{FFHJKO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1978}
+    \field{labeldatesource}{year}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{1}
+    \field{pages}{123\bibrangedash 142}
+    \field{title}{{The new international division of labour}}
+    \field{volume}{17}
+    \field{journaltitle}{Information (International Social Science Council)}
+    \field{year}{1978}
+  \endentry
 
-\bibitem{Hidalgo2009a}
-C{\'{e}}sar~A. Hidalgo.
-\newblock {The Dynamics of Economic Complexity and the Product Space over a 42
-  year period}.
-\newblock {\em CID Working Paper}, 189(189):20, 2009.
+  \entry{giuliani2005upgrading}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GE}{%
+         family={Giuliani},
+         familyi={G\bibinitperiod},
+         given={Elisa},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=PC}{%
+         family={Pietrobelli},
+         familyi={P\bibinitperiod},
+         given={Carlo},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Rabellotti},
+         familyi={R\bibinitperiod},
+         given={Roberta},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{GEPCRR1}
+    \strng{fullhash}{GEPCRR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2005}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{4}
+    \field{pages}{549\bibrangedash 573}
+    \field{title}{{Upgrading in global value chains: lessons from Latin
+  American clusters}}
+    \field{volume}{33}
+    \field{journaltitle}{World development}
+    \field{year}{2005}
+  \endentry
 
-\bibitem{Hidalgo2009}
-C{\'{e}}sar Hidalgo and Ricardo Hausmann.
-\newblock {The building blocks of economic complexity}.
-\newblock {\em Proceedings of the National Academy of the Sciences of the
-  United States of America}, 106(26):10570--10575, 2009.
+  \entry{Gleditsch2002}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GKS}{%
+         family={Gleditsch},
+         familyi={G\bibinitperiod},
+         given={Kristian\bibnamedelima S},
+         giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GKS1}
+    \strng{fullhash}{GKS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2002}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{pages}{712\bibrangedash 24}
+    \field{title}{{Expanded Trade and GDP Data}}
+    \field{volume}{46}
+    \field{journaltitle}{Journal of Conflict Resolution}
+    \field{year}{2002}
+  \endentry
 
-\bibitem{Kozlowski2018b}
-Diego Kozlowski.
-\newblock {Descripci{\'{o}}n del comercio internacional utilizando un modelo de
-  redes complejas}, 2018.
+  \entry{Head2014}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HK}{%
+         family={Head},
+         familyi={H\bibinitperiod},
+         given={Keith},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={Mayer},
+         familyi={M\bibinitperiod},
+         given={Thierry},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{HKMT1}
+    \strng{fullhash}{HKMT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    This chapter focuses on the estimation and interpretation of gravity
+  equations for bilateral trade. This necessarily involves a careful
+  consideration of the theoretical underpinnings since it has become clear that
+  naive approaches to estimation lead to biased and frequently misinterpreted
+  results. There are now several theory-consistent estimation methods and we
+  argue against sole reliance on any one method and instead advocate a toolkit
+  approach. One estimator may be preferred for certain types of data or
+  research questions but more often the methods should be used in concert to
+  establish robustness. In recent years, estimation has become just a first
+  step before a deeper analysis of the implications of the results, notably in
+  terms of welfare. We try to facilitate diffusion of best-practice methods by
+  illustrating their application in a step-by-step cookbook mode of
+  exposition.%
+    }
+    \verb{doi}
+    \verb 10.1016/B978-0-444-54314-1.00003-3
+    \endverb
+    \field{isbn}{9780444543141}
+    \field{issn}{1573-4404}
+    \field{pages}{131\bibrangedash 195}
+    \field{title}{{Gravity Equations: Workhorse,Toolkit, and Cookbook}}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978044454314100003
+    \verb 3?via{\%}3Dihub
+    \endverb
+    \field{volume}{4}
+    \field{journaltitle}{Handbook of International Economics}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
 
-\bibitem{Kozlowski2018a}
-Diego Kozlowski.
-\newblock {Descripci{\'{o}}n del comercio internacional utilizando un modelo de
-  redes complejas}.
-\newblock In {\em YSI Latinamerica}, 2018.
+  \entry{Hidalgo2007}{article}{}
+    \name{author}{4}{}{%
+      {{hash=HCA}{%
+         family={Hidalgo},
+         familyi={H\bibinitperiod},
+         given={C.\bibnamedelima A.},
+         giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Winger},
+         familyi={W\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BAL}{%
+         family={Barab{\'{a}}si},
+         familyi={B\bibinitperiod},
+         given={A.\bibnamedelima L.},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Hausmann},
+         familyi={H\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HCA+1}
+    \strng{fullhash}{HCAWBBALHR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    Economies grow by upgrading the products they produce and export. The
+  technology, capital, institutions, and skills needed to make newer products
+  are more easily adapted from some products than from others. Here, we study
+  this network of relatedness between products, or "product space," finding
+  that more-sophisticated products are located in a densely connected core
+  whereas less-sophisticated products occupy a less-connected periphery.
+  Empirically, countries move through the product space by developing goods
+  close to those they currently produce. Most countries can reach the core only
+  by traversing empirically infrequent distances, which may help explain why
+  poor countries have trouble developing more competitive exports and fail to
+  converge to the income levels of rich countries.%
+    }
+    \verb{doi}
+    \verb 10.1126/science.1144581
+    \endverb
+    \verb{eprint}
+    \verb 0708.2090
+    \endverb
+    \field{isbn}{1095-9203 (Electronic)$\backslash$n0036-8075 (Linking)}
+    \field{issn}{00368075}
+    \field{number}{5837}
+    \field{pages}{482\bibrangedash 487}
+    \field{title}{{The product space conditions the development of nations}}
+    \field{volume}{317}
+    \field{journaltitle}{Science}
+    \field{eprinttype}{arXiv}
+    \field{year}{2007}
+  \endentry
 
-\bibitem{Kozlowski2018}
-Diego Kozlowski.
-\newblock {Descripci{\'{o}}n del comercio internacional utilizando un modelo de
-  redes complejas}.
-\newblock In {\em LatinR}, 2018.
+  \entry{Hidalgo2009}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HC}{%
+         family={Hidalgo},
+         familyi={H\bibinitperiod},
+         given={C{\'{e}}sar},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Hausmann},
+         familyi={H\bibinitperiod},
+         given={Ricardo},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HCHR1}
+    \strng{fullhash}{HCHR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    For Adam Smith, wealth was related to the division of labor. As people and
+  firms specialize in different activities, economic effi-ciency increases,
+  suggesting that development is associated with an increase in the number of
+  individual activities and with the complexity that emerges from the
+  interactions between them. Here we develop a view of economic growth and
+  development that gives a central role to the complexity of a country's
+  economy by interpreting trade data as a bipartite network in which countries
+  are connected to the products they export, and show that it is possible to
+  quantify the complexity of a country's economy by characterizing the
+  structure of this network. Furthermore, we show that the measures of
+  complexity we derive are correlated with a country's level of income, and
+  that deviations from this relationship are predictive of future growth. This
+  suggests that countries tend to converge to the level of income dictated by
+  the complexity of their productive structures, indicating that develop-ment
+  efforts should focus on generating the conditions that would allow complexity
+  to emerge to generate sustained growth and prosperity.%
+    }
+    \verb{doi}
+    \verb 10.1073/pnas.0900943106
+    \endverb
+    \verb{eprint}
+    \verb 0909.3890
+    \endverb
+    \field{isbn}{0900943106}
+    \field{issn}{0027-8424}
+    \field{number}{26}
+    \field{pages}{10570\bibrangedash 10575}
+    \field{title}{{The building blocks of economic complexity}}
+    \field{volume}{106}
+    \field{journaltitle}{Proceedings of the National Academy of the Sciences of
+  the United States of America}
+    \field{eprinttype}{arXiv}
+    \field{year}{2009}
+  \endentry
 
-\bibitem{Gleditsch2002}
-Kristian~S Gleditsch.
-\newblock {Expanded Trade and GDP Data}.
-\newblock {\em Journal of Conflict Resolution}, 46:712--24, 2002.
+  \entry{Hidalgo2009a}{article}{}
+    \name{author}{1}{}{%
+      {{hash=HCA}{%
+         family={Hidalgo},
+         familyi={H\bibinitperiod},
+         given={C{\'{e}}sar\bibnamedelima A.},
+         giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \keyw{Capabilities,Economic Complexity,Economic
+  Development,Networks,Product Space,Structural Transformation}
+    \strng{namehash}{HCA1}
+    \strng{fullhash}{HCA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    How does the productive structure of countries' changes over time? In this
+  paper we explore this question by combining techniques of networks science
+  with 42 years of trade data and find that, while the Product Space remains
+  relatively stable during this period, the dynamics of countries' productive
+  structures is characterized by a few highly dynamic economies. In particular
+  we identify Brazil, Indonesia, Turkey, Malaysia, Thailand, Korea, Singapore
+  and China, as countries that transformed their productive structures
+  considerably during these four decades, albeit following different
+  trajectories. For instance, the economic complexity of Korea, Singapore and
+  China was relatively high at the beginning of the observation period and
+  continued to increase during these forty two years, moving these countries
+  into the top spots of the economic complexity rankings for the beginning of
+  this millennium. Brazil, Indonesia and Turkey, on the other hand, transformed
+  their productive structures significantly during the same period of time, but
+  did so starting from a less sophisticated foundation. We conclude the paper
+  by moving from this and other observations into the policy implications of
+  this view of economic development and argue that the government involvement
+  in the private sector should be to help catalyze market activities and solve
+  coordination problems that emerge naturally when countries try to accumulate
+  capabilities. This represents an alternative to more traditional views of the
+  role of government that postulate, in their extremes, that the public sector
+  should either have no involvement in private sector activities or, on the
+  other hand, substantial ownership of the means of production.%
+    }
+    \field{isbn}{6507247197}
+    \field{issn}{6507247197}
+    \field{number}{189}
+    \field{pages}{20}
+    \field{title}{{The Dynamics of Economic Complexity and the Product Space
+  over a 42 year period}}
+    \field{volume}{189}
+    \field{journaltitle}{CID Working Paper}
+    \field{year}{2009}
+  \endentry
 
-\end{thebibliography}
+  \entry{hoffman2013stochastic}{article}{}
+    \name{author}{4}{}{%
+      {{hash=HMD}{%
+         family={Hoffman},
+         familyi={H\bibinitperiod},
+         given={Matthew\bibnamedelima D},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=BDM}{%
+         family={Blei},
+         familyi={B\bibinitperiod},
+         given={David\bibnamedelima M},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Chong},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Paisley},
+         familyi={P\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JMLR. org}%
+    }
+    \strng{namehash}{HMD+1}
+    \strng{fullhash}{HMDBDMWCPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{1}
+    \field{pages}{1303\bibrangedash 1347}
+    \field{title}{{Stochastic variational inference}}
+    \field{volume}{14}
+    \field{journaltitle}{The Journal of Machine Learning Research}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Jackson2008}{article}{}
+    \name{author}{1}{}{%
+      {{hash=JMO}{%
+         family={Jackson},
+         familyi={J\bibinitperiod},
+         given={Matthew\bibnamedelima O},
+         giveni={M\bibinitperiod\bibinitdelim O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JMO1}
+    \strng{fullhash}{JMO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{year}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{abstract}{%
+    Networks of relationships help determine the careers that people choose,
+  the jobs they obtain, the products they buy, and how they vote. The many
+  aspects of our lives that are governed by social networks make it critical to
+  understand how they impact behavior, which network structures are likely to
+  emerge in a society, and why we organize ourselves as we do. In Social and
+  Economic Networks, Matthew Jackson offers a comprehensive introduction to
+  social and economic networks, drawing on the latest findings in economics,
+  sociology, computer science, physics, and mathematics. He provides empirical
+  background on networks and the regularities that they exhibit, and discusses
+  random graph-based models and strategic models of network formation. He helps
+  readers to understand behavior in networked societies, with a detailed
+  analysis of learning and diffusion in networks, decision making by
+  individuals who are influenced by their social neighbors, game theory and
+  markets on networks, and a host of related subjects. Jackson also describes
+  the varied statistical and modeling techniques used to analyze social
+  networks. Each chapter includes exercises to aid students in their analysis
+  of how networks function. This book is an indispensable resource for students
+  and researchers in economics, mathematics, physics, sociology, and business.%
+    }
+    \verb{doi}
+    \verb 10.1017/CBO9781107415324.004
+    \endverb
+    \verb{eprint}
+    \verb arXiv:1011.1669v3
+    \endverb
+    \field{isbn}{9780691134406}
+    \field{issn}{0691148201}
+    \field{number}{March}
+    \field{pages}{14\bibrangedash 16}
+    \field{title}{{Social and Economic Networks}}
+    \field{journaltitle}{Network}
+    \field{eprinttype}{arXiv}
+    \field{year}{2008}
+  \endentry
+
+  \entry{Kozlowski2018b}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=KD}{%
+         family={Kozlowski},
+         familyi={K\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \keyw{propio}
+    \strng{namehash}{KD1}
+    \strng{fullhash}{KD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{extradate}{1}
+    \field{labeldatesource}{year}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{pages}{15}
+    \field{title}{{Descripci{\'{o}}n del comercio internacional utilizando un
+  modelo de redes complejas}}
+    \list{institution}{1}{%
+      {Universidad de Buenos Aires}%
+    }
+    \field{year}{2018}
+  \endentry
+
+  \entry{Kozlowski2018a}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=KD}{%
+         family={Kozlowski},
+         familyi={K\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KD1}
+    \strng{fullhash}{KD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{extradate}{2}
+    \field{labeldatesource}{year}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{YSI Latinamerica}
+    \field{title}{{Descripci{\'{o}}n del comercio internacional utilizando un
+  modelo de redes complejas}}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Kozlowski2018}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=KD}{%
+         family={Kozlowski},
+         familyi={K\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KD1}
+    \strng{fullhash}{KD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{extradate}{3}
+    \field{labeldatesource}{year}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{LatinR}
+    \field{title}{{Descripci{\'{o}}n del comercio internacional utilizando un
+  modelo de redes complejas}}
+    \field{year}{2018}
+  \endentry
+
+  \entry{lall2000technological}{article}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lall},
+         familyi={L\bibinitperiod},
+         given={Sanjaya},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor {\&} Francis}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{labeldatesource}{year}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{3}
+    \field{pages}{337\bibrangedash 369}
+    \field{title}{{The Technological structure and performance of developing
+  country manufactured exports, 1985-98}}
+    \field{volume}{28}
+    \field{journaltitle}{Oxford development studies}
+    \field{year}{2000}
+  \endentry
+
+  \entry{molinari2016especializacion}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MA}{%
+         family={Molinari},
+         familyi={M\bibinitperiod},
+         given={Andrea},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=dAJY}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Angelis},
+         familyi={A\bibinitperiod},
+         given={Jesica\bibnamedelima Yamila},
+         giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Instituto Interdisciplinario de Econom{\'{i}}a Pol{\'{i}}tica de Buenos
+  Aires}%
+    }
+    \strng{namehash}{MAAJYd1}
+    \strng{fullhash}{MAAJYd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{{Especializaci{\'{o}}n y complementaci{\'{o}}n productiva en
+  el MERCOSUR: un Enfoque de Cadenas Productivas de Valor}}
+    \field{year}{2016}
+  \endentry
+
+  \entry{HS2012}{article}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={OECD},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O1}
+    \strng{fullhash}{O1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{year}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \verb{doi}
+    \verb https://doi.org/https://doi.org/10.1787/6a608f64-en
+    \endverb
+    \field{title}{{Harmonised System 2012}}
+    \verb{url}
+    \verb https://www.oecd-ilibrary.org/content/data/6a608f64-en
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{un2006standard}{article}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={ONU},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O2}
+    \strng{fullhash}{O2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{labeldatesource}{year}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{{Standard International Trade Classification Revision 4}}
+    \field{volume}{34}
+    \field{journaltitle}{Statistical Papers Series M No}
+    \field{year}{2006}
+  \endentry
+
+  \entry{ricardo1987principios}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=RD}{%
+         family={Ricardo},
+         familyi={R\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=C}{%
+         family={Claridad},
+         familyi={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Claridad}%
+    }
+    \strng{namehash}{RD1}
+    \strng{fullhash}{RD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{year}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{{Principios de econom{\'{i}}a pol{\'{i}}tica y
+  tributaci{\'{o}}n}}
+    \list{location}{1}{%
+      {Buenos Aires}%
+    }
+    \field{year}{2007}
+  \endentry
+
+  \entry{WTO2017}{report}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={WTO},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{year}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{abstract}{%
+    World Trade Statistical Review provides a detailed analysis of the latest
+  developments in world trade. It is the WTO's flagship statistical publication
+  and is produced on an annual basis.%
+    }
+    \field{isbn}{978-92-870-4152-4}
+    \field{pages}{181}
+    \field{title}{{World Trade Statistics Review 2017}}
+    \field{type}{techreport}
+    \field{year}{2017}
+  \endentry
+\enddatalist
+\endinput

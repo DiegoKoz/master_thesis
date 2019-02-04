@@ -1,11 +1,20 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {spanish}{}
-\contentsline {section}{\numberline {1}Tema}{2}
-\contentsline {section}{\numberline {2}Estado del arte}{2}
-\contentsline {section}{\numberline {3}Objetivos}{2}
-\contentsline {paragraph}{\textbf {Objetivo general:}}{2}
-\contentsline {paragraph}{\textbf {Objetivos espec\IeC {\'\i }ficos:}}{3}
-\contentsline {section}{\numberline {4}Antecedentes personales en el tema}{3}
-\contentsline {section}{\numberline {5}Plan de Trabajo}{3}
-\contentsline {paragraph}{Comienzo:}{3}
-\contentsline {paragraph}{Fin}{3}
-\contentsline {paragraph}{Etapas de desarrollo de la tesis:}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Resumen}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Tema}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Estado del arte}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Objetivos}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\textbf {Objetivo general:}}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\textbf {Objetivos espec\IeC {\'\i }ficos:}}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Antecedentes personales en el tema}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Plan de Trabajo}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Etapas de desarrollo de la tesis:}{5}
