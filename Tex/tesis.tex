@@ -32,18 +32,47 @@
 \usepackage{url}
 
 
+%para hacer comentarios
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\pendiente}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+
+
+%%%%%%%%%%%%% Titulos
+
+%%%%%%%%%%%% paragraph con titulo en negrita
+\newcommand{\partitle}[1]{%
+	\addvspace{0.2cm}% perhaps, as Barbara Beeton suggests
+	\textbf{#1}
+	\par
+	\hspace{0.5cm}
+}
+
+
+%%%%%%%%% \subsubsection en negrita e italica
+\usepackage{titlesec}
+
+\titleformat{\subsubsection}
+{\normalfont\fontfamily{phv}\fontsize{12}{17}\bfseries\itshape}{\thesubsection}{1em}{}
+
+
 
 \begin{document}
 
 %%%% CARATULA
 
-\def\autor{Luke Skywalker}
-\def\tituloTesis{La Guerra de las Galaxias: \vspace{.2cm} \\ Rebelión e Imperio}
-\def\runtitulo{La Guerra de las Galaxias: Rebelión e Imperio}
-\def\runtitle{Star Wars: Rebellion and Empire}
-\def\director{Obi-Wan Kenobi}
-\def\codirector{Master Yoda}
-\def\lugar{Buenos Aires, 2011}
+\def\autor{Diego Kozlowski}
+\def\tituloTesis{Técnicas de Ciencia de Datos aplicadas al comercio internacional \change{provisorio}}
+\def\runtitulo{Técnicas de Ciencia de Datos aplicadas al comercio internacional \change{provisorio}}
+\def\runtitle{Data Science Techniques applied to World Trade \change{provisorio}}
+\def\director{Dra. Viktoriya Semeshenko}
+%\def\codirector{}
+\def\lugar{Buenos Aires, 2019}
 \input{frontmatter/caratula}
 
 %%%% ABSTRACTS, AGRADECIMIENTOS Y DEDICATORIA
@@ -68,45 +97,61 @@
 
 %%%% ACA VA EL CONTENIDO DE LA TESIS
 
-%\section{capitulo 1}
+\chapter{introducción}
+
 \import{chapters/}{chapter_1/chapter1}
 
 
-%\chapter{La guerra de las galaxias}
-%\section{Infancia y juventud}
-%{\begin{small}%
-%\begin{flushright}%
-%\it
-%There's nothing for me now.
-%I want to learn the ways of\\ the Force and become a Jedi like my father. \\
-%--Luke Skywalker
-%\end{flushright}%
-%\end{small}%
-%\vspace{.5cm}}
+\chapter{Comercio a nivel países}
+
+
+
+\import{chapters/}{chapter_2/chapter2}
+
+%\section{Introducción}
+%\info{inclyue estado del arte}
 %
-%\section{Rescate de la princesa}
-%{\begin{small}%
-%\begin{flushright}%
-%\it
-%Here's where the fun begins!\\
-%--Han Solo
-%\end{flushright}%
-%\end{small}%
-%\vspace{.5cm}}
+%\section{Análisis exploratorio de datos}
 %
-%\section{Sacrificio y victoria}
-%{\begin{small}%
-%\begin{flushright}%
-%\it
-%This will be a day long remembered.\\ It has seen the end of Kenobi.\\ It will soon see the end of the Rebellion.\\
-%--Darth Vader
-%\end{flushright}%
-%\end{small}%
-%\vspace{.5cm}}
+%\section{Metodología}
 %
-%%% ...
-%\chapter{El imperio contraataca}
-%\chapter{El regreso del Jedi}
+%\section{Resultados}
+%
+%\subsection{El comercio internacional en el 2016 a la luz del análisis de redes}
+%
+%
+
+%---------------------------
+
+\chapter{Comercio a nivel producto}
+
+
+
+\section{introducción}
+\info{inclyue estado del arte}
+
+
+\section{Análisis exploratorio de datos}
+
+\section{Metodología}
+
+\subsection{Reducción de dimensionalidad mediante Latent Dirichlet Allocation Models}
+
+\subsection{Grafo Bipartito}
+\unsure{ver si llego}
+
+\section{Resultados}
+
+\subsection{Reducción de dimensionalidad mediante Latent Dirichlet Allocation Models}
+
+\subsection{Grafo Bipartito}
+\unsure{ver si llego}
+
+
+\chapter{Conclusiones}
+
+
+
 
 %%%% BIBLIOGRAFIA
 \backmatter

@@ -236,7 +236,7 @@ ggplot(caracteristicas, aes(threshold,mean_betweenness))+
   scale_x_continuous(breaks = c(seq(0,.25,0.05)),limits = c(0,0.25))+
   theme_tufte()
 
-#ggsave("graficos/2016_mean_betweenness_x_threshold.png", scale = .5)
+ggsave("graficos/2016_mean_betweenness_x_threshold.png", scale = .5)
 
 ggplot(caracteristicas, aes(threshold,mean_closeness))+
   geom_line(size = 1.25)+
@@ -277,7 +277,7 @@ ggplot(caracteristicas, aes(threshold,mean_eigen_centrality ))+
   scale_x_continuous(breaks = c(seq(0,.25,0.05)),limits = c(0,0.25))+
   theme_tufte()
 
-#ggsave("graficos/2016_autovalor_medio_x_threshold.png",scale = .5)
+ggsave("graficos/2016_autovalor_medio_x_threshold.png",scale = .5)
 
 ggplot(caracteristicas, aes(threshold,mean_eigen_centrality_ponderado ))+
   geom_line(size = 1.25, color = "black")+
@@ -321,7 +321,7 @@ for (nano in unique(dataset_all$yr)){
     print(paste0('threshold: ',threshold))
     net <- trade_to_graph(data_yr, threshold_pct = threshold)
     renglon <- c('yr'=nano,'threshold'= threshold,'coef_clustering' = net$coef_clustering,
-                 'naristas' = net$naristas) 
+                 'naristas' = net$naristas, 'densidad'=net$density) 
     clustering_naristas <- bind_rows(clustering_naristas,renglon)
   }
 }
@@ -356,11 +356,22 @@ ggplot(clustering_naristas, aes(threshold,naristas, color = yr, group=yr ))+
   scale_y_continuous(breaks = c(seq(0,25000,5000)))+
   scale_color_continuous("Años",low = gdocs_pal()(2)[1],high = gdocs_pal()(2)[2])
 
-
-
 ggsave("graficos/threshold_x_naristas_x_yr.png")
 
+ggplot(clustering_naristas, aes(threshold,densidad, color = yr, group=yr ))+
+  geom_line()+
+  geom_vline(xintercept = 0.01, size = 0.75,linetype= "dashed", color = "#109618")+
+  #  labs(title= 'Coeficiente de clustering',
+  #       subtitle = 'Importaciones 2016, según punto de corte')+
+  theme_tufte()+
+  labs(x= "Punto de corte", "y"= "Densidad")+
+  theme(panel.grid.major.y = element_line(colour = "grey80"),
+        panel.grid.minor.y = element_line(colour = "grey90"))+
+  scale_x_continuous(breaks = c(0.01,seq(0,.1,0.05)),limits = c(0,0.1))+
+  # scale_y_continuous(breaks = c(seq(0,25000,5000)))+
+  scale_color_continuous("Años",low = gdocs_pal()(2)[1],high = gdocs_pal()(2)[2])
 
+ggsave("graficos/threshold_x_densidad_x_yr.png",scale = 1,height = 7, width = 10)
 
 
 

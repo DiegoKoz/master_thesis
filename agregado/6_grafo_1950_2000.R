@@ -143,6 +143,7 @@ for (nano  in sort(unique(dataset_impo$yr))) {
   dist <- data.frame("yr" = nano,
                      'cod' = V(net$grafo)$name,
                      # 'pais' = V(net$grafo)$pais,
+                     "closeness" = closeness(net$grafo),
                      "betweenness" = betweenness(net$grafo, directed = T),
                      "degree" = degree(net$grafo),
                      "autovalor" = eigen_centrality(net$grafo, directed = F)$vector,
@@ -153,7 +154,9 @@ for (nano  in sort(unique(dataset_impo$yr))) {
 }
 
 caracteristicas_impo
-distribuciones_impo
+distribuciones_impo <- distribuciones_impo %>% 
+  left_join(codigos %>% 
+              select(cod = rt3ISO, continente = continent))
 
 table(caracteristicas_impo$connected_weak)
 table(caracteristicas_impo$connected_strong)
@@ -255,86 +258,42 @@ ggsave("graficos/1950_2000_correlacion_x_yr.png")
 
 #### gráficos densidad IMPO####
 
-ggplot(distribuciones_impo %>% 
-         filter(betweenness>0), aes(betweenness, y = factor(yr) ))+
-  geom_density_ridges()+
-  geom_text_repel(data = distribuciones_impo %>%
-                    group_by(yr) %>% 
-                    top_n(betweenness, n = 3), aes(label = cod), 
-                  nudge_y = 0.5)+
-  theme_tufte()+
-  theme(legend.position = "none")+
-  labs(y = "Año",
-       title= 'Distribución de intermediación de los nodos',
-       subtitle = "Importaciones, threshold 1%, según año")
-  
 
-#ggsave("graficos/1950_2000_impo_densidad_betweenness_x_yr.png")
-
-
-ggplot(distribuciones_impo , aes(degree, y = factor(yr) ))+
+#ARG_BRA_MEX
+ggplot(distribuciones_impo , aes(degree, y = factor(yr)))+
   geom_density_ridges(alpha = 0.2)+
   geom_text_repel(data = distribuciones_impo %>%
-                    group_by(yr) %>% 
-                    top_n(degree, n = 3),
-                  aes(label = cod, color = cod), nudge_y = 0.5)+
-  theme_tufte()+
-  theme(legend.position = "none")+
-  scale_color_gdocs()+
-  labs(y = "Año",
-       title= 'Distribución de grado de los nodos',
-       subtitle = "Importaciones, threshold 1%, según año")
-
-#ggsave("graficos/1950_2000_impo_densidad_degree_x_yr.png")
-
-
-ggplot(distribuciones_impo , aes(autovalor, y = factor(yr)))+
-  geom_density_ridges()+
-  geom_text_repel(data = distribuciones_impo %>%
-                    group_by(yr) %>% 
-                    top_n(autovalor, n = 3), 
-                  aes(label = cod, color = cod), nudge_y = 0.5)+
-  theme_tufte()+
-  theme(legend.position = "none")+
-  scale_color_gdocs() +
-  labs(y = "Año",
-       title= 'Distribución de autovalor de los nodos',
-       subtitle = "Importaciones, threshold 1%, según año")
-
-
-#ggsave("graficos/1950_2000_impo_densidad_autovalor_x_yr.png")
-
-ggplot(distribuciones_impo , aes(autovalor_pond, y = factor(yr)))+
-  geom_density_ridges()+
-  geom_text_repel(data = distribuciones_impo %>%
-                    group_by(yr) %>% 
-                    top_n(autovalor_pond, n = 5),
-                  aes(label = cod, color = cod), nudge_y = 0.5)+
-  theme_tufte()+
-  theme(legend.position = "none")+
-  scale_colour_gdocs() +
-  labs(y = "Año",
-       title= 'Distribución de autovalor de los nodos en grafo ponderado',
-       subtitle = "Importaciones, threshold 1%, según año")
-
-#ggsave("graficos/1950_2000_impo_densidad_autovalor_pond_x_yr.png")
-
-# USA vs CHINA
-ggplot(distribuciones_impo , aes(autovalor_pond, y = factor(yr)))+
-  geom_density_ridges(alpha = 0.2)+
-  geom_text_repel(data = distribuciones_impo %>%
-                    filter(cod %in% c("CHN", "USA")), 
-                  aes(label = cod, color =cod), 
+                    filter(cod %in% c("ARG", "BRA", "MEX")), 
+                  aes(label = cod, color =cod),
                   nudge_y = 0.5, fontface = "bold")+
   theme_tufte()+
   theme(legend.position = "none")+
   scale_fill_gdocs() +
+  scale_x_continuous(limits = c(0,100))+
   scale_color_gdocs() +
-  labs(y = "Año",
-       title= 'Distribución de autovalor de los nodos en grafo ponderado',
-       subtitle = "Importaciones, threshold 1%, según año. Detalle China y Estados Unidos")
+  labs(y = "Año", x = "Grado")
+# title= 'Distribución de autovalor de los nodos',
+# subtitle = "Importaciones, threshold 1%, según año. Detalle Argentina, Canada, Brasil y México")
+ggsave("graficos/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png", scale = 1,height = 10, width = 7)
 
-#ggsave("graficos/1950_2000_impo_densidad_USAvsCHN_autovalor_pond_x_yr.png")
+ggplot(distribuciones_impo , aes(autovalor_pond, y = factor(yr)))+
+  geom_density_ridges(alpha = 0.2)+
+  geom_text_repel(data = distribuciones_impo %>%
+                    filter(cod %in% c("ARG", "BRA", "MEX")), 
+                  aes(label = cod, color =cod),
+                  nudge_y = 0.5, fontface = "bold")+
+  theme_tufte()+
+  theme(legend.position = "none")+
+  scale_fill_gdocs() +
+  scale_x_continuous(limits = c(0,0.5))+
+  scale_color_gdocs() +
+  labs(y = "Año", x = "autovalor ponderado")
+
+ggsave("graficos/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png",scale = 1,height = 10, width = 7)
+
+
+
+# USA vs CHINA
 
 ggplot(distribuciones_impo , aes(autovalor, y = factor(yr) ))+
   geom_density_ridges(alpha = 0.2)+
@@ -346,28 +305,45 @@ ggplot(distribuciones_impo , aes(autovalor, y = factor(yr) ))+
   theme(legend.position = "none")+
   scale_fill_gdocs() +
   scale_color_gdocs() +
-  labs(y = "Año",
-       title= 'Distribución de autovalor de los nodos',
-       subtitle = "Importaciones, threshold 1%, según año. Detalle China y Estados Unidos")
+  labs(y = "Año", x= "Autovalor")
+# title= 'Distribución de autovalor de los nodos',
+# subtitle = "Importaciones, threshold 1%, según año. Detalle China y Estados Unidos")
 
-#ggsave("graficos/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png")
+ggsave("graficos/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png", scale = 1,height = 10, width = 7)
+
  
-ggplot(distribuciones_impo , aes(degree, y = factor(yr)))+
+ggplot(distribuciones_impo , aes(autovalor, y = factor(yr)))+
   geom_density_ridges(alpha = 0.2)+
   geom_text_repel(data = distribuciones_impo %>%
-                    filter(cod %in% c("CHN", "USA")), 
+                    filter(cod %in% c("CHN", "JPN", "ROK")), 
                   aes(label = cod, color =cod),
                   nudge_y = 0.5, fontface = "bold")+
   theme_tufte()+
   theme(legend.position = "none")+
   scale_fill_gdocs() +
+  scale_x_continuous(limits = c(0,1))+
   scale_color_gdocs() +
-  labs(y = "Año",
-       title= 'Distribución de autovalor de los nodos',
-       subtitle = "Importaciones, threshold 1%, según año. Detalle China y Estados Unidos")
+  labs(y = "Año", x = "autovalor")
 
-#ggsave("graficos/1950_2000_impo_densidad_USAvsCHN_grado_x_yr.png")
+ggsave("graficos/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png",scale = 1,height = 10, width = 7)
 
+distribuciones_impo %>% 
+  filter(!is.na(continente)) %>% 
+  select(año = yr, cod,continente,cercanía = closeness, grado = degree, autovalor) %>% 
+  gather(variable, valor, 4:6) %>%
+  group_by(año, continente, variable) %>% 
+  summarise(valor = mean(valor)) %>% 
+  ggplot(aes(año, y = valor, color = continente))+
+  geom_line()+
+  scale_color_gdocs() +
+  theme_tufte()+
+  theme(legend.position = "bottom",
+        legend.margin=margin(t = -.5,unit = "cm"))+
+  guides(color=guide_legend(nrow=2,byrow=TRUE))+
+  labs(x="Años")+
+  facet_grid(variable~., scales="free")
+
+ggsave("graficos/1950_2000_continent_all.png")
 
 #### densidad EXPO ####
 

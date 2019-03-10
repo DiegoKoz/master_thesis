@@ -2,11 +2,11 @@
 
 \bibitem[Arel-Bundock, 2017]{Arel-Bundock2017}
 Arel-Bundock, V. (2017).
-\newblock {\em {countrycode: Convert Country Names and Country Codes}}.
+\newblock {countrycode: Convert Country Names and Country Codes}.
 
 \bibitem[Arnold, 2017]{Arnold2017}
 Arnold, J.~B. (2017).
-\newblock {\em {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'}}.
+\newblock {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'}.
 
 \bibitem[Bhattacharya et~al., 2008]{Bhattacharya2008}
 Bhattacharya, K., Mukherjee, G., Saram{\"{a}}ki, J., Kaski, K., and Manna,
@@ -24,7 +24,11 @@ Chow, W. (2013).
 \bibitem[Csardi and Nepusz, 2006]{Csardi2006}
 Csardi, G. and Nepusz, T. (2006).
 \newblock {The igraph software package for complex network research}.
-\newblock {\em InterJournal}, Complex Sy:1695.
+
+\bibitem[Das, 2004]{das2004regionalism}
+Das, D.~K. (2004).
+\newblock {\em {Regionalism in global trade}}.
+\newblock Edward Elgar Publishing.
 
 \bibitem[Fagiolo et~al., 2007]{Fagiolo2007}
 Fagiolo, G., Reyes, J., and Schiavo, S. (2007).
@@ -41,9 +45,14 @@ Fan, Y., Ren, S., Cai, H., and Cui, X. (2014).
   network perspective}.
 \newblock {\em Economic Modelling}, 39:71--81.
 
+\bibitem[Gleditsch, 2002]{Gleditsch2002}
+Gleditsch, K.~S. (2002).
+\newblock {Expanded Trade and GDP Data}.
+\newblock {\em Journal of Conflict Resolution}, 46:712--24.
+
 \bibitem[Neuwirth, 2014]{Neuwirth2014}
 Neuwirth, E. (2014).
-\newblock {\em {RColorBrewer: ColorBrewer Palettes}}.
+\newblock {RColorBrewer: ColorBrewer Palettes}.
 
 \bibitem[{R Core Team}, 2017]{RCoreTeam2017}
 {R Core Team} (2017).
@@ -51,23 +60,25 @@ Neuwirth, E. (2014).
 
 \bibitem[Ricardo, 2007]{ricardo1987principios}
 Ricardo, D. (2007).
-\newblock {Principios de econom{\'{i}}a pol{\'{i}}tica y tributaci{\'{o}}n}.
+\newblock {\em {Principios de econom{\'{i}}a pol{\'{i}}tica y
+  tributaci{\'{o}}n}}.
+\newblock Claridad, Buenos Aires.
 
 \bibitem[Slowikowski, 2017]{Slowikowski2017}
 Slowikowski, K. (2017).
-\newblock {\em {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}}.
+\newblock {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}.
 
 \bibitem[Vu, 2011]{Vu2011}
 Vu, V.~Q. (2011).
-\newblock {\em {ggbiplot: A ggplot2 based biplot}}.
+\newblock {ggbiplot: A ggplot2 based biplot}.
 
 \bibitem[Wickham, 2017]{Wickham2017}
 Wickham, H. (2017).
-\newblock {\em {tidyverse: Easily Install and Load the 'Tidyverse'}}.
+\newblock {tidyverse: Easily Install and Load the 'Tidyverse'}.
 
 \bibitem[Wilke, 2017]{Wilke2017}
 Wilke, C.~O. (2017).
-\newblock {\em {ggridges: Ridgeline Plots in 'ggplot2'}}.
+\newblock {ggridges: Ridgeline Plots in 'ggplot2'}.
 
 \bibitem[WTO, 2017]{WTO2017}
 WTO (2017).
