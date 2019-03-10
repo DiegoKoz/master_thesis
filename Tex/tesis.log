@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.1.24)  3 FEB 2019 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.1.24)  10 MAR 2019 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -321,47 +321,376 @@ Package: authblk 2001/02/27 1.3 (PWD)
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xargs/xargs.sty
+Package: xargs 2008/03/22 v1.1  extended macro definitions  (mpg)
+\xargs@max=\count121
+\xargs@toksa=\toks26
+\xargs@toksb=\toks27
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
+Package: todonotes 2012/07/25
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen139
+\pgfutil@tempdimb=\dimen140
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box31
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks31
+))
+\pgf@x=\dimen141
+\pgf@y=\dimen142
+\pgf@xa=\dimen143
+\pgf@ya=\dimen144
+\pgf@xb=\dimen145
+\pgf@yb=\dimen146
+\pgf@xc=\dimen147
+\pgf@yc=\dimen148
+\w@pgf@writea=\write4
+\r@pgf@reada=\read1
+\c@pgf@counta=\count122
+\c@pgf@countb=\count123
+\c@pgf@countc=\count124
+\c@pgf@countd=\count125
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count126
+\pgfsyssoftpath@bigbuffer@items=\count127
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen149
+\pgfmath@count=\count128
+\pgfmath@box=\box32
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count129
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen150
+\pgf@picmaxx=\dimen151
+\pgf@picminy=\dimen152
+\pgf@picmaxy=\dimen153
+\pgf@pathminx=\dimen154
+\pgf@pathmaxx=\dimen155
+\pgf@pathminy=\dimen156
+\pgf@pathmaxy=\dimen157
+\pgf@xx=\dimen158
+\pgf@xy=\dimen159
+\pgf@yx=\dimen160
+\pgf@yy=\dimen161
+\pgf@zx=\dimen162
+\pgf@zy=\dimen163
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen164
+\pgf@path@lasty=\dimen165
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen166
+\pgf@shorten@start@additional=\dimen167
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box33
+\pgf@hbox=\box34
+\pgf@layerbox@main=\box35
+\pgf@picture@serial@count=\count130
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen168
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen169
+\pgf@pt@y=\dimen170
+\pgf@pt@temp=\dimen171
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen172
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen173
+\pgf@sys@shading@range@num=\count131
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box36
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box37
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen174
+\pgf@nodesepend=\dimen175
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen176
+\pgffor@skip=\dimen177
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count132
+\pgfplotmarksize=\dimen178
+)
+\tikz@lastx=\dimen179
+\tikz@lasty=\dimen180
+\tikz@lastxsaved=\dimen181
+\tikz@lastysaved=\dimen182
+\tikzleveldistance=\dimen183
+\tikzsiblingdistance=\dimen184
+\tikz@figbox=\box38
+\tikz@figbox@bg=\box39
+\tikz@tempbox=\box40
+\tikz@tempbox@bg=\box41
+\tikztreelevel=\count133
+\tikznumberofchildren=\count134
+\tikznumberofcurrentchild=\count135
+\tikz@fig@count=\count136
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count137
+\pgfmatrixcurrentcolumn=\count138
+\pgf@matrix@numberofcolumns=\count139
+)
+\tikz@expandcount=\count140
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count141
+\calc@Bcount=\count142
+\calc@Adimen=\dimen185
+\calc@Bdimen=\dimen186
+\calc@Askip=\skip59
+\calc@Bskip=\skip60
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count143
+\calc@Cskip=\skip61
+)
+\c@@todonotes@numberoftodonotes=\count144
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box42
+\beforetitleunit=\skip62
+\aftertitleunit=\skip63
+\ttl@plus=\dimen187
+\ttl@minus=\dimen188
+\ttl@toksa=\toks40
+\titlewidth=\dimen189
+\titlewidthlast=\dimen190
+\titlewidthfirst=\dimen191
 ) (./tesis.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 )
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 
 (./tesis.sta
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
 )
 \openout3 = `tesis.sta'.
 
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count121
-\scratchdimen=\dimen139
-\scratchbox=\box31
-\nofMPsegments=\count122
-\nofMParguments=\count123
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count124
-\MPscratchDim=\dimen140
-\MPnumerator=\count125
-\makeMPintoPDFobject=\count126
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count145
+\scratchdimen=\dimen192
+\scratchbox=\box43
+\nofMPsegments=\count146
+\nofMParguments=\count147
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count148
+\MPscratchDim=\dimen193
+\MPnumerator=\count149
+\makeMPintoPDFobject=\count150
+\everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -390,8 +719,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
+LaTeX Info: Redefining \. on input line 65.
+LaTeX Info: Redefining \% on input line 65.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -427,16 +756,23 @@ LaTeX Info: Redefining \% on input line 36.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \celsius on input line 36.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 36.
+LaTeX Info: Redefining \celsius on input line 65.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 65.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 36.
-Package gensymb Info: Using \Omega for \ohm on input line 36.
+LaTeX Info: Redefining \ohm on input line 65.
+Package gensymb Info: Using \Omega for \ohm on input line 65.
 
 Package gensymb Warning: Not defining \micro.
+
+ABD: EveryShipout initializing macros
+
+Package todonotes Warning: The length marginparwidth is less than 2cm and will 
+most likely cause issues with the appearance of inserted todonotes. The issue c
+an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
+loading the todonotes package. on input line 65.
 
 (./frontmatter/caratula.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 9.
@@ -449,7 +785,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 9.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<frontmatter/logofcen.pdf, id=1, 108.405pt x 108.405pt>
+<frontmatter/logofcen.pdf, id=4, 108.405pt x 108.405pt>
 File: frontmatter/logofcen.pdf Graphic file (type pdf)
 <use frontmatter/logofcen.pdf>
 Package pdftex.def Info: frontmatter/logofcen.pdf  used on input line 10.
@@ -458,14 +794,33 @@ Package pdftex.def Info: frontmatter/logofcen.pdf  used on input line 10.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./frontmatter/logofcen.pdf
 >])
-(./frontmatter/abs_esp.tex) [1
+(./frontmatter/abs_esp.tex
+Overfull \hbox (2.24277pt too wide) in paragraph at lines 5--5
+[][][][]\OT1/cmr/m/n/6 PROVISORIO  
+ []
 
 
-] (./frontmatter/abs_en.tex) [2
+Overfull \hbox (2.24277pt too wide) in paragraph at lines 5--5
+[][][][]\OT1/cmr/m/n/6 PROVISORIO  
+ []
+
+) [1
 
 
-]
-(./frontmatter/agradecimientos.tex) [3
+] (./frontmatter/abs_en.tex
+Overfull \hbox (2.24277pt too wide) in paragraph at lines 5--5
+[][][][]\OT1/cmr/m/n/6 PROVISORIO  
+ []
+
+
+Overfull \hbox (2.24277pt too wide) in paragraph at lines 5--5
+[][][][]\OT1/cmr/m/n/6 PROVISORIO  
+ []
+
+) [2
+
+
+] (./frontmatter/agradecimientos.tex) [3
 
 
 ] (./tesis.toc
@@ -473,228 +828,312 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
 )
-\tf@toc=\write4
-\openout4 = `tesis.toc'.
+\tf@toc=\write5
+\openout5 = `tesis.toc'.
 
  [4
 
 
 ]
-(./chapters/chapter_1/chapter1.tex [1
+Cap\'{\i }tulo 1.
+(./chapters/chapter_1/chapter1.tex) [1
 
 
 ]
+Cap\'{\i }tulo 2.
+(./chapters/chapter_2/chapter2.tex
+<images/2016_freq_interacciones_3.png, id=35, 447.8331pt x 337.26pt>
+File: images/2016_freq_interacciones_3.png Graphic file (type png)
+<use images/2016_freq_interacciones_3.png>
+Package pdftex.def Info: images/2016_freq_interacciones_3.png  used on input li
+ne 50.
+(pdftex.def)             Requested size: 426.79135pt x 321.42441pt.
+<images/2016_freq_interacciones_0.png, id=36, 447.8331pt x 337.26pt>
+File: images/2016_freq_interacciones_0.png Graphic file (type png)
+<use images/2016_freq_interacciones_0.png>
+Package pdftex.def Info: images/2016_freq_interacciones_0.png  used on input li
+ne 51.
+(pdftex.def)             Requested size: 426.79135pt x 321.42441pt.
 
-Package natbib Warning: Citation `Gleditsch2002' on page 2 undefined on input l
-ine 82.
 
-[2] [3] [4]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 169.
+LaTeX Warning: Float too large for page by 59.56015pt on input line 54.
+
+[2
+
+]
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
+ [3 <./images/2016_freq_interacciones_3.png (PNG copy)> <./images/2016_freq_int
+eracciones_0.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 81.
+LaTeX Info: Redefining \% on input line 81.
+ [4]
+LaTeX Info: Redefining \. on input line 116.
+LaTeX Info: Redefining \% on input line 116.
  [5]
-<images/2011_freq_interacciones_3.png, id=54, 517.935pt x 273.1806pt>
-File: images/2011_freq_interacciones_3.png Graphic file (type png)
-<use images/2011_freq_interacciones_3.png>
-Package pdftex.def Info: images/2011_freq_interacciones_3.png  used on input li
-ne 206.
-(pdftex.def)             Requested size: 426.79135pt x 225.11832pt.
-<images/2011_freq_interacciones_0.png, id=55, 517.935pt x 273.1806pt>
-File: images/2011_freq_interacciones_0.png Graphic file (type png)
-<use images/2011_freq_interacciones_0.png>
-Package pdftex.def Info: images/2011_freq_interacciones_0.png  used on input li
-ne 207.
-(pdftex.def)             Requested size: 426.79135pt x 225.11832pt.
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
  [6]
-<images/2011_autovalor_medio_x_threshold.png, id=61, 258.9675pt x 136.5903pt>
-File: images/2011_autovalor_medio_x_threshold.png Graphic file (type png)
-<use images/2011_autovalor_medio_x_threshold.png>
-Package pdftex.def Info: images/2011_autovalor_medio_x_threshold.png  used on i
-nput line 228.
-(pdftex.def)             Requested size: 192.0548pt x 101.3024pt.
-<images/2011_mean_betweenness_x_threshold.png, id=62, 258.9675pt x 136.5903pt>
-File: images/2011_mean_betweenness_x_threshold.png Graphic file (type png)
-<use images/2011_mean_betweenness_x_threshold.png>
-Package pdftex.def Info: images/2011_mean_betweenness_x_threshold.png  used on 
-input line 229.
-(pdftex.def)             Requested size: 192.0548pt x 101.3024pt.
-<images/grafo_2011_1_pcnt.png, id=63, 481.8pt x 481.8pt>
-File: images/grafo_2011_1_pcnt.png Graphic file (type png)
-<use images/grafo_2011_1_pcnt.png>
-Package pdftex.def Info: images/grafo_2011_1_pcnt.png  used on input line 242.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 160.
+LaTeX Info: Redefining \. on input line 169.
+LaTeX Info: Redefining \% on input line 169.
+ [7]
+<images/grafo_2016_1_pcnt.png, id=65, 963.6pt x 963.6pt>
+File: images/grafo_2016_1_pcnt.png Graphic file (type png)
+<use images/grafo_2016_1_pcnt.png>
+Package pdftex.def Info: images/grafo_2016_1_pcnt.png  used on input line 195.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2011_5_pcnt.png, id=64, 481.8pt x 481.8pt>
-File: images/grafo_2011_5_pcnt.png Graphic file (type png)
-<use images/grafo_2011_5_pcnt.png>
-Package pdftex.def Info: images/grafo_2011_5_pcnt.png  used on input line 243.
+<images/grafo_2016_5_pcnt.png, id=66, 481.8pt x 481.8pt>
+File: images/grafo_2016_5_pcnt.png Graphic file (type png)
+<use images/grafo_2016_5_pcnt.png>
+Package pdftex.def Info: images/grafo_2016_5_pcnt.png  used on input line 196.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2011_10_pcnt.png, id=65, 481.8pt x 481.8pt>
-File: images/grafo_2011_10_pcnt.png Graphic file (type png)
-<use images/grafo_2011_10_pcnt.png>
-Package pdftex.def Info: images/grafo_2011_10_pcnt.png  used on input line 244.
+<images/grafo_2016_10_pcnt.png, id=67, 481.8pt x 481.8pt>
+File: images/grafo_2016_10_pcnt.png Graphic file (type png)
+<use images/grafo_2016_10_pcnt.png>
+Package pdftex.def Info: images/grafo_2016_10_pcnt.png  used on input line 197.
 
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2011_15_pcnt.png, id=66, 481.8pt x 481.8pt>
-File: images/grafo_2011_15_pcnt.png Graphic file (type png)
-<use images/grafo_2011_15_pcnt.png>
-Package pdftex.def Info: images/grafo_2011_15_pcnt.png  used on input line 245.
+<images/grafo_2016_15_pcnt.png, id=68, 481.8pt x 481.8pt>
+File: images/grafo_2016_15_pcnt.png Graphic file (type png)
+<use images/grafo_2016_15_pcnt.png>
+Package pdftex.def Info: images/grafo_2016_15_pcnt.png  used on input line 198.
 
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2011_20_pcnt.png, id=67, 481.8pt x 481.8pt>
-File: images/grafo_2011_20_pcnt.png Graphic file (type png)
-<use images/grafo_2011_20_pcnt.png>
-Package pdftex.def Info: images/grafo_2011_20_pcnt.png  used on input line 246.
+<images/grafo_2016_20_pcnt.png, id=69, 963.6pt x 963.6pt>
+File: images/grafo_2016_20_pcnt.png Graphic file (type png)
+<use images/grafo_2016_20_pcnt.png>
+Package pdftex.def Info: images/grafo_2016_20_pcnt.png  used on input line 199.
 
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2011_25_pcnt.png, id=68, 481.8pt x 481.8pt>
-File: images/grafo_2011_25_pcnt.png Graphic file (type png)
-<use images/grafo_2011_25_pcnt.png>
-Package pdftex.def Info: images/grafo_2011_25_pcnt.png  used on input line 247.
+<images/grafo_2016_25_pcnt.png, id=70, 481.8pt x 481.8pt>
+File: images/grafo_2016_25_pcnt.png Graphic file (type png)
+<use images/grafo_2016_25_pcnt.png>
+Package pdftex.def Info: images/grafo_2016_25_pcnt.png  used on input line 200.
 
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
 
 
-LaTeX Warning: Float too large for page by 14.72614pt on input line 250.
+LaTeX Warning: Float too large for page by 14.72614pt on input line 203.
 
-<images/corr_grados_2011_1_pcnt.png, id=69, 722.7pt x 505.89pt>
-File: images/corr_grados_2011_1_pcnt.png Graphic file (type png)
-<use images/corr_grados_2011_1_pcnt.png>
-Package pdftex.def Info: images/corr_grados_2011_1_pcnt.png  used on input line
- 263.
-(pdftex.def)             Requested size: 384.1096pt x 268.87689pt.
-<images/corr_grados_2011_10_pcnt.png, id=70, 722.7pt x 505.89pt>
-File: images/corr_grados_2011_10_pcnt.png Graphic file (type png)
-<use images/corr_grados_2011_10_pcnt.png>
-Package pdftex.def Info: images/corr_grados_2011_10_pcnt.png  used on input lin
-e 264.
-(pdftex.def)             Requested size: 384.1096pt x 268.87689pt.
-<images/corr_grados_2011_20_pcnt.png, id=71, 722.7pt x 505.89pt>
-File: images/corr_grados_2011_20_pcnt.png Graphic file (type png)
-<use images/corr_grados_2011_20_pcnt.png>
-Package pdftex.def Info: images/corr_grados_2011_20_pcnt.png  used on input lin
-e 265.
-(pdftex.def)             Requested size: 384.1096pt x 268.87689pt.
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
+[8]
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
+ [9 <./images/grafo_2016_1_pcnt.png (PNG copy)> <./images/grafo_2016_5_pcnt.png
+ (PNG copy)> <./images/grafo_2016_10_pcnt.png (PNG copy)> <./images/grafo_2016_
+15_pcnt.png (PNG copy)> <./images/grafo_2016_20_pcnt.png (PNG copy)> <./images/
+grafo_2016_25_pcnt.png (PNG copy)>]
 
-LaTeX Warning: Float too large for page by 245.19202pt on input line 268.
+LaTeX Warning: Marginpar on page 10 moved.
 
-[7] [8 <./images/2011_freq_interacciones_3.png (PNG copy)> <./images/2011_freq_
-interacciones_0.png (PNG copy)>] [9 <./images/2011_autovalor_medio_x_threshold.
-png (PNG copy)> <./images/2011_mean_betweenness_x_threshold.png (PNG copy)>]
-[10 <./images/grafo_2011_1_pcnt.png (PNG copy)> <./images/grafo_2011_5_pcnt.png
- (PNG copy)> <./images/grafo_2011_10_pcnt.png (PNG copy)> <./images/grafo_2011_
-15_pcnt.png (PNG copy)> <./images/grafo_2011_20_pcnt.png (PNG copy)> <./images/
-grafo_2011_25_pcnt.png (PNG copy)>] [11 <./images/corr_grados_2011_1_pcnt.png (
-PNG copy)> <./images/corr_grados_2011_10_pcnt.png (PNG copy)> <./images/corr_gr
-ados_2011_20_pcnt.png (PNG copy)>]
-<images/correlacion_x_yr.png, id=88, 486.8589pt x 282.8166pt>
+<images/threshold_x_clustering_x_yr.png, id=80, 447.8331pt x 337.26pt>
+File: images/threshold_x_clustering_x_yr.png Graphic file (type png)
+<use images/threshold_x_clustering_x_yr.png>
+Package pdftex.def Info: images/threshold_x_clustering_x_yr.png  used on input 
+line 223.
+(pdftex.def)             Requested size: 192.0548pt x 144.633pt.
+<images/threshold_x_naristas_x_yr.png, id=81, 447.8331pt x 337.26pt>
+File: images/threshold_x_naristas_x_yr.png Graphic file (type png)
+<use images/threshold_x_naristas_x_yr.png>
+Package pdftex.def Info: images/threshold_x_naristas_x_yr.png  used on input li
+ne 224.
+(pdftex.def)             Requested size: 192.0548pt x 144.633pt.
+<images/threshold_x_densidad_x_yr.png, id=82, 722.7pt x 505.89pt>
+File: images/threshold_x_densidad_x_yr.png Graphic file (type png)
+<use images/threshold_x_densidad_x_yr.png>
+Package pdftex.def Info: images/threshold_x_densidad_x_yr.png  used on input li
+ne 225.
+(pdftex.def)             Requested size: 192.0548pt x 134.43845pt.
+<images/corr_grados_2016_1_pcnt.png, id=83, 447.8331pt x 337.26pt>
+File: images/corr_grados_2016_1_pcnt.png Graphic file (type png)
+<use images/corr_grados_2016_1_pcnt.png>
+Package pdftex.def Info: images/corr_grados_2016_1_pcnt.png  used on input line
+ 252.
+(pdftex.def)             Requested size: 384.1096pt x 289.28145pt.
+<images/corr_grados_2016_10_pcnt.png, id=84, 447.8331pt x 337.26pt>
+File: images/corr_grados_2016_10_pcnt.png Graphic file (type png)
+<use images/corr_grados_2016_10_pcnt.png>
+Package pdftex.def Info: images/corr_grados_2016_10_pcnt.png  used on input lin
+e 253.
+(pdftex.def)             Requested size: 384.1096pt x 289.28145pt.
+<images/corr_grados_2016_20_pcnt.png, id=85, 447.8331pt x 337.26pt>
+File: images/corr_grados_2016_20_pcnt.png Graphic file (type png)
+<use images/corr_grados_2016_20_pcnt.png>
+Package pdftex.def Info: images/corr_grados_2016_20_pcnt.png  used on input lin
+e 254.
+(pdftex.def)             Requested size: 384.1096pt x 289.28145pt.
+
+LaTeX Warning: Float too large for page by 306.40569pt on input line 257.
+
+LaTeX Info: Redefining \. on input line 263.
+LaTeX Info: Redefining \% on input line 263.
+[10]
+LaTeX Info: Redefining \. on input line 263.
+LaTeX Info: Redefining \% on input line 263.
+ [11 <./images/threshold_x_clustering_x_yr.png (PNG copy)> <./images/threshold_
+x_naristas_x_yr.png (PNG copy)> <./images/threshold_x_densidad_x_yr.png (PNG co
+py)>]
+LaTeX Info: Redefining \. on input line 263.
+LaTeX Info: Redefining \% on input line 263.
+ [12 <./images/corr_grados_2016_1_pcnt.png (PNG copy)> <./images/corr_grados_20
+16_10_pcnt.png (PNG copy)> <./images/corr_grados_2016_20_pcnt.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 287.
+LaTeX Info: Redefining \% on input line 287.
+ [13]
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 290.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 290.
+LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <12> not available
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 290.
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <12> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 290.
+<images/correlacion_x_yr.png, id=98, 447.8331pt x 337.26pt>
 File: images/correlacion_x_yr.png Graphic file (type png)
 <use images/correlacion_x_yr.png>
-Package pdftex.def Info: images/correlacion_x_yr.png  used on input line 315.
-(pdftex.def)             Requested size: 192.0548pt x 111.56676pt.
-<images/coef_clustering_x_yr.png, id=89, 258.4857pt x 136.5903pt>
+Package pdftex.def Info: images/correlacion_x_yr.png  used on input line 304.
+(pdftex.def)             Requested size: 192.0548pt x 144.633pt.
+<images/coef_clustering_x_yr.png, id=99, 223.7961pt x 168.63pt>
 File: images/coef_clustering_x_yr.png Graphic file (type png)
 <use images/coef_clustering_x_yr.png>
-Package pdftex.def Info: images/coef_clustering_x_yr.png  used on input line 31
-8.
-(pdftex.def)             Requested size: 192.0548pt x 101.48581pt.
- [12 <./images/correlacion_x_yr.png (PNG copy)> <./images/coef_clustering_x_yr.
-png (PNG copy)>]
-<images/impo_densidad_degree_x_yr.png, id=93, 486.8589pt x 282.8166pt>
+Package pdftex.def Info: images/coef_clustering_x_yr.png  used on input line 30
+7.
+(pdftex.def)             Requested size: 192.0548pt x 144.72047pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
+
+ []
+
+LaTeX Info: Redefining \. on input line 321.
+LaTeX Info: Redefining \% on input line 321.
+[14 <./images/correlacion_x_yr.png (PNG copy)> <./images/coef_clustering_x_yr.p
+ng (PNG copy)>]
+<images/impo_densidad_degree_x_yr.png, id=105, 447.8331pt x 337.26pt>
 File: images/impo_densidad_degree_x_yr.png Graphic file (type png)
 <use images/impo_densidad_degree_x_yr.png>
 Package pdftex.def Info: images/impo_densidad_degree_x_yr.png  used on input li
-ne 339.
-(pdftex.def)             Requested size: 341.43437pt x 198.34138pt.
-<images/expo_densidad_autovalor_x_yr.png, id=94, 486.8589pt x 282.8166pt>
+ne 327.
+(pdftex.def)             Requested size: 341.43437pt x 257.13849pt.
+<images/expo_densidad_autovalor_x_yr.png, id=106, 447.8331pt x 337.26pt>
 File: images/expo_densidad_autovalor_x_yr.png Graphic file (type png)
 <use images/expo_densidad_autovalor_x_yr.png>
 Package pdftex.def Info: images/expo_densidad_autovalor_x_yr.png  used on input
- line 343.
-(pdftex.def)             Requested size: 341.43437pt x 198.34138pt.
-<images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png, id=95, 486.8589pt x 282
-.8166pt>
+ line 331.
+(pdftex.def)             Requested size: 341.43437pt x 257.13849pt.
+<images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png, id=107, 447.8331pt x 33
+7.26pt>
 File: images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png Graphic file (type 
 png)
 <use images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png>
 Package pdftex.def Info: images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png 
- used on input line 347.
-(pdftex.def)             Requested size: 341.43437pt x 198.34138pt.
+ used on input line 335.
+(pdftex.def)             Requested size: 341.43437pt x 257.13849pt.
 
 
-LaTeX Warning: Float too large for page by 44.14105pt on input line 351.
+LaTeX Warning: Float too large for page by 220.53236pt on input line 339.
 
-
-Package natbib Warning: Citation `Gleditsch2002' on page 13 undefined on input 
-line 361.
-
-[13] [14 <./images/impo_densidad_degree_x_yr.png (PNG copy)> <./images/expo_den
-sidad_autovalor_x_yr.png (PNG copy)> <./images/expo_densidad_USAvsCHN_autovalor
-_pond_x_yr.png (PNG copy)>]
-<images/1950_2000_coef_clustering_x_yr.png, id=103, 414.5889pt x 277.7577pt>
+LaTeX Info: Redefining \. on input line 357.
+LaTeX Info: Redefining \% on input line 357.
+[15]
+LaTeX Info: Redefining \. on input line 357.
+LaTeX Info: Redefining \% on input line 357.
+ [16 <./images/impo_densidad_degree_x_yr.png (PNG copy)> <./images/expo_densida
+d_autovalor_x_yr.png (PNG copy)> <./images/expo_densidad_USAvsCHN_autovalor_pon
+d_x_yr.png (PNG copy)>]
+<images/1950_2000_coef_clustering_x_yr.png, id=114, 422.2977pt x 307.1475pt>
 File: images/1950_2000_coef_clustering_x_yr.png Graphic file (type png)
 <use images/1950_2000_coef_clustering_x_yr.png>
 Package pdftex.def Info: images/1950_2000_coef_clustering_x_yr.png  used on inp
-ut line 373.
-(pdftex.def)             Requested size: 204.85802pt x 137.24678pt.
-<images/1950_2000_correlacion_x_yr.png, id=104, 414.5889pt x 277.7577pt>
+ut line 360.
+(pdftex.def)             Requested size: 204.85802pt x 148.99916pt.
+<images/1950_2000_correlacion_x_yr.png, id=115, 422.2977pt x 307.1475pt>
 File: images/1950_2000_correlacion_x_yr.png Graphic file (type png)
 <use images/1950_2000_correlacion_x_yr.png>
 Package pdftex.def Info: images/1950_2000_correlacion_x_yr.png  used on input l
-ine 374.
-(pdftex.def)             Requested size: 204.85802pt x 137.24678pt.
- [15 <./images/1950_2000_coef_clustering_x_yr.png (PNG copy)> <./images/1950_20
-00_correlacion_x_yr.png (PNG copy)>]
-<images/1950_2000_continent_all.png, id=108, 829.4187pt x 556.9608pt>
+ine 361.
+(pdftex.def)             Requested size: 204.85802pt x 148.99916pt.
+<images/1950_2000_continent_all.png, id=116, 288.1164pt x 177.5433pt>
 File: images/1950_2000_continent_all.png Graphic file (type png)
 <use images/1950_2000_continent_all.png>
 Package pdftex.def Info: images/1950_2000_continent_all.png  used on input line
- 383.
-(pdftex.def)             Requested size: 426.79135pt x 286.5958pt.
- [16 <./images/1950_2000_continent_all.png (PNG copy)>]
-<images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png, id=112, 505.89pt x 722.7
+ 370.
+(pdftex.def)             Requested size: 426.79135pt x 263.0173pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 380.
+LaTeX Info: Redefining \% on input line 380.
+[17 <./images/1950_2000_coef_clustering_x_yr.png (PNG copy)> <./images/1950_200
+0_correlacion_x_yr.png (PNG copy)>]
+<images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png, id=120, 505.89pt x 722.7
 pt>
 File: images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png Graphic file (type p
 ng)
 <use images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png>
 Package pdftex.def Info: images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png  
-used on input line 397.
+used on input line 383.
 (pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
-<images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png, id=113, 505.89pt x 72
+<images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png, id=121, 505.89pt x 72
 2.7pt>
 File: images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png Graphic file (typ
 e png)
 <use images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png>
 Package pdftex.def Info: images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.pn
-g  used on input line 398.
-(pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
-<images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png, id=114, 505.89pt x
- 722.7pt>
-File: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png Graphic file (
-type png)
-<use images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png>
-Package pdftex.def Info: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr
-.png  used on input line 410.
-(pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
-<images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png, id=115, 505.89pt x 722.7
-pt>
-File: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png Graphic file (type p
-ng)
-<use images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png>
-Package pdftex.def Info: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png  
-used on input line 411.
+g  used on input line 384.
 (pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17 <./images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png (PNG copy)> <./imag
-es/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png (PNG copy)>] [18 <./images/
-1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png (PNG copy)> <./images/1950_
-2000_impo_densidad_CHN_JPN_ROK_atvlr.png (PNG copy)>]) [19] (./tesis.bbl)
+LaTeX Info: Redefining \. on input line 393.
+LaTeX Info: Redefining \% on input line 393.
+[18 <./images/1950_2000_continent_all.png (PNG copy)>]
+<images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png, id=126, 505.89pt x
+ 722.7pt>
+File: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png Graphic file (
+type png)
+<use images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png>
+Package pdftex.def Info: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr
+.png  used on input line 396.
+(pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
+<images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png, id=127, 505.89pt x 722.7
+pt>
+File: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png Graphic file (type p
+ng)
+<use images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png>
+Package pdftex.def Info: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png  
+used on input line 397.
+(pdftex.def)             Requested size: 204.85802pt x 292.65881pt.
 
-Package natbib Warning: There were undefined citations.
 
-[20
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 412.
+LaTeX Info: Redefining \% on input line 412.
+[19 <./images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png (PNG copy)> <./imag
+es/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png (PNG copy)>])
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
+ [20 <./images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png (PNG copy)> 
+<./images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png (PNG copy)>]
+Cap\'{\i }tulo 3.
+[21
+
+]
+Cap\'{\i }tulo 4.
+[22
+
+] (./tesis.bbl) [23
 
 
 ] (./tesis.aux
@@ -702,37 +1141,41 @@ LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 6296 strings out of 494517
- 92446 string characters out of 6175533
- 173896 words of memory out of 5000000
- 9733 multiletter control sequences out of 15000+600000
- 15479 words of font info for 59 fonts, out of 8000000 for 9000
+ 17206 strings out of 494517
+ 322843 string characters out of 6175533
+ 402996 words of memory out of 5000000
+ 20398 multiletter control sequences out of 15000+600000
+ 17774 words of font info for 62 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 66i,10n,48p,1907b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on tesis.pdf (25 pages, 6600938 bytes).
+ 75i,10n,88p,1933b,1020s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
+vbo8a.pfb>
+Output written on tesis.pdf (28 pages, 7234081 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 209 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 
