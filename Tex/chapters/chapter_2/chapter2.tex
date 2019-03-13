@@ -188,7 +188,7 @@ Dado que, por la forma de construcción de los grafos, resulta distinta la inter
 
 \subsection{Determinación del punto de corte}
 
-El punto de corte a utilizar, dada la metodología propuesta para discretizar la información del volumen comerciado, opera fuertemente sobre el grafo resultante. La figura \ref{fig:grafo_2016} muestra el grafo según si se utiliza un punto de corte de 1,5,10,15,20 o 25 porciento.
+El punto de corte a utilizar, dada la metodología propuesta para discretizar la información del volumen comerciado, opera fuertemente sobre el grafo resultante. La figura \ref{fig:grafo_2016} muestra el grafo según si se utiliza un punto de corte de 1\%, 5\%, 10\%, 15\%, 20\% o 25\%.
 
 \begin{figure}
 	\centering
@@ -205,18 +205,9 @@ El punto de corte a utilizar, dada la metodología propuesta para discretizar la
 Se puede observar como hasta un punto de corte del 10\% la red se mantiene unida, aunque disminuye la cantidad de nodos. A partir de este punto, la red deja de estar débilmente conectada y, a la vez que sigue disminuyendo la cantidad de nodos, se observa mejor la importancia de ciertos nodos de alto grado. En particular, uno del continente americano (Estados Unidos) y otro del continente africano (Sudáfrica).
 
 
-Se puede apreciar la importancia de este parámetro en los resultados del modelo. Dado que no se trata de un modelo supervisado, no es posible optimizar el parámetro según una medida de bondad de ajuste del modelo. Por el contrario, debemos elegir el punto de corte que resulte más conveniente para los fines del análisis. 
+De esto se desprende la importancia de este parámetro en los resultados del modelo. Dado que no se trata de un modelo supervisado, no es posible optimizar el parámetro según alguna medida de bondad de ajuste del modelo. Por el contrario, debemos elegir el punto de corte que resulte más conveniente para los fines del análisis. 
 
-En el sentido de esto último, contamos con varias métricas que permiten caracterizar al grafo, así como conocimiento previo respecto del comercio internacional que nos permite caracterizar el comercio internacional. De esta forma, para determinar el punto de corte se propone como metodología utilizar una medida de centralidad que describe un atributo previamente conocido del comercio mundial, y buscar aquél punto de corte en que dicho atributo se expresa más plenamente. Una propiedad ampliamente estudiada del comercio internacional es su regionalismo \citep{das2004regionalism}, es decir, la tendencia de los países de comerciar en mayor medida con sus vecinos. Si bien no contamos en este trabajo con información respecto de la distancia entre países, de esta característica emerge un fenómeno medible: el nivel de clustering de la red. En este sentido un valor alto en el clustering de la red resulta deseable desde el punto de vista del fenómeno estudiado. En la figura \ref{fig:centralidad_2016-1} se observa el coeficiente de clustering para la red según el punto de corte utilizado, para cada año de la serie entre 1996 y 2016. Allí se observa que dicha métrica tiene una relación negativa no lineal con el punto de corte. Por lo tanto utilizar un punto de corte bajo resulta conveniente para captar el fenómeno. Sin embargo el máximo se encuentra en un punto de corte igual a cero, esto quiere decir que el regionalismo se expresa más cuando consideramos todos los intercambios, independientemente del monto comerciado. Sin embargo, como se observa en la figura \ref{fig:centralidad_2016-2} la cantidad de aristas del grafo es significativamente más alta para este punto de corte, y por lo tanto el grafo es sustancialmente más grande y denso, tal como se observa en la figura \ref{fig:centralidad_2016-2}. En este sentido 
-
-\info{Seguir acá!!!}
-
-%Para establecer un porcentaje de las importaciones como punto de corte para construir el grafo no ponderado se procedió construyendo grafos con un umbral entre 0 y 0.5, con incrementos de 0.01, para luego calcular distintas métricas que caracterizan al grafo, y buscar aquel punto en que se marque una inflexión. En particular, se calculo si es un grafo conectado, el diámetro, la densidad, el número de aristas, la intermediación promedio y máxima, la cercanía promedio, el grado promedio, el autovalor promedio y el autovalor promedio ponderado por el valor comercial de la interacción, el coeficiente de clustering y la correlación de grado entre las aristas.
-
-%Los resultados arrojaron que el grafo resultante nunca es fuertemente conectado, aunque es débilmente conectado hasta un umbral de 10\%. 
-%Como se observa en la figura \ref{fig:centralidad_2016-1}, el autovalor medio de la red disminuye fuertemente al considerar un punto de corte del 1\%, y luego el descenso es más moderado. Lo mismo ocurre con el coeficiente de clustering, número de aristas y grado medio de la red. Por su parte, la figura \ref{fig:centralidad_2016-2} muestra como intermediación promedio de la red tiene un máximo en el 1\%, para luego descender. Otras medidas, sin embargo, como la cercanía promedio, la intermediación máxima, el diámetro de la red o la correlación de grado, no muestran un comportamiento tan claro.
-\pendiente{rehacer}
-
+En el sentido de esto último, contamos con varias métricas que permiten caracterizar las propiedades del grafo, así como conocimiento previo respecto a propiedades conocidas y ampliamente aceptadas del comercio internacional. De esta forma, para determinar el punto de corte se propone como metodología utilizar una medida de centralidad que describe un atributo previamente conocido del comercio mundial, y buscar aquél punto de corte en que dicho atributo se expresa más plenamente. Una característica ampliamente estudiada del comercio internacional es su regionalismo \citep{das2004regionalism}, es decir, la tendencia de los países de comerciar en mayor medida con sus vecinos \citep{Head2014}. Si bien no contamos en este trabajo con información respecto de la distancia entre países, de esta característica emerge un fenómeno medible: el nivel de clustering de la red. En este sentido un valor alto en el clustering resulta deseable desde el punto de vista del objeto de estudio. En la figura \ref{fig:centralidad_2016-1} se observa el coeficiente de clustering para la red según el punto de corte utilizado, para cada año de la serie entre 1996 y 2016. Allí se observa que dicha métrica tiene una relación negativa no lineal con el punto de corte. Por lo tanto utilizar un punto de corte bajo resulta conveniente para captar el fenómeno. Sin embargo el máximo se encuentra en el punto de corte igual a cero, esto quiere decir que el regionalismo se expresa más cuando consideramos todos los intercambios, independientemente del monto comerciado. Como se observa en la figura \ref{fig:centralidad_2016-2}, la cantidad de aristas del grafo es significativamente más alta para este punto de corte, y por lo tanto el grafo es sustancialmente más grande y denso, tal como se observa en la figura \ref{fig:centralidad_2016-2}. En este sentido, si bien en la sección siguiente se continúa estudiando diferentes puntos de corte para ver el efecto que esto produce sobre el grafo y sus posibles interpretaciones, se decidió elegir un punto de corte por defecto de 1\% para el resto del trabajo, dado que en dicho valor existe un punto de inflexión en la densidad y número de aristas, lo cual permite resaltar aquellas relaciones comerciales más significativas, a la vez que se maximiza el coeficiente de clustering.
 
 \begin{figure}
 \centering
@@ -224,19 +215,11 @@ En el sentido de esto último, contamos con varias métricas que permiten caract
 \subfigure[Cantidad de aristas]{\label{fig:centralidad_2016-2}\includegraphics[width=0.45\linewidth]{threshold_x_naristas_x_yr.png}}
 \subfigure[Densidad]{\label{fig:centralidad_2016-3}\includegraphics[width=0.45\linewidth]{threshold_x_densidad_x_yr.png}}
 
-
 \caption{\textbf{Medidas de centralidad}. Importaciones, 2016}
 \label{fig:centralidad_2016}
 \end{figure}
 
 
-Por ello, se decidió utilizar como referencia el 1\% para establecer el punto de corte, a la vez que se consideran otros umbrales alternativos para ciertos análisis particulares.
-
-
-%##############
-En la figura \ref{fig:grafo_2016} se presentan los grafos para distintos puntos de corte que pueden resultar de interés.
-
-%###############
 
 
 \section{Resultados}
@@ -244,26 +227,26 @@ En la figura \ref{fig:grafo_2016} se presentan los grafos para distintos puntos 
 
 \subsection{Correlación entre la representación de las exportaciones y las importaciones}
 
-Por su parte, dada la potencial diferencia en el análisis si se tiene en cuenta las exportaciones y las importaciones, se incorporó esta disyuntiva como una nueva dimensión de estudio. Para ello, se analizó el grado total de cada nodo, para sucesivos puntos de corte, tanto para el grafo que surge de considerar las exportaciones, como para el grafo de las importaciones. En la figura \ref{fig:corr} se pueden observar los resultados. Vale mencionar que sólo se grafican los nodos de mayor grado, aunque se haya considerado al conjunto de nodos para el calculo de la tendencia lineal por país y el coeficiente de correlación de Pearson.
+Dada la potencial diferencia en el análisis si se tiene en cuenta las exportaciones y las importaciones, se incorporó esta disyuntiva como una nueva dimensión de estudio. Para ello, se analizó el grado total de cada nodo, para sucesivos puntos de corte, tanto para el grafo que surge de considerar las exportaciones, como para el grafo de las importaciones. En la figura \ref{fig:corr} se pueden observar los resultados. Vale mencionar que sólo se grafican los nodos de mayor grado, aunque se haya considerado al conjunto de nodos para el calculo de la tendencia lineal por continente y el coeficiente de correlación de Pearson.
 
 
 \begin{figure}
 \centering
-\subfigure[1\%. Coeficiente de Pearson = 0.95]{\includegraphics[width=0.9\linewidth]{corr_grados_2016_1_pcnt}}
-\subfigure[10\%. Coeficiente de Pearson = 0.89]{\includegraphics[width=0.9\linewidth]{corr_grados_2016_10_pcnt}}
-\subfigure[20\%. Coeficiente de Pearson = 0.9]{\includegraphics[width=0.9\linewidth]{corr_grados_2016_20_pcnt}}
+\subfigure[1\%. Coeficiente de Pearson = 0.96]{\includegraphics[width=0.9\linewidth]{corr_grados_2016_1_pcnt}}
+\subfigure[10\%. Coeficiente de Pearson = 0.77]{\includegraphics[width=0.45\linewidth]{corr_grados_2016_10_pcnt}}
+\subfigure[20\%. Coeficiente de Pearson = 0.81]{\includegraphics[width=0.45\linewidth]{corr_grados_2016_20_pcnt}}
 \caption{\textbf{Grado total.} Multigrafo exportaciones e importaciones. Año 2016}
 \label{fig:corr}
 \end{figure}
 
 
-La correlación entre los grafos resultantes oscila entre el 0.84 y 0.95 si se consideran puntos de corte de entre el 1\% y el 25\%, por lo que se puede considerar que al observar las importaciones no se pierde demasiada información.
+La correlación entre los grafos resultantes oscila entre el 0.72 y 0.96 si se consideran puntos de corte de entre el 1\% y el 25\%, por lo que se puede considerar que al observar las importaciones no se pierde demasiada información. Esto último es especialmente válido para el punto de corte del 1\% que se eligió como estándar. 
 
-Sin embargo, surgen algunas diferencias interesantes. La regresión lineal para cada continente, muestra el diferente rol de éstos en el mercado mundial, donde Asia se presenta en el rol de productor de mercancías, mientras que Europa lo hace como un gran consumidor del mercado mundial. El caso americano tiene por un lado el rol preponderante de Estados Unidos, con un comportamiento similar al de Europa (con independencia del umbral del 0.25), mientras que el resto del continente, junto con Oceanía y África, juegan un rol secundario. En el caso europeo, se observa como Rusia tiene un comportamiento más acorde al continente asiático, mientras que en este último se destacan en particular China y Singapur como grandes productores.      
+Sin embargo, surgen algunas diferencias interesantes. La regresión lineal para cada continente, muestra el diferente rol de éstos en el mercado mundial, donde Asia se presenta en el rol de productor de mercancías, mientras que Europa lo hace como un gran consumidor del mercado mundial. El caso americano tiene por un lado el rol preponderante de Estados Unidos, con un comportamiento similar al de Europa (con independencia del umbral del 0.25), mientras que el resto del continente, junto con Oceanía y África, juegan un rol secundario. En el caso europeo, se observa como Rusia tiene un comportamiento más acorde al continente asiático, mientras que en este último se destaca en particular China como gran productora.      
 
-Sin embargo, el rol de cada país varía también respecto al umbral considerado. En el caso de Japón, en puntos de corte bajos, donde hay relaciones comerciales de importancia moderada para los países, se presenta jugando un rol de productor más que de consumidor, incluso más que la media asiática. A medida que se aumenta el punto de corte, y por lo tanto se consideran exclusivamente relaciones de carácter más dependiente, Japón se presenta como un país consumidor, incluso más que los países europeos. Esta transición estaría indicando que Japón, productor de productos industriales y tecnológicos, provee a muchos países del mundo de este tipo de mercancías, aunque éstos no dependen en su consumo de Japón, mientras que como consumidor de materias primas, este país establece relaciones comerciales con países que sí dependen de Japón para poder colocar sus mercancías. En el caso de China se puede observar algo similar, aunque de forma más moderada. Más interesante aún, a medida que se consideran relaciones de tipo más dependiente, aparece como destacado el rol de Estados Unidos, relegando a los países europeos y asiáticos. Por su parte, también surge Sudáfrica como un jugador importante del mercado mundial, cuando se consideran este tipo de relaciones de mayor dependencia. Esto implica que estos dos países tienen una forma de interacción en el mercado mundial marcadamente diferente a la de los países europeos y asiáticos.       
+Sin embargo, el rol de cada país varía también respecto al umbral considerado. En el caso de Japón, en puntos de corte bajos, donde hay relaciones comerciales de importancia moderada para los países, se presenta jugando un rol de productor más que de consumidor, incluso más que la media asiática. A medida que se aumenta el punto de corte, y por lo tanto se consideran exclusivamente relaciones de carácter más dependiente, Japón se presenta como un país consumidor, incluso más que los países europeos. Esta transición estaría indicando que Japón, productor de productos industriales y tecnológicos, provee a muchos países del mundo de este tipo de mercancías, aunque éstos no dependen en su consumo de Japón, mientras que como consumidor de materias primas, este país establece relaciones comerciales con países que sí dependen de Japón para poder colocar sus mercancías. Más interesante aún, a medida que se consideran relaciones de tipo más dependiente, aparece como destacado el rol de Estados Unidos, relegando a los países europeos y asiáticos. Por su parte, también surge Sudáfrica como un jugador importante del mercado mundial, cuando se consideran este tipo de relaciones de mayor dependencia. Esto implica que estos dos países tienen una forma de interacción en el mercado mundial marcadamente diferente a la de los países europeos y asiáticos.       
 
-Por último, en la figura \ref{fig:corr} también se puede observar el leverage de las los países con mayor apalancamiento para la regresión del grado de las exportaciones respecto del de las importaciones, sin diferenciar por continente. Cuando se considera un punto de corte del 1\%, China tiene el mayor leverage, con un valor bastante mayor que Estados Unidos, aunque relativamente bajo en términos absolutos. Sin embargo, a medida que se consideran puntos de corte más altos, Estados Unidos se constituye como el país con mayor apalancamiento en la regresión, a la vez que el valor aumenta fuertemente.      
+Por último, en la figura \ref{fig:corr} también se puede observar el leverage de las los países con mayor apalancamiento para la regresión del grado de las exportaciones respecto del de las importaciones, sin diferenciar por continente. Cuando se considera un punto de corte del 1\%, China tiene el mayor leverage, con un valor algo mayor que Estados Unidos, aunque relativamente bajo en términos absolutos. Sin embargo, a medida que se consideran puntos de corte más altos, este país se constituye como el país con mayor apalancamiento en la regresión, a la vez que el valor aumenta fuertemente.      
 
 En la tabla \ref{Table: Tabla1} se presenta el top 5 de países de mayor centralidad de grado para el 2016, en el grafo de importaciones y en el de exportaciones.
 
@@ -283,17 +266,17 @@ En la tabla \ref{Table: Tabla1} se presenta el top 5 de países de mayor central
 	\end{tabular}
 \end{table}
 
-La tabla \ref{Table: Tabla1} muestra como China, Estados Unidos y Alemania son nodos de una centralidad importante, tanto como consumidores, como en su rol de productores. Sin embargo, China se destaca más en este último sentido que en el primero. Por su parte, Estados  Unidos marca una importante hegemonía como consumidor respecto de los demás países, aunque no conserva tal preponderancia como productor global. 
+La tabla \ref{Table: Tabla1} muestra como China, Estados Unidos y Alemania son nodos de una centralidad importante, tanto como consumidores, como en su rol de productores. Sin embargo, China se destaca más en este último sentido, dado que su centralidad en el grafo de las importaciones es mayor, respecto a los demás países, que en el grafo de las exportaciones. Por su parte, Estados  Unidos marca una importante hegemonía como consumidor respecto de los demás países, tal como se observa en su centralidad en el grafo delas exportaciones, aunque no conserva tal preponderancia como productor global. 
 
 \subsection{Evolución de mediano y largo plazo del comercio internacional}
 
 \subsubsection{Análisis mediano plazo}
 
-Lo que resta del análisis \unsure{} se considerará exclusivamente el punto de corte del 1\%, incorporando la dimensión temporal. Para esto, se estudiará en primer lugar el movimiento de algunas medidas de resumen a lo largo del tiempo, para luego analizar la distribución de ciertas medidas de centralidad y el cambio en el rol de los nodos centrales en durante el período.
+Lo que resta del análisis se considerará exclusivamente el punto de corte del 1\%, incorporando la dimensión temporal. Para esto, se estudiará en primer lugar el movimiento de algunas medidas de resumen a lo largo del tiempo, para luego analizar la distribución de ciertas medidas de centralidad y el cambio en el rol de los nodos centrales en durante el período.
 
 
 \partitle{Medidas de resumen de la red}
-En la figura \ref{fig:caracteristicas_yr} se presentan los valores de algunas medidas de resumen entre el período de 1997 y 2016, considerando un punto de corte del 1\% para las importaciones. 
+En la figura \ref{fig:caracteristicas_yr} se presentan los valores de algunas medidas de resumen entre el período de 1996 y 2016, considerando un punto de corte del 1\% para las importaciones. 
 
 
 
@@ -323,20 +306,30 @@ A continuación se presenta la distribución de los nodos según ciertas medidas
 \begin{figure}
 \centering
 \subfigure[Grado, importaciones]{
-    \includegraphics[width=.8\linewidth]{impo_densidad_degree_x_yr}
+    \includegraphics[width=.6\linewidth]{impo_densidad_degree_x_yr}
     \label{fig:distribuciones-a}}
 
 \subfigure[Autovalor, exportaciones]{
-    \includegraphics[width=.8\linewidth]{expo_densidad_autovalor_x_yr}
+    \includegraphics[width=.6\linewidth]{expo_densidad_autovalor_x_yr}
     \label{fig:distribuciones-b}}
 
-\subfigure[Autovalor ponderado, exportaciones]{
-    \includegraphics[width=.8\linewidth]{expo_densidad_USAvsCHN_autovalor_pond_x_yr}
-    \label{fig:distribuciones-c}}
-    
+%\subfigure[Autovalor ponderado, exportaciones]{
+%    \includegraphics[width=.45\linewidth]{expo_densidad_USAvsCHN_autovalor_pond_x_yr}
+%    \label{fig:distribuciones-c}}
+%    
 \caption{Distribución medidas de centralidad según año. umbral 1\%}
 \label{fig:distribuciones}
 \end{figure}
+
+
+
+\begin{figure}
+	\centering		\includegraphics[width=.65\linewidth]{expo_densidad_USAvsCHN_autovalor_pond_x_yr}
+	\caption{Distribución autovalor ponderado, exportaciones según año. umbral 1\%}
+	\label{fig:distribuciones-c}
+\end{figure}
+
+
 
 
 En primer lugar, lo que se observa en la figura \ref{fig:distribuciones} es que la distribución de los nodos de acuerdo a las distintas medidas de centralidad no varía sustancialmente de año en año, ni en su rol como consumidores globales, ni en su rol como productores globales. Por su parte en \ref{fig:distribuciones-a} se observa la distribución de grado de los nodos del grafo de importaciones, donde se ve como los tres países de mayor grado tienden a alejarse del centro de masa de la distribución. Este podio se disputa entre Alemania, Japón, Estados Unidos y, a partir del 2002, China, quien a su vez tiende a alejarse de éstos posteriormente. Por su parte, la figura \ref{fig:distribuciones-b} marca el rol de consumidores globales. Aquí, mientras hasta 2007 Estados Unidos y Gran Bretaña ocupan los lugares principales en la centralidad de autovalor, a partir de este año comienza a tener un rol más destacado Francia, los países bajos, y luego China.      
@@ -367,7 +360,7 @@ Estas medidas refieren a características generales del grafo. También es posib
 La centralidad de autovalor, por su parte, muestra un cambio importante en el rol de los países en la economía mundial. Mientras que Oceanía pasa del segundo al quinto lugar en el período, Asia hace lo opuesto, marcando la incorporación al mercado mundial de este continente como productor de mercancías.  Africa y América, por su parte, si bien siguen un distinto recorrido a lo largo del período, comienzan y terminan el mismo con valores muy similares. Europa mantiene la mayor centralidad promedio a lo largo de todo el período, en las tres métricas. Por último, el recorrido de Asia y Oceanía es similar para la centralidad de grado.
 
 \begin{figure}[h!]
-	\centering		\includegraphics[width=\linewidth]{1950_2000_continent_all}
+	\centering		\includegraphics[width=0.75\linewidth]{1950_2000_continent_all}
 	\caption{Evolución de la centralidad promedio por contiente. Impo. Umbral 1\%}
 	\label{fig:centralidad_LP}
 \end{figure}

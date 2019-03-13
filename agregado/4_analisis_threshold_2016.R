@@ -67,9 +67,6 @@ trade_to_graph <- function(edges, threshold_pct = .01) {
 }
 
 
-
-
-
 ##### Datasets #####
 
   
@@ -326,6 +323,7 @@ for (nano in unique(dataset_all$yr)){
   }
 }
 
+###### punto de corte, publicacion #########
 
 ggplot(clustering_naristas, aes(threshold,coef_clustering, color = yr, group=yr ))+
   geom_line()+
@@ -335,13 +333,13 @@ ggplot(clustering_naristas, aes(threshold,coef_clustering, color = yr, group=yr 
   labs(x= "Punto de corte", "y"= "Coeficiente de clustering")+
   theme_tufte()+
   theme(panel.grid.major.y = element_line(colour = "grey80"),
-        panel.grid.minor.y = element_line(colour = "grey90"))+
-  scale_x_continuous(breaks = c(0.01,seq(0,.25,0.05)),limits = c(0,0.25))+
+        panel.grid.minor.y = element_line(colour = "grey90"),
+        text = element_text(size=25))+
+  scale_x_continuous(breaks = c(0.01,seq(0.01,.25,0.05)),limits = c(0,0.25))+
   scale_color_continuous("Años",low = gdocs_pal()(2)[1],high = gdocs_pal()(2)[2])
   
 
-
-ggsave("graficos/threshold_x_clustering_x_yr.png")
+ggsave("graficos/threshold_x_clustering_x_yr.png",scale = 2)
 
 ggplot(clustering_naristas, aes(threshold,naristas, color = yr, group=yr ))+
   geom_line()+
@@ -351,12 +349,13 @@ ggplot(clustering_naristas, aes(threshold,naristas, color = yr, group=yr ))+
   theme_tufte()+
   labs(x= "Punto de corte", "y"= "Cantidad de aristas")+
   theme(panel.grid.major.y = element_line(colour = "grey80"),
-        panel.grid.minor.y = element_line(colour = "grey90"))+
-  scale_x_continuous(breaks = c(0.01,seq(0,.1,0.05)),limits = c(0,0.1))+
+        panel.grid.minor.y = element_line(colour = "grey90"),
+        text = element_text(size=25))+
+  scale_x_continuous(breaks = c(0.01,0.05, 0.1),limits = c(0,0.1))+
   scale_y_continuous(breaks = c(seq(0,25000,5000)))+
   scale_color_continuous("Años",low = gdocs_pal()(2)[1],high = gdocs_pal()(2)[2])
 
-ggsave("graficos/threshold_x_naristas_x_yr.png")
+ggsave("graficos/threshold_x_naristas_x_yr.png",scale = 2)
 
 ggplot(clustering_naristas, aes(threshold,densidad, color = yr, group=yr ))+
   geom_line()+
@@ -366,16 +365,17 @@ ggplot(clustering_naristas, aes(threshold,densidad, color = yr, group=yr ))+
   theme_tufte()+
   labs(x= "Punto de corte", "y"= "Densidad")+
   theme(panel.grid.major.y = element_line(colour = "grey80"),
-        panel.grid.minor.y = element_line(colour = "grey90"))+
-  scale_x_continuous(breaks = c(0.01,seq(0,.1,0.05)),limits = c(0,0.1))+
+        panel.grid.minor.y = element_line(colour = "grey90"),
+        text = element_text(size=25))+
+  scale_x_continuous(breaks = c(0.01,0.05, 0.1),limits = c(0,0.1))+
   # scale_y_continuous(breaks = c(seq(0,25000,5000)))+
   scale_color_continuous("Años",low = gdocs_pal()(2)[1],high = gdocs_pal()(2)[2])
 
-ggsave("graficos/threshold_x_densidad_x_yr.png",scale = 1,height = 7, width = 10)
+ggsave("graficos/threshold_x_densidad_x_yr.png",scale = 2)
 
 
 
-#### Grafo ####
+###### Grafo ######
 
 ### Punto de corte elegido: 1%
 ### representación grafo 2016
@@ -568,7 +568,9 @@ correlacion_grado_impoexpo <- function(threshold_pct = 0.01,
   r <- round(cor(grafo_impoexpo_DF$grado_impo,grafo_impoexpo_DF$grado_expo),2)
   
   if (pearson_note) {
-    plot_label <- sprintf("\"pearson's\" ~ rho == %0.2f", r)
+    # plot_label <- sprintf("\"pearson's\" ~ rho == %0.2f", r)
+    plot_label = ""
+    print(r)
   }else{
     plot_label = ""
   }
@@ -624,12 +626,12 @@ correlacion_grado_impoexpo <- function(threshold_pct = 0.01,
 
 
 
-for (pcnt in seq(0.05,.25,0.05)) {
+for (pcnt in c(0.01,seq(0.05,.25,0.05))) {
   print(pcnt)
   correlacion_grado_impoexpo(threshold_pct = pcnt,
                              data_expo = dataset_expo, 
                              data_impo = dataset2, save = T,
-                             pearson_note = FALSE,
+                             pearson_note = T,
                              label = FALSE)
 }
 
