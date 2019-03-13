@@ -270,6 +270,8 @@ ggplot(distribuciones_impo %>%
 ggsave("graficos/impo_densidad_betweenness_x_yr.png")
 
 
+##### publicacion #####
+
 ggplot(distribuciones_impo , aes(degree, y = factor(yr)))+
   geom_density_ridges(stat = "binline")+
   geom_density_ridges(alpha = 0.2)+
@@ -278,14 +280,15 @@ ggplot(distribuciones_impo , aes(degree, y = factor(yr)))+
                     top_n(degree, n = 3),
                   aes(label = cod, color = cod), nudge_y = 0.5)+
   theme_tufte()+
-  theme(legend.position = "none")+
+  theme(legend.position = "none",
+        text = element_text(size=25))+
   scale_fill_gdocs() +
   scale_color_gdocs() +
-  labs(y = "Año")#,
+  labs(y = "Año", x = 'Grado')#,
        # title= 'Distribución de grado de los nodos',
        # subtitle = "Importaciones, threshold 1%, según año")
 
-ggsave("graficos/impo_densidad_degree_x_yr.png")
+ggsave("graficos/impo_densidad_degree_x_yr.png", scale= 2)
 
 
 ggplot(distribuciones_impo , aes(autovalor, y = factor(yr)))+
@@ -296,15 +299,16 @@ ggplot(distribuciones_impo , aes(autovalor, y = factor(yr)))+
                     top_n(autovalor, n = 3), 
                   aes(label = cod, color = cod), nudge_y = 0.5)+
   theme_tufte()+
-  theme(legend.position = "none")+
+  theme(legend.position = "none",
+        text = element_text(size=25))+
   scale_fill_gdocs() +
   scale_color_gdocs() +
-  labs(y = "Año")#,
+  labs(y = "Año", x='Autovalor')#,
        # title= 'Distribución de autovalor de los nodos',
        # subtitle = "Importaciones, threshold 1%, según año")
 
 
-ggsave("graficos/impo_densidad_autovalor_x_yr.png")
+ggsave("graficos/impo_densidad_autovalor_x_yr.png", scale = 2)
 
 ggplot(distribuciones_impo , aes(autovalor_pond, y = factor(yr)))+
   geom_density_ridges(stat = "binline")+
@@ -313,14 +317,15 @@ ggplot(distribuciones_impo , aes(autovalor_pond, y = factor(yr)))+
                     top_n(autovalor_pond, n = 5),
                   aes(label = cod, color = cod), nudge_y = 0.5)+
   theme_tufte()+
-  theme(legend.position = "none")+
+  theme(legend.position = "none",
+        text = element_text(size=25))+
   scale_fill_gdocs() +
   scale_colour_gdocs() +
-  labs(y = "Año")#,
+  labs(y = "Año", x = 'Autovalor ponderado')#,
        # title= 'Distribución de autovalor de los nodos en grafo ponderado',
        # subtitle = "Importaciones, threshold 1%, según año")
 
-ggsave("graficos/impo_densidad_autovalor_pond_x_yr.png")
+ggsave("graficos/impo_densidad_autovalor_pond_x_yr.png", scale=2)
 
 # USA vs CHINA
 ggplot(distribuciones_impo , aes(autovalor_pond, y = factor(yr)))+
@@ -439,6 +444,10 @@ ggplot(distribuciones_expo , aes(degree, y = factor(yr)))+
 
 ggsave("graficos/expo_densidad_degree_x_yr.png")
 
+
+##### publicacion
+
+
 ggplot(distribuciones_expo , aes(autovalor, y = factor(yr)))+
   geom_density_ridges(stat = "binline")+
   geom_density_ridges(alpha = 0.2)+
@@ -447,14 +456,15 @@ ggplot(distribuciones_expo , aes(autovalor, y = factor(yr)))+
                     top_n(autovalor, n = 3),
                   aes(label = cod, color = cod), nudge_y = 0.5)+
   theme_tufte()+
-  theme(legend.position = "none")+
+  theme(legend.position = "none",
+        text = element_text(size=25))+
   scale_fill_gdocs() +
   scale_color_gdocs() +
-  labs(y = "Año")#,
+  labs(y = "Año", x = 'Autovalor')#,
        # title= 'Distribución de autovalor de los nodos',
        # subtitle = "Exportaciones, threshold 1%, según año")
 
-ggsave("graficos/expo_densidad_autovalor_x_yr.png")
+ggsave("graficos/expo_densidad_autovalor_x_yr.png", scale = 2)
 
 ggplot(distribuciones_expo , aes(autovalor_pond, y = factor(yr)))+
   geom_density_ridges(stat = "binline")+
@@ -463,14 +473,15 @@ ggplot(distribuciones_expo , aes(autovalor_pond, y = factor(yr)))+
                     top_n(autovalor_pond, n = 5),
                   aes(label = cod, color = cod), nudge_y = 0.5)+
   theme_tufte()+
-  theme(legend.position = "none")+
+  theme(legend.position = "none",
+        text = element_text(size=25))+
   scale_fill_gdocs() +
   scale_color_gdocs() +
-  labs(y = "Año")#,
+  labs(y = "Año", x = 'Autovalor ponderado')#,
        # title= 'Distribución de autovalor de los nodos en grafo ponderado',
        # subtitle = "Exportaciones, threshold 1%, según año")
 
-ggsave("graficos/expo_densidad_autovalor_pond_x_yr.png")
+ggsave("graficos/expo_densidad_autovalor_pond_x_yr.png",scale=2)
 
 # USA vs CHINA
 ggplot(distribuciones_expo , aes(autovalor_pond, y = factor(yr)))+
@@ -481,14 +492,15 @@ ggplot(distribuciones_expo , aes(autovalor_pond, y = factor(yr)))+
                   aes(label = cod, color =cod),
                   nudge_y = 0.5, fontface = "bold")+
   theme_tufte()+
-  theme(legend.position = "none")+
+  theme(legend.position = "none",
+        text = element_text(size=25))+
   scale_fill_gdocs() +
   scale_color_gdocs() +
-  labs(y = "Año")#,
+  labs(y = "Año", x = 'Autovalor ponderado')#,
        # title= 'Distribución de autovalor de los nodos en grafo ponderado',
        # subtitle = "Exportaciones, threshold 1%, según año. Detalle China y Estados Unidos")
 
-ggsave("graficos/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png")
+ggsave("graficos/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png",scale = 2)
 
 ggplot(distribuciones_expo , aes(autovalor, y = factor(yr)))+
   geom_density_ridges(stat = "binline")+

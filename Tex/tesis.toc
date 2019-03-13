@@ -14,17 +14,17 @@
 \contentsline {subsection}{\numberline {2.3.5}Determinaci\IeC {\'o}n del punto de corte}{8}
 \contentsline {section}{\numberline {2.4}Resultados}{10}
 \contentsline {subsection}{\numberline {2.4.1}Correlaci\IeC {\'o}n entre la representaci\IeC {\'o}n de las exportaciones y las importaciones}{10}
-\contentsline {subsection}{\numberline {2.4.2}Evoluci\IeC {\'o}n de mediano y largo plazo del comercio internacional}{14}
-\contentsline {subsubsection}{An\IeC {\'a}lisis mediano plazo}{14}
-\contentsline {subsubsection}{An\IeC {\'a}lisis de largo plazo}{15}
-\contentsline {section}{\numberline {2.5}Conclusiones}{19}
-\contentsline {chapter}{\numberline {3.}Comercio a nivel producto}{21}
-\contentsline {section}{\numberline {3.1}introducci\IeC {\'o}n}{21}
-\contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis exploratorio de datos}{21}
-\contentsline {section}{\numberline {3.3}Metodolog\IeC {\'\i }a}{21}
-\contentsline {subsection}{\numberline {3.3.1}Reducci\IeC {\'o}n de dimensionalidad mediante Latent Dirichlet Allocation Models}{21}
-\contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{21}
-\contentsline {section}{\numberline {3.4}Resultados}{21}
-\contentsline {subsection}{\numberline {3.4.1}Reducci\IeC {\'o}n de dimensionalidad mediante Latent Dirichlet Allocation Models}{21}
-\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{21}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{22}
+\contentsline {subsection}{\numberline {2.4.2}Evoluci\IeC {\'o}n de mediano y largo plazo del comercio internacional}{13}
+\contentsline {subsubsection}{An\IeC {\'a}lisis mediano plazo}{13}
+\contentsline {subsubsection}{An\IeC {\'a}lisis de largo plazo}{17}
+\contentsline {section}{\numberline {2.5}Conclusiones}{20}
+\contentsline {chapter}{\numberline {3.}Comercio a nivel producto}{22}
+\contentsline {section}{\numberline {3.1}introducci\IeC {\'o}n}{22}
+\contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis exploratorio de datos}{22}
+\contentsline {section}{\numberline {3.3}Metodolog\IeC {\'\i }a}{22}
+\contentsline {subsection}{\numberline {3.3.1}Reducci\IeC {\'o}n de dimensionalidad mediante Latent Dirichlet Allocation Models}{22}
+\contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{22}
+\contentsline {section}{\numberline {3.4}Resultados}{22}
+\contentsline {subsection}{\numberline {3.4.1}Reducci\IeC {\'o}n de dimensionalidad mediante Latent Dirichlet Allocation Models}{22}
+\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{22}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{23}
