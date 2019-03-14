@@ -337,7 +337,7 @@ ggplot(distribuciones_impo , aes(autovalor, y = factor(yr)))+
   scale_fill_gdocs() +
   scale_x_continuous(limits = c(0,1))+
   scale_color_gdocs() +
-  labs(y = "Año", x = "autovalor")
+  labs(y = "Año", x = "Autovalor")
 
 ggsave("graficos/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png",scale = 2)
 

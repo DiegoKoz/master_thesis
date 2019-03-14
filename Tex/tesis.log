@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.1.24)  13 MAR 2019 20:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.1.24)  14 MAR 2019 19:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -322,6 +322,50 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip59
+\cftbeforetoctitleskip=\skip60
+\cftaftertoctitleskip=\skip61
+\cftbeforepartskip=\skip62
+\cftpartnumwidth=\skip63
+\cftpartindent=\skip64
+\cftbeforechapskip=\skip65
+\cftchapindent=\skip66
+\cftchapnumwidth=\skip67
+\cftbeforesecskip=\skip68
+\cftsecindent=\skip69
+\cftsecnumwidth=\skip70
+\cftbeforesubsecskip=\skip71
+\cftsubsecindent=\skip72
+\cftsubsecnumwidth=\skip73
+\cftbeforesubsubsecskip=\skip74
+\cftsubsubsecindent=\skip75
+\cftsubsubsecnumwidth=\skip76
+\cftbeforeparaskip=\skip77
+\cftparaindent=\skip78
+\cftparanumwidth=\skip79
+\cftbeforesubparaskip=\skip80
+\cftsubparaindent=\skip81
+\cftsubparanumwidth=\skip82
+\cftbeforeloftitleskip=\skip83
+\cftafterloftitleskip=\skip84
+\cftbeforefigskip=\skip85
+\cftfigindent=\skip86
+\cftfignumwidth=\skip87
+\cftbeforelottitleskip=\skip88
+\cftafterlottitleskip=\skip89
+\cftbeforetabskip=\skip90
+\cfttabindent=\skip91
+\cfttabnumwidth=\skip92
+\cftbeforesubfigskip=\skip93
+\cftsubfigindent=\skip94
+\cftsubfignumwidth=\skip95
+\cftbeforesubtabskip=\skip96
+\cftsubtabindent=\skip97
+\cftsubtabnumwidth=\skip98
+)
 (/usr/share/texlive/texmf-dist/tex/latex/xargs/xargs.sty
 Package: xargs 2008/03/22 v1.1  extended macro definitions  (mpg)
 \xargs@max=\count121
@@ -626,20 +670,20 @@ Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count142
 \calc@Adimen=\dimen185
 \calc@Bdimen=\dimen186
-\calc@Askip=\skip59
-\calc@Bskip=\skip60
+\calc@Askip=\skip99
+\calc@Bskip=\skip100
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count143
-\calc@Cskip=\skip61
+\calc@Cskip=\skip101
 )
 \c@@todonotes@numberoftodonotes=\count144
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box42
-\beforetitleunit=\skip62
-\aftertitleunit=\skip63
+\beforetitleunit=\skip102
+\aftertitleunit=\skip103
 \ttl@plus=\dimen187
 \ttl@minus=\dimen188
 \ttl@toksa=\toks40
@@ -656,18 +700,18 @@ LaTeX Info: Redefining \% on input line 10.
 )
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 (./tesis.sta
 LaTeX Info: Redefining \. on input line 3.
@@ -719,8 +763,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
+LaTeX Info: Redefining \. on input line 68.
+LaTeX Info: Redefining \% on input line 68.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -756,14 +800,14 @@ LaTeX Info: Redefining \% on input line 65.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \celsius on input line 65.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 65.
+LaTeX Info: Redefining \celsius on input line 68.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 68.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 65.
-Package gensymb Info: Using \Omega for \ohm on input line 65.
+LaTeX Info: Redefining \ohm on input line 68.
+Package gensymb Info: Using \Omega for \ohm on input line 68.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -772,7 +816,7 @@ ABD: EveryShipout initializing macros
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 65.
+loading the todonotes package. on input line 68.
 
 (./frontmatter/caratula.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 9.
@@ -836,7 +880,6 @@ LaTeX Info: Redefining \% on input line 3.
 
  [4
 
-
 ]
 Cap\'{\i }tulo 1.
 (./chapters/chapter_1/chapter1.tex) [1
@@ -845,13 +888,13 @@ Cap\'{\i }tulo 1.
 ]
 Cap\'{\i }tulo 2.
 (./chapters/chapter_2/chapter2.tex
-<images/2016_freq_interacciones_3.png, id=35, 447.8331pt x 337.26pt>
+<images/2016_freq_interacciones_3.png, id=34, 447.8331pt x 337.26pt>
 File: images/2016_freq_interacciones_3.png Graphic file (type png)
 <use images/2016_freq_interacciones_3.png>
 Package pdftex.def Info: images/2016_freq_interacciones_3.png  used on input li
 ne 50.
 (pdftex.def)             Requested size: 426.79135pt x 321.42441pt.
-<images/2016_freq_interacciones_0.png, id=36, 447.8331pt x 337.26pt>
+<images/2016_freq_interacciones_0.png, id=35, 447.8331pt x 337.26pt>
 File: images/2016_freq_interacciones_0.png Graphic file (type png)
 <use images/2016_freq_interacciones_0.png>
 Package pdftex.def Info: images/2016_freq_interacciones_0.png  used on input li
@@ -904,7 +947,7 @@ File: images/grafo_2016_15_pcnt.png Graphic file (type png)
 Package pdftex.def Info: images/grafo_2016_15_pcnt.png  used on input line 198.
 
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_20_pcnt.png, id=69, 963.6pt x 963.6pt>
+<images/grafo_2016_20_pcnt.png, id=69, 481.8pt x 481.8pt>
 File: images/grafo_2016_20_pcnt.png Graphic file (type png)
 <use images/grafo_2016_20_pcnt.png>
 Package pdftex.def Info: images/grafo_2016_20_pcnt.png  used on input line 199.
@@ -1070,7 +1113,7 @@ ng)
 <use images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png>
 Package pdftex.def Info: images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png  
 used on input line 376.
-(pdftex.def)             Requested size: 204.85802pt x 222.39159pt.
+(pdftex.def)             Requested size: 298.75264pt x 324.33394pt.
 <images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png, id=124, 582.4962pt x 
 632.3625pt>
 File: images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png Graphic file (typ
@@ -1078,42 +1121,59 @@ e png)
 <use images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png>
 Package pdftex.def Info: images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.pn
 g  used on input line 377.
-(pdftex.def)             Requested size: 204.85802pt x 222.39159pt.
-LaTeX Info: Redefining \. on input line 386.
-LaTeX Info: Redefining \% on input line 386.
- [19 <./images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png (PNG copy)> <./ima
-ges/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png (PNG copy)>]
-<images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png, id=129, 582.4962pt
+(pdftex.def)             Requested size: 298.75264pt x 324.33394pt.
+
+
+LaTeX Warning: Float too large for page by 65.93477pt on input line 380.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png, id=125, 582.4962pt
  x 632.3625pt>
 File: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png Graphic file (
 type png)
 <use images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png>
 Package pdftex.def Info: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr
 .png  used on input line 389.
-(pdftex.def)             Requested size: 204.85802pt x 222.39159pt.
-<images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png, id=130, 582.4962pt x 632
+(pdftex.def)             Requested size: 298.75264pt x 324.33394pt.
+<images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png, id=126, 582.4962pt x 632
 .3625pt>
 File: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png Graphic file (type p
 ng)
 <use images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png>
 Package pdftex.def Info: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png  
 used on input line 390.
-(pdftex.def)             Requested size: 204.85802pt x 222.39159pt.
-LaTeX Info: Redefining \. on input line 405.
-LaTeX Info: Redefining \% on input line 405.
- [20 <./images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png (PNG copy)> 
-<./images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png (PNG copy)>])
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
- [21]
+(pdftex.def)             Requested size: 298.75264pt x 324.33394pt.
+
+LaTeX Warning: Float too large for page by 65.93477pt on input line 393.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 403.
+LaTeX Info: Redefining \% on input line 403.
+[19])
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
+ [20]
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
+ [21 <./images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png (PNG copy)> <./ima
+ges/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
+
+[22 <./images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png (PNG copy)> <
+./images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png (PNG copy)>]
 Cap\'{\i }tulo 3.
-[22
+[23
 
 ]
 Cap\'{\i }tulo 4.
-[23
+[24
 
-] (./tesis.bbl) [24
+] (./tesis.bbl) [25
 
 
 ] (./tesis.aux
@@ -1125,11 +1185,11 @@ LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 17184 strings out of 494517
- 322310 string characters out of 6175533
- 397177 words of memory out of 5000000
- 20376 multiletter control sequences out of 15000+600000
- 17774 words of font info for 62 fonts, out of 8000000 for 9000
+ 17441 strings out of 494517
+ 326192 string characters out of 6175533
+ 401844 words of memory out of 5000000
+ 20629 multiletter control sequences out of 15000+600000
+ 18380 words of font info for 64 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  75i,10n,88p,2418b,972s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texli
@@ -1152,10 +1212,10 @@ blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
 vbo8a.pfb>
-Output written on tesis.pdf (29 pages, 8103381 bytes).
+Output written on tesis.pdf (30 pages, 8044221 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
+ 215 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  148 words of extra memory for PDF output out of 10000 (max. 10000000)
 
