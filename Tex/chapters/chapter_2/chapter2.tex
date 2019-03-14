@@ -157,7 +157,7 @@ Por último, también se considera la correlación de grado entre las aristas. E
 
 \subsection{Software utilizado}
 
-Para el presente trabajo se utilizó el lenguaje de programación estadística \texttt{\textbf{R}}\cite{RCoreTeam2017}, junto con sendas extensiones del mismo. Aquellas que resulta importante mencionar son \texttt{igraph}\cite{Csardi2006} para la construcción de los grafos y las medidas de resumen de los mismos; \texttt{tidyverse}\cite{Wickham2017} para la manipulación de la información y elaboración de los gráficos. Para esto último, también se hizo uso de  \cite{Wilke2017,Arnold2017,Neuwirth2014,Slowikowski2017,Vu2011}, como complementos de \texttt{ggplot}. Por su parte, los códigos de los países provienen de \cite{Arel-Bundock2017}.
+Para el presente trabajo se utilizó el lenguaje de programación estadística \texttt{\textbf{R}}\citep{RCoreTeam2017}, junto con sendas extensiones del mismo. Aquellas que resulta importante mencionar son \texttt{igraph}\citep{Csardi2006} para la construcción de los grafos y las medidas de resumen de los mismos; \texttt{tidyverse}\citep{Wickham2017} para la manipulación de la información y elaboración de los gráficos. Para esto último, también se hizo uso de  \citep{Wilke2017,Arnold2017,Neuwirth2014,Slowikowski2017,Vu2011}, como complementos de \texttt{ggplot}. Por su parte, los códigos de los países provienen de \citep{Arel-Bundock2017}.
 
 \subsection{El comercio internacional como una red compleja}
 
@@ -293,7 +293,7 @@ En la figura \ref{fig:caracteristicas_yr} se presentan los valores de algunas me
 \end{figure}
 
 
-Como se puede observar, las características topológicas del grafo varían fuertemente en el período 2007-2009, durante la gran recesión económica, que se caracterizó por un aumento en el proteccionismo económico de ciertos países centrales, reflejado en el “Buy American”\footnote{http://edition.cnn.com/2009/POLITICS/02/05/senate.buy.american/index.html} o “Buy China” \footnote{https://economix.blogs.nytimes.com/2009/06/29/buy-china/}. 
+Como se puede observar, las características topológicas del grafo varían fuertemente en el período 2007-2009, durante la gran recesión económica, que se caracterizó por un aumento en el proteccionismo económico de ciertos países centrales, reflejado en el “Buy American”\footnote{http://edition.cnn.com/2009/POLITICS/02/05/senate.buy.american/index.html} o “Buy China”\footnote{https://economix.blogs.nytimes.com/2009/06/29/buy-china/}. 
 
 La figura \ref{fig:caracteristicas_yr-a} muestra la caída de la correlación de grado en el año 2007, que implica una transición circunstancial hacia una economía menos selectiva. Es decir, un comercio internacional donde aumentan las relaciones de nodos de mayor grado con nodos de menor grado, respecto de las relaciones entre nodos de similar magnitud.
 
@@ -373,9 +373,9 @@ En \ref{fig:paises_LP-b} se observa el autovalor ponderado por el volumen comerc
 
 \begin{figure}[h!]
 	\centering
-	\subfigure[Grado]{\label{fig:paises_LP-a}\includegraphics[width=0.48\linewidth]{1950_2000_impo_densidad_ARG_BRA_MEX_grado}}
-	\subfigure[Autovalor Ponderado]{\label{fig:paises_LP-b}\includegraphics[width=0.48\linewidth]{1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd}}
-	\caption{Argentina, Brasil y México. Impo. Umbral 1\%}
+	\subfigure[Grado]{\label{fig:paises_LP-a}\includegraphics[width=0.7\linewidth]{1950_2000_impo_densidad_ARG_BRA_MEX_grado}}
+	\subfigure[Autovalor Ponderado]{\label{fig:paises_LP-b}\includegraphics[width=0.7\linewidth]{1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd}}
+	\caption{Argentina, Brasil y México. Importaciones. Umbral 1\%}
 	\label{fig:paises_LP}
 \end{figure}
 
@@ -386,9 +386,9 @@ Por su parte, en la figura \ref{fig:paises_ASI_LP-b} se observa la evolución de
 
 \begin{figure}[h!]
 	\centering
-	\subfigure[China y Estados Unidos]{\label{fig:paises_ASI_LP-a}\includegraphics[width=0.48\linewidth]{1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr}}
-	\subfigure[Japón,Corea y China]{\label{fig:paises_ASI_LP-b}\includegraphics[width=0.48\linewidth]{1950_2000_impo_densidad_CHN_JPN_ROK_atvlr}}
-	\caption{Autovalor. Impo. Umbral 1\%}
+	\subfigure[China y Estados Unidos]{\label{fig:paises_ASI_LP-a}\includegraphics[width=0.7\linewidth]{1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr}}
+	\subfigure[Japón,Corea y China]{\label{fig:paises_ASI_LP-b}\includegraphics[width=0.7\linewidth]{1950_2000_impo_densidad_CHN_JPN_ROK_atvlr}}
+	\caption{Autovalor. Importaciones. Umbral 1\%}
 	\label{fig:paises_ASI_LP}
 \end{figure}
 

@@ -126,7 +126,7 @@ ggplot(dataset2 %>%
        y= "" )
 ggsave("graficos/2016_freq_interacciones_1.png")
 
-
+################## trade_to_plot #############
 trade_to_plot <- function(edges, title = "Frecuencia de interacciones", 
                           subtitle= "Importaciones 2016, según porcentaje de importaciones que representan del país importador",
                           threshold = 0.55) {
@@ -497,7 +497,7 @@ grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2,
 
 
 grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T, label = TRUE)
-grafico_grafo(datos = dataset2,threshold_pct = 0.2, save = T, label = TRUE)
+grafico_grafo(datos = dataset2,threshold_pct = 0.2, save = T, label = FALSE)
 
 
 grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T, 
