@@ -4,48 +4,50 @@ The top-level auxiliary file: tesis.aux
 The style file: apalike.bst
 Database file #1: backmatter/bibliografia.bib
 Warning--empty journal in Chow2013
+Warning--there's a number but no series in united2006standard
 Warning--empty note in Fagiolo2007
+Warning--empty journal in molinari2016especializacion
 Warning--can't use both author and editor fields in ricardo1987principios
 Warning--empty institution in WTO2017
-You've used 19 entries,
+You've used 23 entries,
             1935 wiz_defined-function locations,
-            579 strings with 5940 characters,
-and the built_in function-call counts, 5714 in all, are:
-= -- 566
-> -- 204
-< -- 16
-+ -- 64
-- -- 64
-* -- 431
-:= -- 1072
-add.period$ -- 47
-call.type$ -- 19
-change.case$ -- 126
-chr.to.int$ -- 19
-cite$ -- 23
-duplicate$ -- 226
-empty$ -- 379
-format.name$ -- 87
-if$ -- 1070
+            602 strings with 6679 characters,
+and the built_in function-call counts, 7095 in all, are:
+= -- 701
+> -- 255
+< -- 20
++ -- 80
+- -- 80
+* -- 546
+:= -- 1319
+add.period$ -- 59
+call.type$ -- 23
+change.case$ -- 153
+chr.to.int$ -- 23
+cite$ -- 29
+duplicate$ -- 281
+empty$ -- 477
+format.name$ -- 111
+if$ -- 1337
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 88
-num.names$ -- 57
-pop$ -- 97
+missing$ -- 15
+newline$ -- 107
+num.names$ -- 69
+pop$ -- 121
 preamble$ -- 1
-purify$ -- 127
+purify$ -- 155
 quote$ -- 0
-skip$ -- 189
+skip$ -- 230
 stack$ -- 0
-substring$ -- 338
-swap$ -- 13
-text.length$ -- 1
+substring$ -- 420
+swap$ -- 17
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
-warning$ -- 4
-while$ -- 49
+type$ -- 132
+warning$ -- 6
+while$ -- 60
 width$ -- 0
-write$ -- 216
-(There were 4 warnings)
+write$ -- 265
+(There were 6 warnings)

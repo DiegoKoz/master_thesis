@@ -16,6 +16,11 @@ Bhattacharya, K., Mukherjee, G., Saram{\"{a}}ki, J., Kaski, K., and Manna,
 \newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
   2008(2).
 
+\bibitem[Blei et~al., 2003]{blei2003latent}
+Blei, D.~M., Ng, A.~Y., and Jordan, M.~I. (2003).
+\newblock {Latent dirichlet allocation}.
+\newblock {\em Journal of machine Learning research}, 3(Jan):993--1022.
+
 \bibitem[Chow, 2013]{Chow2013}
 Chow, W. (2013).
 \newblock {An Anatomy of the World Trade Network}.
@@ -29,6 +34,11 @@ Csardi, G. and Nepusz, T. (2006).
 Das, D.~K. (2004).
 \newblock {\em {Regionalism in global trade}}.
 \newblock Edward Elgar Publishing.
+
+\bibitem[Division and Office, 2006]{united2006standard}
+Division, U. N.~S. and Office, U. N.~S. (2006).
+\newblock {\em {Standard International Trade Classification Revision 4}}.
+\newblock Number~34. United Nations Publications.
 
 \bibitem[Fagiolo et~al., 2007]{Fagiolo2007}
 Fagiolo, G., Reyes, J., and Schiavo, S. (2007).
@@ -55,6 +65,11 @@ Head, K. and Mayer, T. (2014).
 \newblock {Gravity Equations: Workhorse,Toolkit, and Cookbook}.
 \newblock {\em Handbook of International Economics}, 4:131--195.
 
+\bibitem[Molinari and de~Angelis, 2016]{molinari2016especializacion}
+Molinari, A. and de~Angelis, J.~Y. (2016).
+\newblock {Especializaci{\'{o}}n y complementaci{\'{o}}n productiva en el
+  MERCOSUR: un Enfoque de Cadenas Productivas de Valor}.
+
 \bibitem[Neuwirth, 2014]{Neuwirth2014}
 Neuwirth, E. (2014).
 \newblock {RColorBrewer: ColorBrewer Palettes}.
@@ -76,6 +91,12 @@ Slowikowski, K. (2017).
 \bibitem[Vu, 2011]{Vu2011}
 Vu, V.~Q. (2011).
 \newblock {ggbiplot: A ggplot2 based biplot}.
+
+\bibitem[Weerth, 2008]{weerth2008basic}
+Weerth, C. (2008).
+\newblock {Basic Principles of Customs Classifications under the Harmonized
+  System}.
+\newblock {\em Global Trade {\&} Cust. J.}, 3:61.
 
 \bibitem[Wickham, 2017]{Wickham2017}
 Wickham, H. (2017).
