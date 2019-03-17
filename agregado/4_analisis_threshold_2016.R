@@ -92,20 +92,23 @@ ggplot(dataset2 %>%
                                   label = paste0(rt3ISO,"-",pt3ISO)))+
   geom_dotplot(binwidth = 2000000000)+
   geom_text_repel(data =dataset2 %>% 
-                    filter(TradeValue>150000000000), aes(y= 0.1))+
+                    filter(TradeValue>150000000000), aes(y= 0.1),
+                  size = 9)+
   geom_rug()+
   theme_tufte()+
   theme(axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
-        legend.position = "top")+
+        legend.position = "top",
+        text = element_text(size=20))+
   scale_fill_gdocs()+
+  scale_x_continuous(labels = function(x)x/1000000000)+
   scale_color_gdocs()+
   labs(#title = "Frecuencia de las interacciones",
        #subtitle = "Importaciones 2016, según su valor comercial",
-       x = "valor comercial",
+       x = "valor comercial, miles de millones",
        y= "" )
 
-ggsave("graficos/2016_freq_interacciones_0.png")
+ggsave("graficos/2016_freq_interacciones_0.png", scale = 2)
 
 
 ggplot(dataset2 %>%
@@ -124,9 +127,12 @@ ggplot(dataset2 %>%
        #subtitle = "Importaciones 2016, según su valor comercial",
        x = "valor comercial",
        y= "" )
+
+
 ggsave("graficos/2016_freq_interacciones_1.png")
 
 ################## trade_to_plot #############
+
 trade_to_plot <- function(edges, title = "Frecuencia de interacciones", 
                           subtitle= "Importaciones 2016, según porcentaje de importaciones que representan del país importador",
                           threshold = 0.55) {
@@ -140,23 +146,25 @@ trade_to_plot <- function(edges, title = "Frecuencia de interacciones",
                     label = paste0(rtTitle,"-",ptTitle)))+
     geom_dotplot(binwidth = 0.005)+
     geom_text_repel(data =edges %>% 
-                      filter(pcnt>threshold), aes(y= 0.01), parse = FALSE,nudge_y = 0.25)+
+                      filter(pcnt>threshold), aes(y= 0.01), parse = FALSE,nudge_y = 0.25,
+                    size=10)+
     geom_rug()+
     theme_tufte()+
     theme(axis.text.y = element_blank(),
           axis.ticks.y = element_blank(),
-          legend.position = "none")+
+          legend.position = "none",
+          text = element_text(size=25))+
+    scale_x_continuous(labels = scales::percent_format(accuracy = 1))+
     scale_color_gdocs()+
     scale_fill_gdocs()+
     labs(title = title, subtitle =  subtitle,  x = "porcentaje", y = "")
   
   g
-  return(g)
-  
+
 }
 
-trade_to_plot(dataset2, title = "", subtitle = "",threshold = 0.6)
-ggsave("graficos/2016_freq_interacciones_3.png")
+trade_to_plot(edges = dataset2, title = "", subtitle = "",threshold = 0.65)
+ggsave("graficos/2016_freq_interacciones_3.png", scale = 2)
 
 
 

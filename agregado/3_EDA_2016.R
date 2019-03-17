@@ -10,8 +10,7 @@ dataset <- readRDS('dataset/dataset_COMTRADE_2016.rds')
 dataset <- dataset %>% select(pt3ISO,rt3ISO,TradeValue, ptTitle)
 
 
-dataset2 <- left_join(dataset,countrycode_data 
-                                %>% select(pt3ISO=iso3c, continent))
+dataset2 <- left_join(dataset,codelist %>% select(pt3ISO=iso3c, continent))
 
 
 

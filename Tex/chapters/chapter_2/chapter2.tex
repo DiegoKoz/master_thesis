@@ -29,12 +29,11 @@
 
 \section{Introducción}
 
-\pendiente{introducción, comercio agregado}
+En la presente sección se buscará captar los rasgos generales de la estructura del comercio internacional, con independencia de los productos específicos que los países comercian. Si bien el rol que ocupan los países en la Nueva División Internacional del Trabajo determina a la vez qué tipo de mercancías concentran su producción para el mercado mundial y la importancia que tienen los mismos en dicha red \citep{frobel1978new}, esto no quita el valor de analizar la centralidad de los países, con independencia de las ramas en que cada país concentra sus exportaciones e importaciones. Naturalmente, los resultados de dicho análisis son representan una caracterización que puede resultar útil como complemento para estudios que indaguen respecto de las causas de dicha distribución.
 
-En la literatura reciente se realizaron diversos enfoques desde esta perspectiva, ya sea desde una mirada desde la teoría de la información \cite{Bhattacharya2008},  como una herramienta de modelización de los fenómenos económicos \cite{Fan2014}, para analizar las relaciones de centro-periferia \cite{Fagiolo2010}, o bien para realizar una descripción del estado del comercio internacional \cite{Chow2013}. Sin embargo, dada la amplitud de los temas a abordar, tanto desde la perspectiva económica, como desde la teoría de grafos, se presenta como un campo abierto para la investigación, con sendas aristas aún por recorrer.        
+En la literatura reciente se realizaron diversos enfoques desde esta perspectiva, ya sea desde una mirada de la teoría de la información \cite{Bhattacharya2008},  como una herramienta de modelización de los fenómenos económicos \cite{Fan2014}, para analizar las relaciones de centro-periferia \cite{Fagiolo2010}, o bien para realizar una descripción del estado del comercio internacional \cite{Chow2013}. Sin embargo, dada la amplitud de los temas a abordar, tanto desde la perspectiva económica, como desde la teoría de grafos, se presenta como un campo abierto para la investigación, con sendas aristas aún por recorrer.        
 
-Lo que resta del trabajo se divide de la siguiente manera: la sección siguiente describe las fuentes de información utilizadas y realiza un pequeño resumen de los elementos de la teoría de grafos utilizados en el presente trabajo, así como las particularidades que surgen al aplicar esta teoría al comercio internacional. Por su parte la sección tercera se enfoca en el grafo que surge de un año en particular, mientras que la cuarta incorpora la dimensión temporal del período 1997-2011 y analiza los cambios recientes de la economía mundial. La sección quinta se extiende una serie de largo aliento, 1948-2000, para realizar un análisis de los cambios estructurales de la economía con la Nueva División Internacional del Trabajo.
-En la sexta y última, se plantean algunas conclusiones y futuras lineas de investigación. \pendiente{modificar}
+El capítulo se estructura de la siguiente manera: En la sección siguiente se realiza un análisis exploratorio de datos, mientras que la sección tercera describe las fuentes de información utilizadas y realiza un pequeño resumen de los elementos de la teoría de grafos utilizados, así como las particularidades que surgen al aplicar esta marco metodológico al comercio internacional. La sección cuarta presenta los resultados, con detalle en el año 2016, así como también un análisis de mediano y largo plazo de la evolución de la red. Finalmente, se presentan las conclusiones específicas a este capítulo.
 
 
 \section{Análisis Exploratorio de Datos}
@@ -42,13 +41,16 @@ En la sexta y última, se plantean algunas conclusiones y futuras lineas de inve
 
 \subsection{Representación del comercio internacional del año 2011 en un grafo dirigido}
 
-En primer lugar, analizamos la frecuencia de las interacciones entre países en función de su valor comercial y la proporción del comercio que representan para el país importador. Ambas distribuciones tienen una asimetría a derecha, similar a una chi-cuadrado. En la figura \ref{fig:Interacciones-1} se puede observar que si bien la gran mayoría de las relaciones bilaterales de comercio representan una baja proporción de las importaciones de un determinado país, existen ciertas relaciones comerciales que se podrían caracterizar como de alta dependencia para el país importador. En particular, Estados Unidos y Sudáfrica venden mercancías a países como las Bahamas, Namibia, etc. que representan más de un 75\% del total de las mercancías que reciben estos países del resto del mundo, por lo que dicha relación comercial es para estos países decisiva para poder consumir ciertos productos. Sin embargo, dichas relaciones comerciales no son necesariamente importantes para Estados Unidos o Sudáfrica, estableciendo una relación asimétrica entre estos pares de países.
+En primer lugar, en la figura \ref{fig:Interacciones}, analizamos la frecuencia de las interacciones entre países en función de su valor comercial y la proporción del comercio que representan para el país importador. Ambas distribuciones tienen una asimetría a derecha, que asemeja una distribución de chi-cuadrado. En la figura \ref{fig:Interacciones-1} se puede observar que si bien la gran mayoría de las relaciones bilaterales de comercio representan una baja proporción de las importaciones de un determinado país, existen ciertas relaciones comerciales que se podrían caracterizar como de alta dependencia para el país importador. 
+\todo{MODIFICAR lo de abajo}
+
+En particular, Estados Unidos, Sudáfrica  e India venden mercancías a países como las Bahamas, Namibia, etc. que representan más de un 75\% del total de las mercancías que reciben estos países del resto del mundo, por lo que dicha relación comercial es para estos países decisiva para poder consumir ciertos productos. Sin embargo, dichas relaciones comerciales no son necesariamente importantes para Estados Unidos o Sudáfrica, estableciendo una relación asimétrica entre estos pares de países.
 
 
 \begin{figure}
 	\centering
-	\subfigure[Según porcentaje de impo. que representa al país importador]{\label{fig:Interacciones-1}\includegraphics[width=\linewidth]{2016_freq_interacciones_3}}
-	\subfigure[Según valor comercial]{\label{fig:Interacciones-2}\includegraphics[width=\linewidth]{2016_freq_interacciones_0}}
+	\subfigure[Según porcentaje de impo. que representa al país importador]{\label{fig:Interacciones-1}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_3}}
+	\subfigure[Según valor comercial]{\label{fig:Interacciones-2}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_0}}
 	\caption{\textbf{Frecuencia de interacciones}. Importaciones, 2016}
 	\label{fig:Interacciones}
 \end{figure}
