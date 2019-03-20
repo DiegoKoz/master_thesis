@@ -5,11 +5,6 @@ library(ggridges)
 
 dataset <- readRDS('dataset/aggregated_trade.RDS')
 
-
-  
-  
-
-
 resumen <- dataset %>%
   group_by(yr) %>% 
   summarise(n = n(),

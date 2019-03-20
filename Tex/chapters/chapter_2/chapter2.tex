@@ -41,21 +41,29 @@ El capítulo se estructura de la siguiente manera: En la sección siguiente se r
 
 \subsection{Representación del comercio internacional del año 2011 en un grafo dirigido}
 
-En primer lugar, en la figura \ref{fig:Interacciones}, analizamos la frecuencia de las interacciones entre países en función de su valor comercial y la proporción del comercio que representan para el país importador. Ambas distribuciones tienen una asimetría a derecha, que asemeja una distribución de chi-cuadrado. En la figura \ref{fig:Interacciones-1} se puede observar que si bien la gran mayoría de las relaciones bilaterales de comercio representan una baja proporción de las importaciones de un determinado país, existen ciertas relaciones comerciales que se podrían caracterizar como de alta dependencia para el país importador. 
-\todo{MODIFICAR lo de abajo}
+En primer lugar, en la figura \ref{fig:rel_dep}, analizamos la frecuencia de las interacciones entre países en función de su valor comercial y la proporción del comercio que representan para el país importador. Ambas distribuciones tienen una asimetría a derecha, que asemeja una distribución de chi-cuadrado. En la figura \ref{fig:rel_dep-1} se puede observar que si bien la gran mayoría de las relaciones bilaterales de comercio representan una baja proporción de las importaciones de un determinado país, existen ciertas relaciones comerciales que se podrían caracterizar como de alta dependencia para el país importador. 
+En particular, se observan cuatro relaciones comerciales de alta dependencia para el año 2016: La venta de mercancías de Estados Unidos a las islas de San Cristóbal y Nieves y Bermudas ; las exportaciones de Dinamarca a Groenlandia y de la India a Nepal. 
 
-En particular, Estados Unidos, Sudáfrica  e India venden mercancías a países como las Bahamas, Namibia, etc. que representan más de un 75\% del total de las mercancías que reciben estos países del resto del mundo, por lo que dicha relación comercial es para estos países decisiva para poder consumir ciertos productos. Sin embargo, dichas relaciones comerciales no son necesariamente importantes para Estados Unidos o Sudáfrica, estableciendo una relación asimétrica entre estos pares de países.
+En la figura \ref{fig:rel_dep-2} se puede observar aquellas relaciones que representan más de un 70\% de las importaciones del país importador, para el período 1996-2017. Allí se destaca con el tamaño de fuente el Valor comerciado en cada dupla para cada año en particular. La mayoría de las relaciones de tipo dependiente se repiten año a año y constituyen volúmenes bajos de comercio, entre países de tamaños, económicos poblacionales y territoriales, muy diferentes entre sí. En particular destaca Estados Unidos en su relación comercial con pequeñas islas del Caribe, y Sudáfrica con países de menor tamaño en su mismo continente, como Namibia o Botswana. Otra relación de comercio dependiente que se repite en la serie es la exportación de productos desde Israel a Palestina. Sin embargo, todas estas relaciones implican un monto menor en términos del comercio mundial. La relación de tipo dependiente más importante es la exportación de productos desde Estados Unidos hacia México durante la década del noventa, en el proceso conocido como la "maquila mexicana" \todo{ref biblio}
+
+\info{SEGUIR ACA}
+
+\begin{figure}
+	\centering
+	\subfigure[2016]{\label{fig:rel_dep-1}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_3}}
+	\subfigure[proporción mayor al 70\%]{\label{fig:rel_dep-2}\includegraphics[width=.65\linewidth]{relaciones_dependientes_EDA}}
+	\caption{Interacciones Según porcentaje de importaciones que representa al país importador}
+	\label{fig:rel_dep}
+\end{figure}
 
 
 \begin{figure}
 	\centering
-	\subfigure[Según porcentaje de impo. que representa al país importador]{\label{fig:Interacciones-1}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_3}}
+%	\subfigure[Según porcentaje de impo. que representa al país importador]{\label{fig:Interacciones-1}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_3}}
 	\subfigure[Según valor comercial]{\label{fig:Interacciones-2}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_0}}
 	\caption{\textbf{Frecuencia de interacciones}. Importaciones, 2016}
 	\label{fig:Interacciones}
 \end{figure}
-
-
 
 
 Por su parte, en la figura \ref{fig:Interacciones-2} se puede apreciar una distribución similar en lo que respecta a los montos comerciados. Dado que esta expresado en términos absolutos, aquellas interacciones de mayor valor resultan de importancia para ambos polos de la relación. En particular, China aparece como un país con las relaciones comerciales de mayor volumen. A su vez, se observa que las relaciones comerciales de África no aparecen en la figura por estar truncada para los primeros bins, lo cual indica que los montos comerciados por dichos países, a pesar de representar una proporción muy grande en ciertos casos como se observó en la figura \ref{fig:Interacciones-1}, son igualmente bajos respecto del resto del comercio mundial.

@@ -3,17 +3,19 @@ gc()
 library(tidyverse)
 library(igraph)
 library(countrycode)
+library(ggthemes)
+library(countrycode)
+library(ggrepel)
+library(openxlsx)
+library(glue)
 
-dataset <- readRDS('dataset/dataset_COMTRADE_2016.rds')
+countrycode_data <- codelist %>% select(cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
+
+dataset <- readRDS('agregado/dataset/dataset_COMTRADE_2016.rds')
 
 
 dataset <- dataset %>% select(pt3ISO,rt3ISO,TradeValue, ptTitle)
-
-
 dataset2 <- left_join(dataset,codelist %>% select(pt3ISO=iso3c, continent))
-
-
-
 
 ##Threshold of 1% del comercio de dicho país. Chow 2013
 
@@ -54,6 +56,39 @@ g <- graph_from_data_frame(edges,directed = TRUE)
 
 plot(g,edge.arrow.size = 0.1, size =10, curved=TRUE)
 
+
+############# Relaciones dependientes
+
+################## trade_to_plot #############
+dataset <- readRDS('agregado/dataset/aggregated_trade.RDS') %>% 
+  filter(ptCode != 0, TradeValue>100, rgCode == 1)
+dataset2 <-  dataset %>% select(yr,rt3ISO,pt3ISO,rtTitle,ptTitle,TradeValue) %>% 
+  left_join(countrycode_data %>% 
+              select(rt3ISO=iso3c, continent, cldr.short.es_ar)) %>% 
+  na.omit(.) %>% 
+  group_by(yr,rt3ISO) %>% 
+    mutate(pcnt = TradeValue/sum(TradeValue)) %>% 
+    na.omit(.) %>% 
+  filter(pcnt>.7)
+  
+
+dataset2 %>% 
+  mutate(dupla = glue('{rtTitle}-{ptTitle}')) %>% 
+  ggplot(., aes(yr,pcnt, label=dupla, size= TradeValue ))+
+  geom_text_repel()+
+  theme_tufte()+
+  labs(x= 'Año', y= 'Porcentaje')+
+  theme(legend.justification = 'left', 
+        legend.position = 'bottom',
+        legend.box = 'vertical', 
+        legend.box.just = 'left',
+        text = element_text(size=25))+
+  guides(size=guide_legend("Monto"))+
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
+  scale_x_continuous(breaks = seq(1996,2017,4))
+
+
+ggsave("agregado/graficos/relaciones_dependientes_EDA.png", scale = 2)
 
 
 
