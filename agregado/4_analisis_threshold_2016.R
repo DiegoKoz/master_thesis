@@ -70,14 +70,14 @@ trade_to_graph <- function(edges, threshold_pct = .01) {
 ##### Datasets #####
 
   
-dataset <- readRDS('dataset/dataset_COMTRADE_2016.rds')
+dataset <- readRDS('agregado/dataset/dataset_COMTRADE_2016.rds')
 dataset <- dataset %>% select(rt3ISO,pt3ISO,rtTitle,ptTitle,TradeValue)
 dataset2 <- left_join(dataset,countrycode_data 
                       %>% select(rt3ISO=iso3c, continent, cldr.short.es_ar)) %>% 
   na.omit(.)
 
 #expos
-dataset_expo <- readRDS('dataset/dataset_COMTRADE_expo_2016.rds')
+dataset_expo <- readRDS('agregado/dataset/dataset_COMTRADE_expo_2016.rds')
 dataset_expo <- dataset_expo %>% select(rt3ISO,pt3ISO,rtTitle,ptTitle,TradeValue)
 dataset_expo <- left_join(dataset_expo,countrycode_data 
                       %>% select(rt3ISO=iso3c, continent,cldr.short.es_ar)) %>% 
@@ -98,7 +98,7 @@ ggplot(dataset2 %>%
   theme_tufte()+
   theme(axis.text.y = element_blank(),
         axis.ticks.y = element_blank(),
-        legend.position = "top",
+        legend.position = "bottom",
         text = element_text(size=20))+
   scale_fill_gdocs()+
   scale_x_continuous(labels = function(x)x/1000000000)+
@@ -106,9 +106,10 @@ ggplot(dataset2 %>%
   labs(#title = "Frecuencia de las interacciones",
        #subtitle = "Importaciones 2016, según su valor comercial",
        x = "valor comercial, miles de millones",
-       y= "" )
+       y= "",
+       fill = 'Continente', color = 'Continente')
 
-ggsave("graficos/2016_freq_interacciones_0.png", scale = 2)
+ggsave("agregado/graficos/2016_freq_interacciones_0.png", scale = 2)
 
 
 ggplot(dataset2 %>%
@@ -129,7 +130,7 @@ ggplot(dataset2 %>%
        y= "" )
 
 
-ggsave("graficos/2016_freq_interacciones_1.png")
+ggsave("agregado/graficos/2016_freq_interacciones_1.png")
 
 ################## trade_to_plot #############
 
@@ -152,19 +153,20 @@ trade_to_plot <- function(edges, title = "Frecuencia de interacciones",
     theme_tufte()+
     theme(axis.text.y = element_blank(),
           axis.ticks.y = element_blank(),
-          legend.position = "none",
-          text = element_text(size=25))+
+          legend.position = "bottom",
+          text = element_text(size=20))+
     scale_x_continuous(labels = scales::percent_format(accuracy = 1))+
     scale_color_gdocs()+
     scale_fill_gdocs()+
-    labs(title = title, subtitle =  subtitle,  x = "porcentaje", y = "")
+    labs(title = title, subtitle =  subtitle,  x = "porcentaje", y = "",
+         fill = 'Continente', color = 'Continente')
   
   g
 
 }
 
 trade_to_plot(edges = dataset2, title = "", subtitle = "",threshold = 0.65)
-ggsave("graficos/2016_freq_interacciones_3.png", scale = 2)
+ggsave("agregado/graficos/2016_freq_interacciones_3.png", scale = 2)
 
 
 

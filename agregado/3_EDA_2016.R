@@ -91,7 +91,35 @@ dataset2 %>%
 ggsave("agregado/graficos/relaciones_dependientes_EDA.png", scale = 2)
 
 
+##### interacciones- valor
+
+dataset <- readRDS('agregado/dataset/aggregated_trade.RDS') %>% 
+  filter(ptCode != 0, TradeValue>100, rgCode == 1)
+
+dataset2 <-  dataset %>% select(yr,rt3ISO,pt3ISO,rtTitle,ptTitle,TradeValue) %>% 
+  left_join(countrycode_data %>% 
+              select(rt3ISO=iso3c, continent, cldr.short.es_ar)) %>% 
+  na.omit(.) %>% 
+  group_by(yr,rtTitle,ptTitle) %>% 
+  summarise(Valor = sum(TradeValue)) %>% 
+  na.omit(.) %>% 
+  group_by(yr) %>% 
+  top_n(.,5,Valor)
+
+dataset2 %>% 
+  mutate(dupla = glue('{rtTitle}-{ptTitle}')) %>% 
+  ggplot(., aes(yr,Valor, label=dupla, size= Valor/1000000000 ))+
+  geom_text_repel()+
+  theme_tufte()+
+  labs(x= 'Año', y= 'Valor Comercial. Miles de millones')+
+  theme(legend.justification = 'left', 
+        legend.position = 'bottom',
+        legend.box = 'vertical', 
+        legend.box.just = 'left',
+        text = element_text(size=25))+
+  guides(size=guide_legend("Tamaño"))+
+  scale_y_continuous(labels = function(x)x/1000000000)+
+  scale_x_continuous(breaks = seq(1996,2017,4))
 
 
-
-
+ggsave("agregado/graficos/relaciones_destacadas_EDA.png", scale = 2)
