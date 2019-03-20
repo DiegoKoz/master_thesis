@@ -9,45 +9,45 @@ Warning--empty note in Fagiolo2007
 Warning--empty journal in molinari2016especializacion
 Warning--can't use both author and editor fields in ricardo1987principios
 Warning--empty institution in WTO2017
-You've used 24 entries,
+You've used 25 entries,
             1935 wiz_defined-function locations,
-            610 strings with 6906 characters,
-and the built_in function-call counts, 7524 in all, are:
-= -- 744
-> -- 273
-< -- 20
-+ -- 86
-- -- 86
-* -- 587
-:= -- 1393
-add.period$ -- 62
-call.type$ -- 24
-change.case$ -- 161
-chr.to.int$ -- 24
-cite$ -- 30
-duplicate$ -- 295
-empty$ -- 507
-format.name$ -- 118
-if$ -- 1419
+            618 strings with 7082 characters,
+and the built_in function-call counts, 7910 in all, are:
+= -- 784
+> -- 286
+< -- 21
++ -- 90
+- -- 90
+* -- 622
+:= -- 1459
+add.period$ -- 65
+call.type$ -- 25
+change.case$ -- 168
+chr.to.int$ -- 25
+cite$ -- 31
+duplicate$ -- 309
+empty$ -- 535
+format.name$ -- 125
+if$ -- 1494
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 16
-newline$ -- 112
-num.names$ -- 72
-pop$ -- 127
+missing$ -- 17
+newline$ -- 117
+num.names$ -- 75
+pop$ -- 131
 preamble$ -- 1
-purify$ -- 163
+purify$ -- 170
 quote$ -- 0
-skip$ -- 240
+skip$ -- 251
 stack$ -- 0
-substring$ -- 457
-swap$ -- 18
+substring$ -- 488
+swap$ -- 19
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
+type$ -- 144
 warning$ -- 6
-while$ -- 64
+while$ -- 68
 width$ -- 0
-write$ -- 278
+write$ -- 291
 (There were 6 warnings)
