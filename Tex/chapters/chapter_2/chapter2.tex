@@ -39,8 +39,6 @@ El capítulo se estructura de la siguiente manera: En la sección siguiente se r
 \section{Análisis Exploratorio de Datos}
 
 
-\subsection{Representación del comercio internacional del año 2011 en un grafo dirigido}
-
 En primer lugar, en la figura \ref{fig:rel_dep-1}, analizamos la frecuencia de las interacciones entre países en función de la proporción del comercio que representan para el país importador. La distribución tiene una asimetría a derecha, que asemeja una distribución de chi-cuadrado. En la figura \ref{fig:rel_dep-1} se puede observar que si bien la gran mayoría de las relaciones bilaterales de comercio representan una baja proporción de las importaciones de un determinado país, existen ciertas relaciones comerciales que se podrían caracterizar como de alta dependencia para el país importador. 
 En particular, se observan cuatro relaciones comerciales de alta dependencia para el año 2016: La venta de mercancías de Estados Unidos a las islas de San Cristóbal y Nieves y Bermudas ; las exportaciones de Dinamarca a Groenlandia y de la India a Nepal. 
 
@@ -51,32 +49,46 @@ En la figura \ref{fig:rel_dep-2} se puede observar aquellas relaciones que repre
 	\centering
 	\subfigure[2016]{\label{fig:rel_dep-1}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_3}}
 	\subfigure[proporción mayor al 70\%]{\label{fig:rel_dep-2}\includegraphics[width=.65\linewidth]{relaciones_dependientes_EDA}}
-	\caption{Interacciones Según porcentaje de importaciones que representa al país importador. Destacado par Importador-Exportador}
+	\caption{Interacciones Según porcentaje de importaciones que representa al país importador. Destacado par Importador-Exportador.1996-2016}
 	\label{fig:rel_dep}
 \end{figure}
+
+
+
+
+
+Por su parte, en la figura \ref{fig:rel_destacadas-1} se puede observar la distribución de los montos comerciados en el año 2016, destacando aquellas relaciones de mayor volumen. Al igual que en la figura \ref{fig:rel_dep-1}, también se observa una fuerte asimetría a derecha, siendo las relaciones más importantes en el continente asiático y Americano. En particular, Las importaciones de Estados Unidos desde México, Canadá y China. También destacan las exportaciones de China, además de la ya mencionada, a Japón y Hong-Kong. Estas relaciones no corresponde caracterizarlas de tipo dependiente en un sentido de intercambio desigual, dado que se trata de volumen, y aquellas que destacan resultan de importancia tanto para exportador como para el importador. Se podría decir que estas son relaciones de alta interdependencia.
+
+En este sentido, la figura \ref{fig:rel_destacadas-2} muestra las cinco relaciones más importantes de cada año. Nuevamente lo que se observa es una repetición en las duplas Importador-Exportador entre año y año. Destaca sobre todo el rol de Estados Unidos como importador de China en primer lugar, y Canadá y México en menor volumen. Es importante observar que las exportaciones de China a Estados Unidos toman una importancia creciente en el tiempo y para el final de la serie se encuentran por fuera de la nube de puntos. 
 
 
 \begin{figure}
 	\centering
 	\subfigure[2016]{\label{fig:rel_destacadas-1}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_0}}
 	\subfigure[Top 5 por año]{\label{fig:rel_destacadas-2}\includegraphics[width=.65\linewidth]{relaciones_destacadas_EDA}}
-	\caption{Interacciones. Según valor comercial. Destacado par Importador-Exportador}
+	\caption{Interacciones. Según valor comercial. Destacado par Importador-Exportador. 1996-2016}
 	\label{fig:rel_destacadas}
 \end{figure}
 
 
-Por su parte, en la figura \ref{fig:rel_destacadas-1} se puede observar la distribución de los montos comerciados en el año 2016, destacando aquellas relaciones de mayor volumen. Al igual que en la figura \ref{fig:rel_dep-1}, también se observa una fuerte asimetría a derecha, siendo las relaciones más importantes en el continente asiático y Americano. En particular, Las importaciones de Estados Unidos desde México, Canadá y China. También destacan las exportaciones de China, además de la ya mencionada, a Japón y Hong-Kong. Estas relaciones no corresponde caracterizarlas de tipo dependiente en un sentido de intercambio desigual, dado que se trata de volumen, y aquellas que destacan resultan de importancia tanto para exportador como para el importador. Se podría decir que estas son relaciones de alta interdependencia. En este sentido, la figura \ref{fig:rel_destacadas-2} muestra las cinco relaciones más importantes de cada año. \pendiente{Seguir acá}
+Esto también se puede apreciar en relación al total de las relaciones comerciales, en la figura \ref{fig:hexplot} donde se incluye la totalidad de las relaciones comerciales para la serie entre 1996 y 2017. Allí se observa que la absoluta mayoría de las relaciones comerciales constituyen montos menores, y que una proporción menor se realiza por montos de hasta cien mil millones de dólares anuales. También se observa un número creciente de operaciones por montos arriba de los cien mil millones de dólares anuales. Finalmente, también cabe destacar nuevamente la anomalía que representa respecto del resto de los datos las exportaciones desde China a Estados Unidos en la segunda mitad de la serie.  
+
+\begin{figure}
+	\centering	
+	\includegraphics[width=.65\linewidth]{relaciones_96_2016_EDA}
+	\caption{Interacciones. Según valor comercial. 1996-2016}
+	\label{fig:hexplot}
+\end{figure}
+
 
 \section{Metodología}
 
 \subsection{Fuentes de información}
 
-La modelización del comercio internacional como un grafo requiere de los datos del flujo anual de comercio bilateral para el total de las mercancías, para la mayor cantidad posible de países, idealmente todos ellos. Dado que los datos del comercio bilateral son realizados por cada país involucrado, es necesaria una base de datos en la cual se haya recolectado la información provista por cada país, y que a su vez haya sido consolidada frente a las posibles, y de hecho abundantes, contradicciones que se presentan entre los reportes oficiales de los países involucrados. En particular, dado que toda importación para un país es una exportación de otro, y que el registro de los datos se realiza de forma nacional, existe una duplicación formal de la información, que no siempre es coincidente. Por esto, se recurrió a una base previamente consistida por un organismo internacional oficial, la Organización Mundial del Comercio (de aquí en más OMC)\footnote{https://comtrade.un.org/}, y la API que dicho organismo provee para descarga de datos. La información analizada  en las secciones tercera y cuarta, del período 1997-2016, proviene dicho organismo.   
+La modelización del comercio internacional como un grafo requiere de los datos del flujo anual de comercio bilateral para el total de las mercancías, para la mayor cantidad posible de países, idealmente todos ellos. Dado que los datos del comercio bilateral son realizados por cada país involucrado, es necesaria una base de datos en la cual se haya recolectado la información provista por cada país, y que a su vez haya sido consolidada frente a las posibles, y de hecho abundantes, contradicciones que se presentan entre los reportes oficiales de los países involucrados. En particular, dado que toda importación para un país es una exportación de otro, y que el registro de los datos se realiza de forma nacional, existe una duplicación formal de la información, que no siempre es coincidente. Por esto, se recurrió a una base previamente consistida por un organismo internacional oficial, la Organización Mundial del Comercio (de aquí en más OMC)\footnote{https://comtrade.un.org/}, y la API que dicho organismo provee para descarga de datos. La información analizada  en las secciones tercera y cuarta, del período 1996-2016, proviene dicho organismo.   
 
-Dado que la OMC establece límites para la extracción de la información se decidió acotar el alcance temporal del estudio al período 1997-2016.En particular, dado que el año 2016 es aquel para el que se cuenta mayor cantidad de información, se decidió realizar una primera parte del estudio sobre dicho año, para luego extender las conclusiones que de allí se desprendan hacia los demás años.
-\par
 
-El período analizado en la sección quinta, proviene del trabajo realizado por \cite{Gleditsch2002}, que también es utilizado en otros trabajos de modelización del comercio internacional mediante redes complejas \cite{Fagiolo2010}.
+Los datos utilizados para el análisis de largo plazo, entre los años 1948 y 2000 proviene del trabajo realizado por \cite{Gleditsch2002}, que también es utilizado en otros trabajos de modelización del comercio internacional mediante redes complejas \cite{Fagiolo2010}.
 
 \subsection{Construcción del grafo}
 
@@ -171,7 +183,7 @@ La modelización del comercio internacional como un grafo conlleva una serie de 
 
 En este punto se abre una serie de consideraciones respecto al denominador a utilizar. Si se normaliza por el tamaño de la economía, el Producto Bruto Interno (PBI), se está considerando no sólo la importancia relativa de ese vínculo comercial respecto del total comerciado, sino también el grado de apertura de dicha economía. En ese sentido, si se quisiera analizar el rol de un país en el comercio internacional, independientemente del tamaño real de su economía, lo más correcto es normalizar por el volumen total comerciado, y no por su PBI. De esta forma, se puede considerar un punto de corte como un tanto por ciento de las importaciones o exportaciones del país que reporta la transacción.
 
-Dado que se considera que la información de las importaciones suele ser más confiable que la de las exportaciones\cite{Fan2014}, en el presente trabajo se utiliza en la generalidad de los casos el punto de corte como un porcentaje del total de las importaciones del país importador. No obstante, dada la construcción de dicho punto de corte, la interpretación de los resultados varía. Si se utiliza la información provista por el importador, la dirección de la arista resultante es desde el importador hacia el exportador, el sentido contrario al de las mercancías, es decir, el sentido del dinero. Esta arista sólo existe sí resulta significativa para el país importador.     
+Dado que se considera que la información de las importaciones suele ser más confiable que la de las exportaciones \citep{Fan2014}, en el presente trabajo se utiliza en la generalidad de los casos el punto de corte como un porcentaje del total de las importaciones del país importador. No obstante, dada la construcción de dicho punto de corte, la interpretación de los resultados varía. Si se utiliza la información provista por el importador, la dirección de la arista resultante es desde el importador hacia el exportador, el sentido contrario al de las mercancías, es decir, el sentido del dinero. Esta arista sólo existe sí resulta significativa para el país importador.     
 
 Podemos entonces, utilizar un grafo binario dirigido. Dados N países, definimos la matriz de adyacencia NxN, dónde:
 
@@ -386,7 +398,7 @@ En \ref{fig:paises_LP-b} se observa el autovalor ponderado por el volumen comerc
 \end{figure}
 
 
-Por último, resulta interesante complementar el análisis de la figura \ref{fig:distribuciones-c}, dónde se veía como China supera a Estados Unidos en ciertas medidas de centralidad para el año 2006, con un análisis de dicha relación en el período de 1950 a 2000. Para ello, en la figura \ref{fig:paises_ASI_LP-a} se observa la distribución de la centralidad de autovalor, y el detalle de estos dos países. \par
+Por último, resulta interesante complementar el análisis de la figura \ref{fig:distribuciones-c}, dónde se veía como China supera a Estados Unidos en ciertas medidas de centralidad para el año 2006, con un análisis de dicha relación en el período de 1948 a 2000. Para ello, en la figura \ref{fig:paises_ASI_LP-a} se observa la distribución de la centralidad de autovalor, y el detalle de estos dos países. \par
 En todo el período se observa la predominancia de Estados Unidos como un nodo central del grafo. China, por su parte, comienza en la moda o incluso en la cola izquierda de la distribución. Para luego ubicarse del lado derecho de la misma, entre los sesentas y setentas, aunque aún con valores relativamente bajos. A partir de la década del ochenta, comienza, de forma lenta pero acelerada, a escalar posiciones de mayor centralidad dentro de la red. 
 Por su parte, en la figura \ref{fig:paises_ASI_LP-b} se observa la evolución de China junto a Corea y Japón. Aquí se puede ver como no es solo China quién aumenta la centralidad en el grafo, sino Asia en su conjunto. Japón lo hace primero, desde el comienzo de la serie, en los cincuentas, y llega a valores cercanos a 1, el máximo valor posible de esta medida, para los ochentas. Por su parte, Corea también sigue el mismo camino, aunque comienza más tarde, y desde una posición de menor centralidad que los otros países. 
 
@@ -401,13 +413,13 @@ Por su parte, en la figura \ref{fig:paises_ASI_LP-b} se observa la evolución de
 
 \section{Conclusiones}
 
-En el presente trabajo \pendiente{modificar} se propuso la utilización de la teoría de grafos como una herramienta para la caracterización del comercio internacional. Para ello se construyó un grafo dirigido no ponderado.  Se utilizó al año 2016 como punto de referencia para determinar ciertos elementos necesarios para la construcción del modelo, como el punto de corte, de donde resultó que el 1\% constituye un umbral posible, aunque considerar este hiperparámetro como una dimensión de análisis también permite observar las distintas formas de relación comercial entre los países, y por lo tanto se logra enriquecer la discusión. 
-\par
+En la presente sección se propuso una primera aproximación de la teoría de grafos como herramienta para la caracterización del comercio internacional, utilizando los datos agregados a nivel país. Para ello se construyó un grafo dirigido no ponderado. Se utilizó al año 2016 como punto de referencia para determinar determinar los mejores hiperparámetros del modelo. En particular, de este análisis resulto que el 1\% constituye un umbral posible para el punto de corte, aunque considerar este hiperparámetro como una dimensión de estudio también permite observar las distintas formas de relación comercial entre los países, y por lo tanto se logra enriquecer la discusión. 
+
 Por su parte, la dimensión temporal en un período de veinte años mostró que las medidas de resumen de un grafo pueden poseer un potencial para la descripción de la crisis del año 2009. El análisis de una serie de largo alcance, por su parte, permite ver los cambios estructurales del comercio internacional.            
 
 Se observó también que la distribución de las medidas de centralidad no pareciera variar en el mediano plazo, aunque sí existe un movimiento visible en los actores principales de la red, lo cual muestra una riqueza en el análisis para describir los cambios de la economía mundial, y los roles cambiantes que en esta juegan los distintos recortes nacionales. 
 
-Finalmente, el trabajo realizado deja una contradicción planteada respecto del rol de ciertos países como consumidores, y de otros como productores, dado que tal estructura no sería sostenible de forma prolongada. En este sentido, es necesario complementar el presente análisis del flujo del comercio de mercancías, con la contraparte correspondiente al flujo de internacional de servicios y de capital, a la vez que se deben considerar las cadenas globales de valor, y la producción de bienes, en particular de diseño y alto valor agregado, que no se comercian directamente en el mercado mundial, sino que constituyen transferencias internas dentro de las empresas transnacionales.
+Finalmente, el trabajo realizado deja una contradicción planteada respecto del rol de ciertos países como consumidores, y de otros como productores, dado que tal estructura no sería sostenible de forma prolongada.
 
 
 %\bibliographystyle{unsrt}

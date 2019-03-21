@@ -5,4 +5,7 @@
 \subpreamble{chapters/chapter_2/chapter2.tex}
 \usepackage [subpreambles=true]{standalone}\usepackage {import}\graphicspath {{images/}}\usepackage {amssymb}\usepackage {amsmath}\setcounter {tocdepth}{3}\usepackage {graphicx}\usepackage {subfigure}\usepackage {gensymb}\usepackage {authblk}\usepackage {url}\usepackage [utf8]{inputenc}\usepackage [spanish]{babel}\selectlanguage {spanish}
 \endsubpreamble
+\subpreamble{chapters/chapter_3/chapter3.tex}
+\usepackage [subpreambles=true]{standalone}\usepackage {import}\graphicspath {{images/}}\usepackage {amssymb}\usepackage {amsmath}\setcounter {tocdepth}{3}\usepackage {graphicx}\usepackage {subfigure}\usepackage {gensymb}\usepackage {authblk}\usepackage {url}\usepackage [utf8]{inputenc}\usepackage [spanish]{babel}\selectlanguage {spanish}
+\endsubpreamble
 \endstandalonepreambles

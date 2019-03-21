@@ -79,7 +79,7 @@ trade_to_graph <- function(edges, threshold_pct = .01) {
 
 ##### Datasets #####
 
-trade_dd <- read_delim("dataset/Gleditsch/exptradegdpv4.1/trade_dd.asc",delim = " ")
+trade_dd <- read_delim("agregado/dataset/Gleditsch/exptradegdpv4.1/trade_dd.asc",delim = " ")
 
 # Caracterización del dataset
 trade_dd %>% filter(acra %in% c("USA","CAN"),acrb %in% c("USA","CAN"), year == 1995)
@@ -247,20 +247,28 @@ ggsave("graficos/1950_2000_mean_eigen_centrality_ponderado_x_yr.png")
 ggplot(caracteristicas_impo, aes(yr,coef_clustering ))+
   geom_line(size = 1.25, color = "black")+
   geom_smooth(se = F)+
-  labs(title= 'Coeficiente de clustering de la red',
-       subtitle = "Importaciones, threshold 1%, según año")+
-  theme_tufte()
+  theme_tufte()+
+  theme(text = element_text(size=25))+
+  labs(x= "Año", y= "Coeficiente de Clustering")
+  # scale_x_continuous(breaks = seq(1996,2017,4))
+# labs(title= 'Correlación de grado en grafo no dirigido',
+#      subtitle = "Importaciones, threshold 1%, según año")+
+# scale_x_continuous(breaks = c(seq(1997,2011,1)))+
 
-ggsave("graficos/1950_2000_coef_clustering_x_yr.png")
+  # labs(title= 'Coeficiente de clustering de la red',
+  #      subtitle = "Importaciones, threshold 1%, según año")+
+  # theme_tufte()
+
+ggsave("agregado/graficos/1950_2000_coef_clustering_x_yr.png", scale=2)
 
 ggplot(caracteristicas_impo, aes(yr,correlacion ))+
   geom_line(size = 1.25, color = "black")+
   geom_smooth(se = F)+
-  labs(title= 'Correlación de grado en grafo no dirigido',
-       subtitle = "Importaciones, threshold 1%, según año")+
-  theme_tufte()
+  theme_tufte()+
+  theme(text = element_text(size=25))+
+  labs(x= "Año", y= "Correlación")
 
-ggsave("graficos/1950_2000_correlacion_x_yr.png")
+ggsave("agregado/graficos/1950_2000_correlacion_x_yr.png", scale = 2)
 
 #### gráficos densidad IMPO####
 
