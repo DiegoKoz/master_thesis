@@ -1,0 +1,524 @@
+---
+title: "RCA y proximity"
+output: 
+  html_notebook:
+    toc: true
+    toc_float: true
+    depth: 4
+
+---
+
+# Definiciones
+
+El objetivo de esta notebook es calcular el RCA y la similitud propuesta por Hidalgo y Hausman:
+
+
+$$
+  RCA(c,i)= \frac{\displaystyle \frac{x(c,i)}{\displaystyle \sum_{i}x(c,i)}}{\frac{\displaystyle\sum_{c}x(c,i)}{\displaystyle \sum_{c,i}x(c,i)}}
+\\
+$$
+dónde $x(c,i)$ es el valor de las exportaciones del __país c__ en el __producto i__     
+Esto es inmediatamente calculable desde el dataset
+
+
+$$
+\large  \phi_{ij} = min (P(RCA_i>1/RCA_j>1),P(RCA_j>1/RCA_i>1))
+\\
+$$
+dónde $P(RCA_i/RCA_j)$ es la probabilidad condicional de exportar el producto ___i___ dado que exporta el producto ___j___. Para calcular esto, utilizamos lo siguiente:
+
+
+\pagebreak
+
+$$
+P(RCA_i/RCA_j) = \frac{P(RCA_i = 1 \cap RCA_j = 1)}{P(RCA_j = 1)}
+$$
+
+$$
+\text{con } P(RCA_j = 1)= \frac{ \sum_{c} I(RCA_c >1)}{N}
+$$
+siendo N la cantidad de países.
+
+y
+
+$$
+P(RCA_i = 1 \cap RCA_j = 1) = \frac{\sum_c RCA_i = 1 \cap RCA_j = 1}{N}
+$$
+
+
+
+
+El objetivo es construir:
+
+- una matriz $R_{PXN}$ donde el elemento i,c sea $RCA_{ic}$
+- una matriz $\Phi_{ij}$ donde el elemento i,j sea $\phi_{ij}$
+
+
+
+# En el dataset
+
+## RCA
+
+```{r message=FALSE, warning=FALSE}
+rm(list = ls())
+gc(verbose = F)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+library(viridis)
+
+data <- read_rds("data/all_data.rds")
+data <- data %>% rename(reporter = `Reporter Description`, partner = `Partner Description`, year = Year, flow = `Trade Flow Description`, value = Value)
+
+```
+
+```{r}
+expo <-  data %>% 
+  filter(flow== 'Export', year == 2016) %>% 
+  filter(!partner %in% c('Mercosur', 'Sudamerica', 'World')) %>% 
+  group_by(reporter,HS96) %>%
+  summarise(expo = sum(value)) %>% 
+  ungroup() %>% 
+  group_by(reporter) %>% 
+  mutate(sumi_expo_c = sum(expo)) %>% 
+  ungroup( ) %>% 
+  group_by(HS96) %>% 
+  mutate(sumc_expo_i = sum(expo)) %>% 
+  ungroup() %>% 
+  mutate(sumci_expo = sum(expo)) %>% 
+  group_by(reporter,HS96) %>% 
+  summarise(RCA = ((expo)/(sumi_expo_c))/((sumc_expo_i)/(sumci_expo)))
+
+saveRDS(expo, "data/expo_rca.RDS")
+expo
+```
+
+Buscamos por país el producto con más ventajas
+
+```{r}
+expo %>% group_by(reporter) %>%  top_n(1,wt = RCA)
+
+```
+
+Es extraño que haya tantos productos con igual RCA para cada país. 
+Suriname y Guyana tienen RCA excesivamente altos para algunos productos. 
+
+Sería importante que podamos entender estos fenómenos, porque pueden estar indicando problemas de cálculo o metodológicos. 
+
+### chequeos:
+
+```{r}
+# prop de expo segun producto en Suriname y Guyana
+data %>% 
+  filter(flow== 'Export', year == 2016) %>% 
+  filter(!partner %in% c('Mercosur', 'Sudamerica', 'World'),
+         reporter %in% c("Guyana", "Suriname")) %>% 
+  group_by(reporter,HS96) %>%
+  summarise(expo = sum(value)) %>% 
+  group_by(reporter) %>% 
+  mutate(prop = round(expo/sum(expo)*100,2)) %>% 
+  top_n(n = 5, wt = prop)
+
+```
+
+En Suriname el 75% de las expo corresponden a 999999, no definido en HS96 (es una referencia a que no sabemos?), pero no aparecen esos dos proctos en los que tiene un RCA muy alto. Tampoco aparecen en Guayana. Esto significa que, aunque no sean productos que representen mucho en la canasta exportadora, en los demás países se exportan muy poco. 
+
+Tomo algunos ejemplos
+
+Guyana: 
+
+HS96 = c(010599, 070952, 120300, 150430, 640691)
+```{r}
+data %>% 
+  filter(flow== 'Export', year == 2016) %>% 
+  filter(!partner %in% c('Mercosur', 'Sudamerica', 'World'),
+         HS96 %in% c("010599", "070952", "120300", "150430", "640691"))
+```
+son todos productos sólo exportados por Guayana. Incluso aunque sea muy pequeño el valor exportado.
+
+Para los productos de Suriname:
+
+HS = c(284410,	291421)
+
+```{r}
+data %>% 
+  filter(flow== 'Export', year == 2016) %>% 
+  filter(!partner %in% c('Mercosur', 'Sudamerica', 'World'),
+         HS96 %in% c("284410", "291421"))
+```
+
+Sucede lo mismo     
+
+Al calcular el denominador de RCA, Guayana y Suriname pesan muy poco en el _país promedio_ por lo tanto, aquellos productos que sólo son exportados por estos países tienen un denominador demasiado pequeño, que satura el RCA en un valor muy alto, dónde ni siquiera quedan registradas las diferencias en valor exportado entre productos dentro de estos países
+
+----------------
+
+Eligo un par de productos de aquellos productos que se repiten en otros países para entender si también se debe a que son el único país exportador de dicho bien
+
+
+Para Argentina
+HS = c(010420,	021012)
+
+```{r}
+data %>% 
+  filter(flow== 'Export', year == 2016) %>% 
+  filter(!partner %in% c('Mercosur', 'Sudamerica', 'World'),
+         HS96 %in% c("010420", "021012"))
+```
+
+Para Brasil
+HS = c(080131,	121120)
+
+```{r}
+data %>% 
+  filter(flow== 'Export', year == 2016) %>% 
+  filter(!partner %in% c('Mercosur', 'Sudamerica', 'World'),
+         HS96 %in% c("080131", "121120"))
+```
+
+
+Son productos que son exportados únicamente por dicho el país donde se repiten. 
+
+#### Conclusión chequeo
+
+Los valores altos de RCA son muy imoportantes para el análisis, porque indican en qué productos hay ventajas comparativas importantes. El hecho de que los valores más altos de cada país sean mediciones colapsadas que sólo indican la proporción de las exportaciones de cada país en el promedio de Sudamérica resulta muy perjudicial para el resto del análisis.    
+
+Por lo tanto, el RCA __no sirve__ para ser calculado exclusivamente para los países de Sudamérica y para un año en particular. Debemos buscar una variante robusta al calculo en:
+
+- Calcular un promedio para todos los años
+- Utilizar un dataset con los demás países del mundo. 
+
+
+----------
+
+## Proximity
+
+
+defino una función de proximidad entre dos producto $i$, $j$ como:
+
+```{r}
+proximity <- function(data, i,j){
+  cualitative_RCA <- data %>% 
+  mutate(RCA = case_when(RCA > 1 ~ 1,
+                         RCA <= 1 ~ 0))
+  
+  n = length(unique(data$reporter))
+  Pj <- sum(cualitative_RCA$RCA[cualitative_RCA$HS96 == j])/n
+  Pi <- sum(cualitative_RCA$RCA[cualitative_RCA$HS96 == i])/n
+  #prob de la interseccion
+  
+  exportan_alguno <- cualitative_RCA %>%
+  filter(HS96 %in% c(i,j) & RCA == 1) %>% 
+  group_by(reporter) %>% 
+  summarise(exporta_ambos = n()== 2)
+
+  Pi_int_j <-  sum(exportan_alguno$exporta_ambos)/n
+  
+  #prob condicional 
+  Pi_dado_j <- Pi_int_j/Pj
+  Pj_dado_i <- Pi_int_j/Pi
+  
+  proximity <- min(Pi_dado_j,Pj_dado_i)
+  return(proximity)
+}
+```
+
+
+por ejemplo
+
+```{r}
+print(paste0("proximidad entre 010111 y 010210: ",proximity(expo, "010111", "010210")))
+print(paste0("proximidad entre 010111 y 010119: ",proximity(expo, "010111", "010119")))
+print(paste0("por simetría: proximidad entre 010119  y 010111: ",proximity(expo,"010119", "010111" )))
+```
+
+
+calculo la matriz de similitudes para los primeros 5 productos
+
+```{r}
+product_list <-  unique(data$HS96)
+similitudes  <-  data_frame()
+for (i in product_list[0:5]) {
+  for (j in product_list[0:5]) {
+    prox_ij  <-  proximity(data = expo, i,j)
+    tmp <-  data_frame("i" = i, "j" = j, prox_ij)
+    similitudes <-  bind_rows(similitudes, tmp)    
+  }
+}
+data_wide <- spread(similitudes,j,prox_ij)%>% as_data_frame()
+
+similarity_matrix <- as.matrix(data.frame(data_wide[,-1],row.names = data_wide$i))
+similarity_matrix
+```
+
+para 100 productos 
+
+```{r}
+start <- Sys.time()
+similitudes  <-  data_frame()
+for (i in product_list[0:100]) {
+  for (j in product_list[0:100]) {
+    prox_ij  <-  proximity(data = expo, i,j)
+    tmp <-  data_frame("i" = i, "j" = j, prox_ij)
+    similitudes <-  bind_rows(similitudes, tmp)    
+  }
+}
+data_wide <- spread(similitudes,j,prox_ij)%>% as_data_frame()
+stop <- Sys.time()
+stop-start
+
+saveRDS(data_wide, "resultados/similtarity.RDS")
+
+```
+
+
+~~tarda unos 5 minutos para calcular 100 productos, 5132 productos. Para el calcular la matriz final, tardaría unas 4.27 horas.~~   
+
+# 27 de mayo
+
+El orden de magintud de la complejidad es altmente no lineal
+
+
+
+## Matriz completa
+
+
+```{r}
+# product_list <-  unique(data$HS96)
+# start <- Sys.time()
+# similitudes  <-  data_frame()
+# for (i in product_list) {
+#   for (j in product_list) {
+#     prox_ij  <-  proximity(data = expo, i,j)
+#     tmp <-  data_frame("i" = i, "j" = j, prox_ij)
+#     similitudes <-  bind_rows(similitudes, tmp)    
+#   }
+# }
+# data_wide <- spread(similitudes,j,prox_ij)%>% as_data_frame()
+# stop <- Sys.time()
+# stop-start
+# 
+# saveRDS(data_wide, "resultados/similtarity.RDS")
+
+```
+
+ Después de 11:30 hs de procesamiento, corto.
+
+
+
+## Defino una función __más performante__ para calcular la proximity
+```{r}
+cualitative_RCA <- expo %>% 
+  mutate(RCA = as.integer(case_when(RCA > 1 ~ 1,
+                          RCA <= 1 ~ 0)))
+w <- cualitative_RCA %>% spread(., reporter,RCA,fill = 0) %>% 
+  ungroup() 
+
+HS96 <- w$HS96 
+  
+mat <- as.matrix(w[,-1])
+
+v <- mat %*% t(mat)                                   
+diag(v) <- 0                                      
+dimnames(v) <- list(HS96, HS96) 
+totales <- rowSums(w[,-1])
+probabilities <- v/totales
+```
+
+```{r}
+#NO PERFORMA
+# library(foreach)
+# library(doParallel)
+#  ncores <- detectCores()
+#  cl <- makeCluster(ncores)
+#  registerDoParallel(cl)
+# 
+# symmetric_max <- function(M){
+#   matrix2 <- M
+#   M2 <- foreach(i = row.names(M), .combine = 'cbind') %:%
+#     foreach(j =row.names(M), .combine = 'c' ) %dopar% {
+#       matrix2[i,j] <- matrix2[j,i] <- max(matrix2[i,j],matrix2[j,i])
+#     }
+#     dimnames(M2) <- list(row.names(M), row.names(M)) 
+#   return(M2)
+# }
+
+```
+
+
+Veamos un ejemplo de unos 10 casos
+```{r}
+prueba <- probabilities[0:10,0:10]
+#la matriz de probabilidades naturalemnte, no es simétrica
+prueba == t(prueba)
+
+#me quedo con el máximo entre M[i,j] y M[j,i]
+probabilities_simetricas <- symmetric_max(prueba)
+#Las diferencias deberían estar en los lugares no simétricos de la matriz de probabilidades
+probabilities_simetricas == prueba
+#matriz original
+prueba
+#matriz simétrica
+probabilities_simetricas
+#compruebo la simetría en la matriz final
+probabilities_simetricas == t(probabilities_simetricas)
+```
+
+
+# quiero testear tiempos de ejecución
+```{r}
+# prueba0 <- probabilities[0:100,0:100]
+# prueba1 <- probabilities[0:1000,0:1000]
+# prueba2 <- probabilities[0:2000,0:2000]
+
+```
+
+```{r}
+
+# system.time(probabilities_simetricas <- symmetric_max(prueba0))
+# system.time(probabilities_simetricas <- symmetric_max(prueba1))
+# system.time(probabilities_simetricas <- symmetric_max(prueba2))
+
+```
+
+```{r}
+tiempo <- data_frame(n = c(100,1000,2000,100,1000,2000), time = c(0.244/(0.244),23.672/0.244,102.053/0.244,1,10,20), tipo = c(rep("simetry",3),rep("tiempo lineal",3)))
+ggplot(tiempo, aes(n,time, color = tipo))+
+  geom_line()+
+  scale_x_continuous(limits = c(0,2000))
+  
+
+```
+
+tenemos un problema con complejidad exponencial, 
+Tengo que resolver una forma eficiente de calcularlo.
+
+
+
+
+
+
+Defino una función genérica
+
+```{r}
+similarity <- function(RCA){
+  
+  cualitative_RCA <- RCA %>% 
+  mutate(RCA = as.integer(case_when(RCA > 1 ~ 1,
+                            RCA <= 1 ~ 0)))
+  w <- cualitative_RCA %>% spread(., reporter,RCA,fill = 0) %>% 
+    ungroup() 
+  
+  HS96 <- w$HS96 
+  mat <- as.matrix(w[,-1])
+  v <- mat %*% t(mat)                                   
+  diag(v) <- 0                                      
+  dimnames(v) <- list(HS96, HS96) 
+  totales <- rowSums(w[,-1])
+  probabilities <- v/totales
+  
+  # Hasta que no resuelva el problema de arriba, sólo calculo las probabilidades
+  #symmetric_proba <- symmetric_max(probabilities)
+  #return(symmetric_proba)   
+  return(probabilities) 
+
+  }
+```
+
+
+```{r}
+probabilities <- similarity(RCA = expo)
+write_csv(data.frame(probabilities),"resultados/probabilities.csv")
+
+
+```
+
+
+```{r}
+test <- probabilities[0:10,0:10]
+test
+```
+
+
+
+Otro intento de calcular la similitud
+
+
+```{r}
+test <- probabilities[0:10,0:10]
+test
+test[test<t(test)] <- test[test<t(test)]
+test[test>t(test)] <- t(test)[test>t(test)]
+test
+test==t(test)
+```
+
+El resultado parece ser adecuado. Testeo performance
+
+
+```{r}
+
+symmetric_max <- function(M){
+  M[M<t(M)] <- M[M<t(M)]
+  M[M>t(M)] <- t(M)[M>t(M)]
+  return(M)
+}
+
+```
+
+```{r}
+prueba0 <- probabilities[0:1,0:1]
+prueba1 <- probabilities[0:10,0:10]
+prueba2 <- probabilities[0:100,0:100]
+prueba3 <- probabilities[0:1000,0:1000]
+prueba4 <- probabilities[0:2000,0:2000]
+prueba5 <- probabilities[0:3000,0:3000]
+
+```
+
+```{r}
+
+system.time(probabilities_simetricas <- symmetric_max(prueba0))
+system.time(probabilities_simetricas <- symmetric_max(prueba1))
+system.time(probabilities_simetricas <- symmetric_max(prueba2))
+system.time(probabilities_simetricas <- symmetric_max(prueba3))
+system.time(probabilities_simetricas <- symmetric_max(prueba4))
+system.time(probabilities_simetricas <- symmetric_max(prueba5))
+
+```
+
+#### Performa bien!
+
+Redefino la funcion de similitudes
+
+```{r}
+similarity <- function(RCA){
+  
+  cualitative_RCA <- RCA %>% 
+  mutate(RCA = as.integer(case_when(RCA > 1 ~ 1,
+                            RCA <= 1 ~ 0)))
+  w <- cualitative_RCA %>% spread(., reporter,RCA,fill = 0) %>% 
+    ungroup() 
+  
+  HS96 <- w$HS96 
+  mat <- as.matrix(w[,-1])
+  v <- mat %*% t(mat)                                   
+  diag(v) <- 0                                      
+  dimnames(v) <- list(HS96, HS96) 
+  totales <- rowSums(w[,-1])
+  probabilities <- v/totales
+  
+  symmetric_proba <- symmetric_max(probabilities)
+  return(symmetric_proba)   
+  }
+```
+
+
+```{r}
+symmetric_proba <- similarity(RCA = expo)
+write_csv(data.frame(symmetric_proba),"resultados/similitud.csv")
+
+```
+
+
+
