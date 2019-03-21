@@ -12,7 +12,7 @@ library(xlsx)
 
 countrycode_data <- codelist %>% select(cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
 
-##### Funciones #####
+##### (siempre) Funciones #####
 
 trade_to_graph <- function(edges, threshold_pct = .01) {
   edges <- edges %>% 
@@ -74,9 +74,9 @@ trade_to_graph <- function(edges, threshold_pct = .01) {
               "correlacion" = correlacion))
 }
 
-##### Datasets #####
+##### (siempre) Datasets #####
 
-dataset <- readRDS("dataset/aggregated_trade.RDS")
+dataset <- readRDS("agregado/dataset/aggregated_trade.RDS")
 dataset <- dataset %>% filter(yr <= 2016,ptCode != 0, TradeValue>100, rgCode == 1)
 
 dataset <- dataset %>% select(rt3ISO,pt3ISO,rtTitle,ptTitle,TradeValue, yr)
@@ -85,7 +85,7 @@ dataset <- left_join(dataset,countrycode_data
   na.omit(.)
 
 #expo
-dataset_expo <- readRDS("dataset/aggregated_trade.RDS")
+dataset_expo <- readRDS("agregado/dataset/aggregated_trade.RDS")
 dataset_expo <- dataset_expo %>% filter(yr <= 2016,ptCode != 0, TradeValue>100, rgCode == 2)
 
 dataset_expo <- dataset_expo %>% select(rt3ISO,pt3ISO,rtTitle,ptTitle,TradeValue, yr)
@@ -93,7 +93,7 @@ dataset_expo <- left_join(dataset_expo,countrycode_data
                           %>% select(rt3ISO=iso3c, continent)) %>% 
   na.omit(.)
 
-#### loop ####
+#### (siempre) loop ####
 caracteristicas <- data_frame()
 distribuciones_impo <- data_frame()
 
@@ -233,20 +233,25 @@ ggplot(caracteristicas, aes(yr,coef_clustering ))+
   #      subtitle = "Importaciones, threshold 1%, según año")+
   # scale_x_continuous(breaks = c(seq(1997,2011,1)))+
   theme_tufte()+
-  # theme(axis.text.x = element_text(angle = 30))+
-  labs(x= "Año")
+  theme(text = element_text(size=20))+
+  labs(x= "Año", y= "Coeficiente de Clustering")+
+  scale_x_continuous(breaks = seq(1996,2017,4))
+# theme(axis.text.x = element_text(angle = 30))+
 
-ggsave("graficos/coef_clustering_x_yr.png", scale= 0.5)
+ggsave("agregado/graficos/coef_clustering_x_yr.png", scale= 2)
 
 ggplot(caracteristicas, aes(yr,correlacion ))+
   geom_line(size = 1.25, color = "black")+
   geom_smooth(se = F)+
+  theme_tufte()+
+  theme(text = element_text(size=20))+
+  labs(x= "Año", y= "Correlación")+
+  scale_x_continuous(breaks = seq(1996,2017,4))
   # labs(title= 'Correlación de grado en grafo no dirigido',
   #      subtitle = "Importaciones, threshold 1%, según año")+
   # scale_x_continuous(breaks = c(seq(1997,2011,1)))+
-  theme_tufte()
 
-ggsave("graficos/correlacion_x_yr.png")
+ggsave("agregado/graficos/correlacion_x_yr.png",scale = 2)
 
 #### gráficos densidad IMPO####
 
