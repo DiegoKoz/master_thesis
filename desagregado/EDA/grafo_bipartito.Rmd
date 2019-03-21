@@ -1,0 +1,334 @@
+---
+title: "Grafo bipartito"
+output: 
+  html_notebook:
+    toc: true
+    toc_float: true
+    depth: 4
+---
+
+
+```{r message=FALSE, warning=FALSE}
+rm(list = ls())
+gc(verbose = F)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+library(viridis)
+library(igraph)
+```
+
+# Utilizando RCA para las aristas
+
+```{r}
+data_all <- read_rds("data/all_data.rds") %>% 
+  rename(reporter = `Reporter Description`, partner = `Partner Description`, year = Year, flow = `Trade Flow Description`, value = Value)
+
+```
+
+
+ Defino una función que calcule el RCA para un determinado año y tipo de flujo.       
+ 
+ Para que se pueda utilizar tanto para datos de expo como de impo, primero defino las variables from y to, según si los datos son del tipo "Export" o "Import". En el primer caso, el reporter es "to" y el partner es "from", y viceversa en el caso de los datos de las expo
+
+```{r}
+rca <- function(data_all, flow_type, nano){
+  
+  df = data_all
+  if (flow_type == "Import") {
+    df <- df %>% 
+        filter(flow == flow_type, year == nano) %>% 
+        rename(from = partner, to = reporter)%>% 
+        filter(!from %in% c('Mercosur', 'Sudamerica', 'World'))
+  }
+  if (flow_type == "Export") {
+    df <- df %>% 
+        filter(flow == flow_type, year == nano) %>% 
+        rename(from = reporter, to = partner) %>% 
+        filter(!to %in% c('Mercosur', 'Sudamerica', 'World'))
+
+    
+  }
+  rca_df <-  df %>% 
+  group_by(from,HS96) %>%
+  summarise(expo = sum(value)) %>% 
+  ungroup() %>% 
+  group_by(from) %>% 
+  mutate(sumi_expo_c = sum(expo)) %>% 
+  ungroup( ) %>% 
+  group_by(HS96) %>% 
+  mutate(sumc_expo_i = sum(expo)) %>% 
+  ungroup() %>% 
+  mutate(sumci_expo = sum(expo)) %>% 
+  group_by(from,HS96) %>% 
+  summarise(RCA = ((expo)/(sumi_expo_c))/((sumc_expo_i)/(sumci_expo))) 
+  
+  return(rca_df)
+}
+
+ejemplo <- rca(data_all = data_all, flow_type = 'Export',nano = 2016)
+
+```
+
+Par el ejemplo, voy a armar una red binaria. Esto quiere decir, que las aristas toman valores de 0 o 1, $a_{ij} \in \{0,1\}$ en lugar de  $a_{ij} \in \mathbb{R}$. Para esto, eligo un punto de corte en RCA, de forma tal que tome valor 1 si supera el treshold, y 0 sino
+
+```{r}
+print(summary(ejemplo$RCA))
+print(paste('Total aristas: ',length(ejemplo$RCA[ejemplo$RCA>0])))
+quantile(ejemplo$RCA, c(.8,.9,.95))
+print(paste('Aristas con RCA>7.5: ',length(ejemplo$RCA[ejemplo$RCA>7.5])))
+```
+
+Tomo como punto de corte 7.5
+
+```{r}
+ejemplo <- ejemplo %>% 
+  filter(RCA  > 7.5)
+```
+
+
+
+## Hago un grafo de ejemplo 
+```{r}
+g <- graph_from_data_frame(ejemplo, directed = T)
+V(g)$type <- !bipartite_mapping(g)$type
+is_bipartite(g)
+```
+
+
+```{r}
+V(g)$color <- ifelse(V(g)$type, "lightblue", "salmon")
+V(g)$shape <- ifelse(V(g)$type, "circle", "square")
+V(g)$label <- ifelse(V(g)$type, V(g)$name, "")
+
+plot(g, layout=layout.bipartite, vertex.shape=V(g)$shape, vertex.label=V(g)$label, vertex.size=5, rescale=T ,  main = "Grafo bipartito, de países a productos. Año 2016", asp=0.35, vertex.label.cex=.7, vertex.label.dist=-2)
+
+```
+
+## Proyección de países
+
+```{r}
+proj <- bipartite_projection(g, which = TRUE)
+plot(proj)
+
+```
+
+No aparecen ni Argentina, ni Brazil, esto es porque, para este año y este tipo de flujo, No hay productos para los que Argentina tenga un RCA>7.5. De hecho, Argentina, para la expo, sólo a partir del 2005 y Brazil nunca llega. Para los datos de impo ambos países llegan. Esto se debe a la forma de construcción del RCA.
+
+Para no perder estos nodos, bajamos el trheshold a 5.  
+
+Por su parte, aún quedandonos con el 5% de las relaciones, es muy difícil apreciar en el grafo algún tipo de relación.    
+Aquí se abren dos caminos: 
+
+- Reducir el espectro de productos (tomando por ejemplo capítulos, en lugar de productos dentro del clasificador).
+- Utilizar medidas de resumen del grafo, que nos permitan hacer inferencia sobre el mismo sin necesidad de apelar a la representación gráficas.
+
+A continuación continuamos por esta segunda vía, queda como un ejercicio pendiente la primera opción.    
+Las métricas que se pueden calcular sobre un grafo son de varios tipos, pero se pueden clasificar básicamente en dos:
+
+- Medidas de centralidad
+- Medidas sobre el grafo
+
+Las primeras describen las características de cada nodo, según cuan _central_ es en la red. Las segundas hacen una descripción sobre todo el grafo
+
+## Armo función para calcular medidas de centralidad
+
+```{r message=FALSE, warning=FALSE}
+cent_analisis <- function(data_all, flow_type, nano,solo_paises=T, threshold= 0){
+  
+  rca_data <- rca(data_all = data_all, flow_type = flow_type,nano = nano)
+  rca_data <- rca_data %>%
+    filter(RCA>threshold)
+    
+  g <- graph_from_data_frame(rca_data, directed = T)
+  V(g)$type <- !bipartite_mapping(g)$type  
+  
+  types <- V(g)$type
+  names <- V(g)$name
+  deg <- degree(g)
+  clos <- closeness(g, normalized = T)
+  eig <- eigen_centrality(g)$vector
+  weig <- eigen_centrality(g, weights = E(g)$RCA)$vector
+  cent_df <- data.frame(names,flow_type,nano,types, deg, clos, eig, weig)
+  cent_df <- cent_df[order(cent_df$type, decreasing = TRUE),]
+  
+  if (solo_paises) {
+    cent_df <- cent_df %>% 
+      filter(types==TRUE) %>% 
+      select(-types)
+    
+  }
+  return(cent_df)
+}
+
+multi_cent_analisis <- function(data_all, solo_paises=T){
+  df <- data.frame()
+
+  for (ano in sort(unique(data_all$year))) {
+    for (tipo in sort(unique(data_all$flow))) {
+      tmp <- cent_analisis(data_all, flow_type= tipo, nano = ano,solo_paises = solo_paises, threshold= 5)
+      df <- bind_rows(df,tmp)
+    }
+    
+  }
+  return(df)
+}
+
+
+result <- multi_cent_analisis(data_all,solo_paises=F)
+
+saveRDS(result, "resultados/centralidades.rds")
+```
+
+
+```{r}
+result %>%  filter(types==TRUE)
+```
+
+
+## Breve explicación medidas de centralidad
+
+La centralidad de grado se define como la cantidad de aristas de un nodo. En el grafo bipartito la medida se interpreta diferente según el tipo de nodo. Para los nodos-país significa la cantidad de productos para los que tiene RCA>7.5; para los nodos-producto, la cantidad de paises que tienen para ese producto un RCA>7.5
+
+La centralidad de cercanía es la inversa de la suma de las distancias que tiene un nodo con los demás nodos con los que esta conectado, multiplicado por la cantidad de nodos que existen en el grafo. Que esté conectado no significa que hay una arista entre ambos, sino que existe un camino (de una o más aristas) que los conecta.   
+
+Al ser bipartito, y tener muchos nodos de un tipo, y muy pocos del otro, y estar muy densamente conectado, esto implica que la distancia a recorrer desde cualquier nodo hacia otro es muy corta, porque los nodos-país pueden funcionar como puente en muchos productos diferentes. 
+
+Formalmente: 
+$$
+C_{clos}(i) = \frac{N}{\displaystyle \sum_{j \neq i} d_{i,j} }
+$$
+
+La centralidad de autovalor, por su parte, caracteriza la importancia de un nodo considerando la importancia de sus nodos vecinos. Si asumimos linealidad:
+
+$$
+x_i'= \sum_{j=1}^{N} a_{ij}x_{j}
+$$
+$$
+x' = Ax
+$$
+Siendo A la matriz de adyacencia de la red. si $x'$ es el vector de centralidades de la red, entonces podemos plantear $Ax^* = \lambda x^*$ donde $x^*$ es la solución y  $\lambda$ es el autovalor asociado al mayor autovector.  Por lo tanto, podemos definir la medida de centralidad de autovalor como
+
+$$
+x_i^*=\frac{1}{\lambda}  \sum_{i} A_{ij}x_{j}^*
+$$
+
+Esta medida tiene la propiedad de considerar la importancia de un nodo a partir de la importancia de aquellos nodos con los que esta conectado, y con los que éstos están conectados, etc. También se puede considerar a la centralidad de autovalor ponderado como una alternativa, donde el peso esta definido por el volumen de dinero comerciado entre los países. Para calcularlo, se multiplica la matriz de adyacencia por una matriz de pesos. Por lo tanto
+
+$$
+x_i^{pond}=\frac{1}{\lambda}  \sum_{i} WA_{ij}x_{j}^{pond}
+$$
+
+
+```{r message=FALSE, warning=FALSE}
+result <- result %>% 
+  filter(types == TRUE)
+  
+nro = 285
+pdf( "graficos/285_grado_paises_RCA.pdf", onefile = T, width= 10)
+
+for (pais in unique(result$names)) {
+graf <- result %>% 
+  filter(names==pais, types == TRUE) %>% 
+  ggplot(., aes(nano,deg, color = flow_type))+
+  geom_line()+
+  theme_tufte()+
+  theme(legend.position = "bottom")+
+  labs(title = paste0("grado nodos paises. ",pais), caption= nro,
+       y= "grado", x= "año")
+  print(graf)
+  # ggsave(paste0("graficos/",nro,"_grado_grafo_",pais,".png"), scale=2)
+  nro = nro+1
+}
+result %>% 
+    filter(types == TRUE) %>% 
+    ggplot(., aes(nano,deg, color = names))+
+    geom_line()+
+    theme_tufte()+
+    theme(legend.position = "right")+
+    facet_grid(flow_type~.)+
+    labs(title = "grado nodos paises", caption= nro,
+         y= "grado", x= "año")
+dev.off()
+
+```
+
+Brasil tampoco tiene datos para RCA>5 en expo. En principio, tiene que ver con que, al ser el país más grande de la región, influye mucho sobre el RCA, tal que el _país medio_ es muy similar a Brasil, y por lo tanto, no tiene ventajas respecto de sí mismo. 
+
+
+```{r}
+pdf( "graficos/298_cercania_paises_RCA.pdf", onefile = T, width= 10)
+nro = 298
+for (pais in unique(result$names)) {
+graf <- result %>% 
+  filter(names==pais, types == TRUE) %>% 
+  ggplot(., aes(nano,clos, color = flow_type))+
+  geom_line()+
+  theme_tufte()+
+  theme(legend.position = "bottom")+
+  labs(title = paste0("Cercanía nodos paises. ",pais), caption= nro,y= "cercania", x= "año")
+  print(graf)
+  #ggsave(paste0("graficos/",nro,"_cercania_grafo_",pais,".png"), scale=2)
+  nro = nro+1
+}
+dev.off()
+```
+
+
+
+
+```{r}
+pdf( "graficos/310_autovalor_paises_RCA.pdf", onefile = T, width= 10)
+nro = 310
+for (pais in unique(result$names)) {
+graf <- result %>% 
+  filter(names==pais, types == TRUE) %>% 
+  ggplot(., aes(nano,eig, color = flow_type))+
+  geom_line()+
+  theme_tufte()+
+  theme(legend.position = "bottom")+
+  labs(title = paste0("Autovalor nodos paises. ",pais), caption= nro, y= "autovalor", x= "año")
+  print(graf)
+  # ggsave(paste0("graficos/",nro,"_autovalor_grafo_",pais,".png"), scale=2)
+  nro = nro+1
+}
+result %>% 
+  ggplot(., aes(nano,eig, color = names))+
+  geom_line()+
+  theme_tufte()+
+  facet_grid(.~flow_type)+
+  labs(title = paste0("Autovalor nodos paises. ",pais), caption= nro, y= "autovalor", x= "año")
+dev.off()
+
+```
+
+La centralidad de autovalor asigna valor 1 al nodo más central (teniendo en cuenta la centralidad considerada como se explicó más arriba). Aquí la importancia de un nodo país es si tiene un RCA>5 para los productos más centrales. Y la centralidad de los productos es mayor, cuantos más países tengan un RCA>5 para el mismo. Como en este caso, la definición del país promedio, que hace al calculo del RCA esta medida por lo que exporta Brazil, y en menor medida por Argentina, estos países nunca tienen una centralidad de autovalor muy grande. Incluso, aquellos que tienen una centralidad de 1 son los que tienen una canasta exportadora bien diferente a la de Brasil y Argentina (esto es una intuición a confirmar)
+
+
+
+```{r}
+pdf( "graficos/323_autovalor_pond_paises_RCA.pdf", onefile = T, width= 10)
+nro = 323
+for (pais in unique(result$names)) {
+graf <- result %>% 
+  filter(names==pais, types == TRUE) %>% 
+  ggplot(., aes(nano,weig, color = flow_type))+
+  geom_line()+
+  theme_tufte()+
+  theme(legend.position = "bottom")+
+  labs(title = paste0("Autovalor ponderado nodos paises. ",pais), caption= nro, y= "autovalor ponderado", x= "año")
+  print(graf)
+  # ggsave(paste0("graficos/",nro,"_autovalor_pond_grafo_",pais,".png"), scale=2)
+  nro = nro+1
+}
+result %>% 
+  ggplot(., aes(nano,weig, color = names))+
+  geom_line()+
+  theme_tufte()+
+  facet_grid(.~flow_type)+
+  labs(title = paste0("Autovalor ponderado nodos paises. ",pais), caption= nro, y= "autovalor ponderado", x= "año")
+dev.off()
+```
+
+Al considerar el autovalor ponderado las conclusiones anteriores son mucho más extremas. Dado que Guayana y Suriname tienen una cantasta exportadora muy poco diversa, con productos que sólo se exportan por esos países (en sudamérica) tienen unos RCA con valores muy altos, que si se consideran para la ponderación generan este efecto
+
