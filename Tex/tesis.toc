@@ -25,12 +25,12 @@
 \contentsline {subsection}{\numberline {3.3.1}Reducci\IeC {\'o}n de dimensionalidad mediante Latent Dirichlet Allocation Models}{26}
 \contentsline {subsubsection}{Definiciones}{26}
 \contentsline {subsubsection}{Dimensi\IeC {\'o}n latente}{26}
-\contentsline {subsubsection}{Proceso generativo}{26}
+\contentsline {subsubsection}{Proceso generativo}{27}
 \contentsline {subsubsection}{Representaci\IeC {\'o}n gr\IeC {\'a}fica}{27}
 \contentsline {subsubsection}{Distribuci\IeC {\'o}n de Dirichlet}{28}
 \contentsline {subsubsection}{Inferencia}{29}
 \contentsline {subsubsection}{Estimaci\IeC {\'o}n de par\IeC {\'a}metros}{29}
-\contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{29}
+\contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{30}
 \contentsline {section}{\numberline {3.4}Resultados}{30}
 \contentsline {subsection}{\numberline {3.4.1}Reducci\IeC {\'o}n de dimensionalidad mediante Latent Dirichlet Allocation Models}{30}
 \contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{30}
