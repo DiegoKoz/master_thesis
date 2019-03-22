@@ -1,863 +1,114 @@
 ---
 title: "Análisis exploratorio de datos"
-date: "26 de Mayo 2018"
+date: "Marzo 2019"
 output: 
-  html_notebook: 
-    code_folding: hide
+  html_notebook
 ---
 
-Les comparto algunos gráficos descriptivos de la base de COMTRADE
 
-```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-rm(list = ls())
-gc()
+```{r setup}
 library(tidyverse)
-library(readxl)
 library(ggthemes)
 library(ggfortify)
-#library(plotly)
-library(knitr)
-library(factoextra)
-library(cluster)
-library(viridis)
 library(treemapify)
-library(jsonlite)
-library(scales)
-library(LaplacesDemon)
 library(RColorBrewer)
-opts_chunk$set(fig.width=12, fig.height=8, fig.path='Figs/',
-echo=FALSE, warning=FALSE, message=FALSE, include = TRUE)
-
+library(shiny)
+library(shinythemes)
+library(shinycssloaders)
+library(glue)
+library(readxl)
+library(DT)
 ```
 
 
+### Treemap mundo. Cadenas y subcadenas
+
 ```{r}
-data <- read_rds("data/data_cadena.rds")
+dataset <- read.delim('data/Export_agg_country_prod_yr.txt',sep = ',', encoding = 'UTF-8')
 #renombro las variables
-data <- data %>% rename(reporter = Reporter, partner = Partner, year = Year, flow = TradeFlowName, value = Valor.en.1000.USD)
-```
 
-#### Datos resumidos por país (reporter & Partner) y tipo
-
-```{r }
-data %>% 
-  group_by(reporter,partner, flow) %>% 
-  summarise(total_value = sum(value))
-```
-
-
-Veo cuales son los valores únicos para _partners_ en el dataset
-```{r}
-unique(data$partner)
-```
-
-
-
-```{r}
-
-data %>% 
-  filter(as.character(reporter) == as.character(partner))
-agregados <- c("Mercosur", "Sudamerica","RDM_Mercosur", "World")
-
-data_filt <- data %>% 
-  filter(!partner %in% agregados)
-```
-
-
-No hay nadie que se venda a sí mismo
-
-Calculo la suma de valor para cada reporter,partner, flow, year y después calculo el promedio de todos los años
-
-```{r}
-summary_data <- data %>% 
-  group_by(reporter,partner, flow, year) %>% 
-  summarise(total_value_yr = sum(value)) %>% 
-  group_by(reporter,partner, flow) %>% 
-  summarise(total_value = mean(total_value_yr))
-summary_data
-```
-
-Me quedo con los flujos Mercosur-Sudamérica y RDM
-
-```{r}
-agregados <- c("Mercosur", "Sudamerica","RDM_Mercosur", "RDM_Sudamerica")
-summary_data <- summary_data %>% 
-  filter(partner %in% agregados)
-summary_data
-```
-
-Estos datos deberían ser análogos a la tabla 3 del DT 10 (más allá de que sean valores absolutos y no porcentajes)
-
-
-Hacemos unos gráficos sencillos para ver valor total exportado intra y inter zona, para Mercosur y Sudamerica 
-
-
-```{r message=FALSE, warning=FALSE}
-mercosur <- c("Mercosur", "RDM_Mercosur")
-mercosur_paises <- c("Argentina", "Brazil","Paraguay","Uruguay")
-sudamerica <- c("Sudamerica","RDM_Sudamerica")
-# options(scipen=0)
-
-pdf( "graficos/1_summary_flows.pdf", onefile = T)
-
-g1 <- summary_data %>% 
-  filter(reporter %in% mercosur_paises, partner %in% mercosur) %>% 
-   ggplot(., aes(partner,reporter,color =total_value , size = total_value)) + 
-   geom_point()+
-  theme_hc()+
-  theme(legend.position = "bottom")+
-  scale_color_continuous(low = "#66b2b2",high = "#004c4c",guide = "legend")+
-  labs(title= 'Mercosur',
-       caption ="1")+
-  facet_grid(.~flow)
-
-print(g1)
-
-g2 <- summary_data %>% 
+dataset_summ <-dataset %>% 
+  group_by(Cadena, Subcadena) %>% 
+  summarise(value = sum(value, na.rm = T)) %>% 
   ungroup() %>% 
-  filter(partner %in% sudamerica) %>%
-  mutate(partner = factor(partner, levels = sudamerica)) %>% 
-   ggplot(., aes(partner,reporter,color =total_value , size = total_value)) + 
-   geom_point()+
-  theme_hc()+
-  theme(legend.position = "bottom")+
-  scale_color_continuous(low = "#66b2b2",high = "#004c4c",guide = "legend")+
-  labs(title= 'Sudamérica',
-       caption ="2")+
-  facet_grid(.~flow)
-print(g2)
-dev.off()
-
-print(g1)
-print(g2)
-
-```
-
-Es más relevante el comercio hacia afuera de la zona (tanto para mercosur como para Sudamérica)
-
-## Treemaps
-
-```{r}
-grow_treemap_partner <- function(data = data, nano= 2015, reportante = "Argentina", save =F, show=T, nro = 1, sin_rdm = T){
-  
-  paises <- unique(data$partner)
-  colores  <-  gdocs_pal()(length(paises))
-  names(colores) <- paises
-
-  data_filt <-   data %>% 
-      filter(reporter==reportante, year == nano)
-  if (sin_rdm == TRUE){
-      data_filt <-   data_filt %>% 
-        filter(partner != "RDM_Sudamerica")
-
-  }
-  if (nrow(data_filt)==0) {
-    print(paste("No hay data para ",reportante,", ",nano))
-    
-  }else{
-        
-        graf <- data_filt  %>% 
-            group_by(partner,flow) %>% 
-            summarise(total_value = sum(value)) %>% 
-            ggplot(., aes(area = total_value, label = partner, fill= partner)) + 
-            geom_treemap(fixed = TRUE)+
-            geom_treemap_text(colour = "white", place = "left",
-                              grow = F, fixed =  TRUE)+
-            facet_grid(.~flow)+
-            labs(title= paste0('Treemap año ',nano,', ', reportante), caption= nro)+
-            #scale_fill_continuous(low = "#518e8e",high = "#284747",guide = 'colourbar')+
-            scale_fill_manual(values = colores)+
-            theme_tufte()+
-            # theme(legend.position = 'bottom',
-            #       legend.key.width = unit(4,"line"))
-            theme(legend.position = 'none')
-          
-          if (save) {
-            graf
-            ggsave(paste0("graficos/",nro,"_treemap_byCountry_",nano,"_",reportante,".png"), scale=2)
-            
-          }
-          if(show){
-            print(graf)
-          }
-      }
-}
-
-
-```
-
-Filtro los agregados Sudamerica, Mercosur, World, RDM_Mercosur. 
-Hago dos tandas de gráficos, una con RDM_Sudamerica y otra sin
-
-
-Con RDM_Sudamerica
-```{r}
-nro = 3
-pdf( "graficos/3_Treemaps_paises_C_RDM.pdf", onefile = T)
-for (pais in unique(data$reporter)) {
-  for (ano in c(1997:2016)) {
-    grow_treemap_partner(data = data_filt, nano = ano, reportante = pais,save = F,show = T, nro = nro, sin_rdm = F)
-    nro = nro+1
-    
-  }
-}
-dev.off()
-```
-
-Sin RDM_Sudamerica
-
-```{r}
-nro = 243
-pdf( "graficos/243_Treemaps_paises_S_RDM.pdf", onefile = T)
-for (pais in unique(data$reporter)) {
-  for (ano in c(1997:2016)) {
-    grow_treemap_partner(data = data_filt, nano = ano, reportante = pais,save = F,show = T, nro = nro, sin_rdm = T)
-    nro = nro+1
-    
-  }
-}
-dev.off()
-```
-
-
-```{r}
-grow_treemap_subcadenas <- function(data = data_filt, nano= 2015, reportante = "Argentina", save =F, show=T, nro = 1, companero = NA){
-
-  cadenas <- unique(data$Cadena)
-  colores  <-  gdocs_pal()(length(cadenas))
-  names(colores) <- cadenas
-
-
-  data_filt <-   data %>% 
-      filter(reporter==reportante, year == nano) 
-  
-  if (reportante == "Sudamerica") {
-      data_filt <-   data %>% 
-        filter(year == nano) 
-  }
-  if (!is.na(companero)) {
-      data_filt <-   data %>% 
-        filter(partner == companero, year == nano) 
-  }
-
-  if (nrow(data_filt)==0) {
-    print(paste("No hay data para ",reportante,", ",nano))
-    
-  }else{
-        
-        graf <- data_filt  %>% 
-          group_by(Cadena,Subcadena, flow) %>% 
-          summarise(value = sum(value)) %>%
-          ggplot(., aes(area = value, fill = Cadena, label = Subcadena, group = Cadena)) + 
-            geom_treemap( fixed =  TRUE)+
-            geom_treemap_text(colour = "white", place = "left",
-                              grow = F, fixed =  TRUE)+
-            facet_grid(.~flow)+
-            labs(title= paste0('Treemap año ',nano,', ', reportante),
-            caption =paste0(nro))+
-            scale_fill_manual(values = colores)+
-            theme_tufte()+
-            theme(legend.position = 'bottom')
-
-          
-          if (save) {
-            graf
-            ggsave(paste0("graficos/",nro,"_treemap_byproduct_",nano,"_",reportante,".png"), scale=2)
-            
-          }
-          if(show){
-            print(graf)
-          }
-      }
-}
-
-```
-
-
-```{r}
-
-nro = 483
-
-pdf( "graficos/483_Treemaps_subcadenas.pdf", onefile = T)
-for (pais in c(paste(unique(data_filt$reporter)),"Sudamerica")) {
-  for (ano in c(1997:2016)) {
-    grow_treemap_subcadenas(data = data_filt, nano = ano, reportante = pais,save = F,show = T, nro = nro, companero = NA)
-    nro = nro+1
-    
-  }
-}
-for (ano in c(1997:2016)) {
-  grow_treemap_subcadenas(nano = ano, reportante= "de Sudamérica al resto del mundo",save = F,show = T, nro = nro, companero = "RDM_Sudamerica")
-  nro = nro+1
-}
-
-dev.off()
-
-```
-
-cadenas
-
-```{r}
-grow_treemap_cadenas <- function(data = data_filt, nano= 2015, reportante = "Argentina", save =F, show=T, nro = 1, companero = NA){
-
-  cadenas <- unique(data$Cadena)
-  colores  <-  gdocs_pal()(length(cadenas))
-  names(colores) <- cadenas
-
-  data_filt <-   data %>% 
-      filter(reporter==reportante, year == nano) 
-  if (reportante == "Sudamerica") {
-      data_filt <-   data %>% 
-        filter(year == nano) 
-  }
-  if (!is.na(companero)) {
-      data_filt <-   data %>% 
-        filter(partner == companero, year == nano) 
-  }
-
-  if (nrow(data_filt)==0) {
-    print(paste("No hay data para ",reportante,", ",nano))
-    
-  }else{
-        
-        graf <- data_filt  %>% 
-          group_by(Cadena, flow) %>% 
-          summarise(value = sum(value)) %>% 
-          ggplot(., aes(area = value, fill = Cadena, label = Cadena, group = Cadena)) + 
-            geom_treemap( fixed =  TRUE)+
-            geom_treemap_text(colour = "white", place = "left",
-                              grow = F, fixed =  TRUE)+
-            facet_grid(.~flow)+
-            labs(title= paste0('Treemap año ',nano,', ', reportante),
-            caption =paste0(nro))+
-            scale_fill_manual(values = colores)+
-            theme_tufte()+
-            theme(legend.position = 'bottom')
-          
-          if (save) {
-            graf
-            ggsave(paste0("graficos/",nro,"_treemap_byproduct_",nano,"_",reportante,".png"), scale=2)
-            
-          }
-          if(show){
-            print(graf)
-          }
-      }
-}
-```
-
-```{r}
-
-nro = 763
-
-pdf( "graficos/763_Treemaps_cadenas.pdf", onefile = T)
-for (pais in c(paste(unique(data_filt$reporter)),"Sudamerica")) {
-  for (ano in c(1997:2016)) {
-    grow_treemap_cadenas(data = data_filt, nano = ano, reportante = pais,save = F,show = T, nro = nro, companero = NA)
-    nro = nro+1
-    
-  }
-}
-for (ano in c(1997:2016)) {
-  grow_treemap_cadenas(data = data_filt, nano = ano, reportante= "de Sudamérica al resto del mundo",save = F,show = T, nro = nro, companero = "RDM_Sudamerica")
-  nro = nro+1
-}
-
-dev.off()
-
-```
-```{r}
-grow_treemap <- function(data = data_filt, nano= 2015, reportante = "Argentina", save =F, show=T, nro = 1, companero = NA){
-
-  cadenas <- unique(data$Cadena)
-  colores  <-  gdocs_pal()(length(cadenas))
-  names(colores) <- cadenas
-
-
-  data_filt <-   data %>% 
-      filter(reporter==reportante, year == nano) 
-  
-  if (reportante == "Sudamerica") {
-      data_filt <-   data %>% 
-        filter(year == nano) 
-  }
-  if (!is.na(companero)) {
-      data_filt <-   data %>% 
-        filter(partner == companero, year == nano) 
-  }
-
-  if (nrow(data_filt)==0) {
-    print(paste("No hay data para ",reportante,", ",nano))
-    
-  }else{
-        
-        graf <- data_filt  %>% 
-          group_by(Cadena,Subcadena, flow) %>% 
-          summarise(value = sum(value)) %>%
-          ggplot(., aes(area = value, fill = Cadena, label = Subcadena, subgroup = Cadena)) + 
-            geom_treemap( fixed =  TRUE)+
-            geom_treemap_subgroup_border(fixed = TRUE)+
-            geom_treemap_subgroup_text(place = "bottomright", grow = T, alpha = 0.5, colour =
-                             "black", fontface = "italic", min.size = 0,  fixed =  TRUE) +
-            geom_treemap_text(colour = "white", place = "topleft", reflow = T,  fixed =  TRUE)+
-          # geom_treemap_text(colour = "white", place = "left",
-          #                     grow = F)+
-            facet_grid(.~flow)+
-            labs(title= paste0('Treemap año ',nano,', ', reportante),
-            caption =paste0(nro))+
-            scale_fill_manual(values = colores)+
-            theme_tufte()+
-            theme(legend.position = "None")
-
-          
-          if (save) {
-            graf
-            ggsave(paste0("graficos/",nro,"_treemap_byproduct_",nano,"_",reportante,".png"), scale=2)
-            
-          }
-          if(show){
-            print(graf)
-          }
-      }
-}
-
-```
-
-
-```{r}
-
-nro = 1043
-pdf( "graficos/1043_Treemaps_alt.pdf", onefile = T, width = 10)
-for (pais in c(paste(unique(data_filt$reporter)),"Sudamerica")) {
-  for (ano in c(1997:2016)) {
-    grow_treemap(data = data_filt, nano = ano, reportante = pais,save = F,show = T, nro = nro, companero = NA)
-    nro = nro+1
-    
-  }
-}
-for (ano in c(1997:2016)) {
-  grow_treemap(data = data_filt, nano = ano, reportante= "de Sudamérica al resto del mundo",save = F,show = T, nro = nro, companero = "RDM_Sudamerica")
-  nro = nro+1
-}
-dev.off()
-
-```
-
-
-
-### Treemap gif
-
-```{r}
-library(gganimate)
-grow_treemap_cadsubcad_gif <- function(data = data_filt, reportante = "Argentina"){
-
-  cadenas <- unique(data$Cadena)
-#Tomo toda la escala cromática, y eligo por k-means los colores más distintivos posibles
-    colores <- c("#455930",
-                  "#c057c5",
-                  "#63b649",
-                  "#6148b9",
-                  "#c49d35",
-                  "#7a8fd0",
-                  "#d1503b",
-                  "#5ea7a3",
-                  "#c7407f",
-                  "#80a25e",
-                  "#56426d",
-                  "#bc8960",
-                  "#c787a5",
-                  "#793933")
-  names(colores) <- cadenas
-
-
-  data_filt <-   data %>% 
-      filter(reporter==reportante) 
-  
-  if (reportante == "Sudamerica") {
-      data_filt <-   data
-  }
-  if (nrow(data_filt)==0) {
-    print(paste("No hay data para ",reportante,", ",nano))
-    
-  }else{
-        
-        graf <- data_filt  %>% 
-          group_by(Cadena,Subcadena, flow, year) %>% 
-          summarise(value = sum(value)) %>%
-          ggplot(., aes(area = value, fill = Cadena, label = Subcadena, subgroup = Cadena, frame = year)) + 
-            geom_treemap( fixed =  TRUE, alpha = 1)+
-            #geom_treemap_subgroup_border(fixed = TRUE)+
-            geom_treemap_subgroup_text(place = "bottomright", grow = T, alpha = 0.5, colour =
-                             "black", fontface = "italic", min.size = 0,  fixed =  TRUE) +
-            geom_treemap_text(colour = "white", place = "topleft", reflow = T,  fixed =  TRUE)+
-          # geom_treemap_text(colour = "white", place = "left",
-          #                     grow = F)+
-            facet_grid(.~flow)+
-            labs(title= paste0('Treemap año, ', reportante))+
-            scale_fill_manual(values = colores)+
-            theme_tufte()+
-            theme(legend.position = "None")
-
-          
-        gganimate(graf,filename =  paste0("graficos/treemap_byproduct_",reportante,".mp4"), ani.width = 1600, ani.height = 900, interval = 0.1)  
-
-          }
-}
-
-```
-
-```{r}
-grow_treemap_caduse_gif <- function(data = data_filt, reportante = "Argentina"){
-
-  cadenas <- unique(data$Cadena)
-#Tomo toda la escala cromática, y eligo por k-means los colores más distintivos posibles
-    colores <- c("#455930",
-                  "#c057c5",
-                  "#63b649",
-                  "#6148b9",
-                  "#c49d35",
-                  "#7a8fd0",
-                  "#d1503b",
-                  "#5ea7a3",
-                  "#c7407f",
-                  "#80a25e",
-                  "#56426d",
-                  "#bc8960",
-                  "#c787a5",
-                  "#793933")
-  names(colores) <- cadenas
-
-
-  data_filt <-   data %>% 
-      filter(reporter==reportante) 
-  
-  if (reportante == "Sudamerica") {
-      data_filt <-   data
-  }
-  if (nrow(data_filt)==0) {
-    print(paste("No hay data para ",reportante,", ",nano))
-    
-  }else{
-        
-        graf <- data_filt  %>% 
-          group_by(Cadena,Flores,Cadena,flow, year) %>% 
-          summarise(value = sum(value)) %>%
-          ggplot(., aes(area = value, fill = Cadena, label = Flores, subgroup = Cadena, frame = year)) + 
-            geom_treemap( fixed =  TRUE, alpha = 1)+
-            #geom_treemap_subgroup_border(fixed = TRUE)+
-            geom_treemap_subgroup_text(place = "bottomright", grow = T, alpha = 0.5, colour =
-                             "black", fontface = "italic", min.size = 0,  fixed =  TRUE) +
-            geom_treemap_text(colour = "white", place = "topleft", reflow = T,  fixed =  TRUE)+
-          # geom_treemap_text(colour = "white", place = "left",
-          #                     grow = F)+
-            facet_grid(.~flow)+
-            labs(title= paste0('Treemap año, ', reportante))+
-            scale_fill_manual(values = colores)+
-            theme_tufte()+
-            theme(legend.position = "None")
-
-          
-          gganimate(graf,filename =  paste0("graficos/treemap_byproduc_tUse_",reportante,".mp4"), ani.width = 1600, ani.height = 900, interval = 0.1)  
-            
-          }
-}
-
-```
-
-
-```{r, fig.show = "animate"}
-for (pais in c(paste(unique(data_filt$reporter)),"Sudamerica")) {
-    grow_treemap_cadsubcad_gif(data = data_filt, reportante = pais)
-}
-
-for (pais in c(paste(unique(data_filt$reporter)),"Sudamerica")) {
-    grow_treemap_caduse_gif(data = data_filt, reportante = pais)
-}
-
-
-```
-
-
-
-
-
-## barplots
-```{r message=FALSE, warning=FALSE, fig.width=15, fig.height=10}
-nro = 1323
-pdf( "graficos/1323_barplots.pdf", onefile = T, width = 10)
-
-data %>%
-  group_by(reporter, flow, year) %>%
-  summarise(total_value = sum(value)) %>%
-  group_by(reporter, flow) %>% 
-  summarise(total_value = mean(total_value)) %>% 
-  ggplot(., aes(reporter, total_value,group = flow, fill = flow)) + 
-  geom_col(alpha= 0.75, position = 'dodge')+
+  mutate(Subcadena = as.character(Subcadena))
+
+dataset_summ$Subcadena[str_detect(dataset_summ$Subcadena, 'CTEOS')] <- 'LACTEOS'
+
+dataset_summ %>% 
+  ggplot(., aes(area = value, fill = Cadena, label = Subcadena, subgroup = Cadena)) + 
+  geom_treemap(alpha = 1)+
+  geom_treemap_subgroup_text(place = "bottomright", grow = T, alpha = 0.5, colour =
+                               "black", fontface = "italic", min.size = 0) +
+  geom_treemap_text(colour = "white", place = "topleft", reflow = T)+
+  # labs(title= glue("Treemap {flow_filter}, {reportante}, year {nano}"))+
+  # scale_fill_manual(values = colores)+
   theme_tufte()+
-  scale_fill_gdocs()+
-  theme(axis.text.x = element_text(size = 12))+
-  labs(title= 'Comercio total', subtitle = "Promedio anual", x = "Reporter", y = "Comercio Total", caption= nro)
+  theme(legend.position = "None",
+        title = element_text(size = 18),
+        strip.text = element_text(size=18))
 
-nro = nro+ 1
 
-data %>%
-  filter(partner != 'RDM_Sudamerica') %>% 
-  group_by(reporter, flow, year) %>%
-  summarise(total_value = sum(value)) %>%
-  group_by(reporter, flow) %>% 
-  summarise(total_value = mean(total_value)) %>%
-  ggplot(., aes(reporter, total_value,group = flow, fill = flow)) + 
-  geom_col(alpha= 0.75, position = 'dodge')+
-  theme_tufte()+
-  scale_fill_gdocs()+
-  theme(axis.text.x = element_text(size = 12))+
-  labs(title= 'Comercio Sudaméricano', subtitle = "Promedio anual", x = "Reporter", y = "Comercio Total", caption= nro)
-
-nro = nro + 1
-
-data %>%
-  filter(partner == 'RDM_Sudamerica') %>% 
-  group_by(reporter, flow, year) %>%
-  summarise(total_value = sum(value)) %>%
-  group_by(reporter, flow) %>% 
-  summarise(total_value = mean(total_value)) %>%
-  ggplot(., aes(reporter, total_value,group = flow, fill = flow)) + 
-  geom_col(alpha= 0.75, position = 'dodge')+
-  theme_tufte()+
-  scale_fill_gdocs()+
-  theme(axis.text.x = element_text(size = 12))+
-  labs(title= 'Comercio con el resto del mundo', subtitle = "Promedio anual", x = "Reporter", y = "Comercio Total", caption= nro)
-
-nro = nro + 1
-data %>% 
-  #filter(partner == 'RDM_Sudamerica') %>% 
-  group_by(reporter, flow, year) %>%
-  summarise(total_value = sum(value)) %>% 
-  ggplot(., aes(reporter, total_value,group = flow,
-                fill = flow)) +
-  geom_col(alpha= 1, position = 'dodge')+
-  theme_tufte()+
-  scale_fill_gdocs()+
-  facet_grid(.~year)+
-  theme(axis.text = element_blank(),
-        axis.ticks = element_blank())+
-  labs(title= 'Comercio Total', subtitle = 'año a año', caption= nro)
-
-nro = nro +1
-
-grafico <- data %>% 
-  filter(partner != 'RDM_Sudamerica') %>% 
-  group_by(reporter, flow, year) %>%
-  summarise(total_value = sum(value)) %>% 
-  ggplot(., aes(reporter, total_value,group = flow,
-                fill = flow)) +
-  geom_col(alpha= 1, position = 'dodge')+
-  theme_tufte()+
-  scale_fill_gdocs()+
-  facet_grid(.~year)+
-  theme(axis.text = element_blank(),
-        axis.ticks = element_blank())+
-  labs(title= 'Comercio Sudameirca', subtitle = 'año a año', caption= nro)
-grafico
-
-nro = nro +1
-
-grafico <- data %>% 
-  filter(partner == 'RDM_Sudamerica') %>% 
-  group_by(reporter, flow, year) %>%
-  summarise(total_value = sum(value)) %>% 
-  ggplot(., aes(reporter, total_value,group = flow,
-                fill = flow)) +
-  geom_col(alpha= 1, position = 'dodge')+
-  theme_tufte()+
-  scale_fill_gdocs()+
-  facet_grid(.~year)+
-  theme(axis.text = element_blank(),
-        axis.ticks = element_blank())+
-  labs(title= 'Comercio Resto del mundo', subtitle = 'año a año', caption= nro)
-grafico
-
-dev.off()
+ggsave('graficos/treemap_cadsubcad.png', width = 7,height = 7)
 ```
 
 
-## Evolución de impo y expo por país
+
+### Treemap mundo. Cadenas y usos
 
 ```{r}
-nro = 1328
-pdf( "graficos/1328_expo_impo_paises.pdf", onefile = T)
-for (pais in unique(data$reporter)) {
-print(data %>% 
-  filter(reporter == pais) %>% 
-  group_by(reporter, flow, year) %>%
-  summarise(total_value = sum(value)) %>% 
-  ggplot(., aes(year, total_value/100000000,group = flow, color = flow)) +
-  geom_line()+
+
+dataset_summ_usos <-dataset %>% 
+  group_by(Cadena, Flores) %>% 
+  summarise(value = sum(value, na.rm = T)) %>% 
+  ungroup() 
+
+dataset_summ_usos %>% 
+  ggplot(., aes(area = value, fill = Cadena, label = Flores, subgroup = Cadena)) + 
+  geom_treemap(alpha = 1)+
+  geom_treemap_subgroup_text(place = "bottomright", grow = T, alpha = 0.5, colour =
+                               "black", fontface = "italic", min.size = 0) +
+  geom_treemap_text(colour = "white", place = "topleft", reflow = T)+
+  # labs(title= glue("Treemap {flow_filter}, {reportante}, year {nano}"))+
+  # scale_fill_manual(values = colores)+
   theme_tufte()+
-  scale_fill_gdocs()+
-  theme(legend.position = "bottom")+
-  scale_y_continuous(label=dollar_format())+
-  labs(title= paste('Comercio Total: ', pais), caption= nro, x = "año", y= "cientos de MM de USD"))
-  nro = nro+1
-}
-data %>% 
-    group_by(reporter, flow, year) %>%
-    summarise(total_value = sum(value)) %>% 
-    ggplot(., aes(year, total_value/100000000,group = reporter, color = reporter)) +
-    geom_line()+
-    theme_tufte()+
-    scale_fill_gdocs()+
-    facet_grid(.~flow)+
-    theme(legend.position = "bottom")+
-    scale_y_continuous(label=dollar_format())+
-    labs(title= 'Comercio Total', caption= nro, x = "año", y= "cientos de MM de USD")
-dev.off()
+  theme(legend.position = "None",
+        title = element_text(size = 18),
+        strip.text = element_text(size=18))
+
+
+ggsave('graficos/treemap_usos.png', width = 7,height = 7)
 ```
 
 
-## Análisis de estabilidad
-
-Propuesta, utilizar la divergencia de Kullback-Leibler, que mide la divergencia entre dos distribuciones.
-$$
-\mathrm{KLD}[p(\textbf{y}) || p(\textbf{x})] = \sum^N_i
-  p(\textbf{y}_i)
-  \log\frac{p(\textbf{y}_i)}{p(\textbf{x}_i)}
-$$
-
-
-
-```{r eval=FALSE, include=FALSE}
-KL_divergences <- function(data_countries = data_filt, reportante = "Argentina", save =F,show = T, nro = 1){
-
-  data_sumary <- data_countries  %>%
-    filter(reporter == reportante) %>% 
-    group_by(year,Cadena, flow) %>% 
-    summarise(value = sum(value)) %>% 
-    group_by(year, flow) %>% 
-    mutate(total_trade = sum(value)) %>% 
-    group_by(year,Cadena, flow) %>% 
-    summarise(prop = value/total_trade)  
-  
-  KL_expo <- c()
-  KL_impo <- c()
-  for(yr in  unique(data_sumary$year)[-length(unique(data_sumary$year))]) {
-    year_1_exp = data_sumary %>%
-      filter(year==yr,flow == "Export")
-    year_2_exp = data_sumary %>% 
-      filter(year==yr+1, flow == "Export")
-    KL_expo <- c(KL_expo,KLD(year_1_exp$prop,year_2_exp$prop)$sum.KLD.px.py)
-    
-    year_1_imp = data_sumary %>%
-      filter(year==yr,flow == "Import")
-    year_2_imp = data_sumary %>% 
-      filter(year==yr+1, flow == "Import")
-    KL_impo <- c(KL_impo,KLD(year_1_imp$prop,year_2_imp$prop)$sum.KLD.px.py)
-  
-  }
-  
-  
-  df <-  data_frame(year = unique(data_sumary$year)[-length(unique(data_sumary$year))], impo = KL_impo, expo = KL_expo) %>% 
-    gather(.,flow,KL,2:3)
-  
-
-  graf <- ggplot(df, aes(year,KL,color = flow, group = flow)) + 
-    geom_line()+
-    geom_smooth(method = "loess",level=0.99)+
-    labs(title= paste0('Divergencia de Kullbak-Leibler ', reportante),
-    caption =paste0(nro))+
-    scale_color_gdocs()+
-    theme_tufte()+
-    theme(legend.position = 'bottom')
-  
-  if (save) {
-    graf
-    ggsave(paste0("graficos/",nro,"KL_",reportante,".png"), scale=2)
-    
-  }
-  if(show){
-    print(graf)
-  }
-
-}
-```
-
-
-```{r eval=FALSE, include=FALSE}
-nro = 1328
-pdf( "graficos/1328_KL.pdf", onefile = T, width = 10)
-
-for (pais in unique(data_filt$reporter)) {
-  KL_divergences(data_filt, reportante = pais, save =F,show = T, nro = nro)
-  nro = nro+1
-}
-dev.off()
-
-
-```
-
-Los resultados son muy malos, no sirven para determinar períodos.
-
-## Variaciones
-
-1. Elimino los datos de 2016 porque tienen más ruido
-2. Calculo la variación cuadrada de la proporción que representa cada cadena para cada país-flujo, entre un año y el año anterior
-3. Calculo para cada año-país-flujo el promedio de las variaciones, ponderado por la proporción que tenía esa cadena en el año anterior
+#### Treemap mundo. Paises receptores
 
 ```{r}
-data_filt  %>%
-    group_by(reporter,year,Cadena, flow) %>% 
-    filter(year != 2016) %>% 
-    summarise(value = sum(value)) %>% 
-    group_by(reporter,year, flow) %>% 
-    mutate(total_trade = sum(value)) %>% 
-    group_by(reporter,flow, Cadena, year) %>%
-    summarise(prop = value/total_trade,
-              value = value) %>% 
-    arrange(reporter,flow,Cadena, year) %>% 
-    mutate(prop_anterior = lag(prop),
-           var = ((prop-prop_anterior)/prop_anterior)^2)  %>% 
-    group_by(flow,year,reporter) %>% 
-  summarise(mean_var =weighted.mean(var,w = prop,na.rm = TRUE)) %>% 
-  filter(!is.nan(mean_var)) %>%  
-  ggplot(., aes(year,mean_var, group = reporter, color = reporter))+
-  geom_line()+
-  facet_grid(reporter~flow, scales = "free")+
+df <- readRDS('data/aggregated_trade.RDS')
+
+countrycode_data <- countrycode::codelist %>% select(cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
+df <- left_join(df,countrycode_data 
+                      %>% select(rt3ISO=iso3c, continent, cldr.short.es_ar)) %>% 
+  na.omit(.)
+
+df_summ_paieses <- df %>% 
+  group_by(continent,cldr.short.es_ar,rgDesc) %>% 
+  summarise(value = sum(TradeValue)) %>% 
+  filter(rgDesc %in% c('Export', 'Import')) 
+  
+df_summ_paieses %>% 
+ggplot(., aes(area = value, fill = continent, label = cldr.short.es_ar, subgroup = continent)) + 
+  geom_treemap(alpha = 1, layout = "fixed")+
+  geom_treemap_subgroup_text(place = "bottomright", grow = T, alpha = 0.5, colour =
+                               "black", fontface = "italic", min.size = 0, layout = "fixed") +
+  geom_treemap_text(colour = "white", place = "topleft", reflow = T, layout = "fixed")+
   theme_tufte()+
-  theme(legend.position = "none",
-        strip.text.y = element_text(angle = 0))+
-  labs(title = "Variación promedio de las proporciones de las cadenas, ponderadas por el peso de cada cadena")
+  theme(legend.position = "None",
+        title = element_text(size = 18),
+        strip.text = element_text(size=18))+
+        facet_grid(.~rgDesc)
 
-ggsave("graficos/varaicion_promedio.png", scale = 2)
+
+ggsave('graficos/treemap_paises.png', width = 7,height = 7)
 ```
-
-Guyana, Suriname Venezuela, Ecuador y Bolivia tienen cambios muy fuertes en algunos períodos
-
-```{r}
-data_filt  %>%
-    group_by(reporter,year,Cadena, flow) %>% 
-    filter(year != 2016, reporter %in% c("Argentina","Brazil", "Chile", "Colombia","Peru","Uruguay")) %>% 
-    summarise(value = sum(value)) %>% 
-    group_by(reporter,year, flow) %>% 
-    mutate(total_trade = sum(value)) %>% 
-    group_by(reporter,flow, Cadena, year) %>%
-    summarise(prop = value/total_trade,
-              value = value) %>% 
-    arrange(reporter,flow,Cadena, year) %>% 
-    mutate(prop_anterior = lag(prop),
-           var = ((prop-prop_anterior)/prop_anterior)^2)  %>% 
-    group_by(flow,year,reporter) %>% 
-  summarise(mean_var =weighted.mean(var,w = prop,na.rm = TRUE)) %>% 
-  filter(!is.nan(mean_var)) %>%  
-  ggplot(., aes(year,mean_var, group = reporter, color = reporter))+
-  geom_line()+
-  #facet_grid(reporter~flow, scales = "free")+
-  theme_tufte()+
-  theme(legend.position = "bottom",
-        strip.text.y = element_text(angle = 0))+
-  labs(title = "Variación promedio de las proporciones de las cadenas, ponderadas por el peso de cada cadena")
-ggsave("graficos/varaicion_promedio2.png", scale = 2)
-
-```
-
-De 2004 a 2014 parecería haber menor volatilidad que en el resto de la series
 
