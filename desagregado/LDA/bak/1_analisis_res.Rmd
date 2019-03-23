@@ -1,0 +1,75 @@
+---
+title: "Análisis resultados LDA"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+library(ggridges)
+library(ggthemes)
+library(readxl)
+library(directlabels)
+
+```
+
+
+```{r message=FALSE, warning=FALSE}
+componentes = read_csv("results/Dist_cadenas20.csv")
+paises = read_csv("results/Dist_paises20.csv")
+nombres = read_excel("names//UN Comtrade Commodity Classifications.xlsx")
+```
+
+## Análisis de los componentes (las cadenas)
+
+```{r}
+componentes$componente <- 0:19
+componentes <- componentes %>% 
+  select(componente, everything()) %>% 
+  gather(HS, prop, 2:ncol(.))
+  
+```
+
+
+Distribución de los productos por componente
+
+```{r}
+ggplot(componentes, aes(x = HS, y = prop)) + 
+  geom_col()+
+  facet_grid(componente~., scales = "free")+
+  theme_tufte()+
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text.y = element_text(angle = 0))
+```
+
+Mas o menos se cubre el espacio de producto, con algunos sectores muy presentes en todos los componentes
+
+
+### Evolución de los componentes en Sudamérica
+
+
+
+```{r, fig.height=40, fig.width=10}
+isos <- c("ARG","BRA", "BOL","CHL","COL","GUY","VEN","MEX","CHN","USA","CAN" )
+
+  
+paises %>% filter(rep_iso %in% isos) %>% 
+  gather(Componente, prop, 3:ncol(.)) %>% 
+  ggplot(., aes(year,prop, group = Componente, color = Componente))+
+  geom_line()+
+  theme_tufte()+
+  theme(axis.text.x = element_text(angle = 15),
+        legend.position = "none",
+        strip.text.y = element_text(angle = 0))+
+  facet_wrap(rep_iso~., ncol = 1, scales = "free")+
+  #labs(title = iso)+
+  #scale_color_gdocs()+
+  scale_x_continuous(limits = c(min(unique(paises$year)),max(unique(paises$year))),
+                      breaks = unique(paises$year))+
+  geom_dl(aes(label = Componente), method = list(dl.trans(x = x + .2), "last.points")) +
+  geom_dl(aes(label = Componente), method = list(dl.trans(x = x - .2), "first.points"))
+
+```
+
+

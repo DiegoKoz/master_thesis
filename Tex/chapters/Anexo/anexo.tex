@@ -1,0 +1,177 @@
+%\documentclass[../../tesis.tex]{subfiles}
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\graphicspath{{images/}}
+
+\usepackage{longtable}
+%
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{natbib}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+%\graphicspath{ {Graficos/} }
+\usepackage{subfigure}
+\usepackage{gensymb}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+%\usepackage[style=authoryear]{biblatex}
+
+
+\begin{document}
+
+La nomenclatura de Cadenas y Subcadenas utilizada en el presente trabajo proviene de \cite{molinari2016especializacion}. A su vez la clasificación en Usos proviene de \cite{flores2008world}
+	
+\section{Tabla de referencia: Descripción cadenas}
+
+
+
+\begin{table}[!ht]
+	\begin{tabular}{ll}
+		\textbf{Cadena} & \textbf{Descripción} \\
+		Agroind & Agroindustria \\
+		Animal & Manufacturas De Origen Animal \\
+		Automotriz & Automotriz \\
+		Bebidas & Bebidas \\
+		Bk & Bienes De Capital \\
+		Combyene & Combustibles Y Energía \\
+		Cuero & Marroquinería, Calzado Y Otras Manufacturas De Cuero Y Pieles \\
+		Foreind & Foresto-Industria \\
+		Insdif & Insumos Difundidos \\
+		Medic & Medicamentos \\
+		Oeqtransp & Otro Equipo De Transporte \\
+		Texteind & Textil E Indumentaria \\
+		Omanuf & Otras Manufacturas \\
+		Oquim & Otros Químicos
+	\end{tabular}
+\label{table:cadenas}
+\end{table}
+
+
+
+\section{Tabla de referencia: Descripción subcadenas}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}[!ht]{lll}
+	\textbf{Cadena} & \textbf{Subcadena} & \textbf{Descripción} \\
+	\endhead
+	%
+	Agroindustria & Agroquim & Agroquímicos \\
+	Agroindustria & Alimanim & Alimentos Para Animales \\
+	Agroindustria & Ceryoleag & Cereales Y Oleaginosas \\
+	Agroindustria & Flh & Frutas, Legumbres Y Hortalizas \\
+	Agroindustria & Oagroind & Otros Agroindustria \\
+	Animal & Aviar & Aviar \\
+	Animal & Lácteos & Lácteos \\
+	Animal & Oanimal & Otros Cadena Animal \\
+	Animal & Pescado & Pescado \\
+	Animal & Porcina & Porcina \\
+	Animal & Vacuna & Vacuna \\
+	Automotriz & Autopartes & Autopartes \\
+	Automotriz & Autos & Autos \\
+	Automotriz & Camyomnib & Camiones Y Ómnibus \\
+	Automotriz & Oautom & Otros Automotriz \\
+	Bebidas & Alcohol & Alcohólicas \\
+	Bebidas & Noalco & No Alcohólicas \\
+	Bebidas & Vino & Vino \\
+	Bienes De Capital & Eqelec & Equipos Eléctricos \\
+	Bienes De Capital & Eqmedico & Equpamiento Médico \\
+	Bienes De Capital & Maqagr & Maquinaria Agrícola \\
+	Bienes De Capital & Maqalim & Maquinaria Para Alimentos \\
+	Bienes De Capital & Maqcomb & Maquinaria Para Combustibles \\
+	Bienes De Capital & Maqfor & Maquinaria Forestal \\
+	Bienes De Capital & Maqmet & Maquinaria Para Metales \\
+	Bienes De Capital & Maqtextycuero & Maquinaria Para Textiles Y Cuero \\
+	Bienes De Capital & Obk & Otros Bienes De Capital \\
+	Bienes De Capital & Oeqtrans & Otro Equipo De Transporte \\
+	Bienes De Capital & Vehyautop & Vehículos Y Autopartes \\
+	Combustibles Y Energía & Biocomb & Biocombustibles \\
+	Combustibles Y Energía & Electricidad & Electricidad \\
+	Combustibles Y Energía & Gas & Gas \\
+	Combustibles Y Energía & Nuclear & Nuclear \\
+	Combustibles Y Energía & Ocombyene & Otros Combustibles Y Energía \\
+	Combustibles Y Energía & Petroleo & Petróleo \\
+	Combustibles Y Energía & Quimicos & Químicos \\
+	\begin{tabular}[c]{@{}l@{}}Marroquinería, Calzado Y Otras\\ Manufacturas De Cuero Y Pieles\end{tabular} & Calzado & Calzado \\
+	\begin{tabular}[c]{@{}l@{}}Marroquinería, Calzado Y Otras\\ Manufacturas De Cuero Y Pieles\end{tabular} & Cueros & Cueros \\
+	\begin{tabular}[c]{@{}l@{}}Marroquinería, Calzado Y Otras\\ Manufacturas De Cuero Y Pieles\end{tabular} & Ocuero & Otros Cueros \\
+	\begin{tabular}[c]{@{}l@{}}Marroquinería, Calzado Y Otras\\ Manufacturas De Cuero Y Pieles\end{tabular} & Quimcuero & Químicos Para Cueros \\
+	Foresto-Industria & Grafica & Gráfica \\
+	Foresto-Industria & Madymueb & Madera Y Muebles \\
+	Foresto-Industria & Oforeind & Otros Foresto-Industria \\
+	Foresto-Industria & Papel & Papel \\
+	Insumos Difundidos & Metales & Metales \\
+	Insumos Difundidos & Minerales & Minerales \\
+	Insumos Difundidos & Oinsdif & Otros Insumos Difundidos \\
+	Insumos Difundidos & Plasticos & Químicos \\
+	Medicamentos & Medic & Medicamentos \\
+	Medicamentos & Omedic & Otros Medicamentos \\
+	Medicamentos & Pactivos & Principios Activos \\
+	Otro Equipo De Transporte & Aeronautico & Aeronautico \\
+	Otro Equipo De Transporte & Ferroviario & Ferroviario \\
+	Otro Equipo De Transporte & Motos & Motos \\
+	Otro Equipo De Transporte & Naval & Naval \\
+	Otro Equipo De Transporte & Oeqtrans & Otro Equipo De Transporte \\
+	Otro Equipo De Transporte & Opartes & Partes Para Otro Equipo De Transporte \\
+	Textil E Indumentaria & Fibras & Fibras \\
+	Textil E Indumentaria & Hilados & Hilados \\
+	Textil E Indumentaria & Indyacces & Indumentaria Y Accesorios \\
+	Textil E Indumentaria & Otexteind & Otros Textiles E Indumentaria \\
+	Textil E Indumentaria & Primtext & Primarios Textiles \\
+	Textil E Indumentaria & Quimtext & Químicos Para Textiles \\
+	Textil E Indumentaria & Tejidos & Tejidos \\
+	Otras Manufacturas & Animal & Otras Manufacturas De Origen Animal \\
+	Otras Manufacturas & Armas & Armamento \\
+	Otras Manufacturas & Cauyplast & Manufacturas De Caucho Y Plástico \\
+	Otras Manufacturas & Cineyfoto & Manufacturas Para Cine Y Fotografía (no Bk) \\
+	Otras Manufacturas & Corcho & Corcho Y Sus Manufacturas \\
+	Otras Manufacturas & Electrodom & Electrodomésticos \\
+	Otras Manufacturas & Eqelec & Otro Equipo De Eléctrico (no Bk) \\
+	Otras Manufacturas & Herramientas & Herramientas \\
+	Otras Manufacturas & Instrumentos & Aparatos E Instrumentos Varios (no Bk) \\
+	Otras Manufacturas & Juguetes & Juguetes \\
+	Otras Manufacturas & Mateqconst & Materiales Y Equipos De Construcción \\
+	Otras Manufacturas & Metypieprec & Metales Y Piedras Preciosas \\
+	Otras Manufacturas & Muebles & Otros Muebles \\
+	Otras Manufacturas & Oarte & Obras De Arte \\
+	Otras Manufacturas & Oartmet & Otros Artículos De Metal \\
+	Otras Manufacturas & Oficina & Artículos De Oficina \\
+	Otras Manufacturas & Omateriales & Otros Materiales \\
+	Otras Manufacturas & Oomanuf & Otras Manufacturas \\
+	Otras Manufacturas & Quimicos & Otros Químicos Y Sus Manufacturas \\
+	Otras Manufacturas & Tabaco & Tabaco Y Sus Manufacturas \\
+	Otras Manufacturas & Vegetal & Otras Manufacturas De Origen Vegetal \\
+	Otros Químicos & Caucho & Caucho \\
+	Otros Químicos & Cosmeticos & Cosméticos \\
+	Otros Químicos & Ooquim & Otros Químicos \\
+	Otros Químicos & Quimicos & Químicos
+\label{tabla:subcadenas}
+\end{longtable}
+
+
+
+\section{Tabla de referencia: Descripción Usos}
+
+
+\begin{table}[!ht]
+	\begin{tabular}{ll}
+		\textbf{Uso} & \textbf{Descripción} \\
+		PP & Productos Primarios \\
+		P\&C & Partes Y Componentes \\
+		ST & Bienes Semiterminados \\
+		BK & Bienes De Capital \\
+		BC & Bienes De Consumo
+	\end{tabular}
+\end{table}
+
+
+\end{document}
