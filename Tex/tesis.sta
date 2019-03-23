@@ -6,6 +6,9 @@
 \usepackage [subpreambles=true]{standalone}\usepackage {import}\graphicspath {{images/}}\usepackage {amssymb}\usepackage {amsmath}\setcounter {tocdepth}{3}\usepackage {graphicx}\usepackage {subfigure}\usepackage {gensymb}\usepackage {authblk}\usepackage {url}\usepackage [utf8]{inputenc}\usepackage [spanish]{babel}\selectlanguage {spanish}
 \endsubpreamble
 \subpreamble{chapters/chapter_3/chapter3.tex}
-\usepackage [subpreambles=true]{standalone}\usepackage {import}\graphicspath {{images/}}\usepackage {amssymb}\usepackage {amsmath}\setcounter {tocdepth}{3}\usepackage {graphicx}\usepackage {subfigure}\usepackage {gensymb}\usepackage {authblk}\usepackage {url}\usepackage [utf8]{inputenc}\usepackage [spanish]{babel}\selectlanguage {spanish}
+\usepackage [subpreambles=true]{standalone}\usepackage {import}\graphicspath {{images/}}\usepackage {amssymb}\usepackage {amsmath}\setcounter {tocdepth}{3}\usepackage {graphicx}\usepackage {subfigure}\usepackage {gensymb}\usepackage {authblk}\usepackage {url}\usepackage [utf8]{inputenc}\usepackage [spanish]{babel}\selectlanguage {spanish}\usepackage {nameref}
+\endsubpreamble
+\subpreamble{chapters/Anexo/anexo.tex}
+\usepackage [subpreambles=true]{standalone}\usepackage {import}\graphicspath {{images/}}\usepackage {longtable}\usepackage {amssymb}\usepackage {amsmath}\setcounter {tocdepth}{3}\usepackage {graphicx}\usepackage {subfigure}\usepackage {gensymb}\usepackage {authblk}\usepackage {url}\usepackage [utf8]{inputenc}\usepackage [spanish]{babel}\selectlanguage {spanish}
 \endsubpreamble
 \endstandalonepreambles

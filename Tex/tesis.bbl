@@ -1,125 +1,194 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{31}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Arel-Bundock, 2017]{Arel-Bundock2017}
-Arel-Bundock, V. (2017).
-\newblock {countrycode: Convert Country Names and Country Codes}.
+\bibitem[Aggarwal et~al.(2001)Aggarwal, Hinneburg, and
+  Keim]{aggarwal2001surprising}
+Charu~C Aggarwal, Alexander Hinneburg, and Daniel~A Keim.
+\newblock {On the surprising behavior of distance metrics in high dimensional
+  space}.
+\newblock In \emph{International conference on database theory}, pages
+  420--434. Springer, 2001.
 
-\bibitem[Arnold, 2017]{Arnold2017}
-Arnold, J.~B. (2017).
-\newblock {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'}.
+\bibitem[Arel-Bundock(2017)]{Arel-Bundock2017}
+Vincent Arel-Bundock.
+\newblock {countrycode: Convert Country Names and Country Codes}, 2017.
 
-\bibitem[Bhattacharya et~al., 2008]{Bhattacharya2008}
-Bhattacharya, K., Mukherjee, G., Saram{\"{a}}ki, J., Kaski, K., and Manna,
-  S.~S. (2008).
+\bibitem[Arnold(2017)]{Arnold2017}
+Jeffrey~B Arnold.
+\newblock {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'}, 2017.
+
+\bibitem[Bhattacharya et~al.(2008)Bhattacharya, Mukherjee, Saram{\"{a}}ki,
+  Kaski, and Manna]{Bhattacharya2008}
+K.~Bhattacharya, G.~Mukherjee, J.~Saram{\"{a}}ki, K.~Kaski, and S.~S. Manna.
 \newblock {The international trade network: Weighted network analysis and
   modelling}.
-\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
-  2008(2).
+\newblock \emph{Journal of Statistical Mechanics: Theory and Experiment},
+  2008\penalty0 (2), 2008.
+\newblock ISSN 17425468.
+\newblock \doi{10.1088/1742-5468/2008/02/P02002}.
 
-\bibitem[Blei et~al., 2003]{blei2003latent}
-Blei, D.~M., Ng, A.~Y., and Jordan, M.~I. (2003).
+\bibitem[Blei et~al.(2003)Blei, Ng, and Jordan]{blei2003latent}
+David~M Blei, Andrew~Y Ng, and Michael~I Jordan.
 \newblock {Latent dirichlet allocation}.
-\newblock {\em Journal of machine Learning research}, 3(Jan):993--1022.
+\newblock \emph{Journal of machine Learning research}, 3\penalty0
+  (Jan):\penalty0 993--1022, 2003.
 
-\bibitem[Carrillo and Hualde, 1998]{carrillo1998third}
-Carrillo, J. and Hualde, A. (1998).
+\bibitem[Carrillo \& Hualde(1998)Carrillo and Hualde]{carrillo1998third}
+Jorge Carrillo and Alfredo Hualde.
 \newblock {Third generation maquiladoras? The Delphi-General Motors case}.
-\newblock {\em Journal of Borderlands Studies}, 13(1):79--97.
+\newblock \emph{Journal of Borderlands Studies}, 13\penalty0 (1):\penalty0
+  79--97, 1998.
 
-\bibitem[Chow, 2013]{Chow2013}
-Chow, W. (2013).
+\bibitem[Chang et~al.(2018)Chang, Cheng, Allaire, Xie, and
+  McPherson]{Chang2018}
+Winston Chang, Joe Cheng, J~J Allaire, Yihui Xie, and Jonathan McPherson.
+\newblock \emph{{shiny: Web Application Framework for R}}, 2018.
+\newblock URL \url{https://cran.r-project.org/package=shiny}.
+
+\bibitem[Chow(2013)]{Chow2013}
+William Chow.
 \newblock {An Anatomy of the World Trade Network}.
-\newblock pages 1--20.
+\newblock pages 1--20, 2013.
 
-\bibitem[Csardi and Nepusz, 2006]{Csardi2006}
-Csardi, G. and Nepusz, T. (2006).
-\newblock {The igraph software package for complex network research}.
+\bibitem[Csardi \& Nepusz(2006)Csardi and Nepusz]{Csardi2006}
+Gabor Csardi and Tamas Nepusz.
+\newblock {The igraph software package for complex network research}, 2006.
 
-\bibitem[Das, 2004]{das2004regionalism}
-Das, D.~K. (2004).
-\newblock {\em {Regionalism in global trade}}.
-\newblock Edward Elgar Publishing.
+\bibitem[Das(2004)]{das2004regionalism}
+Dilip~K Das.
+\newblock \emph{{Regionalism in global trade}}.
+\newblock Edward Elgar Publishing, 2004.
 
-\bibitem[Division and Office, 2006]{united2006standard}
-Division, U. N.~S. and Office, U. N.~S. (2006).
-\newblock {\em {Standard International Trade Classification Revision 4}}.
-\newblock Number~34. United Nations Publications.
+\bibitem[Division \& Office(2006)Division and Office]{united2006standard}
+United Nations.~Statistical Division and United Nations.~Statistical Office.
+\newblock \emph{{Standard International Trade Classification Revision 4}}.
+\newblock Number~34. United Nations Publications, 2006.
 
-\bibitem[Fagiolo et~al., 2007]{Fagiolo2007}
-Fagiolo, G., Reyes, J., and Schiavo, S. (2007).
+\bibitem[Fagiolo et~al.(2007)Fagiolo, Reyes, and Schiavo]{Fagiolo2007}
+Giorgio Fagiolo, Javier Reyes, and Stefano Schiavo.
 \newblock {The Evolution of the World Trade Web Giorgio}.
+\newblock 2007.
 
-\bibitem[Fagiolo et~al., 2010]{Fagiolo2010}
-Fagiolo, G., Reyes, J., and Schiavo, S. (2010).
+\bibitem[Fagiolo et~al.(2010)Fagiolo, Reyes, and Schiavo]{Fagiolo2010}
+Giorgio Fagiolo, Javier Reyes, and Stefano Schiavo.
 \newblock {The evolution of the world trade web: A weighted-network analysis}.
-\newblock {\em Journal of Evolutionary Economics}, 20(4):479--514.
+\newblock \emph{Journal of Evolutionary Economics}, 20\penalty0 (4):\penalty0
+  479--514, 2010.
+\newblock ISSN 09369937.
+\newblock \doi{10.1007/s00191-009-0160-x}.
 
-\bibitem[Fan et~al., 2014]{Fan2014}
-Fan, Y., Ren, S., Cai, H., and Cui, X. (2014).
+\bibitem[Fan et~al.(2014)Fan, Ren, Cai, and Cui]{Fan2014}
+Ying Fan, Suting Ren, Hongbo Cai, and Xuefeng Cui.
 \newblock {The state's role and position in international trade: A complex
   network perspective}.
-\newblock {\em Economic Modelling}, 39:71--81.
+\newblock \emph{Economic Modelling}, 39:\penalty0 71--81, 2014.
+\newblock ISSN 02649993.
+\newblock \doi{10.1016/j.econmod.2014.02.027}.
+\newblock URL \url{http://dx.doi.org/10.1016/j.econmod.2014.02.027}.
 
-\bibitem[Fr{\"{o}}bel et~al., 1978]{frobel1978new}
-Fr{\"{o}}bel, F., Heinrichs, J., and Kreye, O. (1978).
+\bibitem[Fl{\^{o}}res(2008)]{flores2008world}
+Renato G~Jr. Fl{\^{o}}res.
+\newblock {The World Fragmentation of Production and Trade Concepts and Basic
+  Issues}.
+\newblock In \emph{International Workshop" Integra{\c{c}}{\~{a}}o
+  Produtiva-Li{\c{c}}{\~{o}}es da {\'{A}}sia e Europa para o MERCOSUL",
+  CEPAL/Brasil}, page~7, 2008.
+
+\bibitem[Fr{\"{o}}bel et~al.(1978)Fr{\"{o}}bel, Heinrichs, and
+  Kreye]{frobel1978new}
+Folker Fr{\"{o}}bel, J{\"{u}}rgen Heinrichs, and Otto Kreye.
 \newblock {The new international division of labour}.
-\newblock {\em Information (International Social Science Council)},
-  17(1):123--142.
+\newblock \emph{Information (International Social Science Council)},
+  17\penalty0 (1):\penalty0 123--142, 1978.
 
-\bibitem[Gleditsch, 2002]{Gleditsch2002}
-Gleditsch, K.~S. (2002).
+\bibitem[Gleditsch(2002)]{Gleditsch2002}
+Kristian~S Gleditsch.
 \newblock {Expanded Trade and GDP Data}.
-\newblock {\em Journal of Conflict Resolution}, 46:712--24.
+\newblock \emph{Journal of Conflict Resolution}, 46:\penalty0 712--24, 2002.
 
-\bibitem[Head and Mayer, 2014]{Head2014}
-Head, K. and Mayer, T. (2014).
+\bibitem[Head \& Mayer(2014)Head and Mayer]{Head2014}
+Keith Head and Thierry Mayer.
 \newblock {Gravity Equations: Workhorse,Toolkit, and Cookbook}.
-\newblock {\em Handbook of International Economics}, 4:131--195.
+\newblock \emph{Handbook of International Economics}, 4:\penalty0 131--195, jan
+  2014.
+\newblock ISSN 1573-4404.
+\newblock \doi{10.1016/B978-0-444-54314-1.00003-3}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/B9780444543141000033?via{\%}3Dihub}.
 
-\bibitem[Molinari and de~Angelis, 2016]{molinari2016especializacion}
-Molinari, A. and de~Angelis, J.~Y. (2016).
+\bibitem[Hoffman et~al.(2013)Hoffman, Blei, Wang, and
+  Paisley]{hoffman2013stochastic}
+Matthew~D Hoffman, David~M Blei, Chong Wang, and John Paisley.
+\newblock {Stochastic variational inference}.
+\newblock \emph{The Journal of Machine Learning Research}, 14\penalty0
+  (1):\penalty0 1303--1347, 2013.
+
+\bibitem[Humphrey \& Schmitz(2000)Humphrey and Schmitz]{humphrey2000governance}
+John Humphrey and Hubert Schmitz.
+\newblock \emph{{Governance and upgrading: linking industrial cluster and
+  global value chain research}}, volume 120.
+\newblock Institute of Development Studies Brighton, 2000.
+
+\bibitem[Molinari \& de~Angelis(2016)Molinari and
+  de~Angelis]{molinari2016especializacion}
+Andrea Molinari and Jesica~Yamila de~Angelis.
 \newblock {Especializaci{\'{o}}n y complementaci{\'{o}}n productiva en el
   MERCOSUR: un Enfoque de Cadenas Productivas de Valor}.
+\newblock 2016.
 
-\bibitem[Neuwirth, 2014]{Neuwirth2014}
-Neuwirth, E. (2014).
-\newblock {RColorBrewer: ColorBrewer Palettes}.
+\bibitem[Neuwirth(2014)]{Neuwirth2014}
+Erich Neuwirth.
+\newblock {RColorBrewer: ColorBrewer Palettes}, 2014.
 
-\bibitem[{R Core Team}, 2017]{RCoreTeam2017}
-{R Core Team} (2017).
-\newblock {R: A Language and Environment for Statistical Computing}.
+\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
+  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot, and Duchesnay]{scikit-learn}
+F~Pedregosa, G~Varoquaux, A~Gramfort, V~Michel, B~Thirion, O~Grisel, M~Blondel,
+  P~Prettenhofer, R~Weiss, V~Dubourg, J~Vanderplas, A~Passos, D~Cournapeau,
+  M~Brucher, M~Perrot, and E~Duchesnay.
+\newblock {Scikit-learn: Machine Learning in Python }.
+\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830,
+  2011.
 
-\bibitem[Ricardo, 2007]{ricardo1987principios}
-Ricardo, D. (2007).
-\newblock {\em {Principios de econom{\'{i}}a pol{\'{i}}tica y
+\bibitem[{R Core Team}(2017)]{RCoreTeam2017}
+{R Core Team}.
+\newblock {R: A Language and Environment for Statistical Computing}, 2017.
+
+\bibitem[Ricardo(2007)]{ricardo1987principios}
+David Ricardo.
+\newblock \emph{{Principios de econom{\'{i}}a pol{\'{i}}tica y
   tributaci{\'{o}}n}}.
-\newblock Claridad, Buenos Aires.
+\newblock Claridad, Buenos Aires, 2007.
 
-\bibitem[Slowikowski, 2017]{Slowikowski2017}
-Slowikowski, K. (2017).
-\newblock {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}.
+\bibitem[Slowikowski(2017)]{Slowikowski2017}
+Kamil Slowikowski.
+\newblock {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}, 2017.
 
-\bibitem[Vu, 2011]{Vu2011}
-Vu, V.~Q. (2011).
-\newblock {ggbiplot: A ggplot2 based biplot}.
+\bibitem[Vu(2011)]{Vu2011}
+Vincent~Q Vu.
+\newblock {ggbiplot: A ggplot2 based biplot}, 2011.
 
-\bibitem[Weerth, 2008]{weerth2008basic}
-Weerth, C. (2008).
+\bibitem[Weerth(2008)]{weerth2008basic}
+Carsten Weerth.
 \newblock {Basic Principles of Customs Classifications under the Harmonized
   System}.
-\newblock {\em Global Trade {\&} Cust. J.}, 3:61.
+\newblock \emph{Global Trade {\&} Cust. J.}, 3:\penalty0 61, 2008.
 
-\bibitem[Wickham, 2017]{Wickham2017}
-Wickham, H. (2017).
-\newblock {tidyverse: Easily Install and Load the 'Tidyverse'}.
+\bibitem[Wickham(2017)]{Wickham2017}
+Hadley Wickham.
+\newblock {tidyverse: Easily Install and Load the 'Tidyverse'}, 2017.
 
-\bibitem[Wilke, 2017]{Wilke2017}
-Wilke, C.~O. (2017).
-\newblock {ggridges: Ridgeline Plots in 'ggplot2'}.
+\bibitem[Wilke(2017)]{Wilke2017}
+Claus~O Wilke.
+\newblock {ggridges: Ridgeline Plots in 'ggplot2'}, 2017.
 
-\bibitem[WTO, 2017]{WTO2017}
-WTO (2017).
+\bibitem[WTO(2017)]{WTO2017}
+WTO.
 \newblock {World Trade Statistics Review 2017}.
-\newblock Technical report.
+\newblock Technical report, 2017.
 
 \end{thebibliography}

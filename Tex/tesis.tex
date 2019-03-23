@@ -13,9 +13,14 @@
 \usepackage[spanish]{babel}
 \usepackage[left=3cm,right=3cm,bottom=3.5cm,top=3.5cm]{geometry}
 
-\bibliographystyle{apalike}
+%\bibliographystyle{apalike}
 \usepackage[authoryear,round]{natbib}
 
+\bibliographystyle{myplainnat}
+
+
+\renewcommand{\betweenauthors}{&}
+%\usepackage[style=authoryear]{biblatex}
 
 %general adjustments
 %\setcounter{tocdepth}{3}
@@ -31,6 +36,10 @@
 \usepackage{authblk}
 \usepackage{url}
 
+
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{nameref}
 
 \usepackage[subfigure]{tocloft}
 
@@ -128,41 +137,15 @@
 
 \chapter{Comercio a nivel producto}
 
-
-
-
-
-\section{introducción}
-\info{inclyue estado del arte}
-
-
-\section{Análisis exploratorio de datos}
-
-El análisis exploratorio de la información desagregada a nivel producto implica un mayor nivel de complejidad, dado que se incorpora una nueva dimensión, de alta cardinalidad, al estudio. Dado que la información a nivel de comercio agregado entre países ya fue realizada en el capítulo previo, en este análisis exploratorio se realizará foco en comprender la composición de las canastas exportadoras e importadoras de los países.
-
-\info{treemaps}
-
-\section{Metodología}
-
-\subsection{Reducción de dimensionalidad mediante Latent Dirichlet Allocation Models}
-
-
 \import{chapters/}{chapter_3/chapter3}
 
-
-\subsection{Grafo Bipartito}
-\unsure{ver si llego}
-
-\section{Resultados}
-
-\subsection{Reducción de dimensionalidad mediante Latent Dirichlet Allocation Models}
-
-\subsection{Grafo Bipartito}
-\unsure{ver si llego}
 
 
 \chapter{Conclusiones}
 
+\appendix \label{append}
+
+\import{chapters/}{Anexo/anexo}
 
 
 

@@ -2,36 +2,39 @@
 \babel@toc {spanish}{}
 \babel@toc {spanish}{}
 \babel@toc {spanish}{}
-\contentsline {chapter}{\numberline {1.}introducci\IeC {\'o}n}{1}
-\contentsline {chapter}{\numberline {2.}Comercio a nivel pa\IeC {\'\i }ses}{3}
-\contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{3}
-\contentsline {section}{\numberline {2.2}An\IeC {\'a}lisis Exploratorio de Datos}{3}
-\contentsline {section}{\numberline {2.3}Metodolog\IeC {\'\i }a}{4}
-\contentsline {subsection}{\numberline {2.3.1}Fuentes de informaci\IeC {\'o}n}{4}
-\contentsline {subsection}{\numberline {2.3.2}Construcci\IeC {\'o}n del grafo}{7}
-\contentsline {subsection}{\numberline {2.3.3}Software utilizado}{10}
-\contentsline {subsection}{\numberline {2.3.4}El comercio internacional como una red compleja}{10}
-\contentsline {subsection}{\numberline {2.3.5}Determinaci\IeC {\'o}n del punto de corte}{11}
-\contentsline {section}{\numberline {2.4}Resultados}{13}
-\contentsline {subsection}{\numberline {2.4.1}Correlaci\IeC {\'o}n entre la representaci\IeC {\'o}n de las exportaciones y las importaciones}{13}
-\contentsline {subsection}{\numberline {2.4.2}Evoluci\IeC {\'o}n de mediano y largo plazo del comercio internacional}{16}
-\contentsline {subsubsection}{An\IeC {\'a}lisis mediano plazo}{16}
-\contentsline {subsubsection}{An\IeC {\'a}lisis de largo plazo}{20}
-\contentsline {section}{\numberline {2.5}Conclusiones}{22}
-\contentsline {chapter}{\numberline {3.}Comercio a nivel producto}{26}
-\contentsline {section}{\numberline {3.1}introducci\IeC {\'o}n}{26}
-\contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis exploratorio de datos}{26}
-\contentsline {section}{\numberline {3.3}Metodolog\IeC {\'\i }a}{26}
-\contentsline {subsection}{\numberline {3.3.1}Reducci\IeC {\'o}n de dimensionalidad mediante Latent Dirichlet Allocation Models}{26}
-\contentsline {subsubsection}{Definiciones}{26}
-\contentsline {subsubsection}{Dimensi\IeC {\'o}n latente}{26}
-\contentsline {subsubsection}{Proceso generativo}{27}
-\contentsline {subsubsection}{Representaci\IeC {\'o}n gr\IeC {\'a}fica}{27}
-\contentsline {subsubsection}{Distribuci\IeC {\'o}n de Dirichlet}{28}
-\contentsline {subsubsection}{Inferencia}{29}
-\contentsline {subsubsection}{Estimaci\IeC {\'o}n de par\IeC {\'a}metros}{29}
-\contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{30}
-\contentsline {section}{\numberline {3.4}Resultados}{30}
-\contentsline {subsection}{\numberline {3.4.1}Reducci\IeC {\'o}n de dimensionalidad mediante Latent Dirichlet Allocation Models}{30}
-\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{30}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{31}
+\babel@toc {spanish}{}
+\contentsline {chapter}{\numberline {1.}introducci\IeC {\'o}n}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2.}Comercio a nivel pa\IeC {\'\i }ses}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}An\IeC {\'a}lisis Exploratorio de Datos}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Metodolog\IeC {\'\i }a}{4}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Fuentes de informaci\IeC {\'o}n}{4}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Construcci\IeC {\'o}n del grafo}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Software utilizado}{10}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}El comercio internacional como una red compleja}{10}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Determinaci\IeC {\'o}n del punto de corte}{11}{subsection.2.3.5}
+\contentsline {section}{\numberline {2.4}Resultados}{13}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Correlaci\IeC {\'o}n entre la representaci\IeC {\'o}n de las exportaciones y las importaciones}{13}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Evoluci\IeC {\'o}n de mediano y largo plazo del comercio internacional}{16}{subsection.2.4.2}
+\contentsline {subsubsection}{An\IeC {\'a}lisis mediano plazo}{16}{section*.12}
+\contentsline {subsubsection}{An\IeC {\'a}lisis de largo plazo}{20}{figure.2.9}
+\contentsline {section}{\numberline {2.5}Conclusiones}{22}{section.2.5}
+\contentsline {chapter}{\numberline {3.}Comercio a nivel producto}{26}{chapter.3}
+\contentsline {section}{\numberline {3.1}introducci\IeC {\'o}n}{26}{section.3.1}
+\contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis exploratorio de datos}{26}{section.3.2}
+\contentsline {section}{\numberline {3.3}Metodolog\IeC {\'\i }a}{31}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Latent Dirichlet Allocation Models}{31}{subsection.3.3.1}
+\contentsline {subsubsection}{Definiciones}{34}{section*.15}
+\contentsline {subsubsection}{Proceso generativo}{35}{Item.2}
+\contentsline {subsubsection}{Representaci\IeC {\'o}n gr\IeC {\'a}fica}{35}{Item.6}
+\contentsline {subsubsection}{Distribuci\IeC {\'o}n de Dirichlet}{35}{figure.3.6}
+\contentsline {subsubsection}{Inferencia}{36}{figure.3.7}
+\contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{37}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Resultados}{37}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{37}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{37}{subsection.3.4.2}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{38}{chapter.4}
+\contentsline {part}{Ap\'{e}ndice}{39}{part*.18}
+\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{40}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{40}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{42}{section.Alph0.3}

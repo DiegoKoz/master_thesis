@@ -34,7 +34,12 @@ tablas_usos <- read_xlsx("leyendas_treemaps.xlsx",sheet = "USOS")
 
 ##### funciones y presets de datos##### 
 
-grow_treemap_partner <- function(data=dataset, nano= 2015, reportante = "Argentina",sin_rdm = T, sin_china=T){
+grow_treemap_partner <- function(data=dataset, 
+                                 nano= 2015, 
+                                 reportante = "Argentina",
+                                 sin_rdm = T,
+                                 sin_china=T,
+                                 download = F){
   
   paises <- unique(data$partner)
   #colores = rainbow(length(paises), v=0.6,alpha = 0.9)
@@ -76,7 +81,7 @@ grow_treemap_partner <- function(data=dataset, nano= 2015, reportante = "Argenti
     
   }else{
     
-    data_filt  %>% 
+    g <- data_filt  %>% 
       group_by(partner,flow) %>% 
       summarise(value = sum(value)) %>%
       group_by(flow) %>% 
@@ -89,16 +94,25 @@ grow_treemap_partner <- function(data=dataset, nano= 2015, reportante = "Argenti
       geom_treemap_text(colour = "black", place = "left",
                         grow = F, layout = "fixed")+
       facet_grid(.~flow)+
-      labs(title= glue("Treemap {reportante}, year {nano}"))+
       scale_fill_manual(values = colores)+
       theme_tufte()+
       theme(legend.position = 'none',
-            strip.text = element_text(family="Times", face="bold", size=20))
-
+            strip.text = element_text(family="Times", face="bold", size=15))
+    
+    if (!download) {
+      g <- g+
+        labs(title= glue("Treemap {reportante}, year {nano}"))
+      
+    }
+    g
   }
 }
 
-grow_treemap_cadsubcad <- function(data = dataset,nano=2015, reportante = "Argentina", flow_filter = "Export"){
+grow_treemap_cadsubcad <- function(data = dataset,
+                                   nano=2015, 
+                                   reportante = "Argentina",
+                                   flow_filter = "Export",
+                                   download = F){
   
   cadenas <- unique(data$Cadena)
   #Tomo toda la escala cromática, y eligo por k-means los colores más distintivos posibles
@@ -134,7 +148,7 @@ grow_treemap_cadsubcad <- function(data = dataset,nano=2015, reportante = "Argen
              ggtitle(paste("No hay data para ",reportante,", ",nano)))    
   }else{
     
-    data_filt  %>% 
+    g <- data_filt  %>% 
       mutate(RDM = case_when(partner=="Rest of the world \n (except China)"~partner,
                              partner=="China"~partner,
                              TRUE ~ "South America"),
@@ -147,18 +161,26 @@ grow_treemap_cadsubcad <- function(data = dataset,nano=2015, reportante = "Argen
                                    "black", fontface = "italic", min.size = 0,  layout = "fixed") +
       geom_treemap_text(colour = "white", place = "topleft", reflow = T,  layout = "fixed")+
       facet_wrap(~RDM, ncol = 2)+
-      labs(title= glue("Treemap {flow_filter}, {reportante}, year {nano}"))+
       scale_fill_manual(values = colores)+
       theme_tufte()+
       theme(legend.position = "None",
-            title = element_text(size = 18),
-            strip.text = element_text(size=18))
+            title = element_text(size = 15),
+            strip.text = element_text(size=15))
+    
+    
+    if (!download) {
+      g <- g+ labs(title= glue("Treemap {flow_filter}, {reportante}, year {nano}"))
+        
+    }
+    g
+    
 
     
   }
 }
 
-grow_treemap_caduse <- function(data=dataset,nano= 2015, reportante = "Argentina",flow_filter = "Export"){
+grow_treemap_caduse <- function(data=dataset,nano= 2016, reportante = "Sudamerica",flow_filter = "Export",
+                                download = F){
   
   cadenas <- unique(data$Cadena)
   #Tomo toda la escala cromática, y eligo por k-means los colores más distintivos posibles
@@ -182,12 +204,12 @@ grow_treemap_caduse <- function(data=dataset,nano= 2015, reportante = "Argentina
     
   }else{
     
-    data_filt  %>% 
+   g <-  data_filt  %>% 
       mutate(RDM = case_when(partner=="Rest of the world \n (except China)"~partner,
                              partner=="China"~partner,
                              TRUE ~ "South America"),
-             RDM = factor(RDM, levels = c("Rest of the world \n (except China)","China"))) %>%  
-      group_by(RDM,Cadena,Flor) %>% 
+             RDM = factor(RDM, levels = c("South America","Rest of the world \n (except China)","China"))) %>%  
+      group_by(RDM,Cadena,Flor) %>%
       summarise(value = sum(value)) %>% 
       ggplot(., aes(area = value, fill = Cadena, label = Flor, subgroup = Cadena)) + 
       geom_treemap( layout = "fixed", alpha = 1)+
@@ -195,12 +217,18 @@ grow_treemap_caduse <- function(data=dataset,nano= 2015, reportante = "Argentina
                                    "black", fontface = "italic", min.size = 0,  layout = "fixed") +
       geom_treemap_text(colour = "white", place = "topleft", reflow = T,  layout = "fixed")+
       facet_wrap(~RDM, ncol = 2)+
-      labs(title= glue("Treemap {flow_filter}, {reportante}, year {nano}"))+
       scale_fill_manual(values = colores)+
       theme_tufte()+
       theme(legend.position = "None",
-            title = element_text(size = 18),
-            strip.text = element_text(size=18))
+            title = element_text(size = 15),
+            strip.text = element_text(size=15))
+    
+    if (!download) {
+      g <- g+ labs(title= glue("Treemap {flow_filter}, {reportante}, year {nano}"))
+        
+    }
+    g
+    
   }
 }
 
@@ -302,12 +330,18 @@ server <- function (input, output) {
   
   output[["downloadPlot_paises"]] <- downloadHandler(
     
-    filename = function() { glue('treemaps_cadsubcad.png') },
+    filename = function() { glue('treemaps_paises.png') },
     content = function(file) {
       device <- function(..., width, height) grDevices::png(..., width = width, height = height, res = 300, units = "in")
       
       ggsave(file,
-             plot = grow_treemap_partner(data = dataset,reportante = input$reportante, nano = input$nano, sin_rdm= input$sin_rdm, sin_china = input$sin_china),
+             plot = grow_treemap_partner(data = dataset,
+                                         reportante = input$reportante, 
+                                         nano = input$nano,
+                                         sin_rdm= input$sin_rdm, 
+                                         sin_china = input$sin_china,
+                                         download = T),
+             scale = 2,
              device = device)
     }
   )
@@ -317,17 +351,27 @@ server <- function (input, output) {
     content = function(file) {
       device <- function(..., width, height) grDevices::png(..., width = width, height = height, res = 300, units = "in")
       ggsave(file,
-             plot =    grow_treemap_cadsubcad(data = dataset,reportante = input$reportante_cad, nano = input$nano_cad, flow_filter = input$flow),
+             plot =    grow_treemap_cadsubcad(data = dataset,
+                                              reportante = input$reportante_cad,
+                                              nano = input$nano_cad, 
+                                              flow_filter = input$flow,
+                                              download = T),
+             scale = 2,
              device = device)
     }
   )
   output[["downloadPlot_chains"]] <- downloadHandler(
     
-    filename = function() { glue('treemaps_cadsubcad.png') },
+    filename = function() { glue('treemaps_usos.png') },
     content = function(file) {
       device <- function(..., width, height) grDevices::png(..., width = width, height = height, res = 300, units = "in")
       ggsave(file,
-             plot = grow_treemap_caduse(data = dataset, reportante = input$reportante_cad, nano = input$nano_cad, flow_filter = input$flow),
+             plot = grow_treemap_caduse(data = dataset,
+                                        reportante = input$reportante_cad, 
+                                        nano = input$nano_cad, 
+                                        flow_filter = input$flow,
+                                        download = T),
+             scale = 2,
              device = device)
     }
   )

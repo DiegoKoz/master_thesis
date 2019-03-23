@@ -112,3 +112,90 @@ ggplot(., aes(area = value, fill = continent, label = cldr.short.es_ar, subgroup
 ggsave('graficos/treemap_paises.png', width = 7,height = 7)
 ```
 
+
+
+###### treemaps usos
+
+```{r}
+dataset <- read_rds("ShinyApp/data_cadena.rds")
+#renombro las variables
+dataset <- dataset %>% 
+  rename(reporter = Reporter, partner = Partner, year = Year, flow = TradeFlowName, value = TradeValue)
+
+dataset <-   dataset %>%
+  mutate(partner=case_when(partner=="RDM_Sudamerica_sin_China"~"Rest of the world \n (except China)",
+                           partner=="Bolivia (Plurinational State of)" ~ "Bolivia",
+                           TRUE ~ partner))
+
+
+agregados <- c("Mercosur", "Sudamerica","RDM_Mercosur","RDM_Mercosur_sin_China","RDM_Sudamerica", "World")
+
+dataset <- dataset %>% 
+  filter(!partner %in% agregados)
+
+```
+
+```{r}
+grow_treemap_usos <- function(data=dataset,nano= 2016, reportante = "Sudamerica",flow_filter = "Export",
+                                download = F){
+  
+  usos <- unique(data$Flor)
+  #Tomo toda la escala cromática, y eligo por k-means los colores más distintivos posibles
+  colores <- c("#455930",  "#c057c5","#63b649","#6148b9","#c49d35", "grey")
+  names(colores) <- usos
+  
+  
+  if (reportante == "Sudamerica") {
+    data_filt <-   data %>% 
+      filter(year == nano,flow== flow_filter)
+    
+  }else{
+    data_filt <-   data %>% 
+      filter(reporter==reportante, year == nano, flow == flow_filter)
+  }
+  if (nrow(data_filt)==0) {
+    return(ggplot()+
+             ggtitle(paste("No hay data para ",reportante,", ",nano)))
+    
+  }else{
+    
+   g <-  data_filt  %>% 
+      mutate(RDM = case_when(partner=="Rest of the world \n (except China)"~partner,
+                             partner=="China"~partner,
+                             TRUE ~ "South America"),
+             RDM = factor(RDM, levels = c("South America","Rest of the world \n (except China)","China"))) %>%
+      group_by(RDM,Flor) %>%
+      summarise(value = sum(value)) %>% 
+      ggplot(., aes(area = value, fill = Flor, label = Flor)) + 
+      geom_treemap(alpha = 1)+
+      geom_treemap_text(colour = "white", place = "topleft", reflow = T)+
+      facet_wrap(~RDM, ncol = 2)+
+      scale_fill_manual(values = colores)+
+      theme_tufte()+
+      theme(legend.position = "None",
+            title = element_text(size = 20),
+            strip.text = element_text(size=20))
+    
+    if (!download) {
+      g <- g+ labs(title= glue("Treemap {flow_filter}, {reportante}, year {nano}"))
+        
+    }
+    g
+    
+  }
+}
+
+```
+
+```{r}
+grow_treemap_usos(download = T)
+ggsave("graficos/treemaps_usos2016.png", scale = 2)
+```
+
+```{r}
+grow_treemap_usos(flow_filter = "Import", download = T)
+
+ggsave("graficos/treemaps_usos2016_impos.png", scale = 2)
+
+```
+
