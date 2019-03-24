@@ -43,24 +43,24 @@ graficar <- function(df,paises, download= F) {
     geom_line(alpha=0.7, size=1)+
     geom_point(size=1)+
     theme_minimal()+
-    theme(axis.text.x = element_text(angle = 15),
-          legend.position = "none",
-          strip.text.y = element_text(angle = 0))+
+    theme(legend.position = "none")+
     facet_wrap(reporter~., ncol = 1, scales = "free")+
-    scale_x_continuous(limits = c(min(unique(df$year)),max(unique(df$year))),
-                       breaks = unique(df$year))+
-    scale_y_continuous(labels = percent,name = "proportion")
-    # geom_dl(aes(label = Componente), method = list(dl.trans(x = x + .2), "last.points")) +
-    # geom_dl(aes(label = Componente), method = list(dl.trans(x = x - .2), "first.points"))+
+    scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
+    geom_dl(aes(label = Componente), method = list(dl.trans(x = x + .2), "last.points")) +
+    geom_dl(aes(label = Componente), method = list(dl.trans(x = x - .2), "first.points"))
     
-  
   if (download) {
     g <- g+
-      theme(text = element_text(size=20))+
-      labs(caption="Componentes con peso mayor al 5%")
+      theme(text = element_text(size=15),
+            axis.text.x = element_text(size = 15))+
+      scale_x_continuous(breaks = seq(1996,2017,4))+
+      labs(x="Año", y= "Proporción")
+      # labs(caption="Componentes con peso mayor al 5%")
   }
   if (!download) {
     g <- g + 
+      scale_x_continuous(limits = c(min(unique(df$year)),max(unique(df$year))),
+                         breaks = unique(df$year))+
       labs(caption="Components with weight greater than 5%")
   }
   
@@ -186,8 +186,8 @@ supertab_paises <- function(K){
            ),
            mainPanel(
              h3("Evolution of the participation of each component in each country."),
-              plotlyOutput(glue("plot{K}"), width = "800px", height = "600px")%>%
-             # plotOutput(glue("plot{K}"), width = "800px", height = "600px")%>%
+              # plotlyOutput(glue("plot{K}"), width = "800px", height = "600px")%>%
+             plotOutput(glue("plot{K}"), width = "800px", height = "600px")%>%
                withSpinner(color="#0dc5c1")
 
              )
@@ -302,8 +302,10 @@ server <- function (input, output) {
   lapply(c(2,4,6,8,10,20,30,40,100,200),function(k){
     
     paises_graf <- reactive({input[[glue('paises_{k}')]]    })
-    output[[glue("plot{k}")]] <- renderPlotly({
-      ggplotly(graficar(get(glue('Dist_paises{k}')),paises_graf()))})
+    output[[glue("plot{k}")]] <- renderPlot({
+    # output[[glue("plot{k}")]] <- renderPlotly({
+      # ggplotly(graficar(get(glue('Dist_paises{k}')),paises_graf()))})
+      graficar(get(glue('Dist_paises{k}')),paises_graf())})
 
   })
  
@@ -318,7 +320,10 @@ server <- function (input, output) {
       filename = function() { glue('graficoLDA_k{k}.png') },
       content = function(file) {
         device <- function(..., width, height) grDevices::png(..., width = width, height = height, res = 300, units = "in")
-        ggsave(file, plot = graficar(get(glue('Dist_paises{k}')),paises_graf(), download = T),scale=2, device = device)
+        ggsave(file, 
+               plot = graficar(get(glue('Dist_paises{k}')),paises_graf(), download = T),
+               scale=2,
+               device = device)
       }
     )
   })

@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -27,6 +27,12 @@ Vincent Arel-Bundock.
 Jeffrey~B Arnold.
 \newblock {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'}, 2017.
 
+\bibitem[Auty(2002)]{auty2002sustaining}
+Richard Auty.
+\newblock \emph{{Sustaining development in mineral economies: the resource
+  curse thesis}}.
+\newblock Routledge, 2002.
+
 \bibitem[Bhattacharya et~al.(2008)Bhattacharya, Mukherjee, Saram{\"{a}}ki,
   Kaski, and Manna]{Bhattacharya2008}
 K.~Bhattacharya, G.~Mukherjee, J.~Saram{\"{a}}ki, K.~Kaski, and S.~S. Manna.
@@ -54,6 +60,15 @@ Jorge Carrillo and Alfredo Hualde.
 Winston Chang, Joe Cheng, J~J Allaire, Yihui Xie, and Jonathan McPherson.
 \newblock \emph{{shiny: Web Application Framework for R}}, 2018.
 \newblock URL \url{https://cran.r-project.org/package=shiny}.
+
+\bibitem[Ch{\'{a}}vez-Rodr{\'{i}}guez et~al.(2016)Ch{\'{a}}vez-Rodr{\'{i}}guez,
+  Garaffa, Andrade, C{\'{a}}rdenas, Szklo, and Lucena]{chavez2016can}
+Mauro~F Ch{\'{a}}vez-Rodr{\'{i}}guez, Rafael Garaffa, Gisela Andrade, Gonzalo
+  C{\'{a}}rdenas, Alexandre Szklo, and Andr{\'{e}} F~P Lucena.
+\newblock {Can Bolivia keep its role as a major natural gas exporter in South
+  America?}
+\newblock \emph{Journal of Natural Gas Science and Engineering}, 33:\penalty0
+  717--730, 2016.
 
 \bibitem[Chow(2013)]{Chow2013}
 William Chow.
@@ -99,6 +114,11 @@ Renato G~Jr. Fl{\^{o}}res.
   Produtiva-Li{\c{c}}{\~{o}}es da {\'{A}}sia e Europa para o MERCOSUL",
   CEPAL/Brasil}, page~7, 2008.
 
+\bibitem[Fogel \& Riquelme(2005)Fogel and Riquelme]{fogel2005enclave}
+Ram{\'{o}}n Fogel and Marcial~Antonio Riquelme.
+\newblock \emph{{Enclave sojero: merma de soberan{\'{i}}a y pobreza}}.
+\newblock 2005.
+
 \bibitem[Fr{\"{o}}bel et~al.(1978)Fr{\"{o}}bel, Heinrichs, and
   Kreye]{frobel1978new}
 Folker Fr{\"{o}}bel, J{\"{u}}rgen Heinrichs, and Otto Kreye.
@@ -120,6 +140,14 @@ Keith Head and Thierry Mayer.
 \newblock \doi{10.1016/B978-0-444-54314-1.00003-3}.
 \newblock URL
   \url{https://www.sciencedirect.com/science/article/pii/B9780444543141000033?via{\%}3Dihub}.
+
+\bibitem[Hidalgo et~al.(2007)Hidalgo, Winger, Barab{\'{a}}si, and
+  Hausmann]{Hidalgo2007}
+C.~A. Hidalgo, B.~Winger, A.~L. Barab{\'{a}}si, and R.~Hausmann.
+\newblock {The product space conditions the development of nations}.
+\newblock \emph{Science}, 317\penalty0 (5837):\penalty0 482--487, 2007.
+\newblock ISSN 00368075.
+\newblock \doi{10.1126/science.1144581}.
 
 \bibitem[Hoffman et~al.(2013)Hoffman, Blei, Wang, and
   Paisley]{hoffman2013stochastic}
@@ -147,6 +175,12 @@ Andrea Molinari and Jesica~Yamila de~Angelis.
 \newblock {Especializaci{\'{o}}n y complementaci{\'{o}}n productiva en el
   MERCOSUR: un Enfoque de Cadenas Productivas de Valor}.
 \newblock 2016.
+
+\bibitem[Moran(2014)]{moran2014multinational}
+Theodore~H Moran.
+\newblock \emph{{Multinational corporations and the politics of dependence:
+  Copper in Chile}}.
+\newblock Princeton University Press, 2014.
 
 \bibitem[Neuwirth(2014)]{Neuwirth2014}
 Erich Neuwirth.
@@ -209,5 +243,10 @@ Claus~O Wilke.
 WTO.
 \newblock {World Trade Statistics Review 2017}.
 \newblock Technical report, 2017.
+
+\bibitem[Ybran \& Lacelli(2016)Ybran and Lacelli]{ybran2016informe}
+Romina Ybran and A~Lacelli.
+\newblock {Informe estad{\'{i}}stico mercado de soja}.
+\newblock \emph{Instituto Nacional de Tecnologia Agropecuaria INTA}, 2016.
 
 \end{thebibliography}

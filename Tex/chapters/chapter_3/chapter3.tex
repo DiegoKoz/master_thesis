@@ -145,7 +145,7 @@ como el i-ésimo producto del nomenclador y el i-ésimo elemento del
 vector. El V-ésimo producto del nomenclador es el vector \(w\), tal
 que \(w^v\)=1 y \(w^u\)=0, \(u\neq v\)
 \item
-Un \textbf{\emph{país}} es una secuencia de \textbf{N} productos,
+Un \textbf{\emph{país\&año}} es una secuencia de \textbf{N} productos,
 definido como \(W= (w_1, w_2, ..., w_N)\)
 \item
 Nuestro \textbf{corpus} es la colección de \textbf{M} países, definido
@@ -160,7 +160,7 @@ Nuestro objetivo es obtener:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-Una distribución de componentes sobre cada país.
+Una distribución de componentes sobre cada país\&año.
 \item
 Una distribución de los productos sobre los componentes.
 \end{enumerate}
@@ -336,7 +336,84 @@ La figura muestra la distribución siguiendo los grupos de \cite{lall2000technol
 	\label{fig:dist_40_4_lall}
 \end{figure}
 
-\info{seguir aca: Granularidad, casos problematicos. 40 es el mejor. Mostrar etiquetas finales.}
+una de las problemáticas observadas en el análisis de los diferentes ejercicios es definir la granularidad correcta del objeto de estudio. Como se mencionó arriba, el parámetro $k$ define cuan específicos o genéricos son los componentes obtenidos. El problema surge en que en el análisis económico aquellos fenómenos que resulta de interés explorar pueden encontrarse a diferentes niveles de granularidad. Esto es, desde el punto de vista económico puede resultar de interés seguir el comportamiento de un componente que refiera a \textit{derivados de la soja}, pero para poder dar con el mismo, sería necesario un nivel de granularidad que puede implicar que otro concepto interesante como \textit{productos textiles} se multiplique a lo largo de varios componentes. 
+
+Por otro lado, la figura \ref{fig:componentes} muestra la distribución promedio de los componentes en los países, para varios valores de $k$. Se puede observar que el segundo componente siempre toma un valor elevado, por encima del 40\%, mientras que el resto de la distribución de distribuye de forma más o menos uniforme entre los restantes componentes. Esto se puede interpretar como que una proporción importante del comercio mundial se realiza en productos muy similares entre sí, en tanto los países que los exportan tienden a ser los mismos. Este \textit{componente gigante} del comercio no se fragmenta al aumentar $k$ dado que lo que sucede es que se subfragmenta el restante del comercio. 
+
+\begin{figure}[h]
+	\centering	
+	\includegraphics[width=0.65\linewidth]{componentes}
+	\caption{Distribución promedio de los componentes en los países, varios valores de k}
+	\label{fig:componentes}
+\end{figure}
+
+Esta conclusiones encuentran su correlato en la bibliografía. \cite{Hidalgo2007} construye un espacio de productos a partir de la proyección de un grafo bipartito de países y productos, y el resultado muestra evidencias de un núcleo densamente conectado y representativo respecto del comercio global. En este sentido, el $k$ óptimo es aquel que logra separar correctamente los clusters de productos que se encuentran en la periferia de dicho núcleo. Áreas como el \textit{petróleo}, \textit{textiles} y \textit{productos agropecuarios} deberían ser distinguibles con nitidez. Con este objetivo en mente, de los diferentes experimentos para diferentes valores del hiperparámetro, se concluyo que $k=40$ arroja los mejores resultados para este conjunto de datos.
+
+Finalmente, para elaborar las etiquetas finales se consultó especialistas sectoriales. En la tabla \ref{Table: etiquetas} se pueden ver las etiquetas para el modelo con $k=40$. Allí se puede ver que el componente 2 es el mencionado \textit{componente gigante}, y se delimitan un componente para productos textiles (4), petróleo (5), circuitos eléctricos (8), derivados de la madera y papel (15), Soja (16), entre otros. También se ve que algunos componentes tienen una composición de la cual no es posible diferenciarlos a nivel conceptual (31, 32, 34 y 35).
+
+
+\begin{table}[]
+	\begin{tabular}{ll}
+		\textbf{Componente} & \textbf{Descripción}                                   \\
+		1          & Meat and vegetables (fresh and processed)                       \\
+		2          & Industrial gigant component                      \\
+		3          & Process (med-tech)                                              \\
+		4          & Textile confections                                             \\
+		5          & Petroleum oils or bituminous minerals                           \\
+		6          & Minerals and primary products (uranium \& spices)               \\
+		7          & Metals, fuels and primary extraction products                   \\
+		8          & Electric microcircuits                                          \\
+		9          & Prim.prods.(cocoa)                                              \\
+		10         & Prim.prods.(coffee, bananas)                                    \\
+		11         & Electrical machinery, parts and components                      \\
+		12         & Metals, minerals and crude petroleum                            \\
+		13         & Textile confections and primary products                        \\
+		14         & Res.-based manuf.(agro) \& prim.prods. (sugars)                 \\
+		15         & Paper, wood and metals                                          \\
+		16         & Soya beens and oils                                             \\
+		17         & Footwear and textile confections                                \\
+		18         & Res.-based manuf.(other) and textiles                           \\
+		19         & Crustaceans, fish and wires                                     \\
+		20         & Primary products (coffee, bananas, sugar)                       \\
+		21         & Prim.prods.\&res.-based manuf.(agro) (fish fresh and processed) \\
+		22         & Prim.prods.\&res.-based manuf.                                  \\
+		23         & Gold and cotton                                                 \\
+		24         & Diamonds and metals                                             \\
+		25         & Food and beverages                                              \\
+		26         & Copper ores and products                                        \\
+		27         & Fish (fresh and processed)                                      \\
+		28         & Spirits and cigarretes                                          \\
+		29         & Copper ores and products                                        \\
+		30         & Textile confections and precious stones                         \\
+		31         & Animal and vegetable products                                   \\
+		32         & Animal and vegetable products                                   \\
+		33         & Textiles \& prim.prods.                                         \\
+		34         & Animal and vegetable products                                   \\
+		35         & Animal and vegetable products                                   \\
+		36         & Prim.prods. and minerals                                        \\
+		37         & Petroleum and gas                                               \\
+		38         & Alluminium and fish                                             \\
+		39         & Carpets                                                         \\
+		40         & Alcohol and aluminium                                          
+	\end{tabular}
+	\label{Table: etiquetas}
+	\caption{Etiquetas propuestas para k=40.}
+\end{table}
+
+
+Con los componentes definidos, se puede analizar la composición de la canasta exportadora de cada país. Dado que en la definición del problema nuestra unidad es el par país\&año, eso significa que podemos comparar la evolución en la distribución de los componentes al interior de cada país
+
+La figura \ref{fig:serie_componentes} muestra la evolución de la composición de la canasta exportadora en algunos países sudamericanos, en términos de los componentes obtenidos. \ref{fig:serie_componentes_1} muestra la evolución de Argentina y Brasil. En ambos casos el denominado \textit{componente gigante} representa la mayoría de las exportaciones, aunque esto es particularmente cierto para el caso brasilero. Para la Argentina, se observa que en el período 2007-2008 y a partir del 2013, crece la importancia del componente 16, compuesto mayoritariamente por porotos de soja y derivados. Vale mencionar que el período 2007-2008 se caracterizó por un aumento acelerado del precio de la soja. A su vez, los volúmenes cosechados en 2013 de este producto superaron ampliamente la cosecha del año anterior \citep{ybran2016informe}. Un movimiento similar, aunque menos pronunciado se puede observar en Brasil. Por su parte, en \ref{fig:serie_componentes_2} se puede ver la evolución para Bolivia, Chile y Paraguay. La canasta exportadora de estos países no esta centrada en el \textit{componente gigante} 2. Para el caso boliviano, se divide principalmente entre los componentes 29, cobre, y 37, gas y petróleo. Estos resultados son coincidentes con lo conocido por la bibliografía especializada para dicho país \citep{auty2002sustaining, chavez2016can}. Por su parte, En Chile los dos componentes más destacados son el 29, cobre y el 22, \textit{productos primarios y manufacturas basadas en recursos naturales} si bien una porción importante de su producción también se encuentra dentro del componente 2. Para el caso Chileno, la bibliografía especializada indica una amplia predominancia de la producción de cobre y derivados \citep{moran2014multinational}, por lo que pareciera que el componente 22 incluye algunos productos relacionados a la producción de este mineral. Se puede decir que para este país el modelo no performa de forma enteramente satisfactoria, dado que idealmente se pretendería un único componente que englobe la producción de cobre y todos sus derivados. Finalmente, en el caso paraguayo, la producción que domina ampliamente sus exportaciones es la de soja y derivados. Este resultado es también coincidente con la literatura especializada \citep{fogel2005enclave}.
+
+
+\begin{figure}
+	\centering
+	\subfigure[Argentina y Brasil]{\label{fig:serie_componentes_1}\includegraphics[width=\linewidth]{graficoLDA_k40_arg_bra}}
+	\subfigure[Bolivia, Chile y Paraguay]{\label{fig:serie_componentes_2}\includegraphics[width=\linewidth]{graficoLDA_k40_bol_chi_pa}}
+	\caption{Evolución componentes en Sudamérica. Exportaciones. 1997-2017}
+	\label{fig:serie_componentes}
+\end{figure}
+
 
 
 \subsection{Grafo Bipartito}
