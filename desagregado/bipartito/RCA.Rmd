@@ -1,0 +1,185 @@
+---
+title: "RCA"
+output: 
+  html_notebook:
+    toc: true
+    toc_float: true
+    depth: 4
+
+---
+
+# Definiciones
+
+El objetivo de esta notebook es calcular el RCA y la similitud propuesta por Hidalgo y Hausman:
+
+
+
+$$
+  RCA(c,i)= \frac{\displaystyle \frac{x(c,i)}{\displaystyle \sum_{i}x(c,i)}}{\frac{\displaystyle\sum_{c}x(c,i)}{\displaystyle \sum_{c,i}x(c,i)}}
+\\
+$$
+dónde $x(c,i)$ es el valor de las exportaciones del __país c__ en el __producto i__     
+
+__el denominador se construye utilizando los datos de todos los países.__
+
+
+```{r message=FALSE, warning=FALSE}
+rm(list = ls())
+gc(verbose = F)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+library(viridis)
+```
+
+
+
+
+```{r message=FALSE, warning=FALSE}
+data <- read_delim(file = "datasets/Export_agg_country_prod_yr.txt",delim = ",")
+SA_isos <- read_delim("datasets/suthamerica_ISOcodes.txt", delim=",")
+
+mean_dist_SITC <- data %>% 
+  group_by(year, SITC) %>% 
+  summarise(value = sum(as.numeric(value),na.rm = T))
+
+SA_data <- data %>% 
+  filter(rep_iso %in% SA_isos$code) %>% 
+  group_by(year, SITC, rep_iso,reporter) %>% 
+  summarise(value = sum(as.numeric(value),na.rm = T))
+
+rm(data)
+gc()
+
+```
+
+
+Calculo las proporciones del promedio de los países
+```{r}
+mean_dist_SITC <- mean_dist_SITC %>% 
+  group_by(year) %>% 
+  mutate(mean_prop = value/sum(value, na.rm = TRUE)) 
+```
+
+Calculo la proporción para los países de SA
+```{r}
+SA_data <- SA_data %>% 
+  group_by(year,rep_iso) %>% 
+  mutate(prop = value / sum(value, na.rm = TRUE))
+
+```
+
+```{r}
+SA_data <- SA_data %>% 
+  left_join(mean_dist_SITC %>% select(year,SITC,mean_prop),by = c("year", "SITC")) %>% 
+  mutate(RCA = prop/mean_prop)
+
+write_delim(SA_data,"results/RCA_SA.txt",delim = ",")
+```
+
+
+
+Buscamos por país el producto con más ventajas
+
+```{r}
+SA_data %>% group_by(reporter) %>%  top_n(1,wt = RCA)
+
+```
+
+Me quedo con los que tinen RCA>1
+```{r}
+nodos <- SA_data %>% 
+  filter(RCA>1) %>% 
+  select(year,SITC,rep_iso,reporter)
+```
+
+
+cantidad de prodcutos con RCA promedio por país
+```{r}
+nodos %>% 
+  group_by(year,reporter) %>% 
+  summarise(n= n()) %>% 
+  group_by(reporter) %>% 
+  summarise(n=mean(n)) %>% 
+  arrange(-n)
+
+```
+
+
+Armo el grafo bipartito
+
+```{r}
+library(igraph)
+
+g <- nodos %>% 
+  filter(year==2016) %>% 
+  ungroup() %>% 
+  select(SITC, rep_iso) %>% 
+  graph_from_data_frame(., directed = T)
+
+V(g)$type <- !bipartite_mapping(g)$type
+is_bipartite(g)
+
+```
+
+
+```{r}
+V(g)$color <- ifelse(V(g)$type, "lightblue", "salmon")
+V(g)$shape <- ifelse(V(g)$type, "circle", "square")
+V(g)$label <- ifelse(V(g)$type, V(g)$name, "")
+
+plot(g, layout=layout.bipartite, vertex.shape=V(g)$shape, vertex.label=V(g)$label, vertex.size=5, rescale=T ,  main = "Grafo bipartito, de países a productos. Año 2016", asp=0.35, vertex.label.cex=.7, vertex.label.dist=-2)
+```
+
+proyecto a los países.
+
+
+
+```{r}
+
+proj <- bipartite_projection(g, which ="false", multiplicity = T)
+
+# pesos <- scale(E(proj)$weight,scale = T)
+
+igraph::vertex_attr(proj)
+V(proj)$color <- "white"
+V(proj)$label <- V(proj)$name
+V(proj)$shape <- "none"
+E(proj)$width <- E(proj)$weight/20
+
+plot(proj,edge.curved=runif(length(E(proj)),-0.5,0.5) )
+
+```
+
+proyecto productos
+
+```{r}
+proj <- bipartite_projection(g, which ="True", multiplicity = T)
+
+# pesos <- scale(E(proj)$weight,scale = T)
+vertex_attr_names(proj)
+# igraph::vertex_attr(proj)
+V(proj)$color <- "white"
+V(proj)$label <- V(proj)$name
+V(proj)$shape <- "none"
+E(proj)$width <- E(proj)$weight/20
+```
+
+
+Clustering (debería ser con la proyección del total mundial)
+
+```{r}
+
+grafo.cl <- cluster_louvain(graph = proj)
+
+clusters <- tibble(membership=grafo.cl$membership, producto = grafo.cl$names)
+
+```
+
+
+
+Seguir con:
+
+- Clustering con el total de los países. 
+- Ver el concepto de similitud
+- Comparar clusters con LDA
