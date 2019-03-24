@@ -66,6 +66,22 @@ Por su parte, nos nomencladores mencionados tienen la propiedad de ser sistemas 
 \pendiente{ver que pasa con grafos bipartitos}
 
 
+\section{Fuentes de información}
+
+
+La modelización del comercio internacional como un grafo requiere de los datos del flujo anual de comercio bilateral para el total de las mercancías, para la mayor cantidad posible de países, idealmente todos ellos. Dado que los datos del comercio bilateral son realizados por cada país involucrado, es necesaria una base de datos en la cual se haya recolectado la información provista por cada país, y que a su vez haya sido consolidada frente a las posibles, y de hecho abundantes, contradicciones que se presentan entre los reportes oficiales de los países involucrados. En particular, dado que toda importación para un país es una exportación de otro, y que el registro de los datos se realiza de forma nacional, existe una duplicación formal de la información, que no siempre es coincidente. Por esto, se recurrió a una base previamente consistida por un organismo internacional oficial, la Organización Mundial del Comercio (de aquí en más OMC)\footnote{https://comtrade.un.org/}, y la API que dicho organismo provee para descarga de datos. La información analizada  en las secciones tercera y cuarta, del período 1996-2016, proviene dicho organismo.   
+
+
+Los datos utilizados para el análisis de largo plazo, entre los años 1948 y 2000 proviene del trabajo realizado por \cite{Gleditsch2002}, que también es utilizado en otros trabajos de modelización del comercio internacional mediante redes complejas \cite{Fagiolo2010}.
+
+
+\section{Software utilizado}
+
+Para el presente trabajo se utilizó el lenguaje de programación estadística \texttt{\textbf{R}}\citep{RCoreTeam2017}, junto con sendas extensiones del mismo. Aquellas que resulta importante mencionar son \texttt{igraph}\citep{Csardi2006} para la construcción de los grafos y las medidas de resumen de los mismos; \texttt{tidyverse}\citep{Wickham2017} para la manipulación de la información y elaboración de los gráficos. Para esto último, también se hizo uso de  \citep{Wilke2017,Arnold2017,Neuwirth2014,Slowikowski2017,Vu2011}, como complementos de \texttt{ggplot}. Por su parte, los códigos de los países provienen de \citep{Arel-Bundock2017}.
+
+Para el análisis del capítulo \ref{sec:desagregado} también se utilizó el lenguaje \texttt{\textbf{Python}} \citep{CS-R9526}, y específicamente la librería \textit{scikit-learn} \citep{scikit-learn} para la estimación de los modelos.
+A su vez, para esta sección también se elaboraron dos tableros dinámicos para el análisis de resultados, sobre la base de la librería \textit{shiny} \citep{Chang2018}, y se hostearon en \url{www.shinyapps.io/} \citep{Allaire2019}
+
 
 %\bibliographystyle{unsrt}
 %\bibliography{bibliografia}

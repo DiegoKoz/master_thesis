@@ -31,9 +31,9 @@ for (resultado in resultados) {
 
 #### funciones y preprocesamiento ####
 
-graficar <- function(df,paises) {
+graficar <- function(df,paises, download= F) {
 
-  df%>%
+  g <- df%>%
     filter(reporter %in% paises) %>%
     group_by(rep_iso, Componente) %>% 
     mutate(prop = case_when(any(prop>0.05)~prop,
@@ -49,16 +49,28 @@ graficar <- function(df,paises) {
     facet_wrap(reporter~., ncol = 1, scales = "free")+
     scale_x_continuous(limits = c(min(unique(df$year)),max(unique(df$year))),
                        breaks = unique(df$year))+
-    scale_y_continuous(labels = percent,name = "proportion")+
+    scale_y_continuous(labels = percent,name = "proportion")
     # geom_dl(aes(label = Componente), method = list(dl.trans(x = x + .2), "last.points")) +
     # geom_dl(aes(label = Componente), method = list(dl.trans(x = x - .2), "first.points"))+
-    labs(caption="Components with weight greater than 5%")
+    
+  
+  if (download) {
+    g <- g+
+      theme(text = element_text(size=20))+
+      labs(caption="Componentes con peso mayor al 5%")
+  }
+  if (!download) {
+    g <- g + 
+      labs(caption="Components with weight greater than 5%")
+  }
+  
+  g
   
 }
 
-
-graficar_lall <- function(k, comp){
-  dfs %>% 
+graficar_lall <- function(k, comp, download = F){
+  
+  g <- dfs %>% 
     filter(K==k) %>%
     unnest() %>% 
     filter(componente == comp) %>%
@@ -70,7 +82,18 @@ graficar_lall <- function(k, comp){
     geom_col()+
     scale_y_continuous(labels = percent,name = "Proporción")+
     theme_minimal()+
-    theme(legend.position = "none")}
+    theme(legend.position = "none")
+  
+  if (download) {
+    g <- g+
+      theme(text = element_text(size=20))
+  }
+  if (!download) {
+    g <- g + 
+      labs(caption="Components with weight greater than 5%")
+  }
+  g
+}
 
 preprocesamiento <- function(dfs) {
   nested_df <- tibble()
@@ -135,6 +158,7 @@ supertab_dist <- function(K){
                      tabPanel(glue("Component {comp}"),
                               dataTableOutput(glue("comp_{K}_{comp}")),
                               h3("distribution of the component according to the Lall's classification"),
+                              downloadButton(glue('downloadcomp_{K}_{comp}_lall'), 'Download Plot'),
                               fluidRow(column(width = 6,
                      plotOutput(glue("comp_{K}_{comp}_lall"), width = "700px", height = "500px")
                               ),
@@ -241,6 +265,16 @@ server <- function (input, output) {
       )
       #Lall
       output[[glue("comp_{k}_{comp}_lall")]] <- renderPlot({graficar_lall(k, comp)})
+      
+      output[[glue("downloadcomp_{k}_{comp}_lall")]] <- downloadHandler(
+        
+        filename = function() { glue('graficoLall_k{k}_comp{comp}.png') },
+        content = function(file) {
+          device <- function(..., width, height) grDevices::png(..., width = width, height = height, res = 300, units = "in")
+          ggsave(file, plot = graficar_lall(k, comp, download = T),scale=2, device = device)
+        }
+      )
+      
       output[[glue("comp_{k}_{comp}_lall_desc")]] <- renderDataTable(
         datatable(
           clasificacion_lall %>% 
@@ -284,7 +318,7 @@ server <- function (input, output) {
       filename = function() { glue('graficoLDA_k{k}.png') },
       content = function(file) {
         device <- function(..., width, height) grDevices::png(..., width = width, height = height, res = 300, units = "in")
-        ggsave(file, plot = graficar(get(glue('Dist_paises{k}')),paises_graf()), device = device)
+        ggsave(file, plot = graficar(get(glue('Dist_paises{k}')),paises_graf(), download = T),scale=2, device = device)
       }
     )
   })

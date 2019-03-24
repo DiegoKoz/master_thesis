@@ -62,7 +62,7 @@
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=\textwidth]{treemap_paises}
+		\includegraphics[width=.75\textwidth]{treemap_paises}
 		\caption{Treemaps por Continentes y países. 1996-2016. Total mundial}
 				\label{fig:treemaps_global_paises}
 	\end{figure}
@@ -166,7 +166,7 @@ Una distribución de los productos sobre los componentes.
 \end{enumerate}
 
 
-\subsubsection{Proceso generativo}
+\subsubsection{Proceso generativo e inferencial}
 
 Intuitivamente, suponemos el siguiente proceso generativo de datos:
 
@@ -229,9 +229,6 @@ Para cada dólar exportado:
 \end{enumerate}
 \end{itemize}
 
-
-\subsubsection{Representación gráfica}
-
 En la figura \ref{fig:grafo_blei} se puede observar el proceso generativo de forma gráfica. Aquí, cada nodo representa una distribución de probabilidad. Las aristas significan que la distribución de salida definen los parámetros de la distribución de entrada. Los recuadros significan replicación: El recuadro interior representa que el proceso se realiza para cada dólar exportado en el país. El recuadro exterior representa que el proceso se realiza para cada
 país en el corpus.
 
@@ -243,8 +240,6 @@ país en el corpus.
 	\label{fig:grafo_blei}
 \end{figure}
 
-\subsubsection{Distribución de Dirichlet}
-
 Un Proceso de Dirichlet es una familia de procesos estocásticos donde las realizaciones son ellas mismas distribuciones de probabilidad. Es decir, el rango de esta distribución (así como en una normal son los reales) son distribuciones de probabilidad. Para interpretarlo geométricamente, la figura \ref{fig:dirichlet} muestra un ejemplo de la distribución de densidad para 3 productos y 4 componentes. El triángulo representa todas las distribuciones (multinomiales)
 posibles sobre los tres productos. Cada uno de los vértices del triángulo es una distribución de probabilidad que asigna una probabilidad de 1 a uno de los productos. El punto medio de cada lado, es una distribución con probabilidad 0.5 a dos componentes. El cuarto componente, el centroide del triángulo, asigna probabilidad de $\frac{1}{3}$ a cada producto. Los cuatro puntos marcado con x son las distribuciones multinomiales de $p(w|z)$  para cada uno de los cuatro componentes. La altura en el eje z es una posible distribución de densidad sobre el
 simplex, es decir, sobre las distribuciones de densidad multinomiales, dada por LDA.
@@ -255,11 +250,6 @@ simplex, es decir, sobre las distribuciones de densidad multinomiales, dada por 
 	\caption{fuente: \cite{blei2003latent}}
 	\label{fig:dirichlet}
 \end{figure}
-
-
-
-
-\subsubsection{Inferencia}
 
 Cuando observamos los datos, no contamos con los tópicos ni con su
 distribución, sino con los productos y países. El objetivo es realizar
@@ -302,6 +292,52 @@ Estos dos pasos se alternan hasta converger. Por último, se realiza un suavizad
 \section{Resultados}
 
 \subsection{Latent Dirichlet Allocation Models}
+
+Los resultado obtenidos de los modelos de Topic Modelling para el análisis de textos normalmente se analizan en dos etapas: En primer lugar se etiquetan los tópicos obtenidos sobre la base de las palabras más salientes de cada tópico, y luego se analiza su distribución en los textos. El etiquetado de los tópicos es una tarea subjetiva donde lo que se busca es un concepto generalizador de aquellas palabras que componen al tópico, donde es posible que esta tarea no se pueda realizar por falta de coherencia dentro del tópico. El hiperparámero $k$, es decir la cantidad de tópicos, juega un rol fundamental en este punto, dado que con una cantidad baja de tópicos estos tenderán a reflejar conceptos amplios, mientras que si $k$ es mayor que la cardinalidad del espacio latente que se busca, esto puede generar tópicos repetidos. 
+Lo anterior no escapa al presente dominio sino que se refuerza, dado que la búsqueda, subjetiva, de un concepto abarcador entre productos puede resultar más compleja que la de un concepto generalizador de un grupo de palabras. Un problema que no existe en el presente dominio es el de la polisemia, dado que todos los significantes, indices del nomenclador, hacen referencia a un único significado no ambiguo. Sin embargo, nuevos problemas aparecen respecto a este punto, como qué nomenclador de base utilizar y en qué nivel de desagregación. Por motivos de comparabilidad con los resultados de \cite{molinari2016especializacion} se decidió utilizar el nomenclador SITC a 4 dígitos \citep{un2006standard}. A su vez, se realizaron pruebas para varios valores de $k$: 2,4,6,8,10,20,30,40, 100 y 200. Para el etiquetado de los componentes se observó que la práctica usual de observar los primeros diez elementos de la distribución no bastaba para encontrar una etiqueta generalizadora, por lo que se elaboró un tablero dinámico para estudiar la distribución y su función acumulada, a la vez que se gráfico la distribución en función de un nomenclador de complejidad tecnológica \citep{lall2000technological}: 
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{ll}
+		\hline
+		 Código & Descripción \\ 
+		\hline
+		01 & Primary products \\ 
+		02 & Resource-based manufactures: agro-based \\ 
+		03 & Resource-based manufactures: other \\ 
+		04 & Low technology manufactures: textile, garment and footwear \\ 
+		05 & Low technology manufactures: other products \\ 
+		06 & Medium technology manufactures: automotive \\ 
+		07 & Medium technology manufactures: process \\ 
+		08 & Medium technology manufactures: engineering \\ 
+		09 & High technology manufactures: electronic and electrical \\ 
+		10 & High technology manufactures: other \\ 
+		99 & Unclassified products \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+En la figura \ref{fig:dist_40_4} se puede observar la tabla utilizada para caracterizar el cuarto componente en el modelo con $k=4$. Allí se observa que la mayoría de los componentes pertenecen al rubro textil, como pulloveres, remeras y pantalones. También se aparece el té, que no guarda coherencia con le resto del rubro.
+
+
+\begin{figure}[h]
+	\centering	
+	\includegraphics[width=\linewidth]{dist_40_4}
+	\caption{Distribución del Componente 4. K = 40}
+	\label{fig:dist_40_4}
+\end{figure}
+
+La figura muestra la distribución siguiendo los grupos de \cite{lall2000technological}. Aquí se puede confirmar que la distribución se concentra fuertemente en la categoría 4, textiles. 
+
+\begin{figure}[h]
+	\centering	
+	\includegraphics[width=0.65\linewidth]{graficoLall_k40_comp4}
+	\caption{Distribución del Componente 4. K = 40 según Lall}
+	\label{fig:dist_40_4_lall}
+\end{figure}
+
+\info{seguir aca: Granularidad, casos problematicos. 40 es el mejor. Mostrar etiquetas finales.}
+
 
 \subsection{Grafo Bipartito}
 \unsure{ver si llego}

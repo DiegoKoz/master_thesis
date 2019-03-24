@@ -3,51 +3,51 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: tesis.aux
 The style file: myplainnat.bst
 Database file #1: backmatter/bibliografia.bib
+Warning--I didn't find a database entry for "united2006standard"
 Warning--empty journal in Chow2013
-Warning--there's a number but no series in united2006standard
 Warning--empty note in Fagiolo2007
 Warning--empty journal in molinari2016especializacion
 Warning--can't use both author and editor fields in ricardo1987principios
 Warning--empty institution in WTO2017
-You've used 31 entries,
+You've used 34 entries,
             2773 wiz_defined-function locations,
-            792 strings with 9968 characters,
-and the built_in function-call counts, 12965 in all, are:
-= -- 1129
-> -- 747
-< -- 26
-+ -- 259
-- -- 228
-* -- 987
-:= -- 2023
-add.period$ -- 96
-call.type$ -- 31
-change.case$ -- 165
-chr.to.int$ -- 31
-cite$ -- 68
-duplicate$ -- 591
-empty$ -- 1080
-format.name$ -- 271
-if$ -- 2694
+            812 strings with 10342 characters,
+and the built_in function-call counts, 13848 in all, are:
+= -- 1215
+> -- 766
+< -- 29
++ -- 268
+- -- 234
+* -- 1040
+:= -- 2169
+add.period$ -- 104
+call.type$ -- 34
+change.case$ -- 176
+chr.to.int$ -- 34
+cite$ -- 73
+duplicate$ -- 643
+empty$ -- 1166
+format.name$ -- 278
+if$ -- 2871
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 23
-newline$ -- 164
-num.names$ -- 124
-pop$ -- 361
+newline$ -- 179
+num.names$ -- 136
+pop$ -- 377
 preamble$ -- 1
-purify$ -- 138
+purify$ -- 146
 quote$ -- 0
-skip$ -- 482
+skip$ -- 518
 stack$ -- 0
-substring$ -- 346
-swap$ -- 51
+substring$ -- 377
+swap$ -- 55
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 321
-warning$ -- 6
-while$ -- 119
+type$ -- 359
+warning$ -- 5
+while$ -- 130
 width$ -- 0
-write$ -- 396
+write$ -- 435
 (There were 6 warnings)
