@@ -6,48 +6,49 @@ Database file #1: backmatter/bibliografia.bib
 Warning--I didn't find a database entry for "united2006standard"
 Warning--empty journal in Chow2013
 Warning--empty note in Fagiolo2007
+Warning--empty publisher in fogel2005enclave
 Warning--empty journal in molinari2016especializacion
 Warning--can't use both author and editor fields in ricardo1987principios
 Warning--empty institution in WTO2017
-You've used 34 entries,
+You've used 40 entries,
             2773 wiz_defined-function locations,
-            812 strings with 10342 characters,
-and the built_in function-call counts, 13848 in all, are:
-= -- 1215
-> -- 766
-< -- 29
-+ -- 268
-- -- 234
-* -- 1040
-:= -- 2169
-add.period$ -- 104
-call.type$ -- 34
-change.case$ -- 176
-chr.to.int$ -- 34
-cite$ -- 73
-duplicate$ -- 643
-empty$ -- 1166
-format.name$ -- 278
-if$ -- 2871
+            845 strings with 11410 characters,
+and the built_in function-call counts, 16387 in all, are:
+= -- 1428
+> -- 924
+< -- 33
++ -- 322
+- -- 282
+* -- 1240
+:= -- 2575
+add.period$ -- 124
+call.type$ -- 40
+change.case$ -- 207
+chr.to.int$ -- 40
+cite$ -- 86
+duplicate$ -- 764
+empty$ -- 1373
+format.name$ -- 336
+if$ -- 3392
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 23
-newline$ -- 179
-num.names$ -- 136
-pop$ -- 377
+missing$ -- 32
+newline$ -- 211
+num.names$ -- 160
+pop$ -- 449
 preamble$ -- 1
-purify$ -- 146
+purify$ -- 174
 quote$ -- 0
-skip$ -- 518
+skip$ -- 607
 stack$ -- 0
-substring$ -- 377
-swap$ -- 55
+substring$ -- 439
+swap$ -- 61
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 359
-warning$ -- 5
-while$ -- 130
+type$ -- 410
+warning$ -- 6
+while$ -- 152
 width$ -- 0
-write$ -- 435
-(There were 6 warnings)
+write$ -- 512
+(There were 7 warnings)

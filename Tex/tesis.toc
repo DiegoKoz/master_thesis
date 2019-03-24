@@ -23,15 +23,15 @@
 \contentsline {section}{\numberline {3.1}introducci\IeC {\'o}n}{26}{section.3.1}
 \contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis exploratorio de datos}{26}{section.3.2}
 \contentsline {section}{\numberline {3.3}Metodolog\IeC {\'\i }a}{31}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Latent Dirichlet Allocation Models}{31}{subsection.3.3.1}
-\contentsline {subsubsection}{Definiciones}{34}{section*.14}
+\contentsline {subsection}{\numberline {3.3.1}Latent Dirichlet Allocation Models}{34}{subsection.3.3.1}
+\contentsline {subsubsection}{Definiciones}{34}{section*.15}
 \contentsline {subsubsection}{Proceso generativo e inferencial}{35}{Item.2}
 \contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{37}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}Resultados}{37}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{37}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{39}{subsection.3.4.2}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{40}{chapter.4}
-\contentsline {part}{Ap\'{e}ndice}{41}{part*.18}
-\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{42}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{42}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{44}{section.Alph0.3}
+\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{42}{subsection.3.4.2}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{44}{chapter.4}
+\contentsline {part}{Ap\'{e}ndice}{45}{part*.18}
+\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{46}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{46}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{48}{section.Alph0.3}
