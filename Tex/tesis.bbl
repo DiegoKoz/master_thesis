@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{34}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,6 +12,12 @@ Charu~C Aggarwal, Alexander Hinneburg, and Daniel~A Keim.
   space}.
 \newblock In \emph{International conference on database theory}, pages
   420--434. Springer, 2001.
+
+\bibitem[Allaire(2019)]{Allaire2019}
+J~J Allaire.
+\newblock \emph{{rsconnect: Deployment Interface for R Markdown Documents and
+  Shiny Applications}}, 2019.
+\newblock URL \url{https://cran.r-project.org/package=rsconnect}.
 
 \bibitem[Arel-Bundock(2017)]{Arel-Bundock2017}
 Vincent Arel-Bundock.
@@ -62,11 +68,6 @@ Gabor Csardi and Tamas Nepusz.
 Dilip~K Das.
 \newblock \emph{{Regionalism in global trade}}.
 \newblock Edward Elgar Publishing, 2004.
-
-\bibitem[Division \& Office(2006)Division and Office]{united2006standard}
-United Nations.~Statistical Division and United Nations.~Statistical Office.
-\newblock \emph{{Standard International Trade Classification Revision 4}}.
-\newblock Number~34. United Nations Publications, 2006.
 
 \bibitem[Fagiolo et~al.(2007)Fagiolo, Reyes, and Schiavo]{Fagiolo2007}
 Giorgio Fagiolo, Javier Reyes, and Stefano Schiavo.
@@ -133,6 +134,13 @@ John Humphrey and Hubert Schmitz.
   global value chain research}}, volume 120.
 \newblock Institute of Development Studies Brighton, 2000.
 
+\bibitem[Lall(2000)]{lall2000technological}
+Sanjaya Lall.
+\newblock {The Technological structure and performance of developing country
+  manufactured exports, 1985-98}.
+\newblock \emph{Oxford development studies}, 28\penalty0 (3):\penalty0
+  337--369, 2000.
+
 \bibitem[Molinari \& de~Angelis(2016)Molinari and
   de~Angelis]{molinari2016especializacion}
 Andrea Molinari and Jesica~Yamila de~Angelis.
@@ -143,6 +151,11 @@ Andrea Molinari and Jesica~Yamila de~Angelis.
 \bibitem[Neuwirth(2014)]{Neuwirth2014}
 Erich Neuwirth.
 \newblock {RColorBrewer: ColorBrewer Palettes}, 2014.
+
+\bibitem[ONU(2006)]{un2006standard}
+ONU.
+\newblock {Standard International Trade Classification Revision 4}.
+\newblock \emph{Statistical Papers Series M No}, 34, 2006.
 
 \bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
   Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
@@ -167,6 +180,12 @@ David Ricardo.
 \bibitem[Slowikowski(2017)]{Slowikowski2017}
 Kamil Slowikowski.
 \newblock {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}, 2017.
+
+\bibitem[van Rossum(1995)]{CS-R9526}
+G~van Rossum.
+\newblock {Python tutorial}.
+\newblock Technical Report CS-R9526, Centrum voor Wiskunde en Informatica
+  (CWI), Amsterdam, may 1995.
 
 \bibitem[Vu(2011)]{Vu2011}
 Vincent~Q Vu.
