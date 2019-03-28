@@ -30,6 +30,7 @@ library(tidyverse)
 library(readxl)
 library(ggthemes)
 library(viridis)
+library(igraph)
 ```
 
 
@@ -109,8 +110,6 @@ nodos %>%
 Armo el grafo bipartito
 
 ```{r}
-library(igraph)
-
 g <- nodos %>% 
   filter(year==2016) %>% 
   ungroup() %>% 
@@ -174,6 +173,26 @@ grafo.cl <- cluster_louvain(graph = proj)
 
 clusters <- tibble(membership=grafo.cl$membership, producto = grafo.cl$names)
 
+```
+
+
+### RCA para todos los paises
+
+```{r}
+data <- read_delim(file = "datasets/Export_agg_country_prod_yr.txt",delim = ",")
+SA_isos <- read_delim("datasets/suthamerica_ISOcodes.txt", delim=",")
+
+mean_dist_SITC <- data %>% 
+  group_by(year, SITC) %>% 
+  summarise(value = sum(as.numeric(value),na.rm = T))
+
+SA_data <- data %>% 
+  filter(rep_iso %in% SA_isos$code) %>% 
+  group_by(year, SITC, rep_iso,reporter) %>% 
+  summarise(value = sum(as.numeric(value),na.rm = T))
+
+rm(data)
+gc()
 ```
 
 
