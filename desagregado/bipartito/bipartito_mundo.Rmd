@@ -1,0 +1,152 @@
+---
+title: "bipartito Mundo"
+output: html_notebook
+---
+
+
+$$
+  RCA(c,i)= \frac{\displaystyle \frac{x(c,i)}{\displaystyle \sum_{i}x(c,i)}}{\frac{\displaystyle\sum_{c}x(c,i)}{\displaystyle \sum_{c,i}x(c,i)}}
+\\
+$$
+dónde $x(c,i)$ es el valor de las exportaciones del __país c__ en el __producto i__     
+
+
+
+```{r setup}
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+library(viridis)
+library(igraph)
+library(countrycode)
+countrycode_data <- codelist %>% select(cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
+
+```
+
+
+Para correr una sola vez. __Costoso computacionalmente__
+
+```{r eval=FALSE}
+#Leo la info
+data <- read_delim(file = "datasets/Export_agg_country_prod_yr.txt",delim = ",")
+#proporcion promedio global
+mean_dist_SITC <- data %>% 
+  group_by(year, SITC) %>% 
+  summarise(value = sum(as.numeric(value),na.rm = T)) %>% 
+  group_by(year) %>% 
+  mutate(mean_prop = value/sum(value, na.rm = TRUE))
+
+
+RCA <- data %>% 
+  group_by(year, SITC, rep_iso,reporter) %>% 
+  summarise(value = sum(as.numeric(value),na.rm = T)) %>% 
+  group_by(year,rep_iso) %>% 
+  mutate(prop = value / sum(value, na.rm = TRUE)) %>%  #proporcion a nivel pais
+  left_join(mean_dist_SITC %>% select(year,SITC,mean_prop),by = c("year", "SITC")) %>% 
+  mutate(RCA = prop/mean_prop)
+
+write_delim(RCA,"results/RCA_mundo.txt",delim = ",")
+
+rm(data)
+rm(mean_dist_SITC)
+gc()
+
+```
+
+```{r}
+RCA <- read_delim("results/RCA_mundo.txt",delim = ",")
+```
+
+
+
+Defino como nodos las conexiones donde RCA>1
+```{r}
+nodos <- RCA %>% 
+  filter(RCA>1,reporter != 'Other Asia, nes') %>%  #me quedo un agregado supranacional
+  select(year,SITC,rep_iso,reporter)
+
+nodos <- left_join(nodos,countrycode_data %>% select(rep_iso=iso3c, continent, cldr.short.es_ar))
+
+```
+
+
+Quiero ver cuantos nodos links hay en promedio
+```{r}
+nodos %>% 
+  group_by(year,reporter) %>% 
+  summarise(n= n()) %>% 
+  ungroup() %>%  
+  summarise(n=mean(n))
+```
+
+obs: En Sudamerica 
+
+- Brazil	443.04762			
+- Argentina	355.59091			
+- Colombia	345.63636			
+- Chile	286.71429			
+- Peru	281.95000	
+
+
+
+Armo el grafo bipartito para 2016
+
+```{r}
+g <- nodos %>% 
+  filter(year==2016) %>% 
+  ungroup() %>% 
+  select(SITC, rep_iso) %>% 
+  graph_from_data_frame(., directed = T)
+
+V(g)$type <- !bipartite_mapping(g)$type
+is_bipartite(g)
+
+```
+
+proyecto a los países.
+
+
+
+```{r}
+
+proj <- bipartite_projection(g, which ="false", multiplicity = T)
+
+# pesos <- scale(E(proj)$weight,scale = T)
+
+# V(proj)$color <- "white"
+# V(proj)$label <- V(proj)$name
+# V(proj)$shape <- "none"
+E(proj)$width <- E(proj)$weight/20
+
+
+plot(proj,edge.curved=runif(length(E(proj)),-0.5,0.5))
+
+```
+
+
+```{r}
+nombres_vertices <- data_frame(rt3ISO=as.vector(V(proj)$name))
+countrycode_data2 <- countrycode_data %>% 
+  select(rt3ISO = iso3c, continent)
+correspondencia <- left_join(nombres_vertices,countrycode_data2) %>% 
+  mutate(color = case_when(continent == "Europe" ~"#E41A1C",
+                           continent == "Africa" ~"#377EB8",
+                           continent == "Asia" ~"#4DAF4A",
+                           continent == "Oceania" ~"#984EA3",
+                           continent == "Americas" ~"#FF7F00") )
+
+V(proj)$continente <- correspondencia$continent
+V(proj)$color <- correspondencia$color
+E(proj)$edge.color <- "gray80"
+
+l <-layout_nicely(proj)
+
+plot(proj,edge.arrow.size=.4,vertex.frame.color="#ffffff", edge.size = .5,
+     vertex.label="", vertex.label.color="black", vertex.size = 6, 
+     layout=l)
+
+legend(x=-2,  y=1.2,unique(unique(correspondencia$continent)),
+       pch=21,col="#777777",pt.bg=unique(unique(correspondencia$color)))
+
+```
+
