@@ -36,7 +36,7 @@ library(igraph)
 
 
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, eval=FALSE}
 data <- read_delim(file = "datasets/Export_agg_country_prod_yr.txt",delim = ",")
 SA_isos <- read_delim("datasets/suthamerica_ISOcodes.txt", delim=",")
 
@@ -52,25 +52,17 @@ SA_data <- data %>%
 rm(data)
 gc()
 
-```
 
+# Calculo las proporciones del promedio de los países
 
-Calculo las proporciones del promedio de los países
-```{r}
 mean_dist_SITC <- mean_dist_SITC %>% 
   group_by(year) %>% 
   mutate(mean_prop = value/sum(value, na.rm = TRUE)) 
-```
-
-Calculo la proporción para los países de SA
-```{r}
+# Calculo la proporción para los países de SA
 SA_data <- SA_data %>% 
   group_by(year,rep_iso) %>% 
   mutate(prop = value / sum(value, na.rm = TRUE))
 
-```
-
-```{r}
 SA_data <- SA_data %>% 
   left_join(mean_dist_SITC %>% select(year,SITC,mean_prop),by = c("year", "SITC")) %>% 
   mutate(RCA = prop/mean_prop)
@@ -78,6 +70,9 @@ SA_data <- SA_data %>%
 write_delim(SA_data,"results/RCA_SA.txt",delim = ",")
 ```
 
+```{r}
+SA_data <- read_csv("results/RCA_SA.txt")
+```
 
 
 Buscamos por país el producto con más ventajas
@@ -150,6 +145,24 @@ plot(proj,edge.curved=runif(length(E(proj)),-0.5,0.5) )
 
 ```
 
+
+### Cluster
+
+```{r}
+grafo.cl <- cluster_louvain(graph = proj)
+
+
+sizes(grafo.cl)
+algorithm(grafo.cl)
+
+clusters <- tibble(membership=grafo.cl$membership, pais = grafo.cl$names)
+
+clusters %>% 
+  arrange(membership)
+
+```
+
+
 proyecto productos
 
 ```{r}
@@ -174,27 +187,6 @@ grafo.cl <- cluster_louvain(graph = proj)
 clusters <- tibble(membership=grafo.cl$membership, producto = grafo.cl$names)
 
 ```
-
-
-### RCA para todos los paises
-
-```{r}
-data <- read_delim(file = "datasets/Export_agg_country_prod_yr.txt",delim = ",")
-SA_isos <- read_delim("datasets/suthamerica_ISOcodes.txt", delim=",")
-
-mean_dist_SITC <- data %>% 
-  group_by(year, SITC) %>% 
-  summarise(value = sum(as.numeric(value),na.rm = T))
-
-SA_data <- data %>% 
-  filter(rep_iso %in% SA_isos$code) %>% 
-  group_by(year, SITC, rep_iso,reporter) %>% 
-  summarise(value = sum(as.numeric(value),na.rm = T))
-
-rm(data)
-gc()
-```
-
 
 
 Seguir con:

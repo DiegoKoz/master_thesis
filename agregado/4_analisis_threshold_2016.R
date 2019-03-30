@@ -7,6 +7,8 @@ library(igraph)
 library(countrycode)
 library(ggrepel)
 library(xlsx)
+library(fuzzyjoin)
+library(maps)
 countrycode_data <- codelist %>% select(cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
 
 ##### Funciones #####
@@ -726,7 +728,7 @@ write.xlsx(x = as.data.frame(grafo_expos_DF),file =  "resultados/top5_nodos.xlsx
            row.names = FALSE,sheetName = "tabla_expo", append = T)
 
 
-##############importaciones exportaciones
+###### importaciones exportaciones ####### #####
 #dirigido      -0.04973885   -0.02976895
 #no dirigido   -0.27006093   -0.17769331
 #Los países centrales tienen menos dependencia entre sí para sus importaciones que para sus exportaciones.
@@ -808,7 +810,43 @@ for ( i in c(1:length(names(comparacion_expo_impo)))) {
 
 #saveRDS(comparacion_expo_impo, "Resultados/comparacion_expo_impo.RDS")
 
+###### Mapa clusters ########
 
+wordmap <- map_data('world')
 
+codes <- tibble(map_regions = unique(wordmap$region),
+                map_regions_low = tolower(unique(wordmap$region))) %>% 
+  regex_left_join(codelist %>% 
+                    select(pais=iso3c, regex_name = country.name.en.regex), by=c(map_regions_low='regex_name'))
+
+plot_map <- function(cluster, method){
+  clusters <- tibble(membership=cluster$membership, pais = cluster$names)
+  
+  df_map <-  wordmap %>%
+    filter(!str_detect(region, "Antarctica")) %>% 
+    left_join(clusters %>% 
+                left_join(codes %>% select(pais, region = map_regions))) %>% 
+    arrange(order) %>% 
+    mutate(membership = as_factor(membership))
+  
+  
+  ggplot(df_map, aes(long, lat)) +
+    geom_polygon(aes(group = group,  fill = membership),color="black",size=.1) +
+    # coord_quickmap(expand = TRUE) +
+    coord_equal(ratio = 1.2)+
+    theme_void()+
+    theme(legend.position = 'bottom',
+          plot.margin = unit(rep(-1.25,4),"lines"))+
+    scale_fill_discrete(glue::glue('Cluster {method}'))+
+    labs(x=NULL, y=NULL, title=NULL)
+}
+
+g <- trade_to_graph(dataset2, threshold_pct = 0.01)$grafo
+
+g <- as.undirected(g)
+louvain_clust <- cluster_louvain(graph = g, weights = E(g)$TradeValue)
+plot_map(louvain_clust, 'louvain')
+
+ggsave("agregado/graficos/mapa_louvain.png", width = 16, height = 9, dpi = 300)
 
 

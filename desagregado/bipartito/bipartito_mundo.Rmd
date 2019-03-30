@@ -19,7 +19,9 @@ library(ggthemes)
 library(viridis)
 library(igraph)
 library(countrycode)
-countrycode_data <- codelist %>% select(cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
+library(fuzzyjoin)
+library(maps)
+countrycode_data <- codelist %>% select(country.name.en, cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
 
 ```
 
@@ -103,7 +105,8 @@ is_bipartite(g)
 
 ```
 
-proyecto a los países.
+
+# proyecto a los países.
 
 
 
@@ -125,7 +128,7 @@ plot(proj,edge.curved=runif(length(E(proj)),-0.5,0.5))
 
 
 ```{r}
-nombres_vertices <- data_frame(rt3ISO=as.vector(V(proj)$name))
+nombres_vertices <- tibble(rt3ISO=as.vector(V(proj)$name))
 countrycode_data2 <- countrycode_data %>% 
   select(rt3ISO = iso3c, continent)
 correspondencia <- left_join(nombres_vertices,countrycode_data2) %>% 
@@ -148,5 +151,114 @@ plot(proj,edge.arrow.size=.4,vertex.frame.color="#ffffff", edge.size = .5,
 legend(x=-2,  y=1.2,unique(unique(correspondencia$continent)),
        pch=21,col="#777777",pt.bg=unique(unique(correspondencia$color)))
 
+```
+
+### Cluster 
+
+
+```{r}
+wordmap <- map_data('world')
+
+codes <- tibble(map_regions = unique(wordmap$region),
+  map_regions_low = tolower(unique(wordmap$region))) %>% 
+  regex_left_join(codelist %>% 
+                    select(pais=iso3c, regex_name = country.name.en.regex), by=c(map_regions_low='regex_name'))
+```
+
+
+
+```{r}
+plot_map <- function(cluster, method){
+  clusters <- tibble(membership=cluster$membership, pais = cluster$names)
+  
+  df_map <-  wordmap %>%
+    filter(!str_detect(region, "Antarctica")) %>% 
+    left_join(clusters %>% 
+    left_join(codes %>% select(pais, region = map_regions))) %>% 
+    arrange(order) %>% 
+    mutate(membership = as_factor(membership))
+  
+  
+  ggplot(df_map, aes(long, lat)) +
+    geom_polygon(aes(group = group,  fill = membership),color="black",size=.1) +
+    # coord_quickmap(expand = TRUE) +
+    coord_equal(ratio = 1.2)+
+    theme_void()+
+    theme(legend.position = 'bottom',
+         plot.margin = unit(rep(-1.25,4),"lines"))+
+    scale_fill_discrete(glue::glue('Cluster {method}'))+
+    labs(x=NULL, y=NULL, title=NULL)
+}
+```
+
+
+
+```{r}
+# grafo.cl <- cluster_louvain(graph = proj)
+walktrap_clust <- cluster_walktrap(graph = proj, weights = E(proj)$weight)
+plot_map(walktrap_clust, 'walktrap')
+ggsave("results/mapa_projection_walktrap.png", width = 16, height = 9, dpi = 300)
+
+
+louvain_clust <- cluster_louvain(graph = proj, weights = E(proj)$weight)
+plot_map(louvain_clust, 'louvain')
+ggsave("results/mapa_projection_louvain.png", width = 16, height = 9, dpi = 300)
+
+```
+
+
+## Proyección Productos
+
+```{r}
+
+proj <- bipartite_projection(g, which ="true", multiplicity = T)
+```
+
+Louvain
+
+```{r}
+louvain_clust <- cluster_louvain(graph = proj, weights = E(proj)$weight)
+louvain_clust_df <- tibble(membership=louvain_clust$membership, producto = louvain_clust$names)
+louvain_clust_df
+```
+
+Walktrap
+```{r}
+walktrap_clust <- cluster_walktrap(graph = proj, weights = E(proj)$weight)
+walktrap_clust_df <- tibble(membership=walktrap_clust$membership, producto = walktrap_clust$names)
+walktrap_clust_df
+
+```
+
+
+
+# Similitud
+
+```{r}
+similarity <- function(RCA){
+  
+  cualitative_RCA <- RCA %>% 
+  mutate(RCA = as.integer(case_when(RCA > 1 ~ 1,
+                            RCA <= 1 ~ 0)))
+  w <- cualitative_RCA %>% spread(., reporter,RCA,fill = 0) %>% 
+    ungroup() 
+  
+  SITC <- w$SITC 
+  mat <- as.matrix(w[,-1])
+  v <- mat %*% t(mat)                                   
+  diag(v) <- 0                                      
+  dimnames(v) <- list(SITC, SITC) 
+  totales <- rowSums(w[,-1])
+  probabilities <- v/totales
+  
+  symmetric_proba <- symmetric_max(probabilities)
+  return(symmetric_proba)   
+  }
+```
+
+
+```{r}
+symmetric_proba <- similarity(RCA = RCA)
+write_csv(data.frame(symmetric_proba),"results/similitud.csv")
 ```
 
