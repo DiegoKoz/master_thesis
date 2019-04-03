@@ -25,29 +25,53 @@ countrycode_data <- codelist %>% select(country.name.en, cldr.short.es_ar, cldr.
 
 ```
 
+```{r}
+rel_comp_adv <- function(data, country_filt=NA, digits=4){
+  
+  if (digits<5) { #si tiene 5 son los datos originales y me ahorro el calculo
+    data <- data %>% 
+      mutate(SITC = substr(SITC,1,digits)) %>% 
+      group_by(year, reporter,rep_iso, SITC) %>% 
+      summarise(value = sum(value))
+
+  }
+  
+  #el denominador se calcula con todos los paises
+  mean_dist_SITC <- data %>%
+    group_by(year, SITC) %>% 
+    summarise(value = sum(as.numeric(value),na.rm = T)) %>% 
+    group_by(year) %>% 
+    mutate(mean_prop = value/sum(value, na.rm = TRUE))
+
+  if (!is.na(country_filt)) { #filtro para elegir resultados solo de una seleccion de paises
+    data <- data %>% 
+    filter(rep_iso %in% country_filt)
+  }
+  
+  #el denominador despues del filtro
+  data <- data %>%
+    group_by(year, SITC, rep_iso,reporter) %>% 
+    summarise(value = sum(as.numeric(value),na.rm = T)) %>% 
+    group_by(year,rep_iso) %>% 
+    mutate(prop = value / sum(value, na.rm = TRUE))
+  
+  data <- data %>% 
+    left_join(mean_dist_SITC %>% select(year,SITC,mean_prop),by = c("year", "SITC")) %>% 
+    mutate(RCA = prop/mean_prop)
+
+  data
+}
+```
 
 Para correr una sola vez. __Costoso computacionalmente__
 
 ```{r eval=FALSE}
 #Leo la info
 data <- read_delim(file = "datasets/Export_agg_country_prod_yr.txt",delim = ",")
-#proporcion promedio global
-mean_dist_SITC <- data %>% 
-  group_by(year, SITC) %>% 
-  summarise(value = sum(as.numeric(value),na.rm = T)) %>% 
-  group_by(year) %>% 
-  mutate(mean_prop = value/sum(value, na.rm = TRUE))
 
+RCA <- rel_comp_adv(data = data, digits = 4)
 
-RCA <- data %>% 
-  group_by(year, SITC, rep_iso,reporter) %>% 
-  summarise(value = sum(as.numeric(value),na.rm = T)) %>% 
-  group_by(year,rep_iso) %>% 
-  mutate(prop = value / sum(value, na.rm = TRUE)) %>%  #proporcion a nivel pais
-  left_join(mean_dist_SITC %>% select(year,SITC,mean_prop),by = c("year", "SITC")) %>% 
-  mutate(RCA = prop/mean_prop)
-
-write_delim(RCA,"results/RCA_mundo.txt",delim = ",")
+write_delim(RCA,"results/RCA_mundo4d.txt",delim = ",")
 
 rm(data)
 rm(mean_dist_SITC)
@@ -56,10 +80,8 @@ gc()
 ```
 
 ```{r}
-RCA <- read_delim("results/RCA_mundo.txt",delim = ",")
+RCA <- read_delim("results/RCA_mundo4d.txt",delim = ",")
 ```
-
-
 
 Defino como nodos las conexiones donde RCA>1
 ```{r}
@@ -72,7 +94,7 @@ nodos <- left_join(nodos,countrycode_data %>% select(rep_iso=iso3c, continent, c
 ```
 
 
-Quiero ver cuantos nodos links hay en promedio
+Quiero ver cuantos links hay en promedio por nodo
 ```{r}
 nodos %>% 
   group_by(year,reporter) %>% 
@@ -81,14 +103,14 @@ nodos %>%
   summarise(n=mean(n))
 ```
 
-obs: En Sudamerica 
+obs: En Sudamerica (a 4d)
 
-- Brazil	443.04762			
-- Argentina	355.59091			
-- Colombia	345.63636			
-- Chile	286.71429			
-- Peru	281.95000	
-
+- Brazil	190.42857			
+- Argentina	177.13636			
+- Colombia	152.31818			
+- Peru	134.80000			
+- Chile	127.42857			
+- Uruguay	114.90476	
 
 
 Armo el grafo bipartito para 2016
@@ -234,6 +256,34 @@ walktrap_clust_df
 
 # Similitud
 
+Definiciones
+
+$$
+\large  \phi_{ij} = min (P(RCA_i>1/RCA_j>1),P(RCA_j>1/RCA_i>1))
+\\
+$$
+dónde $P(RCA_i/RCA_j)$ es la probabilidad condicional de exportar el producto ___i___ dado que exporta el producto ___j___. Para calcular esto, utilizamos lo siguiente:
+
+
+
+$$
+P(RCA_i/RCA_j) = \frac{P(RCA_i = 1 \cap RCA_j = 1)}{P(RCA_j = 1)}
+$$
+
+$$
+\text{con } P(RCA_j = 1)= \frac{ \sum_{c} I(RCA_c >1)}{N}
+$$
+siendo N la cantidad de países.
+
+y
+
+$$
+P(RCA_i = 1 \cap RCA_j = 1) = \frac{\sum_c RCA_i = 1 \cap RCA_j = 1}{N}
+$$
+
+
+
+
 ```{r}
 similarity <- function(RCA){
   
@@ -253,12 +303,13 @@ similarity <- function(RCA){
   
   symmetric_proba <- symmetric_max(probabilities)
   return(symmetric_proba)   
-  }
+}
+
 ```
 
 
 ```{r}
 symmetric_proba <- similarity(RCA = RCA)
-write_csv(data.frame(symmetric_proba),"results/similitud.csv")
+write_csv(data.frame(symmetric_proba),"results/similitud_4d.csv")
 ```
 
