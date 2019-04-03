@@ -33,41 +33,53 @@ library(viridis)
 library(igraph)
 ```
 
+Armo una funcion para calcular RCA
+```{r}
 
+rel_comp_adv <- function(data, country_filt=NA, digits=4){
+  
+  if (digits<5) { #si tiene 5 son los datos originales y me ahorro el calculo
+    data <- data %>% 
+      mutate(SITC = substr(SITC,1,digits)) %>% 
+      group_by(year, reporter,rep_iso, SITC) %>% 
+      summarise(value = sum(value))
+
+  }
+  
+  #el denominador se calcula con todos los paises
+  mean_dist_SITC <- data %>%
+    group_by(year, SITC) %>% 
+    summarise(value = sum(as.numeric(value),na.rm = T)) %>% 
+    group_by(year) %>% 
+    mutate(mean_prop = value/sum(value, na.rm = TRUE))
+
+  if (!is.na(country_filt)) { #filtro para elegir resultados solo de una seleccion de paises
+    data <- data %>% 
+    filter(rep_iso %in% country_filt)
+  }
+  
+  #el denominador despues del filtro
+  data <- data %>%
+    group_by(year, SITC, rep_iso,reporter) %>% 
+    summarise(value = sum(as.numeric(value),na.rm = T)) %>% 
+    group_by(year,rep_iso) %>% 
+    mutate(prop = value / sum(value, na.rm = TRUE))
+  
+  data <- data %>% 
+    left_join(mean_dist_SITC %>% select(year,SITC,mean_prop),by = c("year", "SITC")) %>% 
+    mutate(RCA = prop/mean_prop)
+
+  data
+}
+```
 
 
 ```{r message=FALSE, warning=FALSE, eval=FALSE}
 data <- read_delim(file = "datasets/Export_agg_country_prod_yr.txt",delim = ",")
 SA_isos <- read_delim("datasets/suthamerica_ISOcodes.txt", delim=",")
 
-mean_dist_SITC <- data %>% 
-  group_by(year, SITC) %>% 
-  summarise(value = sum(as.numeric(value),na.rm = T))
-
-SA_data <- data %>% 
-  filter(rep_iso %in% SA_isos$code) %>% 
-  group_by(year, SITC, rep_iso,reporter) %>% 
-  summarise(value = sum(as.numeric(value),na.rm = T))
-
-rm(data)
-gc()
-
-
-# Calculo las proporciones del promedio de los países
-
-mean_dist_SITC <- mean_dist_SITC %>% 
-  group_by(year) %>% 
-  mutate(mean_prop = value/sum(value, na.rm = TRUE)) 
-# Calculo la proporción para los países de SA
-SA_data <- SA_data %>% 
-  group_by(year,rep_iso) %>% 
-  mutate(prop = value / sum(value, na.rm = TRUE))
-
-SA_data <- SA_data %>% 
-  left_join(mean_dist_SITC %>% select(year,SITC,mean_prop),by = c("year", "SITC")) %>% 
-  mutate(RCA = prop/mean_prop)
-
-write_delim(SA_data,"results/RCA_SA.txt",delim = ",")
+SA_data <- rel_comp_adv(data = data, country_filt = SA_isos$code,digits = 4)
+write_delim(SA_data,"results/RCA_SA4d.txt",delim = ",")
 ```
 
 ```{r}
@@ -135,7 +147,7 @@ proj <- bipartite_projection(g, which ="false", multiplicity = T)
 
 # pesos <- scale(E(proj)$weight,scale = T)
 
-igraph::vertex_attr(proj)
+# igraph::vertex_attr(proj)
 V(proj)$color <- "white"
 V(proj)$label <- V(proj)$name
 V(proj)$shape <- "none"
