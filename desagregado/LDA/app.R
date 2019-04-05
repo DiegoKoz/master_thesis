@@ -126,13 +126,13 @@ clasificacion <- clasificacion %>%
 
 # cadenas ####
 dfs <- list(Dist_cadenas2,Dist_cadenas4,Dist_cadenas6,Dist_cadenas8,Dist_cadenas10,
-            Dist_cadenas20,Dist_cadenas30,Dist_cadenas40,
+            Dist_cadenas20,Dist_cadenas30,Dist_cadenas40,Dist_cadenas50,
             Dist_cadenas100,Dist_cadenas200) %>% 
   preprocesamiento(.)
   
 
 dfs_paises <- c("Dist_paises2","Dist_paises4","Dist_paises6","Dist_paises8","Dist_paises10",
-                   "Dist_paises20","Dist_paises30","Dist_paises40", 
+                   "Dist_paises20","Dist_paises30","Dist_paises40", "Dist_paises50", 
                 "Dist_paises100","Dist_paises200")
 
 
@@ -216,6 +216,7 @@ ui <- fluidPage(
     supertab_dist(K = 20),
     supertab_dist(K = 30),
     supertab_dist(K = 40),
+    supertab_dist(K = 50),
     supertab_dist(K = 100),
     supertab_dist(K = 200)
     #dataTableOutput("Lall_desc")
@@ -230,6 +231,7 @@ ui <- fluidPage(
       supertab_paises(K = 20),
       supertab_paises(K = 30),
       supertab_paises(K = 40),
+      supertab_paises(K = 50),
       supertab_paises(K = 100),
       supertab_paises(K = 200)
     )
@@ -244,7 +246,7 @@ server <- function (input, output) {
   # Componentes ####
   #Tabla
   
-  lapply(c(2,4,6,8,10,20,30,40,100,200),function(k){
+  lapply(c(2,4,6,8,10,20,30,40,50,100,200),function(k){
        lapply(1:k,function(comp){
       output[[glue("comp_{k}_{comp}")]] <- renderDataTable(
         datatable(  
@@ -301,7 +303,7 @@ server <- function (input, output) {
  #Graficos #### 
   
   
-  lapply(c(2,4,6,8,10,20,30,40,100,200),function(k){
+  lapply(c(2,4,6,8,10,20,30,40,50,100,200),function(k){
     
     paises_graf <- reactive({input[[glue('paises_{k}')]]    })
     output[[glue("plot{k}")]] <- renderPlot({
@@ -313,7 +315,7 @@ server <- function (input, output) {
  
   
   
-  lapply(c(2,4,6,8,10,20,30,40,100,200),function(k){
+  lapply(c(2,4,6,8,10,20,30,40,50,100,200),function(k){
     
     paises_graf <- reactive({input[[glue('paises_{k}')]]    })
     
