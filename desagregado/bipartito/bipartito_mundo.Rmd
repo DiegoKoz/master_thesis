@@ -307,8 +307,8 @@ similarity <- function(RCA){
 
 ```
 
-
-```{r}
+Lo corro en el server
+```{r eval=FALSE}
 symmetric_proba <- similarity(RCA = RCA)
 write_csv(data.frame(symmetric_proba),"results/similitud_4d.csv")
 ```
