@@ -67,7 +67,7 @@ Para correr una sola vez. __Costoso computacionalmente__
 
 ```{r eval=FALSE}
 #Leo la info
-data <- read_delim(file = "datasets/Export_agg_country_prod_yr.txt",delim = ",")
+data <- read_delim(file = "../dataset/Export_World_directo.csv",delim = ",")
 
 RCA <- rel_comp_adv(data = data, digits = 4)
 

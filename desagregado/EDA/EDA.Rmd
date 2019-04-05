@@ -18,13 +18,15 @@ library(shinycssloaders)
 library(glue)
 library(readxl)
 library(DT)
+library(magrittr)
 ```
 
 
 ### Treemap mundo. Cadenas y subcadenas
 
 ```{r}
-dataset <- read.delim('data/Export_agg_country_prod_yr.txt',sep = ',', encoding = 'UTF-8')
+# dataset <- read.delim('data/Export_agg_country_prod_yr.txt',sep = ',', encoding = 'UTF-8')
+dataset <- read.delim('../dataset/Export_World_directo.csv',sep = ',', encoding = 'UTF-8')
 #renombro las variables
 
 dataset_summ <-dataset %>% 

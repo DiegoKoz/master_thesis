@@ -119,8 +119,10 @@ preprocesamiento <- function(dfs) {
 }
 
 clasificacion <- clasificacion %>%
-  filter(Classification == "S3") %>%
-  select(Code, Description)
+  filter(Classification == "S3") %>% 
+  select(Code, Description)%>%
+  mutate(Code = case_when(Code %in% c("334", "673", "676") ~paste0(Code,"0"),
+                          TRUE ~ Code))
 
 # cadenas ####
 dfs <- list(Dist_cadenas2,Dist_cadenas4,Dist_cadenas6,Dist_cadenas8,Dist_cadenas10,
