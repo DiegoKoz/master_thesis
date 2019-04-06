@@ -18,11 +18,11 @@ library(plotly)
 ### Load ###
 
 
-clasificacion <-read_xlsx("names/UN Comtrade Commodity Classifications.xlsx")
-clasificacion_lall <-read_xlsx("names/Correspondencia SITCR3a3-d--Lall.xlsx")
-codigos_paises <- read_csv("names/codigos_paises.csv")
+clasificacion <-read_xlsx("desagregado/LDA/names/UN Comtrade Commodity Classifications.xlsx")
+clasificacion_lall <-read_xlsx("desagregado/LDA/names/Correspondencia SITCR3a3-d--Lall.xlsx")
+codigos_paises <- read_csv("desagregado/LDA/names/codigos_paises.csv")
 
-etiquetas_componentes <- read_csv("names/Etiquetas tópicos LDA - ETIQUETAS.csv")
+etiquetas_componentes <- read_csv("desagregado/LDA/names/Etiquetas tópicos LDA - ETIQUETAS.csv")
 
 # resultados <- list.files("results/")
 # for (resultado in resultados) {
@@ -30,11 +30,11 @@ etiquetas_componentes <- read_csv("names/Etiquetas tópicos LDA - ETIQUETAS.csv"
 # }
 
 iteraciones <- c("Dist_paises2.csv","Dist_paises4.csv","Dist_paises8.csv","Dist_paises10.csv",
-  "Dist_paises20.csv","Dist_paises40.csv")
+  "Dist_paises20.csv","Dist_paises40.csv",'Dist_paises50.csv')
 
 
 read_and_sum <- function(x) {
-  read_csv(glue("results/{x}")) %>% 
+  read_csv(glue("desagregado/LDA/results/{x}")) %>% 
     gather(componente,prop,3:ncol(.)) %>% 
     group_by(componente) %>% 
     summarise(prop=mean(prop)) %>% 
@@ -57,4 +57,4 @@ df %>%
         panel.border =element_rect(fill = NA), 
         text = element_text(size=25), 
         strip.text.y = element_text(angle = 0))
-ggsave("graficos/componentes.png",scale = 2)  
+ggsave("desagregado/LDA/graficos/componentes.png",scale = 2)  

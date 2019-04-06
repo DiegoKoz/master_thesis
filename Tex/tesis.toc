@@ -27,11 +27,16 @@
 \contentsline {subsubsection}{Definiciones}{34}{section*.15}
 \contentsline {subsubsection}{Proceso generativo e inferencial}{35}{Item.2}
 \contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{37}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Resultados}{37}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{37}{subsection.3.4.1}
+\contentsline {paragraph}{Clustering}{38}{section*.16}
+\contentsline {section}{\numberline {3.4}Resultados}{38}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{38}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{42}{subsection.3.4.2}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{44}{chapter.4}
-\contentsline {part}{Ap\'{e}ndice}{45}{part*.18}
-\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{46}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{46}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{48}{section.Alph0.3}
+\contentsline {paragraph}{proyecci\IeC {\'o}n paises}{42}{subsection.3.4.2}
+\contentsline {paragraph}{proyecci\IeC {\'o}n productos}{42}{figure.3.14}
+\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{42}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{50}{chapter.4}
+\contentsline {part}{Ap\'{e}ndice}{51}{part*.20}
+\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{52}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{52}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{54}{section.Alph0.3}
+\contentsline {section}{\numberline {.4}Medioides PAM clustering. K=50}{54}{section.Alph0.4}

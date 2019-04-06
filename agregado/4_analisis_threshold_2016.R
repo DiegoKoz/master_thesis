@@ -734,7 +734,7 @@ write.xlsx(x = as.data.frame(grafo_expos_DF),file =  "resultados/top5_nodos.xlsx
 #Los países centrales tienen menos dependencia entre sí para sus importaciones que para sus exportaciones.
 #Nichos de consumo vs provisión de materias primas???
 
-### Rol como consumidor (grafo expos) y como productor (grafo impos)
+##### Rol como consumidor (grafo expos) y como productor (grafo impos)#####
 
 expo_vs_impo <- function(data_impo = dataset2, data_expo = dataset_expo, threshold_pct =0.01){
   
@@ -836,7 +836,8 @@ plot_map <- function(cluster, method){
     coord_equal(ratio = 1.2)+
     theme_void()+
     theme(legend.position = 'bottom',
-          plot.margin = unit(rep(-1.25,4),"lines"))+
+          plot.margin = unit(rep(-1.25,4),"lines"),
+          text = element_text(size = 20))+
     scale_fill_discrete(glue::glue('Cluster {method}'))+
     labs(x=NULL, y=NULL, title=NULL)
 }

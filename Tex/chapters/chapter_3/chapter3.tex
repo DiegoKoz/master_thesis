@@ -5,9 +5,7 @@
 \graphicspath{{images/}}
 
 
-%
-%
-%
+
 %
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -287,14 +285,63 @@ Estos dos pasos se alternan hasta converger. Por último, se realiza un suavizad
 
 
 \subsection{Grafo Bipartito}
-\unsure{pendiente}
+
+\info{HACER}
+
+
+$$
+\operatorname{RCA}(c, i)= \frac{\displaystyle \frac{x(c, i)}{\sum_{i} x(c, i)}}{\displaystyle \frac{\sum_{c} x(c, i)}{\sum_{c, i} x(c, i)}}
+$$
+
+dónde $x(c,i)$ es el valor de las exportaciones del \textit{país c} en \textit{producto i}
+
+
+
+$$
+\phi_{ij} = min (P(RCA_i>1/RCA_j>1),P(RCA_j>1/RCA_i>1))
+$$
+
+dónde $P(RCA_i/RCA_j)$ es la probabilidad condicional de exportar el producto $i$ dado que exporta el producto $j$. Para calcular esto, utilizamos lo siguiente:
+
+
+
+$$
+P(RCA_i/RCA_j) = \frac{P(RCA_i = 1 \cap RCA_j = 1)}{P(RCA_j = 1)}
+$$
+
+$$
+\text{con } P(RCA_j = 1)= \frac{ \sum_{c} I(RCA_c >1)}{N}
+$$
+
+siendo N la cantidad de países. y
+
+$$
+P(RCA_i = 1 \cap RCA_j = 1) = \frac{\sum_c RCA_i = 1 \cap RCA_j = 1}{N}
+$$
+
+
+
+\paragraph{Clustering}
+
+Louvain --> proyección países
+Walktrap --> proyección países
+
+
+
+Proximidad:
+
+Grafo de proximidad: PAM --> proyeccion de los clusters sobre el grafo
+
+HCLUST --> ordenamiento heatmap
+
+
 
 \section{Resultados}
 
 \subsection{Latent Dirichlet Allocation Models}
 
 Los resultado obtenidos de los modelos de Topic Modelling para el análisis de textos normalmente se analizan en dos etapas: En primer lugar se etiquetan los tópicos obtenidos sobre la base de las palabras más salientes de cada tópico, y luego se analiza su distribución en los textos. El etiquetado de los tópicos es una tarea subjetiva donde lo que se busca es un concepto generalizador de aquellas palabras que componen al tópico, donde es posible que esta tarea no se pueda realizar por falta de coherencia dentro del tópico. El hiperparámero $k$, es decir la cantidad de tópicos, juega un rol fundamental en este punto, dado que con una cantidad baja de tópicos estos tenderán a reflejar conceptos amplios, mientras que si $k$ es mayor que la cardinalidad del espacio latente que se busca, esto puede generar tópicos repetidos. 
-Lo anterior no escapa al presente dominio sino que se refuerza, dado que la búsqueda, subjetiva, de un concepto abarcador entre productos puede resultar más compleja que la de un concepto generalizador de un grupo de palabras. Un problema que no existe en el presente dominio es el de la polisemia, dado que todos los significantes, indices del nomenclador, hacen referencia a un único significado no ambiguo. Sin embargo, nuevos problemas aparecen respecto a este punto, como qué nomenclador de base utilizar y en qué nivel de desagregación. Por motivos de comparabilidad con los resultados de \cite{molinari2016especializacion} se decidió utilizar el nomenclador SITC a 4 dígitos \citep{un2006standard}. A su vez, se realizaron pruebas para varios valores de $k$: 2,4,6,8,10,20,30,40, 100 y 200. Para el etiquetado de los componentes se observó que la práctica usual de observar los primeros diez elementos de la distribución no bastaba para encontrar una etiqueta generalizadora, por lo que se elaboró un tablero dinámico para estudiar la distribución y su función acumulada, a la vez que se gráfico la distribución en función de un nomenclador de complejidad tecnológica \citep{lall2000technological}: 
+Lo anterior no escapa al presente dominio sino que se refuerza, dado que la búsqueda, subjetiva, de un concepto abarcador entre productos puede resultar más compleja que la de un concepto generalizador de un grupo de palabras. Un problema que no existe en el presente dominio es el de la polisemia, dado que todos los significantes, indices del nomenclador, hacen referencia a un único significado no ambiguo. Sin embargo, nuevos problemas aparecen respecto a este punto, como qué nomenclador de base utilizar y en qué nivel de desagregación. Por motivos de comparabilidad con los resultados de \cite{molinari2016especializacion} se decidió utilizar el nomenclador SITC a 4 dígitos \citep{un2006standard}. A su vez, se realizaron pruebas para varios valores de $k$: 2,4,6,8,10,20,30,40,50, 100 y 200. Para el etiquetado de los componentes se observó que la práctica usual de observar los primeros diez elementos de la distribución no bastaba para encontrar una etiqueta generalizadora, por lo que se elaboró un tablero dinámico para estudiar la distribución y su función acumulada, a la vez que se gráfico la distribución en función de un nomenclador de complejidad tecnológica \citep{lall2000technological}: 
 
 \begin{table}[ht]
 	\centering
@@ -318,7 +365,7 @@ Lo anterior no escapa al presente dominio sino que se refuerza, dado que la bús
 \end{table}
 
 En la figura \ref{fig:dist_40_4} se puede observar la tabla utilizada para caracterizar el cuarto componente en el modelo con $k=4$. Allí se observa que la mayoría de los componentes pertenecen al rubro textil, como pulloveres, remeras y pantalones. También se aparece el té, que no guarda coherencia con le resto del rubro.
-
+\info{revisar}
 
 \begin{figure}[h]
 	\centering	
@@ -347,8 +394,8 @@ Por otro lado, la figura \ref{fig:componentes} muestra la distribución promedio
 	\label{fig:componentes}
 \end{figure}
 
-Esta conclusiones encuentran su correlato en la bibliografía. \cite{Hidalgo2007} construye un espacio de productos a partir de la proyección de un grafo bipartito de países y productos, y el resultado muestra evidencias de un núcleo densamente conectado y representativo respecto del comercio global. En este sentido, el $k$ óptimo es aquel que logra separar correctamente los clusters de productos que se encuentran en la periferia de dicho núcleo. Áreas como el \textit{petróleo}, \textit{textiles} y \textit{productos agropecuarios} deberían ser distinguibles con nitidez. Con este objetivo en mente, de los diferentes experimentos para diferentes valores del hiperparámetro, se concluyo que $k=40$ arroja los mejores resultados para este conjunto de datos.
-
+Esta conclusiones encuentran su correlato en la bibliografía. \cite{Hidalgo2007} construye un espacio de productos a partir de la proyección de un grafo bipartito de países y productos, y el resultado muestra evidencias de un núcleo densamente conectado y representativo respecto del comercio global. En este sentido, el $k$ óptimo es aquel que logra separar correctamente los clusters de productos que se encuentran en la periferia de dicho núcleo. Áreas como el \textit{petróleo}, \textit{textiles} y \textit{productos agropecuarios} deberían ser distinguibles con nitidez. Con este objetivo en mente, de los diferentes experimentos para diferentes valores del hiperparámetro, se concluyo que $k=40$ \info{rehacer}arroja los mejores resultados para este conjunto de datos.
+\info{rehacer}
 Finalmente, para elaborar las etiquetas finales se consultó especialistas sectoriales. En la tabla \ref{Table: etiquetas} se pueden ver las etiquetas para el modelo con $k=40$. Allí se puede ver que el componente 2 es el mencionado \textit{componente gigante}, y se delimitan un componente para productos textiles (4), petróleo (5), circuitos eléctricos (8), derivados de la madera y papel (15), Soja (16), entre otros. También se ve que algunos componentes tienen una composición de la cual no es posible diferenciarlos a nivel conceptual (31, 32, 34 y 35).
 
 
@@ -417,7 +464,94 @@ La figura \ref{fig:serie_componentes} muestra la evolución de la composición d
 
 
 \subsection{Grafo Bipartito}
-\unsure{pendiente}
+
+
+\paragraph{proyección paises}
+
+\begin{figure}
+	\centering
+	\subfigure[Cluster Louvain]{\label{fig:mapas_proyeccion_1}\includegraphics[width=\linewidth]{mapa_projection_louvain}}
+	\subfigure[Cluster Walktrap]{\label{fig:mapas_proyeccion_2}\includegraphics[width=\linewidth]{mapa_projection_walktrap}}
+	\caption{Proyección países. Exportaciones 2016}
+	\label{fig:mapas_proyeccion}
+\end{figure}
+
+
+
+
+\begin{figure}
+	\centering	
+	\includegraphics[width=\linewidth]{mapa_louvain}
+	\caption{Cluster Louvain. Comercio agregado. Exportaciones 2016}
+	\label{fig:mapa_comercio_agregado}
+\end{figure}
+
+
+\paragraph{proyección productos}
+
+
+\begin{figure}
+	\centering
+	\subfigure[Ordenamiento SITC]{\label{fig:proximity_1}\includegraphics[width=.45\linewidth]{heatmap_prox_sitcOrd}}
+	\subfigure[Ordenamiento Clustering jerárquico]{\label{fig:proximity_2}\includegraphics[width=.45\linewidth]{heatmap_prox_ClustOrd}}
+	\caption{Heatmap proximidad. Espacio de productos. Exportaciones. Promedio 1996-2017}
+	\label{fig:proximity}
+\end{figure}
+
+
+
+
+\begin{figure}
+	\centering	
+	\includegraphics[width=\linewidth]{pam2_gigant}
+	\caption{Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 2 medioides}
+	\label{fig:clustering2}
+\end{figure}
+
+\begin{figure}
+	\centering	
+	\includegraphics[width=\linewidth]{pam10_gigant}
+	\caption{Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}
+	\label{fig:clustering10}
+\end{figure}
+
+\begin{figure}
+	\centering	
+	\includegraphics[width=\linewidth]{pam50_gigant}
+	\caption{Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 50 medioides}
+	\label{fig:clustering50}
+\end{figure}
+
+
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{lll}
+		\hline
+		k & medioide & Description \\ 
+		\hline
+		2 & 8215 & Furniture,nes,of wood \\ 
+		2 & 5162 & Aldehyde,etc.fnct.cmpnds \\ 
+		10 & 6911 & Metal structures,parts \\ 
+		10 & 2831 & Copper ores and concentrates \\ 
+		10 & 6954 & Hand tools,etc. nes \\ 
+		10 & 2232 & Palm nuts and kernels \\ 
+		10 & 8451 & Babies'garmnts,clths acc \\ 
+		10 & 8121 & Boilrs.radiatrs,etc.n.el \\ 
+		10 & 5416 & Glycosides; glands etc. \\ 
+		10 & 6572 & Non-wovens, whether or not impregnated, coated, covered or laminated, n.e \\ 
+		10 & 7526 & Input or output units for automatic data processing machines, whether or \\ 
+		10 & 7285 & Parts publc wrk mach etc \\ 
+		\hline
+	\end{tabular}
+	\caption{Medioides} 
+	\label{table:pam}
+\end{table}
+
+
+\subsection{Conclusiones}
+
+Input or output units for automatic data processing machines, whether or
 
 
 
