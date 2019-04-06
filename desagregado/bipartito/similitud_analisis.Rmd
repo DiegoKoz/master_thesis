@@ -11,6 +11,8 @@ library(viridis)
 library(ggthemes)
 library(cluster)
 library(igraph)
+library(readxl)
+
 set.seed(1234)
 ```
 
@@ -146,6 +148,32 @@ dev.off()
 png('results/pam50_mst.png',width = 6,height = 6, units = 'in', res = 300)
 plot_pam_max_span(M,pam_clust50)
 dev.off()
+```
+
+
+```{r}
+
+clasificacion <-read_xlsx("../LDA/names/UN Comtrade Commodity Classifications.xlsx") %>%
+  filter(Classification == "S3") %>% 
+  select(medioide=Code, Description)%>%
+  mutate(medioide = case_when(medioide %in% c("334", "673", "676") ~paste0(medioide,"0"),
+                          TRUE ~ medioide))
+
+
+tibble(k = '2', medioide= pam_clust2$medoids) %>% 
+  bind_rows(tibble(k = '10', medioide= pam_clust10$medoids)) %>% 
+  # bind_rows(tibble(k = 50, medioide= pam_clust50$medoids)) %>% 
+  left_join(clasificacion) %>% 
+  xtable::xtable(., caption='Medioides', label='table:pam') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
+
+```
+```{r}
+
+tibble(k = '50', medioide= pam_clust50$medoids) %>%
+  left_join(clasificacion) %>% 
+  xtable::xtable(., caption='Medioides', label='table:pam') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
 ```
 
 
