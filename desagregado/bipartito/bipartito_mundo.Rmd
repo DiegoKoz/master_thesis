@@ -63,7 +63,7 @@ rel_comp_adv <- function(data, country_filt=NA, digits=4){
 }
 ```
 
-Para correr una sola vez. __Costoso computacionalmente__
+ __Costoso computacionalmente__: Se corre en el server 
 
 ```{r eval=FALSE}
 #Leo la info
