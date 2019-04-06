@@ -1,0 +1,17 @@
+---
+title: "Similitud analysis"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+mean_sim <- read_csv('results/similitud_4d_mean.csv')
+```
+```{r}
+mean_sim
+```
+
