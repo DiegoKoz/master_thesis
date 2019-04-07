@@ -838,11 +838,11 @@ plot_map <- function(cluster, method){
     theme(legend.position = 'bottom',
           plot.margin = unit(rep(-1.25,4),"lines"),
           text = element_text(size = 20))+
-    scale_fill_discrete(glue::glue('Cluster {method}'))+
+    scale_fill_discrete(glue::glue('Comunidades'))+
     labs(x=NULL, y=NULL, title=NULL)
 }
 
-g <- trade_to_graph(dataset2, threshold_pct = 0.01)$grafo
+g <- trade_to_graph(dataset_expo, threshold_pct = 0.01)$grafo
 
 g <- as.undirected(g)
 louvain_clust <- cluster_louvain(graph = g, weights = E(g)$TradeValue)
@@ -850,4 +850,6 @@ plot_map(louvain_clust, 'louvain')
 
 ggsave("agregado/graficos/mapa_louvain.png", width = 16, height = 9, dpi = 300)
 
+
+V(g)[which(louvain_clust$membership==6)]
 

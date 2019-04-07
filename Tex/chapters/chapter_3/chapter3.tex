@@ -23,7 +23,34 @@
 \selectlanguage{spanish}
 %\usepackage[style=authoryear]{biblatex}
 
+
 \usepackage{nameref}
+
+
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usetikzlibrary{positioning}
+
+\newcommand{\bipgraph}[2]{%
+	\begin{tikzpicture}[every node/.style={circle,draw}]
+	\foreach \xitem in {1,2,...,#1}
+	{%
+		% first set
+		\node at (0,\xitem) (a\xitem) {};
+		% second set
+		\node at (2,\xitem) (b\xitem) {};   
+	}%
+	
+	% connections
+	\foreach \x [count=\xi] in {#2}
+	{% 
+		\foreach \tritem in \x % <-- Here no braces to make it a foreach list also not \xi but \x
+		\draw(a\xi) -- (b\tritem);
+	}
+	\end{tikzpicture}  
+}
+
+
 
 \begin{document}
 	
@@ -286,55 +313,62 @@ Estos dos pasos se alternan hasta converger. Por último, se realiza un suavizad
 
 \subsection{Grafo Bipartito}
 
-\info{HACER}
+Otra manera de analizar el comercio internacional considerando la dimensión \textit{producto} es mediante técnicas de análisis de redes. Es difundido en la literatura el uso de grafos bipartitos para este análisis \citep{10.1371/journal.pone.0197575,straka2017grand,ferreira2016topology,caldarelli2012network}. En la figura \ref{fig:bipgraph} se puede observar un diagrama de un grafo bipartito de países, \textit{a}, y productos, \textit{b}. Una arista entre un país $c$ y un producto $i$ representa en este caso que el país $a_c$ exporta el producto $b_i$. Dado que tanto los países como los productos se representan como nodos, la estructura de grafo bipartito nos permite mantener la diferencia cualitativa entre ambos tipos de vértices.
 
+
+\begin{figure}
+	\centering
+\begin{tikzpicture}
+
+\begin{scope}[rotate=90]
+\SetVertexMath
+\grEmptyLadder[RA=1,RB=2]{4}   
+\end{scope}
+\Edges(b2,a0,b0,a1,b2,a3,b1,a2)
+\end{tikzpicture} 
+
+\caption{Grafo bipartito, países y productos} \label{fig:bipgraph}
+\end{figure}
+
+
+Tal como sucedía con el comercio agregado a nivel países, los tamaños relativos de las economías nacionales implican que un mismo monto exportado tenga un significado muy distinto según el país del cual provienen. A su vez, como los volúmenes comerciados de los diferentes productos también varían fuertemente, lo anterior aplica a este otro tipo de nodos. Es por ello que en la literatura se utiliza una normalización de las exportaciones, conocida como \textit{Ventajas Comparativas Relativas}, o \textit{RCA} por sus siglas en inglés. La misma fue propuesta por \cite{balassa1965trade} y tiene la siguiente forma funcional:
 
 $$
 \operatorname{RCA}(c, i)= \frac{\displaystyle \frac{x(c, i)}{\sum_{i} x(c, i)}}{\displaystyle \frac{\sum_{c} x(c, i)}{\sum_{c, i} x(c, i)}}
 $$
 
-dónde $x(c,i)$ es el valor de las exportaciones del \textit{país c} en \textit{producto i}
+Dónde $x(c,i)$ es el valor de las exportaciones del \textit{país c} en \textit{producto i}. El numerador indica la proporción que dicho producto representa en las exportaciones totales del país c. El denominador indica la proporción que este mismo producto representa en las exportaciones totales de todos los países. Es decir, \textit{RCA} muestra la relación en la importancia de un producto $i$ en un país $c$ respecto de la importancia promedio de ese producto en la economía mundial. De esta forma, un RCA alto implica que el país en cuestión tiene \textit{ventaja relativa} para exportar un producto, mientras que un RCA bajo implica que el país tiene una \textit{desventaja relativa} con el producto. De esta forma, se puede construir un grafo no ponderado estableciendo el punto de corte en $RCA>1$. 
 
+Habiendo establecido nodos y aristas del grafo bipartito, el problema reside en que la mayor parte de las técnicas de análisis sobre grafos están definidas para grafos simples, no para grafos bipartitos. Por ello se continúa por realizar la proyección sobre uno de los tipos de nodos para luego analizar los resultados \citep{zhou2007bipartite}. La proyección se realiza de forma ponderada y el peso asignado a una arista entre dos nodos es la cantidad de nodos del otro tipo con los cuales estaban conectados ambos nodos en el grafo original. Esto significa, en la proyección del grafo de países, que aquellos que compartían ventajas comparativas relativas sobre un conjunto grande productos estarán fuertemente conectados, mientras que los países que poseen canastas exportadoras muy diferentes, estarán débilmente conectados.
 
+Este procedimiento se realizó para los nodos-país. El resultados es un grafo de características similares al elaborado en el capítulo anterior, pero que en esta oportunidad los vínculos entre países no reflejan sus vínculos comerciales, sino su similitud respecto a la estructura productiva exportadora. A diferencia del grafo de relaciones comerciales, aquí las métricas de centralidad no resultan particularmente interesantes porque el centro del grafo esta poblado por aquellos países que exportan las mercancías más comunes, mientras que en los márgenes se encuentran aquellos cuya canasta exportadora resulta muy diferente a la media. Lo que resulta particularmente interesante son las comunidades que se generan en el grafo, para ver si las mismas tienen alguna relación con lo dicho en la literatura respecto de la Nueva División Internacional del Trabajo \citep{frobel1978new}. Para ello se utilizaron técnicas de detección de comunidades. En particular, se utilizo el \textit{clustering de Louvain} \citep{blondel2008fast},donde se optimiza la modularidad de los clusters de forma \textit{greedy}. También se utilizó el método de detección de comunidades \textit{Walktrap} \citep{pons2005computing}, que se basa en la noción de que al realizar \textit{random walks} en el grafo, estos caminos tienden a quedarse atrapados en las secciones más densas del grafo, que corresponden a las comunidades. En ambas técnicas en número de comunidades encontradas es definido de forma automática por el algoritmo. 
+
+Para el análisis de los productos, nos basamos en el concepto de \textit{proximidad} de \cite{Hidalgo2009,Hidalgo2009a,Hidalgo2007} definido como:
 
 $$
 \phi_{ij} = min (P(RCA_i>1/RCA_j>1),P(RCA_j>1/RCA_i>1))
 $$
 
-dónde $P(RCA_i/RCA_j)$ es la probabilidad condicional de exportar el producto $i$ dado que exporta el producto $j$. Para calcular esto, utilizamos lo siguiente:
-
-
+dónde $P(RCA_i/RCA_j)$ es la probabilidad condicional de exportar el producto $i$ dado que exporta el producto $j$. Es decir:
 
 $$
-P(RCA_i/RCA_j) = \frac{P(RCA_i = 1 \cap RCA_j = 1)}{P(RCA_j = 1)}
+P(RCA_i >1 /RCA_j >1) = \frac{P(RCA_i >1 \cap RCA_j >1)}{P(RCA_j >1)}
 $$
 
 $$
-\text{con } P(RCA_j = 1)= \frac{ \sum_{c} I(RCA_c >1)}{N}
+\text{con } P(RCA_j >1)= \frac{ \sum_{c} I(RCA_c >1)}{N}
 $$
 
-siendo N la cantidad de países. y
+siendo N la cantidad de países y $\sum_{c}$ la sumatoria en los países. Es decir, la proporción de países en los cuales el producto $j$ tiene un $RCA>1$. Por su parte: 
 
 $$
-P(RCA_i = 1 \cap RCA_j = 1) = \frac{\sum_c RCA_i = 1 \cap RCA_j = 1}{N}
+P(RCA_i >1 \cap RCA_j >1) = \frac{\sum_c I(RCA_i >1) \cap I(RCA_j >1)}{N}
 $$
 
+Esto es, la probabilidad de que un país tenga para ambos productos ventajas comparativas relativas. Por lo tanto, $\phi_{ij}$ establece que dos productos son similares si son exportados por los mismos países. Dado que existen productos que son ubicuos, es decir que son exportados por la mayoría de los países, y son muchos quienes tienen un $RCA>1$, y que una métrica de distancia debe cumplir con el principio de simetría ($d(x,y)=d(y,x)$), esta función toma el mínimo de ambos valores. 
 
 
-\paragraph{Clustering}
-
-Louvain --> proyección países
-Walktrap --> proyección países
-
-
-
-Proximidad:
-
-Grafo de proximidad: PAM --> proyeccion de los clusters sobre el grafo
-
-HCLUST --> ordenamiento heatmap
-
-
+$\Phi$ es por lo tanto una matriz de distancias entre los productos. Esto resulta ideal para analizar los datos a través de la técnica de clustering \textit{K-medioids} \citep{kaufman1987clustering}. Este método construye K clusters de forma iterativa modificando el centro del cluster para optimizar la bondad de ajuste. A diferencia de K-means \citep{macqueen1967some} el centro de cada cluster se define en una observación existente en el dataset, y por lo tanto se puede recuperar a las mismas para caracterizar el cluster. En es caso del espacio de productos esto resulta de utilidad para comprender los grupos que se conforman. Finalmente, dado que se presentan los datos en un \textit{heatmap}, se decidió también utilizar la técnica de clustering jerárquico propuesta por \cite{ward1963hierarchical} para su ordenamiento.
 
 \section{Resultados}
 
@@ -343,7 +377,7 @@ HCLUST --> ordenamiento heatmap
 Los resultado obtenidos de los modelos de Topic Modelling para el análisis de textos normalmente se analizan en dos etapas: En primer lugar se etiquetan los tópicos obtenidos sobre la base de las palabras más salientes de cada tópico, y luego se analiza su distribución en los textos. El etiquetado de los tópicos es una tarea subjetiva donde lo que se busca es un concepto generalizador de aquellas palabras que componen al tópico, donde es posible que esta tarea no se pueda realizar por falta de coherencia dentro del tópico. El hiperparámero $k$, es decir la cantidad de tópicos, juega un rol fundamental en este punto, dado que con una cantidad baja de tópicos estos tenderán a reflejar conceptos amplios, mientras que si $k$ es mayor que la cardinalidad del espacio latente que se busca, esto puede generar tópicos repetidos. 
 Lo anterior no escapa al presente dominio sino que se refuerza, dado que la búsqueda, subjetiva, de un concepto abarcador entre productos puede resultar más compleja que la de un concepto generalizador de un grupo de palabras. Un problema que no existe en el presente dominio es el de la polisemia, dado que todos los significantes, indices del nomenclador, hacen referencia a un único significado no ambiguo. Sin embargo, nuevos problemas aparecen respecto a este punto, como qué nomenclador de base utilizar y en qué nivel de desagregación. Por motivos de comparabilidad con los resultados de \cite{molinari2016especializacion} se decidió utilizar el nomenclador SITC a 4 dígitos \citep{un2006standard}. A su vez, se realizaron pruebas para varios valores de $k$: 2,4,6,8,10,20,30,40,50, 100 y 200. Para el etiquetado de los componentes se observó que la práctica usual de observar los primeros diez elementos de la distribución no bastaba para encontrar una etiqueta generalizadora, por lo que se elaboró un tablero dinámico para estudiar la distribución y su función acumulada, a la vez que se gráfico la distribución en función de un nomenclador de complejidad tecnológica \citep{lall2000technological}: 
 
-\begin{table}[ht]
+\begin{table}
 	\centering
 	\begin{tabular}{ll}
 		\hline
@@ -367,7 +401,7 @@ Lo anterior no escapa al presente dominio sino que se refuerza, dado que la bús
 En la figura \ref{fig:dist_40_4} se puede observar la tabla utilizada para caracterizar el cuarto componente en el modelo con $k=4$. Allí se observa que la mayoría de los componentes pertenecen al rubro textil, como pulloveres, remeras y pantalones. También se aparece el té, que no guarda coherencia con le resto del rubro.
 \info{revisar}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering	
 	\includegraphics[width=\linewidth]{dist_40_4}
 	\caption{Distribución del Componente 4. K = 40}
@@ -376,7 +410,7 @@ En la figura \ref{fig:dist_40_4} se puede observar la tabla utilizada para carac
 
 La figura muestra la distribución siguiendo los grupos de \cite{lall2000technological}. Aquí se puede confirmar que la distribución se concentra fuertemente en la categoría 4, textiles. 
 
-\begin{figure}[h]
+\begin{figure}
 	\centering	
 	\includegraphics[width=0.65\linewidth]{graficoLall_k40_comp4}
 	\caption{Distribución del Componente 4. K = 40 según Lall}
@@ -387,7 +421,7 @@ una de las problemáticas observadas en el análisis de los diferentes ejercicio
 
 Por otro lado, la figura \ref{fig:componentes} muestra la distribución promedio de los componentes en los países, para varios valores de $k$. Se puede observar que el segundo componente siempre toma un valor elevado, por encima del 40\%, mientras que el resto de la distribución de distribuye de forma más o menos uniforme entre los restantes componentes. Esto se puede interpretar como que una proporción importante del comercio mundial se realiza en productos muy similares entre sí, en tanto los países que los exportan tienden a ser los mismos. Este \textit{componente gigante} del comercio no se fragmenta al aumentar $k$ dado que lo que sucede es que se subfragmenta el restante del comercio. 
 
-\begin{figure}[h]
+\begin{figure}
 	\centering	
 	\includegraphics[width=0.65\linewidth]{componentes}
 	\caption{Distribución promedio de los componentes en los países, varios valores de k}
@@ -398,8 +432,8 @@ Esta conclusiones encuentran su correlato en la bibliografía. \cite{Hidalgo2007
 \info{rehacer}
 Finalmente, para elaborar las etiquetas finales se consultó especialistas sectoriales. En la tabla \ref{Table: etiquetas} se pueden ver las etiquetas para el modelo con $k=40$. Allí se puede ver que el componente 2 es el mencionado \textit{componente gigante}, y se delimitan un componente para productos textiles (4), petróleo (5), circuitos eléctricos (8), derivados de la madera y papel (15), Soja (16), entre otros. También se ve que algunos componentes tienen una composición de la cual no es posible diferenciarlos a nivel conceptual (31, 32, 34 y 35).
 
-
-\begin{table}[]
+\info{la tabla completa al anexo. Aca un resumen de los comp. que aparecen en el analisis.}
+\begin{table}[] 
 	\begin{tabular}{ll}
 		\textbf{Componente} & \textbf{Descripción}                                   \\
 		1          & Meat and vegetables (fresh and processed)                       \\
@@ -459,14 +493,23 @@ La figura \ref{fig:serie_componentes} muestra la evolución de la composición d
 	\subfigure[Bolivia, Chile y Paraguay]{\label{fig:serie_componentes_2}\includegraphics[width=\linewidth]{graficoLDA_k40_bol_chi_pa}}
 	\caption{Evolución componentes en Sudamérica. Exportaciones. 1997-2017}
 	\label{fig:serie_componentes}
-\end{figure}
-
-
+\end{figure} 
 
 \subsection{Grafo Bipartito}
 
+\subsubsection{Proyección a nivel países}
 
-\paragraph{proyección paises}
+Como se mencionó en la metodología, se realizó una proyección del grafo bipartito para reconstruir un grafo simple ponderado de la similitud de la estructura productiva de los países. sobre la base de esto, se realizó un análisis de comunidades. En la figura \ref{fig:mapas_proyeccion} se puede observar las comunidades detectadas para el año 2016. En \ref{fig:mapas_proyeccion_1} se puede observar las comunidades obtenidas mediante la técnica de \textit{Louvain}. Con este método se encuentras tres comunidades. La primer comunidad contiene a China, India, varios países del Sudeste asiático, y algunos países de África y el Caribe. La segunda comunidad contiene al continente sudamericano, Australia, Nueva Zelanda, la mayoría del continente africano, Rusia y oriente medio. Finalmente, el tercer cluster contiene a América del norte, Europa occidental, con excepción de Portugal, Japón, Corea del Sur, Malasia y Tailandia. Estos grupos pueden ser caracterizados respectivamente como:
+
+\begin{enumerate}
+	\item Productores de industria de baja complejidad, textiles, etc.
+	\item Productores de materias primas.
+	\item Productores de industria de alta complejidad.
+\end{enumerate}
+
+En la figura \ref{fig:mapas_proyeccion_2} se presentan los grupos obtenidas utilizando la detección de comunidades de \textit{Walktrap}. Allí lo primero que destaca es que los países petroleros, como Rusia y Arabia Saudita pasaron al tercer cluster. Es decir que esta comunidad sería la de países de industria de alta complejidad y petroleros. Por su parte India pasa a formar parte del cluster de productores de materias primas, y Nueva Zelanda al de países productores de industria de alta complejidad. Una particularidad es la República Centroafricana, que se encuentra en el cluster de productos de alta complejidad. Esto último se explica por el hecho de que en 2012 comienza una guerra civil en dicho país que implica un comercio internacional muy bajo y volátil, y en particular por algún motivo para dicho año este país cuenta entre sus productos más exportados, tanques de guerra y demás vehículos de combate.
+
+Los países petroleros tienen una especificidad particular y les correspondería una comunidad propia, y posiblemente dado que son pocos países ninguno de los métodos utilizados logra dar con esta especificidad. Independientemente de estas particularidades, los resultados obtenidos parecieran confirmar la literatura respecto al rol de los países en el mercado mundial en los últimos años \citep{frobel1978new}.
 
 \begin{figure}
 	\centering
@@ -476,8 +519,18 @@ La figura \ref{fig:serie_componentes} muestra la evolución de la composición d
 	\label{fig:mapas_proyeccion}
 \end{figure}
 
+Para comparar los resultados obtenidos, en la figura \ref{fig:mapa_comercio_agregado} se muestra los clusters de Louvain para el comercio agregado a nivel países (ver capítulo \ref{sec:agregado}). La imagen que se obtiene de las comunidades es muy distinta:
 
+\begin{itemize}
+	\item La primera comunidad esta compuesta por el contiente americano y Mongolia.
+	\item La segunda comunidad esta compuesta por medio oriente, excepto Israel, y parte de África del norte.
+	\item A la tercer comunidad pertenecen Europa, excepto el Reino Unido, Bélgica y Portugual.
+	\item El cuarto cluster se corresponde con el sudeste asiático y África noroccidental.
+	\item La quinta comunidad se corresponde con el África austral.
+	\item Aunque difícil de reconocer en el mapa, el último cluster esta compuesto por Palau, Andorra, Guam y Micronesia.
+\end{itemize}
 
+Aquí se pueden apreciar los regionalismos comerciales, y el rol que la distancia geográfica juega en el comercio internacional \citep{Head2014}. De las figuras \ref{fig:mapas_proyeccion} y \ref{fig:mapa_comercio_agregado} se puede concluir que las distintas representaciones de la información del comercio internacional, según socios comerciales o similitud en la estructura productiva, logran dar con distintas expresiones del sistema económico mundial, siendo todas estas parte de un mismo fenómeno.
 
 \begin{figure}
 	\centering	
@@ -486,9 +539,11 @@ La figura \ref{fig:serie_componentes} muestra la evolución de la composición d
 	\label{fig:mapa_comercio_agregado}
 \end{figure}
 
+\subsubsection{Espacio de productos}
 
-\paragraph{proyección productos}
+Como se mencionó en la metodología, para analizar las relaciones entre los productos se toma como base a \cite{Hidalgo2009} y su concepto de \textit{Espacio de productos}. el mismo se define a partir de un concepto de distancia, definido como \textit{proximidad} analizado en la sección correspondiente de la metodología. Esto se aplico sobre el RCA promedio del período 1996-2017, para SITC desagregado a 4 dígitos. Para realizar una primera caracterización del espacio de productos, en \ref{fig:proximity} se muestra el mapa de calor. En \ref{fig:proximity_1} los productos se encuentran ordenados alfabéticamente según su nomenclador SITC. En \ref{fig:proximity_2} la matriz se ordena a partir de realizar un clustering jerárquico. Dado que algunos pares de productos tienen una proximidad igual a cero, al calcular la matriz de distancias estos pares tienen distancia infinita, por lo que la misma se reemplaza por un valor alto fuera de rango.
 
+Más allá de este ajuste para realizar el clustering, en \ref{fig:proximity_2} se mantienen los valores originales para todos los $\phi_{ij}$. Las diferencias que se observan entre ambas figuras dan cuenta que el nomenclador SITC no mantiene el ordenamiento propio del espacio de productos dada la similitud en términos de proximidad. Este resultado refuerza la motivación del nomenclador construido a partir de \textit{Latent Dirichlet Allocation Models} propuesto en la sección precedente. 
 
 \begin{figure}
 	\centering
@@ -498,7 +553,41 @@ La figura \ref{fig:serie_componentes} muestra la evolución de la composición d
 	\label{fig:proximity}
 \end{figure}
 
+En ambos mapas de calor se puede observar que existe un pequeño conjunto de productos de muy alta proximidad. Para observar dicho fenómeno, en la tabla \ref{table:similarity} se destacan los diez pares productos de mayor proximidad, y su descripción a cuatro dígitos. Como se observa, todos ellos son productos textiles, algunos de ellos incluso compartiendo descripción a cuatro dígitos. Los procesos productivos para realizar estas mercancías son muy similares y requieren básicamente de los mismos insumos, maquinaria y mano de obra, lo cual explica su similitud. 
 
+
+\begin{table}[]
+	\begin{tabular}{|r|l|l|l|l|}
+		\hline
+		\textbf{Sim}               & $SITC_1$ & \textbf{Descripción}                                                                                                     & $SITC_2$ & \textbf{Descripción}                                                                                                     \\ \hline
+		0.82                       & 8438     & underwear,nightwear etc.                                                                                                 & 8448     & underwear, nightwear etc                                                                                                 \\ \hline
+		0.82                       & 8425     & \begin{tabular}[c]{@{}l@{}}skirts and divided skirts,\\ women's or girls',\\ of textile materials, not k\end{tabular}    & 8427     & \begin{tabular}[c]{@{}l@{}}blouses,\\ shirts and shirt-blouses,\\ women's or girls', \\ of textile material\end{tabular} \\ \hline
+		0.82                       & 8416     & underwear,nightwear etc.                                                                                                 & 8428     & underwear,nightwear etc.                                                                                                 \\ \hline
+		0.81                       & 8424     & \begin{tabular}[c]{@{}l@{}}dresses,\\ women's or girls',\\ of textile materials,\\ notted or crochete\end{tabular}       & 8425     & \begin{tabular}[c]{@{}l@{}}skirts and divided skirts,\\ women's or girls',\\ of textile materials, not k\end{tabular}    \\ \hline
+		0.80                       & 8427     & \begin{tabular}[c]{@{}l@{}}blouses,\\ shirts and shirt-blouses,\\ women's or girls', \\ of textile material\end{tabular} & 8424     & \begin{tabular}[c]{@{}l@{}}dresses,\\ women's or girls',\\ of textile materials,\\ notted or crochete\end{tabular}       \\ \hline
+		0.80                       & 8425     & shirts and shirt-blouses,                                                                                                & 8426     & \begin{tabular}[c]{@{}l@{}}trousers, \\ bib and brace overalls,\\ breeches and shorts,\\ women's or girls\end{tabular}   \\ \hline
+		0.80                       & 8428     & women's or girls',                                                                                                       & 8448     & underwear, nightwear etc                                                                                                 \\ \hline
+		0.79                       & 8411     & of textile material                                                                                                      & 8421     & overcoats,oth.coats etc.                                                                                                 \\ \hline
+		0.79                       & 8415     & shirts                                                                                                                   & 8426     & \begin{tabular}[c]{@{}l@{}}trousers, \\ bib and brace overalls,\\ breeches and shorts,\\ women's or girls\end{tabular}   \\ \hline
+		\multicolumn{1}{|l|}{0.79} & 8426     & \begin{tabular}[c]{@{}l@{}}trousers, \\ bib and brace overalls,\\ breeches and shorts,\\ women's or girls\end{tabular}   & 8427     & \begin{tabular}[c]{@{}l@{}}blouses,\\ shirts and shirt-blouses,\\ women's or girls', \\ of textile material\end{tabular} \\ \hline
+	\end{tabular}
+\caption{Top 10 pares de productos más similares}
+\label{table:similarity}
+\end{table}
+
+
+Teniendo presente lo anterior, se utilizó la inversa de la matriz de similaridad como una matriz de distancias para calcular clusters con mediante el método \textit{Partition around medioids}. A su vez, con estos datos se reconstruyó el grafo de productos utilizando una versión modificada de la matriz de proximidad como matriz de adyacencia del grafo. Específicamente, para aquellos productos con una proximidad menor a 0.5 se anuló la métrica: 
+
+
+$$
+\phi_{ij} = 
+\begin{cases} 
+\phi_{ij} & si \ \phi_{ij}>0.5 \\
+0 & si \ \phi_{ij}<0.5
+\end{cases}
+$$
+
+Con esta matriz de proximidad modificada se reconstruyó el grafo. En la figura \ref{fig:clustering2} se observa el componente gigante, identificando la pertenencia de cada nodo y su medioide.
 
 
 \begin{figure}
@@ -508,12 +597,57 @@ La figura \ref{fig:serie_componentes} muestra la evolución de la composición d
 	\label{fig:clustering2}
 \end{figure}
 
+En la figura \ref{fig:clustering2} se puede observar una buena separación entre ambos clusters dentro del componente gigante espacio de productos. En la tabla \ref{table:pam2} se describen los medioides. Dado que el \textit{Aldehyde} es un químico para sintetizar otros compuestos, mientras que el otro mediodide esta caracterizado por muebles de madera, podemos decir que el cluster en verde representa productos de alta complejidad, mientras que el cluster rojo representa a los productos de baja complejidad. 
+
+\begin{table}
+	\centering
+	\begin{tabular}{ll}
+		\hline
+		medioide & Description \\ 
+		\hline
+		8215 & Furniture,nes,of wood \\ 
+		5162 & Aldehyde,etc.fnct.cmpnds \\ 
+		\hline
+	\end{tabular}
+	\caption{Medioides. PAM. k=2} 
+	\label{table:pam2}
+\end{table}
+
+
+En la figura \ref{fig:clustering10} podemos observar qué sucede con 10 medioides. Aquí, si bien se mantiene una separación de los grupos en muchos casos, podemos observar que existe un solapamiento en los puntos más densos del componente gigante. Estos clusters representan a productos de alta complejidad, como componentes de maquinarias (7285), componentes químicos (5416), o productos electrónicos. Con mejor separación aparece la industria pesada (6911) y en especial equipos para el procesamiento automático de datos (7526). En la figura \ref{table:pam10} se describen los demás medioides.
+
 \begin{figure}
 	\centering	
 	\includegraphics[width=\linewidth]{pam10_gigant}
 	\caption{Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}
 	\label{fig:clustering10}
 \end{figure}
+
+
+\begin{table}
+	\centering
+	\begin{tabular}{ll}
+		\hline
+		medioide & Description \\ 
+		\hline
+		6911 & Metal structures,parts \\ 
+		2831 & Copper ores and concentrates \\ 
+		6954 & Hand tools,etc. nes \\ 
+		2232 & Palm nuts and kernels \\ 
+		8451 & Babies'garmnts,clths acc \\ 
+		8121 & Boilrs.radiatrs,etc.n.el \\ 
+		5416 & Glycosides; glands etc. \\ 
+		6572 & Non-wovens, whether or not impregnated, coated, covered or laminated, n.e \\ 
+		7526 & Input or output units for automatic data processing machines, whether or \\ 
+		7285 & Parts publc wrk mach etc \\ 
+		\hline
+	\end{tabular}
+	\caption{Medioides. PAM. k=10} 
+	\label{table:pam10}
+\end{table}
+
+
+En la figura \ref{fig:clustering50} se analiza el caso de 50 medioides. La descripción de cada uno de ellos se encuentra en el anexo, en la tabla \ref{tabla:pam50}. Allí se fuerza lo mencionado anteriormente sobre el solapamiento en la parte más densa del grafo, siendo casi todos los medioides productos del capítulo 7, de maquinaria y equipos industriales. Es decir, es un sector del grafo de alta complejidad. Se mantiene como un cluster más o menos bien diferenciado los procesadores automáticos de datos y microcomponentes (7526, 7722), el cual se podría caracterizar como un sector de mayor complejidad que el centro del grafo. También se configura separadamente el sector de productos textiles (6562) y el de herramientas manuales (6954). 
 
 \begin{figure}
 	\centering	
@@ -524,34 +658,9 @@ La figura \ref{fig:serie_componentes} muestra la evolución de la composición d
 
 
 
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{lll}
-		\hline
-		k & medioide & Description \\ 
-		\hline
-		2 & 8215 & Furniture,nes,of wood \\ 
-		2 & 5162 & Aldehyde,etc.fnct.cmpnds \\ 
-		10 & 6911 & Metal structures,parts \\ 
-		10 & 2831 & Copper ores and concentrates \\ 
-		10 & 6954 & Hand tools,etc. nes \\ 
-		10 & 2232 & Palm nuts and kernels \\ 
-		10 & 8451 & Babies'garmnts,clths acc \\ 
-		10 & 8121 & Boilrs.radiatrs,etc.n.el \\ 
-		10 & 5416 & Glycosides; glands etc. \\ 
-		10 & 6572 & Non-wovens, whether or not impregnated, coated, covered or laminated, n.e \\ 
-		10 & 7526 & Input or output units for automatic data processing machines, whether or \\ 
-		10 & 7285 & Parts publc wrk mach etc \\ 
-		\hline
-	\end{tabular}
-	\caption{Medioides} 
-	\label{table:pam}
-\end{table}
-
-
 \subsection{Conclusiones}
 
-Input or output units for automatic data processing machines, whether or
+
 
 
 

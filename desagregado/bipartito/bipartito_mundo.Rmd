@@ -209,7 +209,7 @@ plot_map <- function(cluster, method){
     theme(legend.position = 'bottom',
          plot.margin = unit(rep(-1.25,4),"lines"),
          text = element_text(size = 20))+
-    scale_fill_discrete(glue::glue('Cluster {method}'))+
+    scale_fill_discrete(glue::glue('Comunidades'))+
     labs(x=NULL, y=NULL, title=NULL)
 }
 ```
@@ -218,7 +218,7 @@ plot_map <- function(cluster, method){
 
 ```{r}
 # grafo.cl <- cluster_louvain(graph = proj)
-walktrap_clust <- cluster_walktrap(graph = proj, weights = E(proj)$weight)
+walktrap_clust <- cluster_walktrap(graph = proj, weights = E(proj)$weight,steps = 4)
 plot_map(walktrap_clust, 'walktrap')
 ggsave("results/mapa_projection_walktrap.png", width = 16, height = 9, dpi = 300)
 

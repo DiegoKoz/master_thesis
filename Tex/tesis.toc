@@ -3,6 +3,7 @@
 \babel@toc {spanish}{}
 \babel@toc {spanish}{}
 \babel@toc {spanish}{}
+\babel@toc {spanish}{}
 \contentsline {chapter}{\numberline {1.}introducci\IeC {\'o}n}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Fuentes de informaci\IeC {\'o}n}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Software utilizado}{3}{section.1.2}
@@ -27,16 +28,15 @@
 \contentsline {subsubsection}{Definiciones}{34}{section*.15}
 \contentsline {subsubsection}{Proceso generativo e inferencial}{35}{Item.2}
 \contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{37}{subsection.3.3.2}
-\contentsline {paragraph}{Clustering}{38}{section*.16}
-\contentsline {section}{\numberline {3.4}Resultados}{38}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{38}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{42}{subsection.3.4.2}
-\contentsline {paragraph}{proyecci\IeC {\'o}n paises}{42}{subsection.3.4.2}
-\contentsline {paragraph}{proyecci\IeC {\'o}n productos}{42}{figure.3.14}
-\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{42}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{50}{chapter.4}
-\contentsline {part}{Ap\'{e}ndice}{51}{part*.20}
-\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{52}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{52}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{54}{section.Alph0.3}
-\contentsline {section}{\numberline {.4}Medioides PAM clustering. K=50}{54}{section.Alph0.4}
+\contentsline {section}{\numberline {3.4}Resultados}{39}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{39}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{44}{subsection.3.4.2}
+\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{44}{section*.20}
+\contentsline {subsubsection}{Espacio de productos}{46}{figure.3.15}
+\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{51}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{54}{chapter.4}
+\contentsline {part}{Ap\'{e}ndice}{55}{part*.21}
+\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{56}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{56}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{58}{section.Alph0.3}
+\contentsline {section}{\numberline {.4}Medioides PAM clustering. K=50}{59}{section.Alph0.4}

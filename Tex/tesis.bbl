@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{53}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -33,6 +33,12 @@ Richard Auty.
   curse thesis}}.
 \newblock Routledge, 2002.
 
+\bibitem[Balassa(1965)]{balassa1965trade}
+Bela Balassa.
+\newblock {Trade liberalisation and “revealed” comparative advantage}.
+\newblock \emph{The manchester school}, 33\penalty0 (2):\penalty0 99--123,
+  1965.
+
 \bibitem[Bhattacharya et~al.(2008)Bhattacharya, Mukherjee, Saram{\"{a}}ki,
   Kaski, and Manna]{Bhattacharya2008}
 K.~Bhattacharya, G.~Mukherjee, J.~Saram{\"{a}}ki, K.~Kaski, and S.~S. Manna.
@@ -48,6 +54,21 @@ David~M Blei, Andrew~Y Ng, and Michael~I Jordan.
 \newblock {Latent dirichlet allocation}.
 \newblock \emph{Journal of machine Learning research}, 3\penalty0
   (Jan):\penalty0 993--1022, 2003.
+
+\bibitem[Blondel et~al.(2008)Blondel, Guillaume, Lambiotte, and
+  Lefebvre]{blondel2008fast}
+Vincent~D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre.
+\newblock {Fast unfolding of communities in large networks}.
+\newblock \emph{Journal of statistical mechanics: theory and experiment},
+  2008\penalty0 (10):\penalty0 P10008, 2008.
+
+\bibitem[Caldarelli et~al.(2012)Caldarelli, Cristelli, Gabrielli, Pietronero,
+  Scala, and Tacchella]{caldarelli2012network}
+Guido Caldarelli, Matthieu Cristelli, Andrea Gabrielli, Luciano Pietronero,
+  Antonio Scala, and Andrea Tacchella.
+\newblock {A network analysis of countries' export flows: firm grounds for the
+  building blocks of the economy}.
+\newblock \emph{PloS one}, 7\penalty0 (10):\penalty0 e47278, 2012.
 
 \bibitem[Carrillo \& Hualde(1998)Carrillo and Hualde]{carrillo1998third}
 Jorge Carrillo and Alfredo Hualde.
@@ -106,6 +127,12 @@ Ying Fan, Suting Ren, Hongbo Cai, and Xuefeng Cui.
 \newblock \doi{10.1016/j.econmod.2014.02.027}.
 \newblock URL \url{http://dx.doi.org/10.1016/j.econmod.2014.02.027}.
 
+\bibitem[Ferreira \& Others(2016)Ferreira and Others]{ferreira2016topology}
+M~Ennes Ferreira and Others.
+\newblock {The Topology of African Exports: emerging patterns on spanning
+  trees}.
+\newblock Technical report, arXiv. org, 2016.
+
 \bibitem[Fl{\^{o}}res(2008)]{flores2008world}
 Renato G~Jr. Fl{\^{o}}res.
 \newblock {The World Fragmentation of Production and Trade Concepts and Basic
@@ -131,6 +158,14 @@ Kristian~S Gleditsch.
 \newblock {Expanded Trade and GDP Data}.
 \newblock \emph{Journal of Conflict Resolution}, 46:\penalty0 712--24, 2002.
 
+\bibitem[Guan et~al.(2018)Guan, Xu, Wu, and Xing]{10.1371/journal.pone.0197575}
+Jun Guan, Xiaoyu Xu, Shan Wu, and Lizhi Xing.
+\newblock {Measurement and simulation of the relatively competitive advantages
+  and weaknesses between economies based on bipartite graph theory}.
+\newblock \emph{PLOS ONE}, 13\penalty0 (5):\penalty0 1--28, 2018.
+\newblock \doi{10.1371/journal.pone.0197575}.
+\newblock URL \url{https://doi.org/10.1371/journal.pone.0197575}.
+
 \bibitem[Head \& Mayer(2014)Head and Mayer]{Head2014}
 Keith Head and Thierry Mayer.
 \newblock {Gravity Equations: Workhorse,Toolkit, and Cookbook}.
@@ -149,6 +184,21 @@ C.~A. Hidalgo, B.~Winger, A.~L. Barab{\'{a}}si, and R.~Hausmann.
 \newblock ISSN 00368075.
 \newblock \doi{10.1126/science.1144581}.
 
+\bibitem[Hidalgo \& Hausmann(2009)Hidalgo and Hausmann]{Hidalgo2009}
+C{\'{e}}sar Hidalgo and Ricardo Hausmann.
+\newblock {The building blocks of economic complexity}.
+\newblock \emph{Proceedings of the National Academy of the Sciences of the
+  United States of America}, 106\penalty0 (26):\penalty0 10570--10575, 2009.
+\newblock ISSN 0027-8424.
+\newblock \doi{10.1073/pnas.0900943106}.
+
+\bibitem[Hidalgo(2009)]{Hidalgo2009a}
+C{\'{e}}sar~A. Hidalgo.
+\newblock {The Dynamics of Economic Complexity and the Product Space over a 42
+  year period}.
+\newblock \emph{CID Working Paper}, 189\penalty0 (189):\penalty0 20, 2009.
+\newblock ISSN 6507247197.
+
 \bibitem[Hoffman et~al.(2013)Hoffman, Blei, Wang, and
   Paisley]{hoffman2013stochastic}
 Matthew~D Hoffman, David~M Blei, Chong Wang, and John Paisley.
@@ -162,12 +212,27 @@ John Humphrey and Hubert Schmitz.
   global value chain research}}, volume 120.
 \newblock Institute of Development Studies Brighton, 2000.
 
+\bibitem[Kaufman \& Rousseeuw(1987)Kaufman and
+  Rousseeuw]{kaufman1987clustering}
+Leonard Kaufman and Peter~J Rousseeuw.
+\newblock {Clustering by means of medoids. Statistical Data Analysis based on
+  the L1 Norm}.
+\newblock \emph{Y. Dodge, Ed}, pages 405--416, 1987.
+
 \bibitem[Lall(2000)]{lall2000technological}
 Sanjaya Lall.
 \newblock {The Technological structure and performance of developing country
   manufactured exports, 1985-98}.
 \newblock \emph{Oxford development studies}, 28\penalty0 (3):\penalty0
   337--369, 2000.
+
+\bibitem[MacQueen \& Others(1967)MacQueen and Others]{macqueen1967some}
+James MacQueen and Others.
+\newblock {Some methods for classification and analysis of multivariate
+  observations}.
+\newblock In \emph{Proceedings of the fifth Berkeley symposium on mathematical
+  statistics and probability}, volume~1, pages 281--297. Oakland, CA, USA,
+  1967.
 
 \bibitem[Molinari \& de~Angelis(2016)Molinari and
   de~Angelis]{molinari2016especializacion}
@@ -201,6 +266,12 @@ F~Pedregosa, G~Varoquaux, A~Gramfort, V~Michel, B~Thirion, O~Grisel, M~Blondel,
 \newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830,
   2011.
 
+\bibitem[Pons \& Latapy(2005)Pons and Latapy]{pons2005computing}
+Pascal Pons and Matthieu Latapy.
+\newblock {Computing communities in large networks using random walks}.
+\newblock In \emph{International symposium on computer and information
+  sciences}, pages 284--293. Springer, 2005.
+
 \bibitem[{R Core Team}(2017)]{RCoreTeam2017}
 {R Core Team}.
 \newblock {R: A Language and Environment for Statistical Computing}, 2017.
@@ -215,6 +286,12 @@ David Ricardo.
 Kamil Slowikowski.
 \newblock {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}, 2017.
 
+\bibitem[Straka et~al.(2017)Straka, Caldarelli, and Saracco]{straka2017grand}
+Mika~J Straka, Guido Caldarelli, and Fabio Saracco.
+\newblock {Grand canonical validation of the bipartite international trade
+  network}.
+\newblock \emph{Physical Review E}, 96\penalty0 (2):\penalty0 22306, 2017.
+
 \bibitem[van Rossum(1995)]{CS-R9526}
 G~van Rossum.
 \newblock {Python tutorial}.
@@ -224,6 +301,12 @@ G~van Rossum.
 \bibitem[Vu(2011)]{Vu2011}
 Vincent~Q Vu.
 \newblock {ggbiplot: A ggplot2 based biplot}, 2011.
+
+\bibitem[{Ward Jr}(1963)]{ward1963hierarchical}
+Joe~H {Ward Jr}.
+\newblock {Hierarchical grouping to optimize an objective function}.
+\newblock \emph{Journal of the American statistical association}, 58\penalty0
+  (301):\penalty0 236--244, 1963.
 
 \bibitem[Weerth(2008)]{weerth2008basic}
 Carsten Weerth.
@@ -248,5 +331,10 @@ WTO.
 Romina Ybran and A~Lacelli.
 \newblock {Informe estad{\'{i}}stico mercado de soja}.
 \newblock \emph{Instituto Nacional de Tecnologia Agropecuaria INTA}, 2016.
+
+\bibitem[Zhou et~al.(2007)Zhou, Ren, Medo, and Zhang]{zhou2007bipartite}
+Tao Zhou, Jie Ren, Mat{\'{u}}{\v{s}} Medo, and Yi-Cheng Zhang.
+\newblock {Bipartite network projection and personal recommendation}.
+\newblock \emph{Physical Review E}, 76\penalty0 (4):\penalty0 46115, 2007.
 
 \end{thebibliography}
