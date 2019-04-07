@@ -18,6 +18,13 @@ set.seed(1234)
 
 ```{r}
 mean_sim <- read_csv('results/similitud_4d_mean.csv',col_types = cols(SITC = col_character()))
+clasificacion <-read_xlsx("../LDA/names/UN Comtrade Commodity Classifications.xlsx") %>%
+  filter(Classification == "S3") %>% 
+  select(medioide=Code, Description)%>%
+  mutate(medioide = case_when(medioide %in% c("334", "673", "676") ~paste0(medioide,"0"),
+                          TRUE ~ medioide))
+
+
 ```
 
 ```{r}
@@ -26,6 +33,7 @@ M <- as.matrix(mean_sim[,-1])
 DM <- 1/M
 
 ```
+
 
 # K medioids
 
@@ -153,12 +161,6 @@ dev.off()
 
 ```{r}
 
-clasificacion <-read_xlsx("../LDA/names/UN Comtrade Commodity Classifications.xlsx") %>%
-  filter(Classification == "S3") %>% 
-  select(medioide=Code, Description)%>%
-  mutate(medioide = case_when(medioide %in% c("334", "673", "676") ~paste0(medioide,"0"),
-                          TRUE ~ medioide))
-
 
 tibble(k = '2', medioide= pam_clust2$medoids) %>% 
   bind_rows(tibble(k = '10', medioide= pam_clust10$medoids)) %>% 
@@ -177,7 +179,27 @@ tibble(k = '50', medioide= pam_clust50$medoids) %>%
 ```
 
 
-### heatmap
+# heatmap
+
+```{r}
+
+dim(dist(M))
+hc <- hclust(dist(M))
+plot(hc)
+
+clust_col <- function(M) {
+  M[M<0.5] <- 0
+  DM_thr <- 1/M
+  DM_thr[is.infinite(DM_thr)] <- 999
+  d <- dist(DM_thr)
+  hclust(d,method = "ward.D")
+}
+
+
+heatmap(M, symm =  TRUE, col = viridis(256), hclustfun = clust_col)
+
+```
+
 
 ```{r}
 
@@ -213,7 +235,7 @@ M_thr <- M
 # M_thr[M_thr<0.5] <- 0
 
 DM_thr <- 1/M_thr
-DM_thr[is.infinite(DM_thr)] <- 999
+DM_thr[is.infinite(DM_thr)] <- 99999999999
 d <- as.dist(DM_thr)
 
 cluster_h <- hclust( d, method = "ward.D" )
@@ -237,6 +259,55 @@ ggplot(.,aes(SITC, SITC_par, fill = similarity))+
   scale_fill_viridis()+
   theme(legend.position = 'bottom')
 ggsave('results/heatmap_prox_ClustOrd.png',height = 6,width = 6,dpi = 300)
+
+```
+
+
+
+```{r}
+mean_sim_table %>% 
+  arrange(-similarity) %>% 
+  top_n(10, similarity) %>%
+  mutate(SITC_3d= substr(SITC, 1,3),
+         SITC_par_3d = substr(SITC_par,1,3)) %>% 
+  left_join(clasificacion %>% select(SITC_3d=medioide,SITC_desc_3d=Description)) %>% 
+  left_join(clasificacion %>% select(SITC_par_3d=medioide,SITC_par_desc_3d=Description)) %>% 
+  select(similarity,SITC, SITC_desc_3d,SITC_par,SITC_par_desc_3d) %>% 
+  mutate(SITC_desc_3d = tolower(SITC_desc_3d),
+         SITC_par_desc_3d = tolower(SITC_par_desc_3d),
+         SITC_desc_3d = str_remove(SITC_desc_3d,",x-knit"),
+         SITC_par_desc_3d = str_remove(SITC_par_desc_3d,",x-knit"),
+         SITC_desc_3d = str_remove(SITC_desc_3d,".xknit"),
+         SITC_par_desc_3d = str_remove(SITC_par_desc_3d,".xknit"),
+         SITC_desc_3d = str_remove(SITC_desc_3d,".knit"),
+         SITC_par_desc_3d = str_remove(SITC_par_desc_3d,".knit")) %>% 
+  xtable::xtable(., caption='Productos más similares', label='table:similarity') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
+
+
+
+
+```
+
+```{r}
+mean_sim_table %>% 
+  arrange(-similarity) %>%
+  top_n(25, similarity) %>% 
+  filter(row_number() %% 2 == 0) %>% 
+  left_join(clasificacion %>% select(SITC=medioide,SITC_desc=Description)) %>% 
+  left_join(clasificacion %>% select(SITC_par=medioide,SITC_par_desc=Description)) %>% 
+  select(similarity,SITC, SITC_desc,SITC_par,SITC_par_desc) %>% 
+  mutate(SITC_desc = tolower(SITC_desc),
+         SITC_par_desc = tolower(SITC_par_desc),
+         SITC_desc = str_remove(SITC_desc,",x-knit"),
+         SITC_par_desc = str_remove(SITC_par_desc,",x-knit"),
+         SITC_desc = str_remove(SITC_desc,".xknit"),
+         SITC_par_desc = str_remove(SITC_par_desc,".xknit"),
+         SITC_desc = str_remove(SITC_desc,".knit"),
+         SITC_par_desc = str_remove(SITC_par_desc,".knit")) %>% 
+  xtable::xtable(., caption='Productos más similares', label='table:similarity') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
+
 
 ```
 

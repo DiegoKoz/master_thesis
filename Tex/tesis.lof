@@ -3,6 +3,7 @@
 \babel@toc {spanish}{}
 \babel@toc {spanish}{}
 \babel@toc {spanish}{}
+\babel@toc {spanish}{}
 \addvspace {10pt}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Interacciones Seg\IeC {\'u}n porcentaje de importaciones que representa al pa\IeC {\'\i }s importador. Destacado par Importador-Exportador.1996-2016}}{6}{figure.2.1}
@@ -61,20 +62,21 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces fuente: \cite {blei2003latent}}}{36}{figure.3.6}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces fuente: \cite {blei2003latent}}}{36}{figure.3.7}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces fuente: \cite {blei2003latent}}}{37}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Distribuci\IeC {\'o}n del Componente 4. K = 40}}{39}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Distribuci\IeC {\'o}n del Componente 4. K = 40 seg\IeC {\'u}n Lall}}{40}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribuci\IeC {\'o}n promedio de los componentes en los pa\IeC {\'\i }ses, varios valores de k}}{42}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Evoluci\IeC {\'o}n componentes en Sudam\IeC {\'e}rica. Exportaciones. 1997-2017}}{43}{figure.3.12}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Argentina y Brasil}}}{43}{figure.3.12}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bolivia, Chile y Paraguay}}}{43}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Proyecci\IeC {\'o}n pa\IeC {\'\i }ses. Exportaciones 2016}}{44}{figure.3.13}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Cluster Louvain}}}{44}{figure.3.13}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cluster Walktrap}}}{44}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Cluster Louvain. Comercio agregado. Exportaciones 2016}}{45}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Heatmap proximidad. Espacio de productos. Exportaciones. Promedio 1996-2017}}{45}{figure.3.15}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ordenamiento SITC}}}{45}{figure.3.15}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ordenamiento Clustering jer\IeC {\'a}rquico}}}{45}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 2 medioides}}{46}{figure.3.16}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}}{47}{figure.3.17}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 50 medioides}}{48}{figure.3.18}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Grafo bipartito, pa\IeC {\'\i }ses y productos}}{38}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Distribuci\IeC {\'o}n del Componente 4. K = 40}}{40}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribuci\IeC {\'o}n del Componente 4. K = 40 seg\IeC {\'u}n Lall}}{41}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Distribuci\IeC {\'o}n promedio de los componentes en los pa\IeC {\'\i }ses, varios valores de k}}{42}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Evoluci\IeC {\'o}n componentes en Sudam\IeC {\'e}rica. Exportaciones. 1997-2017}}{45}{figure.3.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Argentina y Brasil}}}{45}{figure.3.13}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bolivia, Chile y Paraguay}}}{45}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Proyecci\IeC {\'o}n pa\IeC {\'\i }ses. Exportaciones 2016}}{47}{figure.3.14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Cluster Louvain}}}{47}{figure.3.14}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cluster Walktrap}}}{47}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Cluster Louvain. Comercio agregado. Exportaciones 2016}}{48}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Heatmap proximidad. Espacio de productos. Exportaciones. Promedio 1996-2017}}{48}{figure.3.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ordenamiento SITC}}}{48}{figure.3.16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ordenamiento Clustering jer\IeC {\'a}rquico}}}{48}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 2 medioides}}{50}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}}{52}{figure.3.18}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 50 medioides}}{53}{figure.3.19}
 \addvspace {10pt}

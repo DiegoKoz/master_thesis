@@ -50,6 +50,7 @@ La nomenclatura de Cadenas y Subcadenas utilizada en el presente trabajo provien
 		Omanuf & Otras Manufacturas \\
 		Oquim & Otros Químicos
 	\end{tabular}
+\caption{Descripción Cadenas}
 \label{table:cadenas}
 \end{table}
 
@@ -62,6 +63,10 @@ La nomenclatura de Cadenas y Subcadenas utilizada en el presente trabajo provien
 % \usepackage{longtable}
 % Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
 \begin{longtable}[!ht]{lll}
+	\caption{Descripción subcadenas}
+	\label{tabla:subcadenas}
+	\endlastfoot
+	
 	\textbf{Cadena} & \textbf{Subcadena} & \textbf{Descripción} \\
 	\endhead
 	%
@@ -154,7 +159,7 @@ La nomenclatura de Cadenas y Subcadenas utilizada en el presente trabajo provien
 	Otros Químicos & Cosmeticos & Cosméticos \\
 	Otros Químicos & Ooquim & Otros Químicos \\
 	Otros Químicos & Quimicos & Químicos
-\label{tabla:subcadenas}
+
 \end{longtable}
 
 
@@ -171,75 +176,80 @@ La nomenclatura de Cadenas y Subcadenas utilizada en el presente trabajo provien
 		BK & Bienes De Capital \\
 		BC & Bienes De Consumo
 	\end{tabular}
+\caption{Descripción Usos}
+\label{tabla:usos}
 \end{table}
 
+
+\pagebreak
 
 \section{Medioides PAM clustering. K=50}
 
-
-% latex table generated in R 3.5.1 by xtable 1.8-3 package
-% Sat Apr  6 21:33:12 2019
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{lll}
-		\hline
-		k & medioide & Description \\ 
-		\hline
-		50 & 1110 & Non-alcohol.beverage,nes \\ 
-		50 & 6511 & Yarn,of wool,animal hair \\ 
-		50 & 2631 & Cotton (other than linters), not carded or combed \\ 
-		50 & 8426 & Trousers, bib and brace overalls, breeches and shorts, women's or girls', \\ 
-		50 & 2117 & Sheepskins and lambskins without wool on, raw (fresh, or salted, dried, l \\ 
-		50 & 3223 & Peat (including peat litter), whether or not agglomerated \\ 
-		50 & 2891 & Prec.mtl.ore,concentrats \\ 
-		50 & 4225 & Castor oil and its fractions \\ 
-		50 & 7919 & Rail.track fixtures,prts \\ 
-		50 & 8121 & Boilrs.radiatrs,etc.n.el \\ 
-		50 & 2658 & Veg. textile fibres, nes \\ 
-		50 & 5162 & Aldehyde,etc.fnct.cmpnds \\ 
-		50 & 2485 & Wood of non-coniferous species (including strips and friezes for parquet \\ 
-		50 & 5983 & Artificial,prepared waxs \\ 
-		50 & 7526 & Input or output units for automatic data processing machines, whether or \\ 
-		50 & 6572 & Non-wovens, whether or not impregnated, coated, covered or laminated, n.e \\ 
-		50 & 6518 & Yarn,staple fibres, etc. \\ 
-		50 & 2440 & Cork,natural,raw;waste \\ 
-		50 & 5535 & Toiletries, etc. \\ 
-		50 & 2513 & Chemical wood pulp, dissolving grades \\ 
-		50 & 7429 & Parts,pumps,liq.elevator \\ 
-		50 & 6966 & Knives,forks,spoons,etc. \\ 
-		50 & 6644 & Float,ground,plshd.glass \\ 
-		50 & 2683 & Fine animal hair, not carded or combed \\ 
-		50 & 7234 & Const.\& mining machs.nes \\ 
-		50 & 6911 & Metal structures,parts \\ 
-		50 & 3421 & Propane, liquefied \\ 
-		50 & 5817 & Fittings for tubes, pipes and hoses (e.g., joints, elbows, flanges), of p \\ 
-		50 & 6672 & Diamonds.excl.industrial \\ 
-		50 & 6861 & Zinc,zinc alloy,unwrght. \\ 
-		50 & 6726 & Semi-finish.iron,steel \\ 
-		50 & 7462 & Tapered roller bearings (including cone and tapered roller assemblies) \\ 
-		50 & 5233 & Hypochlorites, etc. \\ 
-		50 & 4222 & Palm oil, fractions \\ 
-		50 & 3345 & Lubricating petroleum oils and oils obtained from bituminous minerals, ot \\ 
-		50 & 6562 & Labels,badge etc.not emb \\ 
-		50 & 5752 & Acrylic polymers \\ 
-		50 & 7263 & Typesetting,mch,type etc \\ 
-		50 & 5416 & Glycosides; glands etc. \\ 
-		50 & 7285 & Parts publc wrk mach etc \\ 
-		50 & 7359 & Parts,nes,mch-tool w.mtl \\ 
-		50 & 8854 & Watches,other than p.mtl \\ 
-		50 & 7224 & Wheeled tractors nes \\ 
-		50 & 6954 & Hand tools,etc. nes \\ 
-		50 & 7722 & Printed circuits \\ 
-		50 & 8421 & Overcoats,oth.coats etc. \\ 
-		50 & 7249 & Pts,txtle,dom washng mch \\ 
-		50 & 8982 & Musical instruments nes \\ 
-		50 & 7472 & Valves for oleohydraulic or pneumatic transmissions \\ 
-		50 & 7169 & Parts, n.e.s., suitable for use with the machines of group 716 \\ 
-		\hline
-	\end{tabular}
-	\caption{Medioides} 
-	\label{table:pam}
-\end{table}
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}{ll}
+	\hline
+	\textbf{SITC} & \textbf{Description}                                                      \\ \hline
+	\endhead
+	%
+	\hline
+	\endfoot
+	\caption{Medioides. PAM. k=50}
+	\label{tabla:pam50}
+	\endlastfoot
+	%
+	1110          & Non-alcohol.beverage,nes                                                  \\
+	6511          & Yarn,of wool,animal hair                                                  \\
+	2631          & Cotton (other than linters), not carded or combed                         \\
+	8426          & Trousers, bib and brace overalls, breeches and shorts, women's or girls', \\
+	2117          & Sheepskins and lambskins without wool on, raw (fresh, or salted, dried, l \\
+	3223          & Peat (including peat litter), whether or not agglomerated                 \\
+	2891          & Prec.mtl.ore,concentrats                                                  \\
+	4225          & Castor oil and its fractions                                              \\
+	7919          & Rail.track fixtures,prts                                                  \\
+	8121          & Boilrs.radiatrs,etc.n.el                                                  \\
+	2658          & Veg. textile fibres, nes                                                  \\
+	5162          & Aldehyde,etc.fnct.cmpnds                                                  \\
+	2485          & Wood of non-coniferous species (including strips and friezes for parquet  \\
+	5983          & Artificial,prepared waxs                                                  \\
+	7526          & Input or output units for automatic data processing machines, whether or  \\
+	6572          & Non-wovens, whether or not impregnated, coated, covered or laminated, n.e \\
+	6518          & Yarn,staple fibres, etc.                                                  \\
+	2440          & Cork,natural,raw;waste                                                    \\
+	5535          & Toiletries, etc.                                                          \\
+	2513          & Chemical wood pulp, dissolving grades                                     \\
+	7429          & Parts,pumps,liq.elevator                                                  \\
+	6966          & Knives,forks,spoons,etc.                                                  \\
+	6644          & Float,ground,plshd.glass                                                  \\
+	2683          & Fine animal hair, not carded or combed                                    \\
+	7234          & Const.\& mining machs.nes                                                 \\
+	6911          & Metal structures,parts                                                    \\
+	3421          & Propane, liquefied                                                        \\
+	5817          & Fittings for tubes, pipes and hoses (e.g., joints, elbows, flanges), of p \\
+	6672          & Diamonds.excl.industrial                                                  \\
+	6861          & Zinc,zinc alloy,unwrght.                                                  \\
+	6726          & Semi-finish.iron,steel                                                    \\
+	7462          & Tapered roller bearings (including cone and tapered roller assemblies)    \\
+	5233          & Hypochlorites, etc.                                                       \\
+	4222          & Palm oil, fractions                                                       \\
+	3345          & Lubricating petroleum oils and oils obtained from bituminous minerals, ot \\
+	6562          & Labels,badge etc.not emb                                                  \\
+	5752          & Acrylic polymers                                                          \\
+	7263          & Typesetting,mch,type etc                                                  \\
+	5416          & Glycosides; glands etc.                                                   \\
+	7285          & Parts publc wrk mach etc                                                  \\
+	7359          & Parts,nes,mch-tool w.mtl                                                  \\
+	8854          & Watches,other than p.mtl                                                  \\
+	7224          & Wheeled tractors nes                                                      \\
+	6954          & Hand tools,etc. nes                                                       \\
+	7722          & Printed circuits                                                          \\
+	8421          & Overcoats,oth.coats etc.                                                  \\
+	7249          & Pts,txtle,dom washng mch                                                  \\
+	8982          & Musical instruments nes                                                   \\
+	7472          & Valves for oleohydraulic or pneumatic transmissions                       \\
+	7169          & Parts, n.e.s., suitable for use with the machines of group 716            \\ \hline
+\end{longtable}
 
 
 \end{document}

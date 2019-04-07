@@ -7,48 +7,49 @@ Warning--I didn't find a database entry for "united2006standard"
 Warning--empty journal in Chow2013
 Warning--empty note in Fagiolo2007
 Warning--empty publisher in fogel2005enclave
+Warning--can't use both volume and number fields in macqueen1967some
 Warning--empty journal in molinari2016especializacion
 Warning--can't use both author and editor fields in ricardo1987principios
 Warning--empty institution in WTO2017
-You've used 40 entries,
+You've used 53 entries,
             2773 wiz_defined-function locations,
-            845 strings with 11410 characters,
-and the built_in function-call counts, 16387 in all, are:
-= -- 1428
-> -- 924
-< -- 33
-+ -- 322
-- -- 282
-* -- 1240
-:= -- 2575
-add.period$ -- 124
-call.type$ -- 40
-change.case$ -- 207
-chr.to.int$ -- 40
-cite$ -- 86
-duplicate$ -- 764
-empty$ -- 1373
-format.name$ -- 336
-if$ -- 3392
+            935 strings with 13964 characters,
+and the built_in function-call counts, 22826 in all, are:
+= -- 2030
+> -- 1263
+< -- 45
++ -- 437
+- -- 384
+* -- 1771
+:= -- 3546
+add.period$ -- 170
+call.type$ -- 53
+change.case$ -- 281
+chr.to.int$ -- 53
+cite$ -- 113
+duplicate$ -- 1057
+empty$ -- 1901
+format.name$ -- 461
+if$ -- 4763
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 32
-newline$ -- 211
-num.names$ -- 160
-pop$ -- 449
+missing$ -- 44
+newline$ -- 281
+num.names$ -- 212
+pop$ -- 571
 preamble$ -- 1
-purify$ -- 174
+purify$ -- 234
 quote$ -- 0
-skip$ -- 607
+skip$ -- 840
 stack$ -- 0
-substring$ -- 439
-swap$ -- 61
-text.length$ -- 5
+substring$ -- 733
+swap$ -- 104
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 410
-warning$ -- 6
-while$ -- 152
+type$ -- 553
+warning$ -- 7
+while$ -- 213
 width$ -- 0
-write$ -- 512
-(There were 7 warnings)
+write$ -- 694
+(There were 8 warnings)
