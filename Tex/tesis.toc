@@ -32,11 +32,11 @@
 \contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{39}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{44}{subsection.3.4.2}
 \contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{44}{section*.20}
-\contentsline {subsubsection}{Espacio de productos}{46}{figure.3.15}
-\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{51}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{54}{chapter.4}
-\contentsline {part}{Ap\'{e}ndice}{55}{part*.21}
-\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{56}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{56}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{58}{section.Alph0.3}
-\contentsline {section}{\numberline {.4}Medioides PAM clustering. K=50}{59}{section.Alph0.4}
+\contentsline {subsubsection}{Espacio de productos}{52}{figure.3.20}
+\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{56}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{59}{chapter.4}
+\contentsline {part}{Ap\'{e}ndice}{60}{part*.21}
+\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{61}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{61}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{63}{section.Alph0.3}
+\contentsline {section}{\numberline {.4}Medioides PAM clustering. K=50}{64}{section.Alph0.4}
