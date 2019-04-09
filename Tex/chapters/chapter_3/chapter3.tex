@@ -31,6 +31,8 @@
 \usepackage{tkz-berge}
 \usetikzlibrary{positioning}
 
+
+
 \newcommand{\bipgraph}[2]{%
 	\begin{tikzpicture}[every node/.style={circle,draw}]
 	\foreach \xitem in {1,2,...,#1}
@@ -54,13 +56,14 @@
 
 \begin{document}
 	
-	
-	
-	
-	
-	
 	\section{introducción}
-	\info{inclyue estado del arte}
+	
+	En el presente capítulo\footnote{Parte del trabajo del presente capítulo se realizó en el marco  del proyecto de Investigación Científica y Tecnológica (PICT) 1085-2016. 'Abordando la restricción externa en América Latina a partir de la integración regional: integración productiva, cooperación Sur-Sur y financiamiento para el desarrollo'.} se analiza la estructura del comercio internacional a partir de la estructura de la canasta exportadora de los países. El rol que ocupan los países en el mercado mundial esta profundamente determinado por cómo se insertan en las cadenas globales de valor, y por ende en los tipos de mercancías que producen para el mercado mundial \citep{coe2004globalizing, gereffi2005governance,gereffi1994organization}. Por ello, luego de analizar la centralidad de los países desde la topología de la red, resulta de interés interrogarse hacer de los determinantes de dicha posición, a partir de su estructura productiva. 
+	
+	Es amplia la literatura que estudia el comercio internacional a partir del nivel producto \citep{balassa1965trade,lall2000technological,lall2006sophistication,haveman2004alternative} y en particular existe una extensa bibliografía reciente en la cual se analiza este fenómeno a paritr de construcción de un grafo bipartito entre países y productos \citep{10.1371/journal.pone.0197575,straka2017grand,ferreira2016topology,caldarelli2012network}. Destaca el trabajo de \cite{Hidalgo2009a}\citep{Hidalgo2009, Hidalgo2007}, donde se define el espacio de producto en términos de la complejidad de la producción y las influencias que ello tiene sobre el desarrollo de los países.
+	
+	El presente capítulo propone, luego de un análisis exploratorio de la información a partir de treemaps, dos modelos alternativos para abordar el fenómeno. En primer lugar, inspirado en el modelo propuesto para detección de tópicos en minería de textos \citep{Blei2003}, se propone un modelo generativo bayesiano para detección de dimensiones latentes en el espacio de productos, que permite construir un nomenclador alternativo a los convencionales, construido de forma automática basado en los datos. Luego, con dichas dimensiones latentes, \textit{componentes}, se analiza la participación de las mismas en la canasta exportadora de los países. En segundo lugar, fuertemente inspirado en la propuesta metodológica de \cite{Hidalgo2009}, se realizan diferentes técnicas de clustering y detección de comunidades, tanto sobre la proyección del grafo bipartito entre países y productos, como a partir de una matriz de distancias del espacio de productos. ´
+	
 	
 	
 	\section{Análisis exploratorio de datos}
@@ -260,10 +263,69 @@ país en el corpus.
 
 \begin{figure}
 	\centering	
-	\includegraphics[width=.65\linewidth]{grafo}
+%	\includegraphics[width=.65\linewidth]{grafo}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+%Shape: Circle [id:dp8853764007735601] 
+\draw   (100,146) .. controls (100,132.19) and (111.19,121) .. (125,121) .. controls (138.81,121) and (150,132.19) .. (150,146) .. controls (150,159.81) and (138.81,171) .. (125,171) .. controls (111.19,171) and (100,159.81) .. (100,146) -- cycle ;
+%Shape: Circle [id:dp33419535302461556] 
+\draw   (205,146) .. controls (205,132.19) and (216.19,121) .. (230,121) .. controls (243.81,121) and (255,132.19) .. (255,146) .. controls (255,159.81) and (243.81,171) .. (230,171) .. controls (216.19,171) and (205,159.81) .. (205,146) -- cycle ;
+%Shape: Circle [id:dp6232220468757862] 
+\draw   (281,47) .. controls (281,33.19) and (292.19,22) .. (306,22) .. controls (319.81,22) and (331,33.19) .. (331,47) .. controls (331,60.81) and (319.81,72) .. (306,72) .. controls (292.19,72) and (281,60.81) .. (281,47) -- cycle ;
+%Shape: Circle [id:dp49572645552205263] 
+\draw  [fill={rgb, 255:red, 199; green, 199; blue, 199 }  ,fill opacity=1 ] (410,145) .. controls (410,131.19) and (421.19,120) .. (435,120) .. controls (448.81,120) and (460,131.19) .. (460,145) .. controls (460,158.81) and (448.81,170) .. (435,170) .. controls (421.19,170) and (410,158.81) .. (410,145) -- cycle ;
+%Shape: Circle [id:dp04424520000997234] 
+\draw   (311,145) .. controls (311,131.19) and (322.19,120) .. (336,120) .. controls (349.81,120) and (361,131.19) .. (361,145) .. controls (361,158.81) and (349.81,170) .. (336,170) .. controls (322.19,170) and (311,158.81) .. (311,145) -- cycle ;
+%Shape: Rectangle [id:dp8518034256278205] 
+\draw   (299.13,100.76) -- (496.19,100.76) -- (496.19,199.76) -- (299.13,199.76) -- cycle ;
+%Shape: Rectangle [id:dp2099791938650164] 
+\draw   (173,86) -- (515.13,86) -- (515.13,221.72) -- (173,221.72) -- cycle ;
+%Straight Lines [id:da11406541597292297] 
+\draw    (150,146) -- (203,146) ;
+\draw [shift={(205,146)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Straight Lines [id:da3621589464216769] 
+\draw    (255,146) -- (309,145.04) ;
+\draw [shift={(311,145)}, rotate = 538.98] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Straight Lines [id:da09879567766811748] 
+\draw    (361,145) -- (408,145) ;
+\draw [shift={(410,145)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Straight Lines [id:da23517788835593556] 
+\draw    (328.92,60.5) -- (413.33,125.45) ;
+\draw [shift={(414.92,126.67)}, rotate = 217.57] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+
+% Text Node
+\draw (125,178) node  [align=left] {$\displaystyle \alpha $};
+% Text Node
+\draw (227.58,179) node  [align=left] {$\displaystyle \theta $};
+% Text Node
+\draw (338.42,177) node  [align=left] {$\displaystyle z$};
+% Text Node
+\draw (437.42,177) node  [align=left] {$\displaystyle w$};
+% Text Node
+\draw (270,44) node  [align=left] {$\displaystyle \beta $};
+% Text Node
+\draw (484,189) node  [align=left] {$\displaystyle N$};
+% Text Node
+\draw (504,208) node  [align=left] {$\displaystyle M$};
+
+
+\end{tikzpicture}
+
 	\caption{fuente: \cite{blei2003latent}}
 	\label{fig:grafo_blei}
 \end{figure}
+
+
 
 Un Proceso de Dirichlet es una familia de procesos estocásticos donde las realizaciones son ellas mismas distribuciones de probabilidad. Es decir, el rango de esta distribución (así como en una normal son los reales) son distribuciones de probabilidad. Para interpretarlo geométricamente, la figura \ref{fig:dirichlet} muestra un ejemplo de la distribución de densidad para 3 productos y 4 componentes. El triángulo representa todas las distribuciones (multinomiales)
 posibles sobre los tres productos. Cada uno de los vértices del triángulo es una distribución de probabilidad que asigna una probabilidad de 1 a uno de los productos. El punto medio de cada lado, es una distribución con probabilidad 0.5 a dos componentes. El cuarto componente, el centroide del triángulo, asigna probabilidad de $\frac{1}{3}$ a cada producto. Los cuatro puntos marcado con x son las distribuciones multinomiales de $p(w|z)$  para cada uno de los cuatro componentes. La altura en el eje z es una posible distribución de densidad sobre el
@@ -294,7 +356,96 @@ El problema es que esta ecuación es intratable, por la interacción entre $\the
 
 \begin{figure}[h]
 	\centering	
-	\includegraphics[width=.65\linewidth]{grafo_variational}
+%	\includegraphics[width=.65\linewidth]{grafo_variational}
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.4pt,y=0.4pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Circle [id:dp8853764007735601] 
+\draw   (14,151) .. controls (14,137.19) and (25.19,126) .. (39,126) .. controls (52.81,126) and (64,137.19) .. (64,151) .. controls (64,164.81) and (52.81,176) .. (39,176) .. controls (25.19,176) and (14,164.81) .. (14,151) -- cycle ;
+%Shape: Circle [id:dp33419535302461556] 
+\draw   (119,151) .. controls (119,137.19) and (130.19,126) .. (144,126) .. controls (157.81,126) and (169,137.19) .. (169,151) .. controls (169,164.81) and (157.81,176) .. (144,176) .. controls (130.19,176) and (119,164.81) .. (119,151) -- cycle ;
+%Shape: Circle [id:dp6232220468757862] 
+\draw   (195,52) .. controls (195,38.19) and (206.19,27) .. (220,27) .. controls (233.81,27) and (245,38.19) .. (245,52) .. controls (245,65.81) and (233.81,77) .. (220,77) .. controls (206.19,77) and (195,65.81) .. (195,52) -- cycle ;
+%Shape: Circle [id:dp49572645552205263] 
+\draw  [fill={rgb, 255:red, 199; green, 199; blue, 199 }  ,fill opacity=1 ] (324,150) .. controls (324,136.19) and (335.19,125) .. (349,125) .. controls (362.81,125) and (374,136.19) .. (374,150) .. controls (374,163.81) and (362.81,175) .. (349,175) .. controls (335.19,175) and (324,163.81) .. (324,150) -- cycle ;
+%Shape: Circle [id:dp04424520000997234] 
+\draw   (225,150) .. controls (225,136.19) and (236.19,125) .. (250,125) .. controls (263.81,125) and (275,136.19) .. (275,150) .. controls (275,163.81) and (263.81,175) .. (250,175) .. controls (236.19,175) and (225,163.81) .. (225,150) -- cycle ;
+%Shape: Rectangle [id:dp8518034256278205] 
+\draw   (213.13,105.76) -- (411.6,105.76) -- (411.6,208) -- (213.13,208) -- cycle ;
+%Shape: Rectangle [id:dp2099791938650164] 
+\draw   (87,91) -- (440.6,91) -- (440.6,233) -- (87,233) -- cycle ;
+%Straight Lines [id:da11406541597292297] 
+\draw    (64,151) -- (117,151) ;
+\draw [shift={(119,151)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Straight Lines [id:da3621589464216769] 
+\draw    (169,151) -- (223,150.04) ;
+\draw [shift={(225,150)}, rotate = 538.98] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Straight Lines [id:da09879567766811748] 
+\draw    (275,150) -- (322,150) ;
+\draw [shift={(324,150)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Straight Lines [id:da23517788835593556] 
+\draw    (242.92,65.5) -- (327.33,130.45) ;
+\draw [shift={(328.92,131.67)}, rotate = 217.57] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Shape: Rectangle [id:dp7501348302770449] 
+\draw   (701,53.33) -- (803,53.33) -- (803,222.33) -- (701,222.33) -- cycle ;
+%Shape: Rectangle [id:dp832082779713454] 
+\draw   (551,46.33) -- (841,46.33) -- (841,237.33) -- (551,237.33) -- cycle ;
+%Shape: Circle [id:dp8534167348661814] 
+\draw   (610.39,157.5) .. controls (624.2,157.56) and (635.34,168.8) .. (635.28,182.61) .. controls (635.22,196.42) and (623.98,207.56) .. (610.17,207.5) .. controls (596.37,207.44) and (585.22,196.2) .. (585.28,182.39) .. controls (585.34,168.58) and (596.59,157.44) .. (610.39,157.5) -- cycle ;
+%Shape: Circle [id:dp4466934905564389] 
+\draw   (610.83,58.5) .. controls (624.63,58.56) and (635.78,69.8) .. (635.72,83.61) .. controls (635.66,97.42) and (624.41,108.56) .. (610.61,108.5) .. controls (596.8,108.44) and (585.66,97.2) .. (585.72,83.39) .. controls (585.78,69.58) and (597.02,58.44) .. (610.83,58.5) -- cycle ;
+%Straight Lines [id:da2762808842403305] 
+\draw    (610.61,108.5) -- (610.4,155.5) ;
+\draw [shift={(610.39,157.5)}, rotate = 270.25] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Shape: Circle [id:dp49555163496653243] 
+\draw   (753.39,158.5) .. controls (767.2,158.56) and (778.34,169.8) .. (778.28,183.61) .. controls (778.22,197.42) and (766.98,208.56) .. (753.17,208.5) .. controls (739.37,208.44) and (728.22,197.2) .. (728.28,183.39) .. controls (728.34,169.58) and (739.59,158.44) .. (753.39,158.5) -- cycle ;
+%Shape: Circle [id:dp6912113806172252] 
+\draw   (753.83,59.5) .. controls (767.63,59.56) and (778.78,70.8) .. (778.72,84.61) .. controls (778.66,98.42) and (767.41,109.56) .. (753.61,109.5) .. controls (739.8,109.44) and (728.66,98.2) .. (728.72,84.39) .. controls (728.78,70.58) and (740.02,59.44) .. (753.83,59.5) -- cycle ;
+%Straight Lines [id:da3696244463925229] 
+\draw    (753.61,109.5) -- (753.4,156.5) ;
+\draw [shift={(753.39,158.5)}, rotate = 270.25] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+
+% Text Node
+\draw (39,189) node  [align=left] {$\displaystyle \alpha $};
+% Text Node
+\draw (142.58,190) node  [align=left] {$\displaystyle \theta $};
+% Text Node
+\draw (252.42,188) node  [align=left] {$\displaystyle z$};
+% Text Node
+\draw (351.42,188) node  [align=left] {$\displaystyle w$};
+% Text Node
+\draw (184,49) node  [align=left] {$\displaystyle \beta $};
+% Text Node
+\draw (398,194) node  [align=left] {$\displaystyle N$};
+% Text Node
+\draw (423,217) node  [align=left] {$\displaystyle M$};
+% Text Node
+\draw (788,209) node  [align=left] {$\displaystyle N$};
+% Text Node
+\draw (825,222) node  [align=left] {$\displaystyle M$};
+% Text Node
+\draw (570.58,183) node  [align=left] {$\displaystyle \theta $};
+% Text Node
+\draw (569.58,81) node  [align=left] {$\displaystyle \gamma $};
+% Text Node
+\draw (713.58,82) node  [align=left] {$\displaystyle \varphi $};
+% Text Node
+\draw (714.42,181) node  [align=left] {$\displaystyle z$};
+
+
+\end{tikzpicture}
+
 	\caption{fuente: \cite{blei2003latent}}
 	\label{fig:grafo_variational}
 \end{figure}
@@ -313,7 +464,7 @@ Estos dos pasos se alternan hasta converger. Por último, se realiza un suavizad
 
 \subsection{Grafo Bipartito}
 
-Otra manera de analizar el comercio internacional considerando la dimensión \textit{producto} es mediante técnicas de análisis de redes. Es difundido en la literatura el uso de grafos bipartitos para este análisis \citep{10.1371/journal.pone.0197575,straka2017grand,ferreira2016topology,caldarelli2012network}. En la figura \ref{fig:bipgraph} se puede observar un diagrama de un grafo bipartito de países, \textit{a}, y productos, \textit{b}. Una arista entre un país $c$ y un producto $i$ representa en este caso que el país $a_c$ exporta el producto $b_i$. Dado que tanto los países como los productos se representan como nodos, la estructura de grafo bipartito nos permite mantener la diferencia cualitativa entre ambos tipos de vértices.
+Otra manera de analizar el comercio internacional considerando la dimensión \textit{producto} es mediante técnicas de análisis de redes. Es difundido en la literatura el uso de grafos bipartitos para este análisis \citep{10.1371/journal.pone.0197575,straka2017grand,ferreira2016topology,caldarelli2012network}. En la figura \ref{fig:bipgraph} se puede observar un diagrama de un grafo bipartito de países, \textit{a}, y productos, \textit{b}. Una arista entre un país $a_c$ y un producto $b_i$ representa en este caso que el país $a_c$ exporta el producto $b_i$. Dado que tanto los países como los productos se representan como nodos, la estructura de grafo bipartito nos permite mantener la diferencia cualitativa entre ambos tipos de vértices.
 
 
 \begin{figure}

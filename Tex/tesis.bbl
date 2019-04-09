@@ -1,4 +1,4 @@
-\begin{thebibliography}{53}
+\begin{thebibliography}{59}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -55,6 +55,14 @@ David~M Blei, Andrew~Y Ng, and Michael~I Jordan.
 \newblock \emph{Journal of machine Learning research}, 3\penalty0
   (Jan):\penalty0 993--1022, 2003.
 
+\bibitem[{Blei, D. M.; Ng, A. Y.; Jordan}(2003)]{Blei2003}
+M.~I. {Blei, D. M.; Ng, A. Y.; Jordan}.
+\newblock {Latent dirichlet allocation}.
+\newblock \emph{Journal of Machine Learning Research}, 3(4-5):\penalty0
+  993--1022, 2003.
+\newblock ISSN 15324435.
+\newblock \doi{10.1162/jmlr.2003.3.4-5.993}.
+
 \bibitem[Blondel et~al.(2008)Blondel, Guillaume, Lambiotte, and
   Lefebvre]{blondel2008fast}
 Vincent~D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre.
@@ -95,6 +103,15 @@ Mauro~F Ch{\'{a}}vez-Rodr{\'{i}}guez, Rafael Garaffa, Gisela Andrade, Gonzalo
 William Chow.
 \newblock {An Anatomy of the World Trade Network}.
 \newblock pages 1--20, 2013.
+
+\bibitem[Coe et~al.(2004)Coe, Hess, Yeung, Dicken, and
+  Henderson]{coe2004globalizing}
+Neil~M Coe, Martin Hess, Henry Wai-chung Yeung, Peter Dicken, and Jeffrey
+  Henderson.
+\newblock {‘Globalizing'regional development: a global production networks
+  perspective}.
+\newblock \emph{Transactions of the Institute of British geographers},
+  29\penalty0 (4):\penalty0 468--484, 2004.
 
 \bibitem[Csardi \& Nepusz(2006)Csardi and Nepusz]{Csardi2006}
 Gabor Csardi and Tamas Nepusz.
@@ -153,6 +170,20 @@ Folker Fr{\"{o}}bel, J{\"{u}}rgen Heinrichs, and Otto Kreye.
 \newblock \emph{Information (International Social Science Council)},
   17\penalty0 (1):\penalty0 123--142, 1978.
 
+\bibitem[Gereffi(1994)]{gereffi1994organization}
+Gary Gereffi.
+\newblock {The organization of buyer-driven global commodity chains: how US
+  retailers shape overseas production networks}.
+\newblock \emph{Contributions in economics and economic history}, page~95,
+  1994.
+
+\bibitem[Gereffi et~al.(2005)Gereffi, Humphrey, and
+  Sturgeon]{gereffi2005governance}
+Gary Gereffi, John Humphrey, and Timothy Sturgeon.
+\newblock {The governance of global value chains}.
+\newblock \emph{Review of international political economy}, 12\penalty0
+  (1):\penalty0 78--104, 2005.
+
 \bibitem[Gleditsch(2002)]{Gleditsch2002}
 Kristian~S Gleditsch.
 \newblock {Expanded Trade and GDP Data}.
@@ -165,6 +196,13 @@ Jun Guan, Xiaoyu Xu, Shan Wu, and Lizhi Xing.
 \newblock \emph{PLOS ONE}, 13\penalty0 (5):\penalty0 1--28, 2018.
 \newblock \doi{10.1371/journal.pone.0197575}.
 \newblock URL \url{https://doi.org/10.1371/journal.pone.0197575}.
+
+\bibitem[Haveman \& Hummels(2004)Haveman and Hummels]{haveman2004alternative}
+Jon Haveman and David Hummels.
+\newblock {Alternative hypotheses and the volume of trade: the gravity equation
+  and the extent of specialization}.
+\newblock \emph{Canadian Journal of Economics/Revue canadienne
+  d'{\'{e}}conomique}, 37\penalty0 (1):\penalty0 199--218, 2004.
 
 \bibitem[Head \& Mayer(2014)Head and Mayer]{Head2014}
 Keith Head and Thierry Mayer.
@@ -225,6 +263,11 @@ Sanjaya Lall.
   manufactured exports, 1985-98}.
 \newblock \emph{Oxford development studies}, 28\penalty0 (3):\penalty0
   337--369, 2000.
+
+\bibitem[Lall et~al.(2006)Lall, Weiss, and Zhang]{lall2006sophistication}
+Sanjaya Lall, John Weiss, and Jinkang Zhang.
+\newblock {The “sophistication” of exports: a new trade measure}.
+\newblock \emph{World development}, 34\penalty0 (2):\penalty0 222--237, 2006.
 
 \bibitem[MacQueen \& Others(1967)MacQueen and Others]{macqueen1967some}
 James MacQueen and Others.
