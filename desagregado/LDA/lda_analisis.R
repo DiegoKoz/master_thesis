@@ -24,24 +24,19 @@ codigos_paises <- read_csv("desagregado/LDA/names/codigos_paises.csv")
 
 etiquetas_componentes <- read_csv("desagregado/LDA/names/Etiquetas tópicos LDA - ETIQUETAS.csv")
 
-# resultados <- list.files("results/")
-# for (resultado in resultados) {
-#   assign(sub(".csv","",resultado),read_csv(glue("results/{resultado}")))
-# }
-
-iteraciones <- c("Dist_paises2.csv","Dist_paises4.csv","Dist_paises8.csv","Dist_paises10.csv",
-  "Dist_paises20.csv","Dist_paises40.csv",'Dist_paises50.csv')
-
 
 read_and_sum <- function(x) {
   read_csv(glue("desagregado/LDA/results/{x}")) %>% 
     gather(componente,prop,3:ncol(.)) %>% 
     group_by(componente) %>% 
-    summarise(prop=mean(prop)) %>% 
-    mutate(k=str_extract(x,"[:digit:]{1,2}"))
+    summarise(prop=mean(prop)) %>%
+    ungroup() %>% 
+    mutate(k=max(as.numeric(paste(componente))+1))
 }
+graficar <- function(lista_dist, file="desagregado/LDA/graficos/componentes.png") {
+  
 
-df <- map(iteraciones,read_and_sum) %>% bind_rows()
+df <- map(lista_dist,read_and_sum) %>% bind_rows()
 
 df %>% 
   mutate(k =as.numeric(k),
@@ -57,4 +52,21 @@ df %>%
         panel.border =element_rect(fill = NA), 
         text = element_text(size=25), 
         strip.text.y = element_text(angle = 0))
-ggsave("desagregado/LDA/graficos/componentes.png",scale = 2)  
+
+ggsave(file,scale = 2)  
+}
+
+
+lista_dist <- c("Dist_paises2.csv","Dist_paises4.csv","Dist_paises8.csv","Dist_paises10.csv",
+                "Dist_paises20.csv","Dist_paises40.csv",'Dist_paises50.csv')
+
+graficar(lista_dist)
+
+lista_dist <- c("Dist_paises2.csv","Dist_paises4.csv","Dist_paises8.csv","Dist_paises10.csv",
+                "Dist_paises20.csv","Dist_paises40.csv",'Dist_paises50.csv','Dist_paises100.csv',
+                'Dist_paises200.csv')
+
+graficar(lista_dist,file="desagregado/LDA/graficos/componentes_all.png")
+
+
+
