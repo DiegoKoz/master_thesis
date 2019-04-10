@@ -43,7 +43,7 @@ df %>%
          componente = as.numeric(componente)+1) %>% 
   ggplot(.,aes(componente,prop))+
   geom_col()+
-  facet_grid(k~.,labeller = label_both)+
+  facet_grid(k~.,labeller = label_both, scales = "free")+
   labs(x="Componente",y="Proporción")+
   scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
   theme_tufte()+
@@ -51,6 +51,7 @@ df %>%
         legend.margin=margin(t = -.5,unit = "cm"), 
         panel.border =element_rect(fill = NA), 
         text = element_text(size=25), 
+        axis.text.y = element_text(size = 12),
         strip.text.y = element_text(angle = 0))
 
 ggsave(file,scale = 2)  
