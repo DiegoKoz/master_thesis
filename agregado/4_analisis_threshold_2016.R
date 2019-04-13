@@ -848,8 +848,13 @@ g <- as.undirected(g)
 louvain_clust <- cluster_louvain(graph = g, weights = E(g)$TradeValue)
 plot_map(louvain_clust, 'louvain')
 
-ggsave("agregado/graficos/mapa_louvain.png", width = 16, height = 9, dpi = 300)
-
-
+ggsave("agregado/graficos/mapa_louvain_2016.png", width = 16, height = 9, dpi = 300)
 V(g)[which(louvain_clust$membership==6)]
+
+g <- trade_to_graph(dataset_expo, threshold_pct = 0.01)$grafo
+walktrap_clust <- cluster_walktrap(graph = g, weights = E(g)$TradeValue,steps = 30)
+plot_map(walktrap_clust, 'walktrap')
+ggsave("agregado/graficos/mapa_walktrap_2016.png", width = 16, height = 9, dpi = 300)
+
+
 

@@ -1,0 +1,229 @@
+---
+title: "bipartito Mundo. Serie historica"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+library(viridis)
+library(igraph)
+library(countrycode)
+library(fuzzyjoin)
+library(maps)
+library(magrittr)
+countrycode_data <- codelist %>% select(country.name.en, cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
+
+```
+
+
+```{r}
+RCA <- read_delim("results/RCA_LP.txt",delim = ",")
+```
+
+```{r}
+RCA %>% glimpse()
+```
+
+
+Defino como nodos las conexiones donde RCA>1
+```{r}
+nodos <- RCA %>% 
+  filter(RCA>1,reporter != 'Other Asia, nes') %>%  #me quedo un agregado supranacional
+  select(year,SITC,rep_iso,reporter)
+
+nodos <- left_join(nodos,countrycode_data %>% select(rep_iso=iso3c, continent, cldr.short.es_ar))
+
+```
+
+
+Quiero ver cuantos links hay en promedio por nodo
+```{r}
+nodos %>% 
+  group_by(year,reporter) %>% 
+  summarise(n= n()) %>% 
+  ungroup() %>%  
+  summarise(n=mean(n))
+```
+ (antes tenia 125.4843	!!)
+ 
+
+Armo el grafo bipartito para 2016
+
+```{r}
+g <- nodos %>% 
+  filter(year==2016) %>% 
+  ungroup() %>% 
+  select(SITC, rep_iso) %>% 
+  graph_from_data_frame(., directed = T)
+
+V(g)$type <- !bipartite_mapping(g)$type
+is_bipartite(g)
+
+```
+
+
+# proyecto a los países.
+
+
+
+```{r}
+
+proj <- bipartite_projection(g, which ="false", multiplicity = T)
+
+# pesos <- scale(E(proj)$weight,scale = T)
+
+# V(proj)$color <- "white"
+# V(proj)$label <- V(proj)$name
+# V(proj)$shape <- "none"
+E(proj)$width <- E(proj)$weight/20
+
+
+plot(proj,edge.curved=runif(length(E(proj)),-0.5,0.5))
+
+```
+
+
+```{r}
+nombres_vertices <- tibble(rt3ISO=as.vector(V(proj)$name))
+countrycode_data2 <- countrycode_data %>% 
+  select(rt3ISO = iso3c, continent)
+correspondencia <- left_join(nombres_vertices,countrycode_data2) %>% 
+  mutate(color = case_when(continent == "Europe" ~"#E41A1C",
+                           continent == "Africa" ~"#377EB8",
+                           continent == "Asia" ~"#4DAF4A",
+                           continent == "Oceania" ~"#984EA3",
+                           continent == "Americas" ~"#FF7F00") )
+
+V(proj)$continente <- correspondencia$continent
+V(proj)$color <- correspondencia$color
+E(proj)$edge.color <- "gray80"
+
+l <-layout_nicely(proj)
+
+plot(proj,edge.arrow.size=.4,vertex.frame.color="#ffffff", edge.size = .5,
+     vertex.label="", vertex.label.color="black", vertex.size = 6, 
+     layout=l)
+
+legend(x=-2,  y=1.2,unique(unique(correspondencia$continent)),
+       pch=21,col="#777777",pt.bg=unique(unique(correspondencia$color)))
+
+```
+
+### Cluster 
+
+
+```{r}
+wordmap <- map_data('world')
+
+codes <- tibble(map_regions = unique(wordmap$region),
+  map_regions_low = tolower(unique(wordmap$region))) %>% 
+  regex_left_join(codelist %>% 
+                    select(pais=iso3c, regex_name = country.name.en.regex), by=c(map_regions_low='regex_name'))
+```
+
+
+```{r}
+plot_map <- function(nodos,yr,method){
+  
+  g <- nodos %>% 
+  filter(year==yr) %>% 
+  ungroup() %>% 
+  select(SITC, rep_iso) %>% 
+  graph_from_data_frame(., directed = T)
+  V(g)$type <- !bipartite_mapping(g)$type
+  
+  proj <- bipartite_projection(g, which ="false", multiplicity = T)
+  
+  if (method=='walktrap') {
+    cluster <- cluster_walktrap(graph = proj, weights = E(proj)$weight,steps = 5)
+  }
+  if (method=='louvain') {
+    cluster <- cluster_louvain(graph = proj, weights = E(proj)$weight)
+  }
+
+  clusters <- tibble(membership=cluster$membership, pais = cluster$names)
+  
+  #Agarro dos paises siempre separados para fijar los clusters
+  
+  comm_arg <- clusters %>% filter(pais=="ARG") %$% membership
+  comm_USA <- clusters %>% filter(pais=="USA") %$% membership
+  
+  if (comm_arg == comm_USA) {
+    warning("guarda que USA y ARG deberian estar en el mismo grupo")
+  }
+  
+  clusters <- clusters %>% 
+    mutate(membership_fix = case_when(membership==comm_arg~99,
+                                      membership==comm_USA~98,
+                                      TRUE ~membership))
+  
+  niv_membership_fix = c(98,99,setdiff(unique(clusters$membership_fix), c(98,99)))
+  
+  clusters <- clusters %>% 
+    mutate(membership_fix = as.numeric(factor(membership_fix,levels = niv_membership_fix))) 
+  
+  df_map <-  wordmap %>%
+    filter(!str_detect(region, "Antarctica")) %>% 
+    left_join(clusters %>% 
+    left_join(codes %>% select(pais, region = map_regions))) %>% 
+    arrange(order) %>% 
+    mutate(membership_fix = as_factor(membership_fix))
+  
+  
+  ggplot(df_map, aes(long, lat)) +
+    geom_polygon(aes(group = group,  fill = membership_fix),color="black",size=.1) +
+    # coord_quickmap(expand = TRUE) +
+    coord_equal(ratio = 1.2)+
+    theme_void()+
+    theme(legend.position = 'bottom',
+         plot.margin = unit(rep(-1.25,4),"lines"),
+         text = element_text(size = 20))+
+    scale_fill_discrete(glue::glue('Comunidades'))+
+    labs(x=NULL, y=NULL, title=NULL)
+}
+```
+
+```{r}
+
+plot_map(nodos = nodos,yr = 2016, method = 'louvain')
+
+# ggsave("results/mapa_projection_louvain_lp.png", width = 16, height = 9, dpi = 300)
+```
+```{r}
+plot_map(nodos = nodos,yr = 2016, method = 'walktrap')
+#ggsave("results/mapa_projection_walktrap_lp.png", width = 16, height = 9, dpi = 300)
+
+```
+
+como son muy parecidos, solo voy a mostrar los resultado de Louvain
+
+
+```{r}
+plot_map(nodos = nodos,yr = 1966, method = 'louvain')
+ggsave("results/mapa_projection_louvain_lp_1966.png", width = 16, height = 9, dpi = 300)
+plot_map(nodos = nodos,yr = 1976, method = 'louvain')
+ggsave("results/mapa_projection_louvain_lp_1976.png", width = 16, height = 9, dpi = 300)
+plot_map(nodos = nodos,yr = 1986, method = 'louvain')
+ggsave("results/mapa_projection_louvain_lp_1986.png", width = 16, height = 9, dpi = 300)
+plot_map(nodos = nodos,yr = 1996, method = 'louvain')
+ggsave("results/mapa_projection_louvain_lp_1996.png", width = 16, height = 9, dpi = 300)
+plot_map(nodos = nodos,yr = 2016, method = 'louvain')
+ggsave("results/mapa_projection_louvain_lp_2016.png", width = 16, height = 9, dpi = 300)
+```
+
+
+```{r}
+plot_map(nodos = nodos,yr = 1966, method = 'walktrap')
+ggsave("results/mapa_projection_walktrap_lp_1966.png", width = 16, height = 9, dpi = 300)
+plot_map(nodos = nodos,yr = 1976, method = 'walktrap')
+ggsave("results/mapa_projection_walktrap_lp_1976.png", width = 16, height = 9, dpi = 300)
+plot_map(nodos = nodos,yr = 1986, method = 'walktrap')
+ggsave("results/mapa_projection_walktrap_lp_1986.png", width = 16, height = 9, dpi = 300)
+plot_map(nodos = nodos,yr = 1996, method = 'walktrap')
+ggsave("results/mapa_projection_walktrap_lp_1996.png", width = 16, height = 9, dpi = 300)
+plot_map(nodos = nodos,yr = 2016, method = 'walktrap')
+ggsave("results/mapa_projection_walktrap_lp_2016.png", width = 16, height = 9, dpi = 300)
+```
+

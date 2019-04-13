@@ -10,6 +10,9 @@ library(igraph)
 library(countrycode)
 library(xlsx)
 library(scales)
+library(magrittr)
+library(fuzzyjoin)
+
 options(scipen=10000)
 countrycode_data <- codelist %>% select(iso3c,cowc, cldr.short.es_ar,cldr.short.en,region,continent)
 
@@ -580,4 +583,92 @@ for ( i in c(1:length(names(top5_x_yr_expo)))) {
   }
 } 
 
+
+
+
+
+#### Mapa
+
+
+###### Mapa clusters ########
+
+wordmap <- map_data('world')
+
+codes <- tibble(map_regions = unique(wordmap$region),
+                map_regions_low = tolower(unique(wordmap$region))) %>% 
+  regex_left_join(codelist %>% 
+                    select(pais=cowc, regex_name = country.name.en.regex), by=c(map_regions_low='regex_name'))
+
+# countrycode_data <- codelist %>% select(iso3c,cowc, cldr.short.es_ar,cldr.short.en,region,continent)
+
+
+plot_map <- function(nodos,year,method){
+  
+  g <- nodos %>% 
+    filter(yr==year) %>% 
+    trade_to_graph(.,threshold_pct = 0.01) %$% grafo
+  
+  g <- as.undirected(g)
+
+  
+  if (method=='walktrap') {
+    cluster <- cluster_walktrap(graph = g, weights = E(g)$TradeValue,steps = 5)
+  }
+  if (method=='louvain') {
+    cluster <- cluster_louvain(graph = g, weights = E(g)$TradeValue)
+  }
+  
+  clusters <- tibble(membership=cluster$membership, pais = cluster$names)
+  
+  #Agarro dos paises siempre separados para fijar los clusters
+  # 
+  # comm_arg <- clusters %>% filter(pais=="ARG") %$% membership
+  # comm_USA <- clusters %>% filter(pais=="USA") %$% membership
+  # 
+  # if (comm_arg == comm_USA) {
+  #   warning("guarda que USA y ARG deberian estar en el mismo grupo")
+  # }
+  # 
+  #  clusters <- clusters %>% 
+  #    mutate(membership_fix = case_when(membership==comm_arg~99,
+  #                                     membership==comm_USA~98,
+  #                                     TRUE ~membership))
+  # 
+  # niv_membership_fix = c(98,99,setdiff(unique(clusters$membership_fix), c(98,99)))
+  # 
+  # clusters <- clusters %>% 
+  #   mutate(membership_fix = as.numeric(factor(membership_fix,levels = niv_membership_fix))) 
+  
+  df_map <-  wordmap %>%
+    filter(!str_detect(region, "Antarctica")) %>% 
+    left_join(clusters %>% 
+                left_join(codes %>% select(pais, region = map_regions))) %>% 
+    arrange(order) %>%
+    mutate(membership=as.factor(membership))
+    # mutate(membership_fix = as_factor(membership_fix))
+  
+  
+  ggplot(df_map, aes(long, lat)) +
+    geom_polygon(aes(group = group,  fill = membership),color="black",size=.1) +
+    # geom_polygon(aes(group = group,  fill = membership_fix),color="black",size=.1) +
+    # coord_quickmap(expand = TRUE) +
+    coord_equal(ratio = 1.2)+
+    theme_void()+
+    theme(legend.position = 'bottom',
+          plot.margin = unit(rep(-1.25,4),"lines"),
+          text = element_text(size = 20))+
+    scale_fill_discrete(glue::glue('Comunidades'))+
+    labs(x=NULL, y=NULL, title=NULL)
+}
+
+
+for (nano in c(1966,1976,1986,1996)) {
+  plot_map(nodos = dataset_expo, year = nano,method = 'louvain')
+  ggsave(paste0('agregado/graficos/mapa_louvain_lp_',nano,'.png'), width = 16, height = 9, dpi = 300)
+
+  plot_map(nodos = dataset_expo, year = nano,method = 'walktrap')
+  ggsave(paste0('agregado/graficos/mapa_walktrap_lp_',nano,'.png'), width = 16, height = 9, dpi = 300)
+
+  
+}
 
