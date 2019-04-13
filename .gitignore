@@ -67,3 +67,10 @@ data/**
 **/HS/resultados/**
 
 
+### Me cago LFS
+
+*.csv
+*.txt
+*.RDS
+*.rds
+*.xlsx
