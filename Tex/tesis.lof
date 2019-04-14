@@ -63,25 +63,29 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces fuente: \cite {blei2003latent}}}{36}{figure.3.7}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces fuente: \cite {blei2003latent}}}{37}{figure.3.8}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Grafo bipartito, pa\IeC {\'\i }ses y productos}}{38}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Distribuci\IeC {\'o}n del Componente 4. K = 40}}{41}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribuci\IeC {\'o}n del Componente 4. K = 40 seg\IeC {\'u}n Lall}}{41}{figure.3.11}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n Lall. K=2}}{41}{figure.3.10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Componente 1}}}{41}{figure.3.10}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Componente 2}}}{41}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n Lall. K=2}}{42}{figure.3.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Componente 1}}}{42}{figure.3.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Componente 2}}}{42}{figure.3.11}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Distribuci\IeC {\'o}n promedio de los componentes en los pa\IeC {\'\i }ses, varios valores de k}}{42}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Evoluci\IeC {\'o}n de componentes. Argentina y Brasil. K=50. Exportaciones}}{45}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Evoluci\IeC {\'o}n de componentes. Bolivia, Chile, Paraguay. K=50. Exportaciones}}{46}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Evoluci\IeC {\'o}n de componentes. Estados Unidos, Canad\IeC {\'a} y Mexico. Exportaciones}}{47}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Evoluci\IeC {\'o}n de componentes. Pa\IeC {\'\i }ses petroleros. Exportaciones.}}{48}{figure.3.16}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Evoluci\IeC {\'o}n de componentes. Pa\IeC {\'\i }ses europeos. Exportaciones}}{49}{figure.3.17}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Evoluci\IeC {\'o}n de componentes. Asia. Exportaciones}}{50}{figure.3.18}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Evoluci\IeC {\'o}n de componentes. \IeC {\'A}frica Austral. Exportaciones}}{51}{figure.3.19}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Evoluci\IeC {\'o}n de componentes. \IeC {\'A}frica Noroccidental}}{52}{figure.3.20}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Proyecci\IeC {\'o}n pa\IeC {\'\i }ses. Exportaciones 2016}}{54}{figure.3.21}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Cluster Louvain}}}{54}{figure.3.21}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cluster Walktrap}}}{54}{figure.3.21}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Cluster Louvain. Comercio agregado. Exportaciones 2016}}{55}{figure.3.22}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Heatmap proximidad. Espacio de productos. Exportaciones. Promedio 1996-2017}}{57}{figure.3.23}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ordenamiento SITC}}}{57}{figure.3.23}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ordenamiento Clustering jer\IeC {\'a}rquico}}}{57}{figure.3.23}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 2 medioides}}{58}{figure.3.24}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}}{59}{figure.3.25}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 50 medioides}}{60}{figure.3.26}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Proyecci\IeC {\'o}n a pa\IeC {\'\i }ses del grafo bipartito. Clustering Louvain. Exportaciones}}{45}{figure.3.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{45}{figure.3.13}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{45}{figure.3.13}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{45}{figure.3.13}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{45}{figure.3.13}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{45}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Grafo a nivel pa\IeC {\'\i }ses. Clustering Louvain. Exportaciones}}{46}{figure.3.14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{46}{figure.3.14}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{46}{figure.3.14}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{46}{figure.3.14}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{46}{figure.3.14}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{46}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Heatmap proximidad. Espacio de productos. Exportaciones. Promedio 1996-2017}}{47}{figure.3.15}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ordenamiento SITC}}}{47}{figure.3.15}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ordenamiento Clustering jer\IeC {\'a}rquico}}}{47}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 2 medioides}}{49}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}}{50}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 50 medioides}}{51}{figure.3.18}
 \addvspace {10pt}

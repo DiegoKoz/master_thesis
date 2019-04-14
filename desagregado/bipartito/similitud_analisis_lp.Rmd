@@ -1,0 +1,316 @@
+---
+title: "Similitud analysis Serie larga"
+output: html_notebook
+---
+
+
+```{r setup}
+library(tidyverse)
+library(ggvoronoi)
+library(viridis)
+library(ggthemes)
+library(cluster)
+library(igraph)
+library(readxl)
+
+set.seed(1234)
+```
+
+```{r}
+similitud <- read_csv('results/similitud_LP_2016.csv',col_types = cols(SITC = col_character()))
+clasificacion <-read_xlsx("../LDA/names/classifications_hidalgo.xlsx", sheet = 'sitc_product_id') %>% 
+  rename(medioide=sitc_product_code)
+
+
+```
+
+```{r}
+M <- as.matrix(similitud[,-1])
+#distance matrix
+DM <- 1/M
+
+```
+
+
+# K medioids
+
+```{r}
+
+plot_pam_giant_graph <- function(M,pam_clust,threshold = 0.5){
+  
+#grafo
+adj_mat <- M
+#pongo un threshold
+adj_mat[adj_mat<threshold] <- 0
+
+g  <- graph_from_adjacency_matrix(adj_mat, weighted=TRUE,mode='undirected')
+
+graphs <- decompose.graph(g)
+comp_gigante <- graphs[[which.max(sapply(graphs, vcount))]]
+
+# Pongo solo la etiqueta de los medioides
+
+names <- V(comp_gigante)$name
+mediod_label <- names
+ind <- which(!mediod_label %in% pam_clust$medoids) 
+mediod_label[ind]<-NA
+V(comp_gigante)$label <- mediod_label
+
+colors <- tibble(cluster = unique(pam_clust$clustering), color = colorspace::rainbow_hcl(length(unique(pam_clust$clustering)),c = 100, l = 60, start = 0,alpha = 0.75))
+
+colors_df <- tibble(names) %>% 
+  left_join(.,tibble(names = names(pam_clust$clustering),cluster = pam_clust$clustering)) %>% 
+  left_join(colors)
+
+V(comp_gigante)$color <- colors_df$color
+
+l <-layout_nicely(comp_gigante)
+
+plot(comp_gigante,edge.arrow.size=.4,vertex.frame.color="#ffffff", edge.size = .1,
+     vertex.label=V(comp_gigante)$label, vertex.label.color="black",vertex.size = 5,
+     vertex.label.cex=1.2,  layout=l)
+
+}
+
+```
+
+### Max spanning tree
+
+```{r}
+plot_pam_max_span <- function(M,pam_clust,threshold = 0.5){
+  
+#grafo
+adj_mat <- M
+#pongo un threshold
+# adj_mat[adj_mat<threshold] <- 0
+
+g  <- graph_from_adjacency_matrix(adj_mat, weighted=TRUE)
+
+g_mst <- mst(g)  
+# Pongo solo la etiqueta de los medioides
+
+names <- V(g_mst)$name
+mediod_label <- names
+ind <- which(!mediod_label %in% pam_clust$medoids) 
+mediod_label[ind]<-NA
+V(g_mst)$label <- mediod_label
+
+colors <- tibble(cluster = unique(pam_clust$clustering), color = colorspace::rainbow_hcl(length(unique(pam_clust$clustering)),c = 100, l = 60, start = 0,alpha = 0.75))
+
+colors_df <- tibble(names) %>% 
+  left_join(.,tibble(names = names(pam_clust$clustering),cluster = pam_clust$clustering)) %>% 
+  left_join(colors)
+
+V(g_mst)$color <- colors_df$color
+
+g_mst <-  decompose.graph(g_mst)[[1]]
+
+# l <-layout_nicely(g_mst)
+
+plot(g_mst,edge.arrow.size=.4,vertex.frame.color="#ffffff", edge.size = .1,
+     vertex.label=V(g_mst)$label, vertex.label.color="black",vertex.size = 5,
+     vertex.label.cex=1.2)#,  layout=l)
+
+}
+```
+
+
+### pam k=2
+
+```{r}
+pam_clust2 <- pam(DM,diss = TRUE,k=2)
+
+png('results/pam2_gigant_lp.png',width = 6,height = 6, units = 'in', res = 300)
+plot_pam_giant_graph(M,pam_clust2)
+dev.off()
+
+png('results/pam2_mst_lp.png',width = 6,height = 6, units = 'in', res = 300)
+plot_pam_max_span(M,pam_clust2)
+dev.off()
+```
+
+### pam k=10
+
+```{r}
+pam_clust10 <- pam(DM,diss = TRUE,k=10)
+
+png('results/pam10_gigant_lp.png',width = 6,height = 6, units = 'in', res = 300)
+plot_pam_giant_graph(M,pam_clust10)
+dev.off()
+
+png('results/pam10_mst_lp.png',width = 6,height = 6, units = 'in', res = 300)
+plot_pam_max_span(M,pam_clust10)
+dev.off()
+```
+
+### pam k=50
+
+```{r}
+pam_clust50 <- pam(DM,diss = TRUE,k=50)
+
+png('results/pam50_gigant_lp.png',width = 6,height = 6, units = 'in', res = 300)
+plot_pam_giant_graph(M,pam_clust50)
+dev.off()
+
+png('results/pam50_mst_lp.png',width = 6,height = 6, units = 'in', res = 300)
+plot_pam_max_span(M,pam_clust50)
+dev.off()
+```
+
+
+```{r}
+tibble(k = '2', medioide= pam_clust2$medoids) %>% 
+  # bind_rows(tibble(k = '10', medioide= pam_clust10$medoids)) %>% 
+  # bind_rows(tibble(k = 50, medioide= pam_clust50$medoids)) %>% 
+  left_join(clasificacion %>% select(-id)) %>% 
+  xtable::xtable(., caption='Medioides', label='table:pam') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
+```
+
+```{r}
+  tibble(k = '10', medioide= pam_clust10$medoids) %>%
+  left_join(clasificacion %>% select(-id)) %>% 
+  xtable::xtable(., caption='Medioides', label='table:pam') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
+```
+
+```{r}
+
+tibble(k = '50', medioide= pam_clust50$medoids) %>%
+  left_join(clasificacion) %>% 
+  xtable::xtable(., caption='Medioides', label='table:pam') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
+```
+
+
+# heatmap
+
+```{r}
+
+dim(dist(M))
+hc <- hclust(dist(M))
+plot(hc)
+
+clust_col <- function(M) {
+  M[M<0.5] <- 0
+  DM_thr <- 1/M
+  DM_thr[is.infinite(DM_thr)] <- 999
+  d <- dist(DM_thr)
+  hclust(d,method = "ward.D")
+}
+
+
+heatmap(M, symm =  TRUE, col = viridis(256), hclustfun = clust_col)
+
+```
+
+
+```{r}
+
+m2 <- similitud
+#m2[,-1][lower.tri(m2[,-1],diag = TRUE)] <- NA
+
+sim_table <- m2 %>% 
+  gather(SITC_par,value = similarity,2:ncol(.)) %>%
+  filter(!is.na(similarity)) %>% 
+  mutate(distance = 1/similarity)
+
+```
+
+```{r}
+
+ggplot(sim_table,aes(SITC, reorder(SITC_par, desc(SITC_par)), fill = similarity))+
+  geom_tile()+
+  # scale_x_discrete(breaks = names[seq(1,length(names),100)])+
+  # scale_y_discrete(breaks = names[seq(1,length(names),100)])+
+  # theme_tufte()+
+  theme_void()+
+  labs(x='',y='',fill="Proximity")+
+  scale_fill_viridis()+
+  theme(legend.position = 'bottom')
+
+ggsave('results/heatmap_prox_sitcOrd_lp.png',height = 6,width = 6,dpi = 300)
+
+```
+
+
+```{r}
+M_thr <- M
+# M_thr[M_thr<0.5] <- 0
+
+DM_thr <- 1/M_thr
+DM_thr[is.infinite(DM_thr)] <- 99999999999
+d <- as.dist(DM_thr)
+
+cluster_h <- hclust( d, method = "ward.D" )
+
+order <- cluster_h$order
+
+ordered_names <- colnames(DM_thr)[order]
+
+sim_table %>% 
+  mutate(SITC = factor(SITC, levels = ordered_names),
+         SITC_par = factor(SITC_par, levels = rev(ordered_names))
+         # similarity = case_when(similarity<0.5 ~0,
+         #                        TRUE ~similarity)
+         ) %>% 
+ggplot(.,aes(SITC, SITC_par, fill = similarity))+
+  geom_tile()+
+  # scale_x_discrete(breaks = ordered_names[seq(1,length(ordered_names),100)])+
+  # scale_y_discrete(breaks = ordered_names[seq(1,length(ordered_names),100)])+
+  theme_void()+
+  labs(x='',y='',fill="Proximity")+
+  scale_fill_viridis()+
+  theme(legend.position = 'bottom')
+
+ggsave('results/heatmap_prox_ClustOrd_lp.png',height = 6,width = 6,dpi = 300)
+
+```
+
+
+```{r}
+m3 <- m2
+m3[,-1][lower.tri(m3[,-1],diag = TRUE)] <- NA
+
+
+sim_table <- m3 %>% 
+  gather(SITC_par,value = similarity,2:ncol(.)) %>%
+  filter(!is.na(similarity))
+```
+
+```{r}
+
+sim_table %>% 
+  arrange(-similarity) %>% 
+  top_n(10, similarity) %>%
+  left_join(clasificacion %>% select(SITC= medioide, description=sitc_product_name_short_en)) %>% 
+  left_join(clasificacion %>% select(SITC_par= medioide, description_par=sitc_product_name_short_en)) %>% 
+  mutate(description = paste0(substr(description,1,22),'...'),
+         description_par = paste0(substr(description_par,1,22),'...')) %>% 
+  xtable::xtable(., caption='Productos más similares', label='table:similarity') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
+
+```
+
+```{r}
+mean_sim_table %>% 
+  arrange(-similarity) %>%
+  top_n(25, similarity) %>% 
+  filter(row_number() %% 2 == 0) %>% 
+  left_join(clasificacion %>% select(SITC=medioide,SITC_desc=Description)) %>% 
+  left_join(clasificacion %>% select(SITC_par=medioide,SITC_par_desc=Description)) %>% 
+  select(similarity,SITC, SITC_desc,SITC_par,SITC_par_desc) %>% 
+  mutate(SITC_desc = tolower(SITC_desc),
+         SITC_par_desc = tolower(SITC_par_desc),
+         SITC_desc = str_remove(SITC_desc,",x-knit"),
+         SITC_par_desc = str_remove(SITC_par_desc,",x-knit"),
+         SITC_desc = str_remove(SITC_desc,".xknit"),
+         SITC_par_desc = str_remove(SITC_par_desc,".xknit"),
+         SITC_desc = str_remove(SITC_desc,".knit"),
+         SITC_par_desc = str_remove(SITC_par_desc,".knit")) %>% 
+  xtable::xtable(., caption='Productos más similares', label='table:similarity') %>% 
+  xtable::print.xtable(.,include.rownames=FALSE)
+
+
+```
+

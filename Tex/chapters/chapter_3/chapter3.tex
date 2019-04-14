@@ -482,7 +482,7 @@ Otra manera de analizar el comercio internacional considerando la dimensión \te
 \end{figure}
 
 
-Tal como sucedía con el comercio agregado a nivel países, los tamaños relativos de las economías nacionales implican que un mismo monto exportado tenga un significado muy distinto según el país del cual provienen. A su vez, como los volúmenes comerciados de los diferentes productos también varían fuertemente, lo anterior aplica a este otro tipo de nodos. Es por ello que en la literatura se utiliza una normalización de las exportaciones, conocida como \textit{Ventajas Comparativas Relativas}, o \textit{RCA} por sus siglas en inglés. La misma fue propuesta por \cite{balassa1965trade} y tiene la siguiente forma funcional:
+Tal como sucedía con el comercio agregado a nivel países, los tamaños relativos de las economías nacionales implican que un mismo monto exportado tenga un significado muy distinto según el país del cual provienen. A su vez, como los volúmenes comerciados de los diferentes productos también varían fuertemente, lo anterior aplica a este otro tipo de nodos. Es por ello que en la literatura se utiliza una normalización de las exportaciones, conocida como \textit{Ventajas Comparativas Reveladas}, o \textit{RCA} por sus siglas en inglés. La misma fue propuesta por \cite{balassa1965trade} y tiene la siguiente forma funcional:
 
 $$
 \operatorname{RCA}(c, i)= \frac{\displaystyle \frac{x(c, i)}{\sum_{i} x(c, i)}}{\displaystyle \frac{\sum_{c} x(c, i)}{\sum_{c, i} x(c, i)}}
@@ -490,7 +490,7 @@ $$
 
 Dónde $x(c,i)$ es el valor de las exportaciones del \textit{país c} en \textit{producto i}. El numerador indica la proporción que dicho producto representa en las exportaciones totales del país c. El denominador indica la proporción que este mismo producto representa en las exportaciones totales de todos los países. Es decir, \textit{RCA} muestra la relación en la importancia de un producto $i$ en un país $c$ respecto de la importancia promedio de ese producto en la economía mundial. De esta forma, un RCA alto implica que el país en cuestión tiene \textit{ventaja relativa} para exportar un producto, mientras que un RCA bajo implica que el país tiene una \textit{desventaja relativa} con el producto. De esta forma, se puede construir un grafo no ponderado estableciendo el punto de corte en $RCA>1$. 
 
-Habiendo establecido nodos y aristas del grafo bipartito, el problema reside en que la mayor parte de las técnicas de análisis sobre grafos están definidas para grafos simples, no para grafos bipartitos. Por ello se continúa por realizar la proyección sobre uno de los tipos de nodos para luego analizar los resultados \citep{zhou2007bipartite}. La proyección se realiza de forma ponderada y el peso asignado a una arista entre dos nodos es la cantidad de nodos del otro tipo con los cuales estaban conectados ambos nodos en el grafo original. Esto significa, en la proyección del grafo de países, que aquellos que compartían ventajas comparativas relativas sobre un conjunto grande productos estarán fuertemente conectados, mientras que los países que poseen canastas exportadoras muy diferentes, estarán débilmente conectados.
+Habiendo establecido nodos y aristas del grafo bipartito, el problema reside en que la mayor parte de las técnicas de análisis sobre grafos están definidas para grafos simples, no para grafos bipartitos. Por ello se continúa por realizar la proyección sobre uno de los tipos de nodos para luego analizar los resultados \citep{zhou2007bipartite}. La proyección se realiza de forma ponderada y el peso asignado a una arista entre dos nodos es la cantidad de nodos del otro tipo con los cuales estaban conectados ambos nodos en el grafo original. Esto significa, en la proyección del grafo de países, que aquellos que compartían ventajas comparativas reveladas sobre un conjunto grande productos estarán fuertemente conectados, mientras que los países que poseen canastas exportadoras muy diferentes, estarán débilmente conectados.
 
 Este procedimiento se realizó para los nodos-país. El resultados es un grafo de características similares al elaborado en el capítulo anterior, pero que en esta oportunidad los vínculos entre países no reflejan sus vínculos comerciales, sino su similitud respecto a la estructura productiva exportadora. A diferencia del grafo de relaciones comerciales, aquí las métricas de centralidad no resultan particularmente interesantes porque el centro del grafo esta poblado por aquellos países que exportan las mercancías más comunes, mientras que en los márgenes se encuentran aquellos cuya canasta exportadora resulta muy diferente a la media. Lo que resulta particularmente interesante son las comunidades que se generan en el grafo, para ver si las mismas tienen alguna relación con lo dicho en la literatura respecto de la Nueva División Internacional del Trabajo \citep{frobel1978new}. Para ello se utilizaron técnicas de detección de comunidades. En particular, se utilizo el \textit{clustering de Louvain} \citep{blondel2008fast},donde se optimiza la modularidad de los clusters de forma \textit{greedy}. También se utilizó el método de detección de comunidades \textit{Walktrap} \citep{pons2005computing}, que se basa en la noción de que al realizar \textit{random walks} en el grafo, estos caminos tienden a quedarse atrapados en las secciones más densas del grafo, que corresponden a las comunidades. En ambas técnicas en número de comunidades encontradas es definido de forma automática por el algoritmo. 
 
@@ -516,7 +516,7 @@ $$
 P(RCA_i >1 \cap RCA_j >1) = \frac{\sum_c I(RCA_i >1) \cap I(RCA_j >1)}{N}
 $$
 
-Esto es, la probabilidad de que un país tenga para ambos productos ventajas comparativas relativas. Por lo tanto, $\phi_{ij}$ establece que dos productos son similares si son exportados por los mismos países. Dado que existen productos que son ubicuos, es decir que son exportados por la mayoría de los países, y son muchos quienes tienen un $RCA>1$, y que una métrica de distancia debe cumplir con el principio de simetría ($d(x,y)=d(y,x)$), esta función toma el mínimo de ambos valores. 
+Esto es, la probabilidad de que un país tenga para ambos productos ventajas comparativas reveladas. Por lo tanto, $\phi_{ij}$ establece que dos productos son similares si son exportados por los mismos países. Dado que existen productos que son ubicuos, es decir que son exportados por la mayoría de los países, y son muchos quienes tienen un $RCA>1$, y que una métrica de distancia debe cumplir con el principio de simetría ($d(x,y)=d(y,x)$), esta función toma el mínimo de ambos valores. 
 
 
 $\Phi$ es por lo tanto una matriz de distancias entre los productos. Esto resulta ideal para analizar los datos a través de la técnica de clustering \textit{K-medioids} \citep{kaufman1987clustering}. Este método construye K clusters de forma iterativa modificando el centro del cluster para optimizar la bondad de ajuste. A diferencia de K-means \citep{macqueen1967some} el centro de cada cluster se define en una observación existente en el dataset, y por lo tanto se puede recuperar a las mismas para caracterizar el cluster. En es caso del espacio de productos esto resulta de utilidad para comprender los grupos que se conforman. Finalmente, dado que se presentan los datos en un \textit{heatmap}, se decidió también utilizar la técnica de clustering jerárquico propuesta por \cite{ward1963hierarchical} para su ordenamiento.
@@ -549,32 +549,49 @@ Lo anterior no escapa al presente dominio sino que se refuerza, dado que la bús
 	\end{tabular}
 \end{table}
 
-En la figura \ref{fig:dist_40_4} se puede observar la tabla utilizada para caracterizar el cuarto componente en el modelo con $k=4$. Allí se observa que la mayoría de los componentes pertenecen al rubro textil, como pulloveres, remeras y pantalones. También se aparece el té, que no guarda coherencia con le resto del rubro.
+%En la figura \ref{fig:dist_40_4} se puede observar la tabla utilizada para caracterizar el cuarto componente en el modelo con $k=4$. Allí se observa que la mayoría de los componentes pertenecen al rubro textil, como pulloveres, remeras y pantalones. También se aparece el té, que no guarda coherencia con le resto del rubro.
 \info{revisar}
 
+%\begin{figure}
+%	\centering	
+%	\includegraphics[width=\linewidth]{dist_40_4}
+%	\caption{Distribución del Componente 4. K = 40}
+%	\label{fig:dist_40_4}
+%\end{figure}
+
+%La figura muestra la distribución siguiendo los grupos de \cite{lall2000technological}. Aquí se puede confirmar que la distribución se concentra fuertemente en la categoría 4, textiles. 
+
+%\begin{figure}
+%	\centering	
+%	\includegraphics[width=0.65\linewidth]{graficoLall_k40_comp4}
+%	\caption{Distribución del Componente 4. K = 40 según Lall}
+%	\label{fig:dist_40_4_lall}
+%\end{figure}
+
 \begin{figure}
-	\centering	
-	\includegraphics[width=\linewidth]{dist_40_4}
-	\caption{Distribución del Componente 4. K = 40}
-	\label{fig:dist_40_4}
+	\centering
+	\subfigure[Componente 1]{\label{fig:top_dist1}\includegraphics[width=\linewidth]{comp1k2}}
+	\subfigure[Componente 2]{\label{fig:top_dist1}\includegraphics[width=\linewidth]{comp2k2}}
+	\caption{Distribución de los componentes según Lall. K=2}
+	\label{fig:top_dist}
 \end{figure}
 
-La figura muestra la distribución siguiendo los grupos de \cite{lall2000technological}. Aquí se puede confirmar que la distribución se concentra fuertemente en la categoría 4, textiles. 
-
 \begin{figure}
-	\centering	
-	\includegraphics[width=0.65\linewidth]{graficoLall_k40_comp4}
-	\caption{Distribución del Componente 4. K = 40 según Lall}
-	\label{fig:dist_40_4_lall}
+	\centering
+	\subfigure[Componente 1]{\label{fig:lall_1}\includegraphics[width=0.45\linewidth]{graficoLall_k2_comp1}}
+	\subfigure[Componente 2]{\label{fig:lall_1}\includegraphics[width=0.45\linewidth]{graficoLall_k2_comp2}}
+	\caption{Distribución de los componentes según Lall. K=2}
+	\label{fig:lall}
 \end{figure}
+
 
 una de las problemáticas observadas en el análisis de los diferentes ejercicios es definir la granularidad correcta del objeto de estudio. Como se mencionó arriba, el parámetro $k$ define cuan específicos o genéricos son los componentes obtenidos. El problema surge en que en el análisis económico aquellos fenómenos que resulta de interés explorar pueden encontrarse a diferentes niveles de granularidad. Esto es, desde el punto de vista económico puede resultar de interés seguir el comportamiento de un componente que refiera a \textit{derivados de la soja}, pero para poder dar con el mismo, sería necesario un nivel de granularidad que puede implicar que otro concepto interesante como \textit{productos textiles} se multiplique a lo largo de varios componentes. 
 
-Por otro lado, la figura \ref{fig:componentes} muestra la distribución promedio de los componentes en los países, para varios valores de $k$. Se puede observar que el segundo componente siempre toma un valor elevado, por encima del 40\%, mientras que el resto de la distribución de distribuye de forma más o menos uniforme entre los restantes componentes. Esto se puede interpretar como que una proporción importante del comercio mundial se realiza en productos muy similares entre sí, en tanto los países que los exportan tienden a ser los mismos. Este \textit{componente gigante} del comercio no se fragmenta al aumentar $k$ dado que lo que sucede es que se subfragmenta el restante del comercio. 
+%Por otro lado, la figura \ref{fig:componentes} muestra la distribución promedio de los componentes en los países, para varios valores de $k$. Se puede observar que el segundo componente siempre toma un valor elevado, por encima del 40\%, mientras que el resto de la distribución de distribuye de forma más o menos uniforme entre los restantes componentes. Esto se puede interpretar como que una proporción importante del comercio mundial se realiza en productos muy similares entre sí, en tanto los países que los exportan tienden a ser los mismos. Este \textit{componente gigante} del comercio no se fragmenta al aumentar $k$ dado que lo que sucede es que se subfragmenta el restante del comercio. 
 
 \begin{figure}
 	\centering	
-	\includegraphics[width=0.65\linewidth]{componentes}
+	\includegraphics[width=0.65\linewidth]{componentes_all}
 	\caption{Distribución promedio de los componentes en los países, varios valores de k}
 	\label{fig:componentes}
 \end{figure}
@@ -584,174 +601,211 @@ Esta conclusiones encuentran su correlato en la bibliografía. \cite{Hidalgo2007
 Finalmente, para elaborar las etiquetas finales se consultó especialistas sectoriales. En la tabla \ref{Table: etiquetas} se pueden ver las etiquetas para el modelo con $k=40$. Allí se puede ver que el componente 2 es el mencionado \textit{componente gigante}, y se delimitan un componente para productos textiles (4), petróleo (5), circuitos eléctricos (8), derivados de la madera y papel (15), Soja (16), entre otros. También se ve que algunos componentes tienen una composición de la cual no es posible diferenciarlos a nivel conceptual (31, 32, 34 y 35).
 
 \info{la tabla completa al anexo. Aca un resumen de los comp. que aparecen en el analisis.}
-\begin{table}[] 
-	\begin{tabular}{ll}
-		\textbf{Componente} & \textbf{Descripción}                                   \\
-		1          & Meat and vegetables (fresh and processed)                       \\
-		2          & Industrial gigant component                      \\
-		3          & Process (med-tech)                                              \\
-		4          & Textile confections                                             \\
-		5          & Petroleum oils or bituminous minerals                           \\
-		6          & Minerals and primary products (uranium \& spices)               \\
-		7          & Metals, fuels and primary extraction products                   \\
-		8          & Electric microcircuits                                          \\
-		9          & Prim.prods.(cocoa)                                              \\
-		10         & Prim.prods.(coffee, bananas)                                    \\
-		11         & Electrical machinery, parts and components                      \\
-		12         & Metals, minerals and crude petroleum                            \\
-		13         & Textile confections and primary products                        \\
-		14         & Res.-based manuf.(agro) \& prim.prods. (sugars)                 \\
-		15         & Paper, wood and metals                                          \\
-		16         & Soya beens and oils                                             \\
-		17         & Footwear and textile confections                                \\
-		18         & Res.-based manuf.(other) and textiles                           \\
-		19         & Crustaceans, fish and wires                                     \\
-		20         & Primary products (coffee, bananas, sugar)                       \\
-		21         & Prim.prods.\&res.-based manuf.(agro) (fish fresh and processed) \\
-		22         & Prim.prods.\&res.-based manuf.                                  \\
-		23         & Gold and cotton                                                 \\
-		24         & Diamonds and metals                                             \\
-		25         & Food and beverages                                              \\
-		26         & Copper ores and products                                        \\
-		27         & Fish (fresh and processed)                                      \\
-		28         & Spirits and cigarretes                                          \\
-		29         & Copper ores and products                                        \\
-		30         & Textile confections and precious stones                         \\
-		31         & Animal and vegetable products                                   \\
-		32         & Animal and vegetable products                                   \\
-		33         & Textiles \& prim.prods.                                         \\
-		34         & Animal and vegetable products                                   \\
-		35         & Animal and vegetable products                                   \\
-		36         & Prim.prods. and minerals                                        \\
-		37         & Petroleum and gas                                               \\
-		38         & Alluminium and fish                                             \\
-		39         & Carpets                                                         \\
-		40         & Alcohol and aluminium                                          
-	\end{tabular}
-	\label{Table: etiquetas}
-	\caption{Etiquetas propuestas para k=40.}
-\end{table}
-
+%\begin{table}[] 
+%	\begin{tabular}{ll}
+%		\textbf{Componente} & \textbf{Descripción}                                   \\
+%		1          & Meat and vegetables (fresh and processed)                       \\
+%		2          & Industrial gigant component                      \\
+%		3          & Process (med-tech)                                              \\
+%		4          & Textile confections                                             \\
+%		5          & Petroleum oils or bituminous minerals                           \\
+%		6          & Minerals and primary products (uranium \& spices)               \\
+%		7          & Metals, fuels and primary extraction products                   \\
+%		8          & Electric microcircuits                                          \\
+%		9          & Prim.prods.(cocoa)                                              \\
+%		10         & Prim.prods.(coffee, bananas)                                    \\
+%		11         & Electrical machinery, parts and components                      \\
+%		12         & Metals, minerals and crude petroleum                            \\
+%		13         & Textile confections and primary products                        \\
+%		14         & Res.-based manuf.(agro) \& prim.prods. (sugars)                 \\
+%		15         & Paper, wood and metals                                          \\
+%		16         & Soya beens and oils                                             \\
+%		17         & Footwear and textile confections                                \\
+%		18         & Res.-based manuf.(other) and textiles                           \\
+%		19         & Crustaceans, fish and wires                                     \\
+%		20         & Primary products (coffee, bananas, sugar)                       \\
+%		21         & Prim.prods.\&res.-based manuf.(agro) (fish fresh and processed) \\
+%		22         & Prim.prods.\&res.-based manuf.                                  \\
+%		23         & Gold and cotton                                                 \\
+%		24         & Diamonds and metals                                             \\
+%		25         & Food and beverages                                              \\
+%		26         & Copper ores and products                                        \\
+%		27         & Fish (fresh and processed)                                      \\
+%		28         & Spirits and cigarretes                                          \\
+%		29         & Copper ores and products                                        \\
+%		30         & Textile confections and precious stones                         \\
+%		31         & Animal and vegetable products                                   \\
+%		32         & Animal and vegetable products                                   \\
+%		33         & Textiles \& prim.prods.                                         \\
+%		34         & Animal and vegetable products                                   \\
+%		35         & Animal and vegetable products                                   \\
+%		36         & Prim.prods. and minerals                                        \\
+%		37         & Petroleum and gas                                               \\
+%		38         & Alluminium and fish                                             \\
+%		39         & Carpets                                                         \\
+%		40         & Alcohol and aluminium                                          
+%	\end{tabular}
+%	\label{Table: etiquetas}
+%	\caption{Etiquetas propuestas para k=40.}
+%\end{table}
+%
 
 Con los componentes definidos, se puede analizar la composición de la canasta exportadora de cada país. Dado que en la definición del problema nuestra unidad es el par país\&año, eso significa que podemos comparar la evolución en la distribución de los componentes al interior de cada país
 
 La figura \ref{fig:serie_componentes} muestra la evolución de la composición de la canasta exportadora en algunos países sudamericanos, en términos de los componentes obtenidos. \ref{fig:serie_componentes_1} muestra la evolución de Argentina y Brasil. En ambos casos el denominado \textit{componente gigante} representa la mayoría de las exportaciones, aunque esto es particularmente cierto para el caso brasilero. Para la Argentina, se observa que en el período 2007-2008 y a partir del 2013, crece la importancia del componente 16, compuesto mayoritariamente por porotos de soja y derivados. Vale mencionar que el período 2007-2008 se caracterizó por un aumento acelerado del precio de la soja. A su vez, los volúmenes cosechados en 2013 de este producto superaron ampliamente la cosecha del año anterior \citep{ybran2016informe}. Un movimiento similar, aunque menos pronunciado se puede observar en Brasil. Por su parte, en \ref{fig:serie_componentes_2} se puede ver la evolución para Bolivia, Chile y Paraguay. La canasta exportadora de estos países no esta centrada en el \textit{componente gigante} 2. Para el caso boliviano, se divide principalmente entre los componentes 29, cobre, y 37, gas y petróleo. Estos resultados son coincidentes con lo conocido por la bibliografía especializada para dicho país \citep{auty2002sustaining, chavez2016can}. Por su parte, En Chile los dos componentes más destacados son el 29, cobre y el 22, \textit{productos primarios y manufacturas basadas en recursos naturales} si bien una porción importante de su producción también se encuentra dentro del componente 2. Para el caso Chileno, la bibliografía especializada indica una amplia predominancia de la producción de cobre y derivados \citep{moran2014multinational}, por lo que pareciera que el componente 22 incluye algunos productos relacionados a la producción de este mineral. Se puede decir que para este país el modelo no performa de forma enteramente satisfactoria, dado que idealmente se pretendería un único componente que englobe la producción de cobre y todos sus derivados. Finalmente, en el caso paraguayo, la producción que domina ampliamente sus exportaciones es la de soja y derivados. Este resultado es también coincidente con la literatura especializada \citep{fogel2005enclave}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50Arg_Bra}
-	\caption{Evolución de componentes. Argentina y Brasil. K=50. Exportaciones}
-	\label{fig:graficoldak50argbra}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_bol_chi_pa}
-	\caption{Evolución de componentes. Bolivia, Chile, Paraguay. K=50. Exportaciones}
-	\label{fig:graficoldak50bolchipa}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_us_mex_can}
-	\caption{Evolución de componentes. Estados Unidos, Canadá y Mexico. Exportaciones}
-	\label{fig:graficoldak50usmexcan}
-\end{figure}
-
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_ir_rus_sa_ven}
-	\caption{Evolución de componentes. Países petroleros. Exportaciones.}
-	\label{fig:graficoldak50irrussaven}
-\end{figure}
-
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_uk_fr_esp_ger}
-	\caption{Evolución de componentes. Países europeos. Exportaciones}
-	\label{fig:graficoldak50ukfrespger}
-\end{figure}
-
-
-
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\linewidth]{images/graficoLDA_k50_asia}
-	\caption{Evolución de componentes. Asia. Exportaciones}
-	\label{fig:graficoldak50asia}
-\end{figure}
-
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_africa_austral}
-	\caption{Evolución de componentes. África Austral. Exportaciones}
-	\label{fig:graficoldak50africaaustral}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_africa_noroccidental}
-	\caption{Evolución de componentes. África Noroccidental}
-	\label{fig:graficoldak50africanoroccidental}
-\end{figure}
-
+%
 %\begin{figure}
 %	\centering
-%	\subfigure[Argentina y Brasil]{\label{fig:serie_componentes_1}\includegraphics[width=\linewidth]{graficoLDA_k40_arg_bra}}
-%	\subfigure[Bolivia, Chile y Paraguay]{\label{fig:serie_componentes_2}\includegraphics[width=\linewidth]{graficoLDA_k40_bol_chi_pa}}
-%	\caption{Evolución componentes en Sudamérica. Exportaciones. 1997-2017}
-%	\label{fig:serie_componentes}
-%\end{figure} 
+%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50Arg_Bra}
+%	\caption{Evolución de componentes. Argentina y Brasil. K=50. Exportaciones}
+%	\label{fig:graficoldak50argbra}
+%\end{figure}
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_bol_chi_pa}
+%	\caption{Evolución de componentes. Bolivia, Chile, Paraguay. K=50. Exportaciones}
+%	\label{fig:graficoldak50bolchipa}
+%\end{figure}
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_us_mex_can}
+%	\caption{Evolución de componentes. Estados Unidos, Canadá y Mexico. Exportaciones}
+%	\label{fig:graficoldak50usmexcan}
+%\end{figure}
+%
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_ir_rus_sa_ven}
+%	\caption{Evolución de componentes. Países petroleros. Exportaciones.}
+%	\label{fig:graficoldak50irrussaven}
+%\end{figure}
+%
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_uk_fr_esp_ger}
+%	\caption{Evolución de componentes. Países europeos. Exportaciones}
+%	\label{fig:graficoldak50ukfrespger}
+%\end{figure}
+%
+%
+%
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{images/graficoLDA_k50_asia}
+%	\caption{Evolución de componentes. Asia. Exportaciones}
+%	\label{fig:graficoldak50asia}
+%\end{figure}
+%
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_africa_austral}
+%	\caption{Evolución de componentes. África Austral. Exportaciones}
+%	\label{fig:graficoldak50africaaustral}
+%\end{figure}
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_africa_noroccidental}
+%	\caption{Evolución de componentes. África Noroccidental}
+%	\label{fig:graficoldak50africanoroccidental}
+%\end{figure}
+
 
 \subsection{Grafo Bipartito}
 
 \subsubsection{Proyección a nivel países}
 
-Como se mencionó en la metodología, se realizó una proyección del grafo bipartito para reconstruir un grafo simple ponderado de la similitud de la estructura productiva de los países. sobre la base de esto, se realizó un análisis de comunidades. En la figura \ref{fig:mapas_proyeccion} se puede observar las comunidades detectadas para el año 2016. En \ref{fig:mapas_proyeccion_1} se puede observar las comunidades obtenidas mediante la técnica de \textit{Louvain}. Con este método se encuentras tres comunidades. La primer comunidad contiene a China, India, varios países del Sudeste asiático, y algunos países de África y el Caribe. La segunda comunidad contiene al continente sudamericano, Australia, Nueva Zelanda, la mayoría del continente africano, Rusia y oriente medio. Finalmente, el tercer cluster contiene a América del norte, Europa occidental, con excepción de Portugal, Japón, Corea del Sur, Malasia y Tailandia. Estos grupos pueden ser caracterizados respectivamente como:
+Como se mencionó en la metodología, se realizó una proyección del grafo bipartito para reconstruir un grafo simple ponderado de la similitud de la estructura productiva de los países. En esta red, por lo tanto, la cercanía entre dos países esta determinada por cuán similares son sus canastas exportadoras. Sobre la base de esto, se realizó un análisis de comunidades. El objetivo de este ejercicio es encontrar nueva evidencia empírica respecto de un debate difundido en la literatura económica sobre la Nueva División Internacional del trabajo \cite{starosta2016revisiting}. Por ello, en la figura \ref{fig:mapas_proyeccion_louvain} se representan las comunidades resultantes en mapas de diferentes épocas. La figura \ref{fig:mapas_proyeccion_1} muestra el resultado para la proyección en 1966. en este período el mundo se encuentra fundamentalmente dividido en dos clusters:
 
-\begin{enumerate}
-	\item Productores de industria de baja complejidad, textiles, etc.
-	\item Productores de materias primas.
-	\item Productores de industria de alta complejidad.
-\end{enumerate}
+\begin{itemize}
+	\item La primera comunidad esta constituida por Estados Unidos, Europa occidental y algunso países del sudeste asiático, como Japón, China y Corea del Sur. 
+	\item La segunda comunidad esta compuesta por prácticamente la totalidad del resto del planeta, con excepción de unos pocos países de Centroamérica. 
+\end{itemize}
 
-En la figura \ref{fig:mapas_proyeccion_2} se presentan los grupos obtenidas utilizando la detección de comunidades de \textit{Walktrap}. Allí lo primero que destaca es que los países petroleros, como Rusia y Arabia Saudita pasaron al tercer cluster. Es decir que esta comunidad sería la de países de industria de alta complejidad y petroleros. Por su parte India pasa a formar parte del cluster de productores de materias primas, y Nueva Zelanda al de países productores de industria de alta complejidad. Una particularidad es la República Centroafricana, que se encuentra en el cluster de productos de alta complejidad. Esto último se explica por el hecho de que en 2012 comienza una guerra civil en dicho país que implica un comercio internacional muy bajo y volátil, y en particular por algún motivo para dicho año este país cuenta entre sus productos más exportados, tanques de guerra y demás vehículos de combate.
+Esta división se podría caracterizar como la diferenciación entre países productores de mercancías industriales de diverso tipo, respecto de países productores de otras mercancías, de origen agropecuario o minero. Esta imagen de un mundo polarizado es coincidente con la bibliografía respecto de la División Internacional del Trabajo clásica, en la cual el mundo se caracterizaba como dividido entre \textit{centro} y \textit{periferia}, donde los primeros son productores de mercancías industriales, mientras que los segundo son productores de materias primas \citep{coffey1996newer,hutchinson2004globalisation}. 
 
-Los países petroleros tienen una especificidad particular y les correspondería una comunidad propia, y posiblemente dado que son pocos países ninguno de los métodos utilizados logra dar con esta especificidad. Independientemente de estas particularidades, los resultados obtenidos parecieran confirmar la literatura respecto al rol de los países en el mercado mundial en los últimos años \citep{frobel1978new}.
+En la figura \ref{fig:mapas_proyeccion_2} esta imagen empieza a cambiar. Si bien existe aún un dos clusters que coincidentes con los caracterizados para el decenio anterior, surge una nueva comunidad, de países del continente asiático como China e India y Pakistán, entre otros, junto con países africanos y de medio oriente con un cierto grado de desarrollo como Turquía Marruecos y Egipto, y algunos países americanos como México y Colombia. Este cluster, disperso geográficamente, puede caracterizarse como la comunidad de países cuya producción es industrial, de baja complejidad. Esta comunidad es coincidente en tiempo y espacio con lo propuesto por la teoría de la Nueva División Internacional del trabajo, según la cual el fenómeno que ocurre durante este decenio es la fragmentación del proceso productivo y la transferencia de las etapas simples de la producción industrial a estos países, en busca de la mano de obra disponible \citep{frobel1978new, haggard1986newly}. A partir de este punto, lo que se observa para los siguientes decenios es que se conserva la estructura de países productores de mercancías industriales de alta complejidad, baja complejidad y de materias primas.
+En la figura \ref{fig:mapas_proyeccion_3} se puede observar la distribución de las comunidades en el año 1986. Los cambios en este punto no son de tipo \textit{estructural}, sino que implican movimientos entre las comunidades anteriormente descriptas. En la década de los 80' el principal cambio se observa en América, en dónde tanto Canadá como Brasil se incorporan en la primera comunidad, mientras que México parecería complejizar su producción industrial \citep{cardoso2009brief, feenstra1997foreign}.
+En la figura \ref{fig:mapas_proyeccion_4} se incorpora la información respecto del comercio de la ex Unión Soviética, que se incorpora al mercado mundial como productora de materias primas en el caso de Rusia y los países de Asia central y como exportadora de productos industriales en el caso de los países de Europa oriental. A su vez, se observa como nuevos países del Sudeste asiático se incorporan a la comunidad de países productores de mercancías de baja complejidad, cómo en el caso de Indonesia, Laos, Vietnam, mientras que países como Corea del Sur, Taiwan y Malasia complejizan su producción, este proceso es reconocido en la literatura como la \textit{segunda ola} de los tigres asiáticos \citep{rodrik1995getting}.
+Finalmente, en la figura \ref{fig:mapas_proyeccion_5} se puede observar la configuración de las comunidades en el año 2016. Allí se observa un proceso de reprimarización de Latinoamérica, dado que por primera vez desde 1966 en subcontinente en pleno se encuentra en la comunidad de productores de materias primas \citep{bolinaga2015consenso,svampa2015commodities}. Por su parte, también se observa como continúa la complejización de la producción en el sudeste asiático, con la incorporación de China, Tailandia y Filipinas a la primera comunidad \citep{suehiro2008catch}. 
+
 
 \begin{figure}
 	\centering
-	\subfigure[Cluster Louvain]{\label{fig:mapas_proyeccion_1}\includegraphics[width=\linewidth]{mapa_projection_louvain}}
-	\subfigure[Cluster Walktrap]{\label{fig:mapas_proyeccion_2}\includegraphics[width=\linewidth]{mapa_projection_walktrap}}
-	\caption{Proyección países. Exportaciones 2016}
-	\label{fig:mapas_proyeccion}
+	\subfigure[1966]{\label{fig:mapas_proyeccion_1}\includegraphics[width=0.45\linewidth]{mapa_projection_louvain_lp_1966}}
+	\subfigure[1976]{\label{fig:mapas_proyeccion_2}\includegraphics[width=0.45\linewidth]{mapa_projection_louvain_lp_1976}}
+	\subfigure[1986]{\label{fig:mapas_proyeccion_3}\includegraphics[width=0.45\linewidth]{mapa_projection_louvain_lp_1986}}
+	\subfigure[1996]{\label{fig:mapas_proyeccion_4}\includegraphics[width=0.45\linewidth]{mapa_projection_louvain_lp_1996}}
+	\subfigure[2016]{\label{fig:mapas_proyeccion_5}\includegraphics[width=0.5\linewidth]{mapa_projection_louvain_lp_2016}}
+	\caption{Proyección a países del grafo bipartito. Clustering Louvain. Exportaciones}
+	\label{fig:mapas_proyeccion_louvain}
 \end{figure}
 
-Para comparar los resultados obtenidos, en la figura \ref{fig:mapa_comercio_agregado} se muestra los clusters de Louvain para el comercio agregado a nivel países (ver capítulo \ref{sec:agregado}). La imagen que se obtiene de las comunidades es muy distinta:
+Por comparación y de forma complementaria a los resultados anteriores, en la figura \ref{fig:mapas_comercio} se presentan los resultados de la misma metodología, aplicada sobre los datos de comercio agregado entre países del capítulo dos. En primer lugar lo que destaca es la mayor cantidad de comunidades, así como el número cambiante en el tiempo. Esto puede interpretarse como que las relaciones comerciales, bilaterales o multilaterales, son más inestables en el tiempo que el rol que los países juegan en el mercado mundial en tanto productores de cierto tipo específico de productos. En otros términos, con quién se comercia es una forma concreta circunstancial del verdadero contenido puesto en juego en dicho comercio, que es el rol de los países en el mercado mundial \citep{starosta2016revisiting}. En segundo lugar, lo que se observa es que las distancias geográficas parecieran tener un rol más relevante en el caso de las comunidades comerciales, respecto de las comunidades según estructura productiva. Esto es esperable, dado los costos involucrados en el transporte de mercancías \citep{Head2014}. En todas las figuras, con excepción de \ref{fig:mapas_comercio_2}, existe una comunidad de América. A su vez, en todas las figuras hasta 2016 se puede observar el efecto de la Unión Soviética sobre los vínculos comerciales \footnote{Vale recordar en este punto que, mientras los datos hasta el 2000 provienen de \cite{Gleditsch2002}, los datos de 2016 fueron elaborados a partir de la base de datos de  \textit{comtrade}.} en la actualidad, representada en la figura \ref{fig:mapas_comercio_5}, lo que se observa es una comunidad comercial de Europa y Asia Central, con excepción del Reino Unido. También se observa una comunidad en África austral, central y oriental, mientras que África occidental constituye una comunidad propia, a la cual pertenecen también parte del sudeste asiático y Oceanía.
 
-\begin{itemize}
-	\item La primera comunidad esta compuesta por el contiente americano y Mongolia.
-	\item La segunda comunidad esta compuesta por medio oriente, excepto Israel, y parte de África del norte.
-	\item A la tercer comunidad pertenecen Europa, excepto el Reino Unido, Bélgica y Portugual.
-	\item El cuarto cluster se corresponde con el sudeste asiático y África noroccidental.
-	\item La quinta comunidad se corresponde con el África austral.
-	\item Aunque difícil de reconocer en el mapa, el último cluster esta compuesto por Palau, Andorra, Guam y Micronesia.
-\end{itemize}
-
-Aquí se pueden apreciar los regionalismos comerciales, y el rol que la distancia geográfica juega en el comercio internacional \citep{Head2014}. De las figuras \ref{fig:mapas_proyeccion} y \ref{fig:mapa_comercio_agregado} se puede concluir que las distintas representaciones de la información del comercio internacional, según socios comerciales o similitud en la estructura productiva, logran dar con distintas expresiones del sistema económico mundial, siendo todas estas parte de un mismo fenómeno.
 
 \begin{figure}
-	\centering	
-	\includegraphics[width=\linewidth]{mapa_louvain}
-	\caption{Cluster Louvain. Comercio agregado. Exportaciones 2016}
-	\label{fig:mapa_comercio_agregado}
+	\centering
+	\subfigure[1966]{\label{fig:mapas_comercio_1}\includegraphics[width=0.45\linewidth]{mapa_louvain_lp_1966}}
+	\subfigure[1976]{\label{fig:mapas_comercio_2}\includegraphics[width=0.45\linewidth]{mapa_louvain_lp_1976}}
+	\subfigure[1986]{\label{fig:mapas_comercio_3}\includegraphics[width=0.45\linewidth]{mapa_louvain_lp_1986}}
+	\subfigure[1996]{\label{fig:mapas_comercio_4}\includegraphics[width=0.45\linewidth]{mapa_louvain_lp_1996}}
+	\subfigure[2016]{\label{fig:mapas_comercio_5}\includegraphics[width=0.5\linewidth]{mapa_louvain_2016}}
+	\caption{Grafo a nivel países. Clustering Louvain. Exportaciones}
+	\label{fig:mapas_comercio}
 \end{figure}
 
-\subsubsection{Espacio de productos}
+
+
+
+
+%En la figura \ref{fig:mapas_proyeccion} se puede observar las comunidades detectadas para el año 2016. En \ref{fig:mapas_proyeccion_1} se puede observar las comunidades obtenidas mediante la técnica de \textit{Louvain}. Con este método se encuentras tres comunidades. La primer comunidad contiene a China, India, varios países del Sudeste asiático, y algunos países de África y el Caribe. La segunda comunidad contiene al continente sudamericano, Australia, Nueva Zelanda, la mayoría del continente africano, Rusia y oriente medio. Finalmente, el tercer cluster contiene a América del norte, Europa occidental, con excepción de Portugal, Japón, Corea del Sur, Malasia y Tailandia. Estos grupos pueden ser caracterizados respectivamente como:
+%
+%\begin{enumerate}
+%	\item Productores de industria de baja complejidad, textiles, etc.
+%	\item Productores de materias primas.
+%	\item Productores de industria de alta complejidad.
+%\end{enumerate}
+%
+%En la figura \ref{fig:mapas_proyeccion_2} se presentan los grupos obtenidas utilizando la detección de comunidades de \textit{Walktrap}. Allí lo primero que destaca es que los países petroleros, como Rusia y Arabia Saudita pasaron al tercer cluster. Es decir que esta comunidad sería la de países de industria de alta complejidad y petroleros. Por su parte India pasa a formar parte del cluster de productores de materias primas, y Nueva Zelanda al de países productores de industria de alta complejidad. Una particularidad es la República Centroafricana, que se encuentra en el cluster de productos de alta complejidad. Esto último se explica por el hecho de que en 2012 comienza una guerra civil en dicho país que implica un comercio internacional muy bajo y volátil, y en particular por algún motivo para dicho año este país cuenta entre sus productos más exportados, tanques de guerra y demás vehículos de combate.
+%
+%Los países petroleros tienen una especificidad particular y les correspondería una comunidad propia, y posiblemente dado que son pocos países ninguno de los métodos utilizados logra dar con esta especificidad. Independientemente de estas particularidades, los resultados obtenidos parecieran confirmar la literatura respecto al rol de los países en el mercado mundial en los últimos años \citep{frobel1978new}.
+
+%\begin{figure}
+%	\centering
+%	\subfigure[Cluster Louvain]{\label{fig:mapas_proyeccion_1}\includegraphics[width=\linewidth]{mapa_projection_louvain}}
+%	\subfigure[Cluster Walktrap]{\label{fig:mapas_proyeccion_2}\includegraphics[width=\linewidth]{mapa_projection_walktrap}}
+%	\caption{Proyección países. Exportaciones 2016}
+%	\label{fig:mapas_proyeccion}
+%\end{figure}
+
+%Para comparar los resultados obtenidos, en la figura \ref{fig:mapa_comercio_agregado} se muestra los clusters de Louvain para el comercio agregado a nivel países (ver capítulo \ref{sec:agregado}). La imagen que se obtiene de las comunidades es muy distinta:
+%
+%\begin{itemize}
+%	\item La primera comunidad esta compuesta por el contiente americano y Mongolia.
+%	\item La segunda comunidad esta compuesta por medio oriente, excepto Israel, y parte de África del norte.
+%	\item A la tercer comunidad pertenecen Europa, excepto el Reino Unido, Bélgica y Portugual.
+%	\item El cuarto cluster se corresponde con el sudeste asiático y África noroccidental.
+%	\item La quinta comunidad se corresponde con el África austral.
+%	\item Aunque difícil de reconocer en el mapa, el último cluster esta compuesto por Palau, Andorra, Guam y Micronesia.
+%\end{itemize}
+%
+%Aquí se pueden apreciar los regionalismos comerciales, y el rol que la distancia geográfica juega en el comercio internacional \citep{Head2014}. De las figuras \ref{fig:mapas_proyeccion} y \ref{fig:mapa_comercio_agregado} se puede concluir que las distintas representaciones de la información del comercio internacional, según socios comerciales o similitud en la estructura productiva, logran dar con distintas expresiones del sistema económico mundial, siendo todas estas parte de un mismo fenómeno.
+%
+%\begin{figure}
+%	\centering	
+%	\includegraphics[width=\linewidth]{mapa_louvain}
+%	\caption{Cluster Louvain. Comercio agregado. Exportaciones 2016}
+%	\label{fig:mapa_comercio_agregado}
+%\end{figure}
+
+\subsubsection{Espacio de productos} \label{sec:espacio_productos}
 
 Como se mencionó en la metodología, para analizar las relaciones entre los productos se toma como base a \cite{Hidalgo2009} y su concepto de \textit{Espacio de productos}. el mismo se define a partir de un concepto de distancia, definido como \textit{proximidad} analizado en la sección correspondiente de la metodología. Esto se aplico sobre el RCA promedio del período 1996-2017, para SITC desagregado a 4 dígitos. Para realizar una primera caracterización del espacio de productos, en \ref{fig:proximity} se muestra el mapa de calor. En \ref{fig:proximity_1} los productos se encuentran ordenados alfabéticamente según su nomenclador SITC. En \ref{fig:proximity_2} la matriz se ordena a partir de realizar un clustering jerárquico. Dado que algunos pares de productos tienen una proximidad igual a cero, al calcular la matriz de distancias estos pares tienen distancia infinita, por lo que la misma se reemplaza por un valor alto fuera de rango.
 
@@ -804,7 +858,7 @@ Con esta matriz de proximidad modificada se reconstruyó el grafo. En la figura 
 
 \begin{figure}
 	\centering	
-	\includegraphics[width=\linewidth]{pam2_gigant}
+	\includegraphics[width=0.7\linewidth]{pam2_gigant}
 	\caption{Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 2 medioides}
 	\label{fig:clustering2}
 \end{figure}
@@ -830,7 +884,7 @@ En la figura \ref{fig:clustering10} podemos observar qué sucede con 10 medioide
 
 \begin{figure}
 	\centering	
-	\includegraphics[width=\linewidth]{pam10_gigant}
+	\includegraphics[width=0.7\linewidth]{pam10_gigant}
 	\caption{Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}
 	\label{fig:clustering10}
 \end{figure}
@@ -872,7 +926,7 @@ En la figura \ref{fig:clustering50} se analiza el caso de 50 medioides. La descr
 
 \subsection{Conclusiones}
 
-
+\info{PENDIENTE}
 
 
 

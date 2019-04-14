@@ -149,7 +149,10 @@
 
 \import{chapters/}{chapter_4/chapter4}
 
-\appendix \label{append}
+%\appendix 
+\chapter*{Anexo}\label{append}
+\addcontentsline{toc}{section}{Anexo}
+\renewcommand{\thesubsection}{\Alph{subsection}}
 
 \import{chapters/}{Anexo/anexo}
 

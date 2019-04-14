@@ -1,4 +1,4 @@
-\begin{thebibliography}{59}
+\begin{thebibliography}{69}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -70,6 +70,13 @@ Vincent~D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre.
 \newblock \emph{Journal of statistical mechanics: theory and experiment},
   2008\penalty0 (10):\penalty0 P10008, 2008.
 
+\bibitem[Bolinaga \& Slipak(2015)Bolinaga and Slipak]{bolinaga2015consenso}
+Luciano Bolinaga and Ariel Slipak.
+\newblock {El Consenso de Beijing y la reprimarizaci{\'{o}}n productiva de
+  Am{\'{e}}rica Latina: el caso argentino}.
+\newblock \emph{Problemas del desarrollo}, 46\penalty0 (183):\penalty0 33--58,
+  2015.
+
 \bibitem[Caldarelli et~al.(2012)Caldarelli, Cristelli, Gabrielli, Pietronero,
   Scala, and Tacchella]{caldarelli2012network}
 Guido Caldarelli, Matthieu Cristelli, Andrea Gabrielli, Luciano Pietronero,
@@ -77,6 +84,13 @@ Guido Caldarelli, Matthieu Cristelli, Andrea Gabrielli, Luciano Pietronero,
 \newblock {A network analysis of countries' export flows: firm grounds for the
   building blocks of the economy}.
 \newblock \emph{PloS one}, 7\penalty0 (10):\penalty0 e47278, 2012.
+
+\bibitem[Cardoso(2009)]{cardoso2009brief}
+Eliana Cardoso.
+\newblock {A brief history of trade policies in Brazil: From ISI, export
+  promotion and import liberalization to multilateral and regional agreements}.
+\newblock In \emph{conference on “The Political Economy and Trade Policy in
+  the BRICS”, March}, pages 27--28. Citeseer, 2009.
 
 \bibitem[Carrillo \& Hualde(1998)Carrillo and Hualde]{carrillo1998third}
 Jorge Carrillo and Alfredo Hualde.
@@ -113,6 +127,11 @@ Neil~M Coe, Martin Hess, Henry Wai-chung Yeung, Peter Dicken, and Jeffrey
 \newblock \emph{Transactions of the Institute of British geographers},
   29\penalty0 (4):\penalty0 468--484, 2004.
 
+\bibitem[Coffey(1996)]{coffey1996newer}
+William~J Coffey.
+\newblock {The ‘newer'international division of labour}.
+\newblock \emph{The global economy in transition}, pages 40--61, 1996.
+
 \bibitem[Csardi \& Nepusz(2006)Csardi and Nepusz]{Csardi2006}
 Gabor Csardi and Tamas Nepusz.
 \newblock {The igraph software package for complex network research}, 2006.
@@ -143,6 +162,13 @@ Ying Fan, Suting Ren, Hongbo Cai, and Xuefeng Cui.
 \newblock ISSN 02649993.
 \newblock \doi{10.1016/j.econmod.2014.02.027}.
 \newblock URL \url{http://dx.doi.org/10.1016/j.econmod.2014.02.027}.
+
+\bibitem[Feenstra \& Hanson(1997)Feenstra and Hanson]{feenstra1997foreign}
+Robert~C Feenstra and Gordon~H Hanson.
+\newblock {Foreign direct investment and relative wages: Evidence from Mexico's
+  maquiladoras}.
+\newblock \emph{Journal of international economics}, 42\penalty0
+  (3-4):\penalty0 371--393, 1997.
 
 \bibitem[Ferreira \& Others(2016)Ferreira and Others]{ferreira2016topology}
 M~Ennes Ferreira and Others.
@@ -197,6 +223,11 @@ Jun Guan, Xiaoyu Xu, Shan Wu, and Lizhi Xing.
 \newblock \doi{10.1371/journal.pone.0197575}.
 \newblock URL \url{https://doi.org/10.1371/journal.pone.0197575}.
 
+\bibitem[Haggard(1986)]{haggard1986newly}
+Stephan Haggard.
+\newblock {The newly industrializing countries in the international system}.
+\newblock \emph{World Politics}, 38\penalty0 (2):\penalty0 343--370, 1986.
+
 \bibitem[Haveman \& Hummels(2004)Haveman and Hummels]{haveman2004alternative}
 Jon Haveman and David Hummels.
 \newblock {Alternative hypotheses and the volume of trade: the gravity equation
@@ -249,6 +280,12 @@ John Humphrey and Hubert Schmitz.
 \newblock \emph{{Governance and upgrading: linking industrial cluster and
   global value chain research}}, volume 120.
 \newblock Institute of Development Studies Brighton, 2000.
+
+\bibitem[Hutchinson \& Others(2004)Hutchinson and
+  Others]{hutchinson2004globalisation}
+Francis Hutchinson and Others.
+\newblock {Globalisation and the'Newer'international division of labour}.
+\newblock 2004.
 
 \bibitem[Kaufman \& Rousseeuw(1987)Kaufman and
   Rousseeuw]{kaufman1987clustering}
@@ -325,15 +362,39 @@ David Ricardo.
   tributaci{\'{o}}n}}.
 \newblock Claridad, Buenos Aires, 2007.
 
+\bibitem[Rodrik(1995)]{rodrik1995getting}
+Dani Rodrik.
+\newblock {Getting interventions right: how South Korea and Taiwan grew rich}.
+\newblock \emph{Economic policy}, 10\penalty0 (20):\penalty0 53--107, 1995.
+
 \bibitem[Slowikowski(2017)]{Slowikowski2017}
 Kamil Slowikowski.
 \newblock {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}, 2017.
+
+\bibitem[Starosta(2016)]{starosta2016revisiting}
+Guido Starosta.
+\newblock {Revisiting the new international division of labour thesis}.
+\newblock In \emph{The new international division of labour}, pages 79--103.
+  Springer, 2016.
 
 \bibitem[Straka et~al.(2017)Straka, Caldarelli, and Saracco]{straka2017grand}
 Mika~J Straka, Guido Caldarelli, and Fabio Saracco.
 \newblock {Grand canonical validation of the bipartite international trade
   network}.
 \newblock \emph{Physical Review E}, 96\penalty0 (2):\penalty0 22306, 2017.
+
+\bibitem[Suehiro(2008)]{suehiro2008catch}
+Akira Suehiro.
+\newblock \emph{{Catch-up industrialization: The trajectory and prospects of
+  East Asian economies}}.
+\newblock NUS Press, 2008.
+
+\bibitem[Svampa(2015)]{svampa2015commodities}
+Maristella Svampa.
+\newblock {Commodities consensus: Neoextractivism and enclosure of the commons
+  in Latin America}.
+\newblock \emph{South Atlantic Quarterly}, 114\penalty0 (1):\penalty0 65--82,
+  2015.
 
 \bibitem[van Rossum(1995)]{CS-R9526}
 G~van Rossum.

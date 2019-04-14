@@ -30,13 +30,13 @@
 \contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{37}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}Resultados}{39}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{39}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{44}{subsection.3.4.2}
-\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{44}{section*.18}
-\contentsline {subsubsection}{Espacio de productos}{53}{figure.3.22}
-\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{61}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{62}{chapter.4}
-\contentsline {part}{Ap\'{e}ndice}{63}{part*.19}
-\contentsline {section}{\numberline {.1}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{64}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{64}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}Tabla de referencia: Descripci\IeC {\'o}n Usos}{66}{section.Alph0.3}
-\contentsline {section}{\numberline {.4}Medioides PAM clustering. K=50}{67}{section.Alph0.4}
+\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{43}{subsection.3.4.2}
+\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{43}{section*.18}
+\contentsline {subsubsection}{Espacio de productos}{47}{figure.3.14}
+\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{50}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{52}{chapter.4}
+\contentsline {section}{Anexo}{53}{chapter*.20}
+\contentsline {subsection}{\numberline {A}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{53}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {B}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{53}{subsection.4.0.2}
+\contentsline {subsection}{\numberline {C}Tabla de referencia: Descripci\IeC {\'o}n Usos}{55}{subsection.4.0.3}
+\contentsline {subsection}{\numberline {D}Medioides PAM clustering. K=50}{56}{subsection.4.0.4}

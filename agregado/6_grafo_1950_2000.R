@@ -656,7 +656,7 @@ plot_map <- function(nodos,year,method){
     theme_void()+
     theme(legend.position = 'bottom',
           plot.margin = unit(rep(-1.25,4),"lines"),
-          text = element_text(size = 20))+
+          text = element_text(size = 40))+
     scale_fill_discrete(glue::glue('Comunidades'))+
     labs(x=NULL, y=NULL, title=NULL)
 }

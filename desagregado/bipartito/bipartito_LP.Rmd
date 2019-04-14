@@ -22,9 +22,7 @@ countrycode_data <- codelist %>% select(country.name.en, cldr.short.es_ar, cldr.
 RCA <- read_delim("results/RCA_LP.txt",delim = ",")
 ```
 
-```{r}
-RCA %>% glimpse()
-```
+
 
 
 Defino como nodos las conexiones donde RCA>1
@@ -179,18 +177,18 @@ plot_map <- function(nodos,yr,method){
     theme_void()+
     theme(legend.position = 'bottom',
          plot.margin = unit(rep(-1.25,4),"lines"),
-         text = element_text(size = 20))+
+         text = element_text(size = 40))+
     scale_fill_discrete(glue::glue('Comunidades'))+
     labs(x=NULL, y=NULL, title=NULL)
 }
 ```
 
 ```{r}
-
 plot_map(nodos = nodos,yr = 2016, method = 'louvain')
-
-# ggsave("results/mapa_projection_louvain_lp.png", width = 16, height = 9, dpi = 300)
+ggsave("results/mapa_projection_louvain_lp_2016.png", width = 16, height = 9, dpi = 300)
 ```
+
+
 ```{r}
 plot_map(nodos = nodos,yr = 2016, method = 'walktrap')
 #ggsave("results/mapa_projection_walktrap_lp.png", width = 16, height = 9, dpi = 300)

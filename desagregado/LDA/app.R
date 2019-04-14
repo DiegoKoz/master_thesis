@@ -11,16 +11,20 @@ library(readxl)
 library(DT)
 library(scales)
 library(lubridate)
-library(plotly)
+library(ggrepel)
+library(magrittr)
+# library(plotly)
 #### datos #####
 ### Load ###
 
+#clasificacion <-read_xlsx("names/Comtrade_Commodity_Classifications.xlsx")
+clasificacion <-read_xlsx("names/classifications_hidalgo.xlsx", sheet = 'sitc_product_id')
 
-clasificacion <-read_xlsx("names/UN Comtrade Commodity Classifications.xlsx")
-clasificacion_lall <-read_xlsx("names/Correspondencia SITCR3a3-d--Lall.xlsx")
+
+clasificacion_lall <-read_xlsx("names/Corr_sitc_lall.xlsx")
 codigos_paises <- read_csv("names/codigos_paises.csv")
 
-etiquetas_componentes <- read_csv("names/Etiquetas tópicos LDA - ETIQUETAS.csv")
+etiquetas_componentes <- read_csv("names/LDA_ETIQUETAS.csv")
 
 resultados <- list.files("results/")
 
@@ -29,38 +33,70 @@ for (resultado in resultados) {
   
 }
 
+loess_adj_max <- function(data){loess(prop ~ year, span = 0.8,data = data) %>% predict(newdata = max(data$year))}
+loess_adj_min <- function(data){loess(prop ~ year, span = 0.8,data = data) %>% predict(newdata = min(data$year))}
 #### funciones y preprocesamiento ####
 
-graficar <- function(df,paises, download= F) {
-
-  g <- df%>%
+graficar <- function(df,paises, download= F, smooth=F) {
+  
+  print(smooth)
+  
+  gdata <- df%>%
     filter(reporter %in% paises) %>%
     group_by(rep_iso, Componente) %>% 
     mutate(prop = case_when(any(prop>0.05)~prop,
-                                TRUE~NA_real_)) %>% 
-    ungroup() %>% #tmp
-    ggplot(., aes(year,prop, color = Componente))+
-    geom_line(alpha=0.7, size=1)+
-    geom_point(size=1)+
+                            TRUE~NA_real_)) %>% 
+    ungroup() 
+  g <-   ggplot(gdata, aes(year,prop, color = Componente,label = Componente))+
     theme_minimal()+
     theme(legend.position = "none")+
     facet_wrap(reporter~., ncol = 1, scales = "free")+
     scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
-    geom_dl(aes(label = Componente), method = list(dl.trans(x = x + .2), "last.points")) +
-    geom_dl(aes(label = Componente), method = list(dl.trans(x = x - .2), "first.points"))
+    scale_x_continuous(breaks = pretty_breaks(n = 6))
+  
+  if (smooth) {
+    g <- g + geom_smooth(se=F, alpha=0.7, size=1,method = 'loess')
     
+    labelInfo <- gdata %>%
+      filter(!is.na(prop)) %>% 
+      group_by(reporter,Componente) %>%
+      nest() %>% 
+      mutate(predAtMax = unlist(map(data,loess_adj_max)),
+             predAtMin = unlist(map(data,loess_adj_min)),
+             max = unlist(map(data,function(df){max(df$year)})),
+             min = unlist(map(data,function(df){min(df$year)}))) %>% 
+      select(reporter,Componente,predAtMax,predAtMin,max,min)
+    
+    
+    
+    g <- g + geom_text_repel(data = labelInfo, 
+                             aes(x = max, y = predAtMax, label = Componente, color = Componente))+ 
+      geom_text_repel(data = labelInfo,
+                      aes(x = min, y = predAtMin, label = Componente, color = Componente),
+                      nudge_y = 0.05) 
+    
+  }
+  if (!smooth) {
+    g <- g+  geom_line(alpha=0.7, size=1)+
+      geom_point(size=1)+
+      geom_text_repel(data = subset(gdata, year == max(year)),nudge_y = 0.05)+
+      geom_text_repel(data = subset(gdata, year == min(year)),nudge_y = 0.05)
+    
+    # geom_dl(aes(label = Componente), method="smart.grid", inherit.aes=T)
+    
+  }
   if (download) {
     g <- g+
       theme(text = element_text(size=15),
             axis.text.x = element_text(size = 15))+
-      scale_x_continuous(breaks = seq(1996,2017,4))+
+      #scale_x_continuous(breaks = seq(1996,2017,4))+
       labs(x="Año", y= "Proporción")
-      # labs(caption="Componentes con peso mayor al 5%")
+    # labs(caption="Componentes con peso mayor al 5%")
   }
   if (!download) {
     g <- g + 
-      scale_x_continuous(limits = c(min(unique(df$year)),max(unique(df$year))),
-                         breaks = unique(df$year))+
+      # scale_x_continuous(limits = c(min(unique(df$year)),max(unique(df$year))),
+      #                    breaks = unique(df$year))+
       labs(caption="Components with weight greater than 5%")
   }
   
@@ -118,21 +154,23 @@ preprocesamiento <- function(dfs) {
     nest()
 }
 
-clasificacion <- clasificacion %>%
-  filter(Classification == "S3") %>% 
-  select(Code, Description)%>%
-  mutate(Code = case_when(Code %in% c("334", "673", "676") ~paste0(Code,"0"),
-                          TRUE ~ Code))
+
+clasificacion=clasificacion %>% select(Code=sitc_product_code, Description = sitc_product_name_short_en)
+# clasificacion <- clasificacion %>%
+#   filter(Classification == "S3") %>% 
+#   select(Code, Description)%>%
+#   mutate(Code = case_when(Code %in% c("334", "673", "676") ~paste0(Code,"0"),
+#                           TRUE ~ Code))
 
 # cadenas ####
 dfs <- list(Dist_cadenas2,Dist_cadenas4,Dist_cadenas6,Dist_cadenas8,Dist_cadenas10,
             Dist_cadenas20,Dist_cadenas30,Dist_cadenas40,Dist_cadenas50,
             Dist_cadenas100,Dist_cadenas200) %>% 
   preprocesamiento(.)
-  
+
 
 dfs_paises <- c("Dist_paises2","Dist_paises4","Dist_paises6","Dist_paises8","Dist_paises10",
-                   "Dist_paises20","Dist_paises30","Dist_paises40", "Dist_paises50", 
+                "Dist_paises20","Dist_paises30","Dist_paises40", "Dist_paises50", 
                 "Dist_paises100","Dist_paises200")
 
 
@@ -147,8 +185,10 @@ for (df_pais in dfs_paises) {
 
 
 
+
+
 ##### UI #####
- 
+
 
 #Functions for UI
 supertab_dist <- function(K){
@@ -162,11 +202,11 @@ supertab_dist <- function(K){
                               h3("distribution of the component according to the Lall's classification"),
                               downloadButton(glue('downloadcomp_{K}_{comp}_lall'), 'Download Plot'),
                               fluidRow(column(width = 6,
-                     plotOutput(glue("comp_{K}_{comp}_lall"), width = "700px", height = "500px")
+                                              plotOutput(glue("comp_{K}_{comp}_lall"), width = "700px", height = "500px")
                               ),
-                     column(width = 6,
-                            dataTableOutput(glue("comp_{K}_{comp}_lall_desc")))
-                     ))
+                              column(width = 6,
+                                     dataTableOutput(glue("comp_{K}_{comp}_lall_desc")))
+                              ))
                    }))
   )
 }
@@ -176,9 +216,11 @@ supertab_paises <- function(K){
              selectInput(
                glue("paises_{K}"), "Reporting country:",
                c(unique(Dist_paises20$reporter)),
-               selected = c("Argentina","Brasil","Uruguay","Paraguay"),
+               selected = c("Argentina","Brazil"),
                multiple = TRUE),
-             submitButton("Update countries", icon("refresh")),
+             checkboxInput(glue("smooth_{K}"),"smooth",FALSE),
+             hr(),
+             submitButton("Update", icon("refresh")),
              hr(),
              downloadButton(glue('downloadPlot_{K}'), 'Download Plot'),
              hr(),
@@ -188,15 +230,14 @@ supertab_paises <- function(K){
            ),
            mainPanel(
              h3("Evolution of the participation of each component in each country."),
-              # plotlyOutput(glue("plot{K}"), width = "800px", height = "600px")%>%
+             # plotlyOutput(glue("plot{K}"), width = "800px", height = "600px")%>%
              plotOutput(glue("plot{K}"), width = "800px", height = "600px")%>%
                withSpinner(color="#0dc5c1")
-
-             )
+             
+           )
   )
   
 }
-
 
 
 ui <- fluidPage(
@@ -205,21 +246,21 @@ ui <- fluidPage(
     "Latent Dirichlet Allocation Models",
     tabPanel("Explanation(es)",
              fluidRow(column(10,br(),withMathJax(includeMarkdown("explicacion.Rmd"))))),
-
+    
     navbarMenu(
       "Components",
-    supertab_dist(K = 2),
-    supertab_dist(K = 4),
-    supertab_dist(K = 6),
-    supertab_dist(K = 8),
-    supertab_dist(K = 10),
-    supertab_dist(K = 20),
-    supertab_dist(K = 30),
-    supertab_dist(K = 40),
-    supertab_dist(K = 50),
-    supertab_dist(K = 100),
-    supertab_dist(K = 200)
-    #dataTableOutput("Lall_desc")
+      supertab_dist(K = 2),
+      supertab_dist(K = 4),
+      supertab_dist(K = 6),
+      supertab_dist(K = 8),
+      supertab_dist(K = 10),
+      supertab_dist(K = 20),
+      supertab_dist(K = 30),
+      supertab_dist(K = 40),
+      supertab_dist(K = 50),
+      supertab_dist(K = 100),
+      supertab_dist(K = 200)
+      #dataTableOutput("Lall_desc")
     ),
     navbarMenu(
       "Countries",
@@ -242,12 +283,12 @@ ui <- fluidPage(
 ##### server #####
 
 server <- function (input, output) {
-
+  
   # Componentes ####
   #Tabla
   
   lapply(c(2,4,6,8,10,20,30,40,50,100,200),function(k){
-       lapply(1:k,function(comp){
+    lapply(1:k,function(comp){
       output[[glue("comp_{k}_{comp}")]] <- renderDataTable(
         datatable(  
           dfs %>% 
@@ -285,10 +326,10 @@ server <- function (input, output) {
             select(-Code3) %>% unique(.),
           options = list(scrollX = TRUE)
         ))
-       
       
-      })
-        output[[glue("labels_{k}")]] <- renderDataTable(
+      
+    })
+    output[[glue("labels_{k}")]] <- renderDataTable(
       datatable(
         etiquetas_componentes %>% 
           filter(K==k) %>%
@@ -298,42 +339,55 @@ server <- function (input, output) {
       ))
     
   })
-
   
- #Graficos #### 
+  
+  #Graficos #### 
   
   
   lapply(c(2,4,6,8,10,20,30,40,50,100,200),function(k){
     
     paises_graf <- reactive({input[[glue('paises_{k}')]]    })
     output[[glue("plot{k}")]] <- renderPlot({
-    # output[[glue("plot{k}")]] <- renderPlotly({
+      # output[[glue("plot{k}")]] <- renderPlotly({
       # ggplotly(graficar(get(glue('Dist_paises{k}')),paises_graf()))})
-      graficar(get(glue('Dist_paises{k}')),paises_graf())})
-
+      graficar(df = get(glue('Dist_paises{k}')),
+               paises = paises_graf(),
+               download = F,
+               smooth = input[[glue('smooth_{k}')]])
+    })
+    
   })
- 
+  
   
   
   lapply(c(2,4,6,8,10,20,30,40,50,100,200),function(k){
     
     paises_graf <- reactive({input[[glue('paises_{k}')]]    })
-    
+    # archivo <- reactive({make_filename(paises_graf(),k)})
     output[[glue("downloadPlot_{k}")]] <- downloadHandler(
       
-      filename = function() { glue('graficoLDA_k{k}.png') },
+      
+      filename = function(){
+        
+        isos <- codigos_paises %>% filter(reporter %in% paises_graf()) %$% paste(rep_iso, collapse = '_')
+        
+        glue('graficoLDA_k{k}_{isos}.png')
+      },
       content = function(file) {
         device <- function(..., width, height) grDevices::png(..., width = width, height = height, res = 300, units = "in")
         ggsave(file, 
-               plot = graficar(get(glue('Dist_paises{k}')),paises_graf(), download = T),
+               plot = graficar(get(glue('Dist_paises{k}')),paises_graf(), download = T,smooth = input[[glue('smooth_{k}')]]),
                scale=2,
                device = device)
       }
     )
   })
-    
+  
   
 }
+
+
+
 
 ##### RUN #####
 

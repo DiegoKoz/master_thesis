@@ -4,52 +4,54 @@ The top-level auxiliary file: tesis.aux
 The style file: myplainnat.bst
 Database file #1: backmatter/bibliografia.bib
 Warning--I didn't find a database entry for "united2006standard"
+Warning--I didn't find a database entry for "CenterforInternationalDevelopmentatHarvardUniversity"
 Warning--empty journal in Chow2013
 Warning--empty note in Fagiolo2007
 Warning--empty publisher in fogel2005enclave
+Warning--empty journal in hutchinson2004globalisation
 Warning--can't use both volume and number fields in macqueen1967some
 Warning--empty journal in molinari2016especializacion
 Warning--can't use both author and editor fields in ricardo1987principios
 Warning--empty institution in WTO2017
-You've used 59 entries,
+You've used 69 entries,
             2773 wiz_defined-function locations,
-            971 strings with 15086 characters,
-and the built_in function-call counts, 25676 in all, are:
-= -- 2295
-> -- 1412
-< -- 49
-+ -- 488
-- -- 429
-* -- 2012
-:= -- 3982
-add.period$ -- 190
-call.type$ -- 59
-change.case$ -- 314
-chr.to.int$ -- 59
-cite$ -- 125
-duplicate$ -- 1185
-empty$ -- 2138
-format.name$ -- 514
-if$ -- 5358
+            1035 strings with 16876 characters,
+and the built_in function-call counts, 29790 in all, are:
+= -- 2691
+> -- 1545
+< -- 62
++ -- 537
+- -- 468
+* -- 2286
+:= -- 4589
+add.period$ -- 222
+call.type$ -- 69
+change.case$ -- 356
+chr.to.int$ -- 69
+cite$ -- 146
+duplicate$ -- 1412
+empty$ -- 2538
+format.name$ -- 569
+if$ -- 6253
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 50
-newline$ -- 313
-num.names$ -- 236
-pop$ -- 627
+missing$ -- 61
+newline$ -- 363
+num.names$ -- 276
+pop$ -- 718
 preamble$ -- 1
-purify$ -- 261
+purify$ -- 294
 quote$ -- 0
-skip$ -- 934
+skip$ -- 1097
 stack$ -- 0
-substring$ -- 874
-swap$ -- 115
-text.length$ -- 10
+substring$ -- 1079
+swap$ -- 146
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 619
-warning$ -- 7
-while$ -- 242
+type$ -- 724
+warning$ -- 8
+while$ -- 291
 width$ -- 0
-write$ -- 776
-(There were 8 warnings)
+write$ -- 905
+(There were 10 warnings)
