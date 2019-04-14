@@ -196,7 +196,7 @@ Dado que, por la forma de construcción de los grafos, resulta distinta la inter
 
 \subsection{Determinación del punto de corte}
 
-El punto de corte a utilizar, dada la metodología propuesta para discretizar la información del volumen comerciado, opera fuertemente sobre el grafo resultante. La figura \ref{fig:grafo_2016} muestra el grafo según si se utiliza un punto de corte de 1\%, 5\%, 10\%, 15\%, 20\% o 25\%.
+El punto de corte a utilizar, dada la metodología propuesta para discretizar la información del volumen comerciado, opera fuertemente sobre el grafo resultante. La figura \ref{fig:grafo_2016} muestra el grafo según si se utiliza un punto de corte de 1\%, 5\%, 10\%, 15\%, 20\% o 25\%.\footnote{En el anexo, sección \ref{sec:fig_comp},se pueden observar el grafo en sus distintos puntos de corte, en una representación circular. }
 
 \begin{figure}
 	\centering
@@ -215,7 +215,7 @@ Se puede observar como hasta un punto de corte del 10\% la red se mantiene unida
 
 De esto se desprende la importancia de este parámetro en los resultados del modelo. Dado que no se trata de un modelo supervisado, no es posible optimizar el parámetro según alguna medida de bondad de ajuste del modelo. Por el contrario, debemos elegir el punto de corte que resulte más conveniente para los fines del análisis. 
 
-En el sentido de esto último, contamos con varias métricas que permiten caracterizar las propiedades del grafo, así como conocimiento previo respecto a propiedades conocidas y ampliamente aceptadas del comercio internacional. De esta forma, para determinar el punto de corte se propone como metodología utilizar una medida de centralidad que describe un atributo previamente conocido del comercio mundial, y buscar aquél punto de corte en que dicho atributo se expresa más plenamente. Una característica ampliamente estudiada del comercio internacional es su regionalismo \citep{das2004regionalism}, es decir, la tendencia de los países de comerciar en mayor medida con sus vecinos \citep{Head2014}. Si bien no contamos en este trabajo con información respecto de la distancia entre países, de esta característica emerge un fenómeno medible: el nivel de clustering de la red. En este sentido un valor alto en el clustering resulta deseable desde el punto de vista del objeto de estudio. En la figura \ref{fig:centralidad_2016-1} se observa el coeficiente de clustering para la red según el punto de corte utilizado, para cada año de la serie entre 1996 y 2016. Allí se observa que dicha métrica tiene una relación negativa no lineal con el punto de corte. Por lo tanto utilizar un punto de corte bajo resulta conveniente para captar el fenómeno. Sin embargo el máximo se encuentra en el punto de corte igual a cero, esto quiere decir que el regionalismo se expresa más cuando consideramos todos los intercambios, independientemente del monto comerciado. Como se observa en la figura \ref{fig:centralidad_2016-2}, la cantidad de aristas del grafo es significativamente más alta para este punto de corte, y por lo tanto el grafo es sustancialmente más grande y denso, tal como se observa en la figura \ref{fig:centralidad_2016-2}. En este sentido, si bien en la sección siguiente se continúa estudiando diferentes puntos de corte para ver el efecto que esto produce sobre el grafo y sus posibles interpretaciones, se decidió elegir un punto de corte por defecto de 1\% para el resto del trabajo, dado que en dicho valor existe un punto de inflexión en la densidad y número de aristas, lo cual permite resaltar aquellas relaciones comerciales más significativas, a la vez que se maximiza el coeficiente de clustering.
+En el sentido de esto último, contamos con varias métricas que permiten caracterizar las propiedades del grafo, así como conocimiento previo respecto a propiedades conocidas y ampliamente aceptadas del comercio internacional. De esta forma, para determinar el punto de corte se propone como metodología utilizar una medida de centralidad que describe un atributo previamente conocido del comercio mundial, y buscar aquél punto de corte en que dicho atributo se expresa más plenamente. Una característica ampliamente estudiada del comercio internacional es su regionalismo \citep{das2004regionalism}, es decir, la tendencia de los países de comerciar en mayor medida con sus vecinos \citep{Head2014}. Si bien no contamos en este trabajo con información respecto de la distancia entre países, de esta característica emerge un fenómeno medible: el nivel de clustering de la red. En este sentido un valor alto en el clustering resulta deseable desde el punto de vista del objeto de estudio. En la figura \ref{fig:centralidad_2016-1} se observa el coeficiente de clustering para la red según el punto de corte utilizado, para cada año de la serie entre 1996 y 2016. Allí se observa que dicha métrica tiene una relación negativa no lineal con el punto de corte. Por lo tanto utilizar un punto de corte bajo resulta conveniente para captar el fenómeno. Sin embargo el máximo se encuentra en el punto de corte igual a cero, esto quiere decir que el regionalismo se expresa más cuando consideramos todos los intercambios, independientemente del monto comerciado. Como se observa en la figura \ref{fig:centralidad_2016-2}, la cantidad de aristas del grafo es significativamente más alta para este punto de corte, y por lo tanto el grafo es sustancialmente más grande y denso, tal como se observa en la figura \ref{fig:centralidad_2016-2}. En este sentido, si bien en la sección siguiente se continúa estudiando diferentes puntos de corte para ver el efecto que esto produce sobre el grafo y sus posibles interpretaciones, se decidió elegir un punto de corte por defecto de 1\% para el resto del trabajo, dado que en dicho valor existe un punto de inflexión en la densidad y número de aristas, lo cual permite resaltar aquellas relaciones comerciales más significativas, a la vez que se maximiza el coeficiente de clustering\footnote{En el anexo, en la sección \ref{sec:fig_comp} se presenta a su vez la distribución acumulada de grado para los distintos puntos de corte.}.
 
 \begin{figure}
 \centering
@@ -235,7 +235,7 @@ En el sentido de esto último, contamos con varias métricas que permiten caract
 
 \subsection{Correlación entre la representación de las exportaciones y las importaciones}
 
-Dada la potencial diferencia en el análisis si se tiene en cuenta las exportaciones y las importaciones, se incorporó esta disyuntiva como una nueva dimensión de estudio. Para ello, se analizó el grado total de cada nodo, para sucesivos puntos de corte, tanto para el grafo que surge de considerar las exportaciones, como para el grafo de las importaciones. En la figura \ref{fig:corr} se pueden observar los resultados. Vale mencionar que sólo se grafican los nodos de mayor grado, aunque se haya considerado al conjunto de nodos para el calculo de la tendencia lineal por continente y el coeficiente de correlación de Pearson.
+Dada la potencial diferencia en el análisis si se tiene en cuenta las exportaciones y las importaciones, se incorporó esta disyuntiva como una nueva dimensión de estudio. Para ello, se analizó el grado total de cada nodo, para sucesivos puntos de corte, tanto para el grafo que surge de considerar las exportaciones, como para el grafo de las importaciones. En la figura \ref{fig:corr} se pueden observar los resultados para el 1\%, 10\% y 20\%\footnote{En el anexo, sección \ref{sec:fig_comp} se pueden observar estos gráficos para el 5\%, 15\% y 25\%}. Vale mencionar que sólo se grafican los nodos de mayor grado, aunque se haya considerado al conjunto de nodos para el calculo de la tendencia lineal por continente y el coeficiente de correlación de Pearson.
 
 
 \begin{figure}
@@ -284,7 +284,7 @@ Lo que resta del análisis se considerará exclusivamente el punto de corte del 
 
 
 \partitle{Medidas de resumen de la red}
-En la figura \ref{fig:caracteristicas_yr} se presentan los valores de algunas medidas de resumen entre el período de 1996 y 2016, considerando un punto de corte del 1\% para las importaciones. 
+En la figura \ref{fig:caracteristicas_yr} se presentan los valores de algunas medidas de resumen entre el período de 1996 y 2016, considerando un punto de corte del 1\% para las importaciones\footnote{en el anexo, sección \ref{sec:fig_comp} se presentan otras medidas complementarias}. 
 
 
 
@@ -296,7 +296,7 @@ En la figura \ref{fig:caracteristicas_yr} se presentan los valores de algunas me
 \subfigure[Coeficiente de clustering]{
     \includegraphics[width=.45\linewidth]{coef_clustering_x_yr}
     \label{fig:caracteristicas_yr-b}}
-\caption{\textbf{Importaciones.} umbral 1\%, según año}
+\caption{\textbf{Importaciones.} umbral 1\%. 1996-2016}
 \label{fig:caracteristicas_yr}
 \end{figure}
 
@@ -358,13 +358,13 @@ La figura \ref{fig:metricas_LP-b} muestra la evolución del coeficiente de corre
 
 \begin{figure}[h!]
 	\centering
-	\subfigure[Coeficiente de Clustering, importaciones]{\label{fig:metricas_LP-a}\includegraphics[width=.48\linewidth]{1950_2000_coef_clustering_x_yr}}
-	\subfigure[Correlación de grado, importaciones]{\label{fig:metricas_LP-b}\includegraphics[width=.48\linewidth]{1950_2000_correlacion_x_yr}}
-	\caption{Evolución de la estructura de la red. Impo. Umbral 1\%}
+	\subfigure[Coeficiente de Clustering.]{\label{fig:metricas_LP-a}\includegraphics[width=.48\linewidth]{1950_2000_coef_clustering_x_yr}}
+	\subfigure[Correlación de grado]{\label{fig:metricas_LP-b}\includegraphics[width=.48\linewidth]{1950_2000_correlacion_x_yr}}
+	\caption{Evolución de la estructura de la red. Importaciones. Umbral 1\%. 1948-2000}
 	\label{fig:metricas_LP}
 \end{figure}
 
-Estas medidas refieren a características generales del grafo. También es posible analizar, dentro del grafo, el movimiento en la centralidad de subconjuntos del mismo. En particular, en la figura  \ref{fig:centralidad_LP} se muestra la evolución de la centralidad promedio por continente para las medidas de autovalor, cercanía y grado. En primer lugar, resalta la robustez de la centralidad de cercanía, que evoluciona uniformemente para todos los continentes. La disminución de esta medida indica un crecimiento del tamaño de la red \footnote{ Que parcialmente puede deberse a la incorporación de nuevas fuentes de información, en particular para los años 1949, 1960 y 1991}. \par
+Estas medidas refieren a características generales del grafo \footnote{en el anexo, sección \ref{sec:fig_comp} se presentan otras métricas complementarias.}. También es posible analizar, dentro del grafo, el movimiento en la centralidad de subconjuntos del mismo. En particular, en la figura  \ref{fig:centralidad_LP} se muestra la evolución de la centralidad promedio por continente para las medidas de autovalor, cercanía y grado. En primer lugar, resalta la robustez de la centralidad de cercanía, que evoluciona uniformemente para todos los continentes. La disminución de esta medida indica un crecimiento del tamaño de la red \footnote{ Que parcialmente puede deberse a la incorporación de nuevas fuentes de información, en particular para los años 1949, 1960 y 1991}. \par
 La centralidad de autovalor, por su parte, muestra un cambio importante en el rol de los países en la economía mundial. Mientras que Oceanía pasa del segundo al quinto lugar en el período, Asia hace lo opuesto, marcando la incorporación al mercado mundial de este continente como productor de mercancías.  Africa y América, por su parte, si bien siguen un distinto recorrido a lo largo del período, comienzan y terminan el mismo con valores muy similares. Europa mantiene la mayor centralidad promedio a lo largo de todo el período, en las tres métricas. Por último, el recorrido de Asia y Oceanía es similar para la centralidad de grado.
 
 \begin{figure}[h!]
@@ -374,7 +374,7 @@ La centralidad de autovalor, por su parte, muestra un cambio importante en el ro
 \end{figure}
 
 \partitle{Evolución de los países}
-Otra característica interesante del análisis de grafos es que permite seguir la evolución de un país en particular dentro del mismo, de forma tal que se puede observar la evolución de la centralidad de algunos nodos en el tiempo. \par
+Otra característica interesante del análisis de grafos es que permite seguir la evolución de un país en particular dentro del mismo, de forma tal que se puede observar la evolución de la centralidad de algunos nodos en el tiempo. Para ello, se elaboró una aplicación en \textit{Shiny}\footnote{\url{https://diegokoz.shinyapps.io/Distribucion_nodos_wrdtrade/}} en la cual se puede explorar los resultados para los diferentes países, para sus exportaciones e importaciones, según la centralidad de Grado, Intermediación, Autovalor y Autovalor ponderado. A continuación se ejemplifica el uso de la herramienta en el caso de algunos países latinoamericanos, asiáticos, y Estados Unidos.    \par
 En la figura \ref{fig:paises_LP} se muestra la distribución de las medidas de grado y de autovalor ponderado, y se marca la posición de México Brasil y Argentina en dicha distribución. 
 En \ref{fig:paises_LP-a} observamos la cantidad de conexiones de cada país en el grafo de las importaciones. Aquí se observa como México comienza la serie en la moda de la distribución de grado, mientras que Brasil y Argentina se encuentran a la derecha de la misma. En la evolución se vé como la distribución se convierte en más leptocúritca, y, por un lado Brasil incrementa la cantidad de nodos considerablemente, mientras que por otro lado Argentina mantiene a lo largo de toda la serie la misma cantidad de socios comerciales. Por su parte, México, pasa a ubicarse en la cola derecha de la distribución, más cercano a la Argentina. 
 En \ref{fig:paises_LP-b} se observa el autovalor ponderado por el volumen comerciado. Considerando esta medida, la evolución pareciera ser diferente. Mientras Argentina se mantiene en el mismo lugar de la distribución, Brasil se repliega hacia valores similares a los Argentinos, y México se despega de la moda de la distribución a partir de los años noventa. Al considerar no solo el grado, sino también el grado de los vecinos, y el volumen comerciado, se destaca el proceso de la \textit{Maquila Mexicana}, en dónde el comercio entre este país y Estados Unidos, un nodo sumamente importante, es muy difundido. 
@@ -403,7 +403,7 @@ Por su parte, en la figura \ref{fig:paises_ASI_LP-b} se observa la evolución de
 
 \section{Conclusiones}
 
-En la presente sección se propuso una primera aproximación de la teoría de grafos como herramienta para la caracterización del comercio internacional, utilizando los datos agregados a nivel país. Para ello se construyó un grafo dirigido no ponderado. Se utilizó al año 2016 como punto de referencia para determinar determinar los mejores hiperparámetros del modelo. En particular, de este análisis resulto que el 1\% constituye un umbral posible para el punto de corte, aunque considerar este hiperparámetro como una dimensión de estudio también permite observar las distintas formas de relación comercial entre los países, y por lo tanto se logra enriquecer la discusión. 
+En el presente capítulo se propuso una primera aproximación de la teoría de grafos como herramienta para la caracterización del comercio internacional, utilizando los datos agregados a nivel país. Para ello se construyó un grafo dirigido no ponderado. Se utilizó al año 2016 como punto de referencia para determinar determinar los mejores hiperparámetros del modelo. En particular, de este análisis resulto que el 1\% constituye un umbral posible para el punto de corte, aunque considerar este hiperparámetro como una dimensión de estudio también permite observar las distintas formas de relación comercial entre los países, y por lo tanto se logra enriquecer la discusión. 
 
 Por su parte, la dimensión temporal en un período de veinte años mostró que las medidas de resumen de un grafo pueden poseer un potencial para la descripción de la crisis del año 2009. El análisis de una serie de largo alcance, por su parte, permite ver los cambios estructurales del comercio internacional.            
 

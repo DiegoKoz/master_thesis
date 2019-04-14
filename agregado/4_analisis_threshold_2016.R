@@ -6,7 +6,7 @@ library(RColorBrewer)
 library(igraph)
 library(countrycode)
 library(ggrepel)
-library(xlsx)
+# library(xlsx)
 library(fuzzyjoin)
 library(maps)
 countrycode_data <- codelist %>% select(cldr.short.es_ar, cldr.short.en,iso3c,region,continent)
@@ -397,7 +397,7 @@ grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2,
                           ponderado=F){
   
   
-  archivo <- paste0("graficos/","grafo_2016_",threshold_pct*100,"_pcnt")
+  archivo <- paste0("agregado/graficos/","grafo_2016_",threshold_pct*100,"_pcnt")
   
   lista_grafo <- trade_to_graph(edges = datos, threshold_pct = threshold_pct)
   
@@ -431,7 +431,7 @@ grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2,
         png(archivo)
         plot(grafo,edge.arrow.size=.2,vertex.frame.color="#ffffff",
              vertex.label="", vertex.label.color="black", 
-             layout=l,edge.width=E(grafo)$width, edge.curved=.1, main= paste0("\n 2016, Threshold ", threshold_pct*100,"%"))
+             layout=l,edge.width=E(grafo)$width, edge.curved=.1)#, main= paste0("\n 2016, Threshold ", threshold_pct*100,"%"))
         legend(x=-1.5,  y=1.5,unique(correspondencia$continent),
                pch=21,col="#777777",pt.bg=unique(correspondencia$color),
                pt.cex=2,cex=1,bty="n",ncol=5)
@@ -441,7 +441,7 @@ grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2,
         png(archivo)
         plot(grafo,edge.arrow.size=.2,vertex.frame.color="#ffffff",
              vertex.label="", vertex.label.color="black", 
-             layout=l,edge.width=E(grafo)$width, main= paste0("2016, Threshold ", threshold_pct*100,"%"))
+             layout=l,edge.width=E(grafo)$width)#, main= paste0("2016, Threshold ", threshold_pct*100,"%"))
       }
       dev.off()
     }
@@ -489,7 +489,7 @@ grafico_grafo <- function(threshold_pct, save = TRUE, datos = dataset2,
       if (label) {
         plot(grafo,edge.arrow.size=.2,vertex.frame.color="#ffffff",
              vertex.label="", vertex.label.color="black", vertex.size = 6, 
-             layout=l, main= paste0("Grafo año 2016, punto de corte de ", threshold_pct*100,"%"))
+             layout=l)#, main= paste0("Grafo año 2016, punto de corte de ", threshold_pct*100,"%"))
         legend(x=-.5,  y=1,unique(unique(correspondencia$continent)),
                pch=21,col="#777777",pt.bg=unique(unique(correspondencia$color)),
                pt.cex=2,cex=1.5,bty="n",ncol=1)
@@ -512,7 +512,7 @@ grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T, label = TRUE)
 grafico_grafo(datos = dataset2,threshold_pct = 0.2, save = T, label = FALSE)
 
 
-grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T, 
+grafico_grafo(datos = dataset2,threshold_pct = 0.01, save = T,
               label = T,layout = "circle",ponderado = T)
 
 for (pcnt in seq(0.05,.25,0.05)) {
