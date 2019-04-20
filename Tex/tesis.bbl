@@ -1,4 +1,4 @@
-\begin{thebibliography}{69}
+\begin{thebibliography}{74}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -38,6 +38,12 @@ Bela Balassa.
 \newblock {Trade liberalisation and “revealed” comparative advantage}.
 \newblock \emph{The manchester school}, 33\penalty0 (2):\penalty0 99--123,
   1965.
+
+\bibitem[Bekerman \& Rikap(2010)Bekerman and Rikap]{bekerman2010integracion}
+Marta Bekerman and Cecilia Rikap.
+\newblock {Integraci{\'{o}}n regional y diversificaci{\'{o}}n de exportaciones
+  en el Mercosur: el caso de Argentina y Brasil}.
+\newblock \emph{Revista Cepal}, 2010.
 
 \bibitem[Bhattacharya et~al.(2008)Bhattacharya, Mukherjee, Saram{\"{a}}ki,
   Kaski, and Manna]{Bhattacharya2008}
@@ -132,6 +138,12 @@ William~J Coffey.
 \newblock {The ‘newer'international division of labour}.
 \newblock \emph{The global economy in transition}, pages 40--61, 1996.
 
+\bibitem[Costantino(2013)]{costantino2013gatopardismo}
+Agostina Costantino.
+\newblock {¿Gatopardismo sojero?: Los efectos de la bonanza sojera sobre el
+  cambio estructural en Argentina y Brasil}.
+\newblock \emph{Nueva Sociedad}, \penalty0 (244):\penalty0 84--96, 2013.
+
 \bibitem[Csardi \& Nepusz(2006)Csardi and Nepusz]{Csardi2006}
 Gabor Csardi and Tamas Nepusz.
 \newblock {The igraph software package for complex network research}, 2006.
@@ -183,11 +195,6 @@ Renato G~Jr. Fl{\^{o}}res.
 \newblock In \emph{International Workshop" Integra{\c{c}}{\~{a}}o
   Produtiva-Li{\c{c}}{\~{o}}es da {\'{A}}sia e Europa para o MERCOSUL",
   CEPAL/Brasil}, page~7, 2008.
-
-\bibitem[Fogel \& Riquelme(2005)Fogel and Riquelme]{fogel2005enclave}
-Ram{\'{o}}n Fogel and Marcial~Antonio Riquelme.
-\newblock \emph{{Enclave sojero: merma de soberan{\'{i}}a y pobreza}}.
-\newblock 2005.
 
 \bibitem[Fr{\"{o}}bel et~al.(1978)Fr{\"{o}}bel, Heinrichs, and
   Kreye]{frobel1978new}
@@ -244,6 +251,11 @@ Keith Head and Thierry Mayer.
 \newblock \doi{10.1016/B978-0-444-54314-1.00003-3}.
 \newblock URL
   \url{https://www.sciencedirect.com/science/article/pii/B9780444543141000033?via{\%}3Dihub}.
+
+\bibitem[Henderson(2002)]{henderson2002globalisation}
+Jeffrey Henderson.
+\newblock \emph{{Globalisation of high technology production}}.
+\newblock Routledge, 2002.
 
 \bibitem[Hidalgo et~al.(2007)Hidalgo, Winger, Barab{\'{a}}si, and
   Hausmann]{Hidalgo2007}
@@ -314,6 +326,11 @@ James MacQueen and Others.
   statistics and probability}, volume~1, pages 281--297. Oakland, CA, USA,
   1967.
 
+\bibitem[Mikesell(2013)]{mikesell2013world}
+Raymond~F Mikesell.
+\newblock \emph{{The world copper industry: structure and economic analysis}}.
+\newblock RFF Press, 2013.
+
 \bibitem[Molinari \& de~Angelis(2016)Molinari and
   de~Angelis]{molinari2016especializacion}
 Andrea Molinari and Jesica~Yamila de~Angelis.
@@ -356,6 +373,16 @@ Pascal Pons and Matthieu Latapy.
 {R Core Team}.
 \newblock {R: A Language and Environment for Statistical Computing}, 2017.
 
+\bibitem[Redo et~al.(2012)Redo, AIDE, Clark, and
+  Andrade-N{\'{u}}{\~{n}}ez]{redo2012}
+Daniel~J Redo, T~Mitchell AIDE, Matthew~L Clark, and Mar{\'{i}}a~Jos{\'{e}}
+  Andrade-N{\'{u}}{\~{n}}ez.
+\newblock {Impacts of internal and external policies on land change in Uruguay,
+  2001–2009}.
+\newblock \emph{Environmental Conservation}, 39\penalty0 (2):\penalty0
+  122--131, 2012.
+\newblock \doi{10.1017/S0376892911000658}.
+
 \bibitem[Ricardo(2007)]{ricardo1987principios}
 David Ricardo.
 \newblock \emph{{Principios de econom{\'{i}}a pol{\'{i}}tica y
@@ -366,6 +393,12 @@ David Ricardo.
 Dani Rodrik.
 \newblock {Getting interventions right: how South Korea and Taiwan grew rich}.
 \newblock \emph{Economic policy}, 10\penalty0 (20):\penalty0 53--107, 1995.
+
+\bibitem[Sklair(2012)]{sklair2012assembling}
+Leslie Sklair.
+\newblock \emph{{Assembling for development: The maquila industry in Mexico and
+  the United States}}.
+\newblock Routledge, 2012.
 
 \bibitem[Slowikowski(2017)]{Slowikowski2017}
 Kamil Slowikowski.
@@ -402,6 +435,11 @@ G~van Rossum.
 \newblock Technical Report CS-R9526, Centrum voor Wiskunde en Informatica
   (CWI), Amsterdam, may 1995.
 
+\bibitem[Venn(2016)]{venn2016oil}
+Fiona Venn.
+\newblock \emph{{The oil crisis}}.
+\newblock Routledge, 2016.
+
 \bibitem[Vu(2011)]{Vu2011}
 Vincent~Q Vu.
 \newblock {ggbiplot: A ggplot2 based biplot}, 2011.
@@ -430,11 +468,6 @@ Claus~O Wilke.
 WTO.
 \newblock {World Trade Statistics Review 2017}.
 \newblock Technical report, 2017.
-
-\bibitem[Ybran \& Lacelli(2016)Ybran and Lacelli]{ybran2016informe}
-Romina Ybran and A~Lacelli.
-\newblock {Informe estad{\'{i}}stico mercado de soja}.
-\newblock \emph{Instituto Nacional de Tecnologia Agropecuaria INTA}, 2016.
 
 \bibitem[Zhou et~al.(2007)Zhou, Ren, Medo, and Zhang]{zhou2007bipartite}
 Tao Zhou, Jie Ren, Mat{\'{u}}{\v{s}} Medo, and Yi-Cheng Zhang.

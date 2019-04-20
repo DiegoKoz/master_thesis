@@ -30,14 +30,21 @@
 \contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{37}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}Resultados}{40}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{40}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{44}{subsection.3.4.2}
-\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{44}{section*.23}
-\contentsline {subsubsection}{Espacio de productos}{45}{figure.3.14}
-\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{52}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{55}{chapter.4}
-\contentsline {section}{Anexo}{56}{chapter*.25}
-\contentsline {subsection}{\numberline {A}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{56}{subsection.4.0.1}
-\contentsline {subsection}{\numberline {B}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{56}{subsection.4.0.2}
-\contentsline {subsection}{\numberline {C}Tabla de referencia: Descripci\IeC {\'o}n Usos}{58}{subsection.4.0.3}
-\contentsline {subsection}{\numberline {D}Medioides PAM clustering. K=50}{59}{subsection.4.0.4}
-\contentsline {subsection}{\numberline {E}Figuras Complementarias}{61}{subsection.4.0.5}
+\contentsline {subsubsection}{An\IeC {\'a}lisis de Componentes}{40}{section*.19}
+\contentsline {subsubsection}{An\IeC {\'a}lisis de pa\IeC {\'\i }ses}{42}{table.3.1}
+\contentsline {paragraph}{Pa\IeC {\'\i }ses petroleros}{44}{table.3.1}
+\contentsline {paragraph}{Am\IeC {\'e}rica}{44}{figure.3.13}
+\contentsline {paragraph}{Ocean\IeC {\'\i }a}{48}{figure.3.16}
+\contentsline {paragraph}{Europa}{48}{figure.3.17}
+\contentsline {paragraph}{Asia}{48}{figure.3.23}
+\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{59}{subsection.3.4.2}
+\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{59}{section*.23}
+\contentsline {subsubsection}{Espacio de productos}{60}{figure.3.28}
+\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{67}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{70}{chapter.4}
+\contentsline {section}{Anexo}{71}{chapter*.25}
+\contentsline {subsection}{\numberline {A}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{71}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {B}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{71}{subsection.4.0.2}
+\contentsline {subsection}{\numberline {C}Tabla de referencia: Descripci\IeC {\'o}n Usos}{73}{subsection.4.0.3}
+\contentsline {subsection}{\numberline {D}Medioides PAM clustering. K=50}{74}{subsection.4.0.4}
+\contentsline {subsection}{\numberline {E}Figuras Complementarias}{76}{subsection.4.0.5}

@@ -5,6 +5,7 @@
 \graphicspath{{images/}}
 
 
+\usepackage{booktabs}
 
 %
 \usepackage{amssymb}
@@ -532,6 +533,9 @@ $\Phi$ es por lo tanto una matriz de distancias entre los productos. Esto result
 
 \subsection{Latent Dirichlet Allocation Models}
 
+\subsubsection{Análisis de Componentes}
+
+
 Los resultado obtenidos de los modelos de Topic Modelling para el análisis de textos normalmente se analizan en dos etapas: En primer lugar se etiquetan los tópicos obtenidos sobre la base de las palabras más salientes de cada tópico, y luego se analiza su distribución en los textos. El etiquetado de los tópicos es una tarea subjetiva donde lo que se busca es un concepto generalizador de aquellas palabras que componen al tópico, donde es posible que esta tarea no se pueda realizar por falta de coherencia dentro del tópico. El hiperparámero $k$, es decir la cantidad de tópicos, juega un rol fundamental en este punto, dado que con una cantidad baja de tópicos estos tenderán a reflejar conceptos amplios, mientras que si $k$ es mayor que la cardinalidad del espacio latente que se busca, esto puede generar tópicos repetidos. 
 Lo anterior no escapa al presente dominio sino que se refuerza, dado que la búsqueda, subjetiva, de un concepto abarcador entre productos puede resultar más compleja que la de un concepto generalizador de un grupo de palabras. Un problema que no existe en el presente dominio es el de la polisemia, dado que todos los significantes, indices del nomenclador, hacen referencia a un único significado no ambiguo. Sin embargo, nuevos problemas aparecen respecto a este punto, como qué nomenclador de base utilizar y en qué nivel de desagregación. Por motivos de comparabilidad con los resultados de \cite{molinari2016especializacion} se decidió utilizar el nomenclador SITC a 4 dígitos \citep{un2006standard}. A su vez, se realizaron pruebas para varios valores de $k$: 2,4,6,8,10,20,30,40,50, 100 y 200. Para el etiquetado de los componentes se observó que la práctica usual de observar los primeros diez elementos de la distribución no bastaba para encontrar una etiqueta generalizadora, por lo que se elaboró un tablero dinámico para estudiar la distribución y su función acumulada, a la vez que se gráfico la distribución en función de un nomenclador de complejidad tecnológica \citep{lall2000technological}: 
 
@@ -607,121 +611,186 @@ Esta conclusiones encuentran su correlato en la bibliografía. \cite{Hidalgo2007
 \info{rehacer}
 Finalmente, para elaborar las etiquetas finales se consultó especialistas sectoriales. En la tabla \ref{Table: etiquetas} se pueden ver las etiquetas para el modelo con $k=40$. Allí se puede ver que el componente 2 es el mencionado \textit{componente gigante}, y se delimitan un componente para productos textiles (4), petróleo (5), circuitos eléctricos (8), derivados de la madera y papel (15), Soja (16), entre otros. También se ve que algunos componentes tienen una composición de la cual no es posible diferenciarlos a nivel conceptual (31, 32, 34 y 35).
 
-\info{la tabla completa al anexo. Aca un resumen de los comp. que aparecen en el analisis.}
-%\begin{table}[] 
-%	\begin{tabular}{ll}
-%		\textbf{Componente} & \textbf{Descripción}                                   \\
-%		1          & Meat and vegetables (fresh and processed)                       \\
-%		2          & Industrial gigant component                      \\
-%		3          & Process (med-tech)                                              \\
-%		4          & Textile confections                                             \\
-%		5          & Petroleum oils or bituminous minerals                           \\
-%		6          & Minerals and primary products (uranium \& spices)               \\
-%		7          & Metals, fuels and primary extraction products                   \\
-%		8          & Electric microcircuits                                          \\
-%		9          & Prim.prods.(cocoa)                                              \\
-%		10         & Prim.prods.(coffee, bananas)                                    \\
-%		11         & Electrical machinery, parts and components                      \\
-%		12         & Metals, minerals and crude petroleum                            \\
-%		13         & Textile confections and primary products                        \\
-%		14         & Res.-based manuf.(agro) \& prim.prods. (sugars)                 \\
-%		15         & Paper, wood and metals                                          \\
-%		16         & Soya beens and oils                                             \\
-%		17         & Footwear and textile confections                                \\
-%		18         & Res.-based manuf.(other) and textiles                           \\
-%		19         & Crustaceans, fish and wires                                     \\
-%		20         & Primary products (coffee, bananas, sugar)                       \\
-%		21         & Prim.prods.\&res.-based manuf.(agro) (fish fresh and processed) \\
-%		22         & Prim.prods.\&res.-based manuf.                                  \\
-%		23         & Gold and cotton                                                 \\
-%		24         & Diamonds and metals                                             \\
-%		25         & Food and beverages                                              \\
-%		26         & Copper ores and products                                        \\
-%		27         & Fish (fresh and processed)                                      \\
-%		28         & Spirits and cigarretes                                          \\
-%		29         & Copper ores and products                                        \\
-%		30         & Textile confections and precious stones                         \\
-%		31         & Animal and vegetable products                                   \\
-%		32         & Animal and vegetable products                                   \\
-%		33         & Textiles \& prim.prods.                                         \\
-%		34         & Animal and vegetable products                                   \\
-%		35         & Animal and vegetable products                                   \\
-%		36         & Prim.prods. and minerals                                        \\
-%		37         & Petroleum and gas                                               \\
-%		38         & Alluminium and fish                                             \\
-%		39         & Carpets                                                         \\
-%		40         & Alcohol and aluminium                                          
-%	\end{tabular}
-%	\label{Table: etiquetas}
-%	\caption{Etiquetas propuestas para k=40.}
-%\end{table}
-%
 
-Con los componentes definidos, se puede analizar la composición de la canasta exportadora de cada país. Dado que en la definición del problema nuestra unidad es el par país\&año, eso significa que podemos comparar la evolución en la distribución de los componentes al interior de cada país
 
-La figura \ref{fig:serie_componentes} muestra la evolución de la composición de la canasta exportadora en algunos países sudamericanos, en términos de los componentes obtenidos. \ref{fig:serie_componentes_1} muestra la evolución de Argentina y Brasil. En ambos casos el denominado \textit{componente gigante} representa la mayoría de las exportaciones, aunque esto es particularmente cierto para el caso brasilero. Para la Argentina, se observa que en el período 2007-2008 y a partir del 2013, crece la importancia del componente 16, compuesto mayoritariamente por porotos de soja y derivados. Vale mencionar que el período 2007-2008 se caracterizó por un aumento acelerado del precio de la soja. A su vez, los volúmenes cosechados en 2013 de este producto superaron ampliamente la cosecha del año anterior \citep{ybran2016informe}. Un movimiento similar, aunque menos pronunciado se puede observar en Brasil. Por su parte, en \ref{fig:serie_componentes_2} se puede ver la evolución para Bolivia, Chile y Paraguay. La canasta exportadora de estos países no esta centrada en el \textit{componente gigante} 2. Para el caso boliviano, se divide principalmente entre los componentes 29, cobre, y 37, gas y petróleo. Estos resultados son coincidentes con lo conocido por la bibliografía especializada para dicho país \citep{auty2002sustaining, chavez2016can}. Por su parte, En Chile los dos componentes más destacados son el 29, cobre y el 22, \textit{productos primarios y manufacturas basadas en recursos naturales} si bien una porción importante de su producción también se encuentra dentro del componente 2. Para el caso Chileno, la bibliografía especializada indica una amplia predominancia de la producción de cobre y derivados \citep{moran2014multinational}, por lo que pareciera que el componente 22 incluye algunos productos relacionados a la producción de este mineral. Se puede decir que para este país el modelo no performa de forma enteramente satisfactoria, dado que idealmente se pretendería un único componente que englobe la producción de cobre y todos sus derivados. Finalmente, en el caso paraguayo, la producción que domina ampliamente sus exportaciones es la de soja y derivados. Este resultado es también coincidente con la literatura especializada \citep{fogel2005enclave}.
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50Arg_Bra}
-%	\caption{Evolución de componentes. Argentina y Brasil. K=50. Exportaciones}
-%	\label{fig:graficoldak50argbra}
-%\end{figure}
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_bol_chi_pa}
-%	\caption{Evolución de componentes. Bolivia, Chile, Paraguay. K=50. Exportaciones}
-%	\label{fig:graficoldak50bolchipa}
-%\end{figure}
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_us_mex_can}
-%	\caption{Evolución de componentes. Estados Unidos, Canadá y Mexico. Exportaciones}
-%	\label{fig:graficoldak50usmexcan}
-%\end{figure}
-%
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_ir_rus_sa_ven}
-%	\caption{Evolución de componentes. Países petroleros. Exportaciones.}
-%	\label{fig:graficoldak50irrussaven}
-%\end{figure}
-%
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_uk_fr_esp_ger}
-%	\caption{Evolución de componentes. Países europeos. Exportaciones}
-%	\label{fig:graficoldak50ukfrespger}
-%\end{figure}
-%
-%
-%
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.8\linewidth]{images/graficoLDA_k50_asia}
-%	\caption{Evolución de componentes. Asia. Exportaciones}
-%	\label{fig:graficoldak50asia}
-%\end{figure}
-%
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_africa_austral}
-%	\caption{Evolución de componentes. África Austral. Exportaciones}
-%	\label{fig:graficoldak50africaaustral}
-%\end{figure}
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{images/graficoLDA_k50_africa_noroccidental}
-%	\caption{Evolución de componentes. África Noroccidental}
-%	\label{fig:graficoldak50africanoroccidental}
-%\end{figure}
+
+% \usepackage{booktabs}
+
+
+\begin{table}
+	\centering
+	\begin{tabular}{rllll} 
+		\toprule
+		\multicolumn{1}{l}{\textbf{N}} & \textbf{Desc. gral}    & \textbf{Desc. específica}                                                                          & \textbf{Complejidad} & \textbf{{País}}                                                    \\\hline
+		1                                 & Minerales         & Carbón, hierro                                                                             & -                    & Australia                                                          \\
+		2                                 & Industria         & Textiles, ingenieril, otros                                                                & Baja y media         & San Marino                                                         \\
+		3                                 & Industria         & Automoviles                                                                                & Media                & Bélgica                                                            \\
+		4                                 & Industria         & Textil, juguetes, etc                                                                      & Baja                 & Macao                                                              \\
+		5                                 & Industria         & Electrónicos                                                                               & Alta                 & Checoslovaquia                                                     \\
+		6                                 & Industria         & Autos, barcos, maquinaria                                                                  & Media y alta         & Japón                                                              \\
+		7                                 & Petróleo          & Liquificado (propano)                                                                              & -                    & Turkmenistán                                                       \\
+		8                                 & Minerales         & Cobre                                                                                      & -                    & Chile                                                              \\
+		9                                 & Agropecuario      & Café, bananas, otros                                                                       & -                    & Réunion                                                            \\
+		10                                & Industria         & Autos y electrónicos                                                                       & Media y alta         & México                                                             \\
+		11                                & Industria         & Autos, partes y componentes                                                                & Media y alta         & Alemania                                                           \\
+		12                                & Petróleo          & Crudo                                                                                      & -                    & Sudán del Sur                                                      \\
+		13                                & -                 & Oro, relojes, joyas                                                                        & -                    & Suiza                                                              \\
+		14                                & Industria         & Químicos                                                                                   & Alta                 & Curazao                                                            \\
+		15                                & Minerales         & Diamantes                                                                                  & -                    & Botswana                                                           \\
+		16                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Aviones, autopartes,\\ soja y maíz\end{tabular}                 & Media y alta         & USA                                                                \\
+		17                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Autopartes, madera\\ y derivados\end{tabular}                   & Media                & Finlandia                                                          \\
+		18                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Productos primarios\\ y textiles\end{tabular}                   & Baja                 & Isla de Navidad                                                    \\
+		19                                & -                 & \begin{tabular}[c]{@{}l@{}}Transacciones especiales,\\ no clasificadas\end{tabular}        & -                    & Isla San Martín                                                    \\
+		20                                & Combustibles      & Fuel oil, gasolina, etc.                                                                   & -                    & \begin{tabular}[c]{@{}l@{}}Rep. Dem. Pop.\\del Yemen\end{tabular}  \\
+		21                                & Industria         & \begin{tabular}[c]{@{}l@{}}Medicamentos e \\instrumentos médicos.\end{tabular}             & Alta                 & Irlanda                                                            \\
+		22                                & Petróleo + Agro   & \begin{tabular}[c]{@{}l@{}}Hidrocarburos, \\aceite de palma, cacao, etc.\end{tabular}      & -                    & Ghana                                                              \\
+		23                                & Industria         & \begin{tabular}[c]{@{}l@{}}Procesadores,microcircuitos, \\juguetes y calzado.\end{tabular} & Alta y baja          & China                                                              \\
+		24                                & Agropecuario      & Carnes, pescados, lácteos                                                                  & -                    & Islandia                                                           \\
+		25                                & Minerales + Agro. & Soja y Hierro                                                                              & -                    & Paraguay                                                           \\
+		26                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Aviones, perfumería,\\ vino, queso\end{tabular}                 & Alta                 & Francia                                                            \\
+		27                                & Industria         & Microcircuitos                                                                             & Alta                 & filipinas                                                          \\
+		28                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Arroz, algodón, textiles, \\goma, etc.\end{tabular}             & Baja                 & Pakistán                                                           \\
+		29                                & Industria + Agro. & maquinaria, flores, quesos.                                                                & Alta                 & Países Bajos                                                       \\
+		30                                & Industria         & Autos, motores, etc.                                                                       & Media y alta         & Reino Unido                                                        \\
+		\bottomrule
+	\end{tabular}
+	\caption{Descrición Componentes. K = 30}
+	 \label{desc_comp}
+\end{table}
+
+
+\subsubsection{Análisis de países}
+
+%La figura \ref{fig:serie_componentes} muestra la evolución de la composición de la canasta exportadora en algunos países sudamericanos, en términos de los componentes obtenidos. \ref{fig:serie_componentes_1} muestra la evolución de Argentina y Brasil. En ambos casos el denominado \textit{componente gigante} representa la mayoría de las exportaciones, aunque esto es particularmente cierto para el caso brasilero. Para la Argentina, se observa que en el período 2007-2008 y a partir del 2013, crece la importancia del componente 16, compuesto mayoritariamente por porotos de soja y derivados. Vale mencionar que el período 2007-2008 se caracterizó por un aumento acelerado del precio de la soja. A su vez, los volúmenes cosechados en 2013 de este producto superaron ampliamente la cosecha del año anterior \citep{ybran2016informe}. Un movimiento similar, aunque menos pronunciado se puede observar en Brasil. Por su parte, en \ref{fig:serie_componentes_2} se puede ver la evolución para Bolivia, Chile y Paraguay. La canasta exportadora de estos países no esta centrada en el \textit{componente gigante} 2. Para el caso boliviano, se divide principalmente entre los componentes 29, cobre, y 37, gas y petróleo. Estos resultados son coincidentes con lo conocido por la bibliografía especializada para dicho país \citep{auty2002sustaining, chavez2016can}. Por su parte, En Chile los dos componentes más destacados son el 29, cobre y el 22, \textit{productos primarios y manufacturas basadas en recursos naturales} si bien una porción importante de su producción también se encuentra dentro del componente 2. Para el caso Chileno, la bibliografía especializada indica una amplia predominancia de la producción de cobre y derivados \citep{moran2014multinational}, por lo que pareciera que el componente 22 incluye algunos productos relacionados a la producción de este mineral. Se puede decir que para este país el modelo no performa de forma enteramente satisfactoria, dado que idealmente se pretendería un único componente que englobe la producción de cobre y todos sus derivados. Finalmente, en el caso paraguayo, la producción que domina ampliamente sus exportaciones es la de soja y derivados. Este resultado es también coincidente con la literatura especializada \citep{fogel2005enclave}.
+
+Con los componentes definidos, es posible analizar la composición de la canasta exportadora de cada país. Dado que en la definición del problema nuestra unidad es el par país\&año, eso significa que podemos comparar la evolución en la distribución de los componentes al interior de cada país. 
+
+
+\paragraph{Países petroleros}
+
+
+En la figura \ref{fig:graficoldak30irnirqkwtsauven} se observa la distribución de los componentes para los cinco países fundadores de la Organización de Países Exportadores de Petróleo (OPEP) en 1960. Tal como se refleja en el gráfico, las exportaciones de estos países se concentran en el petróleo y derivados. Es interesante notar cómo, previo a la crisis del petróleo de 1979 \citep{venn2016oil}, las exportaciones se dividían simétricamente entre los componentes 12 (petróleo crudo) y 20 (combustibles), sin embargo, luego de este episodio, con la suba de los precios del barril de crudo, la participación del componente 12 aumenta fuertemente, y se mantiene de esta forma hasta la actualidad. El caso de Venezuela es un tanto particular, dado que las exportaciones de combustible previo a la crisis del 79' tenían un mayor peso que el crudo, y si bien esto se revierte luego de la crisis, durante las décadas de los 80' y 90', el componente 20 sigue teniendo un peso importante, aunque el petróleo crudo va tendencialmente ganando participación hasta la actualidad. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_IRN_IRQ_KWT_SAU_VEN}
+	\caption{Distribución componentes: Irán, Irak, Kuwait, Arabia Saudita y Venezuela.}
+	\label{fig:graficoldak30irnirqkwtsauven}
+\end{figure}
+
+\paragraph{América}
+
+En la figura \ref{fig:graficoldak30canmexusa} se presenta la evolución de los componentes de Canadá, México y Estados Unidos. Los tres países tienen un comportamiento diferente. En Canada predomina el componente 17, una combinación de productos industriales de complejidad media y agropecuarios (madera). Con el comienzo del siglo XXI, este componente pareciera perder terreno frente al componente 12 (petróleo). México comienza la serie sin una especificidad clara, con algún peso mayor del componente 28 (Industrial de baja complejidad y agro) que rápidamente pierde terreno. Durante la década del 80', y parcialmente en los 90' cobra relevancia el componente 12 (petróleo crudo), pero al contrario de lo que sucede en Canadá, este componente pierde peso frente al componente 10 (industrial de media y alta complejidad) que a fines de los 80' se convierte en el componente con más peso, y continúa creciendo en importancia hasta la actualidad. Este proceso es analizado en la literatura como la \textit{Maquila Mexicana} \citep{sklair2012assembling}. En estos análisis se observa como las exportaciones de productos de alta complejidad por parte de México tiene como contrapartida la importación de los componentes desde Estados Unidos, siendo la \textit{maquilas} fábricas de baja complejidad, donde se hace uso de la mano de obra barata en México para ensamblar los componentes importados, y volver a enviarlos a Estados Unidos. Es interesante notar como la metodología propuesta en esta sección lo logra captar este fenómeno en su totalidad, generando una apariencia engañosa respecto de la estructura productiva mexicana. Finalmente, Estados Unidos comienza la serie con una predominancia de los componentes 5 (Electrónicos) y 16 (Industria de alta complejidad y producción agropecuaria). Entre 1977 y 1978 cae la participación del componente 5 cae abruptamente, para luego seguir su derrotero hasta la actualidad. Independientemente del punto de quiebre, este proceso puede asociarse a lo que en la literatura es ampliamente conocido como \textit{globalización}, en donde ciertos procesos productivos, como la producción de productos electrónicos, se trasladó hacia los países \textit{periféricos} \citep{henderson2002globalisation}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_CAN_MEX_USA}
+	\caption{Distribución componentes: Canadá, México y Estados Unidos.}
+	\label{fig:graficoldak30canmexusa}
+\end{figure}
+
+En la figura  \ref{fig:graficoldak30bolchlper} se puede observar la evolución de los componentes para Bolivia, Chile y Perú. En el caso de Bolivia, este país comienza la serie con una fuerte predominancia del componente 8 (cobre). Sin embargo,desde mediados de los 60' la importancia de este componente empieza a disminuir, y a crecer la importancia del componente 7 (gas), primero como un pico en la década del 80', y luego de forma sostenida a partir del cambio de siglo. Estos resultados son coincidentes con lo conocido por la bibliografía especializada para dicho país \citep{auty2002sustaining, chavez2016can}. Por su parte, tanto en Chile como en Perú predomina la producción de Cobre y derivados, aunque en el caso peruano existe una variedad de otros componentes con alguna importancia menor, mientras que para Chile las exportaciones son casi en su totalidad sobre el componente \citep{moran2014multinational,mikesell2013world}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_BOL_CHL_PER}
+	\caption{Distribución componentes: Bolivia, Chile y Perú.}
+	\label{fig:graficoldak30bolchlper}
+\end{figure}
+
+La figura \ref{fig:graficoldak30argbraury} muestra la evolución de los componentes de Argentina, Brasil y Uruguay. En el caso argentino se observa una predominancia del componente 25 (productos primarios como soja y hierro). Al comienzo de la serie también tiene relevancia el componente 24 (ganadería, pesca y lácteos), pero su peso disminuye en el tiempo. Viendo el detalle de los componentes de menor peso, se puede observar que a partir de los 90' crecen los componentes 3 (automóviles) y 14 (químicos), probablemente debido a la creación del Mercado Común del Sur, y las nuevas exportaciones regionales que ello trajo \citep{bekerman2010integracion}. En el caso Brasilero, se observa un cambio de componente dominante, desde el 9 (café, bananas) hacia el mencionado componente 25. Esto marca la misma tendencia que en el caso argentino a que predomine en este grupo de países la producción de commodities agrícolas. Por su parte, es posible que sea la influencia de Brasil la que determina el peso del hierro en el componente \citep{costantino2013gatopardismo}. A su vez, al comienzo de la serie destaca el componente 28 (industria de baja complejidad), que pierde importancia en el tiempo, a la vez que se observa un crecimiento a partir de los 2000' de los componentes 11 (autos, partes y componentes) y 12 (petróleo), aunque siempre de importancia secundaria respecto del componente 25. 
+En el caso de Uruguay, a diferencia de Argentina y Brasil, el componente más importante es el 24 (ganadería, pesca y lácteos). Sin embargo, el mismo pierde importancia, a la vez que desde los 2000' comienzan a crecer las exportaciones en el componente 25, que desde 2009 es el de mayor peso \citep{redo2012}. 
+En los tres países podemos observar una tendencia a la creciente exportación de commodities, en particular de la soja, y en el caso de Brasil del hierro.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_ARG_BRA_URY}
+	\caption{Distribución componentes: Argentina, Brasil y Uruguay.}
+	\label{fig:graficoldak30argbraury}
+\end{figure}
+
+\paragraph{Oceanía}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL}
+	\caption{Distribución componentes: Australia y Nueva Zelanda.}
+	\label{fig:graficoldak30ausnzl}
+\end{figure}
+
+\paragraph{Europa}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU}
+	\caption{Distribución componentes: Austria, República Checa y Alemania.}
+	\label{fig:graficoldak30autczedeu}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_HUN_POL_ROU}
+	\caption{Distribución componentes: Hungría. Polonia y Rumanía.}
+	\label{fig:graficoldak30hunpolrou}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL}
+	\caption{Francia, Reino Unido e Irlanda.}
+	\label{fig:graficoldak30fragbrirl}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_DNK_FIN_NLD_SWE}
+	\caption{Distribución componentes: Dinamárca, Finlandia, los Países bajos y Suecia.}
+	\label{fig:graficoldak30dnkfinnldswe}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_BEL_LUX}
+	\caption{Distribución componentes: Bélgica y Luxemburgo.}
+	\label{fig:graficoldak30bellux}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_ESP_ITA_PRT}
+	\caption{Distribución componentes: España, Italia y Portugal.}
+	\label{fig:graficoldak30espitaprt}
+\end{figure}
+
+
+
+
+\paragraph{Asia}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_CHN_JPN_PHL}
+	\caption{Distribución componentes: China, Japón y Filipinas.}
+	\label{fig:graficoldak30chnjpnphl}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP_TWN}
+	\caption{Distribución componentes: Hong Kong, Corea del Sur, Singapur y Taiwan.}
+	\label{fig:graficoldak30hkgkorsgptwn}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_BGD_IND_PAK}
+	\caption{Distribución componentes: Bangladesh, India y Pakistán.}
+	\label{fig:graficoldak30bgdindpak}
+\end{figure}
+
 
 
 \subsection{Grafo Bipartito}
