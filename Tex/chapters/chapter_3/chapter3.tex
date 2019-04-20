@@ -460,6 +460,13 @@ La estimación de los parámetros se realiza a través del proceso de \emph{vari
 
 Estos dos pasos se alternan hasta converger. Por último, se realiza un suavizado sobre las probabilidades que un componente asigna a un producto, para que sean siempre mayores a 0.
 
+\info{analisis de ETA y alpha}
+\info{los valores grandes para alfa significan que es probable que cada documento contenga una mezcla de la mayoría de los temas, y no un solo tema en particular. Los valores bajos de alfa ponen menos restricciones en los documentos y significan que es más probable que un documento contenga una combinación de solo algunos o incluso un tema}
+
+\info{eliminar las referencias a TF-IDF}
+
+\info{Me parece que no estuvo mal hacerlo si pensabamos que podía cambiar, porque ahora sabemos que el método es robusto a este hiperparámetro. Evidentemente la forma de los datos es muy distinta a la que originalmente se usa para LDA, aunque LDA no necesariamente en text mining es una técnica que neciste grandes volúmenes de datos, sino que con algunos miles de observaciones ya se pueden obtener resultados coherentes. La dimensión tradicional del problema es NxV (N observaciones, en el orden de magnitud de miles, V el vocabulario, también en el orden de magnitud de los miles). Nuestro problema no es 180x700, sino  (180xyr)X700 (porque la observaciones son por año país) Como tenemos un dataset de 54 años, esto es aprox (10000x700) estamos en el orden de magnitud de un dataset pequeño de text mining para LDA.  Respecto de la distirbución, en el vocabulario solemos tener la ley de Zipf, osea una distribución muy asimétrica de las palabras. En nuestro problema tenemos una distribución asimétrica, aunque no tanto, de los productos. Para mi que resulte difícil etiquetar en algunos casos no es tan loco, porque lo mismo pasa (siempre) en LDA para texto, a veces las cosas se agrupan en un sentido en el cual es difícil poner un nombre, lo cual no significa que no podamos entender qué sucede. Para el caso de comercio, eso significa que hay consistentemente un grupo de países que se encuentran en tuplas de ramas de la producción a la vez. No le podemos poner el nombre correspondiente a una rama, pero podemos entender el signfiicado.... }
+\info{eliminar referencias a k optimo}
 
 
 \subsection{Grafo Bipartito}

@@ -28,16 +28,16 @@
 \contentsline {subsubsection}{Definiciones}{34}{section*.13}
 \contentsline {subsubsection}{Proceso generativo e inferencial}{35}{Item.2}
 \contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{37}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Resultados}{39}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{39}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{43}{subsection.3.4.2}
-\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{43}{section*.18}
-\contentsline {subsubsection}{Espacio de productos}{46}{figure.3.14}
+\contentsline {section}{\numberline {3.4}Resultados}{40}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{40}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{44}{subsection.3.4.2}
+\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{44}{section*.23}
+\contentsline {subsubsection}{Espacio de productos}{45}{figure.3.14}
 \contentsline {subsection}{\numberline {3.4.3}Conclusiones}{52}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4.}Conclusiones}{54}{chapter.4}
-\contentsline {section}{Anexo}{55}{chapter*.20}
-\contentsline {subsection}{\numberline {A}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{55}{subsection.4.0.1}
-\contentsline {subsection}{\numberline {B}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{55}{subsection.4.0.2}
-\contentsline {subsection}{\numberline {C}Tabla de referencia: Descripci\IeC {\'o}n Usos}{57}{subsection.4.0.3}
-\contentsline {subsection}{\numberline {D}Medioides PAM clustering. K=50}{58}{subsection.4.0.4}
-\contentsline {subsection}{\numberline {E}Figuras Complementarias}{60}{subsection.4.0.5}
+\contentsline {chapter}{\numberline {4.}Conclusiones}{55}{chapter.4}
+\contentsline {section}{Anexo}{56}{chapter*.25}
+\contentsline {subsection}{\numberline {A}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{56}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {B}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{56}{subsection.4.0.2}
+\contentsline {subsection}{\numberline {C}Tabla de referencia: Descripci\IeC {\'o}n Usos}{58}{subsection.4.0.3}
+\contentsline {subsection}{\numberline {D}Medioides PAM clustering. K=50}{59}{subsection.4.0.4}
+\contentsline {subsection}{\numberline {E}Figuras Complementarias}{61}{subsection.4.0.5}
