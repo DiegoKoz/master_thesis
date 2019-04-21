@@ -616,43 +616,72 @@ Finalmente, para elaborar las etiquetas finales se consultó especialistas secto
 
 % \usepackage{booktabs}
 
-
 \begin{table}
 	\centering
 	\begin{tabular}{rllll} 
-		\toprule
-		\multicolumn{1}{l}{\textbf{N}} & \textbf{Desc. gral}    & \textbf{Desc. específica}                                                                          & \textbf{Complejidad} & \textbf{{País}}                                                    \\\hline
-		1                                 & Minerales         & Carbón, hierro                                                                             & -                    & Australia                                                          \\
-		2                                 & Industria         & Textiles, ingenieril, otros                                                                & Baja y media         & San Marino                                                         \\
-		3                                 & Industria         & Automoviles                                                                                & Media                & Bélgica                                                            \\
-		4                                 & Industria         & Textil, juguetes, etc                                                                      & Baja                 & Macao                                                              \\
-		5                                 & Industria         & Electrónicos                                                                               & Alta                 & Checoslovaquia                                                     \\
-		6                                 & Industria         & Autos, barcos, maquinaria                                                                  & Media y alta         & Japón                                                              \\
-		7                                 & Petróleo          & Liquificado (propano)                                                                              & -                    & Turkmenistán                                                       \\
-		8                                 & Minerales         & Cobre                                                                                      & -                    & Chile                                                              \\
-		9                                 & Agropecuario      & Café, bananas, otros                                                                       & -                    & Réunion                                                            \\
-		10                                & Industria         & Autos y electrónicos                                                                       & Media y alta         & México                                                             \\
-		11                                & Industria         & Autos, partes y componentes                                                                & Media y alta         & Alemania                                                           \\
-		12                                & Petróleo          & Crudo                                                                                      & -                    & Sudán del Sur                                                      \\
-		13                                & -                 & Oro, relojes, joyas                                                                        & -                    & Suiza                                                              \\
-		14                                & Industria         & Químicos                                                                                   & Alta                 & Curazao                                                            \\
-		15                                & Minerales         & Diamantes                                                                                  & -                    & Botswana                                                           \\
-		16                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Aviones, autopartes,\\ soja y maíz\end{tabular}                 & Media y alta         & USA                                                                \\
-		17                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Autopartes, madera\\ y derivados\end{tabular}                   & Media                & Finlandia                                                          \\
-		18                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Productos primarios\\ y textiles\end{tabular}                   & Baja                 & Isla de Navidad                                                    \\
-		19                                & -                 & \begin{tabular}[c]{@{}l@{}}Transacciones especiales,\\ no clasificadas\end{tabular}        & -                    & Isla San Martín                                                    \\
-		20                                & Combustibles      & Fuel oil, gasolina, etc.                                                                   & -                    & \begin{tabular}[c]{@{}l@{}}Rep. Dem. Pop.\\del Yemen\end{tabular}  \\
-		21                                & Industria         & \begin{tabular}[c]{@{}l@{}}Medicamentos e \\instrumentos médicos.\end{tabular}             & Alta                 & Irlanda                                                            \\
-		22                                & Petróleo + Agro   & \begin{tabular}[c]{@{}l@{}}Hidrocarburos, \\aceite de palma, cacao, etc.\end{tabular}      & -                    & Ghana                                                              \\
-		23                                & Industria         & \begin{tabular}[c]{@{}l@{}}Procesadores,microcircuitos, \\juguetes y calzado.\end{tabular} & Alta y baja          & China                                                              \\
-		24                                & Agropecuario      & Carnes, pescados, lácteos                                                                  & -                    & Islandia                                                           \\
-		25                                & Minerales + Agro. & Soja y Hierro                                                                              & -                    & Paraguay                                                           \\
-		26                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Aviones, perfumería,\\ vino, queso\end{tabular}                 & Alta                 & Francia                                                            \\
-		27                                & Industria         & Microcircuitos                                                                             & Alta                 & filipinas                                                          \\
-		28                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Arroz, algodón, textiles, \\goma, etc.\end{tabular}             & Baja                 & Pakistán                                                           \\
-		29                                & Industria + Agro. & maquinaria, flores, quesos.                                                                & Alta                 & Países Bajos                                                       \\
-		30                                & Industria         & Autos, motores, etc.                                                                       & Media y alta         & Reino Unido                                                        \\
-		\bottomrule
+		\hline
+		\multicolumn{1}{l}{\textbf{Comp}} & \textbf{Grupo}    & \textbf{Subgrupo}                                                                                                                & \textbf{Complejidad} & \textbf{País}                                                      \\ 
+		\hline
+		1                                 & Minerales         & Carbón, hierro                                                                                                                   & -                    & Australia                                                          \\ 
+		\hline
+		2                                 & Industria         & Textiles, ingenieril, otros                                                                                                      & Baja y media         & San Marino                                                         \\ 
+		\hline
+		3                                 & Industria         & Automoviles                                                                                                                      & Media                & Bélgica                                                            \\ 
+		\hline
+		4                                 & Industria         & Textil, juguetes, etc                                                                                                            & Baja                 & Macao                                                              \\ 
+		\hline
+		5                                 & Industria         & \begin{tabular}[c]{@{}l@{}}Electrónicos no digitales.\\Cintas de grabación.\\Lineas de telefono.\\Papél fotográfico\end{tabular} & Alta (hasta 70')     & Checoslovaquia                                                     \\ 
+		\hline
+		6                                 & Industria         & \begin{tabular}[c]{@{}l@{}}Autos, barcos, \\maquinaria\end{tabular}                                                            & Media y alta         & Japón                                                              \\ 
+		\hline
+		7                                 & Petróleo          & Estado Gaseoso                                                                                                                   & -                    & Turkmenistán                                                       \\ 
+		\hline
+		8                                 & Minerales         & Cobre                                                                                                                            & -                    & Chile                                                              \\ 
+		\hline
+		9                                 & Agropecuario      & Café, bananas, otros                                                                                                             & -                    & Réunion                                                            \\ 
+		\hline
+		10                                & Industria         & Autos y electrónicos                                                                                                             & Media y alta         & México                                                             \\ 
+		\hline
+		11                                & Industria         & \begin{tabular}[c]{@{}l@{}}Autos, partes y\\ componentes\end{tabular}                                                            & Media y alta         & Alemania                                                           \\ 
+		\hline
+		12                                & Petróleo          & Crudo                                                                                                                            & -                    & Sudán del Sur                                                      \\ 
+		\hline
+		13                                & -                 & Oro, relojes, joyas                                                                                                              & -                    & Suiza                                                              \\ 
+		\hline
+		14                                & Industria         & Químicos                                                                                                                         & Alta                 & Curazao                                                            \\ 
+		\hline
+		15                                & Minerales         & Diamantes                                                                                                                        & -                    & Botswana                                                           \\ 
+		\hline
+		16                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Aviones, autopartes,\\ soja y maíz\end{tabular}                                                       & Media y alta         & USA                                                                \\ 
+		\hline
+		17                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Autopartes,\\ madera y derivados\end{tabular}                                                         & Media                & Finlandia                                                          \\ 
+		\hline
+		18                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Productos primarios\\ y textiles\end{tabular}                                                         & Baja                 & Isla de Navidad                                                    \\ 
+		\hline
+		19                                & -                 & \begin{tabular}[c]{@{}l@{}}Transacciones especiales,\\ no clasificadas\end{tabular}                                              & -                    & Isla San Martín                                                    \\ 
+		\hline
+		20                                & Combustibles      & Fuel oil, gasolina, etc.                                                                                                         & -                    & \begin{tabular}[c]{@{}l@{}}Rep. Dem.\\ Pop.del Yemen\end{tabular}  \\ 
+		\hline
+		21                                & Industria         & \begin{tabular}[c]{@{}l@{}}Medicamentos e\\ instrumentos médicos.\end{tabular}                                                   & Alta                 & Irlanda                                                            \\ 
+		\hline
+		22                                & Petróleo + Agro   & \begin{tabular}[c]{@{}l@{}}Hidrocarburos,\\aceite de palma,cacao, etc.\end{tabular}                                              & -                    & Ghana                                                              \\ 
+		\hline
+		23                                & Industria         & \begin{tabular}[c]{@{}l@{}}Procesadores,\\microcircuitos,\\ juguetes y calzado.\end{tabular}                                     & Alta y baja          & China                                                              \\ 
+		\hline
+		24                                & Agropecuario      & \begin{tabular}[c]{@{}l@{}}Carnes, pescados,\\ lácteos\end{tabular}                                                              & -                    & Islandia                                                           \\ 
+		\hline
+		25                                & Minerales + Agro. & Soja y Hierro                                                                                                                    & -                    & Paraguay                                                           \\ 
+		\hline
+		26                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Aviones, perfumería,\\ vino, queso\end{tabular}                                                       & Alta                 & Francia                                                            \\ 
+		\hline
+		27                                & Industria         & Microcircuitos                                                                                                                   & Alta                 & filipinas                                                          \\ 
+		\hline
+		28                                & Industria + Agro. & \begin{tabular}[c]{@{}l@{}}Arroz, algodón,\\textiles, goma, etc.\end{tabular}                                                 & Baja                 & Pakistán                                                           \\ 
+		\hline
+		29                                & Industria + Agro. & maquinaria, flores, quesos.                                                                                                      & Alta                 & Países Bajos                                                       \\ 
+		\hline
+		30                                & Industria         & Autos, motores, etc.                                                                                                             & Media y alta         & Reino Unido                                                        \\
+		\hline
 	\end{tabular}
 	\caption{Descrición Componentes. K = 30}
 	 \label{desc_comp}
@@ -680,7 +709,9 @@ En la figura \ref{fig:graficoldak30irnirqkwtsauven} se observa la distribución 
 
 \paragraph{América}
 
-En la figura \ref{fig:graficoldak30canmexusa} se presenta la evolución de los componentes de Canadá, México y Estados Unidos. Los tres países tienen un comportamiento diferente. En Canada predomina el componente 17, una combinación de productos industriales de complejidad media y agropecuarios (madera). Con el comienzo del siglo XXI, este componente pareciera perder terreno frente al componente 12 (petróleo). México comienza la serie sin una especificidad clara, con algún peso mayor del componente 28 (Industrial de baja complejidad y agro) que rápidamente pierde terreno. Durante la década del 80', y parcialmente en los 90' cobra relevancia el componente 12 (petróleo crudo), pero al contrario de lo que sucede en Canadá, este componente pierde peso frente al componente 10 (industrial de media y alta complejidad) que a fines de los 80' se convierte en el componente con más peso, y continúa creciendo en importancia hasta la actualidad. Este proceso es analizado en la literatura como la \textit{Maquila Mexicana} \citep{sklair2012assembling}. En estos análisis se observa como las exportaciones de productos de alta complejidad por parte de México tiene como contrapartida la importación de los componentes desde Estados Unidos, siendo la \textit{maquilas} fábricas de baja complejidad, donde se hace uso de la mano de obra barata en México para ensamblar los componentes importados, y volver a enviarlos a Estados Unidos. Es interesante notar como la metodología propuesta en esta sección lo logra captar este fenómeno en su totalidad, generando una apariencia engañosa respecto de la estructura productiva mexicana. Finalmente, Estados Unidos comienza la serie con una predominancia de los componentes 5 (Electrónicos) y 16 (Industria de alta complejidad y producción agropecuaria). Entre 1977 y 1978 cae la participación del componente 5 cae abruptamente, para luego seguir su derrotero hasta la actualidad. Independientemente del punto de quiebre, este proceso puede asociarse a lo que en la literatura es ampliamente conocido como \textit{globalización}, en donde ciertos procesos productivos, como la producción de productos electrónicos, se trasladó hacia los países \textit{periféricos} \citep{henderson2002globalisation}.
+En la figura \ref{fig:graficoldak30canmexusa} se presenta la evolución de los componentes de Canadá, México y Estados Unidos. Los tres países tienen un comportamiento diferente. En Canada predomina el componente 17, una combinación de productos industriales de complejidad media y agropecuarios (madera). Con el comienzo del siglo XXI, este componente pareciera perder terreno frente al componente 12 (petróleo). México comienza la serie sin una especificidad clara, con algún peso mayor del componente 28 (Industrial de baja complejidad y agro) que rápidamente pierde terreno. Durante la década del 80', y parcialmente en los 90' cobra relevancia el componente 12 (petróleo crudo), pero al contrario de lo que sucede en Canadá, este componente pierde peso frente al componente 10 (industrial de media y alta complejidad) que a fines de los 80' se convierte en el componente con más peso, y continúa creciendo en importancia hasta la actualidad. Este proceso es analizado en la literatura como la \textit{Maquila Mexicana} \citep{sklair2012assembling}. En estos análisis se observa como las exportaciones de productos de alta complejidad por parte de México tiene como contrapartida la importación de los componentes desde Estados Unidos, siendo la \textit{maquilas} fábricas de baja complejidad, donde se hace uso de la mano de obra barata en México para ensamblar los componentes importados, y volver a enviarlos a Estados Unidos. Es interesante notar como la metodología propuesta en esta sección lo logra captar este fenómeno en su totalidad, generando una apariencia engañosa respecto de la estructura productiva mexicana. 
+
+Estados Unidos comienza la serie con una predominancia de los componentes 5 (Electrónicos,analógicos) y 16 (Industria de alta complejidad y producción agropecuaria). Entre 1977 y 1978 cae la participación del componente 5 cae abruptamente, para luego seguir su derrotero hasta la actualidad. El componente 5 marca productos analógicos, considerados de alta complejidad hasta el quiebre producido por los cambios técnicos introducidos por las computadoras personales y las telecomunicaciones. Solo a modo de ejemplo, en junio de 1977 se crea la Apple II, las primeras computadoras personales de venta masiva. Es decir, hasta fines de los 70' la producción de Estados Unidos se dividía entre el agro y productos electrónicos no digitales. Sin embargo, en el componente 16, si bien aparece la industrial pesada (aviones, motores, maquinaria), no aparecen los microprocesadores, transistores y demás productos propios de la \textit{era digital}. Es decir que no existe simplemente un reemplazo tecnológico. Independientemente del punto de quiebre, este proceso puede asociarse a lo que en la literatura es ampliamente conocido como \textit{globalización}, donde a raíz de las posibilidades que brinda el mencionado cambio técnico, ciertos procesos productivos, como la producción de productos electrónicos, se trasladó hacia los países \textit{periféricos} \citep{henderson2002globalisation}.
 
 \begin{figure}
 	\centering
@@ -711,6 +742,8 @@ En los tres países podemos observar una tendencia a la creciente exportación d
 
 \paragraph{Oceanía}
 
+La figura \ref{fig:graficoldak30ausnzl} muestra la distribución de los componentes en Australia y Nueva Zelanda. En el caso australiano se marca una clara predominancia del componente 1 (Carbón y hierro), lo cual es esperable, dado que este país es el mayor exportador mundial de dichos minerales \citep{balat2009coal}. A su vez, la literatura especializada en dicho país menciona un \textit{boom} de los términos de intercambio para estos commodities, que permitiría explicar la tendencia ascendente a partir del año 2000 del componente 1 \citep{mckissack2008structural}. Nueva Zelanda, por su parte, refleja una predominancia del componente 24 (Agropecuario, carnes y lácteos), lo cual se corresponde con la especialización productiva que señala la literatura \citep{macleod2006intensification,ballingall2004farming}. Es interesante notar como, a diferencia de lo observado para el caso de Argentina, Brasil y Uruguay, para Austrialia y Nueva Zelanda no se observa un cambio en la especialización productiva. El caso australiano, dado que se trata de extracción de minerales, es lógico compararlo con el caso de Bolivia, Chile y Perú, en donde estos dos últimos tampoco muestran signos de cambio en su especialización para el mercado mundial. Sin embargo, Nueva Zelanda exporta sobre el componente 24, que es el mismo que definía el perfil exportador de Uruguay y jugaba un rol importante en Argentina para el principio de la serie. No obstante esto último, no se observa para Nueva Zelanda un incremento en la participación del componente 25 sobre sus exportaciones.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL}
@@ -720,12 +753,8 @@ En los tres países podemos observar una tendencia a la creciente exportación d
 
 \paragraph{Europa}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU}
-	\caption{Distribución componentes: Austria, República Checa y Alemania.}
-	\label{fig:graficoldak30autczedeu}
-\end{figure}
+
+En la figura \ref{fig:graficoldak30hunpolrou} se presentan los resultados para Hungría, Polonia y Rumanía, tres países que formaron parte de la zona de influencia de la Unión Soviética \citep{shama2000determinants}, y el \textit{Council for Mutual Economic Assistance} (CMEA). En el caso de Hungría, se observa que entre mediados de los 60' hasta mediados de los 70' tiene un peso importante el componente 5(industrial, electrónicos analógicos), que luego cae abruptamente. Este proceso se debe a que los productos del componente 5 se vuelven obsoletos dado el cambio técnico del período. Sin embargo, si se tratara simplemente de un cambio técnico, sería esperable que el componente 5 fuera reemplazado por otro que reflejase las nuevas tecnologías, lo cual no sucede. Esto puede estar relacionado con el deterioro de los términos de intercambio, tanto con el bloque socialista, como con los países de Europa Occidental, y la mayor apertura comercial con estos últimos \citep{koves1983hungarian}. Más allá de este punto, lo que se observa es una irregularidad que da cuenta de una falta de especialización productiva, en particular hasta mediados de los 90'. Con la caída de la Unión Soviética y la fuerte reestructuración económica dentro de estos países, se observa una creciente especialización sobre el componente 10 (industria, automotriz y electrónica)\citep{linden1998building}. Para el caso de Rumanía se observa además un pico del componente 4 (industria liviana, textiles y juguetes) que a partir de 2002 disminuye en importancia para dar lugar al componente 10. 
 
 
 \begin{figure}
@@ -735,13 +764,17 @@ En los tres países podemos observar una tendencia a la creciente exportación d
 	\label{fig:graficoldak30hunpolrou}
 \end{figure}
 
+La figura \ref{fig:graficoldak30autczedeu} presenta la evolución de Austria y Alemania desde 1962, y República Checa desde su fundación como estado independiente a principios de los 90'. Tanto en el caso de Austria como Alemania, se observa una fuerte caía a fines de los años 70' del mencionado componente 5. Este fenómeno ya fue comentado en el caso de Estados Unidos y Hungría, y a su vez también se puede observar para Checoslovaquia. Para el caso de Alemania y Austria, con un mayo o menor rezago, se observa que el componente que toma relevancia luego de la caída del componente 5, es el 11 (Industria de media tecnología, automóviles y maquinaria). Por su parte, para el caso de República Checa, junto con el componente 11, también toma igual importancia el 10, que también es industrial con un fuerte componente de automóviles y maquinaria, pero con mayor peso en productos electrónicos, como cables, paneles de control, televisores, etc. 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL}
-	\caption{Francia, Reino Unido e Irlanda.}
-	\label{fig:graficoldak30fragbrirl}
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU}
+	\caption{Distribución componentes: Austria, República Checa y Alemania.}
+	\label{fig:graficoldak30autczedeu}
 \end{figure}
+
+
+En la figura \ref{fig:graficoldak30dnkfinnldswe} se presentan los resultados para algunos de los países nórdicos: Dinamarca, Finlandia, los Países Bajos y Suecia. Si bien para todos ellos, excepto Finlandia, se puede observar también la caída del componente 5, el mismo no ocupó en ningún momento de la serie el lugar del componente más importante. Al contrario, Todos estos países presentan una especialización bien definida, aunque no sin cambios en el tiempo. En los casos de los países escandinavos, Finlandia y Suecia, predomina el componente 17 (Industria y Agro. Motores, madera y derivados), aunque con una tendencia decreciente en el tiempo. Para el caso finlandés, crece desde mediados de los 90' el componente 23 (procesadores y microcircuitos) y el componente 11(automóviles y maquinaria) a partir de los 2000. El caso sueco es similar, aunque el componente 11 crece tendencialmente desde los 80' y su peso es en general mayor. Tanto el el rol tradicional de estos países como productores de materias primas, y en particular madera y derivados, como los recientes procesos de complejización productiva son reconocidos en la literatura \citep{blomstrom2003natural}. En el caso de Dinamarca y los Países Bajos el componente característico es el 29 (Industria y Agro, maquinaria,productos químicos, flores, quesos, etc.). En el caso de Dinamarca, también se observa al principio de la serie un peso importante en el componente 24 (carnes y lácteos), que cae tendencialmente. Por su parte también se observa un peso importante del componente 2 (industria liviana), particularmente a partir de la mencionada caída del componente 5. 
 
 \begin{figure}
 	\centering
@@ -750,12 +783,23 @@ En los tres países podemos observar una tendencia a la creciente exportación d
 	\label{fig:graficoldak30dnkfinnldswe}
 \end{figure}
 
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_BEL_LUX}
+%	\caption{Distribución componentes: Bélgica y Luxemburgo.}
+%	\label{fig:graficoldak30bellux}
+%\end{figure}
+
+En la figura \ref{fig:graficoldak30fragbrirl} se presenta la evolución de las exportaciones de Francia, Irlanda y el Reino Unido. Nuevamente se observa la caída del componente 5 entre 1977 y 1978, aunque en el caso de Irlanda este componente tenía un peso menor, aunque creciente. Las exportaciones de Irlanda al principio de la serie se caracterizaban por el componente 24 (carnes, lácteos, etc.). Si bien el componente 5 era predominante al comienzo de la serie en Francia y Reino Unido, tal como en los mencionados casos de Alemania y Austria, luego del punto de inflexión cada uno de estos países tiene un componente característico diferente: En el caso francés, es el 26 (aviones,motores, perfumería, vino y queso), todos ellos productos típicos, inclusive la producción de aviones, donde este país es uno de los líderes mundiales con la empresa Air Bus a la cabeza de dicho sector \citep{frenken2000complexity}. En el caso del Reino Unido el componente 30 (motores, medicamentos y bebidas alcohólicas) es el que toma la delantera. En ambos casos, estos componentes ya tenían un valor significativo al comienzo de la serie. Distinto es el caso de Irlanda, en donde el componente 31 (medicamentos, químicos y, en menor medida, maquinaria digital) no tenía relevancia alguna al comienzo de la serie. Este cambio desde un componente basado en productos primarios a uno de alta complejidad es reconocido en la literatura bajo el nombre de \textit{celtic tiger}, en relación al proceso de industrialización reciente en el sudeste asiático (\textit{asian tigers}) \citep{murphy2000celtic}.
+
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_BEL_LUX}
-	\caption{Distribución componentes: Bélgica y Luxemburgo.}
-	\label{fig:graficoldak30bellux}
+	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL}
+	\caption{Francia, Reino Unido e Irlanda.}
+	\label{fig:graficoldak30fragbrirl}
 \end{figure}
+
+La figura \ref{fig:graficoldak30espitaprt} muestra la evolución de Italia, Portugal y España. En el caso italiano, nuevamente se observa una caída del componente 5, que es reemplazado por el 2 (calzado, muebles y maquinaria), en términos de la clasificación de Lall, este cambio implica una simplificación productiva, dado que el peso de productos de alta tecnología en el componente 2 es menor que en el 5. El caso de España y Portugal es similar: desde el comienzo de la serie el componente dominante es el 18 (frutas y vegetales, y producción textil), aunque su peso disminuye a lo largo de la serie, lo cual se contrapone con el incremento de la importancia del componente 3 (automóviles, polietileno, hierro y acero). En particular para el caso español, a partir de la década del 90' este último componente es de mayor peso. Este proceso de industrialización tardía de España y Portugal es reconocido en la literatura \citep{holman2005integrating}.
 
 \begin{figure}
 	\centering
@@ -764,10 +808,14 @@ En los tres países podemos observar una tendencia a la creciente exportación d
 	\label{fig:graficoldak30espitaprt}
 \end{figure}
 
-
+La caracterización del comercio de los países europeos deja como conclusión por un lado la particularidad del comercio dentro del espacio de influencia de la unión soviética, así como la similitud de su estructura productiva en la actualidad de los países que lo componían. Por su parte, es marcada la regularidad temporal con la que el componente 5 cae en importancia en Austria, Alemania, Francia, Reino Unido e Italia. A su vez, parece notarse un proceso de especialización y complementariedad productiva al interior de lo que actualmente constituye la Unión Europea, dado que mientras al principio de la serie muchos de estos países producían en un mismo componente, la caída del mismo da lugar a componentes más o menos bien diferenciados entre los países. También se observa la industrialización tardía de España, Portugal e Irlanda, y se logra apreciar la similitud de este proceso en los primeros dos países, y sus diferencias, tanto en magnitud como en especialización productiva, con Irlanda. 
 
 
 \paragraph{Asia}
+
+en la figura \ref{fig:graficoldak30chnjpnphl} se puede observar la evolución de las exportaciones de China, japón y Filipinas. En el caso de China, a comienzos de los 60' el componente más relevante es el 28, compuesto por arroz, algodón, té y algunos productos textiles. Este componente tiene una caída tendencial, acompañada de un incremento del componente 4 (vestimenta, juguetes, etc.) que a partir de la década del 80' es el de mayor peso. Este componente tiene su pico a comienzos de los 90', para comenzar a descender, en sintonía con el crecimiento del componente 23 (televisores,computadoras, microcircuitos y transistores), que constituye en la actualidad aproximadamente el 80\% de las exportaciones de este país. Este cambio en la especificidad productiva da cuenta de la complejización de la industria China por etapas, primero desde una economía básicamente agropecuaria a una industrialización de baja complejidad, para luego convertirse en uno de los principales exportadores mundiales de productos de alta complejidad \cite{chenery1986industrialization, costantino2013gatopardismo}. 
+En el caso de Japón, se observa al igual que en muchos países europeos la importancia del componente 5 al comienzo de la serie. Sin embargo, la evolución es distinta en este caso. En primer lugar, si bien hay una caída pronunciada en 1977, no tiene la misma magnitud que en los casos europeo o de Estados Unidos. A su vez, el componente 6 (motores, barcos y maquinaria eléctrica) cobra importancia desde el comienzo de la serie, y supera al 5 ya desde comienzos de la década del 70'. A su vez, desde mediados de los 80' aparece el componente 27 (microcircuitos, unidades periféricas, transistores, etc.). 
+El caso de las Filipinas es paradigmáticamente distinto al de China. Desde comienzos de la serie hasta los 90', el componente principal es el 9 (Café, bananas, etc.). Este componente cae de forma irregular hasta 1990. y a partir de mediados de los 90' el componente 27 crece drásticamente \citep{chang2018industrial}.
 
 \begin{figure}
 	\centering
@@ -776,12 +824,20 @@ En los tres países podemos observar una tendencia a la creciente exportación d
 	\label{fig:graficoldak30chnjpnphl}
 \end{figure}
 
+
+La figura \ref{fig:graficoldak30hkgkorsgptwn} muestra la evolución de los denominados \textit{tigres asiáticos}: Hong-Kong, Singapur, Corea del sur y Taiwan. 
+En el caso de Hong-Kong, el componente cuatro (calzado, ropa y juguetes) es el de mayo relevancia a lo largo dela serie, hasta el cambio de siglo. A partir de allí, y de forma irregular, disminuye su importancia respecto del componente 27 (microcircuitos, transistores, etc.). Un comportamiento similar tienen Taiwan y Corea del Sur, donde al comienzo de la serie tiene mayor peso el componente 28 (arroz, algodón, etc.), que pierde importancia a mediados de los 60' para ser remplazado por el componente 4, y por el 27 a mediados de los 90'. Vale mencionar que el componente 28 también tiene un peso significativo y decreciente al comienzo de la serie de Hong-Kong, lo que da la pauta de que esta región podría haber atravesado un proceso similar al de los demás países, con anterioridad en el tiempo. Estos procesos son similares a su vez con lo analizado para el caso Chino, donde también se observa el proceso de sofisticación productiva de los componentes 28-4-27. En el caso de Corea del sur, junto con el componente 27, también crece en importancia el 6 (motores, barcos y maquinaria eléctrica), visto en el caso japonés. 
+Singapur tiene un recorrido diferente al de los demás \textit{tigres}. Hasta fines de los 80' el componente más importante es el 20 (fuel oil, combustibles, etc.), para ser reemplazado por el 27, que se encontraba en rápido crecimiento desde principios de la década. Siguiendo a \cite{ng2013singapore} podría decirse que la industrialización de Singapur se basa en su producción de energía. Sin embargo, a diferencia de los demás países, también se observa en una caída del componente 27 a partir de los 2000, y un crecimiento del 14 (derivados del petróleo)
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP_TWN}
 	\caption{Distribución componentes: Hong Kong, Corea del Sur, Singapur y Taiwan.}
 	\label{fig:graficoldak30hkgkorsgptwn}
 \end{figure}
+
+Finalmente, en el gráfico \ref{fig:graficoldak30bgdindpak} se presenta el caso de Bangladesh, India y Pakistán. Estos tres países tienen un recorrido muy diferente al visto en el resto de Asia. En el caso de Pakistán, el componente 28 representa la absoluta mayoría de las exportaciones, con un decrecimiento tendencial muy leve a partir de los 90' y un incremento muy pequeño de los componentes 4 (ropa juguetes, etc.) y 18 (productos primarios y textiles). En el caso de la India, el componente 28 es predominante, pero su tendencia descendente es marcada, y se comporta en espejo con el crecimiento del componente 15 (diamantes). Este último se explica no por las escasas minas de diamantes que existen en la actualidad en la India, sino por la industria de la talla de diamantes en el oeste de dicho país \citep{henn2013transnational,sevdermish1998rise}. 
+Por su parte, Bangladesh muestra un recorrido similar al de China, pasando del componente 28 al 4. 
 
 
 \begin{figure}
@@ -791,6 +847,7 @@ En los tres países podemos observar una tendencia a la creciente exportación d
 	\label{fig:graficoldak30bgdindpak}
 \end{figure}
 
+La evolución de las exportaciones en Asia deja un imagen muy diferente a la de Europa. Mientras en aquel continente se pasa de una concentración de los distintos países en un único componente a una diferenciación, en el caso asiático sucede lo contrario: ocurre un proceso de indiferenciación en las exportaciones, concentrándose en la producción de industria liviana de baja complejidad primero, y la producción de micro-componentes luego. A su vez, lo que se observa es que la producción del hardware asociado a las nuevas tecnologías que se producen a partir del cambio técnico de la \textit{era digital}, y que generan la obsolescencia de los productos comprendidos en el componente 5, se producen en el sudeste asiático.  
 
 
 \subsection{Grafo Bipartito}

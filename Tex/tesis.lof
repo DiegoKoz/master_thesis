@@ -6,149 +6,148 @@
 \babel@toc {spanish}{}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Interacciones Seg\IeC {\'u}n porcentaje de importaciones que representa al pa\IeC {\'\i }s importador. Destacado par Importador-Exportador.1996-2016}}{6}{figure.2.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2016}}}{6}{figure.2.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {proporci\IeC {\'o}n mayor al 70\%}}}{6}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Interacciones. Seg\IeC {\'u}n valor comercial. Destacado par Importador-Exportador. 1996-2016}}{7}{figure.2.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2016}}}{7}{figure.2.2}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Top 5 por a\IeC {\~n}o}}}{7}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Interacciones. Seg\IeC {\'u}n valor comercial. 1996-2016}}{8}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces \textbf {Grafos. 2016, seg\IeC {\'u}n punto de corte}}}{13}{figure.2.4}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1\%}}}{13}{figure.2.4}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {5\%}}}{13}{figure.2.4}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {10\%}}}{13}{figure.2.4}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {15\%}}}{13}{figure.2.4}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {20\%}}}{13}{figure.2.4}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {25\%}}}{13}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces \textbf {Medidas de centralidad}. Importaciones, 2016}}{14}{figure.2.5}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Clustering}}}{14}{figure.2.5}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cantidad de aristas}}}{14}{figure.2.5}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Densidad}}}{14}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces \textbf {Grado total.} Multigrafo exportaciones e importaciones. A\IeC {\~n}o 2016}}{15}{figure.2.6}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1\%. Coeficiente de Pearson = 0.96}}}{15}{figure.2.6}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {10\%. Coeficiente de Pearson = 0.77}}}{15}{figure.2.6}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {20\%. Coeficiente de Pearson = 0.81}}}{15}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces \textbf {Importaciones.} umbral 1\%. 1996-2016}}{17}{figure.2.7}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Correlaci\IeC {\'o}n de grado}}}{17}{figure.2.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Coeficiente de clustering}}}{17}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Distribuci\IeC {\'o}n medidas de centralidad seg\IeC {\'u}n a\IeC {\~n}o. umbral 1\%}}{19}{figure.2.8}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Grado, importaciones}}}{19}{figure.2.8}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Autovalor, exportaciones}}}{19}{figure.2.8}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Distribuci\IeC {\'o}n autovalor ponderado, exportaciones seg\IeC {\'u}n a\IeC {\~n}o. umbral 1\%}}{20}{figure.2.9}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Evoluci\IeC {\'o}n de la estructura de la red. Importaciones. Umbral 1\%. 1948-2000}}{21}{figure.2.10}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Coeficiente de Clustering.}}}{21}{figure.2.10}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Correlaci\IeC {\'o}n de grado}}}{21}{figure.2.10}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Evoluci\IeC {\'o}n de la centralidad promedio por contiente. Impo. Umbral 1\%}}{22}{figure.2.11}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Argentina, Brasil y M\IeC {\'e}xico. Importaciones. Umbral 1\%}}{24}{figure.2.12}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Grado}}}{24}{figure.2.12}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Autovalor Ponderado}}}{24}{figure.2.12}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Autovalor. Importaciones. Umbral 1\%}}{25}{figure.2.13}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {China y Estados Unidos}}}{25}{figure.2.13}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Jap\IeC {\'o}n,Corea y China}}}{25}{figure.2.13}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Interacciones Seg\IeC {\'u}n porcentaje de importaciones que representa al pa\IeC {\'\i }s importador. Destacado par Importador-Exportador.1996-2016}}{6}{figure.2.1}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2016}}}{6}{figure.2.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {proporci\IeC {\'o}n mayor al 70\%}}}{6}{figure.2.1}% 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Interacciones. Seg\IeC {\'u}n valor comercial. Destacado par Importador-Exportador. 1996-2016}}{7}{figure.2.2}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2016}}}{7}{figure.2.2}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Top 5 por a\IeC {\~n}o}}}{7}{figure.2.2}% 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Interacciones. Seg\IeC {\'u}n valor comercial. 1996-2016}}{8}{figure.2.3}% 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \textbf {Grafos. 2016, seg\IeC {\'u}n punto de corte}}}{13}{figure.2.4}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1\%}}}{13}{figure.2.4}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {5\%}}}{13}{figure.2.4}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {10\%}}}{13}{figure.2.4}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {15\%}}}{13}{figure.2.4}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {20\%}}}{13}{figure.2.4}% 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {25\%}}}{13}{figure.2.4}% 
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \textbf {Medidas de centralidad}. Importaciones, 2016}}{14}{figure.2.5}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Clustering}}}{14}{figure.2.5}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cantidad de aristas}}}{14}{figure.2.5}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Densidad}}}{14}{figure.2.5}% 
+\contentsline {figure}{\numberline {2.6}{\ignorespaces \textbf {Grado total.} Multigrafo exportaciones e importaciones. A\IeC {\~n}o 2016}}{15}{figure.2.6}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1\%. Coeficiente de Pearson = 0.96}}}{15}{figure.2.6}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {10\%. Coeficiente de Pearson = 0.77}}}{15}{figure.2.6}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {20\%. Coeficiente de Pearson = 0.81}}}{15}{figure.2.6}% 
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \textbf {Importaciones.} umbral 1\%. 1996-2016}}{17}{figure.2.7}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Correlaci\IeC {\'o}n de grado}}}{17}{figure.2.7}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Coeficiente de clustering}}}{17}{figure.2.7}% 
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Distribuci\IeC {\'o}n medidas de centralidad seg\IeC {\'u}n a\IeC {\~n}o. umbral 1\%}}{19}{figure.2.8}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Grado, importaciones}}}{19}{figure.2.8}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Autovalor, exportaciones}}}{19}{figure.2.8}% 
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Distribuci\IeC {\'o}n autovalor ponderado, exportaciones seg\IeC {\'u}n a\IeC {\~n}o. umbral 1\%}}{20}{figure.2.9}% 
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Evoluci\IeC {\'o}n de la estructura de la red. Importaciones. Umbral 1\%. 1948-2000}}{21}{figure.2.10}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Coeficiente de Clustering.}}}{21}{figure.2.10}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Correlaci\IeC {\'o}n de grado}}}{21}{figure.2.10}% 
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Evoluci\IeC {\'o}n de la centralidad promedio por contiente. Impo. Umbral 1\%}}{22}{figure.2.11}% 
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Argentina, Brasil y M\IeC {\'e}xico. Importaciones. Umbral 1\%}}{24}{figure.2.12}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Grado}}}{24}{figure.2.12}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Autovalor Ponderado}}}{24}{figure.2.12}% 
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Autovalor. Importaciones. Umbral 1\%}}{25}{figure.2.13}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {China y Estados Unidos}}}{25}{figure.2.13}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Jap\IeC {\'o}n,Corea y China}}}{25}{figure.2.13}% 
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Treemaps por tipos de productos. Exportaciones. 1996-2016. Total mundial}}{28}{figure.3.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Cadenas y Subcadenas}}}{28}{figure.3.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cadenas y Usos}}}{28}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Treemaps por Continentes y pa\IeC {\'\i }ses. 1996-2016. Total mundial}}{29}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Treemaps de Cadenas y Subcadenas.2016. Total Latinoam\IeC {\'e}rica}}{30}{figure.3.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exportaciones}}}{30}{figure.3.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Importaciones}}}{30}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Treemaps de Cadenas y Usos.2016. Total Latinoam\IeC {\'e}rica}}{32}{figure.3.4}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exportaciones}}}{32}{figure.3.4}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Importaciones}}}{32}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Treemaps seg\IeC {\'u}n socio comercial. 2016. Total Latinoam\IeC {\'e}rica}}{33}{figure.3.5}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Excluyendo Resto del Mundo}}}{33}{figure.3.5}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Incluyendo Resto del mundo}}}{33}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces fuente: \cite {blei2003latent}}}{36}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces fuente: \cite {blei2003latent}}}{36}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces fuente: \cite {blei2003latent}}}{37}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Grafo bipartito, pa\IeC {\'\i }ses y productos}}{38}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n Lall. K=2}}{41}{figure.3.10}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Componente 1}}}{41}{figure.3.10}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Componente 2}}}{41}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n Lall. K=2}}{42}{figure.3.11}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Componente 1}}}{42}{figure.3.11}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Componente 2}}}{42}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Distribuci\IeC {\'o}n promedio de los componentes en los pa\IeC {\'\i }ses, varios valores de k}}{44}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Distribuci\IeC {\'o}n componentes: Ir\IeC {\'a}n, Irak, Kuwait, Arabia Saudita y Venezuela.}}{45}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Distribuci\IeC {\'o}n componentes: Canad\IeC {\'a}, M\IeC {\'e}xico y Estados Unidos.}}{46}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Distribuci\IeC {\'o}n componentes: Bolivia, Chile y Per\IeC {\'u}.}}{47}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Distribuci\IeC {\'o}n componentes: Argentina, Brasil y Uruguay.}}{48}{figure.3.16}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Distribuci\IeC {\'o}n componentes: Australia y Nueva Zelanda.}}{49}{figure.3.17}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Distribuci\IeC {\'o}n componentes: Austria, Rep\IeC {\'u}blica Checa y Alemania.}}{50}{figure.3.18}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Distribuci\IeC {\'o}n componentes: Hungr\IeC {\'\i }a. Polonia y Ruman\IeC {\'\i }a.}}{51}{figure.3.19}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Francia, Reino Unido e Irlanda.}}{52}{figure.3.20}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Distribuci\IeC {\'o}n componentes: Dinam\IeC {\'a}rca, Finlandia, los Pa\IeC {\'\i }ses bajos y Suecia.}}{53}{figure.3.21}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Distribuci\IeC {\'o}n componentes: B\IeC {\'e}lgica y Luxemburgo.}}{54}{figure.3.22}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Distribuci\IeC {\'o}n componentes: Espa\IeC {\~n}a, Italia y Portugal.}}{55}{figure.3.23}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Distribuci\IeC {\'o}n componentes: China, Jap\IeC {\'o}n y Filipinas.}}{56}{figure.3.24}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Distribuci\IeC {\'o}n componentes: Hong Kong, Corea del Sur, Singapur y Taiwan.}}{57}{figure.3.25}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Distribuci\IeC {\'o}n componentes: Bangladesh, India y Pakist\IeC {\'a}n.}}{58}{figure.3.26}
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Proyecci\IeC {\'o}n a pa\IeC {\'\i }ses del grafo bipartito. Clustering Louvain. Exportaciones}}{61}{figure.3.27}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{61}{figure.3.27}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{61}{figure.3.27}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{61}{figure.3.27}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{61}{figure.3.27}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{61}{figure.3.27}
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Grafo a nivel pa\IeC {\'\i }ses. Clustering Louvain. Exportaciones}}{62}{figure.3.28}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{62}{figure.3.28}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{62}{figure.3.28}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{62}{figure.3.28}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{62}{figure.3.28}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{62}{figure.3.28}
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Heatmap proximidad. Espacio de productos. Exportaciones. Promedio 1996-2017}}{63}{figure.3.29}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ordenamiento SITC}}}{63}{figure.3.29}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ordenamiento Clustering jer\IeC {\'a}rquico}}}{63}{figure.3.29}
-\contentsline {figure}{\numberline {3.30}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 2 medioides}}{65}{figure.3.30}
-\contentsline {figure}{\numberline {3.31}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}}{66}{figure.3.31}
-\contentsline {figure}{\numberline {3.32}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 50 medioides}}{68}{figure.3.32}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Treemaps por tipos de productos. Exportaciones. 1996-2016. Total mundial}}{28}{figure.3.1}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Cadenas y Subcadenas}}}{28}{figure.3.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cadenas y Usos}}}{28}{figure.3.1}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Treemaps por Continentes y pa\IeC {\'\i }ses. 1996-2016. Total mundial}}{29}{figure.3.2}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Treemaps de Cadenas y Subcadenas.2016. Total Latinoam\IeC {\'e}rica}}{30}{figure.3.3}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exportaciones}}}{30}{figure.3.3}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Importaciones}}}{30}{figure.3.3}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Treemaps de Cadenas y Usos.2016. Total Latinoam\IeC {\'e}rica}}{32}{figure.3.4}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exportaciones}}}{32}{figure.3.4}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Importaciones}}}{32}{figure.3.4}% 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Treemaps seg\IeC {\'u}n socio comercial. 2016. Total Latinoam\IeC {\'e}rica}}{33}{figure.3.5}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Excluyendo Resto del Mundo}}}{33}{figure.3.5}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Incluyendo Resto del mundo}}}{33}{figure.3.5}% 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces fuente: \cite {blei2003latent}}}{36}{figure.3.6}% 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces fuente: \cite {blei2003latent}}}{36}{figure.3.7}% 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces fuente: \cite {blei2003latent}}}{37}{figure.3.8}% 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Grafo bipartito, pa\IeC {\'\i }ses y productos}}{38}{figure.3.9}% 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n Lall. K=2}}{41}{figure.3.10}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Componente 1}}}{41}{figure.3.10}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Componente 2}}}{41}{figure.3.10}% 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n Lall. K=2}}{42}{figure.3.11}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Componente 1}}}{42}{figure.3.11}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Componente 2}}}{42}{figure.3.11}% 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Distribuci\IeC {\'o}n promedio de los componentes en los pa\IeC {\'\i }ses, varios valores de k}}{42}{figure.3.12}% 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Distribuci\IeC {\'o}n componentes: Ir\IeC {\'a}n, Irak, Kuwait, Arabia Saudita y Venezuela.}}{45}{figure.3.13}% 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Distribuci\IeC {\'o}n componentes: Canad\IeC {\'a}, M\IeC {\'e}xico y Estados Unidos.}}{47}{figure.3.14}% 
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Distribuci\IeC {\'o}n componentes: Bolivia, Chile y Per\IeC {\'u}.}}{48}{figure.3.15}% 
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Distribuci\IeC {\'o}n componentes: Argentina, Brasil y Uruguay.}}{49}{figure.3.16}% 
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Distribuci\IeC {\'o}n componentes: Australia y Nueva Zelanda.}}{50}{figure.3.17}% 
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Distribuci\IeC {\'o}n componentes: Hungr\IeC {\'\i }a. Polonia y Ruman\IeC {\'\i }a.}}{51}{figure.3.18}% 
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Distribuci\IeC {\'o}n componentes: Austria, Rep\IeC {\'u}blica Checa y Alemania.}}{52}{figure.3.19}% 
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Distribuci\IeC {\'o}n componentes: Dinam\IeC {\'a}rca, Finlandia, los Pa\IeC {\'\i }ses bajos y Suecia.}}{53}{figure.3.20}% 
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Francia, Reino Unido e Irlanda.}}{54}{figure.3.21}% 
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Distribuci\IeC {\'o}n componentes: Espa\IeC {\~n}a, Italia y Portugal.}}{55}{figure.3.22}% 
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Distribuci\IeC {\'o}n componentes: China, Jap\IeC {\'o}n y Filipinas.}}{57}{figure.3.23}% 
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Distribuci\IeC {\'o}n componentes: Hong Kong, Corea del Sur, Singapur y Taiwan.}}{58}{figure.3.24}% 
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Distribuci\IeC {\'o}n componentes: Bangladesh, India y Pakist\IeC {\'a}n.}}{59}{figure.3.25}% 
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Proyecci\IeC {\'o}n a pa\IeC {\'\i }ses del grafo bipartito. Clustering Louvain. Exportaciones}}{62}{figure.3.26}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{62}{figure.3.26}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{62}{figure.3.26}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{62}{figure.3.26}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{62}{figure.3.26}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{62}{figure.3.26}% 
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Grafo a nivel pa\IeC {\'\i }ses. Clustering Louvain. Exportaciones}}{63}{figure.3.27}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{63}{figure.3.27}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{63}{figure.3.27}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{63}{figure.3.27}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{63}{figure.3.27}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{63}{figure.3.27}% 
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Heatmap proximidad. Espacio de productos. Exportaciones. Promedio 1996-2017}}{64}{figure.3.28}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ordenamiento SITC}}}{64}{figure.3.28}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ordenamiento Clustering jer\IeC {\'a}rquico}}}{64}{figure.3.28}% 
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 2 medioides}}{66}{figure.3.29}% 
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 10 medioides}}{67}{figure.3.30}% 
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Componente gigante. Grafo de proximidad y clustering por K-medioides. Exportaciones. Promedio 1996-2017. 50 medioides}}{69}{figure.3.31}% 
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \textbf {Grafos. 2016, seg\IeC {\'u}n punto de corte. Ponderado por Valor comercial. Importaciones}}}{77}{figure.4.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1\%}}}{77}{figure.4.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {5\%}}}{77}{figure.4.1}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {10\%}}}{77}{figure.4.1}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {15\%}}}{77}{figure.4.1}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {20\%}}}{77}{figure.4.1}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {25\%}}}{77}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \textbf {Distribuci\IeC {\'o}n acumulada del grado. 2016, seg\IeC {\'u}n punto de corte. Importaciones}}}{78}{figure.4.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1\%}}}{78}{figure.4.2}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {5\%}}}{78}{figure.4.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {10\%}}}{78}{figure.4.2}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {15\%}}}{78}{figure.4.2}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {20\%}}}{78}{figure.4.2}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {25\%}}}{78}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \textbf {Grado total.} Multigrafo exportaciones e importaciones. A\IeC {\~n}o 2016}}{79}{figure.4.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {5\%}}}{79}{figure.4.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {15\%}}}{79}{figure.4.3}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {25\%}}}{79}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \textbf {Importaciones.} umbral 1\%. 1996-2016}}{80}{figure.4.4}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {N\IeC {\'u}mero de aristas}}}{80}{figure.4.4}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Grado promedio}}}{80}{figure.4.4}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Cercan\IeC {\'\i }a promedio}}}{80}{figure.4.4}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {M\IeC {\'a}xima intermediaci\IeC {\'o}n}}}{80}{figure.4.4}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Intermediaci\IeC {\'o}n promedio}}}{80}{figure.4.4}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Autovalor promedio}}}{80}{figure.4.4}
-\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Autovalor promedio. Ponderado por valor comercial}}}{80}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Evoluci\IeC {\'o}n de la estructura de la red. Importaciones. Umbral 1\%.1948-2000}}{81}{figure.4.5}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {N\IeC {\'u}mero de aristas}}}{81}{figure.4.5}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Di\IeC {\'a}metro}}}{81}{figure.4.5}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Correlaci\IeC {\'o}n}}}{81}{figure.4.5}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Grado medio}}}{81}{figure.4.5}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {cercan\IeC {\'\i }a promedio}}}{81}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Evoluci\IeC {\'o}n de la estructura de la red. Importaciones. Umbral 1\%.1948-2000}}{82}{figure.4.6}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intermediaci\IeC {\'o}n m\IeC {\'a}xima}}}{82}{figure.4.6}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intermediaci\IeC {\'o}n media}}}{82}{figure.4.6}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Autovalor promedio}}}{82}{figure.4.6}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Autovalor promedio. Ponderado por valor comercial}}}{82}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Proyecci\IeC {\'o}n a pa\IeC {\'\i }ses del grafo bipartito. Clustering Walktrap. Exportaciones}}{83}{figure.4.7}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{83}{figure.4.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{83}{figure.4.7}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{83}{figure.4.7}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{83}{figure.4.7}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{83}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Grafo a nivel pa\IeC {\'\i }ses. Clustering walktrap. Exportaciones}}{84}{figure.4.8}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{84}{figure.4.8}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{84}{figure.4.8}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{84}{figure.4.8}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{84}{figure.4.8}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{84}{figure.4.8}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \textbf {Grafos. 2016, seg\IeC {\'u}n punto de corte. Ponderado por Valor comercial. Importaciones}}}{78}{figure.4.1}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1\%}}}{78}{figure.4.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {5\%}}}{78}{figure.4.1}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {10\%}}}{78}{figure.4.1}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {15\%}}}{78}{figure.4.1}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {20\%}}}{78}{figure.4.1}% 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {25\%}}}{78}{figure.4.1}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \textbf {Distribuci\IeC {\'o}n acumulada del grado. 2016, seg\IeC {\'u}n punto de corte. Importaciones}}}{79}{figure.4.2}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1\%}}}{79}{figure.4.2}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {5\%}}}{79}{figure.4.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {10\%}}}{79}{figure.4.2}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {15\%}}}{79}{figure.4.2}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {20\%}}}{79}{figure.4.2}% 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {25\%}}}{79}{figure.4.2}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \textbf {Grado total.} Multigrafo exportaciones e importaciones. A\IeC {\~n}o 2016}}{80}{figure.4.3}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {5\%}}}{80}{figure.4.3}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {15\%}}}{80}{figure.4.3}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {25\%}}}{80}{figure.4.3}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \textbf {Importaciones.} umbral 1\%. 1996-2016}}{81}{figure.4.4}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {N\IeC {\'u}mero de aristas}}}{81}{figure.4.4}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Grado promedio}}}{81}{figure.4.4}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Cercan\IeC {\'\i }a promedio}}}{81}{figure.4.4}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {M\IeC {\'a}xima intermediaci\IeC {\'o}n}}}{81}{figure.4.4}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Intermediaci\IeC {\'o}n promedio}}}{81}{figure.4.4}% 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Autovalor promedio}}}{81}{figure.4.4}% 
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Autovalor promedio. Ponderado por valor comercial}}}{81}{figure.4.4}% 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Evoluci\IeC {\'o}n de la estructura de la red. Importaciones. Umbral 1\%.1948-2000}}{82}{figure.4.5}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {N\IeC {\'u}mero de aristas}}}{82}{figure.4.5}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Di\IeC {\'a}metro}}}{82}{figure.4.5}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Correlaci\IeC {\'o}n}}}{82}{figure.4.5}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Grado medio}}}{82}{figure.4.5}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {cercan\IeC {\'\i }a promedio}}}{82}{figure.4.5}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Evoluci\IeC {\'o}n de la estructura de la red. Importaciones. Umbral 1\%.1948-2000}}{83}{figure.4.6}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intermediaci\IeC {\'o}n m\IeC {\'a}xima}}}{83}{figure.4.6}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intermediaci\IeC {\'o}n media}}}{83}{figure.4.6}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Autovalor promedio}}}{83}{figure.4.6}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Autovalor promedio. Ponderado por valor comercial}}}{83}{figure.4.6}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Proyecci\IeC {\'o}n a pa\IeC {\'\i }ses del grafo bipartito. Clustering Walktrap. Exportaciones}}{84}{figure.4.7}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{84}{figure.4.7}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{84}{figure.4.7}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{84}{figure.4.7}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{84}{figure.4.7}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{84}{figure.4.7}% 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Grafo a nivel pa\IeC {\'\i }ses. Clustering walktrap. Exportaciones}}{85}{figure.4.8}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1966}}}{85}{figure.4.8}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {1976}}}{85}{figure.4.8}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {1986}}}{85}{figure.4.8}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {1996}}}{85}{figure.4.8}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2016}}}{85}{figure.4.8}% 

@@ -115,14 +115,24 @@ graficar <- function(df,paises, download= F, smooth=F) {
   
 }
 
-graficar_dado_comp <- function(df, comp,download=F, smooth=F ){
-  pais <- df %>% 
+graficar_dado_comp <- function(df, comp,n_paises=2,download=F, smooth=F ){
+  
+  n_paises <- switch (n_paises,
+                      '1' = 1,
+                      '2' = 2,
+                      '3' = 3,
+                      '4' = 4
+                    ) #lo podria hacer con n <- integer(n)
+
+  paises <- df %>% 
     filter(Componente==comp) %>% 
     group_by(reporter) %>% 
     summarise(prop = mean(prop)) %>% 
-    slice(which.max(prop)) %$% 
+    arrange(-prop) %>% 
+    top_n(n_paises,prop) %$%
     reporter
-  graficar(df, pais,download = download,smooth = smooth)
+  
+  graficar(df, paises,download = download,smooth = smooth)
   
 }
 
@@ -261,6 +271,12 @@ supertab_paises_dado_comp <- function(K){
                c(unique(get(glue('Dist_paises{K}'))[['Componente']])),
                selected = "1",
                multiple = FALSE),
+             selectInput(
+               inputId = glue("npaises_comp_{K}"),
+               label = "Number of countries:",
+               choices = c(1:4),
+               selected=2,
+               multiple=FALSE),
              checkboxInput(glue("smooth_comp_{K}"),"smooth",FALSE),
              hr(),
              submitButton("Update", icon("refresh")),
@@ -272,7 +288,7 @@ supertab_paises_dado_comp <- function(K){
              dataTableOutput(glue("labels_comp_{K}")) 
            ),
            mainPanel(
-             h3("Evolution of the participation of each component in each country."),
+             h3("Top Countries by component"),
              # plotlyOutput(glue("plot{K}"), width = "800px", height = "600px")%>%
              plotOutput(glue("plot_comp{K}"), width = "800px", height = "600px")%>%
                withSpinner(color="#0dc5c1")
@@ -431,6 +447,7 @@ server <- function (input, output) {
       # ggplotly(graficar(get(glue('Dist_paises{k}')),paises_graf()))})
       graficar_dado_comp(df = get(glue('Dist_paises{k}')),
                comp = comp_graf(),
+               n_paises = input[[glue('npaises_comp_{k}')]],
                download = F,
                smooth = input[[glue('smooth_comp_{k}')]])
     })
@@ -480,7 +497,11 @@ server <- function (input, output) {
       content = function(file) {
         device <- function(..., width, height) grDevices::png(..., width = width, height = height, res = 300, units = "in")
         ggsave(file, 
-               plot = graficar_dado_comp(get(glue('Dist_paises{k}')),comp_graf(), download = T,smooth = input[[glue('smooth_comp_{k}')]]),
+               plot = graficar_dado_comp(get(glue('Dist_paises{k}')),
+                                         comp_graf(),
+                                         n_paises = input[[glue('npaises_comp_{k}')]],
+                                         download = T,
+                                         smooth = input[[glue('smooth_comp_{k}')]]),
                scale=2,
                device = device)
       }

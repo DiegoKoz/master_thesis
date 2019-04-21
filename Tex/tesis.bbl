@@ -1,4 +1,4 @@
-\begin{thebibliography}{74}
+\begin{thebibliography}{90}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -39,6 +39,19 @@ Bela Balassa.
 \newblock \emph{The manchester school}, 33\penalty0 (2):\penalty0 99--123,
   1965.
 
+\bibitem[Balat(2009)]{balat2009coal}
+M~Balat.
+\newblock {Coal in the global energy scene}.
+\newblock \emph{Energy Sources, Part B: Economics, Planning, and Policy},
+  5\penalty0 (1):\penalty0 50--62, 2009.
+
+\bibitem[Ballingall \& Lattimore(2004)Ballingall and
+  Lattimore]{ballingall2004farming}
+John Ballingall and Ralph Lattimore.
+\newblock {Farming in New Zealand: The state of play and key issues for the
+  backbone of the New Zealand economy}.
+\newblock Technical report, New Zealand Trade Consortium Working Paper, 2004.
+
 \bibitem[Bekerman \& Rikap(2010)Bekerman and Rikap]{bekerman2010integracion}
 Marta Bekerman and Cecilia Rikap.
 \newblock {Integraci{\'{o}}n regional y diversificaci{\'{o}}n de exportaciones
@@ -68,6 +81,12 @@ M.~I. {Blei, D. M.; Ng, A. Y.; Jordan}.
   993--1022, 2003.
 \newblock ISSN 15324435.
 \newblock \doi{10.1162/jmlr.2003.3.4-5.993}.
+
+\bibitem[Blomstrom \& Kokko(2003)Blomstrom and Kokko]{blomstrom2003natural}
+Magnus Blomstrom and Ari Kokko.
+\newblock {From natural resources to high-tech production: the evolution of
+  industrial competitiveness in Sweden and Finland}.
+\newblock 2003.
 
 \bibitem[Blondel et~al.(2008)Blondel, Guillaume, Lambiotte, and
   Lefebvre]{blondel2008fast}
@@ -104,6 +123,12 @@ Jorge Carrillo and Alfredo Hualde.
 \newblock \emph{Journal of Borderlands Studies}, 13\penalty0 (1):\penalty0
   79--97, 1998.
 
+\bibitem[Chang \& Zach(2018)Chang and Zach]{chang2018industrial}
+Ha-joon Chang and Kiryl Zach.
+\newblock {Industrial development in Asia: Trends in industrialization and
+  industrial policy experiences of developing Asia}.
+\newblock Technical report, WIDER Working Paper, 2018.
+
 \bibitem[Chang et~al.(2018)Chang, Cheng, Allaire, Xie, and
   McPherson]{Chang2018}
 Winston Chang, Joe Cheng, J~J Allaire, Yihui Xie, and Jonathan McPherson.
@@ -118,6 +143,12 @@ Mauro~F Ch{\'{a}}vez-Rodr{\'{i}}guez, Rafael Garaffa, Gisela Andrade, Gonzalo
   America?}
 \newblock \emph{Journal of Natural Gas Science and Engineering}, 33:\penalty0
   717--730, 2016.
+
+\bibitem[Chenery et~al.(1986)Chenery, Robinson, Syrquin, and
+  Feder]{chenery1986industrialization}
+Hollis~Burnley Chenery, Sherman Robinson, Moshe Syrquin, and Syrquin Feder.
+\newblock \emph{{Industrialization and growth}}.
+\newblock Oxford University Press New York, 1986.
 
 \bibitem[Chow(2013)]{Chow2013}
 William Chow.
@@ -196,6 +227,12 @@ Renato G~Jr. Fl{\^{o}}res.
   Produtiva-Li{\c{c}}{\~{o}}es da {\'{A}}sia e Europa para o MERCOSUL",
   CEPAL/Brasil}, page~7, 2008.
 
+\bibitem[Frenken(2000)]{frenken2000complexity}
+Koen Frenken.
+\newblock {A complexity approach to innovation networks. The case of the
+  aircraft industry (1909--1997)}.
+\newblock \emph{Research Policy}, 29\penalty0 (2):\penalty0 257--272, 2000.
+
 \bibitem[Fr{\"{o}}bel et~al.(1978)Fr{\"{o}}bel, Heinrichs, and
   Kreye]{frobel1978new}
 Folker Fr{\"{o}}bel, J{\"{u}}rgen Heinrichs, and Otto Kreye.
@@ -257,6 +294,14 @@ Jeffrey Henderson.
 \newblock \emph{{Globalisation of high technology production}}.
 \newblock Routledge, 2002.
 
+\bibitem[Henn(2013)]{henn2013transnational}
+Sebastian Henn.
+\newblock {Transnational entrepreneurs and the emergence of clusters in
+  peripheral regions. The case of the diamond cutting cluster in Gujarat
+  (India)}.
+\newblock \emph{European Planning Studies}, 21\penalty0 (11):\penalty0
+  1779--1795, 2013.
+
 \bibitem[Hidalgo et~al.(2007)Hidalgo, Winger, Barab{\'{a}}si, and
   Hausmann]{Hidalgo2007}
 C.~A. Hidalgo, B.~Winger, A.~L. Barab{\'{a}}si, and R.~Hausmann.
@@ -287,6 +332,12 @@ Matthew~D Hoffman, David~M Blei, Chong Wang, and John Paisley.
 \newblock \emph{The Journal of Machine Learning Research}, 14\penalty0
   (1):\penalty0 1303--1347, 2013.
 
+\bibitem[Holman(2005)]{holman2005integrating}
+Otto Holman.
+\newblock \emph{{Integrating Southern Europe: EC expansion and the
+  transnationalization of Spain}}.
+\newblock Routledge, 2005.
+
 \bibitem[Humphrey \& Schmitz(2000)Humphrey and Schmitz]{humphrey2000governance}
 John Humphrey and Hubert Schmitz.
 \newblock \emph{{Governance and upgrading: linking industrial cluster and
@@ -306,6 +357,11 @@ Leonard Kaufman and Peter~J Rousseeuw.
   the L1 Norm}.
 \newblock \emph{Y. Dodge, Ed}, pages 405--416, 1987.
 
+\bibitem[K{\"{o}}ves \& Oblath(1983)K{\"{o}}ves and Oblath]{koves1983hungarian}
+Andras K{\"{o}}ves and Gabor Oblath.
+\newblock {Hungarian foreign trade in the 1970's}.
+\newblock \emph{Acta Oeconomica}, pages 89--109, 1983.
+
 \bibitem[Lall(2000)]{lall2000technological}
 Sanjaya Lall.
 \newblock {The Technological structure and performance of developing country
@@ -318,6 +374,19 @@ Sanjaya Lall, John Weiss, and Jinkang Zhang.
 \newblock {The “sophistication” of exports: a new trade measure}.
 \newblock \emph{World development}, 34\penalty0 (2):\penalty0 222--237, 2006.
 
+\bibitem[Linden(1998)]{linden1998building}
+Greg Linden.
+\newblock {Building production networks in Central Europe: the case of the
+  electronics industry}.
+\newblock 1998.
+
+\bibitem[MacLeod \& Moller(2006)MacLeod and Moller]{macleod2006intensification}
+Catriona~J MacLeod and Henrik Moller.
+\newblock {Intensification and diversification of New Zealand agriculture since
+  1960: An evaluation of current indicators of land use change}.
+\newblock \emph{Agriculture, ecosystems {\&} environment}, 115\penalty0
+  (1-4):\penalty0 201--218, 2006.
+
 \bibitem[MacQueen \& Others(1967)MacQueen and Others]{macqueen1967some}
 James MacQueen and Others.
 \newblock {Some methods for classification and analysis of multivariate
@@ -325,6 +394,12 @@ James MacQueen and Others.
 \newblock In \emph{Proceedings of the fifth Berkeley symposium on mathematical
   statistics and probability}, volume~1, pages 281--297. Oakland, CA, USA,
   1967.
+
+\bibitem[McKissack et~al.(2008)McKissack, Chang, Ewing, Rahman, and
+  Others]{mckissack2008structural}
+Adam McKissack, Jennifer Chang, Robert Ewing, Jyoti Rahman, and Others.
+\newblock {Structural effects of a sustained rise in the terms of trade}.
+\newblock \emph{Australian Treasury}, 2008.
 
 \bibitem[Mikesell(2013)]{mikesell2013world}
 Raymond~F Mikesell.
@@ -344,9 +419,21 @@ Theodore~H Moran.
   Copper in Chile}}.
 \newblock Princeton University Press, 2014.
 
+\bibitem[Murphy(2000)]{murphy2000celtic}
+Antoin~E Murphy.
+\newblock {The'Celtic Tiger', An Analysis of Ireland's Economic Growth
+  Performance}.
+\newblock 2000.
+
 \bibitem[Neuwirth(2014)]{Neuwirth2014}
 Erich Neuwirth.
 \newblock {RColorBrewer: ColorBrewer Palettes}, 2014.
+
+\bibitem[Ng(2013)]{ng2013singapore}
+Weng~Hoong Ng.
+\newblock \emph{{Singapore, the Energy Economy: From the First Refinery to the
+  End of Cheap Oil, 1960-2010}}.
+\newblock Routledge, 2013.
 
 \bibitem[ONU(2006)]{un2006standard}
 ONU.
@@ -393,6 +480,20 @@ David Ricardo.
 Dani Rodrik.
 \newblock {Getting interventions right: how South Korea and Taiwan grew rich}.
 \newblock \emph{Economic policy}, 10\penalty0 (20):\penalty0 53--107, 1995.
+
+\bibitem[Sevdermish et~al.(1998)Sevdermish, Miciak, and
+  Levinson]{sevdermish1998rise}
+Menahem Sevdermish, Alan~R Miciak, and Alfred~A Levinson.
+\newblock {The rise to prominence of the modern diamond cutting industry in
+  India}.
+\newblock \emph{Gems {\&} Gemology}, 34\penalty0 (1):\penalty0 4--23, 1998.
+
+\bibitem[Shama(2000)]{shama2000determinants}
+Avraham Shama.
+\newblock {Determinants of entry strategies of US companies into Russia, the
+  Czech Republic, Hungary, Poland, and Romania}.
+\newblock \emph{Thunderbird International Business Review}, 42\penalty0
+  (6):\penalty0 651--676, 2000.
 
 \bibitem[Sklair(2012)]{sklair2012assembling}
 Leslie Sklair.
