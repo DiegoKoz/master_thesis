@@ -58,8 +58,15 @@ ggsave(file,scale = 2)
 }
 
 
-lista_dist <- c("Dist_paises2.csv","Dist_paises4.csv","Dist_paises8.csv","Dist_paises10.csv",
-                "Dist_paises20.csv","Dist_paises40.csv",'Dist_paises50.csv')
+lista_dist <- c("Dist_paises_k2_etaDefault.csv",
+                "Dist_paises_k4_etaDefault.csv",
+                "Dist_paises_k6_etaDefault.csv",
+                "Dist_paises_k8_etaDefault.csv",
+                "Dist_paises_k10_etaDefault.csv",
+                "Dist_paises_k20_etaDefault.csv",
+                "Dist_paises_k30_etaDefault.csv",
+                "Dist_paises_k40_etaDefault.csv",
+                'Dist_paises_k50_etaDefault.csv')
 
 graficar(lista_dist)
 

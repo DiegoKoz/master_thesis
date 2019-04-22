@@ -11,7 +11,7 @@
 \BOOKMARK [1][-]{section.2.4}{Resultados}{chapter.2}% 11
 \BOOKMARK [2][-]{subsection.2.4.1}{Correlaci\363n entre la representaci\363n de las exportaciones y las importaciones}{section.2.4}% 12
 \BOOKMARK [2][-]{subsection.2.4.2}{Evoluci\363n de mediano y largo plazo del comercio internacional}{section.2.4}% 13
-\BOOKMARK [3][-]{section*.11}{An\341lisis mediano plazo}{subsection.2.4.2}% 14
+\BOOKMARK [3][-]{section*.7}{An\341lisis mediano plazo}{subsection.2.4.2}% 14
 \BOOKMARK [3][-]{figure.2.9}{An\341lisis de largo plazo}{subsection.2.4.2}% 15
 \BOOKMARK [1][-]{section.2.5}{Conclusiones}{chapter.2}% 16
 \BOOKMARK [0][-]{chapter.3}{Comercio a nivel producto}{}% 17
@@ -19,21 +19,21 @@
 \BOOKMARK [1][-]{section.3.2}{An\341lisis exploratorio de datos}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.3}{Metodolog\355a}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.3.1}{Latent Dirichlet Allocation Models}{section.3.3}% 21
-\BOOKMARK [3][-]{section*.13}{Definiciones}{subsection.3.3.1}% 22
+\BOOKMARK [3][-]{section*.9}{Definiciones}{subsection.3.3.1}% 22
 \BOOKMARK [3][-]{Item.2}{Proceso generativo e inferencial}{subsection.3.3.1}% 23
 \BOOKMARK [2][-]{subsection.3.3.2}{Grafo Bipartito}{section.3.3}% 24
 \BOOKMARK [1][-]{section.3.4}{Resultados}{chapter.3}% 25
 \BOOKMARK [2][-]{subsection.3.4.1}{Latent Dirichlet Allocation Models}{section.3.4}% 26
-\BOOKMARK [3][-]{section*.19}{An\341lisis de Componentes}{subsection.3.4.1}% 27
-\BOOKMARK [3][-]{table.3.1}{An\341lisis de pa\355ses}{subsection.3.4.1}% 28
+\BOOKMARK [3][-]{section*.10}{An\341lisis de Componentes}{subsection.3.4.1}% 27
+\BOOKMARK [3][-]{table.3.2}{An\341lisis de pa\355ses}{subsection.3.4.1}% 28
 \BOOKMARK [2][-]{subsection.3.4.2}{Grafo Bipartito}{section.3.4}% 29
-\BOOKMARK [3][-]{section*.23}{Proyecci\363n a nivel pa\355ses}{subsection.3.4.2}% 30
+\BOOKMARK [3][-]{section*.11}{Proyecci\363n a nivel pa\355ses}{subsection.3.4.2}% 30
 \BOOKMARK [3][-]{figure.3.27}{Espacio de productos}{subsection.3.4.2}% 31
 \BOOKMARK [2][-]{subsection.3.4.3}{Conclusiones}{section.3.4}% 32
 \BOOKMARK [0][-]{chapter.4}{Conclusiones}{}% 33
-\BOOKMARK [1][-]{chapter*.25}{Anexo}{chapter.4}% 34
-\BOOKMARK [2][-]{subsection.4.0.1}{Tabla de referencia: Descripci\363n cadenas}{chapter*.25}% 35
-\BOOKMARK [2][-]{subsection.4.0.2}{Tabla de referencia: Descripci\363n subcadenas}{chapter*.25}% 36
-\BOOKMARK [2][-]{subsection.4.0.3}{Tabla de referencia: Descripci\363n Usos}{chapter*.25}% 37
-\BOOKMARK [2][-]{subsection.4.0.4}{Medioides PAM clustering. K=50}{chapter*.25}% 38
-\BOOKMARK [2][-]{subsection.4.0.5}{Figuras Complementarias}{chapter*.25}% 39
+\BOOKMARK [1][-]{chapter*.12}{Anexo}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.0.1}{Tabla de referencia: Descripci\363n cadenas}{chapter*.12}% 35
+\BOOKMARK [2][-]{subsection.4.0.2}{Tabla de referencia: Descripci\363n subcadenas}{chapter*.12}% 36
+\BOOKMARK [2][-]{subsection.4.0.3}{Tabla de referencia: Descripci\363n Usos}{chapter*.12}% 37
+\BOOKMARK [2][-]{subsection.4.0.4}{Medioides PAM clustering. K=50}{chapter*.12}% 38
+\BOOKMARK [2][-]{subsection.4.0.5}{Figuras Complementarias}{chapter*.12}% 39

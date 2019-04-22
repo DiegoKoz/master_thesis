@@ -1,4 +1,4 @@
-\begin{thebibliography}{90}
+\begin{thebibliography}{94}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -116,6 +116,11 @@ Eliana Cardoso.
   promotion and import liberalization to multilateral and regional agreements}.
 \newblock In \emph{conference on “The Political Economy and Trade Policy in
   the BRICS”, March}, pages 27--28. Citeseer, 2009.
+
+\bibitem[Carrera(2017)]{carrera2017renta}
+Juan~I{\~{n}}igo Carrera.
+\newblock \emph{{La renta de la tierra: formas, fuentes y apropiaci{\'{o}}n}}.
+\newblock Ediciones Imago Mundi, 2017.
 
 \bibitem[Carrillo \& Hualde(1998)Carrillo and Hualde]{carrillo1998third}
 Jorge Carrillo and Alfredo Hualde.
@@ -456,6 +461,16 @@ Pascal Pons and Matthieu Latapy.
 \newblock In \emph{International symposium on computer and information
   sciences}, pages 284--293. Springer, 2005.
 
+\bibitem[Powers(1998)]{Powers1998}
+David M~W Powers.
+\newblock {Applications and Explanations of Zipf's Law}.
+\newblock In \emph{Proceedings of the Joint Conferences on New Methods in
+  Language Processing and Computational Natural Language Learning},
+  NeMLaP3/CoNLL '98, pages 151--160, Stroudsburg, PA, USA, 1998. Association
+  for Computational Linguistics.
+\newblock ISBN 0-7258-0634-6.
+\newblock URL \url{http://dl.acm.org/citation.cfm?id=1603899.1603924}.
+
 \bibitem[{R Core Team}(2017)]{RCoreTeam2017}
 {R Core Team}.
 \newblock {R: A Language and Environment for Statistical Computing}, 2017.
@@ -481,6 +496,12 @@ Dani Rodrik.
 \newblock {Getting interventions right: how South Korea and Taiwan grew rich}.
 \newblock \emph{Economic policy}, 10\penalty0 (20):\penalty0 53--107, 1995.
 
+\bibitem[Ross(2012)]{ross2012oil}
+Michael Ross.
+\newblock \emph{{The oil curse: How petroleum wealth shapes the development of
+  nations}}.
+\newblock Princeton University Press, 2012.
+
 \bibitem[Sevdermish et~al.(1998)Sevdermish, Miciak, and
   Levinson]{sevdermish1998rise}
 Menahem Sevdermish, Alan~R Miciak, and Alfred~A Levinson.
@@ -505,11 +526,17 @@ Leslie Sklair.
 Kamil Slowikowski.
 \newblock {ggrepel: Repulsive Text and Label Geoms for 'ggplot2'}, 2017.
 
-\bibitem[Starosta(2016)]{starosta2016revisiting}
+\bibitem[Starosta(2016{\natexlab{a}})]{starosta2016new}
+Guido Starosta.
+\newblock \emph{{The new international division of labour: global
+  transformation and uneven development}}.
+\newblock Springer, 2016{\natexlab{a}}.
+
+\bibitem[Starosta(2016{\natexlab{b}})]{starosta2016revisiting}
 Guido Starosta.
 \newblock {Revisiting the new international division of labour thesis}.
 \newblock In \emph{The new international division of labour}, pages 79--103.
-  Springer, 2016.
+  Springer, 2016{\natexlab{b}}.
 
 \bibitem[Straka et~al.(2017)Straka, Caldarelli, and Saracco]{straka2017grand}
 Mika~J Straka, Guido Caldarelli, and Fabio Saracco.

@@ -283,6 +283,7 @@ país en el corpus.
 \draw  [fill={rgb, 255:red, 199; green, 199; blue, 199 }  ,fill opacity=1 ] (410,145) .. controls (410,131.19) and (421.19,120) .. (435,120) .. controls (448.81,120) and (460,131.19) .. (460,145) .. controls (460,158.81) and (448.81,170) .. (435,170) .. controls (421.19,170) and (410,158.81) .. (410,145) -- cycle ;
 %Shape: Circle [id:dp04424520000997234] 
 \draw   (311,145) .. controls (311,131.19) and (322.19,120) .. (336,120) .. controls (349.81,120) and (361,131.19) .. (361,145) .. controls (361,158.81) and (349.81,170) .. (336,170) .. controls (322.19,170) and (311,158.81) .. (311,145) -- cycle ;
+
 %Shape: Rectangle [id:dp8518034256278205] 
 \draw   (299.13,100.76) -- (496.19,100.76) -- (496.19,199.76) -- (299.13,199.76) -- cycle ;
 %Shape: Rectangle [id:dp2099791938650164] 
@@ -303,6 +304,11 @@ país en el corpus.
 \draw    (328.92,60.5) -- (413.33,125.45) ;
 \draw [shift={(414.92,126.67)}, rotate = 217.57] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
 
+%agrego a mano
+\draw (211,47) circle (0.65cm);
+\draw (237,47) -- (278,47);
+\draw [shift={(281,47)}, rotate =180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
 
 % Text Node
 \draw (125,178) node  [align=left] {$\displaystyle \alpha $};
@@ -313,7 +319,9 @@ país en el corpus.
 % Text Node
 \draw (437.42,177) node  [align=left] {$\displaystyle w$};
 % Text Node
-\draw (270,44) node  [align=left] {$\displaystyle \beta $};
+\draw (305,12) node  [align=left] {$\displaystyle \beta $};
+%agrego a mano
+\draw (210,12) node  [align=left] {$\displaystyle \eta $};
 % Text Node
 \draw (484,189) node  [align=left] {$\displaystyle N$};
 % Text Node
@@ -330,7 +338,7 @@ país en el corpus.
 
 Un Proceso de Dirichlet es una familia de procesos estocásticos donde las realizaciones son ellas mismas distribuciones de probabilidad. Es decir, el rango de esta distribución (así como en una normal son los reales) son distribuciones de probabilidad. Para interpretarlo geométricamente, la figura \ref{fig:dirichlet} muestra un ejemplo de la distribución de densidad para 3 productos y 4 componentes. El triángulo representa todas las distribuciones (multinomiales)
 posibles sobre los tres productos. Cada uno de los vértices del triángulo es una distribución de probabilidad que asigna una probabilidad de 1 a uno de los productos. El punto medio de cada lado, es una distribución con probabilidad 0.5 a dos componentes. El cuarto componente, el centroide del triángulo, asigna probabilidad de $\frac{1}{3}$ a cada producto. Los cuatro puntos marcado con x son las distribuciones multinomiales de $p(w|z)$  para cada uno de los cuatro componentes. La altura en el eje z es una posible distribución de densidad sobre el
-simplex, es decir, sobre las distribuciones de densidad multinomiales, dada por LDA.
+simplex, es decir, sobre las distribuciones de densidad multinomiales, dada por LDA. el parámetro que define a la distribución de dirichlet (en nuestro caso, los parámetros $\eta$ y $\alpha$) determinan el grado de concentración de las distribuciones resultantes. Para una distribución $Dir(\alpha)$, $\alpha$ define el grado de simetría de las distribuciones multinomiales que el proceso genere. Con valores mucho menores a 1, las distribuciones resultantes estarán muy concentradas sobre algunos elementos, mientras que valores mucho mayores que 1 generarían distribuciones muy uniformes. En términos de nuestro problema, un $\alpha$ muy pequeño generará que en los países haya uno o unos pocos componentes característicos, mientras que un $\eta$ muy pequeño generará que la distribución que caracteriza a un componente sea muy asimétrica sobre los productos, y por lo tanto que haya unos pocos productos muy importantes, y el resto con probabilidad nula o casi nula.
 
 \begin{figure}
 	\centering	
@@ -461,13 +469,11 @@ La estimación de los parámetros se realiza a través del proceso de \emph{vari
 
 Estos dos pasos se alternan hasta converger. Por último, se realiza un suavizado sobre las probabilidades que un componente asigna a un producto, para que sean siempre mayores a 0.
 
-\info{analisis de ETA y alpha}
-\info{los valores grandes para alfa significan que es probable que cada documento contenga una mezcla de la mayoría de los temas, y no un solo tema en particular. Los valores bajos de alfa ponen menos restricciones en los documentos y significan que es más probable que un documento contenga una combinación de solo algunos o incluso un tema}
 
-\info{eliminar las referencias a TF-IDF}
 
-\info{Me parece que no estuvo mal hacerlo si pensabamos que podía cambiar, porque ahora sabemos que el método es robusto a este hiperparámetro. Evidentemente la forma de los datos es muy distinta a la que originalmente se usa para LDA, aunque LDA no necesariamente en text mining es una técnica que neciste grandes volúmenes de datos, sino que con algunos miles de observaciones ya se pueden obtener resultados coherentes. La dimensión tradicional del problema es NxV (N observaciones, en el orden de magnitud de miles, V el vocabulario, también en el orden de magnitud de los miles). Nuestro problema no es 180x700, sino  (180xyr)X700 (porque la observaciones son por año país) Como tenemos un dataset de 54 años, esto es aprox (10000x700) estamos en el orden de magnitud de un dataset pequeño de text mining para LDA.  Respecto de la distirbución, en el vocabulario solemos tener la ley de Zipf, osea una distribución muy asimétrica de las palabras. En nuestro problema tenemos una distribución asimétrica, aunque no tanto, de los productos. Para mi que resulte difícil etiquetar en algunos casos no es tan loco, porque lo mismo pasa (siempre) en LDA para texto, a veces las cosas se agrupan en un sentido en el cual es difícil poner un nombre, lo cual no significa que no podamos entender qué sucede. Para el caso de comercio, eso significa que hay consistentemente un grupo de países que se encuentran en tuplas de ramas de la producción a la vez. No le podemos poner el nombre correspondiente a una rama, pero podemos entender el signfiicado.... }
-\info{eliminar referencias a k optimo}
+\paragraph{reflexiones finales}
+Por último, es interesante detenerse en la factibilidad del modelo dado el cambio de dominio del problema. La naturaleza tan distinta de los datos usados tradicionalmente en minería de textos y Topic Modelling, respecto de los de comercio internacional, amerita el interrogante respecto de la posibilidad de que el modelo pueda operar en el nuevo dominio. Sin embargo, en términos de la estructura de datos, ambos problemas tienen más semejanzas de las que aparentan. En primer lugar, La dimensión tradicional del problema es $NxV$ ($N$ observaciones, en el orden de magnitud de miles, $V$ el vocabulario, también en el orden de magnitud de los miles). En este caso, el problema es aproximadamente de dimensión $NxP$, donde las $N$ observaciones son los pares año-país, con 180 países y 54 años, y $P$ productos, que en SITC a 4 dígitos son unos 750 aproximadamente. Es decir, estamos en un orden de magnitud similar al de un dataset pequeño en un problema tradicional de Topic Modelling. 
+Respecto de la distribución, en el vocabulario suele operar la ley de Zipf \citep{Powers1998},es decir una distribución fuertemente asimétrica de la frecuencia de las palabras. En nuestro problema también existe una distribución asimétrica de los productos exportados por país, aunque no necesariamente del mismo orden de magnitud. Por último, un cambio importante en ambos dominios es la diferencia entre la frecuencia de las palabras en un texto (decenas o centenas, según el tamaño) y los valore exportados de los países (miles de millones). Esta diferencia en principio no debería afectar al modelo, dado que lo que el modelo considera en su optimización son las distribuciones entre los distintos elementos (frecuencias de palabras o valores exportados por producto) y no los valores absolutos.
 
 
 \subsection{Grafo Bipartito}
@@ -536,8 +542,8 @@ $\Phi$ es por lo tanto una matriz de distancias entre los productos. Esto result
 \subsubsection{Análisis de Componentes}
 
 
-Los resultado obtenidos de los modelos de Topic Modelling para el análisis de textos normalmente se analizan en dos etapas: En primer lugar se etiquetan los tópicos obtenidos sobre la base de las palabras más salientes de cada tópico, y luego se analiza su distribución en los textos. El etiquetado de los tópicos es una tarea subjetiva donde lo que se busca es un concepto generalizador de aquellas palabras que componen al tópico, donde es posible que esta tarea no se pueda realizar por falta de coherencia dentro del tópico. El hiperparámero $k$, es decir la cantidad de tópicos, juega un rol fundamental en este punto, dado que con una cantidad baja de tópicos estos tenderán a reflejar conceptos amplios, mientras que si $k$ es mayor que la cardinalidad del espacio latente que se busca, esto puede generar tópicos repetidos. 
-Lo anterior no escapa al presente dominio sino que se refuerza, dado que la búsqueda, subjetiva, de un concepto abarcador entre productos puede resultar más compleja que la de un concepto generalizador de un grupo de palabras. Un problema que no existe en el presente dominio es el de la polisemia, dado que todos los significantes, indices del nomenclador, hacen referencia a un único significado no ambiguo. Sin embargo, nuevos problemas aparecen respecto a este punto, como qué nomenclador de base utilizar y en qué nivel de desagregación. Por motivos de comparabilidad con los resultados de \cite{molinari2016especializacion} se decidió utilizar el nomenclador SITC a 4 dígitos \citep{un2006standard}. A su vez, se realizaron pruebas para varios valores de $k$: 2,4,6,8,10,20,30,40,50, 100 y 200. Para el etiquetado de los componentes se observó que la práctica usual de observar los primeros diez elementos de la distribución no bastaba para encontrar una etiqueta generalizadora, por lo que se elaboró un tablero dinámico para estudiar la distribución y su función acumulada, a la vez que se gráfico la distribución en función de un nomenclador de complejidad tecnológica \citep{lall2000technological}: 
+Los resultado obtenidos de los modelos de Topic Modelling para el análisis de textos normalmente se analizan en dos etapas: En primer lugar se etiquetan los tópicos obtenidos sobre la base de las palabras más salientes de cada tópico. Luego, se analiza su distribución en los textos. El etiquetado de los tópicos es una tarea subjetiva donde lo que se busca es un concepto generalizador de aquellas palabras que componen al tópico. Es posible, y frecuente, que esta tarea no se pueda realizar por falta de un concepto generalizador dentro del tópico. El hiperparámetro $k$, es decir la cantidad de tópicos, juega un rol fundamental en este punto, dado que con una cantidad baja de tópicos estos tenderán a reflejar conceptos amplios, mientras que si $k$ es mayor que la cardinalidad del espacio latente que se busca, esto puede generar tópicos repetidos o sobre-específicos. 
+Lo anterior no escapa al presente dominio sino que se refuerza, dado que la búsqueda, subjetiva, de un concepto abarcador entre productos puede resultar más compleja que la de un concepto generalizador de un grupo de palabras. Un problema que no existe en el presente dominio es el de la polisemia, dado que todos los significantes, indices del nomenclador, hacen referencia a un único significado no ambiguo. Sin embargo, nuevos problemas aparecen respecto a este punto, como qué nomenclador de base utilizar y en qué nivel de desagregación. Por motivos de comparabilidad con los resultados de \cite{molinari2016especializacion} e \cite{Hidalgo2009} se decidió utilizar el nomenclador SITC a 4 dígitos \citep{un2006standard}. A su vez, se realizaron pruebas para varios valores de $k$: 2,4,6,8,10,20,30,40,50, 100 y 200, así como para diferentes valores de los hiperparámetros $\eta$ y $\alpha$ \footnote{dado que los resultados son robustos a estos últimos parámetros, se decidió utilizar $\alpha=\eta=\frac{1}{k}$ para las corridas con distintos valores de k}. Para el etiquetado de los componentes se observó que la práctica usual de observar los primeros diez elementos de la distribución no bastaba para encontrar una etiqueta generalizadora, por lo que se elaboró un tablero dinámico \footnote{ver \url{https://treemaps.shinyapps.io/LDA_worldtrade/}} para estudiar la distribución y su función acumulada, a la vez que se gráfico la distribución en función de un nomenclador de complejidad tecnológica \citep{lall2000technological}. En la tabla \ref{tabla:lall} se puede observar dichas categorías.  
 
 \begin{table}
 	\centering
@@ -558,34 +564,23 @@ Lo anterior no escapa al presente dominio sino que se refuerza, dado que la bús
 		99 & Unclassified products \\ 
 		\hline
 	\end{tabular}
+\caption{Agrupamiento por complejidad tecnológica de \cite{lall2000technological}}
+\label{tabla:lall}
 \end{table}
 
-%En la figura \ref{fig:dist_40_4} se puede observar la tabla utilizada para caracterizar el cuarto componente en el modelo con $k=4$. Allí se observa que la mayoría de los componentes pertenecen al rubro textil, como pulloveres, remeras y pantalones. También se aparece el té, que no guarda coherencia con le resto del rubro.
-\info{revisar}
+A título ilustrativo, en la figura \ref{fig:top_dist} se presentan una captura de la interfaz elaborada para la caracterización de los componentes en el caso de $k=2$. Allí se presenta el código de SITC a 4 dígitos, la descripción del producto, su proporción y la proporción acumulada, ordenados de forma decreciente según su peso. En la figura \ref{fig:top_dist1} se puede observar que la distribución del primer componente asigna un gran peso al petróleo crudo, y que los siguientes productos, además de aquellos no especificados, son también derivados del petróleo, como el gasoil, gas propano (petroleum gases), etc. Una etiqueta plausible para este componente sería \textit{Petróleo y derivados}. Nótese que también se encuentras otros productos como el carbón (coal) y metales como el hierro (iron) oro (gold) y cobre (copper).
+En la figura \ref{fig:top_dist2} se presenta la distribución del segundo componente. Allí no se observa una distribución tan asimétrica como en el caso del primer componente, sino que el primer producto pesa tan solo un 5\%. Los productos más destacados son los vehículos de pasajeros, microcircuitos electrónicos, partes y accesorios, etc. Podría decirse que este componente representa a los productos de origen industrial en general.
 
-%\begin{figure}
-%	\centering	
-%	\includegraphics[width=\linewidth]{dist_40_4}
-%	\caption{Distribución del Componente 4. K = 40}
-%	\label{fig:dist_40_4}
-%\end{figure}
-
-%La figura muestra la distribución siguiendo los grupos de \cite{lall2000technological}. Aquí se puede confirmar que la distribución se concentra fuertemente en la categoría 4, textiles. 
-
-%\begin{figure}
-%	\centering	
-%	\includegraphics[width=0.65\linewidth]{graficoLall_k40_comp4}
-%	\caption{Distribución del Componente 4. K = 40 según Lall}
-%	\label{fig:dist_40_4_lall}
-%\end{figure}
 
 \begin{figure}
 	\centering
 	\subfigure[Componente 1]{\label{fig:top_dist1}\includegraphics[width=\linewidth]{comp1k2}}
-	\subfigure[Componente 2]{\label{fig:top_dist1}\includegraphics[width=\linewidth]{comp2k2}}
+	\subfigure[Componente 2]{\label{fig:top_dist2}\includegraphics[width=\linewidth]{comp2k2}}
 	\caption{Distribución de los componentes según Lall. K=2}
 	\label{fig:top_dist}
 \end{figure}
+
+La figura \ref{fig:lall} muestra la distribución de los componente siguiendo la clasificación de \cite{lall2000technological}. Allí se observa cómo el primer componente esta constituído esencialmente por productos primarios y manufacturas derivadas de los mismos. El segundo componente presenta una distribución más uniforme, donde se destacan las manufacturas de tecnologías media y alta (ingenieriles y electrónicas)
 
 \begin{figure}
 	\centering
@@ -596,25 +591,22 @@ Lo anterior no escapa al presente dominio sino que se refuerza, dado que la bús
 \end{figure}
 
 
+Vale notar que los productos de origen agropecuario, ganadero, forestal, etc. no quedan bien definidos en $k=2$. A su vez, resulta interesante como, bajo la consigna de dividir es espacio de productos en dos grupos, el modelo de LDA encuentra su óptimo en esta diferenciación. Por un lado, reproduce la dicotomía clásica de países industriales versus países productores de materias primas \citep{coffey1996newer,hutchinson2004globalisation}. Por otro lado, dicha imagen tradicional pone a los productos agropecuarios como unos de los polos, y no exclusivamente al petróleo y sus derivados. Esto puede entenderse a partir del rol particular que la producción petrolera juega en la estructuración de las economías nacionales, y en particular de las exportaciones \citep{ross2012oil,carrera2017renta,starosta2016new}. En ese sentido, las formas tan particulares de las exportaciones de los países petroleros llevan a que el modelo encuentre su óptimo construyendo uno de los dos componentes con estos productos. 
+
+
 una de las problemáticas observadas en el análisis de los diferentes ejercicios es definir la granularidad correcta del objeto de estudio. Como se mencionó arriba, el parámetro $k$ define cuan específicos o genéricos son los componentes obtenidos. El problema surge en que en el análisis económico aquellos fenómenos que resulta de interés explorar pueden encontrarse a diferentes niveles de granularidad. Esto es, desde el punto de vista económico puede resultar de interés seguir el comportamiento de un componente que refiera a \textit{derivados de la soja}, pero para poder dar con el mismo, sería necesario un nivel de granularidad que puede implicar que otro concepto interesante como \textit{productos textiles} se multiplique a lo largo de varios componentes. 
 
-%Por otro lado, la figura \ref{fig:componentes} muestra la distribución promedio de los componentes en los países, para varios valores de $k$. Se puede observar que el segundo componente siempre toma un valor elevado, por encima del 40\%, mientras que el resto de la distribución de distribuye de forma más o menos uniforme entre los restantes componentes. Esto se puede interpretar como que una proporción importante del comercio mundial se realiza en productos muy similares entre sí, en tanto los países que los exportan tienden a ser los mismos. Este \textit{componente gigante} del comercio no se fragmenta al aumentar $k$ dado que lo que sucede es que se subfragmenta el restante del comercio. 
+La figura \ref{fig:componentes} muestra la distribución de los componentes \footnote{sin ponderar por el peso de las exportaciones, es decir de forma equiponderada entre países}. Allí se observa que la distirbución es irregular, y que tiende a haber componentes que se destacan por sobre los demás, como el primer componente para k igual a 2,4 y 6 ; el componente octavo en k igual a 8,10,20, etc. Estos componentes están compuestos o bien por productos petroleros o por una mezcla de estos con otros productos primarios. Esto se puede interpreta como que, o bien son más los países productores primarios, o bien estos productos tienen un mayor peso en las canastas exportadoras de aquellos países que los producen, o una combinación de ambos fenómenos.
 
 \begin{figure}
 	\centering	
-	\includegraphics[width=0.65\linewidth]{componentes_all}
+	\includegraphics[width=0.65\linewidth]{componentes}
 	\caption{Distribución promedio de los componentes en los países, varios valores de k}
 	\label{fig:componentes}
 \end{figure}
 
-Esta conclusiones encuentran su correlato en la bibliografía. \cite{Hidalgo2007} construye un espacio de productos a partir de la proyección de un grafo bipartito de países y productos, y el resultado muestra evidencias de un núcleo densamente conectado y representativo respecto del comercio global. En este sentido, el $k$ óptimo es aquel que logra separar correctamente los clusters de productos que se encuentran en la periferia de dicho núcleo. Áreas como el \textit{petróleo}, \textit{textiles} y \textit{productos agropecuarios} deberían ser distinguibles con nitidez. Con este objetivo en mente, de los diferentes experimentos para diferentes valores del hiperparámetro, se concluyo que $k=40$ \info{rehacer}arroja los mejores resultados para este conjunto de datos.
-\info{rehacer}
-Finalmente, para elaborar las etiquetas finales se consultó especialistas sectoriales. En la tabla \ref{Table: etiquetas} se pueden ver las etiquetas para el modelo con $k=40$. Allí se puede ver que el componente 2 es el mencionado \textit{componente gigante}, y se delimitan un componente para productos textiles (4), petróleo (5), circuitos eléctricos (8), derivados de la madera y papel (15), Soja (16), entre otros. También se ve que algunos componentes tienen una composición de la cual no es posible diferenciarlos a nivel conceptual (31, 32, 34 y 35).
 
-
-
-
-% \usepackage{booktabs}
+Finalmente, para elaborar las etiquetas finales se consultó especialistas sectoriales. En la tabla \ref{tabla:desc_comp} se pueden ver las etiquetas para el modelo con $k=30$, que se utilizará para mostrar los resultados, dado que permite una buena granularidad para los objetivos del presente trabajo. Allí se presenta una descripción general por rama, excepto para el componente 19 donde esto no es posible, además se presenta como \textit{subgrupo} algún conjunto característico de productos que permite una mejor especificación, y para el caso de los productos industriales, el nivel de complejidad, siguiendo la clasificación de \cite{lall2000technological}. Por último, en la columna \textit{país} se muestra aquel país para el que tiene una mayor participación del componente en el promedio de la serie. Un caso particular es el componente 5, que posee productos de alta complejidad para el comienzo de la serie, pero que luego cayeron en desuso o disminuyeron su participación en el comercio internacional. Por ejemplo, las cintas de grabación, líneas de teléfono o el papel fotográfico. Es natural que el país que caracteriza a dicho componente sea aquel cuya serie es de menor duración, como Checoslovaquia, que por disolverse en el año 92', su denominador es menor que en los demás países. 
 
 \begin{table}
 	\centering
@@ -684,13 +676,12 @@ Finalmente, para elaborar las etiquetas finales se consultó especialistas secto
 		\hline
 	\end{tabular}
 	\caption{Descrición Componentes. K = 30}
-	 \label{desc_comp}
+	 \label{tabla:desc_comp}
 \end{table}
 
 
 \subsubsection{Análisis de países}
 
-%La figura \ref{fig:serie_componentes} muestra la evolución de la composición de la canasta exportadora en algunos países sudamericanos, en términos de los componentes obtenidos. \ref{fig:serie_componentes_1} muestra la evolución de Argentina y Brasil. En ambos casos el denominado \textit{componente gigante} representa la mayoría de las exportaciones, aunque esto es particularmente cierto para el caso brasilero. Para la Argentina, se observa que en el período 2007-2008 y a partir del 2013, crece la importancia del componente 16, compuesto mayoritariamente por porotos de soja y derivados. Vale mencionar que el período 2007-2008 se caracterizó por un aumento acelerado del precio de la soja. A su vez, los volúmenes cosechados en 2013 de este producto superaron ampliamente la cosecha del año anterior \citep{ybran2016informe}. Un movimiento similar, aunque menos pronunciado se puede observar en Brasil. Por su parte, en \ref{fig:serie_componentes_2} se puede ver la evolución para Bolivia, Chile y Paraguay. La canasta exportadora de estos países no esta centrada en el \textit{componente gigante} 2. Para el caso boliviano, se divide principalmente entre los componentes 29, cobre, y 37, gas y petróleo. Estos resultados son coincidentes con lo conocido por la bibliografía especializada para dicho país \citep{auty2002sustaining, chavez2016can}. Por su parte, En Chile los dos componentes más destacados son el 29, cobre y el 22, \textit{productos primarios y manufacturas basadas en recursos naturales} si bien una porción importante de su producción también se encuentra dentro del componente 2. Para el caso Chileno, la bibliografía especializada indica una amplia predominancia de la producción de cobre y derivados \citep{moran2014multinational}, por lo que pareciera que el componente 22 incluye algunos productos relacionados a la producción de este mineral. Se puede decir que para este país el modelo no performa de forma enteramente satisfactoria, dado que idealmente se pretendería un único componente que englobe la producción de cobre y todos sus derivados. Finalmente, en el caso paraguayo, la producción que domina ampliamente sus exportaciones es la de soja y derivados. Este resultado es también coincidente con la literatura especializada \citep{fogel2005enclave}.
 
 Con los componentes definidos, es posible analizar la composición de la canasta exportadora de cada país. Dado que en la definición del problema nuestra unidad es el par país\&año, eso significa que podemos comparar la evolución en la distribución de los componentes al interior de cada país. 
 
@@ -1059,7 +1050,7 @@ En la figura \ref{fig:clustering50} se analiza el caso de 50 medioides. La descr
 
 \subsection{Conclusiones}
 
-En el presente capítulo se realizó una segunda aproximación a la cuantificación del comercio internacional, considerando la dimensión \textit{producto}. Este enfoque busca no considerar el lugar que ocupan los países en el mercado mundial, no ya desde sus centralidad en el comercio agregado, sino en función del rol de los mismos en el sistema productivo mundial. Para ello, y dado que parte del presente capítulo fue elaborada en un marco de trabajo multidisciplinario\footnote{Parte del trabajo del presente capítulo se realizó en el marco  del proyecto de Investigación Científica y Tecnológica (PICT) 1085-2016. 'Abordando la restricción externa en América Latina a partir de la integración regional: integración productiva, cooperación Sur-Sur y financiamiento para el desarrollo'.}, se desarrollaron diversas herramientas de análisis. En primer lugar, para poder dar a conocer los resultados a investigadores temáticos, se elaboraron diversas aplicaciones web en \textit{shiny}, tanto para el análisis exploratorio de datos \footnote{\url{ https://treemaps.shinyapps.io/treemaps/ }}, como para la caracterización de los componentes del modelo de \textit{LDA}, y sus resultados \footnote{\url{ https://treemaps.shinyapps.io/LDA_serie_larga/ }}. La propuesta metodológica del capítulo consta de dos partes. En primer lugar, se propone una nueva utilización del modelo propuesto por \cite{blei2003latent}, proveniente del campo del análisis de textos, para la detección de las dimensiones latentes del comercio mundial, nombradas \textit{componentes}. Allí se exploró los parámetros óptimos del modelo, se caracterizaron los componentes, y con esto, se analizaron los resultados desde el punto de vista de la evolución de la estructura productiva exportadora de los países a lo largo del período 1962-2016. Esta nueva herramienta se presenta como promisoria para la elaboración de una caracterización sintética del comercio de los países, sin necesidad de elaborar nomencladores ad-hoc.
+En el presente capítulo se realizó una segunda aproximación a la cuantificación del comercio internacional, considerando la dimensión \textit{producto}. Este enfoque busca no considerar el lugar que ocupan los países en el mercado mundial, no ya desde sus centralidad en el comercio agregado, sino en función del rol de los mismos en el sistema productivo mundial. Para ello, y dado que parte del presente capítulo fue elaborada en un marco de trabajo multidisciplinario\footnote{Parte del trabajo del presente capítulo se realizó en el marco  del proyecto de Investigación Científica y Tecnológica (PICT) 1085-2016. 'Abordando la restricción externa en América Latina a partir de la integración regional: integración productiva, cooperación Sur-Sur y financiamiento para el desarrollo'.}, se desarrollaron diversas herramientas de análisis. En primer lugar, para poder dar a conocer los resultados a investigadores temáticos, se elaboraron diversas aplicaciones web en \textit{shiny}, tanto para el análisis exploratorio de datos \footnote{\url{ https://treemaps.shinyapps.io/treemaps/ }}, como para la caracterización de los componentes del modelo de \textit{LDA}, y sus resultados \footnote{\url{ https://treemaps.shinyapps.io/LDA_worldtrade/ }}. La propuesta metodológica del capítulo consta de dos partes. En primer lugar, se propone una nueva utilización del modelo propuesto por \cite{blei2003latent}, proveniente del campo del análisis de textos, para la detección de las dimensiones latentes del comercio mundial, nombradas \textit{componentes}. Allí se exploró los parámetros óptimos del modelo, se caracterizaron los componentes, y con esto, se analizaron los resultados desde el punto de vista de la evolución de la estructura productiva exportadora de los países a lo largo del período 1962-2016. Esta nueva herramienta se presenta como promisoria para la elaboración de una caracterización sintética del comercio de los países, sin necesidad de elaborar nomencladores ad-hoc.
 Por su parte, tomando el trabajo de  \cite{balassa1965trade} se elaboró un grafo bipartito entre países y productos, con el que luego se elaboró una proyección al grafo de países y de allí se caracterizaron las comunidades presentes en el mercado mundial a lo largo del período. Este análisis permitió agrupar a los países según el rol que los mismos juegan en la producción mundial de valor. De esta forma, se produjo nueva evidencia empírica respecto de la Nueva División Internacional del trabajo. Finalmente, sobre la base del trabajo de \cite{Hidalgo2009} se caracterizó el espacio de productos, en función de su similitud. Śe encontró de esta forma que los nomencladores oficiales no son una representación uniforme respecto a la distancia entre los distintos productos, y que por lo tanto resultan de interés los ejercicios como el propuesto en utilizando LDA. A su vez, mediante técnicas de clustering, se caracterizó a los productos procurando construir tipologías basadas en la información empírica disponible.
 En síntesis, la propuesta del presente capítulo es elaborar metodologías complementarias a las tradicionalmente utilizadas en el análisis estadístico del comercio internacional. Las diferentes propuestas tienen en común buscar tipologías que se basen en los datos generados por el comercio internacional.
 

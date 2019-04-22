@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.4.20)  21 APR 2019 20:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.4.20)  22 APR 2019 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,15 +841,6 @@ LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
 
 
-LaTeX Warning: Label `fig:top_dist1' multiply defined.
-
-
-LaTeX Warning: Label `fig:top_dist1@cref' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:top_dist1' multiply defined.
-
-
 LaTeX Warning: Label `fig:lall_1' multiply defined.
 
 
@@ -1080,39 +1071,21 @@ File: frontmatter/logofcen.pdf Graphic file (type pdf)
 <use frontmatter/logofcen.pdf>
 Package pdftex.def Info: frontmatter/logofcen.pdf  used on input line 10.
 (pdftex.def)             Requested size: 73.97733pt x 73.98073pt.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 34.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./frontmatter/logofcen.pdf
 >])
 (./frontmatter/abs_esp.tex
-Overfull \hbox (2.24277pt too wide) in paragraph at lines 5--5
-[][]\OT1/cmr/m/n/6 PROVISORIO  
- []
-
-
-Overfull \hbox (2.24277pt too wide) in paragraph at lines 5--5
-[][]\OT1/cmr/m/n/6 PROVISORIO  
- []
-
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 9.
 ) [1
 
 
-] (./frontmatter/abs_en.tex
-Overfull \hbox (2.24277pt too wide) in paragraph at lines 5--5
-[][]\OT1/cmr/m/n/6 PROVISORIO  
- []
+] (./frontmatter/abs_en.tex) [2
 
 
-Overfull \hbox (2.24277pt too wide) in paragraph at lines 5--5
-[][]\OT1/cmr/m/n/6 PROVISORIO  
- []
-
-) [2
-
-
-] (./frontmatter/agradecimientos.tex) [3
+]
+(./frontmatter/agradecimientos.tex) [3
 
 
 ] (./tesis.toc
@@ -1134,8 +1107,7 @@ LaTeX Info: Redefining \% on input line 6.
 \tf@toc=\write6
 \openout6 = `tesis.toc'.
 
- [5]
-(./tesis.lof
+ [5] (./tesis.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 2.
@@ -1168,13 +1140,8 @@ x-por-ta-cio-nes. Pro-me-dio 1996-
 
  [7]
 Cap\'{\i }tulo 1.
-(./chapters/chapter_1/chapter1.tex
-
-Package natbib Warning: Citation `united2006standard' on page 1 undefined on in
-put line 47.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+(./chapters/chapter_1/chapter1.texpdfTeX warning (ext4): destination with the s
+ame identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.49 
@@ -1184,15 +1151,15 @@ l.49
 ]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 53.
+               Default added (so using `tbp') on input line 52.
 
+LaTeX Info: Redefining \. on input line 73.
+LaTeX Info: Redefining \% on input line 73.
+[2]
 
 Package natbib Warning: Citation `CenterforInternationalDevelopmentatHarvardUni
-versity' on page 2 undefined on input line 76.
+versity' on page 3 undefined on input line 76.
 
-LaTeX Info: Redefining \. on input line 77.
-LaTeX Info: Redefining \% on input line 77.
-[2]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 80.
 )
@@ -1203,31 +1170,31 @@ Cap\'{\i }tulo 2.
 (./chapters/chapter_2/chapter2.tex [4
 
 ]
-<images/2016_freq_interacciones_3.png, id=518, 582.4962pt x 526.8483pt>
+<images/2016_freq_interacciones_3.png, id=521, 582.4962pt x 526.8483pt>
 File: images/2016_freq_interacciones_3.png Graphic file (type png)
 <use images/2016_freq_interacciones_3.png>
 Package pdftex.def Info: images/2016_freq_interacciones_3.png  used on input li
 ne 50.
 (pdftex.def)             Requested size: 277.41176pt x 250.91475pt.
-<images/relaciones_dependientes_EDA.png, id=519, 582.4962pt x 526.8483pt>
+<images/relaciones_dependientes_EDA.png, id=522, 582.4962pt x 526.8483pt>
 File: images/relaciones_dependientes_EDA.png Graphic file (type png)
 <use images/relaciones_dependientes_EDA.png>
 Package pdftex.def Info: images/relaciones_dependientes_EDA.png  used on input 
 line 51.
 (pdftex.def)             Requested size: 277.41176pt x 250.91475pt.
-<images/2016_freq_interacciones_0.png, id=523, 582.4962pt x 526.8483pt>
+<images/2016_freq_interacciones_0.png, id=526, 582.4962pt x 526.8483pt>
 File: images/2016_freq_interacciones_0.png Graphic file (type png)
 <use images/2016_freq_interacciones_0.png>
 Package pdftex.def Info: images/2016_freq_interacciones_0.png  used on input li
 ne 67.
 (pdftex.def)             Requested size: 277.41176pt x 250.91475pt.
-<images/relaciones_destacadas_EDA.png, id=524, 582.4962pt x 526.8483pt>
+<images/relaciones_destacadas_EDA.png, id=527, 582.4962pt x 526.8483pt>
 File: images/relaciones_destacadas_EDA.png Graphic file (type png)
 <use images/relaciones_destacadas_EDA.png>
 Package pdftex.def Info: images/relaciones_destacadas_EDA.png  used on input li
 ne 68.
 (pdftex.def)             Requested size: 277.41176pt x 250.91475pt.
-<images/relaciones_96_2016_EDA.png, id=526, 582.4962pt x 526.8483pt>
+<images/relaciones_96_2016_EDA.png, id=529, 582.4962pt x 526.8483pt>
 File: images/relaciones_96_2016_EDA.png Graphic file (type png)
 <use images/relaciones_96_2016_EDA.png>
 Package pdftex.def Info: images/relaciones_96_2016_EDA.png  used on input line 
@@ -1256,35 +1223,35 @@ LaTeX Info: Redefining \% on input line 173.
 LaTeX Info: Redefining \. on input line 195.
 LaTeX Info: Redefining \% on input line 195.
  [11]
-<images/grafo_2016_1_pcnt.png, id=578, 963.6pt x 963.6pt>
+<images/grafo_2016_1_pcnt.png, id=581, 963.6pt x 963.6pt>
 File: images/grafo_2016_1_pcnt.png Graphic file (type png)
 <use images/grafo_2016_1_pcnt.png>
 Package pdftex.def Info: images/grafo_2016_1_pcnt.png  used on input line 203.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_5_pcnt.png, id=579, 481.8pt x 481.8pt>
+<images/grafo_2016_5_pcnt.png, id=582, 481.8pt x 481.8pt>
 File: images/grafo_2016_5_pcnt.png Graphic file (type png)
 <use images/grafo_2016_5_pcnt.png>
 Package pdftex.def Info: images/grafo_2016_5_pcnt.png  used on input line 204.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_10_pcnt.png, id=580, 481.8pt x 481.8pt>
+<images/grafo_2016_10_pcnt.png, id=583, 481.8pt x 481.8pt>
 File: images/grafo_2016_10_pcnt.png Graphic file (type png)
 <use images/grafo_2016_10_pcnt.png>
 Package pdftex.def Info: images/grafo_2016_10_pcnt.png  used on input line 205.
 
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_15_pcnt.png, id=581, 481.8pt x 481.8pt>
+<images/grafo_2016_15_pcnt.png, id=584, 481.8pt x 481.8pt>
 File: images/grafo_2016_15_pcnt.png Graphic file (type png)
 <use images/grafo_2016_15_pcnt.png>
 Package pdftex.def Info: images/grafo_2016_15_pcnt.png  used on input line 206.
 
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_20_pcnt.png, id=582, 481.8pt x 481.8pt>
+<images/grafo_2016_20_pcnt.png, id=585, 481.8pt x 481.8pt>
 File: images/grafo_2016_20_pcnt.png Graphic file (type png)
 <use images/grafo_2016_20_pcnt.png>
 Package pdftex.def Info: images/grafo_2016_20_pcnt.png  used on input line 207.
 
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_25_pcnt.png, id=583, 481.8pt x 481.8pt>
+<images/grafo_2016_25_pcnt.png, id=586, 481.8pt x 481.8pt>
 File: images/grafo_2016_25_pcnt.png Graphic file (type png)
 <use images/grafo_2016_25_pcnt.png>
 Package pdftex.def Info: images/grafo_2016_25_pcnt.png  used on input line 208.
@@ -1303,37 +1270,37 @@ LaTeX Info: Redefining \% on input line 219.
 g (PNG copy)> <./images/grafo_2016_10_pcnt.png (PNG copy)> <./images/grafo_2016
 _15_pcnt.png (PNG copy)> <./images/grafo_2016_20_pcnt.png (PNG copy)> <./images
 /grafo_2016_25_pcnt.png (PNG copy)>]
-<images/threshold_x_clustering_x_yr.png, id=612, 582.4962pt x 355.0866pt>
+<images/threshold_x_clustering_x_yr.png, id=615, 582.4962pt x 355.0866pt>
 File: images/threshold_x_clustering_x_yr.png Graphic file (type png)
 <use images/threshold_x_clustering_x_yr.png>
 Package pdftex.def Info: images/threshold_x_clustering_x_yr.png  used on input 
 line 222.
 (pdftex.def)             Requested size: 192.0548pt x 117.07597pt.
-<images/threshold_x_naristas_x_yr.png, id=613, 582.4962pt x 355.0866pt>
+<images/threshold_x_naristas_x_yr.png, id=616, 582.4962pt x 355.0866pt>
 File: images/threshold_x_naristas_x_yr.png Graphic file (type png)
 <use images/threshold_x_naristas_x_yr.png>
 Package pdftex.def Info: images/threshold_x_naristas_x_yr.png  used on input li
 ne 223.
 (pdftex.def)             Requested size: 192.0548pt x 117.07597pt.
-<images/threshold_x_densidad_x_yr.png, id=614, 582.4962pt x 355.0866pt>
+<images/threshold_x_densidad_x_yr.png, id=617, 582.4962pt x 355.0866pt>
 File: images/threshold_x_densidad_x_yr.png Graphic file (type png)
 <use images/threshold_x_densidad_x_yr.png>
 Package pdftex.def Info: images/threshold_x_densidad_x_yr.png  used on input li
 ne 224.
 (pdftex.def)             Requested size: 192.0548pt x 117.07597pt.
-<images/corr_grados_2016_1_pcnt.png, id=618, 447.8331pt x 337.26pt>
+<images/corr_grados_2016_1_pcnt.png, id=621, 447.8331pt x 337.26pt>
 File: images/corr_grados_2016_1_pcnt.png Graphic file (type png)
 <use images/corr_grados_2016_1_pcnt.png>
 Package pdftex.def Info: images/corr_grados_2016_1_pcnt.png  used on input line
  243.
 (pdftex.def)             Requested size: 384.1096pt x 289.28145pt.
-<images/corr_grados_2016_10_pcnt.png, id=619, 291.2481pt x 177.5433pt>
+<images/corr_grados_2016_10_pcnt.png, id=622, 291.2481pt x 177.5433pt>
 File: images/corr_grados_2016_10_pcnt.png Graphic file (type png)
 <use images/corr_grados_2016_10_pcnt.png>
 Package pdftex.def Info: images/corr_grados_2016_10_pcnt.png  used on input lin
 e 244.
 (pdftex.def)             Requested size: 192.0548pt x 117.07869pt.
-<images/corr_grados_2016_20_pcnt.png, id=620, 291.2481pt x 177.5433pt>
+<images/corr_grados_2016_20_pcnt.png, id=623, 291.2481pt x 177.5433pt>
 File: images/corr_grados_2016_20_pcnt.png Graphic file (type png)
 <use images/corr_grados_2016_20_pcnt.png>
 Package pdftex.def Info: images/corr_grados_2016_20_pcnt.png  used on input lin
@@ -1368,12 +1335,12 @@ LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10> not available
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 281.
 
-<images/correlacion_x_yr.png, id=647, 582.4962pt x 526.8483pt>
+<images/correlacion_x_yr.png, id=650, 582.4962pt x 526.8483pt>
 File: images/correlacion_x_yr.png Graphic file (type png)
 <use images/correlacion_x_yr.png>
 Package pdftex.def Info: images/correlacion_x_yr.png  used on input line 295.
 (pdftex.def)             Requested size: 192.0548pt x 173.70773pt.
-<images/coef_clustering_x_yr.png, id=648, 582.4962pt x 526.8483pt>
+<images/coef_clustering_x_yr.png, id=651, 582.4962pt x 526.8483pt>
 File: images/coef_clustering_x_yr.png Graphic file (type png)
 <use images/coef_clustering_x_yr.png>
 Package pdftex.def Info: images/coef_clustering_x_yr.png  used on input line 29
@@ -1388,19 +1355,19 @@ LaTeX Info: Redefining \. on input line 309.
 LaTeX Info: Redefining \% on input line 309.
 [17 <./images/correlacion_x_yr.png (PNG copy)> <./images/coef_clustering_x_yr.p
 ng (PNG copy)>]
-<images/impo_densidad_degree_x_yr.png, id=664, 582.4962pt x 632.3625pt>
+<images/impo_densidad_degree_x_yr.png, id=667, 582.4962pt x 632.3625pt>
 File: images/impo_densidad_degree_x_yr.png Graphic file (type png)
 <use images/impo_densidad_degree_x_yr.png>
 Package pdftex.def Info: images/impo_densidad_degree_x_yr.png  used on input li
 ne 318.
 (pdftex.def)             Requested size: 256.07741pt x 278.00879pt.
-<images/expo_densidad_autovalor_x_yr.png, id=665, 582.4962pt x 632.3625pt>
+<images/expo_densidad_autovalor_x_yr.png, id=668, 582.4962pt x 632.3625pt>
 File: images/expo_densidad_autovalor_x_yr.png Graphic file (type png)
 <use images/expo_densidad_autovalor_x_yr.png>
 Package pdftex.def Info: images/expo_densidad_autovalor_x_yr.png  used on input
  line 322.
 (pdftex.def)             Requested size: 256.07741pt x 278.00879pt.
-<images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png, id=666, 582.4962pt x 63
+<images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png, id=669, 582.4962pt x 63
 2.3625pt>
 File: images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png Graphic file (type 
 png)
@@ -1418,19 +1385,19 @@ d_autovalor_x_yr.png (PNG copy)>]
 LaTeX Info: Redefining \. on input line 356.
 LaTeX Info: Redefining \% on input line 356.
  [20 <./images/expo_densidad_USAvsCHN_autovalor_pond_x_yr.png (PNG copy)>]
-<images/1950_2000_coef_clustering_x_yr.png, id=691, 582.4962pt x 526.8483pt>
+<images/1950_2000_coef_clustering_x_yr.png, id=694, 582.4962pt x 526.8483pt>
 File: images/1950_2000_coef_clustering_x_yr.png Graphic file (type png)
 <use images/1950_2000_coef_clustering_x_yr.png>
 Package pdftex.def Info: images/1950_2000_coef_clustering_x_yr.png  used on inp
 ut line 361.
 (pdftex.def)             Requested size: 204.85802pt x 185.28397pt.
-<images/1950_2000_correlacion_x_yr.png, id=692, 582.4962pt x 526.8483pt>
+<images/1950_2000_correlacion_x_yr.png, id=695, 582.4962pt x 526.8483pt>
 File: images/1950_2000_correlacion_x_yr.png Graphic file (type png)
 <use images/1950_2000_correlacion_x_yr.png>
 Package pdftex.def Info: images/1950_2000_correlacion_x_yr.png  used on input l
 ine 362.
 (pdftex.def)             Requested size: 204.85802pt x 185.28397pt.
-<images/1950_2000_continent_all.png, id=697, 582.4962pt x 632.3625pt>
+<images/1950_2000_continent_all.png, id=700, 582.4962pt x 632.3625pt>
 File: images/1950_2000_continent_all.png Graphic file (type png)
 <use images/1950_2000_continent_all.png>
 Package pdftex.def Info: images/1950_2000_continent_all.png  used on input line
@@ -1447,7 +1414,7 @@ LaTeX Info: Redefining \% on input line 377.
 LaTeX Info: Redefining \. on input line 381.
 LaTeX Info: Redefining \% on input line 381.
  [22 <./images/1950_2000_continent_all.png (PNG copy)>]
-<images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png, id=718, 582.4962pt x 632
+<images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png, id=721, 582.4962pt x 632
 .3625pt>
 File: images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png Graphic file (type p
 ng)
@@ -1455,7 +1422,7 @@ ng)
 Package pdftex.def Info: images/1950_2000_impo_densidad_ARG_BRA_MEX_grado.png  
 used on input line 384.
 (pdftex.def)             Requested size: 298.75264pt x 324.33394pt.
-<images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png, id=719, 582.4962pt x 
+<images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png, id=722, 582.4962pt x 
 632.3625pt>
 File: images/1950_2000_impo_densidad_ARG_BRA_MEX_atvlrpnd.png Graphic file (typ
 e png)
@@ -1470,7 +1437,7 @@ LaTeX Warning: Float too large for page by 70.93477pt on input line 388.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png, id=723, 582.4962pt
+<images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png, id=726, 582.4962pt
  x 632.3625pt>
 File: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr.png Graphic file (
 type png)
@@ -1478,7 +1445,7 @@ type png)
 Package pdftex.def Info: images/1950_2000_impo_densidad_USAvsCHN_autovalor_x_yr
 .png  used on input line 397.
 (pdftex.def)             Requested size: 298.75264pt x 324.33394pt.
-<images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png, id=724, 582.4962pt x 632
+<images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png, id=727, 582.4962pt x 632
 .3625pt>
 File: images/1950_2000_impo_densidad_CHN_JPN_ROK_atvlr.png Graphic file (type p
 ng)
@@ -1509,17 +1476,17 @@ Cap\'{\i }tulo 3.
 (./chapters/chapter_3/chapter3.tex [26
 
 ]
-<images/treemap_cadsubcad.png, id=800, 505.89pt x 505.89pt>
+<images/treemap_cadsubcad.png, id=802, 505.89pt x 505.89pt>
 File: images/treemap_cadsubcad.png Graphic file (type png)
 <use images/treemap_cadsubcad.png>
 Package pdftex.def Info: images/treemap_cadsubcad.png  used on input line 81.
 (pdftex.def)             Requested size: 277.41176pt x 277.41438pt.
-<images/treemap_usos.png, id=801, 505.89pt x 505.89pt>
+<images/treemap_usos.png, id=803, 505.89pt x 505.89pt>
 File: images/treemap_usos.png Graphic file (type png)
 <use images/treemap_usos.png>
 Package pdftex.def Info: images/treemap_usos.png  used on input line 82.
 (pdftex.def)             Requested size: 277.41176pt x 277.41438pt.
-<images/treemap_paises.png, id=803, 505.89pt x 505.89pt>
+<images/treemap_paises.png, id=805, 505.89pt x 505.89pt>
 File: images/treemap_paises.png Graphic file (type png)
 <use images/treemap_paises.png>
 Package pdftex.def Info: images/treemap_paises.png  used on input line 94.
@@ -1531,13 +1498,13 @@ LaTeX Info: Redefining \. on input line 105.
 LaTeX Info: Redefining \% on input line 105.
  [28 <./images/treemap_cadsubcad.png (PNG copy)> <./images/treemap_usos.png (PN
 G copy)>]
-<images/treemaps_cadsubcad2016.png, id=823, 582.4962pt x 579.6054pt>
+<images/treemaps_cadsubcad2016.png, id=825, 582.4962pt x 579.6054pt>
 File: images/treemaps_cadsubcad2016.png Graphic file (type png)
 <use images/treemaps_cadsubcad2016.png>
 Package pdftex.def Info: images/treemaps_cadsubcad2016.png  used on input line 
 109.
 (pdftex.def)             Requested size: 320.0935pt x 318.51863pt.
-<images/treemaps_cadsubcad2016_impos.png, id=824, 582.4962pt x 579.6054pt>
+<images/treemaps_cadsubcad2016_impos.png, id=826, 582.4962pt x 579.6054pt>
 File: images/treemaps_cadsubcad2016_impos.png Graphic file (type png)
 <use images/treemaps_cadsubcad2016_impos.png>
 Package pdftex.def Info: images/treemaps_cadsubcad2016_impos.png  used on input
@@ -1554,24 +1521,24 @@ LaTeX Info: Redefining \. on input line 117.
 LaTeX Info: Redefining \% on input line 117.
  [30 <./images/treemaps_cadsubcad2016.png (PNG copy)> <./images/treemaps_cadsub
 cad2016_impos.png (PNG copy)>]
-<images/treemaps_usos2016.png, id=840, 1053.9375pt x 650.43pt>
+<images/treemaps_usos2016.png, id=842, 1053.9375pt x 650.43pt>
 File: images/treemaps_usos2016.png Graphic file (type png)
 <use images/treemaps_usos2016.png>
 Package pdftex.def Info: images/treemaps_usos2016.png  used on input line 120.
 (pdftex.def)             Requested size: 320.0935pt x 197.5422pt.
-<images/treemaps_usos2016_impos.png, id=841, 1053.9375pt x 650.43pt>
+<images/treemaps_usos2016_impos.png, id=843, 1053.9375pt x 650.43pt>
 File: images/treemaps_usos2016_impos.png Graphic file (type png)
 <use images/treemaps_usos2016_impos.png>
 Package pdftex.def Info: images/treemaps_usos2016_impos.png  used on input line
  121.
 (pdftex.def)             Requested size: 320.0935pt x 197.5422pt.
-<images/treemaps_paises2016.png, id=845, 582.4962pt x 579.6054pt>
+<images/treemaps_paises2016.png, id=847, 582.4962pt x 579.6054pt>
 File: images/treemaps_paises2016.png Graphic file (type png)
 <use images/treemaps_paises2016.png>
 Package pdftex.def Info: images/treemaps_paises2016.png  used on input line 134
 .
 (pdftex.def)             Requested size: 277.41176pt x 276.04063pt.
-<images/treemaps_paises_rdm2016.png, id=846, 582.4962pt x 579.6054pt>
+<images/treemaps_paises_rdm2016.png, id=848, 582.4962pt x 579.6054pt>
 File: images/treemaps_paises_rdm2016.png Graphic file (type png)
 <use images/treemaps_paises_rdm2016.png>
 Package pdftex.def Info: images/treemaps_paises_rdm2016.png  used on input line
@@ -1603,409 +1570,396 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 209.
-LaTeX Info: Redefining \. on input line 334.
-LaTeX Info: Redefining \% on input line 334.
+LaTeX Info: Redefining \. on input line 342.
+LaTeX Info: Redefining \% on input line 342.
  [35]
-<images/dirichlet.png, id=903, 572.1375pt x 418.56375pt>
+<images/dirichlet.png, id=905, 572.1375pt x 418.56375pt>
 File: images/dirichlet.png Graphic file (type png)
 <use images/dirichlet.png>
-Package pdftex.def Info: images/dirichlet.png  used on input line 337.
+Package pdftex.def Info: images/dirichlet.png  used on input line 345.
 (pdftex.def)             Requested size: 277.41176pt x 202.95207pt.
-LaTeX Info: Redefining \. on input line 354.
-LaTeX Info: Redefining \% on input line 354.
- [36 <./images/dirichlet.png>]
+LaTeX Info: Redefining \. on input line 365.
+LaTeX Info: Redefining \% on input line 365.
+ [36]
+LaTeX Info: Redefining \. on input line 477.
+LaTeX Info: Redefining \% on input line 477.
 
-LaTeX Warning: Marginpar on page 37 moved.
-
-
-LaTeX Warning: Marginpar on page 37 moved.
-
-
-LaTeX Warning: Marginpar on page 37 moved.
-
-
-LaTeX Warning: Marginpar on page 37 moved.
-
-LaTeX Info: Redefining \. on input line 494.
-LaTeX Info: Redefining \% on input line 494.
-[37]
-LaTeX Info: Redefining \. on input line 504.
-LaTeX Info: Redefining \% on input line 504.
+[37 <./images/dirichlet.png>]
+LaTeX Info: Redefining \. on input line 503.
+LaTeX Info: Redefining \% on input line 503.
  [38]
+LaTeX Info: Redefining \. on input line 521.
+LaTeX Info: Redefining \% on input line 521.
+ [39]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 536.
+(hyperref)                be the same. Added a new anchor on input line 542.
 
-LaTeX Info: Redefining \. on input line 541.
-LaTeX Info: Redefining \% on input line 541.
-[39]
-<images/comp1k2.png, id=983, 1317.92375pt x 584.1825pt>
+LaTeX Info: Redefining \. on input line 547.
+LaTeX Info: Redefining \% on input line 547.
+[40]
+<images/comp1k2.png, id=998, 1317.92375pt x 584.1825pt>
 File: images/comp1k2.png Graphic file (type png)
 <use images/comp1k2.png>
-Package pdftex.def Info: images/comp1k2.png  used on input line 584.
+Package pdftex.def Info: images/comp1k2.png  used on input line 577.
 (pdftex.def)             Requested size: 426.79135pt x 189.1796pt.
-<images/comp2k2.png, id=984, 1308.89pt x 571.13374pt>
+<images/comp2k2.png, id=999, 1308.89pt x 571.13374pt>
 File: images/comp2k2.png Graphic file (type png)
 <use images/comp2k2.png>
-Package pdftex.def Info: images/comp2k2.png  used on input line 585.
+Package pdftex.def Info: images/comp2k2.png  used on input line 578.
 (pdftex.def)             Requested size: 426.79135pt x 186.2263pt.
-<images/graficoLall_k2_comp1.png, id=985, 505.89pt x 505.89pt>
+<images/graficoLall_k2_comp1.png, id=1003, 505.89pt x 505.89pt>
 File: images/graficoLall_k2_comp1.png Graphic file (type png)
 <use images/graficoLall_k2_comp1.png>
-Package pdftex.def Info: images/graficoLall_k2_comp1.png  used on input line 59
-2.
+Package pdftex.def Info: images/graficoLall_k2_comp1.png  used on input line 58
+7.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/graficoLall_k2_comp2.png, id=986, 505.89pt x 505.89pt>
+<images/graficoLall_k2_comp2.png, id=1004, 505.89pt x 505.89pt>
 File: images/graficoLall_k2_comp2.png Graphic file (type png)
 <use images/graficoLall_k2_comp2.png>
-Package pdftex.def Info: images/graficoLall_k2_comp2.png  used on input line 59
-3.
+Package pdftex.def Info: images/graficoLall_k2_comp2.png  used on input line 58
+8.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/componentes_all.png, id=987, 505.89pt x 505.89pt>
-File: images/componentes_all.png Graphic file (type png)
-<use images/componentes_all.png>
-Package pdftex.def Info: images/componentes_all.png  used on input line 605.
+LaTeX Info: Redefining \. on input line 595.
+LaTeX Info: Redefining \% on input line 595.
+ [41]
+LaTeX Info: Redefining \. on input line 595.
+LaTeX Info: Redefining \% on input line 595.
+ [42 <./images/comp1k2.png> <./images/comp2k2.png>]
+<images/componentes.png, id=1036, 505.89pt x 505.89pt>
+File: images/componentes.png Graphic file (type png)
+<use images/componentes.png>
+Package pdftex.def Info: images/componentes.png  used on input line 603.
 (pdftex.def)             Requested size: 277.41176pt x 277.41438pt.
-
-
-LaTeX Warning: Reference `Table: etiquetas' on page 40 undefined on input line 
-612.
-
-LaTeX Info: Redefining \. on input line 613.
-LaTeX Info: Redefining \% on input line 613.
-[40]
-LaTeX Info: Redefining \. on input line 613.
-LaTeX Info: Redefining \% on input line 613.
- [41 <./images/comp1k2.png> <./images/comp2k2.png>]
-LaTeX Info: Redefining \. on input line 613.
-LaTeX Info: Redefining \% on input line 613.
- [42 <./images/graficoLall_k2_comp1.png (PNG copy)> <./images/graficoLall_k2_co
-mp2.png (PNG copy)> <./images/componentes_all.png>]
-
-LaTeX Warning: Marginpar on page 43 moved.
-
-
-Overfull \hbox (33.49228pt too wide) in paragraph at lines 621--686
+LaTeX Info: Redefining \. on input line 606.
+LaTeX Info: Redefining \% on input line 606.
+ [43 <./images/graficoLall_k2_comp1.png (PNG copy)> <./images/graficoLall_k2_co
+mp2.png (PNG copy)>]
+Overfull \hbox (33.49228pt too wide) in paragraph at lines 613--678
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 39.61069pt on input line 688.
+LaTeX Warning: Float too large for page by 39.61069pt on input line 680.
 
-<../desagregado/LDA/graficos/graficoLDA_k30_IRN_IRQ_KWT_SAU_VEN.png, id=1016, 5
+LaTeX Info: Redefining \. on input line 693.
+LaTeX Info: Redefining \% on input line 693.
+[44 <./images/componentes.png>]
+LaTeX Info: Redefining \. on input line 693.
+LaTeX Info: Redefining \% on input line 693.
+ [45]
+<../desagregado/LDA/graficos/graficoLDA_k30_IRN_IRQ_KWT_SAU_VEN.png, id=1064, 5
 05.89pt x 505.89pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_IRN_IRQ_KWT_SAU_VEN.png Graphi
 c file (type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_IRN_IRQ_KWT_SAU_VEN.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_IRN_IRQ_KWT
-_SAU_VEN.png  used on input line 705.
+_SAU_VEN.png  used on input line 696.
 (pdftex.def)             Requested size: 298.75264pt x 298.75812pt.
-LaTeX Info: Redefining \. on input line 713.
-LaTeX Info: Redefining \% on input line 713.
-[43]
-LaTeX Info: Redefining \. on input line 713.
-LaTeX Info: Redefining \% on input line 713.
- [44]
-LaTeX Info: Redefining \. on input line 713.
-LaTeX Info: Redefining \% on input line 713.
- [45 <../desagregado/LDA/graficos/graficoLDA_k30_IRN_IRQ_KWT_SAU_VEN.png (PNG c
+LaTeX Info: Redefining \. on input line 704.
+LaTeX Info: Redefining \% on input line 704.
+ [46 <../desagregado/LDA/graficos/graficoLDA_k30_IRN_IRQ_KWT_SAU_VEN.png (PNG c
 opy)>]
-Overfull \hbox (9.80704pt too wide) in paragraph at lines 714--715
+Overfull \hbox (9.80704pt too wide) in paragraph at lines 705--706
 []\OT1/cmr/m/n/10.95 Estados Uni-dos co-mien-za la se-rie con una pre-do-mi-nan
 -cia de los com-po-nen-tes 5 (Electr^^Soni-
  []
 
-<../desagregado/LDA/graficos/graficoLDA_k30_CAN_MEX_USA.png, id=1038, 650.43pt 
+<../desagregado/LDA/graficos/graficoLDA_k30_CAN_MEX_USA.png, id=1075, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_CAN_MEX_USA.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_CAN_MEX_USA.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_CAN_MEX_USA
-.png  used on input line 718.
+.png  used on input line 709.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-<../desagregado/LDA/graficos/graficoLDA_k30_BOL_CHL_PER.png, id=1048, 650.43pt 
+<../desagregado/LDA/graficos/graficoLDA_k30_BOL_CHL_PER.png, id=1085, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_BOL_CHL_PER.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_BOL_CHL_PER.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_BOL_CHL_PER
-.png  used on input line 727.
+.png  used on input line 718.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-LaTeX Info: Redefining \. on input line 735.
-LaTeX Info: Redefining \% on input line 735.
-[46]
-LaTeX Info: Redefining \. on input line 735.
-LaTeX Info: Redefining \% on input line 735.
- [47 <../desagregado/LDA/graficos/graficoLDA_k30_CAN_MEX_USA.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 735.
-LaTeX Info: Redefining \% on input line 735.
- [48 <../desagregado/LDA/graficos/graficoLDA_k30_BOL_CHL_PER.png (PNG copy)>]
-<../desagregado/LDA/graficos/graficoLDA_k30_ARG_BRA_URY.png, id=1077, 650.43pt 
+LaTeX Info: Redefining \. on input line 726.
+LaTeX Info: Redefining \% on input line 726.
+[47]
+LaTeX Info: Redefining \. on input line 726.
+LaTeX Info: Redefining \% on input line 726.
+ [48 <../desagregado/LDA/graficos/graficoLDA_k30_CAN_MEX_USA.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 726.
+LaTeX Info: Redefining \% on input line 726.
+ [49 <../desagregado/LDA/graficos/graficoLDA_k30_BOL_CHL_PER.png (PNG copy)>]
+<../desagregado/LDA/graficos/graficoLDA_k30_ARG_BRA_URY.png, id=1114, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_ARG_BRA_URY.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_ARG_BRA_URY.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_ARG_BRA_URY
-.png  used on input line 738.
+.png  used on input line 729.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-LaTeX Info: Redefining \. on input line 746.
-LaTeX Info: Redefining \% on input line 746.
-[49 <../desagregado/LDA/graficos/graficoLDA_k30_ARG_BRA_URY.png (PNG copy)>]
-<../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL.png, id=1097, 650.43pt x 74
+LaTeX Info: Redefining \. on input line 737.
+LaTeX Info: Redefining \% on input line 737.
+[50 <../desagregado/LDA/graficos/graficoLDA_k30_ARG_BRA_URY.png (PNG copy)>]
+<../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL.png, id=1134, 650.43pt x 74
 5.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL.png Graphic file (type
  png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL.png
-  used on input line 749.
+  used on input line 740.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-LaTeX Info: Redefining \. on input line 758.
-LaTeX Info: Redefining \% on input line 758.
+LaTeX Info: Redefining \. on input line 749.
+LaTeX Info: Redefining \% on input line 749.
 
-[50 <../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL.png (PNG copy)>]
-<../desagregado/LDA/graficos/graficoLDA_k30_HUN_POL_ROU.png, id=1111, 650.43pt 
+[51 <../desagregado/LDA/graficos/graficoLDA_k30_AUS_NZL.png (PNG copy)>]
+<../desagregado/LDA/graficos/graficoLDA_k30_HUN_POL_ROU.png, id=1149, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_HUN_POL_ROU.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_HUN_POL_ROU.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_HUN_POL_ROU
-.png  used on input line 762.
+.png  used on input line 753.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-<../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU.png, id=1113, 650.43pt 
+LaTeX Info: Redefining \. on input line 759.
+LaTeX Info: Redefining \% on input line 759.
+
+[52 <../desagregado/LDA/graficos/graficoLDA_k30_HUN_POL_ROU.png (PNG copy)>]
+<../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU.png, id=1157, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU
-.png  used on input line 771.
+.png  used on input line 762.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-LaTeX Info: Redefining \. on input line 778.
-LaTeX Info: Redefining \% on input line 778.
+LaTeX Info: Redefining \. on input line 769.
+LaTeX Info: Redefining \% on input line 769.
 
-[51 <../desagregado/LDA/graficos/graficoLDA_k30_HUN_POL_ROU.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 778.
-LaTeX Info: Redefining \% on input line 778.
-
-[52 <../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU.png (PNG copy)>]
-<../desagregado/LDA/graficos/graficoLDA_k30_DNK_FIN_NLD_SWE.png, id=1127, 650.4
+[53 <../desagregado/LDA/graficos/graficoLDA_k30_AUT_CZE_DEU.png (PNG copy)>]
+<../desagregado/LDA/graficos/graficoLDA_k30_DNK_FIN_NLD_SWE.png, id=1167, 650.4
 3pt x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_DNK_FIN_NLD_SWE.png Graphic fi
 le (type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_DNK_FIN_NLD_SWE.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_DNK_FIN_NLD
-_SWE.png  used on input line 781.
+_SWE.png  used on input line 772.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-LaTeX Info: Redefining \. on input line 794.
-LaTeX Info: Redefining \% on input line 794.
-
-[53 <../desagregado/LDA/graficos/graficoLDA_k30_DNK_FIN_NLD_SWE.png (PNG copy)>
-]
-<../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL.png, id=1139, 650.43pt 
+<../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL.png, id=1173, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL
-.png  used on input line 797.
+.png  used on input line 788.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-LaTeX Info: Redefining \. on input line 803.
-LaTeX Info: Redefining \% on input line 803.
- [54 <../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL.png (PNG copy)>]
-<../desagregado/LDA/graficos/graficoLDA_k30_ESP_ITA_PRT.png, id=1149, 650.43pt 
+LaTeX Info: Redefining \. on input line 791.
+LaTeX Info: Redefining \% on input line 791.
+
+[54 <../desagregado/LDA/graficos/graficoLDA_k30_DNK_FIN_NLD_SWE.png (PNG copy)>
+]
+<../desagregado/LDA/graficos/graficoLDA_k30_ESP_ITA_PRT.png, id=1182, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_ESP_ITA_PRT.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_ESP_ITA_PRT.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_ESP_ITA_PRT
-.png  used on input line 806.
+.png  used on input line 797.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-LaTeX Info: Redefining \. on input line 819.
-LaTeX Info: Redefining \% on input line 819.
+LaTeX Info: Redefining \. on input line 803.
+LaTeX Info: Redefining \% on input line 803.
+ [55 <../desagregado/LDA/graficos/graficoLDA_k30_FRA_GBR_IRL.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 803.
+LaTeX Info: Redefining \% on input line 803.
 
-[55 <../desagregado/LDA/graficos/graficoLDA_k30_ESP_ITA_PRT.png (PNG copy)>]
-<../desagregado/LDA/graficos/graficoLDA_k30_CHN_JPN_PHL.png, id=1162, 650.43pt 
+[56 <../desagregado/LDA/graficos/graficoLDA_k30_ESP_ITA_PRT.png (PNG copy)>]
+<../desagregado/LDA/graficos/graficoLDA_k30_CHN_JPN_PHL.png, id=1200, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_CHN_JPN_PHL.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_CHN_JPN_PHL.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_CHN_JPN_PHL
-.png  used on input line 822.
+.png  used on input line 813.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-<../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP_TWN.png, id=1166, 650.4
+LaTeX Info: Redefining \. on input line 822.
+LaTeX Info: Redefining \% on input line 822.
+
+[57]
+LaTeX Info: Redefining \. on input line 822.
+LaTeX Info: Redefining \% on input line 822.
+ [58 <../desagregado/LDA/graficos/graficoLDA_k30_CHN_JPN_PHL.png (PNG copy)>]
+<../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP_TWN.png, id=1215, 650.4
 3pt x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP_TWN.png Graphic fi
 le (type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP_TWN.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP
-_TWN.png  used on input line 834.
+_TWN.png  used on input line 825.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-LaTeX Info: Redefining \. on input line 841.
-LaTeX Info: Redefining \% on input line 841.
-
-[56]
-LaTeX Info: Redefining \. on input line 841.
-LaTeX Info: Redefining \% on input line 841.
- [57 <../desagregado/LDA/graficos/graficoLDA_k30_CHN_JPN_PHL.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 841.
-LaTeX Info: Redefining \% on input line 841.
- [58 <../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP_TWN.png (PNG copy)
->]
-<../desagregado/LDA/graficos/graficoLDA_k30_BGD_IND_PAK.png, id=1187, 650.43pt 
+<../desagregado/LDA/graficos/graficoLDA_k30_BGD_IND_PAK.png, id=1221, 650.43pt 
 x 745.1037pt>
 File: ../desagregado/LDA/graficos/graficoLDA_k30_BGD_IND_PAK.png Graphic file (
 type png)
 <use ../desagregado/LDA/graficos/graficoLDA_k30_BGD_IND_PAK.png>
 Package pdftex.def Info: ../desagregado/LDA/graficos/graficoLDA_k30_BGD_IND_PAK
-.png  used on input line 845.
+.png  used on input line 836.
 (pdftex.def)             Requested size: 298.75264pt x 342.24023pt.
-
+LaTeX Info: Redefining \. on input line 842.
+LaTeX Info: Redefining \% on input line 842.
+ [59 <../desagregado/LDA/graficos/graficoLDA_k30_HKG_KOR_SGP_TWN.png (PNG copy)
+>]
+LaTeX Info: Redefining \. on input line 842.
+LaTeX Info: Redefining \% on input line 842.
+ [60 <../desagregado/LDA/graficos/graficoLDA_k30_BGD_IND_PAK.png (PNG copy)>]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 855.
+(hyperref)                be the same. Added a new anchor on input line 846.
 
-LaTeX Info: Redefining \. on input line 858.
-LaTeX Info: Redefining \% on input line 858.
-[59 <../desagregado/LDA/graficos/graficoLDA_k30_BGD_IND_PAK.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 870.
-LaTeX Info: Redefining \% on input line 870.
-
-[60]
-<images/mapa_projection_louvain_lp_1966.png, id=1241, 1156.32pt x 650.43pt>
+LaTeX Info: Redefining \. on input line 861.
+LaTeX Info: Redefining \% on input line 861.
+[61]
+<images/mapa_projection_louvain_lp_1966.png, id=1275, 1156.32pt x 650.43pt>
 File: images/mapa_projection_louvain_lp_1966.png Graphic file (type png)
 <use images/mapa_projection_louvain_lp_1966.png>
 Package pdftex.def Info: images/mapa_projection_louvain_lp_1966.png  used on in
-put line 874.
+put line 865.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_projection_louvain_lp_1976.png, id=1242, 1156.32pt x 650.43pt>
+<images/mapa_projection_louvain_lp_1976.png, id=1276, 1156.32pt x 650.43pt>
 File: images/mapa_projection_louvain_lp_1976.png Graphic file (type png)
 <use images/mapa_projection_louvain_lp_1976.png>
 Package pdftex.def Info: images/mapa_projection_louvain_lp_1976.png  used on in
-put line 875.
+put line 866.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_projection_louvain_lp_1986.png, id=1243, 1156.32pt x 650.43pt>
+<images/mapa_projection_louvain_lp_1986.png, id=1277, 1156.32pt x 650.43pt>
 File: images/mapa_projection_louvain_lp_1986.png Graphic file (type png)
 <use images/mapa_projection_louvain_lp_1986.png>
 Package pdftex.def Info: images/mapa_projection_louvain_lp_1986.png  used on in
-put line 876.
+put line 867.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_projection_louvain_lp_1996.png, id=1244, 1156.32pt x 650.43pt>
+<images/mapa_projection_louvain_lp_1996.png, id=1278, 1156.32pt x 650.43pt>
 File: images/mapa_projection_louvain_lp_1996.png Graphic file (type png)
 <use images/mapa_projection_louvain_lp_1996.png>
 Package pdftex.def Info: images/mapa_projection_louvain_lp_1996.png  used on in
-put line 877.
+put line 868.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_projection_louvain_lp_2016.png, id=1245, 1156.32pt x 650.43pt>
+<images/mapa_projection_louvain_lp_2016.png, id=1279, 1156.32pt x 650.43pt>
 File: images/mapa_projection_louvain_lp_2016.png Graphic file (type png)
 <use images/mapa_projection_louvain_lp_2016.png>
 Package pdftex.def Info: images/mapa_projection_louvain_lp_2016.png  used on in
-put line 878.
+put line 869.
 (pdftex.def)             Requested size: 213.39568pt x 120.02992pt.
-<images/mapa_louvain_lp_1966.png, id=1258, 1156.32pt x 650.43pt>
+<images/mapa_louvain_lp_1966.png, id=1292, 1156.32pt x 650.43pt>
 File: images/mapa_louvain_lp_1966.png Graphic file (type png)
 <use images/mapa_louvain_lp_1966.png>
-Package pdftex.def Info: images/mapa_louvain_lp_1966.png  used on input line 88
-8.
+Package pdftex.def Info: images/mapa_louvain_lp_1966.png  used on input line 87
+9.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_louvain_lp_1976.png, id=1259, 1156.32pt x 650.43pt>
+<images/mapa_louvain_lp_1976.png, id=1293, 1156.32pt x 650.43pt>
 File: images/mapa_louvain_lp_1976.png Graphic file (type png)
 <use images/mapa_louvain_lp_1976.png>
 Package pdftex.def Info: images/mapa_louvain_lp_1976.png  used on input line 88
-9.
-(pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_louvain_lp_1986.png, id=1260, 1156.32pt x 650.43pt>
-File: images/mapa_louvain_lp_1986.png Graphic file (type png)
-<use images/mapa_louvain_lp_1986.png>
-Package pdftex.def Info: images/mapa_louvain_lp_1986.png  used on input line 89
 0.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_louvain_lp_1996.png, id=1261, 1156.32pt x 650.43pt>
-File: images/mapa_louvain_lp_1996.png Graphic file (type png)
-<use images/mapa_louvain_lp_1996.png>
-Package pdftex.def Info: images/mapa_louvain_lp_1996.png  used on input line 89
+<images/mapa_louvain_lp_1986.png, id=1294, 1156.32pt x 650.43pt>
+File: images/mapa_louvain_lp_1986.png Graphic file (type png)
+<use images/mapa_louvain_lp_1986.png>
+Package pdftex.def Info: images/mapa_louvain_lp_1986.png  used on input line 88
 1.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_louvain_2016.png, id=1262, 1156.32pt x 650.43pt>
+<images/mapa_louvain_lp_1996.png, id=1295, 1156.32pt x 650.43pt>
+File: images/mapa_louvain_lp_1996.png Graphic file (type png)
+<use images/mapa_louvain_lp_1996.png>
+Package pdftex.def Info: images/mapa_louvain_lp_1996.png  used on input line 88
+2.
+(pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
+<images/mapa_louvain_2016.png, id=1296, 1156.32pt x 650.43pt>
 File: images/mapa_louvain_2016.png Graphic file (type png)
 <use images/mapa_louvain_2016.png>
-Package pdftex.def Info: images/mapa_louvain_2016.png  used on input line 892.
+Package pdftex.def Info: images/mapa_louvain_2016.png  used on input line 883.
 (pdftex.def)             Requested size: 213.39568pt x 120.02992pt.
-LaTeX Info: Redefining \. on input line 944.
-LaTeX Info: Redefining \% on input line 944.
- [61]
-LaTeX Info: Redefining \. on input line 944.
-LaTeX Info: Redefining \% on input line 944.
- [62 <./images/mapa_projection_louvain_lp_1966.png (PNG copy)> <./images/mapa_p
+LaTeX Info: Redefining \. on input line 935.
+LaTeX Info: Redefining \% on input line 935.
+ [62]
+LaTeX Info: Redefining \. on input line 935.
+LaTeX Info: Redefining \% on input line 935.
+ [63 <./images/mapa_projection_louvain_lp_1966.png (PNG copy)> <./images/mapa_p
 rojection_louvain_lp_1976.png (PNG copy)> <./images/mapa_projection_louvain_lp_
 1986.png (PNG copy)> <./images/mapa_projection_louvain_lp_1996.png (PNG copy)> 
 <./images/mapa_projection_louvain_lp_2016.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 944.
-LaTeX Info: Redefining \% on input line 944.
- [63 <./images/mapa_louvain_lp_1966.png (PNG copy)> <./images/mapa_louvain_lp_1
+LaTeX Info: Redefining \. on input line 935.
+LaTeX Info: Redefining \% on input line 935.
+ [64 <./images/mapa_louvain_lp_1966.png (PNG copy)> <./images/mapa_louvain_lp_1
 976.png (PNG copy)> <./images/mapa_louvain_lp_1986.png (PNG copy)> <./images/ma
 pa_louvain_lp_1996.png (PNG copy)> <./images/mapa_louvain_2016.png (PNG copy)>]
-<images/heatmap_prox_sitcOrd.png, id=1297, 433.62pt x 433.62pt>
+<images/heatmap_prox_sitcOrd.png, id=1331, 433.62pt x 433.62pt>
 File: images/heatmap_prox_sitcOrd.png Graphic file (type png)
 <use images/heatmap_prox_sitcOrd.png>
 Package pdftex.def Info: images/heatmap_prox_sitcOrd.png  used on input line 94
-9.
+0.
 (pdftex.def)             Requested size: 192.0548pt x 192.05714pt.
-<images/heatmap_prox_ClustOrd.png, id=1298, 433.62pt x 433.62pt>
+<images/heatmap_prox_ClustOrd.png, id=1332, 433.62pt x 433.62pt>
 File: images/heatmap_prox_ClustOrd.png Graphic file (type png)
 <use images/heatmap_prox_ClustOrd.png>
 Package pdftex.def Info: images/heatmap_prox_ClustOrd.png  used on input line 9
-50.
+41.
 (pdftex.def)             Requested size: 192.0548pt x 192.05714pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 958.
+               Default added (so using `tbp') on input line 949.
 
-<images/pam2_gigant.png, id=1301, 433.62pt x 433.62pt>
+LaTeX Info: Redefining \. on input line 978.
+LaTeX Info: Redefining \% on input line 978.
+[65 <./images/heatmap_prox_sitcOrd.png (PNG copy)> <./images/heatmap_prox_Clust
+Ord.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 978.
+LaTeX Info: Redefining \% on input line 978.
+ [66]
+<images/pam2_gigant.png, id=1347, 433.62pt x 433.62pt>
 File: images/pam2_gigant.png Graphic file (type png)
 <use images/pam2_gigant.png>
-Package pdftex.def Info: images/pam2_gigant.png  used on input line 994.
+Package pdftex.def Info: images/pam2_gigant.png  used on input line 985.
 (pdftex.def)             Requested size: 298.75264pt x 298.76805pt.
-LaTeX Info: Redefining \. on input line 1000.
-LaTeX Info: Redefining \% on input line 1000.
-[64 <./images/heatmap_prox_sitcOrd.png (PNG copy)> <./images/heatmap_prox_Clust
-Ord.png (PNG copy)>]
-LaTeX Info: Redefining \. on input line 1000.
-LaTeX Info: Redefining \% on input line 1000.
- [65]
-LaTeX Info: Redefining \. on input line 1000.
-LaTeX Info: Redefining \% on input line 1000.
- [66 <./images/pam2_gigant.png (PNG copy)>]
-<images/pam10_gigant.png, id=1321, 433.62pt x 433.62pt>
+LaTeX Info: Redefining \. on input line 1008.
+LaTeX Info: Redefining \% on input line 1008.
+ [67 <./images/pam2_gigant.png (PNG copy)>]
+<images/pam10_gigant.png, id=1357, 433.62pt x 433.62pt>
 File: images/pam10_gigant.png Graphic file (type png)
 <use images/pam10_gigant.png>
-Package pdftex.def Info: images/pam10_gigant.png  used on input line 1020.
+Package pdftex.def Info: images/pam10_gigant.png  used on input line 1011.
 (pdftex.def)             Requested size: 298.75264pt x 298.76805pt.
 
-Overfull \hbox (3.18031pt too wide) in paragraph at lines 1028--1044
+Overfull \hbox (3.18031pt too wide) in paragraph at lines 1019--1035
  [][] 
  []
 
-LaTeX Info: Redefining \. on input line 1050.
-LaTeX Info: Redefining \% on input line 1050.
-[67 <./images/pam10_gigant.png (PNG copy)>]
-<images/pam50_gigant.png, id=1330, 433.62pt x 433.62pt>
+<images/pam50_gigant.png, id=1360, 433.62pt x 433.62pt>
 File: images/pam50_gigant.png Graphic file (type png)
 <use images/pam50_gigant.png>
-Package pdftex.def Info: images/pam50_gigant.png  used on input line 1053.
+Package pdftex.def Info: images/pam50_gigant.png  used on input line 1044.
 (pdftex.def)             Requested size: 426.79135pt x 426.81056pt.
-LaTeX Info: Redefining \. on input line 1065.
-LaTeX Info: Redefining \% on input line 1065.
- [68]
-LaTeX Info: Redefining \. on input line 1065.
-LaTeX Info: Redefining \% on input line 1065.
+LaTeX Info: Redefining \. on input line 1056.
+LaTeX Info: Redefining \% on input line 1056.
+[68 <./images/pam10_gigant.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 1056.
+LaTeX Info: Redefining \% on input line 1056.
  [69 <./images/pam50_gigant.png (PNG copy)>])
 LaTeX Info: Redefining \. on input line 147.
 LaTeX Info: Redefining \% on input line 147.
  [70]
 Cap\'{\i }tulo 4.
-(./chapters/chapter_4/chapter4.tex) [71
+(./chapters/chapter_4/chapter4.tex
+Overfull \hbox (0.50197pt too wide) in paragraph at lines 35--42
+[]\OT1/cmr/m/n/10.95 El pre-sen-te tra-ba-jo busc^^So, me-dian-te di-fe-ren-tes
+ t^^Secni-cas, apor-tar nue-va evi-den-cia emp^^S^^Pri-
+ []
 
-] (./chapters/Anexo/anexo.tex
+[71
+
+])
+LaTeX Info: Redefining \. on input line 153.
+LaTeX Info: Redefining \% on input line 153.
+ [72] (./chapters/Anexo/anexo.tex
 Overfull \hbox (60.50127pt too wide) in alignment at lines 65--68
  [] [] [] 
  []
@@ -2025,7 +1979,7 @@ Overfull \hbox (60.50127pt too wide) in alignment at lines 93--113
  [] [] [] 
  []
 
-[72
+[73
 
 ]
 Overfull \hbox (60.50127pt too wide) in alignment at lines 113--133
@@ -2039,51 +1993,51 @@ Overfull \hbox (60.50127pt too wide) in alignment at lines 133--153
 
 LaTeX Info: Redefining \. on input line 153.
 LaTeX Info: Redefining \% on input line 153.
-[73]
+[74]
 Overfull \hbox (60.50127pt too wide) in alignment at lines 153--163
  [] [] [] 
  []
 
 LaTeX Info: Redefining \. on input line 185.
 LaTeX Info: Redefining \% on input line 185.
-[74]
+[75]
 LaTeX Info: Redefining \. on input line 252.
 LaTeX Info: Redefining \% on input line 252.
- [75]
+ [76]
 LaTeX Info: Redefining \. on input line 255.
 LaTeX Info: Redefining \% on input line 255.
- [76]
-<images/grafo_2016_1_pcnt_wgt_Circ.png, id=1392, 481.8pt x 481.8pt>
+ [77]
+<images/grafo_2016_1_pcnt_wgt_Circ.png, id=1428, 481.8pt x 481.8pt>
 File: images/grafo_2016_1_pcnt_wgt_Circ.png Graphic file (type png)
 <use images/grafo_2016_1_pcnt_wgt_Circ.png>
 Package pdftex.def Info: images/grafo_2016_1_pcnt_wgt_Circ.png  used on input l
 ine 260.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_5_pcnt_wgt_Circ.png, id=1393, 481.8pt x 481.8pt>
+<images/grafo_2016_5_pcnt_wgt_Circ.png, id=1429, 481.8pt x 481.8pt>
 File: images/grafo_2016_5_pcnt_wgt_Circ.png Graphic file (type png)
 <use images/grafo_2016_5_pcnt_wgt_Circ.png>
 Package pdftex.def Info: images/grafo_2016_5_pcnt_wgt_Circ.png  used on input l
 ine 261.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_10_pcnt_wgt_Circ.png, id=1394, 481.8pt x 481.8pt>
+<images/grafo_2016_10_pcnt_wgt_Circ.png, id=1430, 481.8pt x 481.8pt>
 File: images/grafo_2016_10_pcnt_wgt_Circ.png Graphic file (type png)
 <use images/grafo_2016_10_pcnt_wgt_Circ.png>
 Package pdftex.def Info: images/grafo_2016_10_pcnt_wgt_Circ.png  used on input 
 line 262.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_15_pcnt_wgt_Circ.png, id=1395, 481.8pt x 481.8pt>
+<images/grafo_2016_15_pcnt_wgt_Circ.png, id=1431, 481.8pt x 481.8pt>
 File: images/grafo_2016_15_pcnt_wgt_Circ.png Graphic file (type png)
 <use images/grafo_2016_15_pcnt_wgt_Circ.png>
 Package pdftex.def Info: images/grafo_2016_15_pcnt_wgt_Circ.png  used on input 
 line 263.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_20_pcnt_wgt_Circ.png, id=1396, 481.8pt x 481.8pt>
+<images/grafo_2016_20_pcnt_wgt_Circ.png, id=1432, 481.8pt x 481.8pt>
 File: images/grafo_2016_20_pcnt_wgt_Circ.png Graphic file (type png)
 <use images/grafo_2016_20_pcnt_wgt_Circ.png>
 Package pdftex.def Info: images/grafo_2016_20_pcnt_wgt_Circ.png  used on input 
 line 264.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/grafo_2016_25_pcnt_wgt_Circ.png, id=1397, 481.8pt x 481.8pt>
+<images/grafo_2016_25_pcnt_wgt_Circ.png, id=1433, 481.8pt x 481.8pt>
 File: images/grafo_2016_25_pcnt_wgt_Circ.png Graphic file (type png)
 <use images/grafo_2016_25_pcnt_wgt_Circ.png>
 Package pdftex.def Info: images/grafo_2016_25_pcnt_wgt_Circ.png  used on input 
@@ -2091,39 +2045,39 @@ line 265.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
 
 
-LaTeX Warning: Float too large for page by 39.7817pt on input line 268.
+LaTeX Warning: Float too large for page by 29.72614pt on input line 268.
 
-<images/dist_ac_2016_1_pcnt.png, id=1398, 481.8pt x 481.8pt>
+<images/dist_ac_2016_1_pcnt.png, id=1434, 481.8pt x 481.8pt>
 File: images/dist_ac_2016_1_pcnt.png Graphic file (type png)
 <use images/dist_ac_2016_1_pcnt.png>
 Package pdftex.def Info: images/dist_ac_2016_1_pcnt.png  used on input line 273
 .
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/dist_ac_2016_5_pcnt.png, id=1399, 481.8pt x 481.8pt>
+<images/dist_ac_2016_5_pcnt.png, id=1435, 481.8pt x 481.8pt>
 File: images/dist_ac_2016_5_pcnt.png Graphic file (type png)
 <use images/dist_ac_2016_5_pcnt.png>
 Package pdftex.def Info: images/dist_ac_2016_5_pcnt.png  used on input line 274
 .
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/dist_ac_2016_10_pcnt.png, id=1400, 481.8pt x 481.8pt>
+<images/dist_ac_2016_10_pcnt.png, id=1436, 481.8pt x 481.8pt>
 File: images/dist_ac_2016_10_pcnt.png Graphic file (type png)
 <use images/dist_ac_2016_10_pcnt.png>
 Package pdftex.def Info: images/dist_ac_2016_10_pcnt.png  used on input line 27
 5.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/dist_ac_2016_15_pcnt.png, id=1401, 481.8pt x 481.8pt>
+<images/dist_ac_2016_15_pcnt.png, id=1437, 481.8pt x 481.8pt>
 File: images/dist_ac_2016_15_pcnt.png Graphic file (type png)
 <use images/dist_ac_2016_15_pcnt.png>
 Package pdftex.def Info: images/dist_ac_2016_15_pcnt.png  used on input line 27
 6.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/dist_ac_2016_20_pcnt.png, id=1402, 481.8pt x 481.8pt>
+<images/dist_ac_2016_20_pcnt.png, id=1438, 481.8pt x 481.8pt>
 File: images/dist_ac_2016_20_pcnt.png Graphic file (type png)
 <use images/dist_ac_2016_20_pcnt.png>
 Package pdftex.def Info: images/dist_ac_2016_20_pcnt.png  used on input line 27
 7.
 (pdftex.def)             Requested size: 192.0548pt x 192.05493pt.
-<images/dist_ac_2016_25_pcnt.png, id=1403, 481.8pt x 481.8pt>
+<images/dist_ac_2016_25_pcnt.png, id=1439, 481.8pt x 481.8pt>
 File: images/dist_ac_2016_25_pcnt.png Graphic file (type png)
 <use images/dist_ac_2016_25_pcnt.png>
 Package pdftex.def Info: images/dist_ac_2016_25_pcnt.png  used on input line 27
@@ -2132,59 +2086,59 @@ Package pdftex.def Info: images/dist_ac_2016_25_pcnt.png  used on input line 27
 
 LaTeX Warning: Float too large for page by 29.72614pt on input line 281.
 
-<images/corr_grados_2016_5_pcnt.png, id=1404, 291.2481pt x 177.5433pt>
+<images/corr_grados_2016_5_pcnt.png, id=1440, 291.2481pt x 177.5433pt>
 File: images/corr_grados_2016_5_pcnt.png Graphic file (type png)
 <use images/corr_grados_2016_5_pcnt.png>
 Package pdftex.def Info: images/corr_grados_2016_5_pcnt.png  used on input line
  285.
 (pdftex.def)             Requested size: 204.85802pt x 124.88358pt.
-<images/corr_grados_2016_15_pcnt.png, id=1405, 291.2481pt x 177.5433pt>
+<images/corr_grados_2016_15_pcnt.png, id=1441, 291.2481pt x 177.5433pt>
 File: images/corr_grados_2016_15_pcnt.png Graphic file (type png)
 <use images/corr_grados_2016_15_pcnt.png>
 Package pdftex.def Info: images/corr_grados_2016_15_pcnt.png  used on input lin
 e 286.
 (pdftex.def)             Requested size: 204.85802pt x 124.88358pt.
-<images/corr_grados_2016_25_pcnt.png, id=1406, 291.2481pt x 177.5433pt>
+<images/corr_grados_2016_25_pcnt.png, id=1442, 291.2481pt x 177.5433pt>
 File: images/corr_grados_2016_25_pcnt.png Graphic file (type png)
 <use images/corr_grados_2016_25_pcnt.png>
 Package pdftex.def Info: images/corr_grados_2016_25_pcnt.png  used on input lin
 e 287.
 (pdftex.def)             Requested size: 204.85802pt x 124.88358pt.
-<images/naristas_x_yr.png, id=1407, 447.8331pt x 337.26pt>
+<images/naristas_x_yr.png, id=1443, 447.8331pt x 337.26pt>
 File: images/naristas_x_yr.png Graphic file (type png)
 <use images/naristas_x_yr.png>
 Package pdftex.def Info: images/naristas_x_yr.png  used on input line 295.
 (pdftex.def)             Requested size: 192.0548pt x 144.633pt.
-<images/mean_degree_x_yr.png, id=1408, 447.8331pt x 337.26pt>
+<images/mean_degree_x_yr.png, id=1444, 447.8331pt x 337.26pt>
 File: images/mean_degree_x_yr.png Graphic file (type png)
 <use images/mean_degree_x_yr.png>
 Package pdftex.def Info: images/mean_degree_x_yr.png  used on input line 296.
 (pdftex.def)             Requested size: 192.0548pt x 144.633pt.
-<images/mean_closeness_x_yr.png, id=1409, 447.8331pt x 337.26pt>
+<images/mean_closeness_x_yr.png, id=1445, 447.8331pt x 337.26pt>
 File: images/mean_closeness_x_yr.png Graphic file (type png)
 <use images/mean_closeness_x_yr.png>
 Package pdftex.def Info: images/mean_closeness_x_yr.png  used on input line 297
 .
 (pdftex.def)             Requested size: 192.0548pt x 144.633pt.
-<images/max_betweenness_x_yr.png, id=1410, 447.8331pt x 337.26pt>
+<images/max_betweenness_x_yr.png, id=1446, 447.8331pt x 337.26pt>
 File: images/max_betweenness_x_yr.png Graphic file (type png)
 <use images/max_betweenness_x_yr.png>
 Package pdftex.def Info: images/max_betweenness_x_yr.png  used on input line 29
 8.
 (pdftex.def)             Requested size: 192.0548pt x 144.633pt.
-<images/mean_betweenness_x_yr.png, id=1411, 447.8331pt x 337.26pt>
+<images/mean_betweenness_x_yr.png, id=1447, 447.8331pt x 337.26pt>
 File: images/mean_betweenness_x_yr.png Graphic file (type png)
 <use images/mean_betweenness_x_yr.png>
 Package pdftex.def Info: images/mean_betweenness_x_yr.png  used on input line 2
 99.
 (pdftex.def)             Requested size: 192.0548pt x 144.633pt.
-<images/mean_eigen_centrality_x_yr.png, id=1412, 223.7961pt x 168.63pt>
+<images/mean_eigen_centrality_x_yr.png, id=1448, 223.7961pt x 168.63pt>
 File: images/mean_eigen_centrality_x_yr.png Graphic file (type png)
 <use images/mean_eigen_centrality_x_yr.png>
 Package pdftex.def Info: images/mean_eigen_centrality_x_yr.png  used on input l
 ine 300.
 (pdftex.def)             Requested size: 192.0548pt x 144.72047pt.
-<images/mean_eigen_centrality_ponderado_x_yr.png, id=1413, 223.7961pt x 168.63p
+<images/mean_eigen_centrality_ponderado_x_yr.png, id=1449, 223.7961pt x 168.63p
 t>
 File: images/mean_eigen_centrality_ponderado_x_yr.png Graphic file (type png)
 <use images/mean_eigen_centrality_ponderado_x_yr.png>
@@ -2194,13 +2148,13 @@ on input line 301.
 
 LaTeX Warning: Float too large for page by 68.42384pt on input line 304.
 
-<images/1950_2000_naristas_x_yr.png, id=1414, 422.2977pt x 307.1475pt>
+<images/1950_2000_naristas_x_yr.png, id=1450, 422.2977pt x 307.1475pt>
 File: images/1950_2000_naristas_x_yr.png Graphic file (type png)
 <use images/1950_2000_naristas_x_yr.png>
 Package pdftex.def Info: images/1950_2000_naristas_x_yr.png  used on input line
  309.
 (pdftex.def)             Requested size: 192.0548pt x 139.6867pt.
-<images/1950_2000_diametro_x_ano.png, id=1415, 422.2977pt x 307.1475pt>
+<images/1950_2000_diametro_x_ano.png, id=1451, 422.2977pt x 307.1475pt>
 File: images/1950_2000_diametro_x_ano.png Graphic file (type png)
 <use images/1950_2000_diametro_x_ano.png>
 Package pdftex.def Info: images/1950_2000_diametro_x_ano.png  used on input lin
@@ -2211,13 +2165,13 @@ File: images/1950_2000_correlacion_x_yr.png Graphic file (type png)
 Package pdftex.def Info: images/1950_2000_correlacion_x_yr.png  used on input l
 ine 310.
 (pdftex.def)             Requested size: 192.0548pt x 173.70773pt.
-<images/1950_2000_mean_degree_x_yr.png, id=1416, 422.2977pt x 307.1475pt>
+<images/1950_2000_mean_degree_x_yr.png, id=1452, 422.2977pt x 307.1475pt>
 File: images/1950_2000_mean_degree_x_yr.png Graphic file (type png)
 <use images/1950_2000_mean_degree_x_yr.png>
 Package pdftex.def Info: images/1950_2000_mean_degree_x_yr.png  used on input l
 ine 310.
 (pdftex.def)             Requested size: 192.0548pt x 139.6867pt.
-<images/1950_2000_mean_closeness_x_yr.png, id=1417, 422.2977pt x 307.1475pt>
+<images/1950_2000_mean_closeness_x_yr.png, id=1453, 422.2977pt x 307.1475pt>
 File: images/1950_2000_mean_closeness_x_yr.png Graphic file (type png)
 <use images/1950_2000_mean_closeness_x_yr.png>
 Package pdftex.def Info: images/1950_2000_mean_closeness_x_yr.png  used on inpu
@@ -2226,26 +2180,26 @@ t line 310.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/1950_2000_max_betweenness_x_yr.png, id=1418, 422.2977pt x 307.1475pt>
+<images/1950_2000_max_betweenness_x_yr.png, id=1454, 422.2977pt x 307.1475pt>
 File: images/1950_2000_max_betweenness_x_yr.png Graphic file (type png)
 <use images/1950_2000_max_betweenness_x_yr.png>
 Package pdftex.def Info: images/1950_2000_max_betweenness_x_yr.png  used on inp
 ut line 316.
 (pdftex.def)             Requested size: 192.0548pt x 139.6867pt.
-<images/1950_2000_mean_betweenness_x_yr.png, id=1419, 422.2977pt x 307.1475pt>
+<images/1950_2000_mean_betweenness_x_yr.png, id=1455, 422.2977pt x 307.1475pt>
 File: images/1950_2000_mean_betweenness_x_yr.png Graphic file (type png)
 <use images/1950_2000_mean_betweenness_x_yr.png>
 Package pdftex.def Info: images/1950_2000_mean_betweenness_x_yr.png  used on in
 put line 317.
 (pdftex.def)             Requested size: 192.0548pt x 139.6867pt.
-<images/1950_2000_mean_eigen_centrality_x_yr.png, id=1420, 422.2977pt x 307.147
+<images/1950_2000_mean_eigen_centrality_x_yr.png, id=1456, 422.2977pt x 307.147
 5pt>
 File: images/1950_2000_mean_eigen_centrality_x_yr.png Graphic file (type png)
 <use images/1950_2000_mean_eigen_centrality_x_yr.png>
 Package pdftex.def Info: images/1950_2000_mean_eigen_centrality_x_yr.png  used 
 on input line 318.
 (pdftex.def)             Requested size: 192.0548pt x 139.6867pt.
-<images/1950_2000_mean_eigen_centrality_ponderado_x_yr.png, id=1421, 288.1164pt
+<images/1950_2000_mean_eigen_centrality_ponderado_x_yr.png, id=1457, 288.1164pt
  x 177.5433pt>
 File: images/1950_2000_mean_eigen_centrality_ponderado_x_yr.png Graphic file (t
 ype png)
@@ -2256,61 +2210,61 @@ png  used on input line 319.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/mapa_projection_walktrap_lp_1966.png, id=1422, 1156.32pt x 650.43pt>
+<images/mapa_projection_walktrap_lp_1966.png, id=1458, 1156.32pt x 650.43pt>
 File: images/mapa_projection_walktrap_lp_1966.png Graphic file (type png)
 <use images/mapa_projection_walktrap_lp_1966.png>
 Package pdftex.def Info: images/mapa_projection_walktrap_lp_1966.png  used on i
 nput line 327.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_projection_walktrap_lp_1976.png, id=1423, 1156.32pt x 650.43pt>
+<images/mapa_projection_walktrap_lp_1976.png, id=1459, 1156.32pt x 650.43pt>
 File: images/mapa_projection_walktrap_lp_1976.png Graphic file (type png)
 <use images/mapa_projection_walktrap_lp_1976.png>
 Package pdftex.def Info: images/mapa_projection_walktrap_lp_1976.png  used on i
 nput line 328.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_projection_walktrap_lp_1986.png, id=1424, 1156.32pt x 650.43pt>
+<images/mapa_projection_walktrap_lp_1986.png, id=1460, 1156.32pt x 650.43pt>
 File: images/mapa_projection_walktrap_lp_1986.png Graphic file (type png)
 <use images/mapa_projection_walktrap_lp_1986.png>
 Package pdftex.def Info: images/mapa_projection_walktrap_lp_1986.png  used on i
 nput line 329.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_projection_walktrap_lp_1996.png, id=1425, 1156.32pt x 650.43pt>
+<images/mapa_projection_walktrap_lp_1996.png, id=1461, 1156.32pt x 650.43pt>
 File: images/mapa_projection_walktrap_lp_1996.png Graphic file (type png)
 <use images/mapa_projection_walktrap_lp_1996.png>
 Package pdftex.def Info: images/mapa_projection_walktrap_lp_1996.png  used on i
 nput line 330.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_projection_walktrap_lp_2016.png, id=1426, 1156.32pt x 650.43pt>
+<images/mapa_projection_walktrap_lp_2016.png, id=1462, 1156.32pt x 650.43pt>
 File: images/mapa_projection_walktrap_lp_2016.png Graphic file (type png)
 <use images/mapa_projection_walktrap_lp_2016.png>
 Package pdftex.def Info: images/mapa_projection_walktrap_lp_2016.png  used on i
 nput line 331.
 (pdftex.def)             Requested size: 213.39568pt x 120.02992pt.
-<images/mapa_walktrap_lp_1966.png, id=1427, 1156.32pt x 650.43pt>
+<images/mapa_walktrap_lp_1966.png, id=1463, 1156.32pt x 650.43pt>
 File: images/mapa_walktrap_lp_1966.png Graphic file (type png)
 <use images/mapa_walktrap_lp_1966.png>
 Package pdftex.def Info: images/mapa_walktrap_lp_1966.png  used on input line 3
 38.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_walktrap_lp_1976.png, id=1428, 1156.32pt x 650.43pt>
+<images/mapa_walktrap_lp_1976.png, id=1464, 1156.32pt x 650.43pt>
 File: images/mapa_walktrap_lp_1976.png Graphic file (type png)
 <use images/mapa_walktrap_lp_1976.png>
 Package pdftex.def Info: images/mapa_walktrap_lp_1976.png  used on input line 3
 39.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_walktrap_lp_1986.png, id=1429, 1156.32pt x 650.43pt>
+<images/mapa_walktrap_lp_1986.png, id=1465, 1156.32pt x 650.43pt>
 File: images/mapa_walktrap_lp_1986.png Graphic file (type png)
 <use images/mapa_walktrap_lp_1986.png>
 Package pdftex.def Info: images/mapa_walktrap_lp_1986.png  used on input line 3
 40.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_walktrap_lp_1996.png, id=1430, 1156.32pt x 650.43pt>
+<images/mapa_walktrap_lp_1996.png, id=1466, 1156.32pt x 650.43pt>
 File: images/mapa_walktrap_lp_1996.png Graphic file (type png)
 <use images/mapa_walktrap_lp_1996.png>
 Package pdftex.def Info: images/mapa_walktrap_lp_1996.png  used on input line 3
 41.
 (pdftex.def)             Requested size: 192.0548pt x 108.0309pt.
-<images/mapa_walktrap_2016.png, id=1431, 1156.32pt x 650.43pt>
+<images/mapa_walktrap_2016.png, id=1467, 1156.32pt x 650.43pt>
 File: images/mapa_walktrap_2016.png Graphic file (type png)
 <use images/mapa_walktrap_2016.png>
 Package pdftex.def Info: images/mapa_walktrap_2016.png  used on input line 342.
@@ -2319,86 +2273,86 @@ Package pdftex.def Info: images/mapa_walktrap_2016.png  used on input line 342.
 )
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
- [77]
+ [78]
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
- [78 <./images/grafo_2016_1_pcnt_wgt_Circ.png (PNG copy)> <./images/grafo_2016_
+ [79 <./images/grafo_2016_1_pcnt_wgt_Circ.png (PNG copy)> <./images/grafo_2016_
 5_pcnt_wgt_Circ.png (PNG copy)> <./images/grafo_2016_10_pcnt_wgt_Circ.png (PNG 
 copy)> <./images/grafo_2016_15_pcnt_wgt_Circ.png (PNG copy)> <./images/grafo_20
 16_20_pcnt_wgt_Circ.png (PNG copy)> <./images/grafo_2016_25_pcnt_wgt_Circ.png (
 PNG copy)>]
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
- [79 <./images/dist_ac_2016_1_pcnt.png> <./images/dist_ac_2016_5_pcnt.png> <./i
+ [80 <./images/dist_ac_2016_1_pcnt.png> <./images/dist_ac_2016_5_pcnt.png> <./i
 mages/dist_ac_2016_10_pcnt.png> <./images/dist_ac_2016_15_pcnt.png> <./images/d
 ist_ac_2016_20_pcnt.png> <./images/dist_ac_2016_25_pcnt.png>]
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
 
-[80 <./images/corr_grados_2016_5_pcnt.png (PNG copy)> <./images/corr_grados_201
+[81 <./images/corr_grados_2016_5_pcnt.png (PNG copy)> <./images/corr_grados_201
 6_15_pcnt.png (PNG copy)> <./images/corr_grados_2016_25_pcnt.png (PNG copy)>]
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
 
-[81 <./images/naristas_x_yr.png (PNG copy)> <./images/mean_degree_x_yr.png (PNG
+[82 <./images/naristas_x_yr.png (PNG copy)> <./images/mean_degree_x_yr.png (PNG
  copy)> <./images/mean_closeness_x_yr.png (PNG copy)> <./images/max_betweenness
 _x_yr.png (PNG copy)> <./images/mean_betweenness_x_yr.png (PNG copy)> <./images
 /mean_eigen_centrality_x_yr.png (PNG copy)> <./images/mean_eigen_centrality_pon
 derado_x_yr.png (PNG copy)>]
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
- [82 <./images/1950_2000_naristas_x_yr.png (PNG copy)> <./images/1950_2000_diam
+ [83 <./images/1950_2000_naristas_x_yr.png (PNG copy)> <./images/1950_2000_diam
 etro_x_ano.png (PNG copy)> <./images/1950_2000_mean_degree_x_yr.png (PNG copy)>
  <./images/1950_2000_mean_closeness_x_yr.png (PNG copy)>]
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
- [83 <./images/1950_2000_max_betweenness_x_yr.png (PNG copy)> <./images/1950_20
+ [84 <./images/1950_2000_max_betweenness_x_yr.png (PNG copy)> <./images/1950_20
 00_mean_betweenness_x_yr.png (PNG copy)> <./images/1950_2000_mean_eigen_central
 ity_x_yr.png (PNG copy)> <./images/1950_2000_mean_eigen_centrality_ponderado_x_
 yr.png (PNG copy)>]
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
- [84 <./images/mapa_projection_walktrap_lp_1966.png (PNG copy)> <./images/mapa_
+ [85 <./images/mapa_projection_walktrap_lp_1966.png (PNG copy)> <./images/mapa_
 projection_walktrap_lp_1976.png (PNG copy)> <./images/mapa_projection_walktrap_
 lp_1986.png (PNG copy)> <./images/mapa_projection_walktrap_lp_1996.png (PNG cop
 y)> <./images/mapa_projection_walktrap_lp_2016.png (PNG copy)>]
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
- [85 <./images/mapa_walktrap_lp_1966.png (PNG copy)> <./images/mapa_walktrap_lp
+ [86 <./images/mapa_walktrap_lp_1966.png (PNG copy)> <./images/mapa_walktrap_lp
 _1976.png (PNG copy)> <./images/mapa_walktrap_lp_1986.png (PNG copy)> <./images
 /mapa_walktrap_lp_1996.png (PNG copy)> <./images/mapa_walktrap_2016.png (PNG co
-py)>] (./tesis.bbl [86
+py)>] (./tesis.bbl [87
 
 
 ]
-LaTeX Info: Redefining \. on input line 209.
-LaTeX Info: Redefining \% on input line 209.
-
-Overfull \vbox (1.31665pt too high) has occurred while \output is active []
-
-
-[87]
-LaTeX Info: Redefining \. on input line 312.
-LaTeX Info: Redefining \% on input line 312.
+LaTeX Info: Redefining \. on input line 213.
+LaTeX Info: Redefining \% on input line 213.
 
 Overfull \vbox (1.31665pt too high) has occurred while \output is active []
 
 
 [88]
-LaTeX Info: Redefining \. on input line 410.
-LaTeX Info: Redefining \% on input line 410.
+LaTeX Info: Redefining \. on input line 317.
+LaTeX Info: Redefining \% on input line 317.
 
 Overfull \vbox (1.31665pt too high) has occurred while \output is active []
 
 
 [89]
+LaTeX Info: Redefining \. on input line 415.
+LaTeX Info: Redefining \% on input line 415.
+
+Overfull \vbox (1.31665pt too high) has occurred while \output is active []
+
+
+[90]
 LaTeX Info: Redefining \. on input line 519.
 LaTeX Info: Redefining \% on input line 519.
 
 Overfull \vbox (1.31665pt too high) has occurred while \output is active []
 
 
-[90])
+[91])
 
 Package natbib Warning: There were undefined citations.
 
@@ -2408,7 +2362,7 @@ LaTeX Info: Redefining \% on input line 168.
 Overfull \vbox (1.31665pt too high) has occurred while \output is active []
 
 
-[91]
+[92]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
  (./tesis.aux
@@ -2428,10 +2382,7 @@ LaTeX Info: Redefining \% on input line 30.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: ECE799A11E66FE00CB185FC3BFA23C82;2956.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: 80B411E70BDA89FE696A515011E1235E;2954.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2439,13 +2390,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 25827 strings out of 494492
- 491229 string characters out of 6175185
- 618400 words of memory out of 5000000
- 28428 multiletter control sequences out of 15000+600000
- 19251 words of font info for 67 fonts, out of 8000000 for 9000
+ 25732 strings out of 494492
+ 489070 string characters out of 6175185
+ 574887 words of memory out of 5000000
+ 28337 multiletter control sequences out of 15000+600000
+ 18943 words of font info for 66 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 75i,15n,88p,2568b,1423s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,15n,88p,2568b,1427s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{https://treemaps.shinyapps.io/treemaps/} has been
  referenced but does not exist, replaced by a fixed one
 
@@ -2457,24 +2408,25 @@ onts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts
 1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-t10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb>
-Output written on tesis.pdf (99 pages, 52686302 bytes).
+m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb>
+Output written on tesis.pdf (100 pages, 52697955 bytes).
 PDF statistics:
- 1719 PDF objects out of 1728 (max. 8388607)
- 1439 compressed objects within 15 object streams
- 425 named destinations out of 1000 (max. 500000)
+ 1759 PDF objects out of 2073 (max. 8388607)
+ 1477 compressed objects within 15 object streams
+ 421 named destinations out of 1000 (max. 500000)
  986 words of extra memory for PDF output out of 10000 (max. 10000000)
 
