@@ -31,9 +31,9 @@
 
 En el presente capítulo se analiza la estructura comercio internacional a partir de las relaciones comerciales bilaterales. A partir de la elaboración de una red compleja de relaciones entre países, es posible captar la posición relativa de los mismo en el agregado mundial, tanto en un momento del tiempo, como en la evolución. A su vez, a partir de utilizar tanto la información de la exportaciones como de las importaciones, el posible analizar los diferentes roles que juegan los países en el mercado mundial. Junto con esto, analizar las propiedades emergentes de la red, y su evolución en el tiempo, nos permite caracterizar los cambios en el mercado mundial, y buscar nuevas evidencias respecto de la Nueva División Internacional del trabajo \citep{frobel1978new}.
 
-En la literatura reciente se realizaron diversos enfoques desde esta perspectiva, ya sea desde una mirada de la teoría de la información \cite{Bhattacharya2008},  como una herramienta de modelización de los fenómenos económicos \cite{Fan2014}, para analizar las relaciones de centro-periferia \cite{Fagiolo2010}, o bien para realizar una descripción del estado del comercio internacional \cite{Chow2013}. Sin embargo, dada la amplitud de los temas a abordar, tanto desde la perspectiva económica, como desde la teoría de grafos, se presenta como un campo abierto para la investigación, con sendas aristas aún por recorrer.        
+En la literatura reciente se realizaron diversos enfoques desde esta perspectiva, ya sea desde una mirada de la teoría de la información \citep{Bhattacharya2008},  como una herramienta de modelización de los fenómenos económicos \citep{Fan2014}, para analizar las relaciones de centro-periferia \citep{Fagiolo2010}, o bien para realizar una descripción del estado del comercio internacional \citep{Chow2013}. Sin embargo, dada la amplitud de los temas a abordar, tanto desde la perspectiva económica, como desde la teoría de grafos, se presenta como un campo abierto para la investigación, con sendas aristas aún por recorrer.        
 
-El capítulo se estructura de la siguiente manera: En la sección siguiente se realiza un análisis exploratorio de datos, mientras que la sección tercera describe las fuentes de información utilizadas y realiza un pequeño resumen de los elementos de la teoría de grafos utilizados, así como las particularidades que surgen al aplicar esta marco metodológico al comercio internacional. La sección cuarta presenta los resultados, con detalle en el año 2016, así como también un análisis de mediano y largo plazo de la evolución de la red. Finalmente, se presentan las conclusiones específicas a este capítulo.
+El capítulo se estructura de la siguiente manera: En la sección siguiente se realiza un análisis exploratorio de datos, mientras que la sección \ref{sec:c2metodologia} describe las fuentes de información utilizadas y realiza un pequeño resumen de los elementos de la teoría de grafos utilizados, así como las particularidades que surgen al aplicar esta marco metodológico al comercio internacional. La sección \ref{sec:c2resultados} presenta los resultados, con detalle en el año 2016, así como también un análisis de mediano y largo plazo de la evolución de la red. Finalmente, se presentan las conclusiones específicas a este capítulo.
 
 
 \section{Análisis Exploratorio de Datos}
@@ -49,7 +49,7 @@ En la figura \ref{fig:rel_dep-2} se puede observar aquellas relaciones que repre
 	\centering
 	\subfigure[2016]{\label{fig:rel_dep-1}\includegraphics[width=.65\linewidth]{2016_freq_interacciones_3}}
 	\subfigure[proporción mayor al 70\%]{\label{fig:rel_dep-2}\includegraphics[width=.65\linewidth]{relaciones_dependientes_EDA}}
-	\caption{Interacciones Según porcentaje de importaciones que representa al país importador. Destacado par Importador-Exportador.1996-2016}
+	\caption{Interacciones según porcentaje de importaciones que representa al país importador. Destacado par Importador-Exportador.1996-2016}
 	\label{fig:rel_dep}
 \end{figure}
 
@@ -57,7 +57,7 @@ En la figura \ref{fig:rel_dep-2} se puede observar aquellas relaciones que repre
 
 
 
-Por su parte, en la figura \ref{fig:rel_destacadas-1} se puede observar la distribución de los montos comerciados en el año 2016, destacando aquellas relaciones de mayor volumen. Al igual que en la figura \ref{fig:rel_dep-1}, también se observa una fuerte asimetría a derecha, siendo las relaciones más importantes en el continente asiático y Americano. En particular, Las importaciones de Estados Unidos desde México, Canadá y China. También destacan las exportaciones de China, además de la ya mencionada, a Japón y Hong-Kong. Estas relaciones no corresponde caracterizarlas de tipo dependiente en un sentido de intercambio desigual, dado que se trata de volumen, y aquellas que destacan resultan de importancia tanto para exportador como para el importador. Se podría decir que estas son relaciones de alta interdependencia.
+Por su parte, en la figura \ref{fig:rel_destacadas-1} se puede observar la distribución de los montos comerciados en el año 2016, destacando aquellas relaciones de mayor volumen. Al igual que en la figura \ref{fig:rel_dep-1}, también se observa una fuerte asimetría a derecha, siendo las relaciones más importantes en el continente asiático y Americano. En particular, las importaciones de Estados Unidos desde México, Canadá y China. También destacan las exportaciones de China, además de la ya mencionada, a Japón y Hong-Kong. Estas relaciones no corresponde caracterizarlas de tipo dependiente en un sentido de intercambio desigual, dado que se trata de volumen, y aquellas que destacan resultan de importancia tanto para exportador como para el importador. Se podría decir que estas son relaciones de alta interdependencia.
 
 En este sentido, la figura \ref{fig:rel_destacadas-2} muestra las cinco relaciones más importantes de cada año. Nuevamente lo que se observa es una repetición en las duplas Importador-Exportador entre año y año. Destaca sobre todo el rol de Estados Unidos como importador de China en primer lugar, y Canadá y México en menor volumen. Es importante observar que las exportaciones de China a Estados Unidos toman una importancia creciente en el tiempo y para el final de la serie se encuentran por fuera de la nube de puntos. 
 
@@ -81,7 +81,7 @@ Esto también se puede apreciar en relación al total de las relaciones comercia
 \end{figure}
 
 
-\section{Metodología}
+\section{Metodología}\label{sec:c2metodologia}
 
 
 \subsection{Construcción del grafo}
@@ -89,7 +89,7 @@ Esto también se puede apreciar en relación al total de las relaciones comercia
 Un grafo (o red) se define como un conjunto de nodos y aristas, donde cada nodo representa una entidad, mientras las aristas representan la existencia de una relación entre dos entidades. La representación algebraica del grafo se realiza mediante la denominada matriz de adyacencia, donde las filas representan los nodos de salida, mientras que las columnas representan el nodo de entrada. Por lo tanto, el elemento $a_{ij}$ de dicha matriz representa a la arista que va desde i hacia j.
 
 En el caso de las redes pesadas, una arista, $a_{ij} \in \mathbb{R}$, denota la intensidad de la relación entre los nodos $i$ y $j$. Por su parte, en las redes binarias, $a_{ij} \in \{0,1\}$ define cualitativamente la relación, dónde $a_{ij} = 1$ si existe la relación y $a_{ij} = 0$ sino. Este último tipo de grafos sera el utilizado para el presente trabajo, dado que se cuenta con una mayor cantidad de métricas para caracterizar los grafos de este tipo.      
-A su vez, las redes pueden ser tanto dirigidas como no dirigidas. En el primer caso, la relación no tiene un sentido definido, y por lo tanto $a_{ij} = a_{ji}$, mientras que en el segundo caso tal igualdad no es necesaria, y la presencia de una relación tiene un sentido definido. Si bien en la bibliografía existen autores que plantean que la simetría del intercambio comercial es fuerte, y por lo tanto no es necesario utilizar un grafo dirigido para su representación \cite{Fagiolo2007}, en el presente trabajo se sostiene que esto depende fuertemente de la forma de construcción de la red, en particular si se trabaja con un grafo no ponderado, y por lo tanto hay un riqueza interpretativa que se pierde si se utiliza una red no dirigida.       
+A su vez, las redes pueden ser tanto dirigidas como no dirigidas. En el primer caso, la relación no tiene un sentido definido, y por lo tanto $a_{ij} = a_{ji}$, mientras que en el segundo caso tal igualdad no es necesaria, y la presencia de una relación tiene un sentido definido. Si bien en la bibliografía existen autores que plantean que la simetría del intercambio comercial es fuerte, y por lo tanto no es necesario utilizar un grafo dirigido para su representación \citep{Fagiolo2007}, en el presente trabajo se sostiene que esto depende fuertemente de la forma de construcción de la red, en particular si se trabaja con un grafo no ponderado, y por lo tanto hay una riqueza interpretativa que se pierde si se utiliza una red no dirigida.       
 
 
 Sobre una red se puede calcular una serie de medidas de resumen que permiten caracterizarla. Éstas pueden referirse a un atributo propio del grafo, o bien de cada nodo o arista. Si bien las posibles métricas son muchas, en el presente trabajo nos limitamos a aquellas que se definen a continuación. \par    
@@ -97,21 +97,21 @@ Dos nodos se dicen conectados si existe un recorrido entre ellos, es decir, una 
 El diámetro $d_m$ de una red es la máxima distancia entre cualquier par de nodos. En teoría de grafos se considera la distancia entre un par de nodos como el camino más corto que se puede realizar entre éstos. Es decir, el diámetro de un grafo no pesado se considera como la cantidad de aristas que hay entre los dos elementos más lejanos del grafo, considerando el recorrido más corto entre ambos. 
 
 $$
-d_m = max(d_{uv})
+d_m = max(d_{uv}),
 $$
 donde $d_{uv}$ es la distancia entre los nodos u y v, definida como:
 $$
-d_{uv} = min(L(P))
+d_{uv} = min(L(P)),
 $$
 con $P = (v_1, v_2, ..., v_n)$,un conjunto de n vértices, donde $v_i$ es adyacente a $v_{i+1}$, y siendo $L(P)$ la longitud del camino P, definida como:
 $$
-L(P) = \sum_{i=1}^{n} w_i
+L(P) = \sum_{i=1}^{n} w_i.
 $$
 En el caso de una red no ponderada, $w_i = 1$ y por lo tanto, la longitud de un camino es la cantidad de elementos que lo componen. \par
 La densidad $De_m$ de una red es la relación entre la cantidad de aristas de la red y la máxima cantidad de aristas potenciales de la misma. 
 
 $$
-De_m = \frac{|A|}{|V|(|V|-1)}
+De_m = \frac{|A|}{|V|(|V|-1)}.
 $$
 
 Siendo $|A|$ el número de aristas y $|V|$ el número de vértices, o nodos, del grafo. $De_m \in [0,1]$. Aquellas redes con una densidad cercana a 0 se las considera dispersas, mientras que aquellas con una densidad cercana a 1 se las considera grafos densos. \par
@@ -119,33 +119,33 @@ Siendo $|A|$ el número de aristas y $|V|$ el número de vértices, o nodos, del
 A su vez, existe una serie de medidas de centralidad de nodos que caracterizan la importancia de los mismos en la red. Las utilizadas en el presente trabajo son la intermediación, cercanía y autovalor. \par
 La centralidad de intermediación mide el rol de un nodo $i$, $C_{BET}(i)$, como puente entre los demás nodos, considerando sus caminos más cortos. Se define como:
 $$
-C_{BET}(i) = \sum_{j,k \neq i} \frac{b_{jik}}{b_{jk}}
+C_{BET}(i) = \sum_{j,k \neq i} \frac{b_{jik}}{b_{jk}},
 $$
 donde $b_{jk}$ son todos los caminos más cortos entre los nodos $j$ y $k$, y $b_{ijk}$ son los caminos más cortos entre $j$ y $k$, que pasan por $i$. \par
 La centralidad de cercanía es la distancia promedio que tiene un nodo con los demás nodos con los que esta conectado. Formalmente: 
 $$
-C_{cer}(i) = \frac{1}{\displaystyle \sum_{j \neq i} d_{i,j} }
+C_{cer}(i) = \frac{1}{\displaystyle \sum_{j \neq i} d_{i,j} }.
 $$
 
 La centralidad de grado se define como la cantidad de aristas de un nodo. En el caso de los grafos dirigidos, se puede considerar un grado de entrada, así como un grado de salida, si las aristas van en dirección al grafo o desde el grafo, respectivamente.
 La centralidad de autovalor, por su parte, caracteriza la importancia de un nodo considerando la de sus nodos vecinos. Si asumimos linealidad:
 
 $$
-x_i'= \sum_{j=1}^{N} a_{ij}x_{j}
+x_i'= \sum_{j=1}^{N} a_{ij}x_{j},
 $$
 $$
-x' = Ax
+x' = Ax.
 $$
 Siendo A la matriz de adyacencia de la red. si $x'$ es el vector de centralidades de la red, entonces podemos plantear $Ax^* = \lambda x^*$ donde $x^*$ es la solución y  $\lambda$ es el autovalor asociado al mayor autovector.  Por lo tanto, podemos definir la medida de centralidad de autovalor como
 
 $$
-x_i^*=\frac{1}{\lambda}  \sum_{i} A_{ij}x_{j}^*
+x_i^*=\frac{1}{\lambda}  \sum_{i} A_{ij}x_{j}^*.
 $$
 
 Esta medida tiene la propiedad de considerar la importancia de un nodo a partir de la importancia de aquellos nodos con los que esta conectado, y con los que éstos están conectados, etc. En el presente trabajo también se considera a la centralidad de autovalor ponderado como una alternativa, donde el peso esta definido por el volumen de dinero comerciado entre los países. Para calcularlo, se multiplica la matriz de adyacencia por una matriz de pesos. Por lo tanto
 
 $$
-x_i^{pond}=\frac{1}{\lambda}  \sum_{i} WA_{ij}x_{j}^{pond}
+x_i^{pond}=\frac{1}{\lambda}  \sum_{i} WA_{ij}x_{j}^{pond}.
 $$
 
 Estas medidas de centralidad pueden ser resumidas para el grafo en su conjunto mediante una agregación de algún tipo, como el promedio, máximos y mínimos, etc. En el presente trabajo se utilizan de ambas maneras, tanto para definir la importancia de un país en particular en el grafo, como para caracterizar a la red en su conjunto.
@@ -154,13 +154,13 @@ Estas medidas de centralidad pueden ser resumidas para el grafo en su conjunto m
 El Coeficiente de clustering estima la cohesividad local, midiendo la probabilidad de que dos nodos que comparten un vecino estén conectados. Para calcularlo, se mide en primer lugar el grado de agrupamiento de cada nodo, tomando la vecindad del mismo, es decir, todos aquellos nodos con los que esta conectado, y se calcula el cociente entre las aristas existentes y la máxima cantidad de aristas posibles:
 
 $$
-C_i = \frac{|A_i|}{|V_i|(|V_i|-1)}
+C_i = \frac{|A_i|}{|V_i|(|V_i|-1)},
 $$
 siendo $|A_i|$ las aristas en el subgrafo de la vecindad de i, y $|V_i|$ los vértices del subgrafo de la vecindad de $i$. Nótese que esta medida no representa lo mismo que la densidad, si bien las ecuaciones sean similares, dado que en el clustering se analiza solamente la vecindad de un nodo, mientras que la densidad se refiere a toda la red.
 Si quisiéramos caracterizar a toda la red según el coeficiente de clustering, podemos calcular el promedio del mismo para todos los nodos, también conocido como transitividad del grafo, que se define como el promedio del grado de agrupamiento de los nodos. Es decir:
 
 $$
-\Bar{C} = \frac{1}{n} \sum_{i} C_{i}
+\Bar{C} = \frac{1}{n} \sum_{i} C_{i}.
 $$ 
 
 
@@ -183,9 +183,10 @@ a_{ij} =
       1 & si \frac{x_{ij}}{x_{i\cdot}}\geq u \\
       0 & sino 
   \end{cases}
+  .
 $$
 
-Donde $u$ representa el umbral elegido, y $x$ representa el volumen comerciado.   
+Donde $u$ representa el umbral elegido, o punto de corte, y $x$ representa el volumen comerciado.   
 Para el caso de las importaciones, $x_{ij}$ representa el monto total comerciado desde el país $j$ hacia el país $i$, mientras que $x_{i\cdot}$ representa el total de las importaciones del país $i$. En el grafo de exportaciones, al contrario, $x_{ij}$ representa el monto total comerciado desde el país $i$ hacia el país $j$, mientras que $x_{i\cdot}$ representa el total exportado por el país $i$.          
 
 Dado que la restricción se construye por la importancia relativa para el nodo de origen, en general sólo existirá una pequeña cantidad de aristas que salgan de cada nodo, aunque no están limitadas las aristas en dirección hacia el nodo. Más precisamente, la máxima cantidad posible de aristas de salida es igual a $\frac{1}{u}$. Esta cantidad se obtiene sólo cuando el país comercia de forma uniforme con exactamente $\frac{1}{u}$ países. Como se verá más adelante, la distribución del comercio dista mucho de ser uniforme, por lo cual la cantidad de aristas de salida de un nodo se verá fuertemente limitada. Sin embargo, las aristas de entrada al nodo sólo se limita formalmente por la cantidad de nodos en el grafo. 
@@ -196,7 +197,8 @@ Dado que, por la forma de construcción de los grafos, resulta distinta la inter
 
 \subsection{Determinación del punto de corte}
 
-El punto de corte a utilizar, dada la metodología propuesta para discretizar la información del volumen comerciado, opera fuertemente sobre el grafo resultante. La figura \ref{fig:grafo_2016} muestra el grafo según si se utiliza un punto de corte de 1\%, 5\%, 10\%, 15\%, 20\% o 25\%.\footnote{En el anexo, sección \ref{sec:fig_comp},se pueden observar el grafo en sus distintos puntos de corte, en una representación circular. }
+Como se desarrolló en la sección precedente, dado que la información utilizada son montos comerciados, y se quiere representar la existencia o no de un vínculo comercial entre dos países, es necesario definir un punto de corte en a partir del cual se establece la existencia de dicha relación. 
+Dicho umbral, dada la metodología propuesta para discretizar la información del volumen comerciado, opera fuertemente sobre el grafo resultante. La figura \ref{fig:grafo_2016} muestra el grafo según si se utiliza un punto de corte de 1\%, 5\%, 10\%, 15\%, 20\% o 25\%.\footnote{En el anexo, sección \ref{sec:fig_comp}, se pueden observar el grafo en sus distintos puntos de corte, en una representación circular. }
 
 \begin{figure}
 	\centering
@@ -230,7 +232,7 @@ En el sentido de esto último, contamos con varias métricas que permiten caract
 
 
 
-\section{Resultados}
+\section{Resultados}\label{sec:c2resultados}
 
 
 \subsection{Correlación entre la representación de las exportaciones y las importaciones}

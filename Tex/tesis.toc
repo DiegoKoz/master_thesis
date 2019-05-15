@@ -17,21 +17,21 @@
 \contentsline {section}{\numberline {2.4}Resultados}{14}{section.2.4}% 
 \contentsline {subsection}{\numberline {2.4.1}Correlaci\IeC {\'o}n entre la representaci\IeC {\'o}n de las exportaciones y las importaciones}{14}{subsection.2.4.1}% 
 \contentsline {subsection}{\numberline {2.4.2}Evoluci\IeC {\'o}n de mediano y largo plazo del comercio internacional}{17}{subsection.2.4.2}% 
-\contentsline {subsubsection}{An\IeC {\'a}lisis mediano plazo}{17}{section*.7}% 
+\contentsline {subsubsection}{An\IeC {\'a}lisis mediano plazo}{17}{section*.4}% 
 \contentsline {subsubsection}{An\IeC {\'a}lisis de largo plazo}{18}{figure.2.9}% 
 \contentsline {section}{\numberline {2.5}Conclusiones}{23}{section.2.5}% 
 \contentsline {chapter}{\numberline {3.}Comercio a nivel producto}{26}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}introducci\IeC {\'o}n}{26}{section.3.1}% 
+\contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n}{26}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis exploratorio de datos}{26}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}Metodolog\IeC {\'\i }a}{31}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Latent Dirichlet Allocation Models}{34}{subsection.3.3.1}% 
-\contentsline {subsubsection}{Definiciones}{34}{section*.9}% 
+\contentsline {subsubsection}{Definiciones}{34}{section*.5}% 
 \contentsline {subsubsection}{Proceso generativo e inferencial}{35}{Item.2}% 
-\contentsline {paragraph}{reflexiones finales}{37}{figure.3.8}% 
+\contentsline {paragraph}{reflexiones finales}{38}{figure.3.8}% 
 \contentsline {subsection}{\numberline {3.3.2}Grafo Bipartito}{38}{subsection.3.3.2}% 
 \contentsline {section}{\numberline {3.4}Resultados}{40}{section.3.4}% 
 \contentsline {subsection}{\numberline {3.4.1}Latent Dirichlet Allocation Models}{40}{subsection.3.4.1}% 
-\contentsline {subsubsection}{An\IeC {\'a}lisis de Componentes}{40}{section*.10}% 
+\contentsline {subsubsection}{An\IeC {\'a}lisis de Componentes}{40}{section*.6}% 
 \contentsline {subsubsection}{An\IeC {\'a}lisis de pa\IeC {\'\i }ses}{44}{table.3.2}% 
 \contentsline {paragraph}{Pa\IeC {\'\i }ses petroleros}{46}{table.3.2}% 
 \contentsline {paragraph}{Am\IeC {\'e}rica}{46}{figure.3.13}% 
@@ -39,11 +39,11 @@
 \contentsline {paragraph}{Europa}{51}{figure.3.17}% 
 \contentsline {paragraph}{Asia}{57}{figure.3.22}% 
 \contentsline {subsection}{\numberline {3.4.2}Grafo Bipartito}{61}{subsection.3.4.2}% 
-\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{61}{section*.11}% 
+\contentsline {subsubsection}{Proyecci\IeC {\'o}n a nivel pa\IeC {\'\i }ses}{61}{section*.7}% 
 \contentsline {subsubsection}{Espacio de productos}{62}{figure.3.27}% 
-\contentsline {subsection}{\numberline {3.4.3}Conclusiones}{68}{subsection.3.4.3}% 
+\contentsline {section}{\numberline {3.5}Conclusiones}{68}{section.3.5}% 
 \contentsline {chapter}{\numberline {4.}Conclusiones}{71}{chapter.4}% 
-\contentsline {section}{Anexo}{73}{chapter*.12}% 
+\contentsline {section}{Anexo}{73}{chapter*.8}% 
 \contentsline {subsection}{\numberline {A}Tabla de referencia: Descripci\IeC {\'o}n cadenas}{73}{subsection.4.0.1}% 
 \contentsline {subsection}{\numberline {B}Tabla de referencia: Descripci\IeC {\'o}n subcadenas}{73}{subsection.4.0.2}% 
 \contentsline {subsection}{\numberline {C}Tabla de referencia: Descripci\IeC {\'o}n Usos}{75}{subsection.4.0.3}% 

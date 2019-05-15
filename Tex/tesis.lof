@@ -6,7 +6,7 @@
 \babel@toc {spanish}{}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Interacciones Seg\IeC {\'u}n porcentaje de importaciones que representa al pa\IeC {\'\i }s importador. Destacado par Importador-Exportador.1996-2016}}{6}{figure.2.1}% 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Interacciones seg\IeC {\'u}n porcentaje de importaciones que representa al pa\IeC {\'\i }s importador. Destacado par Importador-Exportador.1996-2016}}{6}{figure.2.1}% 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2016}}}{6}{figure.2.1}% 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {proporci\IeC {\'o}n mayor al 70\%}}}{6}{figure.2.1}% 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Interacciones. Seg\IeC {\'u}n valor comercial. Destacado par Importador-Exportador. 1996-2016}}{7}{figure.2.2}% 
@@ -63,10 +63,10 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces fuente: \cite {blei2003latent}}}{37}{figure.3.7}% 
 \contentsline {figure}{\numberline {3.8}{\ignorespaces fuente: \cite {blei2003latent}}}{37}{figure.3.8}% 
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Grafo bipartito, pa\IeC {\'\i }ses y productos}}{38}{figure.3.9}% 
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n Lall. K=2}}{42}{figure.3.10}% 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Captura de interfaz elaborada para la caracterizaci\IeC {\'o}n de los componentes. Destacado de la proporci\IeC {\'o}n del producto en el componente, y distribuci\IeC {\'o}n acumulada. K=2}}{42}{figure.3.10}% 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Componente 1}}}{42}{figure.3.10}% 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Componente 2}}}{42}{figure.3.10}% 
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n Lall. K=2}}{43}{figure.3.11}% 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribuci\IeC {\'o}n de los componentes seg\IeC {\'u}n \cite {lall2000technological}. K=2}}{43}{figure.3.11}% 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Componente 1}}}{43}{figure.3.11}% 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Componente 2}}}{43}{figure.3.11}% 
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Distribuci\IeC {\'o}n promedio de los componentes en los pa\IeC {\'\i }ses, varios valores de k}}{44}{figure.3.12}% 

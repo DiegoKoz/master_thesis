@@ -1,4 +1,4 @@
-\begin{thebibliography}{94}
+\begin{thebibliography}{95}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -127,6 +127,11 @@ Jorge Carrillo and Alfredo Hualde.
 \newblock {Third generation maquiladoras? The Delphi-General Motors case}.
 \newblock \emph{Journal of Borderlands Studies}, 13\penalty0 (1):\penalty0
   79--97, 1998.
+
+\bibitem[{Center for International Development at Harvard University}()]{star}
+{Center for International Development at Harvard University}.
+\newblock {The Atlas of Economic Complexity}.
+\newblock URL \url{http://www.atlas.cid.harvard.edu}.
 
 \bibitem[Chang \& Zach(2018)Chang and Zach]{chang2018industrial}
 Ha-joon Chang and Kiryl Zach.
@@ -355,6 +360,12 @@ Francis Hutchinson and Others.
 \newblock {Globalisation and the'Newer'international division of labour}.
 \newblock 2004.
 
+\bibitem[Jain(2010)]{jain2010data}
+Anil~K Jain.
+\newblock {Data clustering: 50 years beyond K-means}.
+\newblock \emph{Pattern recognition letters}, 31\penalty0 (8):\penalty0
+  651--666, 2010.
+
 \bibitem[Kaufman \& Rousseeuw(1987)Kaufman and
   Rousseeuw]{kaufman1987clustering}
 Leonard Kaufman and Peter~J Rousseeuw.
@@ -460,16 +471,6 @@ Pascal Pons and Matthieu Latapy.
 \newblock {Computing communities in large networks using random walks}.
 \newblock In \emph{International symposium on computer and information
   sciences}, pages 284--293. Springer, 2005.
-
-\bibitem[Powers(1998)]{Powers1998}
-David M~W Powers.
-\newblock {Applications and Explanations of Zipf's Law}.
-\newblock In \emph{Proceedings of the Joint Conferences on New Methods in
-  Language Processing and Computational Natural Language Learning},
-  NeMLaP3/CoNLL '98, pages 151--160, Stroudsburg, PA, USA, 1998. Association
-  for Computational Linguistics.
-\newblock ISBN 0-7258-0634-6.
-\newblock URL \url{http://dl.acm.org/citation.cfm?id=1603899.1603924}.
 
 \bibitem[{R Core Team}(2017)]{RCoreTeam2017}
 {R Core Team}.
