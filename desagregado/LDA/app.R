@@ -62,8 +62,9 @@ graficar <- function(df,paises, download= F, smooth=F) {
     theme_minimal()+
     theme(legend.position = "none")+
     facet_wrap(reporter~., ncol = 1, scales = "free")+
-    scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
-    scale_x_continuous(breaks = pretty_breaks(n = 6))
+    scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0,1))+
+    scale_x_continuous(breaks = pretty_breaks(n = 6))+
+    labs(y='proportion')
   
   if (smooth) {
     g <- g + geom_smooth(se=F, alpha=0.7, size=1,method = 'loess')
