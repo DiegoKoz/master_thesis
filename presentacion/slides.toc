@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{Introducción}{2}{0}{1}
+\beamer@sectionintoc {2}{Metodología}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Comercio Agregado}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{disaggregated trade}{8}{0}{2}
+\beamer@subsectionintoc {2}{3}{Latent Dirichlet Allocation Model}{9}{0}{2}
+\beamer@sectionintoc {3}{Resultados}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Exports and Imports correlation}{12}{0}{3}
+\beamer@subsectionintoc {3}{2}{Aggregated Trade}{18}{0}{3}
+\beamer@subsectionintoc {3}{3}{Value Chains}{21}{0}{3}
+\beamer@subsectionintoc {3}{4}{Latent Dirichlet Allocation}{22}{0}{3}
