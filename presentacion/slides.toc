@@ -1,10 +1,14 @@
 \beamer@sectionintoc {1}{Introducción}{2}{0}{1}
-\beamer@sectionintoc {2}{Metodología}{4}{0}{2}
-\beamer@subsectionintoc {2}{1}{Comercio Agregado}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{disaggregated trade}{8}{0}{2}
-\beamer@subsectionintoc {2}{3}{Latent Dirichlet Allocation Model}{9}{0}{2}
-\beamer@sectionintoc {3}{Resultados}{10}{0}{3}
-\beamer@subsectionintoc {3}{1}{Exports and Imports correlation}{12}{0}{3}
-\beamer@subsectionintoc {3}{2}{Aggregated Trade}{18}{0}{3}
-\beamer@subsectionintoc {3}{3}{Value Chains}{21}{0}{3}
-\beamer@subsectionintoc {3}{4}{Latent Dirichlet Allocation}{22}{0}{3}
+\beamer@sectionintoc {2}{Comercio agregado entre países}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Metodología}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Resultados}{9}{0}{2}
+\beamer@sectionintoc {3}{Comercio a nivel productos}{22}{0}{3}
+\beamer@subsectionintoc {3}{1}{Análisis Exploratorio de Datos}{24}{0}{3}
+\beamer@subsectionintoc {3}{2}{Latent Dirichlet Allocation}{28}{0}{3}
+\beamer@subsectionintoc {3}{3}{Topic Modeling}{29}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{1}{Metodología}{29}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{2}{Resultados}{34}{0}{3}
+\beamer@subsectionintoc {3}{4}{Grafo Bipartito}{42}{0}{3}
+\beamer@subsubsectionintoc {3}{4}{1}{Metodología}{42}{0}{3}
+\beamer@subsubsectionintoc {3}{4}{2}{Resultados}{47}{0}{3}
+\beamer@sectionintoc {4}{Conclusiones}{53}{0}{4}

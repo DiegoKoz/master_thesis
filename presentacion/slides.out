@@ -1,10 +1,11 @@
 \BOOKMARK [2][]{Outline0.1}{Introducción}{}% 1
-\BOOKMARK [2][]{Outline0.2}{Metodología}{}% 2
-\BOOKMARK [3][]{Outline0.2.1.5}{Comercio\040Agregado}{Outline0.2}% 3
-\BOOKMARK [3][]{Outline0.2.2.8}{disaggregated\040trade}{Outline0.2}% 4
-\BOOKMARK [3][]{Outline0.2.3.9}{Latent\040Dirichlet\040Allocation\040Model}{Outline0.2}% 5
-\BOOKMARK [2][]{Outline0.3}{Resultados}{}% 6
-\BOOKMARK [3][]{Outline0.3.1.12}{Exports\040and\040Imports\040correlation}{Outline0.3}% 7
-\BOOKMARK [3][]{Outline0.3.2.18}{Aggregated\040Trade}{Outline0.3}% 8
-\BOOKMARK [3][]{Outline0.3.3.21}{Value\040Chains}{Outline0.3}% 9
-\BOOKMARK [3][]{Outline0.3.4.22}{Latent\040Dirichlet\040Allocation}{Outline0.3}% 10
+\BOOKMARK [2][]{Outline0.2}{Comercio agregado entre países}{}% 2
+\BOOKMARK [3][]{Outline0.2.1.5}{Metodología}{Outline0.2}% 3
+\BOOKMARK [3][]{Outline0.2.2.9}{Resultados}{Outline0.2}% 4
+\BOOKMARK [2][]{Outline0.3}{Comercio\040a\040nivel\040productos}{}% 5
+\BOOKMARK [3][]{Outline0.3.1.24}{Análisis Exploratorio de Datos}{Outline0.3}% 6
+\BOOKMARK [3][]{Outline0.3.2.28}{Latent\040Dirichlet\040Allocation}{Outline0.3}% 7
+\BOOKMARK [3][]{Outline0.3.3.29}{Topic\040Modeling}{Outline0.3}% 8
+\BOOKMARK [3][]{Outline0.3.4.42}{Grafo\040Bipartito}{Outline0.3}% 9
+\BOOKMARK [2][]{Outline0.4}{Conclusiones}{}% 10
+\BOOKMARK [2][]{Outline0.5}{References}{}% 11
