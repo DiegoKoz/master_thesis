@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: defensa.aux
+The style file: plainnat.bst
+Database file #1: bibliografia.bib
+Warning--empty institution in WTO2017
+You've used 7 entries,
+            2773 wiz_defined-function locations,
+            652 strings with 6168 characters,
+and the built_in function-call counts, 3399 in all, are:
+= -- 320
+> -- 170
+< -- 5
++ -- 58
+- -- 51
+* -- 283
+:= -- 524
+add.period$ -- 25
+call.type$ -- 7
+change.case$ -- 39
+chr.to.int$ -- 7
+cite$ -- 15
+duplicate$ -- 147
+empty$ -- 276
+format.name$ -- 62
+if$ -- 706
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 6
+newline$ -- 47
+num.names$ -- 28
+pop$ -- 62
+preamble$ -- 1
+purify$ -- 31
+quote$ -- 0
+skip$ -- 116
+stack$ -- 0
+substring$ -- 179
+swap$ -- 15
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 77
+warning$ -- 1
+while$ -- 33
+width$ -- 0
+write$ -- 105
+(There was 1 warning)

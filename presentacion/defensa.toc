@@ -1,0 +1,12 @@
+\beamer@sectionintoc {1}{Introducción}{2}{0}{1}
+\beamer@sectionintoc {2}{Comercio agregado entre países}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Metodología}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Resultados}{9}{0}{2}
+\beamer@sectionintoc {3}{Comercio a nivel productos}{22}{0}{3}
+\beamer@subsectionintoc {3}{1}{Topic Modeling}{25}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{1}{Metodología}{25}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{2}{Resultados}{30}{0}{3}
+\beamer@subsectionintoc {3}{2}{Grafo Bipartito}{38}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{1}{Metodología}{38}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{2}{Resultados}{43}{0}{3}
+\beamer@sectionintoc {4}{Conclusiones}{49}{0}{4}
