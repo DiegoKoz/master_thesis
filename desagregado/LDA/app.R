@@ -179,7 +179,7 @@ preprocesamiento <- function(dfs) {
       mutate(cumprop = cumsum(prop)) %>%
       select(componente, Code, Description, prop, cumprop,LDC,LDC_description ) %>%
       nest() %>% 
-      mutate(K=n())
+      mutate(K=nrow(.))
     nested_df <- bind_rows(nested_df,df_tmp)
   }  
   nested_df %>% 
