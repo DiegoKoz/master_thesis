@@ -52,7 +52,7 @@ Buscando un agrupamiento alternativo de los productos, se esta desarrollando una
 
 Los resultados preliminares se encuentran en:
 
-- https://treemaps.shinyapps.io/shiny_LDA/ 
+- https://treemaps.shinyapps.io/LDA_worldtrade/ 
 
 Estos Resultados fueron presentados en _ECON2018_. Además, se esta trabajando en un seminario de investigación en la FCE-UBA para la presentación de la herramienta y en la publicación de la metodología y los resultados.
 
