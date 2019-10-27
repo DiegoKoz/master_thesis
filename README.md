@@ -2,9 +2,16 @@
 
 Repositorio para la tesis de maestría en _Data Mining and Knowledge Discovery_ de Diego Kozlowski
 
-Estructura:
 
-## Comercio Agregado
+## Resultados
+
+- [Tesis](Tex/tesis.pdf)
+- [Defensa](presentacion/defensa.pdf)
+
+
+## Estructura:
+
+### Comercio Agregado
 
 Una primera parte de la tesis se basa en el análisis del comercio total entre países. Esta sección se divide de la siguiente manera:
 
@@ -31,13 +38,13 @@ Además se construyó una herramienta interactiva para la visualización de la i
 - [__shiny distribución de nodos__](https://diegokoz.shinyapps.io/Distribucion_nodos_wrdtrade/)
 
 
-## Comercio a nivel producto
+### Comercio a nivel producto
 
 Una segunda instancia del trabajo se encuentra en desarrollo en el repo [DiegoKoz/southamerica_commerce_graph](https://github.com/DiegoKoz/southamerica_commerce_graph).
 
 Allí lo que se busca es analizar el comercio desagregado a nivel producto, y se concentra en las posibles integraciones regionales de Sudamérica. Esta sección se divide de la siguiente manera:
 
-### Análisis exploratorio de datos
+#### Análisis exploratorio de datos
 
 Se construyó un [__shiny__](https://treemaps.shinyapps.io/treemaps/) donde se obsveran las distribuciones del comercio de los países sudaméricano en términos de:
 
@@ -46,7 +53,7 @@ Se construyó un [__shiny__](https://treemaps.shinyapps.io/treemaps/) donde se o
 
 Para esto se tomo por base un nomenclador de cadenas productivas y de uso de productos (Molinari y Angelis, 2016)
 
-### LDA
+#### LDA
 
 Buscando un agrupamiento alternativo de los productos, se esta desarrollando una técnica basada en latent dirichlet allocation (David M. Blei Andrew Y. Ng, 2003). Esta técnica se utiliza en Text Mining para encontrar los _tópicos subyacentes_ en un corpus de texto. Aquí se reformula para encontrar _componentes subyacentes del espacio de productos_. 
 
@@ -56,13 +63,13 @@ Los resultados preliminares se encuentran en:
 
 Estos Resultados fueron presentados en _ECON2018_. Además, se esta trabajando en un seminario de investigación en la FCE-UBA para la presentación de la herramienta y en la publicación de la metodología y los resultados.
 
-### Grafo Bipartito
+#### Grafo Bipartito
 
 Basado en Hidalgo and Hausmann (2009), se estudiará la representación del comercio internacional como un grafo bipartito de países y productos. La proyección del grafo bipartito construye un espacio de productos y un espacio de países. De aquí se define la similitud entre los productos a partir de que son exportados en tandem, y similitud de los países a partir de sus canastas exportadoras similares.
 
 Además, los autores proponen una métrica de ventajas comparativas relativas, _Relative Comparative Advantages_ 
 
-![](formula1.png)
+![](formula1.png){width=200}
 
 dónde x(c,i) es el valor de las exportaciones del __país c__ en el __producto i__     
 
